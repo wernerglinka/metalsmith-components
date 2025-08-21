@@ -1,0 +1,40 @@
+/* Overwrite threashold default for the banner content container */
+.section-wrapper .banner {
+  --threshold: 60rem;
+
+  &.content {
+    max-width: var(--threshold);
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/*
+  Special case: Accordion Banner
+*/
+.accordion-header {
+  cursor: pointer;
+
+  h2:after,
+  h3:after {
+    content: '+';
+  }
+
+  &.is-open {
+    h2:after,
+    h3:after {
+      content: '-';
+    }
+  }
+}
+
+.accordion-content {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &.is-closed {
+    max-height: 0;
+    padding-block: 0;
+  }
+}
