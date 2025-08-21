@@ -27,6 +27,7 @@ import prism from 'metalsmith-prism';
 import componentDependencyBundler from 'metalsmith-bundled-components';
 
 import assets from 'metalsmith-static-files'; // Copies static assets to build
+import optimizeImages from 'metalsmith-optimize-images'; // Optimizes images for web
 import htmlMinifier from 'metalsmith-optimize-html'; // Minifies HTML in production
 import sitemap from 'metalsmith-sitemap'; // Generates a sitemap.xml file
 
@@ -285,6 +286,13 @@ metalsmith
       source: 'lib/assets/', // Where to find assets
       destination: 'assets/', // Where to copy assets
       ignore: [ 'main.css', 'main.js', 'styles/' ] // Exclude files handled by bundled-components
+    } )
+  )
+
+  .use(
+    optimizeImages( {
+      // Enable progressive loading
+      isProgressive: true,
     } )
   )
 
