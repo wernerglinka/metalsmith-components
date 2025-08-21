@@ -8,10 +8,11 @@ navigation:
   navIndex: 10
 
 seo:
-  title: Metalsmith components library - Blog List
-  description: 'A responsive blog listing component that displays a grid of blog post cards with pagination support.'
+  title: Blog List Component - Paginated Post Grid for Metalsmith
+  description: 'Responsive blog listing component with automatic pagination, card-based layout, and collection support. Display blog posts in an organized grid with Metalsmith.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith blog list, blog pagination, post grid, blog cards, collection display, paginated blog, blog archive component, metalsmith collections'
 
 sections:
   - sectionType: text-only

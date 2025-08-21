@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library - Media Image
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Media Image Component - Text & Image Layouts for Metalsmith
+  description: 'Flexible media section combining text and images with reversible layouts. Create engaging content presentations with optional CTAs and captions for Metalsmith sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith media image, text and image layout, content with images, media section, image caption, reversible layout, feature showcase'
 
 sections:
   - sectionType: text-only

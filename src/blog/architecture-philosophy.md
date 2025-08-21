@@ -4,10 +4,11 @@ bodyClass: ''
 draft: false
 
 seo:
-  title: Architecture Philosophy
-  description: 'This starter embodies several key principles that make structured content management both powerful and approachable.'
+  title: Architecture Philosophy - Building with Metalsmith Components
+  description: 'Explore the core principles behind Metalsmith component architecture: true encapsulation, separation of concerns, and declarative content management for modern static sites.'
   socialImage: 'https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png'
   canonicalOverwrite: ''
+  keywords: 'metalsmith architecture, component philosophy, structured content, separation of concerns, component encapsulation, declarative content, static site architecture'
 
 card:
   title: 'Architecture Philosophy'

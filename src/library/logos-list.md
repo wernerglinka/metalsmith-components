@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library - Logos List
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Logos List Component - Client & Partner Logo Display for Metalsmith
+  description: 'Display collections of logos, client brands, partner organizations, or social media icons with auto-scrolling support. Flexible logo grid for Metalsmith static sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith logos list, client logos, partner logos, logo grid, social media icons, brand showcase, logo carousel, scrolling logos'
 
 sections:
   - sectionType: text-only

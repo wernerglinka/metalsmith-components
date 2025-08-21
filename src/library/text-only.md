@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library - Text Only
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Text Only Component - Content Sections for Metalsmith
+  description: 'Versatile text section for articles, documentation, and content-heavy layouts. Supports markdown, headings, CTAs, and background styling for Metalsmith static sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith text section, content component, article section, markdown content, text-only layout, documentation component, prose section'
 
 sections:
   - sectionType: text-only

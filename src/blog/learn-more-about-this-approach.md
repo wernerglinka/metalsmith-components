@@ -4,10 +4,11 @@ bodyClass: ''
 draft: false
 
 seo:
-  title: Learn More About This Approach
-  description: 'This starter accompanies a comprehensive exploration of structured content approaches in static site generation.'
+  title: Learn More About This Approach - Metalsmith Structured Content
+  description: 'Discover the evolution of structured content in static site generation. Learn how component-driven development transforms web workflows with Metalsmith.'
   socialImage: 'https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png'
   canonicalOverwrite: ''
+  keywords: 'metalsmith structured content, component-driven development, static site generation, beyond markdown, metalsmith redux, content as data, web development workflow'
 
 card:
   title: 'Learn More About This Approach'

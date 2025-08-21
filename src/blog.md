@@ -7,10 +7,11 @@ navigation:
   navIndex: 4
 
 seo:
-  title: MS2025 Structured Content Starter Blog
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Blog - Metalsmith Components & Architecture Examples
+  description: 'Explore articles about building with Metalsmith components, structured content patterns, and modern static site architecture. Learn best practices for component-based development.'
   socialImage: '/assets/images/metalsmith-starter-social.png'
   canonicalOverwrite: ''
+  keywords: 'metalsmith blog, static site tutorials, component architecture, structured content, web development articles, metalsmith patterns, static site best practices'
 
 sections:
   - sectionType: hero

@@ -8,10 +8,11 @@ navigation:
   navIndex: 0
 
 seo:
-  title: Metalsmith Components
-  description: 'A collection of section components for use with Metalsmith in 2025 and beyond'
+  title: Metalsmith Components - Modular Page Building Framework
+  description: 'Build dynamic web pages with reusable Metalsmith components. A modern component-based architecture for static site generation with structured content, flexible layouts, and composable sections.'
   socialImage: '/assets/images/sample2.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith, static site generator, components, modular design, web components, page builder, structured content, nunjucks templates, reusable sections'
 
 sections:
   - sectionType: hero

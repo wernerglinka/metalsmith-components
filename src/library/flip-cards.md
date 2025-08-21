@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library - Flip Cards
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Flip Cards Component - Interactive Card UI for Metalsmith
+  description: 'Interactive flip card components with front and back content, icons, and CTAs. Create engaging card-based interfaces for your Metalsmith static site.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith flip cards, interactive cards, card UI component, flip animation, card interface, hover cards, two-sided cards'
 
 sections:
   - sectionType: text-only

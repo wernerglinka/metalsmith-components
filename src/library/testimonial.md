@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library - Testimonial
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Testimonial Component - Customer Quotes & Reviews for Metalsmith
+  description: 'Display customer testimonials with quotes, citations, portraits, and company logos. Professional testimonial section for building trust in Metalsmith static sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith testimonial, customer quotes, review component, blockquote section, testimonial with portrait, client feedback, social proof'
 
 sections:
   - sectionType: text-only

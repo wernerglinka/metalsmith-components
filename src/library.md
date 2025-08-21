@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Component Library - Metalsmith Page Sections & Templates
+  description: 'Browse our collection of reusable Metalsmith components including heroes, banners, sliders, testimonials, and more. Ready-to-use templates for building modern static websites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith components, component library, page sections, hero section, banner component, blog list, flip cards, testimonials, sliders, static site components'
 
 sections:
   - sectionType: hero

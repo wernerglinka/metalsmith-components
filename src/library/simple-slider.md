@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library - Simple Slider
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Simple Slider Component - Carousel & Tabbed Content for Metalsmith
+  description: 'Interactive slider component with standard pagination or tabbed interface. Display multiple content slides with images, text, and CTAs in your Metalsmith static site.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith slider, carousel component, image slider, tabbed content, content carousel, slideshow, interactive slider, tabbed interface'
 
 sections:
   - sectionType: text-only

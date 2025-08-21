@@ -4,10 +4,11 @@ bodyClass: ''
 draft: false
 
 seo:
-  title: What Makes This Different
-  description: 'Most static site generators ask you to choose between simplicity and power. This starter bridges that gap by providing a structured approach that scales naturally.'
+  title: What Makes This Different - Metalsmith Component Architecture
+  description: 'Bridge the gap between simplicity and power with Metalsmith components. A scalable architecture that grows with your requirements while maintaining true component encapsulation.'
   socialImage: 'https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png'
   canonicalOverwrite: ''
+  keywords: 'metalsmith difference, component architecture, scalable static sites, component encapsulation, progressive enhancement, static site scalability, modular architecture'
 
 card:
   title: 'What Makes This Different'

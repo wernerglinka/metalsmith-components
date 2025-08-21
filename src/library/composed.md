@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library - Composed Section
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Composed Section - Flexible Multi-Column Layouts for Metalsmith
+  description: 'Create custom multi-column layouts with the composed section component. Combine text, images, and CTAs in flexible column arrangements for Metalsmith sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith composed section, multi-column layout, flexible layouts, custom sections, column blocks, image gallery component, composable layouts'
 
 sections:
   - sectionType: text-only

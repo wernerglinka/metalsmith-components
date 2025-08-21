@@ -8,10 +8,11 @@ navigation:
   navIndex: 2
 
 seo:
-  title: Building Structured Pages with Metalsmith Components
-  description: 'Understanding the build process and template hierarchy when creating component-based pages with Metalsmith'
+  title: From YAML to HTML - Metalsmith Component Build Process
+  description: 'Complete guide to understanding how Metalsmith transforms YAML configurations into HTML pages. Learn the template hierarchy, Nunjucks macros, data flow, and debugging techniques.'
   socialImage: '/assets/images/sample8.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith build process, YAML to HTML, nunjucks templates, template hierarchy, component rendering, static site pipeline, metalsmith tutorial, debugging metalsmith'
 
 sections:
   - sectionType: hero

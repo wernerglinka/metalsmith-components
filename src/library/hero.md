@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Starter Sections Library - Hero
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Hero Section Component - Full Screen & Standard Heroes for Metalsmith
+  description: 'Create impactful hero sections with background images, text overlays, and CTAs. Includes full-screen hero options with scroll targeting for Metalsmith sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith hero section, full screen hero, hero component, landing page hero, hero with background image, page header, hero overlay'
 
 sections:
   - sectionType: hero

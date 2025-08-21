@@ -8,10 +8,11 @@ navigation:
   navIndex: 3
 
 seo:
-  title: Metalsmith components library - Banner
-  description: 'A Metalsmith Starter to build modern websites using structured data and reusable components.'
+  title: Banner Component - Metalsmith Call-to-Action Section
+  description: 'Create eye-catching CTA banners with background images or colors. Includes accordion header functionality and flexible styling options for Metalsmith static sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith banner, CTA section, call-to-action component, accordion header, banner with background image, promotional banner, static site components'
 
 sections:
   - sectionType: text-only

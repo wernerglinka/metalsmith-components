@@ -4,10 +4,11 @@ bodyClass: ''
 draft: false
 
 seo:
-  title: Getting Started with Structured Content
-  description: 'Begin by exploring the existing page configurations to understand how content is organized.'
+  title: Getting Started with Structured Content - Metalsmith Tutorial
+  description: 'Learn how to build with Metalsmith structured content. Explore page configurations, experiment with components, and create scalable static websites with ease.'
   socialImage: 'https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png'
   canonicalOverwrite: ''
+  keywords: 'metalsmith tutorial, structured content guide, getting started metalsmith, component configuration, static site tutorial, page structure, content organization'
 
 card:
   title: 'Getting Started with Structured Content'

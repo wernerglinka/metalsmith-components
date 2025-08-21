@@ -4,10 +4,11 @@ bodyClass: ''
 draft: false
 
 seo:
-  title: Featured Components
-  description: 'Explore the various section types included in this starter to see the component system in action.'
+  title: Featured Components - Metalsmith Section Types Showcase
+  description: 'Discover the full range of Metalsmith components: heroes, galleries, testimonials, CTAs, and more. See how structured content creates maintainable, scalable websites.'
   socialImage: 'https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png'
   canonicalOverwrite: ''
+  keywords: 'metalsmith components showcase, section types, component examples, hero sections, image galleries, testimonials, CTA components, structured content'
 
 card:
   title: 'Featured Components'

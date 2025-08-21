@@ -8,10 +8,11 @@ navigation:
   navIndex: 1
 
 seo:
-  title: Section Anatomy
-  description: 'A close look at how a section is structured'
+  title: Section Anatomy - Understanding Metalsmith Component Structure
+  description: 'Deep dive into Metalsmith component architecture. Learn how hero sections, content blocks, and page sections are structured with YAML configuration and Nunjucks templates.'
   socialImage: '/assets/images/sample12.jpg'
   canonicalURL: ''
+  keywords: 'metalsmith section anatomy, component structure, YAML configuration, hero section, component properties, page sections, template architecture, structured content'
 
 sections:
   - sectionType: hero

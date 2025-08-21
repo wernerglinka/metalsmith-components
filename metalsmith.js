@@ -208,33 +208,6 @@ metalsmith
     } )
   )
 
-  /*
-    .use( function( files, metalsmith, done ) {
-      console.log( metalsmith.metadata().data );
-  
-      
-       // Handle circular references by only extracting safe properties
-       const collections = metalsmith.metadata().collections;
-       const safeCollections = {};
-   
-       Object.keys( collections ).forEach( name => {
-         safeCollections[ name ] = collections[ name ].map( item => ( {
-           title: item.card?.title,
-           path: item.path,
-           permalink: item.permalink,
-           date: item.card?.date,
-           previous: item.previous ? { title: item.previous.card?.title, path: item.previous.path } : null,
-           next: item.next ? { title: item.next.card?.title, path: item.next.path } : null
-         } ) );
-       } );
-   
-       console.log( JSON.stringify( safeCollections, null, 2 ) );
-   
-       
-      done();
-    } )
-  */
-
   /**
    * Apply templates to content
    * Learn more: https://github.com/metalsmith/layouts
@@ -313,6 +286,17 @@ metalsmith
       destination: 'assets/', // Where to copy assets
       ignore: [ 'main.css', 'main.js', 'styles/' ] // Exclude files handled by bundled-components
     } )
+  )
+
+  /**
+   * Intelligent metadata generation, social media tags, and structured data including Open Graph tags,
+   * Twitter Cards, JSON-LD structured data object, a sitemap and a robots.txt file
+   * Learn more: https://github.com/wernerglinka/metalsmith-seo
+   */
+  .use(
+    seo( {
+      metadataPath: 'data.site'  // Object in metadata points to where to find site metadata
+    } )
   );
 
 // These plugins only run in production mode to optimize the site
@@ -323,15 +307,6 @@ if ( isProduction ) {
      * Learn more: https://github.com/wernerglinka/metalsmith-optimize-html
      */
     .use( htmlMinifier() );
-
-  /**
-   * SEO
-   */
-  metalsmith.use(
-    seo( {
-      metadataPath: 'data.site'  // Where to find site metadata
-    } )
-  );
 }
 
 /**
