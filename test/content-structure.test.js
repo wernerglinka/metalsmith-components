@@ -166,7 +166,7 @@ describe('Content Structure', () => {
       const siteData = JSON.parse(content);
 
       assert.ok(siteData.title, 'site.json should have title');
-      assert.ok(siteData.siteURL, 'site.json should have siteURL');
+      assert.ok(siteData.url, 'site.json should have url');
       assert.ok(siteData.description, 'site.json should have description');
     });
   });

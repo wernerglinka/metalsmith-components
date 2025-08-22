@@ -255,7 +255,7 @@ describe('Build Integration', () => {
 
         // Check that clean URLs are generated (directories with index.html)
         assert.ok(existsSync(join(testBuildDir, 'index.html')), 'Root index.html should exist');
-        assert.ok(existsSync(join(testBuildDir, 'about/index.html')), 'About page should have clean URL');
+        assert.ok(existsSync(join(testBuildDir, 'library/index.html')), 'Library page should have clean URL');
         assert.ok(existsSync(join(testBuildDir, 'blog/index.html')), 'Blog index should have clean URL');
 
         done();
@@ -305,7 +305,7 @@ describe('Build Integration', () => {
 
         // Check that assets were copied
         assert.ok(existsSync(join(testBuildDir, 'assets')), 'Assets directory should be created');
-        assert.ok(existsSync(join(testBuildDir, 'assets/global-styles.css')), 'Global CSS should be copied');
+        assert.ok(existsSync(join(testBuildDir, 'assets/main.css')), 'Main CSS should be copied');
         assert.ok(existsSync(join(testBuildDir, 'assets/images')), 'Images directory should be copied');
 
         done();

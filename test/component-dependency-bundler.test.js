@@ -188,14 +188,21 @@ describe('Component Dependency Bundler Setup', () => {
 
             // Check basic manifest structure
             assert.ok(manifest.name, `Manifest for ${section} should have name`);
-            assert.ok(manifest.dependencies, `Manifest for ${section} should have dependencies`);
+            assert.ok(manifest.type, `Manifest for ${section} should have type`);
 
-            if (manifest.dependencies.css) {
-              assert.ok(Array.isArray(manifest.dependencies.css), `CSS dependencies for ${section} should be an array`);
+            // Check component dependencies (requires field)
+            if (manifest.requires) {
+              assert.ok(Array.isArray(manifest.requires), `Requires field for ${section} should be an array`);
             }
 
-            if (manifest.dependencies.js) {
-              assert.ok(Array.isArray(manifest.dependencies.js), `JS dependencies for ${section} should be an array`);
+            // Check styles dependencies
+            if (manifest.styles) {
+              assert.ok(Array.isArray(manifest.styles), `Styles field for ${section} should be an array`);
+            }
+
+            // Check scripts dependencies
+            if (manifest.scripts) {
+              assert.ok(Array.isArray(manifest.scripts), `Scripts field for ${section} should be an array`);
             }
           } catch (error) {
             assert.fail(`Invalid manifest for ${section}: ${error.message}`);

@@ -21,6 +21,8 @@
     "start": "NODE_ENV=development node metalsmith.js --watch",
     "start:debug": "NODE_ENV=development DEBUG=@metalsmith* node metalsmith.js --watch",
     "serve": "browser-sync start --server 'build'",
+    "test": "mocha test/**/*.test.js",
+    "test:watch": "mocha test/**/*.test.js --watch",
     "format": "prettier --write \"**/*.{js,json,njk,css}\"",
     "lint": "eslint --fix .",
     "fix": "npm run format && npm run lint",

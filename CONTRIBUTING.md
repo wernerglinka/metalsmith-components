@@ -1,6 +1,6 @@
-# Contributing to Metalsmith2025 Structured Content Starter
+# Contributing to Metalsmith Components
 
-Thank you for your interest in contributing! This document provides guidelines for contributing to the project.
+Thank you for your interest in contributing to the Metalsmith Components library! This document provides guidelines for contributing new components, improving existing ones, and enhancing documentation.
 
 ## Development Setup
 
@@ -43,8 +43,20 @@ The project includes comprehensive tests:
 - **Component Manifest Tests**: Ensure all components have valid manifests
 - **Content Structure Tests**: Verify frontmatter and data file structure
 - **Component Dependency Tests**: Test the bundling system
+- **Component Rendering Tests**: Verify components render correctly
+- **Documentation Tests**: Ensure all components have proper documentation
 
 Run tests with `npm test`. All tests must pass before submitting a pull request.
+
+### Testing New Components
+
+When adding a new component:
+1. Add test cases for the component's manifest
+2. Test with various configuration options
+3. Verify the component renders without errors
+4. Test responsive behavior
+5. Check accessibility with screen readers
+6. Validate against the Metalsmith2025 Starter structure
 
 ## Validation System
 
@@ -57,30 +69,101 @@ The project includes a validation system for catching configuration errors in fr
 
 ## Component Development
 
-When creating new components:
+### Adding New Components
 
-1. Follow the existing component structure in `lib/layouts/components/`
-2. Include a `manifest.json` file with dependencies and validation rules
-3. Use semantic HTML and accessible markup
-4. Add JSDoc comments explaining the component's purpose
-5. Update tests to include the new component
+When creating new components for the library:
+
+1. **Component Structure**: Follow the existing component structure in `lib/layouts/components/sections/`
+2. **Include Required Files**:
+   - `component-name.njk` - The Nunjucks template
+   - `component-name.css` - Component styles (if needed)
+   - `component-name.js` - Component JavaScript (if needed)
+   - `manifest.json` - Dependencies and validation rules
+   - `README.md` - Component documentation
+3. **Create Documentation Page**: Add a showcase page in `src/library/` with:
+   - Live examples of the component
+   - Configuration options
+   - Usage patterns
+   - Code snippets
+4. **Use Semantic HTML**: Ensure accessible markup and proper ARIA attributes
+5. **Add JSDoc Comments**: Explain the component's purpose and parameters
+6. **Update Tests**: Include the new component in the test suite
+7. **Update Library Index**: Add the component to `src/library.md`
+
+### Component Compatibility
+
+Ensure components are compatible with the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter):
+
+- Follow the same frontmatter structure patterns
+- Use consistent property naming conventions
+- Maintain the same dependency bundling approach
+- Test component portability to starter projects
+
+## Documentation
+
+When adding or updating components:
+
+1. **Component Documentation**: Each component should have clear documentation in `src/library/component-name.md`
+2. **Code Examples**: Provide complete YAML configuration examples
+3. **Property Descriptions**: Document all component properties and their effects
+4. **Visual Examples**: Include working examples that render on the page
+5. **Best Practices**: Include usage guidelines and common patterns
 
 ## Commit Messages
 
 Use conventional commit format:
-- `feat:` for new features
+- `feat:` for new components or features
 - `fix:` for bug fixes  
+- `docs:` for documentation updates
+- `style:` for CSS/styling changes
 - `chore:` for maintenance tasks
-- `docs:` for documentation changes
+- `refactor:` for code improvements
+
+Examples:
+- `feat: add accordion component with collapsible sections`
+- `docs: update hero component examples`
+- `fix: correct flip-card animation on mobile`
 
 ## Pull Requests
 
-1. Create a descriptive title and detailed description
-2. Reference any related issues
-3. Ensure all tests pass
-4. Include documentation updates if needed
-5. Request review from maintainers
+1. **Title**: Use a descriptive title following commit conventions
+2. **Description**: Include:
+   - What component was added/changed
+   - Why the change was needed
+   - Screenshots for visual changes
+   - Link to live example (if applicable)
+3. **Testing**: Ensure all tests pass
+4. **Documentation**: Update relevant documentation
+5. **Compatibility**: Verify compatibility with Metalsmith2025 Starter
+6. **Review**: Request review from maintainers
+
+## Contributing Examples
+
+### Example: Adding a New Component
+
+If you want to add a "Timeline" component:
+
+1. Create component files in `lib/layouts/components/sections/timeline/`:
+   - `timeline.njk` - Template structure
+   - `timeline.css` - Styling
+   - `timeline.js` - Interactive behavior (if needed)
+   - `manifest.json` - Dependencies and configuration
+   - `README.md` - Component documentation
+
+2. Create showcase page at `src/library/timeline.md`:
+   - Multiple examples showing different configurations
+   - Property documentation
+   - Usage guidelines
+
+3. Update `src/library.md` to include link to timeline component
+
+4. Test the component with the Metalsmith2025 Starter to ensure compatibility
+
+5. Submit PR with title: `feat: add timeline component for chronological content`
 
 ## Questions?
 
-Feel free to open an issue for questions or join the [Metalsmith community on Gitter](https://gitter.im/metalsmith/community).
+- Open an issue for questions about contributing
+- Join the [Metalsmith community on Gitter](https://gitter.im/metalsmith/community)
+- Check existing components for implementation patterns
+- Review the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter) for compatibility requirements

@@ -4,295 +4,257 @@
   </a>
 </p>
 <h1 align="center">
-  Metalsmith2025 Structured Content Starter
+  Metalsmith Components
 </h1>
 
-This is a component-based, structured content starter built with Metalsmith, demonstrating modern web development patterns without the overhead of JavaScript frameworks. Unlike traditional long-text Markdown contents, this starter uses structured content in frontmatter to define reusable page sections and components. Each component manages its own styles and scripts, which are automatically bundled only when used. This approach provides the flexibility of component-driven development while maintaining the simplicity and performance benefits of static site generation with Metalsmith.
+A comprehensive showcase and documentation site for building modern websites with Metalsmith using a component-based architecture. This website demonstrates how to create scalable, maintainable static sites using structured content in frontmatter instead of traditional Markdown. Each component is self-contained with its own styles and scripts, which are automatically bundled only when used.
 
-[Explore the demo](https://ms2025-structured-content-starter.netlify.app/).
+This library serves as the component reference for the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). Components showcased here can be imported into your starter-based projects to enhance and extend your website's functionality.
 
-## Features
+[View the live site](https://metalsmith-components.netlify.app/) | [Component Library](/library) | [Documentation](/section-anatomy)
 
-### Component-Based Architecture
+## What This Site Offers
 
-- **Structured Content**: Define pages using structured data in frontmatter instead of Markdown body content
-- **Reusable Components**: Build pages from modular section components (hero, banner, media, text-only, etc.)
+### Component Library
+
+Explore a comprehensive collection of production-ready components:
+- **Hero Sections**: Full-screen and standard hero components with background images and CTAs
+- **Banner Components**: Versatile call-to-action sections with background options and accordion functionality
+- **Media Sections**: Flexible image and text combinations with reversible layouts
+- **Content Blocks**: Text-only sections, testimonials, and blog listings
+- **Interactive Elements**: Sliders, flip cards, and logo carousels
+- **Composed Sections**: Multi-column layouts for custom content arrangements
+
+### Documentation & Learning
+
+- **Section Anatomy**: Deep dive into component structure and properties
+- **Build Process Guide**: Understanding the journey from YAML to HTML
+- **Template Hierarchy**: Learn how components compose into complete pages
+- **Best Practices**: Component configuration and optimization techniques
+- **Sample Blog**: See the component system in action with real content
+
+### Technical Features
+
 - **Component Dependency Bundling**: Automatically bundles only the CSS and JavaScript needed for components used on each page
-- **No Framework Overhead**: Get the benefits of component architecture without React, Vue, or other JavaScript frameworks
+- **PostCSS Processing**: Built-in autoprefixing and CSS optimization
+- **True Component Encapsulation**: Each component manages its own styles, scripts, and templates
+- **No Framework Overhead**: Pure HTML/CSS/JS output without React, Vue, or other runtime dependencies
 
-### Modern Development Patterns
+## Getting Started with Metalsmith Components
 
-- **Component Manifests**: Each component has a manifest.json defining its dependencies and configuration
-- **PostCSS Processing**: Built-in autoprefixing and CSS optimization through the componentDependencyBundler
-- **Separation of Concerns**: Components maintain their own styles, scripts, and templates
-- **Flexible Section System**: Mix and match different section types to create unique page layouts
+### For Metalsmith2025 Starter Users
 
-### Content Management
+If you're building a website with the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter):
 
-- **Frontmatter-Driven**: All page content and structure defined in frontmatter
-- **Blog System**: Full-featured blog with pagination, but using structured content approach
-- **Section-Based Pages**: Build complex layouts by composing section components
-- **Clean URLs**: Permalinks for SEO-friendly URLs
+1. **Browse this library** to discover available components
+2. **Copy component code** from this repository to your starter project
+3. **Import components** into your `lib/layouts/components/sections/` directory
+4. **Customize styles and behavior** to match your design needs
+5. **Use the component** by adding it to your page's frontmatter sections
 
-### SEO Features
+### Use as a Reference
 
-This starter includes several SEO-friendly features:
+This site serves as a living documentation and reference implementation for building component-based Metalsmith sites. Browse the component library, examine the source code, and learn from the implementation patterns.
 
-- **Sitemap Generation**: A sitemap.xml file is automatically generated in production builds
-- **Robots.txt**: A robots.txt file is included and processed with Nunjucks
-- **404 Page**: A custom 404 error page that works with Netlify and other hosting providers
-- **SEO Metadata**: Each page can include custom title, description, and social image metadata
+### Build Your Own Component Library
 
-### Component Dependency Bundler
+You can also fork this repository to create your own component library:
 
-The `componentDependencyBundler` plugin is a key differentiator of this starter:
+1. Fork or clone the repository
+2. Create new components following the established patterns
+3. Document your components with live examples
+4. Share your library with the Metalsmith community
 
-- **Automatic Dependency Resolution**: Scans your pages to identify which components are used
-- **Smart Bundling**: Creates optimized CSS and JavaScript bundles containing only the code for components actually used
-- **PostCSS Processing**: Applies autoprefixing and minification to component styles
-- **Performance Optimized**: Reduces payload by excluding unused component code
-- **Component Isolation**: Each component's styles and scripts are scoped and managed independently
+## Installation & Development
 
-### Development Experience
+### Prerequisites
+- Node.js version 18 or higher
+- npm or yarn package manager
 
-- **Live Reloading**: Development server with automatic browser refresh
-- **Code Quality Tools**: ESLint and Prettier integration for consistent code style
-- **Optimized Build**: HTML minification for production builds
-- **Combined Scripts**: Run `npm run fix` to format and lint your code in one command
+### Local Development
 
-## Quick start
-
-To get started with this Metalsmith starter You should have Node.js version 18 or higher installed.
-
-1.  **Create a Metalsmith site.**
-
-    Clone the starter repository to create a new blog.
+1.  **Clone the repository**
 
     ```shell
-    git clone https://github.com/wernerglinka/metalsmith2025-structured-content-starter my-site
+    git clone https://github.com/wernerglinka/metalsmith-components.git
+    cd metalsmith-components
     ```
 
-1.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+2.  **Install dependencies**
 
     ```shell
-    cd my-site/
     npm install
+    ```
+
+3.  **Start the development server**
+
+    ```shell
     npm start
     ```
 
-1.  **Open the source code and start editing!**
+    Your site will be running at `http://localhost:3000` with live reloading enabled.
 
-    Your site is now running at `http://localhost:3000`!
-
-    Open the `src` directory in your code editor of choice and edit any page's frontmatter to modify its sections. Save your changes and the browser will update in real time!
-
-1.  **Available scripts**
-
-    This starter includes several useful scripts:
+4.  **Build for production**
 
     ```shell
-    npm start      # Start development server with live reloading
-    npm run dev    # Run a development build
-    npm run build  # Create a production build
-    npm run serve  # Serve the build directory with Browser-Sync
-    npm run format # Format code with Prettier
-    npm run lint   # Lint and fix code with ESLint
-    npm run fix    # Run both format and lint in sequence
+    npm run build
     ```
 
-## What's included?
+    The production-ready site will be in the `build` directory.
 
-A quick look at the top-level files and directories you'll see in this Metalsmith project.
+### Available Scripts
 
-    .
-    ├── node_modules/            # Dependencies
-    ├── src/                     # Source content (structured frontmatter)
-    ├── lib/                     # Project assets, components, and templates
-    │   ├── assets/              # Static assets (images, global CSS)
-    │   ├── data/                # Global data files (JSON)
-    │   └── layouts/             # Templates and components
-    │       ├── components/      # Reusable components
-    │       │   ├── _helpers/    # Template helpers
-    │       │   ├── _partials/   # Partial components (buttons, cards, etc.)
-    │       │   └── sections/    # Section components (hero, banner, etc.)
-    │       └── pages/           # Page templates
-    ├── nunjucks-filters/        # Custom Nunjucks filters
-    ├── eslint.config.js         # ESLint configuration
-    ├── .gitattributes           # Git attributes configuration
-    ├── .gitignore               # Git ignore rules
-    ├── .prettierignore          # Prettier ignore rules
-    ├── prettier.config.js       # Prettier configuration
-    ├── LICENSE                  # License file
-    ├── metalsmith.js            # Metalsmith configuration
-    ├── package-lock.json        # Dependency lock file
-    ├── package.json             # Project manifest
-    └── README.md                # Project documentation
+```shell
+npm start      # Start development server with live reloading
+npm run dev    # Run a development build
+npm run build  # Create a production build
+npm run serve  # Serve the build directory with Browser-Sync
+npm run format # Format code with Prettier
+npm run lint   # Lint and fix code with ESLint
+npm run fix    # Run both format and lint in sequence
+```
 
-1. **`node_modules`**: This directory contains all the node modules that your project depends on.
+## Project Structure
 
-2. **`src`**: This directory contains all the content that makes up your site:
-   - **`src/index.md`**: Homepage with structured sections in frontmatter
-   - **`src/blog.md`**: Blog index page using blog-list section component
-   - **`src/blog/`**: Individual blog posts with structured frontmatter
-   - **`src/sections.md`**: Example page showcasing various section components
-   - **`src/404.html`**: Custom 404 error page
-   - **`src/robots.txt`**: SEO-friendly robots.txt file
+```
+.
+├── src/                        # Source content pages
+│   ├── index.md               # Homepage showcasing components
+│   ├── library.md             # Component library index
+│   ├── library/               # Individual component documentation
+│   │   ├── banner.md          # Banner component examples
+│   │   ├── hero.md            # Hero section examples
+│   │   ├── media-image.md     # Media section examples
+│   │   └── ...                # More component examples
+│   ├── section-anatomy.md     # Component structure documentation
+│   ├── yaml-to-html.md        # Build process documentation
+│   ├── blog.md                # Blog index with pagination
+│   └── blog/                  # Sample blog posts
+├── lib/                       # Templates and assets
+│   ├── assets/                # Images, fonts, global styles
+│   ├── data/                  # Site configuration (site.json, etc.)
+│   └── layouts/
+│       ├── components/
+│       │   ├── _partials/     # Reusable UI elements
+│       │   └── sections/      # Page section components
+│       └── pages/             # Page templates
+├── metalsmith.js              # Build configuration
+└── package.json               # Project dependencies
+```
 
-3. **`lib`**: This directory contains all the project assets and templates:
-   - **`lib/assets`**: Static assets like images and global CSS
-   - **`lib/data`**: JSON data files for global site configuration
-   - **`lib/layouts`**: Templates and components:
-     - **`components/_partials`**: Reusable UI components (buttons, cards, navigation, etc.)
-     - **`components/sections`**: Page section components (hero, banner, media blocks, etc.)
-     - **`pages`**: Page-level templates that compose sections
+## How It Works
 
-4. **Component Structure**: Each component typically includes:
-   - **`component-name.njk`**: The component's template
-   - **`component-name.css`**: Component-specific styles
-   - **`component-name.js`**: Component-specific JavaScript (if needed)
-   - **`manifest.json`**: Component metadata and dependencies
-   - **`README.md`**: Component documentation
+### Relationship with Metalsmith2025 Starter
 
-5. **`nunjucks-filters`**: Custom filters for the Nunjucks templating engine including markdown processing, date formatting, and more
+This component library demonstrates the same paradigm used by the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). While the starter provides the foundation and build system for creating component-based Metalsmith sites, this library showcases the full potential of what can be built with that approach.
 
-6. **`eslint.config.js`**: This file contains all rules for ESLint.
+Components from this library are designed to be compatible with the starter's architecture, allowing developers to:
+- Import individual components as needed
+- Study implementation patterns
+- Extend their starter projects with proven components
+- Learn best practices for component development
 
-7. **`.gitattributes`**: This file tells git how it should handle line endings.
+### Structured Content Approach
 
-8. **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-9. **`.prettierignore`**: This file tells prettier what files it should ignore.
-
-10. **`prettier.config.js`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-11. **`eslint.config.js`**: This is a configuration file for [ESLint](https://eslint.org/). ESLint is a tool to help keep the formatting of your code consistent.
-
-12. **`LICENSE`**: This Metalsmith starter is licensed under the MIT license.
-
-13. **`metalsmith.js`**: This is the Metalsmith build file that includes the componentDependencyBundler plugin for managing component assets.
-
-14. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-15. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-16. **`README.md`**: A text file containing useful reference information about your project.
-
-## How Structured Content Works
-
-This starter takes a different approach from traditional Markdown-based static sites:
-
-### Content Definition
-
-Pages are defined using structured data in frontmatter rather than Markdown content. For example:
+Instead of traditional Markdown files with content in the body, this system uses structured data in frontmatter to define pages:
 
 ```yaml
+---
+layout: pages/sections.njk
 sections:
   - sectionType: hero
     text:
-      title: 'Welcome to My Site'
-      prose: 'This content is defined in structured data'
+      title: 'Welcome to Metalsmith Components'
+      prose: 'Build modern websites with reusable components'
     containerFields:
       background:
         image: '/assets/images/hero.jpg'
-  - sectionType: banner
+  - sectionType: media-image
     text:
-      title: 'Another Section'
-      prose: 'Each section is a reusable component'
+      title: 'Feature Showcase'
+      prose: 'Combine text and images seamlessly'
+    image:
+      src: '/assets/images/feature.jpg'
+      alt: 'Feature demonstration'
+---
 ```
 
-### Component System
+### Component Architecture
 
-- **Section Components**: Large page sections like hero, banner, media blocks
-- **Partial Components**: Smaller reusable elements like buttons, cards, navigation
-- **Template Helpers**: Utilities for rendering sections and building attributes
+Each component is self-contained with:
+- **Template** (`.njk`): Defines the HTML structure
+- **Styles** (`.css`): Component-specific CSS
+- **Scripts** (`.js`): Interactive behavior (optional)
+- **Manifest** (`manifest.json`): Dependencies and metadata
 
-### Banner Component
+### Component Dependency Bundler
 
-The banner component is a versatile section for prominent call-to-action areas with the following features:
+The system automatically manages component assets:
 
-- **Background Options**: Use either background images with screen overlays (`light`, `dark`, `none`) or solid background colors
-- **Container Control**: Set `inContainer: false` for full viewport width or `true` to restrict to content width
-- **Text Content**: Includes lead-in text, title, subtitle, and prose content
-- **Call-to-Actions**: Support for multiple CTA buttons or links with customizable styles
-- **Accordion Mode**: Can function as an accordion header by adding `accordion-header` class and pairing with an `accordion-content` section
+1. **Scans pages** to identify which components are used
+2. **Bundles only required CSS/JS** for optimal performance
+3. **Applies PostCSS processing** for autoprefixing and minification
+4. **Generates per-page assets** with no unused code
 
-Example configuration:
+## Available Components
 
-```yaml
-- sectionType: banner
-  containerTag: aside
-  containerFields:
-    inContainer: false
-    background:
-      image: '/assets/images/sample.jpg'
-      imageScreen: 'light' # Better text contrast
-  text:
-    leadIn: 'Special Offer'
-    title: 'Get Started Today'
-    titleTag: 'h2'
-    prose: 'Your compelling message here'
-  ctas:
-    - url: '/signup'
-      label: 'Sign Up'
-      isButton: true
-      buttonStyle: 'primary'
-```
+### Content Sections
+- **Hero**: Full-screen or standard hero sections with background images
+- **Banner**: Call-to-action sections with flexible backgrounds
+- **Text Only**: Pure content sections with markdown support
+- **Media Image**: Image and text combinations with reversible layouts
 
-### Automatic Asset Management
+### Interactive Components
+- **Simple Slider**: Carousel with pagination or tabbed interface
+- **Flip Cards**: Interactive cards with front/back content
+- **Logos List**: Auto-scrolling logo carousels
+- **Testimonial**: Customer quotes with attribution
 
-The `componentDependencyBundler` automatically:
+### Layout Components
+- **Composed**: Multi-column custom layouts
+- **Blog List**: Paginated blog post grids
+- **Blog Navigation**: Previous/next post navigation
 
-1. Scans your pages to identify which components are used
-2. Bundles only the CSS and JavaScript for those components
-3. Applies PostCSS processing (autoprefixing, minification)
-4. Outputs optimized per-page stylesheets and scripts
+View live examples in the [Component Library](/library).
 
-## Content Validation
+## Deployment
 
-This starter includes built-in validation to catch common configuration errors:
+Deploy to any static hosting service:
+- [Netlify](https://www.netlify.com) (recommended)
+- [Vercel](https://vercel.com/)
+- [Cloudflare Pages](https://pages.cloudflare.com/)
+- GitHub Pages
 
-- **Type validation**: Ensures booleans are actual booleans (not strings like `"false"`)
-- **Enum validation**: Validates values like `titleTag` (h1-h6) and `buttonStyle` (primary, secondary, ghost)
-- **Component validation**: Ensures referenced section types exist
+### Subdirectory Deployment
 
-See [Content Validation Guide](docs/VALIDATION.md) for complete details.
+For deployment to subdirectories (e.g., GitHub Pages), the [metalsmith-safe-links](https://github.com/wernerglinka/metalsmith-safe-links) plugin automatically handles path prefixing for all assets and links.
 
-## Learn more about Metalsmith
+## Resources
 
-Looking for more guidance? Full documentation for Metalsmith can be found [on the Metalsmith website](https://www.metalsmith.io).
+### Related Projects
+- [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter) - The starter template that uses this component paradigm
+- [Metalsmith Documentation](https://www.metalsmith.io) - Official Metalsmith documentation
 
-## Deploy
+### Documentation
+- [Component Library](/library) - Browse all available components with live examples
+- [Section Anatomy](/section-anatomy) - Deep dive into component structure and properties
+- [Build Process Guide](/yaml-to-html) - Understanding the YAML to HTML rendering pipeline
+- [Sample Blog](/blog) - See components in action with real content
 
-Deploy and Host on any static hosting service. For example [Netlify](https://www.netlify.com), [Vercel](https://vercel.com/) or [Cloudflare Pages](https://pages.cloudflare.com/).
+## Contributing
 
-Here is an article about [how to deploy Metalsmith on Netlify](https://www.netlify.com/blog/2015/12/08/a-step-by-step-guide-metalsmith-on-netlify/). The process is similar for this Metalsmith2025 Structured Content Starter.
+Contributions are welcome! Please read the contributing guidelines before submitting PRs.
 
-### Deploying to a Subdirectory
+## License
 
-When deploying your site to a subdirectory path (such as GitHub Pages at `https://username.github.io/repository-name/`), special configuration is required to ensure all assets and links work correctly. Without proper handling, your CSS, JavaScript, images, and internal links will break because they'll point to the wrong paths.
+MIT License - see LICENSE file for details.
 
-This starter is using the [metalsmith-safe-links](https://github.com/wernerglinka/metalsmith-safe-links) plugin for subdirectory deployments. It automatically handles path prefixing for all your site's resources. This plugin:
+## Community
 
-- Automatically prefixes all relative URLs with the correct base path
-- Processes all HTML elements with URLs (links, images, scripts, stylesheets, etc.)
-- Handles both absolute and relative URL conversion
-- Adds proper attributes to external links (target="\_blank", rel="noopener noreferrer")
+Join the Metalsmith community:
+- [Gitter Chat](https://gitter.im/metalsmith/community)
+- [GitHub Discussions](https://github.com/metalsmith/metalsmith/discussions)
 
-To configure your site for subdirectory deployment, ensure the `metalsmith-safe-links` plugin is properly configured in your `metalsmith.js` build file with the appropriate base path for your deployment target. Without this plugin, your deployed site will have broken styling, missing images, and non-functional navigation.
+## Acknowledgments
 
-## Development
-
-### Template Formatting
-
-Some Nunjucks templates use dynamic HTML tags (e.g., user-configurable header levels) which are excluded from Prettier formatting due to parser limitations. See `.prettierignore` and `CONTRIBUTING.md` for specific files and details.
-
-### Running the Project
-
-- `npm start` - Start development server with watch mode
-- `npm run build` - Build for production
-- `npm test` - Run test suite
-- `npm run format` - Format code with Prettier
-
-## Join the Metalsmith community at [Gitter](https://gitter.im/metalsmith/community).
+Built with [Metalsmith](https://www.metalsmith.io) - a pluggable static site generator.
