@@ -63,7 +63,7 @@
     "metalsmith-prism": "^5.0.5",
     "metalsmith-safe-links": "^2.1.0",
     "metalsmith-sectioned-blog-pagination": "^1.1.0",
-    "metalsmith-seo": "^0.2.0",
+    "metalsmith-seo": "^0.2.1",
     "metalsmith-simple-pagination": "^0.1.0",
     "metalsmith-sitemap": "^1.2.2",
     "metalsmith-static-files": "^2.0.0",

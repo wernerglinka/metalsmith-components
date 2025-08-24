@@ -282,6 +282,35 @@ const isArray = ( value ) => {
   return Array.isArray( value );
 };
 
+/**
+ * Checks if an image object has a valid src property
+ * @param {Object} imageObj - The image object to check
+ * @returns {boolean} True if the image has a valid src, false otherwise
+ */
+const hasImage = ( imageObj ) => {
+  return imageObj && imageObj.src && imageObj.src.trim() !== '';
+};
+
+/**
+ * Checks if there are any valid CTAs in the CTAs array
+ * A valid CTA must have both url and label properties that are non-empty strings
+ * @param {Array} ctasArray - The array of CTA objects to check
+ * @returns {boolean} True if there is at least one valid CTA, false otherwise
+ */
+const hasCtas = ( ctasArray ) => {
+  if ( !Array.isArray( ctasArray ) || ctasArray.length === 0 ) {
+    return false;
+  }
+  
+  return ctasArray.some( cta => 
+    cta && 
+    cta.url && 
+    cta.url.trim() !== '' && 
+    cta.label && 
+    cta.label.trim() !== ''
+  );
+};
+
 export {
   toLower,
   toUpper,
@@ -304,5 +333,7 @@ export {
   trimString,
   isExternal,
   getArrayLength,
-  isArray
+  isArray,
+  hasImage,
+  hasCtas
 };

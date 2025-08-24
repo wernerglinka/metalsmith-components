@@ -17,28 +17,28 @@
 
     <ul class="slides" aria-live="polite" aria-atomic="false">
       {% for slide in section.slides %}
-      <li
+        <li
         class="slide {{ slide.slideClasses }} {% if loop.index == 1 %}is-visible{% endif %}"
         role="group"
         aria-label="{% if slide.text.title %}{{ slide.text.title }}{% else %}Slide {{ loop.index }} of {{ section.slides | length }}{% endif %}"
       >
-        <div class="image">{{ image(slide.image)}}</div>
+          <div class="image">{{ image(slide.image)}}</div>
 
-        <!-- .image -->
+          <!-- .image -->
 
-        <div class="slide-content">
-          {% if slide.text %}
-          <div class="text">{{ text(slide.text)}}</div>
+          <div class="slide-content">
+            {% if slide.text %}
+              <div class="text">{{ text(slide.text)}}</div>
 
-          <!-- .text -->
-          {% endif %}
-          {% if slide.ctas %}
-            {{ ctas(slide.ctas) }}
-          {% endif %}
-        </div>
+              <!-- .text -->
+            {% endif %}
+            {% if slide.ctas | hasCtas %}
+              {{ ctas(slide.ctas) }}
+            {% endif %}
+          </div>
 
-        <!-- .content -->
-      </li>
+          <!-- .content -->
+        </li>
       {% endfor %}
     </ul>
 

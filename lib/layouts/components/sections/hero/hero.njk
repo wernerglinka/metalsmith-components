@@ -9,16 +9,16 @@
   role="banner"
   aria-label="{% if section.text.title %}{{ section.text.title }}{% else %}Hero section{% endif %}"
 >
-  {% if section.image.src %}
+  {% if section.image | hasImage %}
     <div class="image">{{ image(section.image)}}</div>
   {% endif %}
 
-  {% if section.text or(section.ctas and section.ctas | length > 0) %}
+  {% if section.text or (section.ctas | hasCtas) %}
     <div class="text flow glass-background">
       {% if section.text %}
         <div class="flow">{{ text(section.text)}}</div>
       {% endif %}
-      {% if section.ctas and section.ctas | length > 0 %}
+      {% if section.ctas | hasCtas %}
         {{ ctas(section.ctas) }}
       {% endif %}
       {% if section.date or section.author %}

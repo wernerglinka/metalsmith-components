@@ -1,7 +1,7 @@
 {
   "title": "Metalsmith Components Library",
   "description": "Metalsmith Components is a library of reusable structured content components.",
-  "url": "https://metalsmith-components.netlify.app",
+  "url": "https://ms-components-library.netlify.app",
   "locale": "en_US",
 
   "defaultImage": "/assets/images/metalsmith/starter/social.png",

@@ -2,12 +2,12 @@
 {% from "components/_partials/text/text.njk" import text %}
 
 <div class="text-only content container">
-  {% if section.text and section.ctas | length > 0 %}
+  {% if section.text %}
     <div class="text flow">
       {% if section.text %}
         {{ text(section.text)}}
       {% endif %}
-      {% if section.ctas | length > 0 %}
+      {% if section.ctas | hasCtas %}
         {{ ctas(section.ctas) }}
       {% endif %}
     </div>
