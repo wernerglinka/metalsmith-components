@@ -11,13 +11,14 @@ A comprehensive showcase and documentation site for building modern websites wit
 
 This library serves as the component reference for the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). Components showcased here can be imported into your starter-based projects to enhance and extend your website's functionality.
 
-[View the live site](https://metalsmith-components.netlify.app/) | [Component Library](/library) | [Documentation](/section-anatomy)
+[View the live site](https://ms-components-library.netlify.app/)
 
 ## What This Site Offers
 
 ### Component Library
 
 Explore a comprehensive collection of production-ready components:
+
 - **Hero Sections**: Full-screen and standard hero components with background images and CTAs
 - **Banner Components**: Versatile call-to-action sections with background options and accordion functionality
 - **Media Sections**: Flexible image and text combinations with reversible layouts
@@ -68,6 +69,7 @@ You can also fork this repository to create your own component library:
 ## Installation & Development
 
 ### Prerequisites
+
 - Node.js version 18 or higher
 - npm or yarn package manager
 
@@ -149,6 +151,7 @@ npm run fix    # Run both format and lint in sequence
 This component library demonstrates the same paradigm used by the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). While the starter provides the foundation and build system for creating component-based Metalsmith sites, this library showcases the full potential of what can be built with that approach.
 
 Components from this library are designed to be compatible with the starter's architecture, allowing developers to:
+
 - Import individual components as needed
 - Study implementation patterns
 - Extend their starter projects with proven components
@@ -182,6 +185,7 @@ sections:
 ### Component Architecture
 
 Each component is self-contained with:
+
 - **Template** (`.njk`): Defines the HTML structure
 - **Styles** (`.css`): Component-specific CSS
 - **Scripts** (`.js`): Interactive behavior (optional)
@@ -199,18 +203,21 @@ The system automatically manages component assets:
 ## Available Components
 
 ### Content Sections
+
 - **Hero**: Full-screen or standard hero sections with background images
 - **Banner**: Call-to-action sections with flexible backgrounds
 - **Text Only**: Pure content sections with markdown support
 - **Media Image**: Image and text combinations with reversible layouts
 
 ### Interactive Components
+
 - **Simple Slider**: Carousel with pagination or tabbed interface
 - **Flip Cards**: Interactive cards with front/back content
 - **Logos List**: Auto-scrolling logo carousels
 - **Testimonial**: Customer quotes with attribution
 
 ### Layout Components
+
 - **Composed**: Multi-column custom layouts
 - **Blog List**: Paginated blog post grids
 - **Blog Navigation**: Previous/next post navigation
@@ -220,6 +227,7 @@ View live examples in the [Component Library](/library).
 ## Deployment
 
 Deploy to any static hosting service:
+
 - [Netlify](https://www.netlify.com) (recommended)
 - [Vercel](https://vercel.com/)
 - [Cloudflare Pages](https://pages.cloudflare.com/)
@@ -232,10 +240,12 @@ For deployment to subdirectories (e.g., GitHub Pages), the [metalsmith-safe-link
 ## Resources
 
 ### Related Projects
+
 - [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter) - The starter template that uses this component paradigm
 - [Metalsmith Documentation](https://www.metalsmith.io) - Official Metalsmith documentation
 
 ### Documentation
+
 - [Component Library](/library) - Browse all available components with live examples
 - [Section Anatomy](/section-anatomy) - Deep dive into component structure and properties
 - [Build Process Guide](/yaml-to-html) - Understanding the YAML to HTML rendering pipeline
@@ -252,6 +262,7 @@ MIT License - see LICENSE file for details.
 ## Community
 
 Join the Metalsmith community:
+
 - [Gitter Chat](https://gitter.im/metalsmith/community)
 - [GitHub Discussions](https://github.com/metalsmith/metalsmith/discussions)
 
