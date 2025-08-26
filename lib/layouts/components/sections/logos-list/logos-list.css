@@ -6,6 +6,15 @@
   --animation-speed: 15s;
 
   position: relative;
+  width: fit-content;
+  display: flex;
+  transform: translate3d(var(--start-position, 0%), 0, 0);
+  animation: marquee var(--animation-speed) linear infinite;
+  animation-play-state: paused;
+
+  &.play {
+    animation-play-state: running;
+  }
 }
 
 @keyframes marquee {
@@ -26,53 +35,39 @@
 }
 
 /* when scrolling, add gradients for fade-out effect before and after the logos */
-.mask {
-  &:has(.play):before,
-  &:has(.play):after {
-    content: '';
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 15rem;
-    height: 100%;
-    pointer-events: none;
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.95) 20%,
-      rgba(255, 255, 255, 0.8) 40%,
-      rgba(255, 255, 255, 0.4) 60%,
-      rgba(255, 255, 255, 0.1) 80%,
-      transparent 100%
-    );
-  }
-  &:has(.play):after {
-    left: auto;
-    right: 0;
-    background-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(255, 255, 255, 0.1) 20%,
-      rgba(255, 255, 255, 0.4) 40%,
-      rgba(255, 255, 255, 0.8) 60%,
-      rgba(255, 255, 255, 0.95) 80%,
-      rgba(255, 255, 255, 1) 100%
-    );
-  }
+.mask:has(.play):before,
+.mask:has(.play):after {
+  content: '';
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 100%;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.95) 20%,
+    rgba(255, 255, 255, 0.8) 40%,
+    rgba(255, 255, 255, 0.4) 60%,
+    rgba(255, 255, 255, 0.1) 80%,
+    transparent 100%
+  );
 }
 
-.logos-wrapper {
-  width: fit-content;
-  display: flex;
-  position: relative;
-  transform: translate3d(var(--start-position, 0%), 0, 0);
-  animation: marquee var(--animation-speed) linear infinite;
-  animation-play-state: paused;
-
-  &.play {
-    animation-play-state: running;
-  }
+.mask:has(.play):after {
+  left: auto;
+  right: 0;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0.4) 40%,
+    rgba(255, 255, 255, 0.8) 60%,
+    rgba(255, 255, 255, 0.95) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 .hint {
@@ -127,32 +122,70 @@
     justify-content: center;
     height: 100%;
     border: none;
+  }
 
-    &:hover {
-      text-decoration: none;
-    }
+  a:hover {
+    text-decoration: none;
   }
 
   img {
     filter: grayscale(100%);
     opacity: 0.5;
     transition: all 0.3s ease-in-out;
+  }
 
-    &:hover {
-      filter: grayscale(0);
-      opacity: 1;
-    }
+  img:hover {
+    filter: grayscale(0);
+    opacity: 1;
   }
 }
 
 /* Reverse animation */
-.is-reverse {
-  .logo-wrapper {
-    @media (max-width: $tablet-width-portrait) {
-      flex-direction: row-reverse; /* overwrite flex-direction in common styles */
-    }
-  }
-  .logos-wrapper.play {
-    animation-direction: reverse;
-  }
+.is-reverse .logos-wrapper.play {
+  animation-direction: reverse;
+}
+
+/** Dark Theme styles variations */
+.dark-theme .mask:has(.play):before {
+  background-image: linear-gradient(
+    to right,
+    var(--color-background-dark) 0%,
+    rgba(var(--color-background-dark-rgb), 0.95) 20%,
+    rgba(var(--color-background-dark-rgb), 0.8) 40%,
+    rgba(var(--color-background-dark-rgb), 0.4) 60%,
+    rgba(var(--color-background-dark-rgb), 0.1) 80%,
+    transparent 100%
+  );
+}
+
+.dark-theme .mask:has(.play):after {
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(var(--color-background-dark-rgb), 0.1) 20%,
+    rgba(var(--color-background-dark-rgb), 0.4) 40%,
+    rgba(var(--color-background-dark-rgb), 0.8) 60%,
+    rgba(var(--color-background-dark-rgb), 0.95) 80%,
+    var(--color-background-dark) 100%
+  );
+}
+
+.dark-theme .logos li svg {
+  stroke: var(--color-text-dark);
+}
+
+.dark-theme .logos li svg * {
+  stroke: var(--color-text-dark);
+}
+
+.dark-theme .logos li a:hover svg {
+  stroke: var(--color-primary);
+}
+
+.dark-theme .logos li a:hover svg * {
+  stroke: var(--color-primary);
+}
+
+/** Dark Theme styles variations */
+.dark-theme .section-wrapper .logos-wrapper {
 }

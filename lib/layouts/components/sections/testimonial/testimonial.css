@@ -58,3 +58,7 @@
     text-align: center;
   }
 }
+
+/** Dark Theme styles variations */
+.dark-theme .section-wrapper .testimonial {
+}

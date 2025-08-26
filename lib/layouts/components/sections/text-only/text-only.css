@@ -131,3 +131,7 @@ pre[class*='language-'] {
 .token.inserted {
   color: green;
 }
+
+/** Dark Theme styles variations */
+.dark-theme .section-wrapper .text-only {
+}

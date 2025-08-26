@@ -17,3 +17,7 @@ header {
     align-items: center;
   }
 }
+
+/** Dark Theme styles variations */
+.dark-theme header {
+}
