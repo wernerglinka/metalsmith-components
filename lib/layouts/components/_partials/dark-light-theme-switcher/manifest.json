@@ -1,0 +1,7 @@
+{
+  "name": "dark-light-theme-switcher",
+  "type": "_partials",
+  "styles": ["dark-light-theme-switcher.css"],
+  "scripts": ["dark-light-theme-switcher.js"],
+  "requires": []
+}

@@ -63,3 +63,16 @@
     margin-block: var(--space-s-m) 0;
   }
 }
+
+/** Style variations for dark theme */
+.dark-theme .simple-card {
+  border: none;
+
+  * {
+    color: var(--color-text-light);
+  }
+
+  .text-wrapper {
+    background-color: var(--glass-background-dark-card);
+  }
+}

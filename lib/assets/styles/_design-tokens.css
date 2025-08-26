@@ -8,12 +8,13 @@
   --color-secondary: #fa4d56;
   --color-text: #161616;
   --color-text-light: #f4f4f4;
+  --color-text-dark: #999;
   --color-text-highlight: #ff832b;
   --color-text-highlight-light: #fbc39b;
   --color-text-inactive: #999;
   --color-link-inactive: #666666;
   --color-link-in-path: #888;
-  --color-pagination-active: #999;
+  --color-pagination-active: #666;
   --color-background: #fff;
   --color-background-light: #f4f4f4;
   --color-highlight-background: #ffd4b5;
@@ -25,8 +26,11 @@
   /* Glass Morphism */
   --glass-background: rgba(255, 255, 255, 0.15);
   --glass-background-light: rgba(255, 255, 255, 0.85);
+  --glass-background-dark: rgba(0, 0, 0, 0.5);
+  --glass-background-dark-card: rgba(0, 0, 0, 0.7);
   --glass-backdrop-filter: blur(2px) saturate(180%);
   --glass-border: 1px solid rgba(255, 255, 255, 0.8);
+  --glass-border-dark: 1px solid rgba(0, 0, 0, 0.8);
   --glass-border-radius: 1rem;
   --glass-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.3);
 

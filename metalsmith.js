@@ -287,29 +287,31 @@ metalsmith
       destination: 'assets/', // Where to copy assets
       ignore: [ 'main.css', 'main.js', 'styles/' ] // Exclude files handled by bundled-components
     } )
-  )
-
-  .use(
-    optimizeImages( {
-      // Enable progressive loading
-      isProgressive: true,
-    } )
-  )
-
-  /**
-   * Intelligent metadata generation, social media tags, and structured data including Open Graph tags,
-   * Twitter Cards, JSON-LD structured data object, a sitemap and a robots.txt file
-   * Learn more: https://github.com/wernerglinka/metalsmith-seo
-   */
-  .use(
-    seo( {
-      metadataPath: 'data.site'  // Object in metadata points to where to find site metadata
-    } )
   );
 
 // These plugins only run in production mode to optimize the site
 if ( isProduction ) {
   metalsmith
+    /**
+     * Optimize images for faster loading
+     * Learn more: https://github.com/wernerglinka/metalsmith-optimize-images
+     */
+    .use(
+      optimizeImages( {
+        // Enable progressive loading
+        isProgressive: true,
+      } )
+    )
+    /**
+     * Intelligent metadata generation, social media tags, and structured data including Open Graph tags,
+     * Twitter Cards, JSON-LD structured data object, a sitemap and a robots.txt file
+     * Learn more: https://github.com/wernerglinka/metalsmith-seo
+     */
+    .use(
+      seo( {
+        metadataPath: 'data.site'  // Object in metadata points to where to find site metadata
+      } )
+    )
     /**
      * Optimize HTML by Minify HTML to reduce file size
      * Learn more: https://github.com/wernerglinka/metalsmith-optimize-html

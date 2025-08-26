@@ -132,3 +132,13 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
 }
+
+/** Dark Theme style variations */
+.dark-theme .prose {
+  pre code {
+    color: var(--color-text-light);
+  }
+  code {
+    color: var(--color-text);
+  }
+}

@@ -1,5 +1,6 @@
 {% from "components/_partials/branding/branding.njk" import branding %}
 {% from "components/_partials/navigation/navigation.njk" import navigation %}
+{% from "components/_partials/dark-light-theme-switcher/dark-light-theme-switcher.njk" import darkLightThemeSwitcher %}
 
 <header>
   <div class="container">
@@ -9,5 +10,7 @@
     {{ branding( link, img ) }}
 
     {{ navigation( mainMenu, urlPath )}}
+
+    {{ darkLightThemeSwitcher() }}
   </div>
 </header>

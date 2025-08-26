@@ -1,0 +1,49 @@
+.theme-toggle {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  margin-left: var(--space-m);
+
+  a {
+    border-bottom: none;
+
+    svg {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+
+      * {
+        stroke: #fff;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    &:hover {
+      border-bottom: none;
+
+      svg * {
+        stroke: red;
+      }
+    }
+  }
+
+  .dark {
+    display: none;
+  }
+
+  .light {
+    display: inline;
+  }
+}
+
+.dark-theme .theme-toggle {
+  .dark {
+    display: inline;
+  }
+
+  .light {
+    display: none;
+  }
+}
