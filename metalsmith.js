@@ -316,7 +316,9 @@ if ( isProduction ) {
      * Optimize HTML by Minify HTML to reduce file size
      * Learn more: https://github.com/wernerglinka/metalsmith-optimize-html
      */
-    .use( htmlMinifier() );
+    .use( htmlMinifier( {
+      excludeTags: [ 'script' ]
+    } ) );
 }
 
 /**
