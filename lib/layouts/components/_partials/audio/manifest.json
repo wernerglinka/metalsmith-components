@@ -1,0 +1,7 @@
+{
+  "name": "audio",
+  "type": "_partials",
+  "styles": ["audio.css"],
+  "scripts": [],
+  "requires": []
+}

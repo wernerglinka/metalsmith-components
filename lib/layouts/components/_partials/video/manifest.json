@@ -1,0 +1,7 @@
+{
+  "name": "video",
+  "type": "_partials",
+  "styles": ["video.css"],
+  "scripts": ["video.js"],
+  "requires": ["overlay"]
+}

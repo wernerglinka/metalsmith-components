@@ -1,0 +1,7 @@
+{
+  "name": "overlay",
+  "type": "_partials",
+  "styles": ["overlay.css"],
+  "scripts": [],
+  "requires": []
+}

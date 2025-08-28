@@ -1,0 +1,7 @@
+{
+  "name": "lottie",
+  "type": "_partials",
+  "styles": ["lottie.css"],
+  "scripts": [],
+  "requires": []
+}

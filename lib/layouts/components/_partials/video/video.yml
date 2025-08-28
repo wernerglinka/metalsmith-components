@@ -1,0 +1,6 @@
+mediaType: video
+video:
+  inline: false
+  src: youtube # can be youtube, vimeo, or cloudinary
+  id: '5Ak12PBrTuw'
+  tn: '/assets/images/sample10.jpg'

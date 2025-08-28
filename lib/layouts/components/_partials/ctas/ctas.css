@@ -1,5 +1,8 @@
 .ctas {
   --flow-space: var(--space-m-l);
+  --primary-button-color: rgba(218, 30, 40, 0.8);
+  --secondary-button-color: rgba(0, 0, 0, 0.6);
+  --tertiary-button-color: rgba(255, 255, 255, 0.8);
 }
 
 /* special case for only ctas in banner */
@@ -44,6 +47,18 @@
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  &.primary {
+    background: var(--primary-button-color);
+  }
+  &.secondary {
+    background: var(--secondary-button-color);
+  }
+  &.tertiary {
+    background: var(--tertiary-button-color);
+    color: var(--color-text);
+    border: 1px solid var(--color-border-light);
   }
 
   &.small {

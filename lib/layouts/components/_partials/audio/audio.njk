@@ -1,0 +1,20 @@
+{% from "components/_partials/image/image.njk" import image %}
+
+{% macro audio(info) %}
+
+
+    {% if info.bgImage %}
+      {% set imageData = {
+        src: info.bgImage,
+        alt: info.alt
+      } %}
+      {{ image(imageData) }}
+    {% endif %}
+
+    <audio controls>
+      <source src={{info.ogg}} type="audio/ogg"/>
+      <source src={{info.mpeg}} type="audio/mpeg"/>
+      Your browser does not support the audio element.
+    </audio>
+
+{% endmacro %}

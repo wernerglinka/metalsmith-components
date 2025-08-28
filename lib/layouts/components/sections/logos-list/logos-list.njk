@@ -37,10 +37,10 @@
           {% for item in logosList %}
             <li style="width: {{ logoWidth }}px;">
               {% if item.logo %}
-                {{ logo(item, logoWidth) }}
+                {{ logo(item) }}
               {% endif %}
               {% if item.icon %}
-                {{ icon(item, logoWidth) }}
+                {{ icon(item) }}
               {% endif %}
             </li>
           {% endfor %}

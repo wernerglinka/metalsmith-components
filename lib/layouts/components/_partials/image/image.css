@@ -1,7 +1,8 @@
 /*
  * Image Styles
  */
-.image {
+.image,
+.media {
   position: relative;
   overflow: hidden;
 

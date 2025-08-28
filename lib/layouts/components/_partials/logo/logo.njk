@@ -1,4 +1,4 @@
-{% macro logo(item, logoWidth) %}
+{% macro logo(item) %}
 
   <a href="{{ item.url }}" {% if item.url | isExternal %} target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }} (opens in new window)" {% endif %} >
     <img src="{{ item.logo }}" alt="{{ item.title }}"/>

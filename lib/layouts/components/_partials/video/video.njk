@@ -1,0 +1,32 @@
+{% from "components/_partials/image/image.njk" import image %}
+
+{% macro video(info) %}
+    {% if info.inline %}
+    <div class="video media inline">
+      <div class="inline-video-wrapper js-inline-video-wrapper">
+        <div class="js-inline-video" data-videoid={{ info.id}} data-starttime={{info.start}} data-endtime={{info.end}}></div>
+      </div>
+    
+      <button class="video-trigger">
+        <div class="play-button"></div>
+        {% set imageData = {
+          src: info.tn,
+          alt: ""
+        } %}
+        {{ image(imageData) }}
+      </button>
+    </div>
+    {% else %}
+    <div class="video media" >
+      <button class="js-modal-video" data-videoid={{ info.id}} data-videosrc={{ info.src }}>
+        <div class="play-button"></div>
+        {% set imageData = {
+          src: info.tn,
+          alt: ""
+        } %}
+        {{ image(imageData) }}
+      </button>
+    </div>
+  {% endif %}
+  
+{% endmacro %}

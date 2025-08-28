@@ -18,7 +18,7 @@
       image: ''
       imageScreen: 'none'
   hasPagingParams: true
-  pagingParams:
+  pagingParams: # leave these empty, will be filled by section pagination plugin
     numberOfBlogs: ''
     numberOfPages: ''
     pageLength: ''
