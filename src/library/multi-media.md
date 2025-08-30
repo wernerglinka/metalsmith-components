@@ -241,8 +241,9 @@ sections:
       subTitle: ''
       prose: |-
         - `video.inline`: Display inline (true) or in modal (false)
-        - `video.src`: Video source ('youtube', 'vimeo', or video file path)
+        - `video.src`: Video source ('youtube', 'vimeo', or claudinary)
         - `video.id`: Video ID for YouTube/Vimeo
+        - `video.cloudname`: Something like "demo" # For Cloudinary only
         - `video.tn`: Thumbnail image path for modal display
 
   - sectionType: multi-media
@@ -315,8 +316,8 @@ sections:
     mediaType: video
     video:
       inline: false
-      src: youtube
-      id: '5Ak12PBrTuw'
+      src: vimeo
+      id: '347119375'
       tn: '/assets/images/sample10.jpg'
 
   - sectionType: text-only
