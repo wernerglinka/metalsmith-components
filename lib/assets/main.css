@@ -22,6 +22,10 @@ body {
   background-color: var(--color-background);
 }
 
+body.modal-active {
+  overflow: hidden;
+}
+
 .container {
   position: relative;
   margin-left: auto;

@@ -1,6 +1,6 @@
 # Video Component
 
-Modern multi-provider video component supporting YouTube, Vimeo, and Cloudinary videos with performance-optimized inline and modal display options.
+Multi-provider video component supporting YouTube, Vimeo, and Cloudinary videos with inline and modal display options.
 
 ## Features
 
@@ -63,78 +63,35 @@ video:
 
 ### YouTube Videos
 
-**Basic YouTube Modal:**
-
 ```yaml
 video:
   inline: false
   src: youtube
   id: 'dQw4w9WgXcQ'
   tn: '/assets/images/youtube-thumb.jpg'
-```
-
-**YouTube Inline with Time Controls:**
-
-```yaml
-video:
-  inline: true
-  src: youtube
-  id: 'dQw4w9WgXcQ'
-  start: 30
-  end: 120
-```
-
-**Backward Compatible (defaults to YouTube):**
-
-```yaml
-video:
-  inline: false
-  id: 'dQw4w9WgXcQ'
-  tn: '/assets/images/thumb.jpg'
+  start: 30 # optional
+  end: 120 # optional
 ```
 
 ### Vimeo Videos
 
-**Vimeo Modal:**
-
 ```yaml
 video:
-  inline: false
+  inline: false # false for modal
   src: vimeo
   id: '123456789'
   tn: '/assets/images/vimeo-thumb.jpg'
 ```
 
-**Vimeo Inline:**
-
-```yaml
-video:
-  inline: true
-  src: vimeo
-  id: '123456789'
-```
-
 ### Cloudinary Videos
 
-**Cloudinary Modal:**
-
 ```yaml
 video:
-  inline: false
+  inline: false # false for modal
   src: cloudinary
   id: 'my-video-public-id'
   cloudname: 'my-cloud-name'
   tn: '/assets/images/cloudinary-thumb.jpg'
-```
-
-**Cloudinary Inline:**
-
-```yaml
-video:
-  inline: true
-  src: cloudinary
-  id: 'my-video-public-id'
-  cloudname: 'my-cloud-name'
 ```
 
 ## HTML Structure
@@ -184,22 +141,18 @@ video:
 
 ```
 video/
-├── video.js                # Main simplified component (single-player)
+├── video.js                # Main component with single-player management
+├── video.css               # Component styles  
 ├── modules/
-│   ├── config/
-│   │   └── video-config.js # Functional configuration management
 │   ├── helpers/
-│   │   ├── dom.js          # DOM manipulation utilities
-│   │   ├── event-bus.js    # Functional event system
-│   │   ├── load-script.js  # Script loading utility
-│   │   ├── load-styles.js  # CSS loading utility
+│   │   ├── load-script.js      # Script loading utility
+│   │   ├── load-styles.js      # CSS loading utility
 │   │   ├── load-youtube-api.js # YouTube API loader
-│   │   ├── modal.js        # Modal control functions
-│   │   └── player-manager.js # Single active player management
+│   │   └── video-utils.js      # DOM utilities, modal controls, observers
 │   └── providers/
-│       ├── youtube.js      # Simplified YouTube provider
-│       ├── vimeo.js        # Simplified Vimeo provider
-│       └── cloudinary.js   # Simplified Cloudinary provider
+│       ├── youtube.js      # YouTube provider (modal & inline)
+│       ├── vimeo.js        # Vimeo provider (modal & inline)
+│       └── cloudinary.js   # Cloudinary provider (modal & inline)
 ```
 
 ### Provider Interface
@@ -250,11 +203,11 @@ const playerVars = {
 
 ### Modal Features
 
-- **Backdrop Click**: Click outside to close
-- **ESC Key**: Keyboard close functionality
-- **Scroll Lock**: Prevents background scrolling
-- **Focus Management**: Proper focus handling
-- **Provider Cleanup**: Automatic player cleanup on close
+- **Close Button**: Click the [Close] button to close the modal
+- **Fade Animations**: Smooth fade in/out transitions using CSS animations
+- **Scroll Lock**: Prevents background scrolling when modal is open (via `body.modal-active`)
+- **Single Player**: Opening a modal stops any playing inline videos
+- **Auto Cleanup**: Player and DOM elements are cleaned up on close
 
 ### Modal Overlay Structure
 
@@ -302,19 +255,10 @@ await loadStyles('https://unpkg.com/cloudinary-video-player@latest/dist/cld-vide
 
 ### Lazy Loading with Intersection Observer
 
-- **Viewport Detection**: Videos initialize only when entering viewport
-- **Configurable Thresholds**: Customizable distance from viewport
-- **Performance Monitoring**: Built-in timing measurements
+- **Viewport Detection**: Inline videos initialize when entering viewport
+- **Root Margin**: 100px before viewport edge (hardcoded)
 - **Graceful Fallback**: Works without IntersectionObserver support
-
-```javascript
-// Lazy loading configuration
-const config = {
-  lazyLoad: true,
-  intersectionThreshold: 0.1,
-  preloadDistance: '200px'
-};
-```
+- **Note**: Always enabled for inline videos, cannot be configured
 
 ### Single-Player Management
 
@@ -370,13 +314,11 @@ videoConfig.set({
 });
 ```
 
-## Accessibility Features
+## Accessibility Considerations
 
-- **Keyboard Navigation**: Full keyboard support for all providers
-- **Screen Readers**: Proper ARIA labeling and announcements
-- **Focus Management**: Logical focus flow in modals with focus trapping
-- **High Contrast**: Compatible with high contrast modes
-- **State Announcements**: Screen reader feedback for video state changes
+- **Close Button**: Text-based [Close] button is keyboard accessible
+- **Thumbnail Alt Text**: Provide descriptive alt text for video thumbnails
+- **Semantic HTML**: Uses button elements for interactive controls
 
 ## Browser Support
 
@@ -389,12 +331,9 @@ videoConfig.set({
 
 1. **Provider Selection**: Choose the right provider for your needs
 2. **Thumbnail Quality**: Use high-quality thumbnails for modal videos
-3. **Lazy Loading**: Enable lazy loading for videos below the fold
-4. **Configuration**: Use centralized configuration for consistent behavior
-5. **Performance**: Monitor loading times with built-in performance tracking
-6. **Events**: Leverage the event system for custom behavior
-7. **Accessibility**: Always provide descriptive alt text and ARIA labels
-8. **Error Handling**: Implement proper error recovery for failed video loads
+3. **Lazy Loading**: Enable lazy loading for videos below the fold (default: true)
+4. **Alt Text**: Always provide descriptive alt text for thumbnails
+5. **Error Handling**: Component includes automatic error recovery
 
 ## Troubleshooting
 
@@ -440,30 +379,27 @@ performance
   .forEach((entry) => console.log(`${entry.name}: ${entry.duration}ms`));
 ```
 
-## Migration Guide
+## Auto-Initialization
 
-### From Current Implementation
-
-The enhanced implementation maintains full backward compatibility while adding new features:
-
-1. **Existing code continues to work** - no breaking changes
-2. **Lazy loading** - add `data-lazy="true"` to enable
-3. **Enhanced error handling** - automatic with improved modules
-4. **Performance gains** - automatic with enhanced script loading
-
-### Upgrade Path
+The component automatically initializes when the DOM is ready:
 
 ```javascript
-// Replace current imports
-import modalVideo from './modules/modal-video.js';
-import inlineVideo from './modules/inline-video.js';
-
-// With simplified single-player version
-import videoComponent from './video.js';
-
-// Initialize with modern features
-videoComponent.init();
+// Auto-initialization in video.js
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 ```
+
+This pattern ensures the component works whether the script loads before or after the DOM is ready.
+
+### Key Features
+
+1. **Backward compatible** - Works with existing templates
+2. **Lazy loading** - Automatic for inline videos (always enabled)
+3. **Single-player management** - Only one video plays at a time
+4. **Smooth animations** - Modal uses CSS animations with `animationend` events
 
 ## Extending with New Providers
 
@@ -480,17 +416,17 @@ To add a new provider using functional patterns:
 export const createNewProviderModalPlayer = async (videoId, targetId, options) => {
   // Load provider assets
   await loadScript('https://provider.com/api.js');
-  
+
   // Create player
   const player = new ProviderAPI.Player(targetId, { videoId, ...options });
-  
+
   // Register with player manager
   setActivePlayer(player, 'newprovider', videoId);
-  
+
   // Setup events
   player.on('play', () => eventBus.emit(VIDEO_EVENTS.PLAY, { provider: 'newprovider', videoId }));
   player.on('ended', () => eventBus.emit(VIDEO_EVENTS.ENDED, { provider: 'newprovider', videoId }));
-  
+
   return player;
 };
 
