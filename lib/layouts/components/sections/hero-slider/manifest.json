@@ -1,0 +1,92 @@
+{
+  "name": "hero-slider",
+  "version": "1.0.0",
+  "description": "Hero slider section with multiple slides, navigation, autoplay, and background media support",
+  "type": "section",
+  "scripts": ["hero-slider.js"],
+  "styles": ["hero-slider.css"],
+  "dependencies": [
+    "ctas",
+    "text",
+    "image",
+    "video"
+  ],
+  "fields": {
+    "autoplay": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable automatic slide progression"
+    },
+    "autoPlayDelay": {
+      "type": "number",
+      "default": 5000,
+      "description": "Delay between slides in milliseconds"
+    },
+    "slides": {
+      "type": "array",
+      "description": "Array of slide configurations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "navLabel": {
+            "type": "string",
+            "description": "Navigation label for the slide"
+          },
+          "isReverse": {
+            "type": "boolean",
+            "default": false,
+            "description": "Reverse the layout direction"
+          },
+          "text": {
+            "type": "object",
+            "description": "Text content for the slide"
+          },
+          "ctas": {
+            "type": "array",
+            "description": "Call-to-action buttons"
+          },
+          "image": {
+            "type": "object",
+            "description": "Main image for the slide"
+          },
+          "background": {
+            "type": "object",
+            "description": "Background configuration",
+            "properties": {
+              "color": {
+                "type": "string",
+                "description": "Background color"
+              },
+              "isDark": {
+                "type": "boolean",
+                "description": "Use dark theme for text"
+              },
+              "image": {
+                "type": "object",
+                "description": "Background image"
+              },
+              "video": {
+                "type": "object",
+                "description": "Background video"
+              },
+              "screen": {
+                "type": "object",
+                "description": "Screen overlay configuration",
+                "properties": {
+                  "hasScreen": {
+                    "type": "boolean",
+                    "description": "Enable screen overlay"
+                  },
+                  "isDark": {
+                    "type": "boolean",
+                    "description": "Use dark screen overlay"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Video Component
 
-Multi-provider video component supporting YouTube, Vimeo, and Cloudinary videos with inline and modal display options.
+The video component provides a flexible solution for embedding videos from multiple providers into a Metalsmith site. Rather than implementing separate components for each video platform or display mode, this unified component handles YouTube, Vimeo, and Cloudinary videos seamlessly, presenting them either inline within your content flow or as modal overlays. The component employs modern web development practices including lazy loading with Intersection Observer, dynamic script loading to minimize initial page weight, and a single-player architecture that ensures only one video plays at a time across your entire page. Through event-driven design and factory pattern, the component maintains clean separation between providers while offering consistent behavior and user experience regardless of the video source. The architecture prioritizes performance through intelligent resource management, loading provider APIs only when needed and automatically cleaning up resources when videos are closed or switched, making it an ideal choice for content-rich sites where video engagement is important but page performance cannot be compromised.
 
 ## Features
 
@@ -142,7 +142,7 @@ video:
 ```
 video/
 ├── video.js                # Main component with single-player management
-├── video.css               # Component styles  
+├── video.css               # Component styles
 ├── modules/
 │   ├── helpers/
 │   │   ├── load-script.js      # Script loading utility

@@ -1,0 +1,327 @@
+.hero-slider {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  --slider-height: 680px;
+  --tablet-slider-height: 500px;
+  --small-screen-slider-height: 360px;
+  --slider-nav-height: 80px;
+  --slider-nav-color: var(--color-text-light);
+  --slider-nav-background-color: var(--glass-background-dark);
+  --slider-nav-item-width: 120px;
+  --slider-nav-item-hover-color: var(--glass-background);
+  --slider-nav-item-is-selected-color: var(--color-text-highlight);
+  --slider-nav-item-is-selected-background-color: var(--glass-background-light);
+}
+
+.hero-slider-list {
+  position: relative;
+  height: var(--slider-height);
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media only screen and (max-width: 1170px) {
+  .hero-slider-list {
+    height: var(--tablet-slider-height);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-slider-list {
+    height: var(--small-screen-slider-height);
+  }
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform: translateX(100%);
+  will-change: transform;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .media-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    /*
+    Media background container
+  */
+    &.has-dark-screen:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dark-screen);
+      z-index: 1;
+    }
+
+    &.has-light-screen:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--light-screen);
+      z-index: 1;
+    }
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 var(--gutter);
+    max-width: var(--container-width);
+    margin: 0 auto;
+  }
+
+  &.is-reverse .container {
+    flex-direction: row-reverse;
+  }
+
+  .hero-content {
+    height: 100%;
+    padding: var(--space-m);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    * {
+      text-align: center;
+      margin: 0;
+      /* All content starts translated to the right for slide-in effect */
+      opacity: 0;
+      transform: translateX(10rem);
+    }
+
+    .text-subtitle {
+      margin-bottom: var(--space-s);
+    }
+
+    .ctas-container {
+      margin-top: var(--space-xl);
+    }
+  }
+
+  /* Slide animations */
+  &.is-moving,
+  &.is-selected {
+    transition: transform var(--transition-fade);
+  }
+
+  &.is-moving {
+    transform: translateX(-100%);
+
+    .hero-content * {
+      transition:
+        opacity 0s var(--transition-fade),
+        transform 0s var(--transition-fade);
+    }
+  }
+
+  /* Pause behavior on hover */
+  &.is-autoplay.is-paused {
+    cursor: wait;
+  }
+
+  /* Manual pause state */
+  &.is-manually-paused {
+    /* Indicate manually paused state */
+
+    .hero-nav .is-paused-indicator a {
+      background-color: var(--color-secondary) !important;
+      color: var(--color-text-light) !important;
+      position: relative;
+
+      /* Add pause icon to manually paused navigation item */
+      &::after {
+        content: '⏸';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.8em;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  /* When slide is selected, all content slides in from the right */
+  &.is-selected {
+    transform: translateX(0);
+    
+    .hero-content {
+      * {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Staggered timing for different elements to create cascading effect */
+      :is(h1, h2, h3, h4, h5, h6) {
+        transition:
+          transform var(--transition-fade) 0.2s,
+          opacity var(--transition-fade) 0.2s;
+      }
+
+      p {
+        transition:
+          transform var(--transition-fade) 0.3s,
+          opacity var(--transition-fade) 0.3s;
+      }
+
+      .ctas-container,
+      img {
+        transition:
+          transform var(--transition-fade) 0.4s,
+          opacity var(--transition-fade) 0.4s;
+      }
+    }
+  }
+
+  /* Dark theme for slides */
+  &.is-dark {
+    color: var(--color-text-light);
+
+    .hero-content :is(h1, h2, h3, h4, h5, h6),
+    .hero-content p {
+      color: var(--color-text-light);
+    }
+  }
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 768px) {
+  .hero-content {
+    &.has-image {
+      display: none;
+    }
+  }
+}
+
+/* Slider navigation */
+.hero-nav {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  height: var(--slider-nav-height);
+  background-color: var(--slider-nav-background-color);
+
+  ul {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    flex: 0 0 var(--slider-nav-item-width);
+    margin: 0;
+    background-color: transparent;
+    transition: background-color 1s ease;
+
+    &:hover {
+      background-color: var(--slider-nav-item-hover-color);
+    }
+
+    &.is-selected {
+      background-color: var(--slider-nav-item-is-selected-background-color);
+      
+      a {
+        color: var(--slider-nav-item-is-selected-color);
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+  }
+
+  a {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 var(--space-s);
+    font-size: var(--font-s);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: var(--slider-nav-color);
+    transition: color var(--transition-base);
+  }
+}
+
+/* Background video specific styles */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+
+  iframe,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+}
+
+/* Ensure video component spans full container when used as background */
+.media-background .background-video .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  video,
+  iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+  }
+
+  /* Hide video controls and overlays when used as background */
+  .video-trigger,
+  .close,
+  .play-button {
+    display: none;
+  }
+}

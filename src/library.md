@@ -85,6 +85,7 @@ sections:
         - [Composed](/library/composed)
         - [Flip Cards](/library/flip-cards)
         - [Hero](/library/hero)
+        - [Hero Slider](/library/hero-slider)
         - [Logos List](/library/logos-list)
         - [Media Image](/library/media-image)
         - [Multi Media](/library/multi-media)

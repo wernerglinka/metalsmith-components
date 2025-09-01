@@ -26,7 +26,7 @@
   /* Glass Morphism */
   --glass-background: rgba(255, 255, 255, 0.15);
   --glass-background-light: rgba(255, 255, 255, 0.85);
-  --glass-background-dark: rgba(0, 0, 0, 0.5);
+  --glass-background-dark: rgba(0, 0, 0, 0.3);
   --glass-background-dark-card: rgba(0, 0, 0, 0.7);
   --glass-backdrop-filter: blur(2px) saturate(180%);
   --glass-border: 1px solid rgba(255, 255, 255, 0.8);

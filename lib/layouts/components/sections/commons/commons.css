@@ -137,8 +137,8 @@
     background: var(--light-screen);
     z-index: -2;
   }
-  /*
-    Content container
+
+  Content container
     Responsive flex container that wraps at 60rem.
     Inspiried by: https://every-layout.dev/layouts/switcher/
   */
