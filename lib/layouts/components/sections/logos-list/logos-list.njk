@@ -1,5 +1,7 @@
 {% from "components/_partials/logo/logo.njk" import logo %}
 {% from "components/_partials/icon/icon.njk" import icon %}
+{% from "components/_partials/text/text.njk" import text %}
+{% from "components/_partials/ctas/ctas.njk" import ctas %}
 
 {# 
   This section is used to display a list of logos or icons in a horizontal scrolling list.
@@ -29,6 +31,13 @@
 {% set logosListLength = logosList | length * logoWidth ~ "px" %}
 {% set isReverse = section.isReverse %}
 
+{# if there is text render the text block #}
+{% if section.text | hasText %}
+  <div class="text flow {% if section.hasCenteredContent %}is-centered{% endif %}">
+    {{ text(section.text)}}
+  </div>
+{% endif %}
+
 <div class="marquee {% if isReverse %}is-reverse{% endif %}" style="--list-width: {{ logosListLength }}">
   <div class="mask">
     <div class="logos-wrapper">
@@ -42,12 +51,20 @@
               {% if item.icon %}
                 {{ icon(item) }}
               {% endif %}
+
+              {% if section.logos.showTitle %}
+                <div class="logo-title">{{ item.title }}</div>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
       {% endfor %}
     </div>
-  </div>
-
-  <!-- .marquee -->
 </div>
+
+{# if ctas render them #}
+{% if section.ctas | hasCtas %}
+  <div class="ctas flow {% if section.hasCenteredContent %}is-centered{% endif %}">
+    {{ ctas(section.ctas) }}
+  </div>
+{% endif %}

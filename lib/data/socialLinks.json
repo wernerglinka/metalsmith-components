@@ -53,5 +53,10 @@
     "url": "mailto:you@email.com",
     "icon": "mail",
     "title": "email"
+  },
+  {
+    "url": "https://feathericons.com/",
+    "icon": "feather",
+    "title": "Feather Icons"
   }
 ]

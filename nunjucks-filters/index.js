@@ -311,6 +311,26 @@ const hasCtas = ( ctasArray ) => {
   );
 };
 
+/**
+ * Checks if a text object has any meaningful content
+ * @param {Object} textObj - The text object to check
+ * @returns {boolean} True if the text has meaningful content, false otherwise
+ */
+const hasText = ( textObj ) => {
+  if ( !textObj || typeof textObj !== 'object' ) {
+    return false;
+  }
+  
+  const { leadIn, title, subTitle, prose } = textObj;
+  
+  return (
+    ( leadIn && leadIn.trim() !== '' ) ||
+    ( title && title.trim() !== '' ) ||
+    ( subTitle && subTitle.trim() !== '' ) ||
+    ( prose && prose.trim() !== '' )
+  );
+};
+
 export {
   toLower,
   toUpper,
@@ -335,5 +355,6 @@ export {
   getArrayLength,
   isArray,
   hasImage,
-  hasCtas
+  hasCtas,
+  hasText
 };

@@ -17,6 +17,19 @@
   }
 }
 
+.text,
+.ctas {
+  max-width: clamp(45ch, 65ch, 80ch);
+  margin-inline: auto;
+}
+
+.text {
+  margin-bottom: var(--space-m-l);
+}
+.ctas {
+  margin-top: var(--space-m-l);
+}
+
 @keyframes marquee {
   0% {
     transform: translate3d(var(--start-position, 0%), 0, 0);
@@ -84,7 +97,7 @@
   display: flex;
   width: var(--list-width);
   padding: 0;
-  margin: 0;
+  margin: 0 0 3rem;
 
   li {
     padding: 0 var(--logo-padding);
@@ -137,6 +150,11 @@
   img:hover {
     filter: grayscale(0);
     opacity: 1;
+  }
+
+  .logo-title {
+    font-size: 1rem;
+    text-align: center;
   }
 }
 
