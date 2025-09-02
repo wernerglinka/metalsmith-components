@@ -79,7 +79,7 @@
         Applied to the slide that's about to animate in.
         Provides high z-index to ensure it appears above all other slides.
       */
-      &.sliding-in {
+      &.is-moving {
         z-index: 100; /* High z-index to override natural HTML stacking */
       }
 
@@ -88,7 +88,7 @@
         Applied to the current active slide.
         Entire slide animates from off-screen right to final position.
       */
-      &.is-visible {
+      &.is-selected {
         transform: translateX(0%); /* Final position: in view */
       }
 
@@ -98,7 +98,7 @@
         Without this when sliding in a slide with a lower stacking order
         it would slide out above the incoming slide.
       */
-      &.reset {
+      &.is-reset {
         transform: translateX(100%) !important; /* Force off-screen instantly */
         transition: none !important; /* No animation */
       }

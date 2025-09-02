@@ -1,44 +1,96 @@
-/* Overwrite threashold default for the banner content container */
+/* Banner component styles following hero-slider patterns */
 .section-wrapper .banner {
-  --threshold: 60rem;
+  /* Use consistent threshold with other components */
+  --threshold: 50rem;
+  
+  /* Design token integration */
+  --banner-padding: var(--space-s-l);
+  --banner-gap: var(--space-m-l);
+  --banner-border-radius: var(--glass-border-radius);
+  --banner-transition: var(--transition-base);
 
   &.content {
+    /* Fluid layout system similar to hero-slider */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--banner-gap);
     max-width: var(--threshold);
     margin: 0 auto;
     text-align: center;
+    
+    > * {
+      flex-grow: 1;
+      flex-basis: calc((var(--threshold) - 100%) * 999);
+      align-self: stretch;
+    }
+    
+    &.is-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  
+  .text {
+    padding: var(--banner-padding);
+  }
+  
+  .image {
+    border-radius: var(--banner-border-radius);
+    overflow: hidden;
   }
 }
 
 /*
-  Special case: Accordion Banner
+  Accordion Banner functionality
+  Following hero-slider state management patterns
 */
 .accordion-header {
   cursor: pointer;
+  transition: var(--banner-transition);
+  position: relative;
 
-  h2:after,
-  h3:after {
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Plus/minus indicators using design tokens */
+  h2::after,
+  h3::after {
     content: '+';
+    color: var(--color-primary);
+    font-weight: normal;
+    margin-left: var(--space-s);
+    transition: var(--banner-transition);
   }
 
   &.is-open {
-    h2:after,
-    h3:after {
+    h2::after,
+    h3::after {
       content: '-';
+      color: var(--color-secondary);
+      transform: scale(1.1);
     }
   }
 }
 
 .accordion-content {
-  max-height: 1000px;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
-
+  transition: all 400ms ease-in-out;
+  
   &.is-closed {
     max-height: 0;
-    padding-block: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
-}
-
-/** Dark Theme styles variations */
-.dark-theme .section-wrapper .banner {
+  
+  &:not(.is-closed) {
+    max-height: 500px;
+    padding-top: var(--space-s);
+    padding-bottom: var(--space-s);
+  }
 }
