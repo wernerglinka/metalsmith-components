@@ -69,9 +69,7 @@ Each slide in the `slides` array supports:
   - `isDark` (boolean): Use dark theme for text
   - `image` (object): Background image configuration
   - `video` (object): Background video configuration
-  - `screen` (object): Overlay screen configuration
-    - `hasScreen` (boolean): Enable overlay
-    - `isDark` (boolean): Use dark overlay (true) or light (false)
+  - `imageScreen` (string): Screen overlay type: 'dark', 'light', or 'none'
 
 ## Examples
 
@@ -102,9 +100,7 @@ Each slide in the `slides` array supports:
       background:
         image:
           src: '/assets/images/bg1.jpg'
-        screen:
-          hasScreen: true
-          isDark: true
+        imageScreen: 'dark'
 ```
 
 ### Mixed Media Slider
@@ -152,13 +148,15 @@ The component uses CSS custom properties for easy customization:
 
 ```css
 .hero-slider {
-  --slider-height: 680px;
-  --tablet-slider-height: 500px;
-  --small-screen-slider-height: 360px;
+  /* Fluid height: 680px at 1240px viewport, 480px at 500px viewport */
+  --slider-height: clamp(480px, calc(480px + (680 - 480) * ((100vw - 500px) / (1240 - 500))), 680px);
   --slider-nav-height: 80px;
-  --slider-nav-color: #fff;
-  --slider-nav-background-color: rgba(0, 0, 0, 0.5);
+  --slider-nav-color: var(--color-text-light);
+  --slider-nav-background-color: var(--glass-background-dark);
   --slider-nav-item-width: 120px;
+  --slider-nav-item-hover-color: var(--glass-background);
+  --slider-nav-item-is-selected-color: var(--color-text-highlight);
+  --slider-nav-item-is-selected-background-color: var(--glass-background-light);
 }
 ```
 
@@ -197,9 +195,10 @@ The slider implements a sophisticated animation system:
 
 On mobile devices (< 768px):
 - Content images are hidden to focus on text
-- Half-width layouts become full-width
-- Reduced slider height for better mobile experience
+- Navigation tabs become dots for space efficiency
+- Fluid height scaling for better mobile experience
 - Touch-friendly navigation controls
+- Text truncation with ellipsis on very small screens (< 500px)
 
 ## Performance Considerations
 

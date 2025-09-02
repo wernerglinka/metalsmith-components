@@ -47,9 +47,7 @@
         image:
           src: '/assets/images/hero-bg-1.jpg'
           alt: 'Background image'
-        screen:
-          hasScreen: true
-          isDark: true
+        imageScreen: 'dark'
     - navLabel: 'Features'
       isReverse: true
       text:
@@ -76,9 +74,7 @@
           src: 'youtube'
           id: 'dQw4w9WgXcQ'
           tn: '/assets/images/video-thumb.jpg'
-        screen:
-          hasScreen: true
-          isDark: false
+        imageScreen: 'light'
     - navLabel: 'About'
       isReverse: false
       text:
@@ -99,6 +95,4 @@
         image:
           src: '/assets/images/hero-bg-3.jpg'
           alt: 'About section background'
-        screen:
-          hasScreen: false
-          isDark: false
+        imageScreen: 'none'

@@ -71,7 +71,7 @@ sections:
           titleTag: 'h2'
           subTitle: 'Optimized for Modern Web'
           prose: 'Hardware-accelerated animations, lazy loading, and intelligent resource management ensure smooth performance across all devices.'
-          isCentered: true
+          isCentered: false
         ctas:
           - url: '#examples'
             label: 'See Examples'
@@ -144,7 +144,7 @@ sections:
       inContainer: true
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -180,7 +180,7 @@ sections:
     containerFields:
       inContainer: true
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
@@ -198,6 +198,8 @@ sections:
         ```yaml
         sections:
           - sectionType: hero-slider
+            # other settings
+
             autoplay: true
             autoPlayDelay: 5000
             slides:
@@ -297,10 +299,10 @@ sections:
             isButton: true
             buttonStyle: 'primary'
         background:
-          color: '#000000'
+          color: ''
           isDark: true
           image:
-            src: '/assets/images/sample14.jpg'
+            src: '/assets/images/sample10.jpg'
             alt: 'Background image'
           imageScreen: 'dark'
       - navLabel: 'Split Layout'
@@ -311,9 +313,9 @@ sections:
           titleTag: 'h2'
           subTitle: 'Text and Image Side by Side'
           prose: 'Slides can include content images that display alongside text for more visual interest.'
-          isCentered: false
+          isCentered: true
         image:
-          src: '/assets/images/sample9.jpg'
+          src: '/assets/images/old-tractor-2.png'
           alt: 'Content image'
         background:
           color: '#ecf0f1'
@@ -340,7 +342,7 @@ sections:
             src: 'vimeo'
             id: '76979871'
             tn: '/assets/images/vimeo-thumb.jpg'
-          imageScreen: 'light'
+          imageScreen: 'dark'
 
   - sectionType: text-only
     containerTag: article

@@ -69,19 +69,11 @@
                 "type": "object",
                 "description": "Background video"
               },
-              "screen": {
-                "type": "object",
-                "description": "Screen overlay configuration",
-                "properties": {
-                  "hasScreen": {
-                    "type": "boolean",
-                    "description": "Enable screen overlay"
-                  },
-                  "isDark": {
-                    "type": "boolean",
-                    "description": "Use dark screen overlay"
-                  }
-                }
+              "imageScreen": {
+                "type": "string",
+                "enum": ["none", "light", "dark"],
+                "default": "none",
+                "description": "Screen overlay type: none, light, or dark"
               }
             }
           }

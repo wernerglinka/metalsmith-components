@@ -10,7 +10,7 @@
       {% set hasCtas = slide.ctas | hasCtas %}
       {% set hasImage = slide.image and slide.image.src %}
       {% set hasTextAndImage = (hasText or hasCtas) and hasImage %}
-      {% set contentWidth = 'is-half-width' if hasTextAndImage else 'is-full-width' %}
+      {% set contentWidth = '' %}
       {% set hasBackgroundImage = slide.background and slide.background.image and slide.background.image.src %}
       {% set hasBackgroundVideo = slide.background and slide.background.video and slide.background.video.id %}
       {% set hasBackgroundColor = slide.background and slide.background.color %}
@@ -72,7 +72,7 @@
         {% endif %}
         
         <div class="container">
-          <div class="hero-content {{ contentWidth }}">
+          <div class="hero-content {% if slide.text.isCentered %}is-text-centered{% endif %}">
             {% if hasText %}
               <div class="text-wrapper">
                 {{ text(slide.text) }}
@@ -86,8 +86,8 @@
             {% endif %}
           </div>
           
-          {% if contentWidth == 'is-half-width' %}
-            <div class="hero-content is-half-width has-image">
+          {% if hasImage %}
+            <div class="hero-content has-image">
               {{ image(slide.image) }}
             </div>
           {% endif %}
