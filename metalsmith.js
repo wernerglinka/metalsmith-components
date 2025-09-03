@@ -72,15 +72,30 @@ const dependencies = JSON.parse( fs.readFileSync( './package.json' ) ).dependenc
  */
 const getGlobalMetadata = () => {
   const dataDir = path.join( thisDirectory, 'lib', 'data' ); // Path to data directory
-  const files = fs.readdirSync( dataDir ); // Get all files in directory
-
-  // Process each JSON file and add it to the result object
-  return files.reduce( ( obj, file ) => {
-    const fileName = file.replace( '.json', '' ); // Remove .json extension
-    const fileContents = fs.readFileSync( path.join( dataDir, file ), 'utf8' );
-    obj[ fileName ] = JSON.parse( fileContents ); // Parse JSON content
-    return obj;
-  }, {} );
+  
+  const processDirectory = ( dirPath, relativePath = '' ) => {
+    const files = fs.readdirSync( dirPath );
+    const result = {};
+    
+    files.forEach( file => {
+      const filePath = path.join( dirPath, file );
+      const stat = fs.statSync( filePath );
+      
+      if ( stat.isDirectory() ) {
+        // Recursively process subdirectories
+        result[ file ] = processDirectory( filePath, path.join( relativePath, file ) );
+      } else if ( file.endsWith( '.json' ) ) {
+        // Process JSON files
+        const fileName = file.replace( '.json', '' );
+        const fileContents = fs.readFileSync( filePath, 'utf8' );
+        result[ fileName ] = JSON.parse( fileContents );
+      }
+    } );
+    
+    return result;
+  };
+  
+  return processDirectory( dataDir );
 };
 
 const globalMetadata = getGlobalMetadata();

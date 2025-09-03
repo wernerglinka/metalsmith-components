@@ -1,0 +1,91 @@
+{
+  "latitude": 40.7128,
+  "longitude": -74.0060,
+  "zoom": 8,
+  "clustering": {
+    "enabled": true,
+    "maxZoom": 15,
+    "radius": 60,
+    "minClusterSize": 2,
+    "style": {
+      "backgroundColor": "#e74c3c",
+      "textColor": "#ffffff",
+      "borderColor": "#c0392b",
+      "borderWidth": 2
+    }
+  },
+  "markers": [
+    {
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "title": "Manhattan",
+      "icon": "star",
+      "content": {
+        "title": "Manhattan",
+        "body": "The heart of New York City",
+        "link": "https://en.wikipedia.org/wiki/Manhattan"
+      }
+    },
+    {
+      "latitude": 40.6782,
+      "longitude": -73.9442,
+      "title": "Brooklyn",
+      "icon": "home",
+      "content": {
+        "title": "Brooklyn",
+        "body": "Most populous borough of NYC",
+        "link": "https://en.wikipedia.org/wiki/Brooklyn"
+      }
+    },
+    {
+      "latitude": 40.7489,
+      "longitude": -73.9857,
+      "title": "Times Square",
+      "icon": "camera",
+      "content": {
+        "title": "Times Square",
+        "body": "The crossroads of the world"
+      }
+    },
+    {
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "title": "Empire State Building",
+      "icon": "award",
+      "content": {
+        "title": "Empire State Building",
+        "body": "Iconic Art Deco skyscraper"
+      }
+    },
+    {
+      "latitude": 40.6892,
+      "longitude": -74.0445,
+      "title": "Statue of Liberty",
+      "icon": "star",
+      "content": {
+        "title": "Statue of Liberty",
+        "body": "Symbol of freedom and democracy"
+      }
+    },
+    {
+      "latitude": 40.7282,
+      "longitude": -74.0776,
+      "title": "Jersey City",
+      "icon": "map-pin",
+      "content": {
+        "title": "Jersey City",
+        "body": "Great views of Manhattan skyline"
+      }
+    },
+    {
+      "latitude": 40.7831,
+      "longitude": -73.9712,
+      "title": "Central Park",
+      "icon": "heart",
+      "content": {
+        "title": "Central Park",
+        "body": "NYC's green oasis"
+      }
+    }
+  ]
+}

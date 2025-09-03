@@ -1,0 +1,40 @@
+{
+  "latitude": 48.8566,
+  "longitude": 2.3522,
+  "zoom": 11,
+  "markers": [
+    {
+      "latitude": 48.8584,
+      "longitude": 2.2945,
+      "title": "Eiffel Tower",
+      "icon": "star",
+      "content": {
+        "title": "Eiffel Tower",
+        "body": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France.",
+        "link": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+      }
+    },
+    {
+      "latitude": 48.8606,
+      "longitude": 2.3376,
+      "title": "Louvre Museum",
+      "icon": "camera",
+      "content": {
+        "title": "Louvre Museum",
+        "body": "The Louvre is the world's most-visited museum, and a historic landmark in Paris.",
+        "link": "https://en.wikipedia.org/wiki/Louvre"
+      }
+    },
+    {
+      "latitude": 48.8738,
+      "longitude": 2.2950,
+      "title": "Arc de Triomphe",
+      "icon": "heart",
+      "content": {
+        "title": "Arc de Triomphe",
+        "body": "The Arc de Triomphe is one of the most famous monuments in Paris.",
+        "link": "https://en.wikipedia.org/wiki/Arc_de_Triomphe"
+      }
+    }
+  ]
+}

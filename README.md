@@ -24,6 +24,7 @@ Explore a comprehensive collection of production-ready components:
 - **Media Sections**: Flexible image and text combinations with reversible layouts
 - **Content Blocks**: Text-only sections, testimonials, and blog listings
 - **Interactive Elements**: Sliders, flip cards, and logo carousels
+- **Mapping Components**: Interactive maps with Leaflet and OpenLayers support, JSON data files, custom markers, and clustering
 - **Composed Sections**: Multi-column layouts for custom content arrangements
 
 ### Documentation & Learning
@@ -127,6 +128,7 @@ npm run fix    # Run both format and lint in sequence
 │   │   ├── banner.md          # Banner component examples
 │   │   ├── hero.md            # Hero section examples
 │   │   ├── media-image.md     # Media section examples
+│   │   ├── mapping.md         # Interactive mapping examples
 │   │   └── ...                # More component examples
 │   ├── section-anatomy.md     # Component structure documentation
 │   ├── yaml-to-html.md        # Build process documentation
@@ -135,11 +137,21 @@ npm run fix    # Run both format and lint in sequence
 ├── lib/                       # Templates and assets
 │   ├── assets/                # Images, fonts, global styles
 │   ├── data/                  # Site configuration (site.json, etc.)
+│   │   └── maps/              # Map data JSON files
+│   │       ├── london-landmarks.json
+│   │       ├── paris-monuments.json
+│   │       └── nyc-clustering-demo.json
 │   └── layouts/
 │       ├── components/
 │       │   ├── _partials/     # Reusable UI elements
 │       │   └── sections/      # Page section components
+│       │       └── mapping/   # Interactive mapping component
+│       │           ├── modules/
+│       │           │   ├── providers/    # Leaflet & OpenLayers providers
+│       │           │   └── helpers/      # Utilities & icon registry
 │       └── pages/             # Page templates
+├── plugins/                   # Custom build plugins
+│   └── generate-mapping-icons.js  # Dynamic icon registry generator
 ├── metalsmith.js              # Build configuration
 └── package.json               # Project dependencies
 ```
@@ -200,6 +212,15 @@ The system automatically manages component assets:
 3. **Applies PostCSS processing** for autoprefixing and minification
 4. **Generates per-page assets** with no unused code
 
+### JSON Data Architecture
+
+For complex components like mapping, the system uses external JSON files for data management:
+
+- **Clean Separation**: UI configuration stays in page frontmatter, content data in JSON files
+- **Scalable Data**: Handle large datasets (many markers, locations, etc.) without cluttering pages
+- **Reusable Content**: Same JSON data can be used across multiple pages
+- **Build Integration**: JSON files in `/lib/data/` are automatically loaded and accessible as `data.maps.filename`
+
 ## Available Components
 
 ### Content Sections
@@ -215,6 +236,14 @@ The system automatically manages component assets:
 - **Flip Cards**: Interactive cards with front/back content
 - **Logos List**: Auto-scrolling logo carousels
 - **Testimonial**: Customer quotes with attribution
+
+### Mapping Components
+
+- **Interactive Maps**: Dual provider support (Leaflet and OpenLayers)
+- **JSON Data Architecture**: External data files for clean separation of content and configuration
+- **Custom Markers**: Dynamic icon registry with Feather icons
+- **Marker Clustering**: Performance optimization for large datasets
+- **Responsive Design**: Mobile-optimized touch interactions
 
 ### Layout Components
 

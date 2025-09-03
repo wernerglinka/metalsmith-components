@@ -1,0 +1,40 @@
+{
+  "latitude": 51.509865,
+  "longitude": -0.118092,
+  "zoom": 10,
+  "markers": [
+    {
+      "latitude": 51.509865,
+      "longitude": -0.118092,
+      "title": "London",
+      "icon": "award",
+      "content": {
+        "title": "London",
+        "body": "London is a political, historical, cultural, and tourist center of the United Kingdom, an important city and commercial spot in Western Europe.",
+        "link": "https://en.wikipedia.org/wiki/London"
+      }
+    },
+    {
+      "latitude": 51.483334,
+      "longitude": -0.604167,
+      "title": "Windsor Castle",
+      "icon": "home",
+      "content": {
+        "title": "Windsor Castle",
+        "body": "Windsor Castle is one of the most known buildings and a royal residence in the county of Berkshire.",
+        "link": "https://en.wikipedia.org/wiki/Windsor_Castle"
+      }
+    },
+    {
+      "latitude": 51.5055,
+      "longitude": -0.0754,
+      "title": "Tower Bridge",
+      "icon": "camera",
+      "content": {
+        "title": "Tower Bridge",
+        "body": "Tower Bridge is a combined bascule and suspension bridge in London, built between 1886 and 1894.",
+        "link": "https://en.wikipedia.org/wiki/Tower_Bridge"
+      }
+    }
+  ]
+}

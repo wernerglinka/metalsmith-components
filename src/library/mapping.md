@@ -39,19 +39,16 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A mapping component that supports Leaflet and OpenLayers providers via the `mapProvider` property. Dynamically loads the appropriate mapping library only when needed, maintaining optimal performance. Features custom SVG markers, interactive popups, and responsive design across all devices.
+        A mapping component that supports Leaflet and OpenLayers providers with clean separation between UI configuration and map data. Uses external JSON files for map content, making it ideal for complex maps with many markers while keeping page frontmatter minimal.
 
-        The component handles multiple maps per page, each with independent configurations and provider selection. All text fields (leadIn, title, subtitle, prose) and CTAs are optional. The maps automatically adapt to container dimensions and include accessibility features for screen readers.
+        Features dynamic library loading, custom SVG markers, interactive popups, marker clustering, and responsive design across all devices. The component handles multiple maps per page with independent configurations and provider selection. All text fields and CTAs are optional, and maps automatically adapt to container dimensions with accessibility features for screen readers.
 
         ```yaml
         - sectionType: mapping
           containerTag: section
           
           mapProvider: 'leaflet' # 'leaflet' or 'openlayers'
-          latitude: 51.509865
-          longitude: -0.118092
-          zoom: 10
-          # more settings
+          mapData: 'london-landmarks' # references lib/data/maps/london-landmarks.json
 
           text:
             leadIn: 'Interactive Mapping'
@@ -64,25 +61,58 @@ sections:
               label: 'Learn More'
               isButton: true
               buttonStyle: 'primary'
-          markers:
-            - latitude: 51.509865
-              longitude: -0.118092
-              title: 'London'
-              icon: 'star'  # Optional: custom icon from registry
-              content:
-                title: 'London'
-                body: 'London is a political, historical, cultural center...'
-                link: 'https://en.wikipedia.org/wiki/London'
         ```
 
         ### Core Properties
 
+        **Page Frontmatter (UI Configuration):**
         - `mapProvider`: Map library to use ('leaflet' or 'openlayers')
-        - `latitude`/`longitude`: Map center coordinates (required)
-        - `zoom`: Initial zoom level (default: 10)
-        - `markers`: Array of marker objects with coordinates and popup content
+        - `mapData`: Reference to JSON file in lib/data/maps/ (e.g., 'london-landmarks')
         - `text`: Standard text block with leadIn, title, subtitle, and prose
         - `ctas`: Array of call-to-action buttons or links
+
+        **JSON Data File (Map Content):**
+        - `latitude`/`longitude`: Map center coordinates
+        - `zoom`: Initial zoom level
+        - `clustering`: Optional clustering configuration object
+        - `markers`: Array of marker objects with coordinates and popup content
+
+        ### JSON Data Structure
+
+        Map data is stored in `/lib/data/maps/{mapData}.json` files with the following structure:
+
+        ```json
+        {
+          "latitude": 51.509865,
+          "longitude": -0.118092,
+          "zoom": 10,
+          "clustering": {
+            "enabled": true,
+            "maxZoom": 15,
+            "radius": 50,
+            "minClusterSize": 2,
+            "style": {
+              "backgroundColor": "#4285f4",
+              "textColor": "#ffffff",
+              "borderColor": "#1976d2",
+              "borderWidth": 2
+            }
+          },
+          "markers": [
+            {
+              "latitude": 51.509865,
+              "longitude": -0.118092,
+              "title": "London",
+              "icon": "star",
+              "content": {
+                "title": "London",
+                "body": "Description text...",
+                "link": "https://example.com"
+              }
+            }
+          ]
+        }
+        ```
 
     ctas:
       - url: ''
@@ -152,34 +182,7 @@ sections:
         isButton: true
         buttonStyle: 'primary'
     mapProvider: 'leaflet'
-    latitude: 51.509865
-    longitude: -0.118092
-    zoom: 10
-    markers:
-      - latitude: 51.509865
-        longitude: -0.118092
-        title: 'London'
-        icon: 'award'
-        content:
-          title: 'London'
-          body: 'London is a political, historical, cultural, and tourist center of the United Kingdom, an important city and commercial spot in Western Europe.'
-          link: 'https://en.wikipedia.org/wiki/London'
-      - latitude: 51.483334
-        longitude: -0.604167
-        title: 'Windsor Castle'
-        icon: 'home'
-        content:
-          title: 'Windsor Castle'
-          body: 'Windsor Castle is one of the most known buildings and a royal residence in the county of Berkshire.'
-          link: 'https://en.wikipedia.org/wiki/Windsor_Castle'
-      - latitude: 51.5055
-        longitude: -0.0754
-        title: 'Tower Bridge'
-        icon: 'camera'
-        content:
-          title: 'Tower Bridge'
-          body: 'Tower Bridge is a combined bascule and suspension bridge in London, built between 1886 and 1894.'
-          link: 'https://en.wikipedia.org/wiki/Tower_Bridge'
+    mapData: 'london-landmarks'
 
   - sectionType: text-only
     containerTag: section
@@ -243,34 +246,7 @@ sections:
         isButton: true
         buttonStyle: 'secondary'
     mapProvider: 'openlayers'
-    latitude: 48.8566
-    longitude: 2.3522
-    zoom: 11
-    markers:
-      - latitude: 48.8584
-        longitude: 2.2945
-        title: 'Eiffel Tower'
-        icon: 'star'
-        content:
-          title: 'Eiffel Tower'
-          body: 'The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France.'
-          link: 'https://en.wikipedia.org/wiki/Eiffel_Tower'
-      - latitude: 48.8606
-        longitude: 2.3376
-        title: 'Louvre Museum'
-        icon: 'camera'
-        content:
-          title: 'Louvre Museum'
-          body: "The Louvre is the world's most-visited museum, and a historic landmark in Paris."
-          link: 'https://en.wikipedia.org/wiki/Louvre'
-      - latitude: 48.8738
-        longitude: 2.2950
-        title: 'Arc de Triomphe'
-        icon: 'heart'
-        content:
-          title: 'Arc de Triomphe'
-          body: 'The Arc de Triomphe is one of the most famous monuments in Paris.'
-          link: 'https://en.wikipedia.org/wiki/Arc_de_Triomphe'
+    mapData: 'paris-monuments'
 
   - sectionType: text-only
     containerTag: section
@@ -296,7 +272,23 @@ sections:
       titleTag: 'h3'
       subTitle: ''
       prose: |-
-        Each marker in the markers array includes:
+        Each marker in the JSON data file's markers array includes:
+        
+        ```json
+        {
+          "latitude": 40.7128,
+          "longitude": -74.0060,
+          "title": "Location Name",
+          "icon": "star",
+          "content": {
+            "title": "Popup Heading",
+            "body": "Description text for the popup",
+            "link": "https://example.com"
+          }
+        }
+        ```
+        
+        **Marker Properties:**
         - `latitude`/`longitude`: Marker position coordinates (required)
         - `title`: Tooltip text displayed on hover
         - `icon`: Optional icon name from the built-in icon registry
@@ -347,11 +339,17 @@ sections:
       titleTag: 'h3'
       subTitle: ''
       prose: |-
+        **JSON Data Architecture**: Map content is stored in external JSON files in `/lib/data/maps/`, keeping page frontmatter clean while supporting complex datasets with many markers.
+
         **Dynamic Loading**: The component loads the appropriate mapping library (Leaflet v1.9.4 or OpenLayers v10.3.0) from CDN only when needed. This keeps your initial bundle size small.
 
-        **Provider Switching**: You can easily switch between Leaflet and OpenLayers by changing just the `mapProvider` field. All other configuration remains identical.
+        **Provider Switching**: You can easily switch between Leaflet and OpenLayers by changing just the `mapProvider` field. The same JSON data file works with both providers.
 
-        **Multiple Maps**: You can have multiple maps on the same page using different providers. Each map maintains its own state and configuration.
+        **Data Reusability**: The same JSON data file can be referenced by multiple pages, making it easy to maintain consistent map content across your site.
+
+        **Build-time Icon Registry**: Icons are automatically scanned from JSON files and included in the build only when used, optimizing bundle size.
+
+        **Multiple Maps**: You can have multiple maps on the same page using different providers and different JSON data files. Each map maintains its own state and configuration.
 
         **Consistent SVG Markers**: Both providers use the same custom SVG marker design for visual consistency across all maps.
 
@@ -385,71 +383,7 @@ sections:
       prose: 'When displaying many markers, clustering groups nearby markers together to improve performance and visual clarity. Click clusters to zoom in and expand them.'
       isCentered: false
     mapProvider: 'openlayers'
-    latitude: 40.7128
-    longitude: -74.0060
-    zoom: 8
-    clustering:
-      enabled: true
-      maxZoom: 15
-      radius: 60
-      minClusterSize: 2
-      style:
-        backgroundColor: '#e74c3c'
-        textColor: '#ffffff'
-        borderColor: '#c0392b'
-        borderWidth: 2
-    markers:
-      - latitude: 40.7128
-        longitude: -74.0060
-        title: 'Manhattan'
-        icon: 'star'
-        content:
-          title: 'Manhattan'
-          body: 'The heart of New York City'
-          link: 'https://en.wikipedia.org/wiki/Manhattan'
-      - latitude: 40.6782
-        longitude: -73.9442
-        title: 'Brooklyn'
-        icon: 'home'
-        content:
-          title: 'Brooklyn'
-          body: 'Most populous borough of NYC'
-          link: 'https://en.wikipedia.org/wiki/Brooklyn'
-      - latitude: 40.7489
-        longitude: -73.9857
-        title: 'Times Square'
-        icon: 'camera'
-        content:
-          title: 'Times Square'
-          body: 'The crossroads of the world'
-      - latitude: 40.7505
-        longitude: -73.9934
-        title: 'Empire State Building'
-        icon: 'award'
-        content:
-          title: 'Empire State Building'
-          body: 'Iconic Art Deco skyscraper'
-      - latitude: 40.6892
-        longitude: -74.0445
-        title: 'Statue of Liberty'
-        icon: 'star'
-        content:
-          title: 'Statue of Liberty'
-          body: 'Symbol of freedom and democracy'
-      - latitude: 40.7282
-        longitude: -74.0776
-        title: 'Jersey City'
-        icon: 'map-pin'
-        content:
-          title: 'Jersey City'
-          body: 'Great views of Manhattan skyline'
-      - latitude: 40.7831
-        longitude: -73.9712
-        title: 'Central Park'
-        icon: 'heart'
-        content:
-          title: 'Central Park'
-          body: "NYC's green oasis"
+    mapData: 'nyc-clustering-demo'
     ctas:
       - url: 'https://leafletjs.com/reference.html'
         label: 'Learn About Clustering'
@@ -495,40 +429,44 @@ sections:
 
         **Clustering Code Example:**
 
+        Page frontmatter:
         ```yaml
         - sectionType: mapping
           mapProvider: 'openlayers'
-          latitude: 40.7128
-          longitude: -74.0060
-          zoom: 8
-          
-          clustering:
-            enabled: true
-            maxZoom: 15
-            radius: 60
-            minClusterSize: 2
-            style:
-              backgroundColor: '#e74c3c'
-              textColor: '#ffffff'
-              borderColor: '#c0392b'
-              borderWidth: 2
-          
-          markers:
-            - latitude: 40.7128
-              longitude: -74.0060
-              title: 'Manhattan'
-              icon: 'star'
-              content:
-                title: 'Manhattan'
-                body: 'The heart of New York City'
-            - latitude: 40.6782
-              longitude: -73.9442
-              title: 'Brooklyn'
-              icon: 'home'
-              content:
-                title: 'Brooklyn'
-                body: 'Most populous borough of NYC'
-            # Additional markers will automatically cluster when close together
+          mapData: 'nyc-clustering-demo'
+        ```
+
+        JSON data file (`lib/data/maps/nyc-clustering-demo.json`):
+        ```json
+        {
+          "latitude": 40.7128,
+          "longitude": -74.0060,
+          "zoom": 8,
+          "clustering": {
+            "enabled": true,
+            "maxZoom": 15,
+            "radius": 60,
+            "minClusterSize": 2,
+            "style": {
+              "backgroundColor": "#e74c3c",
+              "textColor": "#ffffff",
+              "borderColor": "#c0392b",
+              "borderWidth": 2
+            }
+          },
+          "markers": [
+            {
+              "latitude": 40.7128,
+              "longitude": -74.0060,
+              "title": "Manhattan",
+              "icon": "star",
+              "content": {
+                "title": "Manhattan",
+                "body": "The heart of New York City"
+              }
+            }
+          ]
+        }
         ```
 
         When clustering is enabled, markers within the specified radius are grouped together and displayed as numbered cluster markers. Clicking a cluster will zoom in to reveal individual markers, or expand the cluster if at maximum zoom level.

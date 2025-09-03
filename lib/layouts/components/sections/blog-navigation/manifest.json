@@ -4,5 +4,17 @@
   "styles": ["blog-navigation.css"],
   "scripts": [],
   "requires": [],
-  "plugins": ["@metalsmith/collections"]
+  "plugins": ["@metalsmith/collections"],
+  "validation": {
+    "required": ["sectionType"],
+    "properties": {
+      "sectionType": {
+        "type": "string",
+        "const": "blog-navigation"
+      },
+      "isDisabled": {
+        "type": "boolean"
+      }
+    }
+  }
 }

@@ -37,20 +37,22 @@ const extractSvgContent = (iconPath) => {
 };
 
 /**
- * Scan page content for mapping sections and extract icon names
+ * Scan for mapping icons in both frontmatter and metadata
  * @param {Object} files - Metalsmith files object
+ * @param {Object} metadata - Metalsmith global metadata
  * @returns {Set<string>} Set of unique icon names
  */
-const scanForMappingIcons = (files) => {
+const scanForMappingIcons = (files, metadata) => {
   const iconNames = new Set();
   
+  // Scan frontmatter for legacy inline markers
   Object.keys(files).forEach(filename => {
     const file = files[filename];
     
     // Skip non-content files
     if (!file.sections) return;
     
-    // Look for mapping sections
+    // Look for mapping sections with inline markers (legacy)
     file.sections.forEach(section => {
       if (section.sectionType === 'mapping' && section.markers) {
         section.markers.forEach(marker => {
@@ -62,6 +64,21 @@ const scanForMappingIcons = (files) => {
       }
     });
   });
+  
+  // Scan JSON data from metadata.data.maps
+  if (metadata.data && metadata.data.maps) {
+    Object.keys(metadata.data.maps).forEach(mapName => {
+      const mapData = metadata.data.maps[mapName];
+      if (mapData.markers && Array.isArray(mapData.markers)) {
+        mapData.markers.forEach(marker => {
+          if (marker.icon) {
+            iconNames.add(marker.icon);
+            console.log(`Found mapping icon: ${marker.icon} in ${mapName}.json`);
+          }
+        });
+      }
+    });
+  }
   
   return iconNames;
 };
@@ -149,11 +166,14 @@ export const createMarkerIcon = (iconContent, options = {}) => {
  * @returns {Function} Metalsmith plugin function
  */
 export default function generateMappingIcons() {
-  return function(files, _metalsmith, done) {
+  return function(files, metalsmith, done) {
     console.log('🔍 Scanning for mapping icons...');
     
-    // Scan all files for mapping icons
-    const foundIcons = scanForMappingIcons(files);
+    // Get metadata from metalsmith instance
+    const metadata = metalsmith.metadata();
+    
+    // Scan all files and metadata for mapping icons
+    const foundIcons = scanForMappingIcons(files, metadata);
     
     if (foundIcons.size === 0) {
       console.log('ℹ️  No mapping icons found, generating empty registry');

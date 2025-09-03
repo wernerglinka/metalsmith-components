@@ -8,24 +8,31 @@
     </div>
   {% endif %}
 
+  {% set mapData = data.maps[section.mapData] if section.mapData else section %}
+  {% set mapLat = mapData.latitude %}
+  {% set mapLng = mapData.longitude %}
+  {% set mapZoom = mapData.zoom %}
+  {% set mapMarkers = mapData.markers %}
+  {% set mapClustering = mapData.clustering %}
+
   {% if section.mapProvider === "leaflet" %}
-    <div class="js-leaflet-map" 
+    <div class="js-leaflet-map map-wrapper" 
          data-provider="leaflet"
-         data-latitude="{{ section.latitude }}" 
-         data-longitude="{{ section.longitude }}" 
-         data-zoom="{{ section.zoom }}"
-         data-markers="{{ section.markers | dump | e }}"
-         data-clustering="{{ section.clustering | dump | e }}">
+         data-latitude="{{ mapLat }}" 
+         data-longitude="{{ mapLng }}" 
+         data-zoom="{{ mapZoom }}"
+         data-markers="{{ mapMarkers | dump | e }}"
+         data-clustering="{{ mapClustering | dump | e }}">
       <div id="map-{{ section.id or 'leaflet-' + loop.index }}"></div>
     </div>
   {% else %}
-    <div class="js-openlayers-map" 
+    <div class="js-openlayers-map map-wrapper" 
          data-provider="openlayers"
-         data-latitude="{{ section.latitude }}" 
-         data-longitude="{{ section.longitude }}" 
-         data-zoom="{{ section.zoom }}"
-         data-markers="{{ section.markers | dump | e }}"
-         data-clustering="{{ section.clustering | dump | e }}">
+         data-latitude="{{ mapLat }}" 
+         data-longitude="{{ mapLng }}" 
+         data-zoom="{{ mapZoom }}"
+         data-markers="{{ mapMarkers | dump | e }}"
+         data-clustering="{{ mapClustering | dump | e }}">
       <div id="map-{{ section.id or 'openlayers-' + loop.index }}"></div>
     </div>
   {% endif %}

@@ -1,6 +1,5 @@
 {
   "name": "featured-posts",
-  "description": "Featured blog posts section",
   "type": "section",
   "styles": ["featured-posts.css"],
   "scripts": [],

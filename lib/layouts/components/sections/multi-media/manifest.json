@@ -1,10 +1,6 @@
 {
   "name": "multi-media",
   "type": "section",
-  "version": "1.0.0",
-  "description": "Section component that renders text content alongside various media types",
-  "author": "Werner Glinka",
-  "license": "MIT",
   "styles": ["multi-media.css"],
   "scripts": [],
   "requires": ["ctas", "text", "image", "video", "audio", "icon", "lottie", "commons"],
@@ -13,241 +9,62 @@
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "multi-media",
-        "description": "Component identifier"
+        "const": "multi-media"
       },
       "mediaType": {
         "type": "string",
-        "enum": ["image", "video", "audio", "icon", "lottie"],
-        "description": "Type of media to display"
+        "enum": ["image", "video", "audio", "icon", "lottie"]
       },
       "isReverse": {
-        "type": "boolean",
-        "default": false,
-        "description": "Reverse media/text positioning"
+        "type": "boolean"
       },
       "isDisabled": {
-        "type": "boolean",
-        "default": false,
-        "description": "Disable section rendering"
+        "type": "boolean"
       },
       "containerTag": {
         "type": "string",
-        "enum": ["section", "aside", "div", "article"],
-        "default": "section",
-        "description": "HTML container element"
-      },
-      "id": {
-        "type": "string",
-        "description": "Optional element ID"
-      },
-      "classes": {
-        "type": "string",
-        "description": "Additional CSS classes"
+        "enum": ["section", "aside", "div", "article"]
       },
       "containerFields.inContainer": {
-        "type": "boolean",
-        "default": true,
-        "description": "Wrap content in container"
+        "type": "boolean"
       },
       "containerFields.isAnimated": {
-        "type": "boolean",
-        "default": false,
-        "description": "Enable animation effects"
+        "type": "boolean"
       },
       "containerFields.noMargin.top": {
-        "type": "boolean",
-        "default": false,
-        "description": "Remove top margin"
+        "type": "boolean"
       },
       "containerFields.noMargin.bottom": {
-        "type": "boolean",
-        "default": false,
-        "description": "Remove bottom margin"
+        "type": "boolean"
       },
       "containerFields.noPadding.top": {
-        "type": "boolean",
-        "default": false,
-        "description": "Remove top padding"
+        "type": "boolean"
       },
       "containerFields.noPadding.bottom": {
-        "type": "boolean",
-        "default": false,
-        "description": "Remove bottom padding"
+        "type": "boolean"
       },
-      "containerFields.background.color": {
-        "type": "string",
-        "description": "Background color value"
-      },
-      "containerFields.background.image": {
-        "type": "string",
-        "description": "Background image path"
+      "containerFields.background.isDark": {
+        "type": "boolean"
       },
       "containerFields.background.imageScreen": {
         "type": "string",
-        "enum": ["light", "dark", "none"],
-        "default": "none",
-        "description": "Background image overlay"
+        "enum": ["light", "dark", "none"]
       },
-      "text": {
-        "type": "object",
-        "properties": {
-          "leadIn": {
-            "type": "string",
-            "description": "Lead-in text"
-          },
-          "title": {
-            "type": "string",
-            "description": "Section title"
-          },
-          "titleTag": {
-            "type": "string",
-            "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
-            "default": "h2",
-            "description": "HTML heading level"
-          },
-          "subTitle": {
-            "type": "string",
-            "description": "Section subtitle"
-          },
-          "prose": {
-            "type": "string",
-            "description": "Markdown-formatted content"
-          },
-          "isCentered": {
-            "type": "boolean",
-            "default": false,
-            "description": "Center text content"
-          }
-        }
+      "text.titleTag": {
+        "type": "string",
+        "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
+        "default": "h2"
       },
       "ctas": {
         "type": "array",
-        "description": "Call-to-action buttons/links",
         "items": {
-          "type": "object",
           "properties": {
-            "url": {
-              "type": "string",
-              "description": "Link URL"
-            },
-            "label": {
-              "type": "string",
-              "description": "Button/link text"
-            },
             "isButton": {
-              "type": "boolean",
-              "default": false,
-              "description": "Render as button"
+              "type": "boolean"
             },
             "buttonStyle": {
               "type": "string",
-              "enum": ["primary", "secondary", "tertiary", "inverted"],
-              "default": "primary",
-              "description": "Button style variant"
-            }
-          }
-        }
-      },
-      "image": {
-        "type": "object",
-        "description": "Image properties (when mediaType: 'image')",
-        "properties": {
-          "src": {
-            "type": "string",
-            "description": "Image file path"
-          },
-          "alt": {
-            "type": "string",
-            "description": "Alt text for accessibility"
-          },
-          "caption": {
-            "type": "string",
-            "description": "Optional image caption"
-          }
-        }
-      },
-      "video": {
-        "type": "object",
-        "description": "Video properties (when mediaType: 'video')",
-        "properties": {
-          "inline": {
-            "type": "boolean",
-            "default": true,
-            "description": "Display inline or in modal"
-          },
-          "src": {
-            "type": "string",
-            "enum": ["youtube", "vimeo", "self"],
-            "description": "Video source type"
-          },
-          "id": {
-            "type": "string",
-            "description": "YouTube/Vimeo video ID"
-          },
-          "tn": {
-            "type": "string",
-            "description": "Thumbnail image path"
-          }
-        }
-      },
-      "audio": {
-        "type": "object",
-        "description": "Audio properties (when mediaType: 'audio')",
-        "properties": {
-          "bgImage": {
-            "type": "string",
-            "description": "Background image path"
-          },
-          "ogg": {
-            "type": "string",
-            "description": "OGG audio file path"
-          },
-          "mpeg": {
-            "type": "string",
-            "description": "MP3 audio file path"
-          }
-        }
-      },
-      "icon": {
-        "type": "object",
-        "description": "Icon properties (when mediaType: 'icon')",
-        "properties": {
-          "icon": {
-            "type": "string",
-            "description": "Icon identifier"
-          },
-          "title": {
-            "type": "string",
-            "description": "Icon title for accessibility"
-          },
-          "url": {
-            "type": "string",
-            "description": "Optional icon link"
-          }
-        }
-      },
-      "lottie": {
-        "type": "object",
-        "description": "Lottie animation properties (when mediaType: 'lottie')",
-        "properties": {
-          "src": {
-            "type": "string",
-            "description": "Lottie JSON file path"
-          },
-          "control": {
-            "type": "object",
-            "properties": {
-              "autoplay": {
-                "type": "boolean",
-                "default": true,
-                "description": "Start animation automatically"
-              },
-              "loop": {
-                "type": "boolean",
-                "default": true,
-                "description": "Loop animation"
-              }
+              "enum": ["primary", "secondary", "tertiary", "inverted"]
             }
           }
         }

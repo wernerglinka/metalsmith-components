@@ -1,128 +1,74 @@
 {
   "name": "mapping",
-  "version": "1.0.0",
-  "description": "Unified mapping component supporting both Leaflet and OpenLayers providers with modular architecture",
   "type": "section",
-  "scripts": ["mapping.js"],
   "styles": ["mapping.css"],
-  "dependencies": [],
+  "scripts": ["mapping.js"],
+  "requires": ["ctas", "text", "commons"],
   "modules": {
     "providers": ["leaflet.js", "openlayers.js"],
-    "helpers": ["load-script.js", "load-styles.js", "mapping-utils.js"]
+    "helpers": ["load-script.js", "load-styles.js", "mapping-utils.js", "icon-loader.js"]
   },
-  "fields": {
-    "mapProvider": {
-      "type": "string",
-      "default": "leaflet",
-      "description": "Map library provider: 'leaflet' or 'openlayers'"
-    },
-    "latitude": {
-      "type": "number",
-      "required": true,
-      "description": "Map center latitude"
-    },
-    "longitude": {
-      "type": "number",
-      "required": true,
-      "description": "Map center longitude"
-    },
-    "zoom": {
-      "type": "number",
-      "default": 10,
-      "description": "Initial zoom level"
-    },
-    "markers": {
-      "type": "array",
-      "description": "Array of map markers",
-      "items": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "description": "Marker title (tooltip)"
-          },
-          "latitude": {
-            "type": "number",
-            "required": true,
-            "description": "Marker latitude"
-          },
-          "longitude": {
-            "type": "number",
-            "required": true,
-            "description": "Marker longitude"
-          },
-          "icon": {
-            "type": "string",
-            "description": "Icon name from Feather icon library"
-          },
-          "content": {
-            "type": "object",
-            "description": "Popup content",
-            "properties": {
-              "title": {
-                "type": "string",
-                "description": "Popup title"
-              },
-              "body": {
-                "type": "string",
-                "description": "Popup body text"
-              },
-              "link": {
-                "type": "string",
-                "description": "Optional link URL"
-              }
-            }
-          }
-        }
-      }
-    },
-    "clustering": {
-      "type": "object",
-      "description": "Marker clustering configuration",
-      "properties": {
-        "enabled": {
-          "type": "boolean",
-          "default": false,
-          "description": "Enable marker clustering"
-        },
-        "maxZoom": {
-          "type": "number",
-          "default": 15,
-          "description": "Disable clustering beyond this zoom level"
-        },
-        "radius": {
-          "type": "number",
-          "default": 50,
-          "description": "Cluster radius in pixels"
-        },
-        "minClusterSize": {
-          "type": "number",
-          "default": 2,
-          "description": "Minimum markers to form a cluster"
-        },
-        "style": {
-          "type": "object",
-          "description": "Cluster styling options",
+  "validation": {
+    "required": ["sectionType", "mapProvider", "mapData"],
+    "properties": {
+      "sectionType": {
+        "type": "string",
+        "const": "mapping"
+      },
+      "mapProvider": {
+        "type": "string",
+        "enum": ["leaflet", "openlayers"],
+        "default": "leaflet"
+      },
+      "mapData": {
+        "type": "string"
+      },
+      "height": {
+        "type": "string"
+      },
+      "isDisabled": {
+        "type": "boolean"
+      },
+      "containerFields.inContainer": {
+        "type": "boolean"
+      },
+      "containerFields.isAnimated": {
+        "type": "boolean"
+      },
+      "containerFields.noMargin.top": {
+        "type": "boolean"
+      },
+      "containerFields.noMargin.bottom": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.top": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.bottom": {
+        "type": "boolean"
+      },
+      "containerFields.background.isDark": {
+        "type": "boolean"
+      },
+      "containerFields.background.imageScreen": {
+        "type": "string",
+        "enum": ["light", "dark", "none"]
+      },
+      "text.titleTag": {
+        "type": "string",
+        "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
+        "default": "h2"
+      },
+      "ctas": {
+        "type": "array",
+        "items": {
           "properties": {
-            "backgroundColor": {
-              "type": "string",
-              "default": "#4285f4",
-              "description": "Cluster background color"
+            "isButton": {
+              "type": "boolean"
             },
-            "textColor": {
+            "buttonStyle": {
               "type": "string",
-              "default": "#ffffff",
-              "description": "Cluster text color"
-            },
-            "borderColor": {
-              "type": "string",
-              "default": "#1976d2",
-              "description": "Cluster border color"
-            },
-            "borderWidth": {
-              "type": "number",
-              "default": 2,
-              "description": "Cluster border width"
+              "enum": ["primary", "secondary", "tertiary", "inverted"]
             }
           }
         }

@@ -1,80 +1,89 @@
 {
   "name": "hero-slider",
-  "version": "1.0.0",
-  "description": "Hero slider section with multiple slides, navigation, autoplay, and background media support",
   "type": "section",
   "scripts": ["hero-slider.js"],
   "styles": ["hero-slider.css"],
-  "dependencies": [
-    "ctas",
-    "text",
-    "image",
-    "video"
-  ],
-  "fields": {
-    "autoplay": {
-      "type": "boolean",
-      "default": false,
-      "description": "Enable automatic slide progression"
-    },
-    "autoPlayDelay": {
-      "type": "number",
-      "default": 5000,
-      "description": "Delay between slides in milliseconds"
-    },
-    "slides": {
-      "type": "array",
-      "description": "Array of slide configurations",
-      "items": {
-        "type": "object",
-        "properties": {
-          "navLabel": {
-            "type": "string",
-            "description": "Navigation label for the slide"
-          },
-          "isReverse": {
-            "type": "boolean",
-            "default": false,
-            "description": "Reverse the layout direction"
-          },
-          "text": {
-            "type": "object",
-            "description": "Text content for the slide"
-          },
-          "ctas": {
-            "type": "array",
-            "description": "Call-to-action buttons"
-          },
-          "image": {
-            "type": "object",
-            "description": "Main image for the slide"
-          },
-          "background": {
-            "type": "object",
-            "description": "Background configuration",
-            "properties": {
-              "color": {
-                "type": "string",
-                "description": "Background color"
-              },
-              "isDark": {
-                "type": "boolean",
-                "description": "Use dark theme for text"
-              },
-              "image": {
-                "type": "object",
-                "description": "Background image"
-              },
-              "video": {
-                "type": "object",
-                "description": "Background video"
-              },
-              "imageScreen": {
-                "type": "string",
-                "enum": ["none", "light", "dark"],
-                "default": "none",
-                "description": "Screen overlay type: none, light, or dark"
+  "requires": ["ctas", "text", "image", "video", "commons"],
+  "validation": {
+    "required": ["sectionType"],
+    "properties": {
+      "sectionType": {
+        "type": "string",
+        "const": "hero-slider"
+      },
+      "autoplay": {
+        "type": "boolean",
+        "default": false
+      },
+      "autoPlayDelay": {
+        "type": "number",
+        "default": 5000
+      },
+      "isDisabled": {
+        "type": "boolean"
+      },
+      "containerFields.inContainer": {
+        "type": "boolean"
+      },
+      "containerFields.isAnimated": {
+        "type": "boolean"
+      },
+      "containerFields.noMargin.top": {
+        "type": "boolean"
+      },
+      "containerFields.noMargin.bottom": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.top": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.bottom": {
+        "type": "boolean"
+      },
+      "containerFields.background.isDark": {
+        "type": "boolean"
+      },
+      "containerFields.background.imageScreen": {
+        "type": "string",
+        "enum": ["light", "dark", "none"]
+      },
+      "slides": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "navLabel": {
+              "type": "string"
+            },
+            "isReverse": {
+              "type": "boolean"
+            },
+            "text.titleTag": {
+              "type": "string",
+              "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
+              "default": "h1"
+            },
+            "ctas": {
+              "type": "array",
+              "items": {
+                "properties": {
+                  "isButton": {
+                    "type": "boolean"
+                  },
+                  "buttonStyle": {
+                    "type": "string",
+                    "enum": ["primary", "secondary", "tertiary", "inverted"]
+                  }
+                }
               }
+            },
+            "background.isDark": {
+              "type": "boolean"
+            },
+            "background.imageScreen": {
+              "type": "string",
+              "enum": ["none", "light", "dark"],
+              "default": "none"
             }
           }
         }

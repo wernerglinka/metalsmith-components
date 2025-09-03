@@ -2,8 +2,13 @@
  * Unified Mapping Component Styles
  * Shared styles for both Leaflet and OpenLayers providers
  */
+.section-wrapper:has(.mapping):not(.in-container) {
+  padding: 0;
+}
 
 .mapping {
+  --map-default-height: 400px;
+
   width: 100%;
 }
 
@@ -14,7 +19,7 @@
 .js-leaflet-map,
 .js-openlayers-map {
   width: 100%;
-  height: 400px;
+  height: var(--map-default-height);
   margin-bottom: var(--space-m);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -98,7 +103,16 @@
 /* Map container loading state */
 .js-leaflet-map.loading,
 .js-openlayers-map.loading {
-  background: linear-gradient(-45deg, #f0f0f0 25%, transparent 25%, transparent 50%, #f0f0f0 50%, #f0f0f0 75%, transparent 75%, transparent);
+  background: linear-gradient(
+    -45deg,
+    #f0f0f0 25%,
+    transparent 25%,
+    transparent 50%,
+    #f0f0f0 50%,
+    #f0f0f0 75%,
+    transparent 75%,
+    transparent
+  );
   background-size: 20px 20px;
   animation: loading-pattern 1s linear infinite;
   display: flex;
@@ -212,7 +226,7 @@
   .js-openlayers-map {
     height: 300px;
   }
-  
+
   .ol-popup {
     min-width: 180px;
     max-width: 250px;
