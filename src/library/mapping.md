@@ -68,6 +68,7 @@ sections:
             - latitude: 51.509865
               longitude: -0.118092
               title: 'London'
+              icon: 'star'  # Optional: custom icon from registry
               content:
                 title: 'London'
                 body: 'London is a political, historical, cultural center...'
@@ -158,6 +159,7 @@ sections:
       - latitude: 51.509865
         longitude: -0.118092
         title: 'London'
+        icon: 'award'
         content:
           title: 'London'
           body: 'London is a political, historical, cultural, and tourist center of the United Kingdom, an important city and commercial spot in Western Europe.'
@@ -165,6 +167,7 @@ sections:
       - latitude: 51.483334
         longitude: -0.604167
         title: 'Windsor Castle'
+        icon: 'home'
         content:
           title: 'Windsor Castle'
           body: 'Windsor Castle is one of the most known buildings and a royal residence in the county of Berkshire.'
@@ -172,6 +175,7 @@ sections:
       - latitude: 51.5055
         longitude: -0.0754
         title: 'Tower Bridge'
+        icon: 'camera'
         content:
           title: 'Tower Bridge'
           body: 'Tower Bridge is a combined bascule and suspension bridge in London, built between 1886 and 1894.'
@@ -246,6 +250,7 @@ sections:
       - latitude: 48.8584
         longitude: 2.2945
         title: 'Eiffel Tower'
+        icon: 'star'
         content:
           title: 'Eiffel Tower'
           body: 'The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France.'
@@ -253,6 +258,7 @@ sections:
       - latitude: 48.8606
         longitude: 2.3376
         title: 'Louvre Museum'
+        icon: 'camera'
         content:
           title: 'Louvre Museum'
           body: "The Louvre is the world's most-visited museum, and a historic landmark in Paris."
@@ -260,6 +266,7 @@ sections:
       - latitude: 48.8738
         longitude: 2.2950
         title: 'Arc de Triomphe'
+        icon: 'heart'
         content:
           title: 'Arc de Triomphe'
           body: 'The Arc de Triomphe is one of the most famous monuments in Paris.'
@@ -292,10 +299,29 @@ sections:
         Each marker in the markers array includes:
         - `latitude`/`longitude`: Marker position coordinates (required)
         - `title`: Tooltip text displayed on hover
+        - `icon`: Optional icon name from the built-in icon registry
         - `content`: Popup content object
           - `title`: Popup heading text
           - `body`: Description or details
           - `link`: Optional external URL for "Read more" functionality
+
+        ### Available Icons for Markers
+
+        The mapping component includes a built-in icon registry with commonly used marker icons:
+        - `map-pin`: Default location marker
+        - `home`: House/residence marker
+        - `camera`: Photo location marker
+        - `coffee`: Cafe/restaurant marker
+        - `briefcase`: Business/office marker
+        - `shopping-bag`: Shopping/retail marker
+        - `star`: Featured/important location
+        - `heart`: Favorite/loved location
+        - `calendar`: Event location marker
+        - `clock`: Time-sensitive location
+        - `music`: Entertainment venue marker
+        - `phone`: Contact/service location
+
+        If no icon is specified, the default red location pin marker is used.
 
   - sectionType: text-only
     containerTag: section

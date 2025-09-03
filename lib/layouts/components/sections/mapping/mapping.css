@@ -37,6 +37,8 @@
 .custom-div-icon svg,
 .ol-marker-icon svg {
   display: block;
+  width: 100%;
+  height: 100%;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.2s ease;
 }
@@ -49,8 +51,8 @@
 
 /* Ensure consistent marker positioning */
 .leaflet-marker-icon.custom-div-icon {
-  margin-left: -12px !important;
-  margin-top: -32px !important;
+  margin-left: -24px !important;
+  margin-top: -62px !important;
 }
 
 /* OpenLayers popup styling */
