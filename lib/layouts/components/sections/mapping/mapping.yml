@@ -25,6 +25,7 @@
     isCentered: false
   mapProvider: 'leaflet' # 'leaflet' or 'openlayers'
   mapData: 'nyc-clustering-demo' # references lib/data/maps/nyc-clustering-demo.json
+  height: '500px' # optional custom height (defaults to 400px)
   ctas:
     - url: '/contact'
       label: 'Get Directions'

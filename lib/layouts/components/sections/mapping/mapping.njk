@@ -15,6 +15,8 @@
   {% set mapMarkers = mapData.markers %}
   {% set mapClustering = mapData.clustering %}
 
+  {% set mapStyle = "style=\"" + ("--map-default-height: " + section.height + ";" if section.height else "") + "\"" %}
+
   {% if section.mapProvider === "leaflet" %}
     <div class="js-leaflet-map map-wrapper" 
          data-provider="leaflet"
@@ -22,7 +24,8 @@
          data-longitude="{{ mapLng }}" 
          data-zoom="{{ mapZoom }}"
          data-markers="{{ mapMarkers | dump | e }}"
-         data-clustering="{{ mapClustering | dump | e }}">
+         data-clustering="{{ mapClustering | dump | e }}"
+         {{ mapStyle | safe }}>
       <div id="map-{{ section.id or 'leaflet-' + loop.index }}"></div>
     </div>
   {% else %}
@@ -32,7 +35,8 @@
          data-longitude="{{ mapLng }}" 
          data-zoom="{{ mapZoom }}"
          data-markers="{{ mapMarkers | dump | e }}"
-         data-clustering="{{ mapClustering | dump | e }}">
+         data-clustering="{{ mapClustering | dump | e }}"
+         {{ mapStyle | safe }}>
       <div id="map-{{ section.id or 'openlayers-' + loop.index }}"></div>
     </div>
   {% endif %}

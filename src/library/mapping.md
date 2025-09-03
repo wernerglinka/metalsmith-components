@@ -49,6 +49,7 @@ sections:
           
           mapProvider: 'leaflet' # 'leaflet' or 'openlayers'
           mapData: 'london-landmarks' # references lib/data/maps/london-landmarks.json
+          height: '500px' # optional custom height (defaults to 400px)
 
           text:
             leadIn: 'Interactive Mapping'
@@ -68,6 +69,7 @@ sections:
         **Page Frontmatter (UI Configuration):**
         - `mapProvider`: Map library to use ('leaflet' or 'openlayers')
         - `mapData`: Reference to JSON file in lib/data/maps/ (e.g., 'london-landmarks')
+        - `height`: Optional custom map height (e.g., '500px', '50vh') - defaults to 400px
         - `text`: Standard text block with leadIn, title, subtitle, and prose
         - `ctas`: Array of call-to-action buttons or links
 
@@ -183,6 +185,7 @@ sections:
         buttonStyle: 'primary'
     mapProvider: 'leaflet'
     mapData: 'london-landmarks'
+    height: '300px'
 
   - sectionType: text-only
     containerTag: section
@@ -273,7 +276,7 @@ sections:
       subTitle: ''
       prose: |-
         Each marker in the JSON data file's markers array includes:
-        
+
         ```json
         {
           "latitude": 40.7128,
@@ -287,7 +290,7 @@ sections:
           }
         }
         ```
-        
+
         **Marker Properties:**
         - `latitude`/`longitude`: Marker position coordinates (required)
         - `title`: Tooltip text displayed on hover
