@@ -1,0 +1,49 @@
+- sectionType: mapping
+  containerTag: section
+  classes: ''
+  id: ''
+  isDisabled: false
+  containerFields:
+    inContainer: true
+    isAnimated: true
+    noMargin:
+      top: false
+      bottom: false
+    noPadding:
+      top: false
+      bottom: false
+    background:
+      color: ''
+      image: ''
+      imageScreen: 'none'
+  text:
+    leadIn: ''
+    title: 'Interactive Map'
+    titleTag: 'h2'
+    subTitle: ''
+    prose: 'Explore locations on our interactive map.'
+    isCentered: false
+  mapProvider: 'leaflet' # 'leaflet' or 'openlayers'
+  latitude: 40.7128
+  longitude: -74.0060
+  zoom: 10
+  markers:
+    - latitude: 40.7128
+      longitude: -74.0060
+      title: "New York City"
+      content:
+        title: "Big Apple"
+        body: "The largest city in the United States"
+        link: "https://www.nyc.gov"
+    - latitude: 40.6892
+      longitude: -74.0445
+      title: "Statue of Liberty"
+      content:
+        title: "Liberty Island"
+        body: "A symbol of freedom and democracy"
+        link: "https://www.nps.gov/stli/"
+  ctas:
+    - url: '/contact'
+      label: 'Get Directions'
+      isButton: true
+      buttonStyle: 'primary'

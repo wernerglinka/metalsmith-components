@@ -1,0 +1,36 @@
+{% from "components/_partials/ctas/ctas.njk" import ctas %}
+{% from "components/_partials/text/text.njk" import text %}
+
+<div class="mapping content">
+  {% if section.text %}
+    <div class="text flow">
+      <div class="prose flow">{{ text(section.text)}}</div>
+    </div>
+  {% endif %}
+
+  {% if section.mapProvider === "leaflet" %}
+    <div class="js-leaflet-map" 
+         data-provider="leaflet"
+         data-latitude="{{ section.latitude }}" 
+         data-longitude="{{ section.longitude }}" 
+         data-zoom="{{ section.zoom }}"
+         data-markers="{{ section.markers | dump | e }}">
+      <div id="map-{{ section.id or 'leaflet-' + loop.index }}"></div>
+    </div>
+  {% else %}
+    <div class="js-openlayers-map" 
+         data-provider="openlayers"
+         data-latitude="{{ section.latitude }}" 
+         data-longitude="{{ section.longitude }}" 
+         data-zoom="{{ section.zoom }}"
+         data-markers="{{ section.markers | dump | e }}">
+      <div id="map-{{ section.id or 'openlayers-' + loop.index }}"></div>
+    </div>
+  {% endif %}
+
+  {% if section.ctas | hasCtas %}
+    <div class="ctas-wrapper">
+      {{ ctas(section.ctas) }}
+    </div>
+  {% endif %}
+</div>

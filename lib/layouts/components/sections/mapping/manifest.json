@@ -1,12 +1,21 @@
 {
-  "name": "openlayers",
+  "name": "mapping",
   "version": "1.0.0",
-  "description": "Interactive map section using OpenLayers with support for multiple markers and popups",
+  "description": "Unified mapping component supporting both Leaflet and OpenLayers providers with modular architecture",
   "type": "section",
-  "scripts": ["openlayers.js"],
-  "styles": ["openlayers.css"],
+  "scripts": ["mapping.js"],
+  "styles": ["mapping.css"],
   "dependencies": [],
+  "modules": {
+    "providers": ["leaflet.js", "openlayers.js"],
+    "helpers": ["load-script.js", "load-styles.js", "mapping-utils.js"]
+  },
   "fields": {
+    "mapProvider": {
+      "type": "string",
+      "default": "leaflet",
+      "description": "Map library provider: 'leaflet' or 'openlayers'"
+    },
     "latitude": {
       "type": "number",
       "required": true,
@@ -21,16 +30,6 @@
       "type": "number",
       "default": 10,
       "description": "Initial zoom level"
-    },
-    "containerId": {
-      "type": "string",
-      "default": "map",
-      "description": "Unique ID for the map container"
-    },
-    "containerHeight": {
-      "type": "number",
-      "default": 600,
-      "description": "Height of the map container in pixels"
     },
     "markers": {
       "type": "array",
