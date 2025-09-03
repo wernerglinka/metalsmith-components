@@ -19,16 +19,7 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+:is(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) {
   margin-block-end: 0;
 }
 
@@ -47,21 +38,15 @@ body {
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-button,
-input,
+:is(h1, h2, h3, h4, button, input, textarea) {
+  line-height: var(--smaller-line-height);
+}
 label {
   line-height: var(--smaller-line-height);
 }
 
 /* Balance text wrapping on headings */
-h1,
-h2,
-h3,
-h4 {
+:is(h1, h2, h3, h4) {
   text-wrap: balance;
 }
 
@@ -73,10 +58,7 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
+:is(input, button, textarea, select) {
   font-family: inherit;
   font-size: inherit;
 }

@@ -40,9 +40,7 @@ body.modal-active {
 /**
  * Heading Styles 
  */
-h1,
-h2,
-h3 {
+:is(h1, h2, h3, h4) {
   font-family: var(--font-heading);
   font-weight: var(--default-font-weight);
   line-height: var(--smaller-line-height);
@@ -60,9 +58,11 @@ h3 {
   font-size: var(--font-h3);
 }
 
-h1,
-h2,
-h3 {
+h4 {
+  font-size: var(--font-h4);
+}
+
+:is(h1, h2, h3, h4) {
   max-width: 40ch; /* Shorter line length for headings */
 }
 
@@ -86,7 +86,13 @@ h3 {
   margin-top: var(--space-xs-s);
 }
 
+p {
+  font-size: var(--font-p);
+  margin: 0;
+}
+
 a {
+  font-size: inherit;
   text-decoration: none;
   color: var(--color-primary);
   display: inline-block; /* Needed for transform to work */

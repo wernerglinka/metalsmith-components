@@ -86,6 +86,7 @@ sections:
         - [Flip Cards](/library/flip-cards)
         - [Hero](/library/hero)
         - [Hero Slider](/library/hero-slider)
+        - [Leaflet Map](/library/leaflet)
         - [Logos List](/library/logos-list)
         - [Media Image](/library/media-image)
         - [Multi Media](/library/multi-media)
