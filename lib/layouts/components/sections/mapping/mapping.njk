@@ -14,7 +14,8 @@
          data-latitude="{{ section.latitude }}" 
          data-longitude="{{ section.longitude }}" 
          data-zoom="{{ section.zoom }}"
-         data-markers="{{ section.markers | dump | e }}">
+         data-markers="{{ section.markers | dump | e }}"
+         data-clustering="{{ section.clustering | dump | e }}">
       <div id="map-{{ section.id or 'leaflet-' + loop.index }}"></div>
     </div>
   {% else %}
@@ -23,7 +24,8 @@
          data-latitude="{{ section.latitude }}" 
          data-longitude="{{ section.longitude }}" 
          data-zoom="{{ section.zoom }}"
-         data-markers="{{ section.markers | dump | e }}">
+         data-markers="{{ section.markers | dump | e }}"
+         data-clustering="{{ section.clustering | dump | e }}">
       <div id="map-{{ section.id or 'openlayers-' + loop.index }}"></div>
     </div>
   {% endif %}

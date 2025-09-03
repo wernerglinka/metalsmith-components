@@ -102,8 +102,8 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -190,7 +190,7 @@ sections:
     containerFields:
       inContainer: true
       noMargin:
-        top: false
+        top: true
         bottom: true
       noPadding:
         top: false
@@ -223,7 +223,7 @@ sections:
       isAnimated: true
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: false
@@ -358,4 +358,178 @@ sections:
         **Responsive Design**: Maps automatically adapt to their container width and include mobile-optimized touch interactions.
 
         **Accessibility**: Markers include proper title attributes for screen readers, and all external links include appropriate security attributes.
+
+  - sectionType: mapping
+    containerTag: section
+    classes: ''
+    id: 'clustering-demo'
+    isDisabled: false
+    containerFields:
+      inContainer: true
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: 'Advanced Feature'
+      title: 'Marker Clustering'
+      titleTag: 'h2'
+      subTitle: 'Handle Large Datasets'
+      prose: 'When displaying many markers, clustering groups nearby markers together to improve performance and visual clarity. Click clusters to zoom in and expand them.'
+      isCentered: false
+    mapProvider: 'openlayers'
+    latitude: 40.7128
+    longitude: -74.0060
+    zoom: 8
+    clustering:
+      enabled: true
+      maxZoom: 15
+      radius: 60
+      minClusterSize: 2
+      style:
+        backgroundColor: '#e74c3c'
+        textColor: '#ffffff'
+        borderColor: '#c0392b'
+        borderWidth: 2
+    markers:
+      - latitude: 40.7128
+        longitude: -74.0060
+        title: 'Manhattan'
+        icon: 'star'
+        content:
+          title: 'Manhattan'
+          body: 'The heart of New York City'
+          link: 'https://en.wikipedia.org/wiki/Manhattan'
+      - latitude: 40.6782
+        longitude: -73.9442
+        title: 'Brooklyn'
+        icon: 'home'
+        content:
+          title: 'Brooklyn'
+          body: 'Most populous borough of NYC'
+          link: 'https://en.wikipedia.org/wiki/Brooklyn'
+      - latitude: 40.7489
+        longitude: -73.9857
+        title: 'Times Square'
+        icon: 'camera'
+        content:
+          title: 'Times Square'
+          body: 'The crossroads of the world'
+      - latitude: 40.7505
+        longitude: -73.9934
+        title: 'Empire State Building'
+        icon: 'award'
+        content:
+          title: 'Empire State Building'
+          body: 'Iconic Art Deco skyscraper'
+      - latitude: 40.6892
+        longitude: -74.0445
+        title: 'Statue of Liberty'
+        icon: 'star'
+        content:
+          title: 'Statue of Liberty'
+          body: 'Symbol of freedom and democracy'
+      - latitude: 40.7282
+        longitude: -74.0776
+        title: 'Jersey City'
+        icon: 'map-pin'
+        content:
+          title: 'Jersey City'
+          body: 'Great views of Manhattan skyline'
+      - latitude: 40.7831
+        longitude: -73.9712
+        title: 'Central Park'
+        icon: 'heart'
+        content:
+          title: 'Central Park'
+          body: "NYC's green oasis"
+    ctas:
+      - url: 'https://leafletjs.com/reference.html'
+        label: 'Learn About Clustering'
+        isButton: true
+        buttonStyle: 'secondary'
+
+  - sectionType: text-only
+    containerTag: section
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: false
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Clustering Configuration'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: |-
+        For maps with many markers, clustering groups nearby markers together to improve performance and reduce visual clutter. Clustering works with both Leaflet and OpenLayers providers.
+
+        **Clustering Properties:**
+        - `enabled`: Boolean to enable/disable clustering (default: false)
+        - `maxZoom`: Zoom level beyond which clustering is disabled (default: 15)
+        - `radius`: Cluster radius in pixels for grouping markers (default: 50)
+        - `minClusterSize`: Minimum markers required to form a cluster (default: 2)
+        - `style`: Visual styling for cluster markers
+          - `backgroundColor`: Cluster background color (default: '#4285f4')
+          - `textColor`: Text color for marker count (default: '#ffffff')
+          - `borderColor`: Cluster border color (default: '#1976d2')
+          - `borderWidth`: Border width in pixels (default: 2)
+
+        **Clustering Code Example:**
+
+        ```yaml
+        - sectionType: mapping
+          mapProvider: 'openlayers'
+          latitude: 40.7128
+          longitude: -74.0060
+          zoom: 8
+          
+          clustering:
+            enabled: true
+            maxZoom: 15
+            radius: 60
+            minClusterSize: 2
+            style:
+              backgroundColor: '#e74c3c'
+              textColor: '#ffffff'
+              borderColor: '#c0392b'
+              borderWidth: 2
+          
+          markers:
+            - latitude: 40.7128
+              longitude: -74.0060
+              title: 'Manhattan'
+              icon: 'star'
+              content:
+                title: 'Manhattan'
+                body: 'The heart of New York City'
+            - latitude: 40.6782
+              longitude: -73.9442
+              title: 'Brooklyn'
+              icon: 'home'
+              content:
+                title: 'Brooklyn'
+                body: 'Most populous borough of NYC'
+            # Additional markers will automatically cluster when close together
+        ```
+
+        When clustering is enabled, markers within the specified radius are grouped together and displayed as numbered cluster markers. Clicking a cluster will zoom in to reveal individual markers, or expand the cluster if at maximum zoom level.
 ---

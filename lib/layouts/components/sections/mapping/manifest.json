@@ -51,6 +51,10 @@
             "required": true,
             "description": "Marker longitude"
           },
+          "icon": {
+            "type": "string",
+            "description": "Icon name from Feather icon library"
+          },
           "content": {
             "type": "object",
             "description": "Popup content",
@@ -67,6 +71,58 @@
                 "type": "string",
                 "description": "Optional link URL"
               }
+            }
+          }
+        }
+      }
+    },
+    "clustering": {
+      "type": "object",
+      "description": "Marker clustering configuration",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable marker clustering"
+        },
+        "maxZoom": {
+          "type": "number",
+          "default": 15,
+          "description": "Disable clustering beyond this zoom level"
+        },
+        "radius": {
+          "type": "number",
+          "default": 50,
+          "description": "Cluster radius in pixels"
+        },
+        "minClusterSize": {
+          "type": "number",
+          "default": 2,
+          "description": "Minimum markers to form a cluster"
+        },
+        "style": {
+          "type": "object",
+          "description": "Cluster styling options",
+          "properties": {
+            "backgroundColor": {
+              "type": "string",
+              "default": "#4285f4",
+              "description": "Cluster background color"
+            },
+            "textColor": {
+              "type": "string",
+              "default": "#ffffff",
+              "description": "Cluster text color"
+            },
+            "borderColor": {
+              "type": "string",
+              "default": "#1976d2",
+              "description": "Cluster border color"
+            },
+            "borderWidth": {
+              "type": "number",
+              "default": 2,
+              "description": "Cluster border width"
             }
           }
         }

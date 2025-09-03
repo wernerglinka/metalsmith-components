@@ -26,7 +26,17 @@
   mapProvider: 'leaflet' # 'leaflet' or 'openlayers'
   latitude: 40.7128
   longitude: -74.0060
-  zoom: 10
+  zoom: 8
+  clustering:
+    enabled: true
+    maxZoom: 15
+    radius: 50
+    minClusterSize: 2
+    style:
+      backgroundColor: '#4285f4'
+      textColor: '#ffffff'
+      borderColor: '#1976d2'
+      borderWidth: 2
   markers:
     - latitude: 40.7128
       longitude: -74.0060
@@ -38,10 +48,34 @@
     - latitude: 40.6892
       longitude: -74.0445
       title: "Statue of Liberty"
+      icon: "star"
       content:
         title: "Liberty Island"
         body: "A symbol of freedom and democracy"
         link: "https://www.nps.gov/stli/"
+    - latitude: 40.7489
+      longitude: -73.9857
+      title: "Times Square"
+      icon: "camera"
+      content:
+        title: "Times Square"
+        body: "The crossroads of the world"
+        link: "https://www.timessquarenyc.org/"
+    - latitude: 40.7505
+      longitude: -73.9934
+      title: "Empire State Building"
+      icon: "home"
+      content:
+        title: "Empire State Building"
+        body: "Iconic NYC skyscraper"
+        link: "https://www.esbnyc.com/"
+    - latitude: 40.7282
+      longitude: -74.0776
+      title: "Jersey City"
+      icon: "map-pin"
+      content:
+        title: "Jersey City"
+        body: "Great views of Manhattan"
   ctas:
     - url: '/contact'
       label: 'Get Directions'
