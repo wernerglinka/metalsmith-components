@@ -90,6 +90,7 @@ sections:
         - [Logos List](/library/logos-list)
         - [Media Image](/library/media-image)
         - [Multi Media](/library/multi-media)
+        - [OpenLayers Map](/library/openlayers)
         - [Simple Slider](/library/simple-slider)
         - [Testimonial](/library/testimonial)
         - [Text Only](/library/text-only)

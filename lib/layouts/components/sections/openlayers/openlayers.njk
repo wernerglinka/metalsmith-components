@@ -1,0 +1,12 @@
+<div class="openlayers-wrapper section-inner">
+  <div class="map-wrapper openlayers-map js-openlayers-map section-inner">
+    <div 
+      id="{{ section.openlayers.containerId }}"
+      data-latitude="{{ section.openlayers.latitude }}"
+      data-longitude="{{ section.openlayers.longitude }}"
+      data-zoom="{{ section.openlayers.zoom }}" 
+      style="height: {{ section.openlayers.containerHeight }}px; width: 100%;" 
+      data-markers="{{ section.openlayers.markers | objToString }}">
+    </div>
+  </div>
+</div>
