@@ -8,7 +8,7 @@ navigation:
 
 seo:
   title: Metalsmith Components Library
-  description: ''
+  description: 'Browse our comprehensive library of reusable Metalsmith components. Explore sections, partials, and architectural patterns for building modern static sites with structured content.'
   socialImage: '/assets/images/metalsmith-starter-social.png'
   canonicalOverwrite: ''
   keywords: 'static site tutorials, component architecture, structured content, web development articles, metalsmith patterns, static site best practices'
@@ -54,7 +54,9 @@ sections:
       alt: ''
       caption: ''
 
-  - sectionType: cards
+  - sectionType: collection-list
+    collectionName: 'library'
+    domainName: 'library'
     containerTag: section # section || article || aside
     classes: ''
     id: ''

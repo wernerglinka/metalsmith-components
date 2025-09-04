@@ -9,13 +9,13 @@ navigation:
   navIndex: 10
 
 card:
-  title: 'Blog List'
-  description: 'Responsive blog listing component with pagination and card-based layout.'
+  title: 'Collection List'
+  description: 'Universal collection listing component with pagination and card-based layout. Works with any collection (blog, components, etc.).'
   image: '/assets/images/sample4.jpg'
 
 seo:
-  title: Blog List Component - Paginated Post Grid for Metalsmith
-  description: 'Responsive blog listing component with automatic pagination, card-based layout, and collection support. Display blog posts in an organized grid with Metalsmith.'
+  title: Collection List Component - Universal Paginated Collection Grid for Metalsmith
+  description: 'Universal collection listing component with automatic pagination, card-based layout, and support for any collection type. Display collections in an organized grid with Metalsmith.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
   keywords: 'metalsmith blog list, blog pagination, post grid, blog cards, collection display, paginated blog, blog archive component, metalsmith collections'
@@ -41,14 +41,15 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
-      title: 'Blog List'
+      title: 'Collection List'
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A blog listing component that displays a grid of blog post cards with pagination support. Designed to render collections of blog posts in an organized, accessible format with automatic pagination and responsive layout.
+        A universal collection listing component that displays a grid of items with pagination support. Works with any collection (blog posts, components, products, etc.) and automatically detects available fields like author and date.
 
         ```yaml
-        - sectionType: blog-list
+        - sectionType: collection-list
+          collectionName: 'blog'  # Required: name of collection to display
           containerTag: section  # section, article, or aside
           disabled: false
           id: ""
@@ -69,21 +70,20 @@ sections:
               imageScreen: "none"  # light, dark, none
           hasPagingParams: true
           pagingParams:
-            numberOfBlogs: ""       # Total number of blog posts (auto-populated)
+            numberOfBlogs: ""       # Total number of items (auto-populated)
             numberOfPages: ""       # Total pages needed (auto-populated)
-            pageLength: ""          # Posts per page (auto-populated)
+            pageLength: ""          # Items per page (auto-populated)
             pageStart: ""           # Starting index for current page (auto-populated)
             pageNumber: ""          # Current page number (auto-populated)
         ```
 
-        ### Specific blog-list properties
+        ### Collection List Properties
 
+        - `collectionName`: **Required** - Name of the collection to display ('blog', 'components', 'products', etc.)
         - `hasPagingParams`: Enables pagination functionality
-        - `pagingParams.numberOfBlogs`: Auto-populated with total blog count
-        - `pagingParams.numberOfPages`: Auto-calculated based on page length
-        - `pagingParams.pageLength`: Number of posts per page (configured in plugin)
-        - `pagingParams.pageStart`: Auto-calculated starting index for current page
-        - `pagingParams.pageNumber`: Current page number (auto-populated from URL)
+        - `pagingParams.*`: Auto-populated pagination parameters
+
+        The component automatically includes author/date information if present in collection items.
 
         **Note:** This component requires the `metalsmith-sectioned-blog-pagination` plugin to calculate and populate pagination parameters automatically.
 
@@ -103,7 +103,8 @@ sections:
         isButton: true
         buttonStyle: 'primary'
 
-  - sectionType: blog-list
+  - sectionType: collection-list
+    collectionName: 'blog'
     containerTag: section
     disabled: false
     id: ''

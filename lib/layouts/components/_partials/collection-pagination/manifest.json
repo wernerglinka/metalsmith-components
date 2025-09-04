@@ -1,7 +1,7 @@
 {
-  "name": "blog-pagination",
+  "name": "collection-pagination",
   "type": "_partials",
-  "styles": ["blog-pagination.css"],
+  "styles": ["collection-pagination.css"],
   "scripts": [],
   "requires": [],
   "requiredPlugins": ["metalsmith-sectioned-blog-pagination"]

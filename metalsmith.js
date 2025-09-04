@@ -193,7 +193,7 @@ metalsmith
         sortBy: 'card.date',
         reverse: false
       },
-      components: {
+      library: {
         pattern: 'library/*.md',
         sortBy: 'seo.title',
         reverse: false

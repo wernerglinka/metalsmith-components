@@ -1,16 +1,20 @@
 {
-  "name": "blog-list",
+  "name": "collection-list",
   "type": "section",
-  "styles": ["blog-list.css"],
+  "styles": ["collection-list.css"],
   "scripts": [],
   "requires": [],
   "requiredPlugins": ["metalsmith-sectioned-blog-pagination"],
   "validation": {
-    "required": ["sectionType"],
+    "required": ["sectionType", "collectionName"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "blog-list"
+        "const": "collection-list"
+      },
+      "collectionName": {
+        "type": "string",
+        "description": "Name of the collection to display (e.g., 'blog', 'components')"
       },
       "containerFields.inContainer": {
         "type": "boolean"

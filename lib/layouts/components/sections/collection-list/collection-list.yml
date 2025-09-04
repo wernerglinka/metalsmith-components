@@ -1,4 +1,4 @@
-- sectionType: blog-list
+- sectionType: collection-list
   containerTag: section
   disabled: false
   id: ''
@@ -17,6 +17,7 @@
       color: ''
       image: ''
       imageScreen: 'none'
+  collectionName: 'blog'  # Name of collection to display (blog, components, etc.)
   hasPagingParams: true
   pagingParams: # leave these empty, will be filled by section pagination plugin
     numberOfBlogs: ''
