@@ -18,8 +18,7 @@ import Metalsmith from 'metalsmith'; // The core static site generator
 import drafts from '@metalsmith/drafts'; // Excludes draft content from builds
 import generateMappingIcons from './plugins/generate-mapping-icons.js'; // Generates mapping icon registry
 import collections from '@metalsmith/collections';
-import blogPages from 'metalsmith-sectioned-blog-pagination';
-import libraryPages from 'metalsmith-pagination';
+import paginatePages from 'metalsmith-sectioned-blog-pagination';
 import permalinks from '@metalsmith/permalinks'; // Creates clean URLs
 import menus from 'metalsmith-menu-plus'; // Generates navigation menus
 import layouts from '@metalsmith/layouts'; // Applies templates to content
@@ -202,16 +201,6 @@ metalsmith
     } )
   )
 
-  .use( libraryPages( {
-    'collections.components': {
-      perPage: 6,
-      noPageOne: true,
-      first: 'library/1/index.html',
-      template: 'page/sections.njk',
-      path: 'library/:num/index.html'
-    }
-  } ) )
-
   //.use( function( files, metalsmith, done ) {
   //  for ( const file in files ) {
   //    console.log( files[ file ] );
@@ -226,9 +215,17 @@ metalsmith
    * Learn more: https://github.com/wernerglinka/metalsmith-sectioned-blog-pagination
    */
   .use(
-    blogPages( {
+    paginatePages( {
       pagesPerPage: 3,
       blogDirectory: 'blog/'
+    } )
+  )
+
+  .use(
+    paginatePages( {
+      pagesPerPage: 6,
+      blogDirectory: 'library/',
+      mainTemplate: 'library.md'
     } )
   )
 

@@ -1,12 +1,12 @@
-{% macro blogPagination(numberOfPages, pageNumber) %}
+{% macro blogPagination(numberOfPages, pageNumber, domain) %}
 
   {% set isFirst = pageNumber == 1 %}
   {% set isLast = pageNumber == numberOfPages %}
-  {% set firstUrl = "/blog/" %}
-  {% set lastUrl = "/blog/" + numberOfPages + "/" if numberOfPages > 1 else 
-    "/blog/" %}
-  {% set prevUrl = "/blog/" + (pageNumber - 1) + "/" if pageNumber > 2 else "/blog/" %}
-  {% set nextUrl = "/blog/" + (
+  {% set firstUrl = "/{{ domain}}/" %}
+  {% set lastUrl = "/{{ domain}}/" + numberOfPages + "/" if numberOfPages > 1 else 
+    "/{{ domain}}/" %}
+  {% set prevUrl = "/{{ domain}}/" + (pageNumber - 1) + "/" if pageNumber > 2 else "/{{ domain}}/" %}
+  {% set nextUrl = "/{{ domain}}/" + (
   pageNumber + 1) + "/" %}
 
   <nav class="pagination" aria-label="Blog pagination">
@@ -42,9 +42,9 @@
             <span class="pagination-page current" aria-current="page" aria-label="Current page, page {{ currentPage }}">{{ currentPage }}</span>
           {% else %}
             {% if i == 0 %}
-              <a href="/blog/" class="pagination-page" aria-label="Go to page {{ currentPage }}">{{ currentPage }}</a>
+              <a href="/{{ domain}}/" class="pagination-page" aria-label="Go to page {{ currentPage }}">{{ currentPage }}</a>
             {% else %}
-              <a href="/blog/{{ currentPage }}/" class="pagination-page" aria-label="Go to page {{ currentPage }}">{{ currentPage }}</a>
+              <a href="/{{ domain}}/{{ currentPage }}/" class="pagination-page" aria-label="Go to page {{ currentPage }}">{{ currentPage }}</a>
             {% endif %}
           {% endif %}
         </li>

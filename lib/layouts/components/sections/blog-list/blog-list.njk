@@ -16,7 +16,7 @@
 <div class="container">
   {% set params = section.pagingParams %}
   {% if params.numberOfPages > 1 %}
-    {{ blogPagination(params.numberOfPages, params.pageNumber) }}
+    {{ blogPagination(params.numberOfPages, params.pageNumber, 'blog') }}
     {% set startPage = params.pageStart %}
     {% set endPage = startPage + params.pageLength %}
   {% else %}
@@ -44,7 +44,7 @@
   </ul>
 
   {% if params.numberOfPages > 1 %}
-    {{ blogPagination(params.numberOfPages, params.pageNumber) }}
+    {{ blogPagination(params.numberOfPages, params.pageNumber, 'blog') }}
   {% endif %}
 
 </div>

@@ -58,7 +58,7 @@ sections:
     containerTag: section # section || article || aside
     classes: ''
     id: ''
-    description: 'section with all blogposts'
+    description: 'section with all library components'
     isDisabled: false
     isFullScreen: false
     isReverse: false
