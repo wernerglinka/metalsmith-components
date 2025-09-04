@@ -2,6 +2,7 @@
 layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
+title: Commposed
 
 navigation:
   navLabel: 'Composed Section'

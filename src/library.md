@@ -1,102 +1,86 @@
 ---
 layout: pages/sections.njk
-bodyClasses: 'sections-page'
-hasHero: true
+bodyClass: ''
 
 navigation:
   navLabel: 'Library'
   navIndex: 3
 
 seo:
-  title: Component Library - Metalsmith Page Sections & Templates
-  description: 'Browse our collection of reusable Metalsmith components including heroes, banners, sliders, testimonials, and more. Ready-to-use templates for building modern static websites.'
-  socialImage: '/assets/images/sample.jpg'
-  canonicalURL: ''
-  keywords: 'metalsmith components, component library, page sections, hero section, banner component, blog list, flip cards, testimonials, sliders, static site components'
+  title: Metalsmith Components Library
+  description: ''
+  socialImage: '/assets/images/metalsmith-starter-social.png'
+  canonicalOverwrite: ''
+  keywords: 'static site tutorials, component architecture, structured content, web development articles, metalsmith patterns, static site best practices'
 
 sections:
   - sectionType: hero
     containerTag: section
     classes: 'first-section'
     id: ''
-    description: 'Hero section of the library page'
+    description: "This is a blog post hero section. The hero section has a class of 'blog-hero'."
     isDisabled: false
-    isReverse: true
-    isAnimated: true
     isFullScreen: false
-    targetId: ''
+    isReverse: false
     date: ''
     author: ''
     containerFields:
       inContainer: false
+      isAnimated: true
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
       background:
         isDark: true
         color: ''
-        image: '/assets/images/legos.jpg'
+        image: '/assets/images/sample10.jpg'
         imageScreen: 'dark' # light, dark, none
     text:
       leadIn: 'Metalsmith Components'
-      title: Library
+      title: Component Library
       titleTag: 'h1'
-      subTitle:
-      prose: ''
+      subTitle: 'Read on'
+      prose: 'Explore the many components available'
     ctas:
       - url: ''
         label: ''
-        isButton: true
+        isButton: false
         buttonStyle: 'primary'
     image:
       src: ''
       alt: ''
       caption: ''
 
-  - sectionType: text-only
-    containerTag: article
+  - sectionType: cards
+    containerTag: section # section || article || aside
     classes: ''
-    id: 'first-section'
+    id: ''
+    description: 'section with all blogposts'
     isDisabled: false
-    isAnimated: true
+    isFullScreen: false
+    isReverse: false
     containerFields:
       inContainer: false
+      isAnimated: true
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
       background:
+        isDark: true
         color: ''
         image: ''
         imageScreen: 'none' # light, dark, none
-    text:
-      leadIn: ''
-      title: Section Components
-      titleTag: 'h2'
-      subTitle: ''
-      prose: |-
-        - [Banner](/library/banner)
-        - [Blog List](/library/blog-list)
-        - [Composed](/library/composed)
-        - [Flip Cards](/library/flip-cards)
-        - [Hero](/library/hero)
-        - [Hero Slider](/library/hero-slider)
-        - [Logos List](/library/logos-list)
-        - [Mapping](/library/mapping)
-        - [Media Image](/library/media-image)
-        - [Multi Media](/library/multi-media)
-        - [Simple Slider](/library/simple-slider)
-        - [Testimonial](/library/testimonial)
-        - [Text Only](/library/text-only)
-
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
+    hasPagingParams: true
+    pagingParams:
+      numberOfBlogs: '' # updated by plugin
+      numberOfPages: '' # updated by plugin
+      pageLength: '' # updated by plugin
+      pageStart: '' # updated by plugin
+      pageNumber: '' # updated by plugin
 ---

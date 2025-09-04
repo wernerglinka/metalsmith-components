@@ -2,6 +2,7 @@
 layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
+title: Simple Slider
 
 navigation:
   navLabel: 'Simple Slider'

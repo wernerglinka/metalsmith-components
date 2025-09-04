@@ -19,6 +19,7 @@ import drafts from '@metalsmith/drafts'; // Excludes draft content from builds
 import generateMappingIcons from './plugins/generate-mapping-icons.js'; // Generates mapping icon registry
 import collections from '@metalsmith/collections';
 import blogPages from 'metalsmith-sectioned-blog-pagination';
+import libraryPages from 'metalsmith-pagination';
 import permalinks from '@metalsmith/permalinks'; // Creates clean URLs
 import menus from 'metalsmith-menu-plus'; // Generates navigation menus
 import layouts from '@metalsmith/layouts'; // Applies templates to content
@@ -72,15 +73,15 @@ const dependencies = JSON.parse( fs.readFileSync( './package.json' ) ).dependenc
  */
 const getGlobalMetadata = () => {
   const dataDir = path.join( thisDirectory, 'lib', 'data' ); // Path to data directory
-  
+
   const processDirectory = ( dirPath, relativePath = '' ) => {
     const files = fs.readdirSync( dirPath );
     const result = {};
-    
+
     files.forEach( file => {
       const filePath = path.join( dirPath, file );
       const stat = fs.statSync( filePath );
-      
+
       if ( stat.isDirectory() ) {
         // Recursively process subdirectories
         result[ file ] = processDirectory( filePath, path.join( relativePath, file ) );
@@ -91,10 +92,10 @@ const getGlobalMetadata = () => {
         result[ fileName ] = JSON.parse( fileContents );
       }
     } );
-    
+
     return result;
   };
-  
+
   return processDirectory( dataDir );
 };
 
@@ -158,9 +159,9 @@ metalsmith
   .clean( true )
   // Ignore macOS system files
   .ignore( [ '**/.DS_Store' ] )
-  .watch( isProduction ? false : [ 
-    'src/**/*', 
-    'lib/layouts/**/*', 
+  .watch( isProduction ? false : [
+    'src/**/*',
+    'lib/layouts/**/*',
     'lib/assets/**/*',
     '!lib/layouts/components/sections/mapping/modules/helpers/icon-loader.js' // Exclude generated file to prevent rebuild loops
   ] )
@@ -192,9 +193,31 @@ metalsmith
         pattern: 'blog/*.md',
         sortBy: 'card.date',
         reverse: false
+      },
+      components: {
+        pattern: 'library/*.md',
+        sortBy: 'seo.title',
+        reverse: false
       }
     } )
   )
+
+  .use( libraryPages( {
+    'collections.components': {
+      perPage: 6,
+      noPageOne: true,
+      first: 'library/1/index.html',
+      template: 'page/sections.njk',
+      path: 'library/:num/index.html'
+    }
+  } ) )
+
+  .use( function( files, metalsmith, done ) {
+    for ( const file in files ) {
+      console.log( files[ file ] );
+    }
+    done();
+  } )
 
   /**
    * Create metadata for blog pagination as pages are built

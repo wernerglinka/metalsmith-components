@@ -2,6 +2,7 @@
 layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
+title: Hero Banner
 
 navigation:
   navLabel: 'Hero'

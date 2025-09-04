@@ -2,10 +2,16 @@
 layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
+title: Banner
 
 navigation:
   navLabel: 'Banner'
   navIndex: 3
+
+card:
+  title: 'CTA Banner'
+  description: 'Create eye-catching CTA banners with background images or colors. Includes accordion header functionality and flexible styling options for Metalsmith static sites.'
+  image: '/assets/images/sample9.jpg'
 
 seo:
   title: Banner Component - Metalsmith Call-to-Action Section

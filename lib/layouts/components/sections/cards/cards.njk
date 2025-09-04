@@ -1,0 +1,29 @@
+{% from "components/_partials/card/card.njk" import card %}
+
+<div class="container cards content">
+
+  <pre>
+    {{ collections.components[0] | debugCollections }}
+  </pre>
+
+
+
+
+  <ul class="cards-list">
+    {% for component in collections.components %}
+
+        {% set thisCard = {
+          title: component.card.title,
+          prose: component.card.description,
+          thumbnail: component.card.image,
+          link: "/" ~ component.permalink
+        } %}
+        <li class="simple-card">
+          {{ card(thisCard) }}
+        </li>
+
+    {% endfor %}
+  </ul>
+
+
+</div>`

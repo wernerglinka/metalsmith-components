@@ -2,6 +2,7 @@
 layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
+title: Logos List
 
 navigation:
   navLabel: 'Logos List'

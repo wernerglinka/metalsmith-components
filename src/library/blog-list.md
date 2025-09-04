@@ -2,6 +2,7 @@
 layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
+title: Blog List
 
 navigation:
   navLabel: 'Blog List'

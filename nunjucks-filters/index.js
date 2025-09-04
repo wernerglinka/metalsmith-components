@@ -148,26 +148,26 @@ const safeDump = ( obj ) => {
 const debugCollections = ( collections ) => {
   try {
     const safeCollections = {};
-    
+
     Object.keys( collections ).forEach( name => {
       // If it's an array (a collection), extract metadata from each item
-      if ( Array.isArray( collections[name] ) ) {
-        safeCollections[name] = collections[name].map( item => ({
+      if ( Array.isArray( collections[ name ] ) ) {
+        safeCollections[ name ] = collections[ name ].map( item => ( {
           title: item.card?.title || item.title || 'No title',
           path: item.path,
           permalink: item.permalink,
           date: item.card?.date,
           excerpt: item.card?.excerpt
-        }));
+        } ) );
       } else {
         // If it's not an array, just note its type
-        safeCollections[name] = `[${typeof collections[name]}]`;
+        safeCollections[ name ] = `[${ typeof collections[ name ] }]`;
       }
-    });
-    
+    } );
+
     return JSON.stringify( safeCollections, null, 2 );
   } catch ( error ) {
-    return `[Error extracting collections: ${error.message}]`;
+    return `[Error extracting collections: ${ error.message }]`;
   }
 };
 
@@ -301,12 +301,12 @@ const hasCtas = ( ctasArray ) => {
   if ( !Array.isArray( ctasArray ) || ctasArray.length === 0 ) {
     return false;
   }
-  
-  return ctasArray.some( cta => 
-    cta && 
-    cta.url && 
-    cta.url.trim() !== '' && 
-    cta.label && 
+
+  return ctasArray.some( cta =>
+    cta &&
+    cta.url &&
+    cta.url.trim() !== '' &&
+    cta.label &&
     cta.label.trim() !== ''
   );
 };
@@ -320,15 +320,39 @@ const hasText = ( textObj ) => {
   if ( !textObj || typeof textObj !== 'object' ) {
     return false;
   }
-  
+
   const { leadIn, title, subTitle, prose } = textObj;
-  
+
   return (
     ( leadIn && leadIn.trim() !== '' ) ||
     ( title && title.trim() !== '' ) ||
     ( subTitle && subTitle.trim() !== '' ) ||
     ( prose && prose.trim() !== '' )
   );
+};
+
+/**
+ * Checks if an author value exists and has meaningful content
+ * Handles both single author strings and arrays of authors
+ * @param {string|Array} author - The author value to check (string or array)
+ * @returns {boolean} True if there is at least one non-empty author, false otherwise
+ */
+const hasAuthor = ( author ) => {
+  if ( !author ) {
+    return false;
+  }
+
+  // If it's an array, check if it has length and at least one non-empty item
+  if ( Array.isArray( author ) ) {
+    return author.length > 0 && author.some( a => a && a.trim && a.trim() !== '' );
+  }
+
+  // If it's a string, check if it's not empty
+  if ( typeof author === 'string' ) {
+    return author.trim() !== '';
+  }
+
+  return false;
 };
 
 export {
@@ -356,5 +380,6 @@ export {
   isArray,
   hasImage,
   hasCtas,
-  hasText
+  hasText,
+  hasAuthor
 };
