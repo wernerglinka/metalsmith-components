@@ -5,11 +5,16 @@ hasHero: true
 title: Maps
 
 navigation:
-  navLabel: 'Mapping'
+  navLabel: 'Maps'
   navIndex: 4
 
+card:
+  title: 'Maps'
+  description: 'Map component supporting Leaflet and OpenLayers providers with dynamic library loading, custom SVG markers, and popup interactions.'
+  image: '/assets/images/sample11.jpg'
+
 seo:
-  title: Mapping Component - Interactive Maps with Leaflet and OpenLayers for Metalsmith
+  title: Map Component - Interactive Maps with Leaflet and OpenLayers for Metalsmith
   description: 'Mapping component supporting Leaflet and OpenLayers providers with dynamic library loading, custom SVG markers, and popup interactions for Metalsmith sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''

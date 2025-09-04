@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Composed Section'
   navIndex: 3
 
+card:
+  title: 'Composed'
+  description: 'Create custom multi-column layouts. Combine text, images, and CTAs in flexible column arrangements.'
+  image: '/assets/images/sample5.jpg'
+
 seo:
   title: Composed Section - Flexible Multi-Column Layouts for Metalsmith
   description: 'Create custom multi-column layouts with the composed section component. Combine text, images, and CTAs in flexible column arrangements for Metalsmith sites.'

@@ -41,6 +41,11 @@
         {% endif %}
 
         <div class="prose">{{ props.prose | safe }}</div>
+
+        {# right arrow icon #}
+        {% set iconProps = { icon: "arrow-right", url: '' } %}
+        {{ icon(iconProps) }}
+
       </div>
     </a>
   {% endif %}

@@ -3,7 +3,7 @@
   "type": "section",
   "styles": ["cards.css"],
   "scripts": ["cards.js"],
-  "requires": ["ctas", "text", "image", "commons"],
+  "requires": ["ctas", "text", "image", "card", "commons"],
   "validation": {
     "required": ["sectionType"],
     "properties": {

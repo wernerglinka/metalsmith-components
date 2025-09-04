@@ -355,6 +355,19 @@ const hasAuthor = ( author ) => {
   return false;
 };
 
+/**
+ * Checks if a URL value exists and has meaningful content
+ * @param {string} url - The URL value to check
+ * @returns {boolean} True if the URL exists and is not empty, false otherwise
+ */
+const hasUrl = ( url ) => {
+  if ( !url || typeof url !== 'string' ) {
+    return false;
+  }
+
+  return url.trim() !== '';
+};
+
 export {
   toLower,
   toUpper,
@@ -381,5 +394,6 @@ export {
   hasImage,
   hasCtas,
   hasText,
-  hasAuthor
+  hasAuthor,
+  hasUrl
 };

@@ -10,7 +10,7 @@ navigation:
 
 card:
   title: 'CTA Banner'
-  description: 'Create eye-catching CTA banners with background images or colors. Includes accordion header functionality and flexible styling options for Metalsmith static sites.'
+  description: 'Create eye-catching CTA banners with background images or colors. Includes accordion header functionality.'
   image: '/assets/images/sample9.jpg'
 
 seo:

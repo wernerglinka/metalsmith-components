@@ -1,0 +1,10 @@
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs-s);
+  justify-content: center;
+
+  .simple-card {
+    width: 17.5rem;
+  }
+}

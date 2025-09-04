@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Hero'
   navIndex: 3
 
+card:
+  title: 'Hero'
+  description: 'Hero section with background images, text overlays, and CTAs.'
+  image: '/assets/images/sample8.jpg'
+
 seo:
   title: Hero Section Component - Full Screen & Standard Heroes for Metalsmith
   description: 'Create impactful hero sections with background images, text overlays, and CTAs. Includes full-screen hero options with scroll targeting for Metalsmith sites.'

@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Media Image'
   navIndex: 3
 
+card:
+  title: 'Media Image'
+  description: 'Media section combining text, optional CTAs and images with reversible layouts.'
+  image: '/assets/images/sample12.jpg'
+
 seo:
   title: Media Image Component - Text & Image Layouts for Metalsmith
   description: 'Flexible media section combining text and images with reversible layouts. Create engaging content presentations with optional CTAs and captions for Metalsmith sites.'

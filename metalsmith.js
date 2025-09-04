@@ -212,12 +212,12 @@ metalsmith
     }
   } ) )
 
-  .use( function( files, metalsmith, done ) {
-    for ( const file in files ) {
-      console.log( files[ file ] );
-    }
-    done();
-  } )
+  //.use( function( files, metalsmith, done ) {
+  //  for ( const file in files ) {
+  //    console.log( files[ file ] );
+  //  }
+  //  done();
+  //} )
 
   /**
    * Create metadata for blog pagination as pages are built

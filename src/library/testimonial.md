@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Testimonial'
   navIndex: 3
 
+card:
+  title: 'Testimonial'
+  description: 'Display customer testimonials with quotes, citations, portraits, and company logos.'
+  image: '/assets/images/sample15.jpg'
+
 seo:
   title: Testimonial Component - Customer Quotes & Reviews for Metalsmith
   description: 'Display customer testimonials with quotes, citations, portraits, and company logos. Professional testimonial section for building trust in Metalsmith static sites.'

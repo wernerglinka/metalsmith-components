@@ -46,10 +46,18 @@
   }
 
   .text-wrapper {
+    position: relative;
     flex-grow: 1;
     margin-block-start: 10rem;
-    padding: var(--space-s-m) var(--space-s-m);
+    padding: var(--space-s-m) var(--space-s-m) var(--space-l-xl);
     background-color: var(--glass-background-light);
+
+    .icon-wrapper {
+      position: absolute;
+      bottom: var(--space-s-m);
+      right: var(--space-s-m);
+      margin: 0;
+    }
   }
 
   .title {

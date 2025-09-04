@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Hero Slider'
   navIndex: 4
 
+card:
+  title: 'Hero Slider'
+  description: 'Hero slider with various background media, smooth transitions, and autoplay.'
+  image: '/assets/images/sample7.jpg'
+
 seo:
   title: Hero Slider Component - Multi-Slide Hero Sections for Metalsmith
   description: 'Create dynamic hero sections with multiple slides, background media, smooth transitions, and autoplay. Perfect for showcasing multiple messages or features on your Metalsmith site.'

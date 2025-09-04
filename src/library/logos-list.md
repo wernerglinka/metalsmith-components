@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Logos List'
   navIndex: 3
 
+card:
+  title: 'Logos List'
+  description: 'Display collections of logos, client brands, partner organizations, or social media icons with auto-scrolling support.'
+  image: '/assets/images/sample10.jpg'
+
 seo:
   title: Logos List Component - Client & Partner Logo Display for Metalsmith
   description: 'Display collections of logos, client brands, partner organizations, or social media icons with auto-scrolling support. Flexible logo grid for Metalsmith static sites.'

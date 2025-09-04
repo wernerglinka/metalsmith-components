@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Text Only'
   navIndex: 3
 
+card:
+  title: 'Text Only'
+  description: 'Versatile text section for articles, documentation, code snippets, and content-heavy layouts. '
+  image: '/assets/images/sample16.jpg'
+
 seo:
   title: Text Only Component - Content Sections for Metalsmith
   description: 'Versatile text section for articles, documentation, and content-heavy layouts. Supports markdown, headings, CTAs, and background styling for Metalsmith static sites.'

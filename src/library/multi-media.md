@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Multi Media'
   navIndex: 3
 
+card:
+  title: 'Multi Media'
+  description: 'Flexible media section combining text, optional CTAs, and various multi media with reversible layouts.'
+  image: '/assets/images/sample13.jpg'
+
 seo:
   title: Multi Media Component - Text & Image, Video, Icon, Audio and Lottie Animation  Layouts for Metalsmith
   description: 'Flexible media section combining text and multi media with reversible layouts. Create engaging content presentations with optional CTAs and captions for Metalsmith sites.'

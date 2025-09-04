@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Flip Cards'
   navIndex: 3
 
+card:
+  title: 'Flip Cards'
+  description: 'Interactive flip card components with front and back content, icons, and CTAs.'
+  image: '/assets/images/sample6.jpg'
+
 seo:
   title: Flip Cards Component - Interactive Card UI for Metalsmith
   description: 'Interactive flip card components with front and back content, icons, and CTAs. Create engaging card-based interfaces for your Metalsmith static site.'

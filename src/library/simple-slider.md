@@ -8,6 +8,11 @@ navigation:
   navLabel: 'Simple Slider'
   navIndex: 3
 
+card:
+  title: 'Simple Slider'
+  description: 'Interactive slider component with standard pagination or tabbed interface.'
+  image: '/assets/images/sample14.jpg'
+
 seo:
   title: Simple Slider Component - Carousel & Tabbed Content for Metalsmith
   description: 'Interactive slider component with standard pagination or tabbed interface. Display multiple content slides with images, text, and CTAs in your Metalsmith static site.'
