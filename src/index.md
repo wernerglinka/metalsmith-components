@@ -234,7 +234,7 @@ sections:
         isButton: true
         buttonStyle: 'primary'
 
-  - sectionType: media-image
+  - sectionType: multi-media
     containerTag: aside
     classes: ''
     id: ''
@@ -253,6 +253,7 @@ sections:
         color: ''
         image: ''
         imageScreen: 'none' # light, dark, none
+    mediaType: image
     text:
       leadIn: 'And what is this?'
       title: Media Section Example

@@ -138,7 +138,8 @@
     z-index: -2;
   }
 
-  Content container
+  /*
+    Content container
     Responsive flex container that wraps at 60rem.
     Inspiried by: https://every-layout.dev/layouts/switcher/
   */
@@ -150,7 +151,7 @@
 
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     column-gap: var(--content-gap, 2rem);
     row-gap: 0;
 

@@ -69,7 +69,7 @@ sections:
                   titleTag: 'h3'
                   subTitle: ''
                   prose: |-
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam.
                 ctas:
                   - url: 'https://apple.com'
                     label: 'Go Apple'
@@ -197,7 +197,7 @@ sections:
             titleTag: 'h3'
             subTitle: ''
             prose: |-
-              Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.
+              Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
           ctas:
             - url: 'https://apple.com'
               label: 'Go Apple'
@@ -212,7 +212,7 @@ sections:
             titleTag: 'h3'
             subTitle: ''
             prose: |-
-              Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+              Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo.
 
         back:
           text:
@@ -221,7 +221,7 @@ sections:
             titleTag: 'h3'
             subTitle: ''
             prose: |-
-              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
           ctas:
             - url: ''
               label: ''
@@ -236,7 +236,7 @@ sections:
             titleTag: 'h3'
             subTitle: ''
             prose: |-
-              Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo.
+              Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus.
 
         back:
           text:

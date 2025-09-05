@@ -1,35 +1,3 @@
-.logos-wrapper {
-  --logo-padding: 20px;
-  --list-height: 160px;
-  --start-position: 0%;
-  --end-position: -50%;
-  --animation-speed: 15s;
-
-  position: relative;
-  width: fit-content;
-  display: flex;
-  transform: translate3d(var(--start-position, 0%), 0, 0);
-  animation: marquee var(--animation-speed) linear infinite;
-  animation-play-state: paused;
-
-  &.play {
-    animation-play-state: running;
-  }
-}
-
-.text,
-.ctas {
-  max-width: clamp(45ch, 65ch, 80ch);
-  margin-inline: auto;
-}
-
-.text {
-  margin-bottom: var(--space-m-l);
-}
-.ctas {
-  margin-top: var(--space-m-l);
-}
-
 @keyframes marquee {
   0% {
     transform: translate3d(var(--start-position, 0%), 0, 0);
@@ -40,170 +8,162 @@
   }
 }
 
-.marquee {
-  width: var(--list-width);
-  max-width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
+.logo-list.content {
+  display: block;
 
-/* when scrolling, add gradients for fade-out effect before and after the logos */
-.mask:has(.play):before,
-.mask:has(.play):after {
-  content: '';
-  position: absolute;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 15rem;
-  height: 100%;
-  pointer-events: none;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.95) 20%,
-    rgba(255, 255, 255, 0.8) 40%,
-    rgba(255, 255, 255, 0.4) 60%,
-    rgba(255, 255, 255, 0.1) 80%,
-    transparent 100%
-  );
-}
-
-.mask:has(.play):after {
-  left: auto;
-  right: 0;
-  background-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 20%,
-    rgba(255, 255, 255, 0.4) 40%,
-    rgba(255, 255, 255, 0.8) 60%,
-    rgba(255, 255, 255, 0.95) 80%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-.hint {
-  font-style: italic;
-  font-size: 1.2rem;
-}
-
-.marquee:hover .logos-wrapper {
-  animation-play-state: paused;
-  transition-duration: 0.8s;
-}
-
-.logos {
-  display: flex;
-  width: var(--list-width);
-  padding: 0;
-  margin: 0 0 3rem;
-
-  li {
-    padding: 0 var(--logo-padding);
-
-    .icon-wrapper {
-      width: 100%;
-    }
-
-    svg {
-      stroke: black;
-      stroke-width: 1px;
-      fill: none;
-      width: 100%;
-      height: 100%;
-      transition: all 0.3s ease-in-out;
-
-      * {
-        fill: none;
-        stroke: black;
-        stroke-width: 1px;
-      }
-    }
-
-    a:hover svg {
-      stroke: var(--color-primary);
-      * {
-        stroke: var(--color-primary);
-      }
-    }
+  .text,
+  .ctas {
+    max-width: clamp(45ch, 65ch, 80ch);
+    margin-inline: auto;
   }
 
-  a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    border: none;
-  }
-
-  a:hover {
-    text-decoration: none;
-  }
-
-  img {
-    filter: grayscale(100%);
-    opacity: 0.5;
-    transition: all 0.3s ease-in-out;
-  }
-
-  img:hover {
-    filter: grayscale(0);
-    opacity: 1;
-  }
-
-  .logo-title {
-    font-size: 1rem;
+  .text {
+    margin-bottom: var(--space-m-l);
     text-align: center;
   }
-}
+  .ctas {
+    margin-top: var(--space-m-l);
+  }
 
-/* Reverse animation */
-.is-reverse .logos-wrapper.play {
-  animation-direction: reverse;
-}
+  .logos-wrapper {
+    --logo-padding: 20px;
+    --list-height: 160px;
+    --start-position: 0%;
+    --end-position: -50%;
+    --animation-speed: 15s;
 
-/** Dark Theme styles variations */
-.dark-theme .mask:has(.play):before {
-  background-image: linear-gradient(
-    to right,
-    var(--color-background-dark) 0%,
-    rgba(var(--color-background-dark-rgb), 0.95) 20%,
-    rgba(var(--color-background-dark-rgb), 0.8) 40%,
-    rgba(var(--color-background-dark-rgb), 0.4) 60%,
-    rgba(var(--color-background-dark-rgb), 0.1) 80%,
-    transparent 100%
-  );
-}
+    position: relative;
+    width: fit-content;
+    display: flex;
+    transform: translate3d(var(--start-position, 0%), 0, 0);
+    animation: marquee var(--animation-speed) linear infinite;
+    animation-play-state: paused;
 
-.dark-theme .mask:has(.play):after {
-  background-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(var(--color-background-dark-rgb), 0.1) 20%,
-    rgba(var(--color-background-dark-rgb), 0.4) 40%,
-    rgba(var(--color-background-dark-rgb), 0.8) 60%,
-    rgba(var(--color-background-dark-rgb), 0.95) 80%,
-    var(--color-background-dark) 100%
-  );
-}
+    &.play {
+      animation-play-state: running;
+    }
+  }
 
-.dark-theme .logos li svg {
-  stroke: var(--color-text-dark);
-}
+  .marquee {
+    width: var(--list-width);
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 
-.dark-theme .logos li svg * {
-  stroke: var(--color-text-dark);
-}
+  /* when scrolling, add gradients for fade-out effect before and after the logos */
+  .mask:has(.play):before,
+  .mask:has(.play):after {
+    content: '';
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 15rem;
+    height: 100%;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.95) 20%,
+      rgba(255, 255, 255, 0.8) 40%,
+      rgba(255, 255, 255, 0.4) 60%,
+      rgba(255, 255, 255, 0.1) 80%,
+      transparent 100%
+    );
+  }
 
-.dark-theme .logos li a:hover svg {
-  stroke: var(--color-primary);
-}
+  .mask:has(.play):after {
+    left: auto;
+    right: 0;
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(255, 255, 255, 0.4) 40%,
+      rgba(255, 255, 255, 0.8) 60%,
+      rgba(255, 255, 255, 0.95) 80%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
 
-.dark-theme .logos li a:hover svg * {
-  stroke: var(--color-primary);
-}
+  .hint {
+    font-style: italic;
+    font-size: 1.2rem;
+  }
 
-/** Dark Theme styles variations */
-.dark-theme .section-wrapper .logos-wrapper {
+  .marquee:hover .logos-wrapper {
+    animation-play-state: paused;
+    transition-duration: 0.8s;
+  }
+
+  .logos {
+    display: flex;
+    width: var(--list-width);
+    padding: 0;
+    margin: 0 0 3rem;
+
+    li {
+      padding: 0 var(--logo-padding);
+
+      .icon-wrapper {
+        width: 100%;
+      }
+
+      svg {
+        stroke: black;
+        stroke-width: 1px;
+        fill: none;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+
+        * {
+          fill: none;
+          stroke: black;
+          stroke-width: 1px;
+        }
+      }
+
+      a:hover svg {
+        stroke: var(--color-primary);
+        * {
+          stroke: var(--color-primary);
+        }
+      }
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      border: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    img {
+      filter: grayscale(100%);
+      opacity: 0.5;
+      transition: all 0.3s ease-in-out;
+    }
+
+    img:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    .logo-title {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  /* Reverse animation */
+  .is-reverse .logos-wrapper.play {
+    animation-direction: reverse;
+  }
 }

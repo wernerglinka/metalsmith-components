@@ -6,10 +6,17 @@
   padding: 0;
 }
 
-.mapping {
+.mapping.content {
   --map-default-height: 400px;
 
+  display: block;
   width: 100%;
+
+  .text,
+  .ctas {
+    max-width: clamp(45ch, 65ch, 80ch);
+    margin-inline: auto;
+  }
 }
 
 .mapping .text {
