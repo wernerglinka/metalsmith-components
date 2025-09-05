@@ -343,7 +343,7 @@ if ( isProduction ) {
     .use(
       optimizeImages( {
         // Enable progressive loading
-        isProgressive: true,
+        isProgressive: false,
       } )
     )
     /**
