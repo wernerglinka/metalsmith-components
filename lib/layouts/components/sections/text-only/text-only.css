@@ -1,34 +1,39 @@
-/* Overwrite threashold default for the banner content container */
-.section-wrapper.text-only {
-  > * {
+/* Overwrite threshold default for the banner content container */
+.text-only {
+  /* Override commons.css .content flex layout for text-only sections */
+  .content {
+    display: block; /* Override flex layout */
+  }
+
+  .text {
     max-width: clamp(45ch, 65ch, 80ch); /* Fluid reading width */
     margin-inline: auto; /* Center the text block */
-  }
 
-  h1,
-  h2,
-  h3,
-  .sub-title {
-    margin-bottom: var(--space-s);
+    h1,
+    h2,
+    h3,
+    .sub-title {
+      margin-bottom: var(--space-s);
 
-    & + div {
-      margin-top: 0;
+      & + div {
+        margin-top: 0;
+      }
     }
-  }
 
-  pre {
-    margin: 2em 0;
-  }
+    pre {
+      margin: 2em 0;
+    }
 
-  .ctas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-m-l);
+    .ctas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-m-l);
 
-    * {
-      margin: 0;
+      * {
+        margin: 0;
+      }
     }
   }
 }
@@ -133,5 +138,5 @@ pre[class*='language-'] {
 }
 
 /** Dark Theme styles variations */
-.dark-theme .section-wrapper .text-only {
+.dark-theme .text-only {
 }

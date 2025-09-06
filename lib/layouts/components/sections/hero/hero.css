@@ -1,4 +1,4 @@
-.section-wrapper.hero.first-section {
+.hero.first-section {
   /*
     The text container should be 100% of the viewport width at 600px and smaller.
     At 600px and larger, the text container should grow to 60% of the viewport width.
@@ -75,5 +75,5 @@
 }
 
 /** Dark Theme styles variations */
-.dark-theme .section-wrapper .hero {
+.dark-theme .section-wrapper.hero {
 }

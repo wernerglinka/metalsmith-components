@@ -1,4 +1,4 @@
-.section-wrapper.blog-author {
+.blog-author {
   /* 
     the threshold determines the viewport width in which the container switches 
     from horizontal to vertical layout. Depends on the text size.
@@ -11,11 +11,13 @@
   /* overwrite the commons.css styles to get some seperation when rendered vertically */
   row-gap: var(--content-gap, 2rem);
 
-  padding: var(--space-l-2xl);
-  overflow: hidden;
+  .content {
+    padding: var(--space-l-2xl);
+    overflow: hidden;
 
-  border: 1px solid #f0f0f0;
-  border-radius: var(--glass-border-radius);
+    border: 1px solid #f0f0f0;
+    border-radius: var(--glass-border-radius);
+  }
 
   .author-profile {
     display: flex;
@@ -118,5 +120,5 @@
 }
 
 /** Dark Theme styles variations */
-.dark-theme .section-wrapper .blog-author {
+.dark-theme .section-wrapper.blog-author {
 }

@@ -2,7 +2,7 @@
  * Unified Maps Component Styles
  * Shared styles for both Leaflet and OpenLayers providers
  */
-.section-wrapper.maps:not(.in-container) {
+.maps:not(.in-container) {
   padding: 0;
 }
 

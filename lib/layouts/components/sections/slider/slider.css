@@ -12,7 +12,7 @@
    - 'reset' class: Instant off-screen positioning without animation
 */
 
-.section-wrapper.slider {
+.slider {
   .slider-wrapper {
     position: relative;
     /* Fluid height that adapts to content */
@@ -107,5 +107,5 @@
 }
 
 /** Dark Theme styles variations */
-.dark-theme .section-wrapper .slider {
+.dark-theme .section-wrapper.slider {
 }
