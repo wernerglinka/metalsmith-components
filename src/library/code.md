@@ -1,0 +1,255 @@
+---
+layout: pages/sections.njk
+bodyClasses: 'sections-page'
+hasHero: true
+title: Code
+date: 2024-09-06
+
+navigation:
+  navLabel: 'Code'
+  navIndex: 3
+
+card:
+  title: 'Code'
+  description: 'Syntax-highlighted code blocks with language tabs, copy-to-clipboard functionality, and dynamic Prism theme loading.'
+  image: '/assets/images/sample16.jpg'
+
+seo:
+  title: Code Component - Syntax Highlighted Code Blocks for Metalsmith
+  description: 'Display syntax-highlighted code snippets with language labels, copy functionality, and dynamic theme loading. Perfect for documentation, tutorials, and technical content.'
+  socialImage: '/assets/images/sample.jpg'
+  canonicalURL: ''
+  keywords: 'metalsmith code component, syntax highlighting, prism themes, code snippets, copy to clipboard, programming documentation, code display'
+
+sections:
+  - sectionType: text-only
+    containerTag: article
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Code Component'
+      titleTag: 'h1'
+      subTitle: ''
+      prose: |-
+        A specialized component for displaying syntax-highlighted code blocks with enhanced features. Extends the existing [Prism.js](https://prismjs.com/) implementation used in text-only sections with additional functionality for better user experience.
+
+        ### Key Features
+
+        - **Syntax Highlighting**: Uses Prism.js for accurate syntax highlighting across multiple programming languages
+        - **Language Labels**: Displays the programming language in a styled tab
+        - **Copy to Clipboard**: One-click copying with visual feedback
+        - **Dynamic Theme Loading**: Load Prism themes on-demand from CDN
+        - **Responsive Design**: Mobile-friendly layout with proper scaling
+        - **Accessibility**: ARIA labels and keyboard support
+        - **File Names**: Optional filename display in the header
+
+        ### Basic Configuration
+
+        ```yaml
+        - sectionType: code
+          containerTag: section
+          containerFields:
+            inContainer: true
+            isAnimated: true
+          code:
+            language: "javascript"      # Programming language for highlighting
+            theme: "default"           # Prism theme (default, tomorrow, okaidia, etc.)
+            filename: "app.js"         # Optional filename display
+            showCopy: true             # Enable/disable copy button
+            content: |                 # The code content
+              function example() {
+                console.log('Hello, World!');
+              }
+        ```
+
+        ### Code-specific Properties
+
+        - `code.language`: Programming language for syntax highlighting (javascript, css, html, python, etc.)
+        - `code.theme`: Prism theme to load dynamically from CDN
+        - `code.filename`: Optional filename to display in the header
+        - `code.showCopy`: Boolean to show/hide the copy button (default: true)
+        - `code.content`: The actual code content using YAML literal block syntax (|)
+
+        ### Supported Languages
+
+        The component supports all languages available in [Prism.js](https://prismjs.com/) including:
+        - JavaScript, TypeScript, JSX
+        - HTML, CSS, SCSS, Less
+        - Python, PHP, Ruby, Java
+        - Go, Rust, C++, C#
+        - YAML, JSON, Markdown
+        - Bash, PowerShell, SQL
+        - And many more...
+
+        ### Available Themes
+
+        The component supports multiple Prism themes that are loaded dynamically:
+        - `default` - Uses the existing theme from text-only component
+        - `tomorrow` - GitHub-style dark theme
+        - `okaidia` - Monokai-inspired theme
+        - `twilight` - TextMate twilight theme
+        - `prism` - Clean light theme
+        - `dark` - High contrast dark theme
+        - `solarizedlight` - Solarized light theme
+        - `coy` - Minimal light theme
+
+    ctas:
+      - url: ''
+        label: ''
+        isButton: true
+        buttonStyle: 'primary'
+
+  - sectionType: code
+    containerTag: section
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    code:
+      language: 'javascript'
+      theme: 'prism'
+      filename: 'example.js'
+      showCopy: true
+      content: |-
+        ```javascript
+        /**
+         * Example JavaScript function with JSDoc comments
+         * @param {string} name - The name to greet
+         * @returns {string} Greeting message
+         */
+        function greet(name) {
+          return `Hello, ${name}!`;
+        }
+
+        // Usage example
+        const message = greet('World');
+        console.log(message); // Output: Hello, World!
+
+        // ES6 arrow function version
+        const greetArrow = (name) => `Hello, ${name}!`;
+        ```
+
+  - sectionType: code
+    containerTag: section
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    code:
+      language: 'css'
+      theme: 'tomorrow'
+      filename: 'styles.css'
+      showCopy: true
+      content: |
+        ```css
+        /* Modern CSS Grid Layout */
+        .container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          padding: 2rem;
+        }
+
+        .card {
+          background: white;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          padding: 1.5rem;
+          transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+          transform: translateY(-4px);
+        }
+
+        /* Dark theme support */
+        @media (prefers-color-scheme: dark) {
+          .card {
+            background: #1a1a1a;
+            color: white;
+          }
+        }
+        ```
+
+  - sectionType: code
+    containerTag: section
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    code:
+      language: 'yaml'
+      theme: 'coy'
+      filename: 'example.md'
+      showCopy: true
+      content: |
+        ```yaml
+        ---
+        layout: pages/sections.njk
+        title: 'My Page Title'
+        sections:
+          - sectionType: hero
+            text:
+              title: 'Welcome'
+              prose: 'This is a hero section'
+          - sectionType: code
+            code:
+              language: 'javascript'
+              theme: 'tomorrow'
+              filename: 'main.js'
+              content: |
+                console.log('Hello from Metalsmith!');
+        ---
+        ```
+---

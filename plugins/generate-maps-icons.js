@@ -50,7 +50,7 @@ const scanForMapsIcons = (files, metadata) => {
     const file = files[filename];
     
     // Skip non-content files
-    if (!file.sections) return;
+    if (!file.sections) {return;}
     
     // Look for maps sections with inline markers (legacy)
     file.sections.forEach(section => {
@@ -58,7 +58,6 @@ const scanForMapsIcons = (files, metadata) => {
         section.markers.forEach(marker => {
           if (marker.icon) {
             iconNames.add(marker.icon);
-            console.log(`Found maps icon: ${marker.icon} in ${filename}`);
           }
         });
       }
@@ -73,7 +72,6 @@ const scanForMapsIcons = (files, metadata) => {
         mapData.markers.forEach(marker => {
           if (marker.icon) {
             iconNames.add(marker.icon);
-            console.log(`Found maps icon: ${marker.icon} in ${mapName}.json`);
           }
         });
       }
@@ -167,7 +165,6 @@ export const createMarkerIcon = (iconContent, options = {}) => {
  */
 export default function generateMapsIcons() {
   return function(files, metalsmith, done) {
-    console.log('🔍 Scanning for maps icons...');
     
     // Get metadata from metalsmith instance
     const metadata = metalsmith.metadata();
@@ -176,9 +173,7 @@ export default function generateMapsIcons() {
     const foundIcons = scanForMapsIcons(files, metadata);
     
     if (foundIcons.size === 0) {
-      console.log('ℹ️  No maps icons found, generating empty registry');
     } else {
-      console.log(`📍 Found ${foundIcons.size} unique maps icons:`, Array.from(foundIcons).join(', '));
     }
     
     // Load icon content from .njk files
@@ -191,7 +186,6 @@ export default function generateMapsIcons() {
       
       if (svgContent) {
         iconRegistry.set(iconName, svgContent);
-        console.log(`✅ Loaded icon: ${iconName}`);
       } else {
         console.warn(`❌ Failed to load icon: ${iconName} from ${iconPath}`);
       }
@@ -213,7 +207,6 @@ export default function generateMapsIcons() {
     
     try {
       fs.writeFileSync(outputPath, iconLoaderCode, 'utf8');
-      console.log(`✨ Generated icon-loader.js with ${iconRegistry.size} icons`);
     } catch (error) {
       console.error('❌ Failed to write icon-loader.js:', error);
       return done(error);
