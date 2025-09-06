@@ -15,10 +15,10 @@ card:
 
 seo:
   title: Map Component - Interactive Maps with Leaflet and OpenLayers for Metalsmith
-  description: 'Mapping component supporting Leaflet and OpenLayers providers with dynamic library loading, custom SVG markers, and popup interactions for Metalsmith sites.'
+  description: 'Maps component supporting Leaflet and OpenLayers providers with dynamic library loading, custom SVG markers, and popup interactions for Metalsmith sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
-  keywords: 'metalsmith mapping, leaflet maps, openlayers maps, interactive maps, custom markers, mapping component, map integration'
+  keywords: 'metalsmith maps, leaflet maps, openlayers maps, interactive maps, custom markers, maps component, map integration'
 
 sections:
   - sectionType: text-only
@@ -41,16 +41,16 @@ sections:
         imageScreen: 'none'
     text:
       leadIn: ''
-      title: 'Mapping'
+      title: 'Maps'
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A mapping component that supports Leaflet and OpenLayers providers with clean separation between UI configuration and map data. Uses external JSON files for map content, making it ideal for complex maps with many markers while keeping page frontmatter minimal.
+        A maps component that supports Leaflet and OpenLayers providers with clean separation between UI configuration and map data. Uses external JSON files for map content, making it ideal for complex maps with many markers while keeping page frontmatter minimal.
 
         Features dynamic library loading, custom SVG markers, interactive popups, marker clustering, and responsive design across all devices. The component handles multiple maps per page with independent configurations and provider selection. All text fields and CTAs are optional, and maps automatically adapt to container dimensions with accessibility features for screen readers.
 
         ```yaml
-        - sectionType: mapping
+        - sectionType: maps
           containerTag: section
           
           mapProvider: 'leaflet' # 'leaflet' or 'openlayers'
@@ -160,13 +160,13 @@ sections:
         - Mobile-first design with touch interactions
         - Better performance on older devices
 
-  - sectionType: mapping
+  - sectionType: maps
     containerTag: aside
     classes: ''
     id: ''
     isDisabled: false
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
       noMargin:
         top: true
@@ -225,7 +225,7 @@ sections:
         - Better performance with large datasets
         - Enterprise-grade mapping features
 
-  - sectionType: mapping
+  - sectionType: maps
     containerTag: aside
     classes: ''
     id: ''
@@ -308,7 +308,7 @@ sections:
 
         ### Available Icons for Markers
 
-        The mapping component includes a built-in icon registry with commonly used marker icons:
+        The maps component includes a built-in icon registry with commonly used marker icons:
         - `map-pin`: Default location marker
         - `home`: House/residence marker
         - `camera`: Photo location marker
@@ -366,7 +366,7 @@ sections:
 
         **Accessibility**: Markers include proper title attributes for screen readers, and all external links include appropriate security attributes.
 
-  - sectionType: mapping
+  - sectionType: maps
     containerTag: section
     classes: ''
     id: 'clustering-demo'
@@ -440,7 +440,7 @@ sections:
 
         Page frontmatter:
         ```yaml
-        - sectionType: mapping
+        - sectionType: maps
           mapProvider: 'openlayers'
           mapData: 'nyc-clustering-demo'
         ```

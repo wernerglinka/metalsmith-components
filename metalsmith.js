@@ -16,7 +16,7 @@ import * as fs from 'node:fs'; // File system operations (read/write files)
 // The main Metalsmith library and plugins that transform your content
 import Metalsmith from 'metalsmith'; // The core static site generator
 import drafts from '@metalsmith/drafts'; // Excludes draft content from builds
-import generateMappingIcons from './plugins/generate-mapping-icons.js'; // Generates mapping icon registry
+import generateMapsIcons from './plugins/generate-maps-icons.js'; // Generates maps icon registry
 import collections from '@metalsmith/collections';
 import paginatePages from 'metalsmith-sectioned-blog-pagination';
 import permalinks from '@metalsmith/permalinks'; // Creates clean URLs
@@ -162,7 +162,7 @@ metalsmith
     'src/**/*',
     'lib/layouts/**/*',
     'lib/assets/**/*',
-    '!lib/layouts/components/sections/mapping/modules/helpers/icon-loader.js' // Exclude generated file to prevent rebuild loops
+    '!lib/layouts/components/sections/maps/modules/helpers/icon-loader.js' // Exclude generated file to prevent rebuild loops
   ] )
   // Pass NODE_ENV to plugins
   .env( 'NODE_ENV', process.env.NODE_ENV )
@@ -180,7 +180,7 @@ metalsmith
   .use( drafts( !isProduction ) )
 
   // Generate mapping icon registry from used icons
-  .use( generateMappingIcons() )
+  .use( generateMapsIcons() )
 
   /**
    * Create a collection of blog posts

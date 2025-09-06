@@ -1,7 +1,7 @@
 /**
- * Metalsmith Plugin: Generate Mapping Icon Registry
+ * Metalsmith Plugin: Generate Maps Icon Registry
  * 
- * Scans all pages for mapping sections, extracts icon names from markers,
+ * Scans all pages for maps sections, extracts icon names from markers,
  * and generates a dynamic icon-loader.js with only the icons actually used.
  */
 
@@ -37,12 +37,12 @@ const extractSvgContent = (iconPath) => {
 };
 
 /**
- * Scan for mapping icons in both frontmatter and metadata
+ * Scan for maps icons in both frontmatter and metadata
  * @param {Object} files - Metalsmith files object
  * @param {Object} metadata - Metalsmith global metadata
  * @returns {Set<string>} Set of unique icon names
  */
-const scanForMappingIcons = (files, metadata) => {
+const scanForMapsIcons = (files, metadata) => {
   const iconNames = new Set();
   
   // Scan frontmatter for legacy inline markers
@@ -52,13 +52,13 @@ const scanForMappingIcons = (files, metadata) => {
     // Skip non-content files
     if (!file.sections) return;
     
-    // Look for mapping sections with inline markers (legacy)
+    // Look for maps sections with inline markers (legacy)
     file.sections.forEach(section => {
-      if (section.sectionType === 'mapping' && section.markers) {
+      if (section.sectionType === 'maps' && section.markers) {
         section.markers.forEach(marker => {
           if (marker.icon) {
             iconNames.add(marker.icon);
-            console.log(`Found mapping icon: ${marker.icon} in ${filename}`);
+            console.log(`Found maps icon: ${marker.icon} in ${filename}`);
           }
         });
       }
@@ -73,7 +73,7 @@ const scanForMappingIcons = (files, metadata) => {
         mapData.markers.forEach(marker => {
           if (marker.icon) {
             iconNames.add(marker.icon);
-            console.log(`Found mapping icon: ${marker.icon} in ${mapName}.json`);
+            console.log(`Found maps icon: ${marker.icon} in ${mapName}.json`);
           }
         });
       }
@@ -101,13 +101,13 @@ const generateIconLoaderCode = (iconRegistry) => {
     .join(',\n');
     
   return `/**
- * Icon Registry for Mapping Component
+ * Icon Registry for Maps Component
  * Auto-generated during build - DO NOT EDIT MANUALLY
- * Generated from icons found in mapping sections across the site
+ * Generated from icons found in maps sections across the site
  */
 
 /**
- * Built-in icon registry with icons used in mapping components
+ * Built-in icon registry with icons used in maps components
  * These SVG paths are extracted from the project's Feather icon library
  */
 const iconRegistry = {
@@ -162,23 +162,23 @@ export const createMarkerIcon = (iconContent, options = {}) => {
 };
 
 /**
- * Metalsmith plugin to generate mapping icon registry
+ * Metalsmith plugin to generate maps icon registry
  * @returns {Function} Metalsmith plugin function
  */
-export default function generateMappingIcons() {
+export default function generateMapsIcons() {
   return function(files, metalsmith, done) {
-    console.log('🔍 Scanning for mapping icons...');
+    console.log('🔍 Scanning for maps icons...');
     
     // Get metadata from metalsmith instance
     const metadata = metalsmith.metadata();
     
-    // Scan all files and metadata for mapping icons
-    const foundIcons = scanForMappingIcons(files, metadata);
+    // Scan all files and metadata for maps icons
+    const foundIcons = scanForMapsIcons(files, metadata);
     
     if (foundIcons.size === 0) {
-      console.log('ℹ️  No mapping icons found, generating empty registry');
+      console.log('ℹ️  No maps icons found, generating empty registry');
     } else {
-      console.log(`📍 Found ${foundIcons.size} unique mapping icons:`, Array.from(foundIcons).join(', '));
+      console.log(`📍 Found ${foundIcons.size} unique maps icons:`, Array.from(foundIcons).join(', '));
     }
     
     // Load icon content from .njk files
@@ -205,7 +205,7 @@ export default function generateMappingIcons() {
       'layouts', 
       'components', 
       'sections', 
-      'mapping', 
+      'maps', 
       'modules', 
       'helpers', 
       'icon-loader.js'

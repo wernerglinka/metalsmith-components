@@ -1,18 +1,15 @@
 {
-  "name": "composed",
+  "name": "compound",
   "type": "section",
-  "styles": ["composed.css"],
-  "scripts": [],
-  "requires": ["commons"],
+  "styles": ["compound.css"],
+  "scripts": ["compound.js"],
+  "requires": ["commons", "text", "ctas"],
   "validation": {
     "required": ["sectionType"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "composed"
-      },
-      "isReverse": {
-        "type": "boolean"
+        "const": "compound"
       },
       "isDisabled": {
         "type": "boolean"
@@ -42,24 +39,8 @@
         "type": "string",
         "enum": ["light", "dark", "none"]
       },
-      "text.titleTag": {
-        "type": "string",
-        "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
-        "default": "h2"
-      },
-      "ctas": {
-        "type": "array",
-        "items": {
-          "properties": {
-            "isButton": {
-              "type": "boolean"
-            },
-            "buttonStyle": {
-              "type": "string",
-              "enum": ["primary", "secondary", "tertiary", "inverted"]
-            }
-          }
-        }
+      "sections": {
+        "type": "array"
       }
     }
   }

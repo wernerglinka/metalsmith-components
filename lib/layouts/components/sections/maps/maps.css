@@ -1,12 +1,12 @@
 /**
- * Unified Mapping Component Styles
+ * Unified Maps Component Styles
  * Shared styles for both Leaflet and OpenLayers providers
  */
-.section-wrapper:has(.mapping):not(.in-container) {
+.section-wrapper.maps:not(.in-container) {
   padding: 0;
 }
 
-.mapping.content {
+.maps .content {
   --map-default-height: 400px;
 
   display: block;
@@ -19,7 +19,7 @@
   }
 }
 
-.mapping .text {
+.maps .text {
   margin-bottom: var(--space-l);
 }
 

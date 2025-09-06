@@ -1,77 +1,75 @@
 /* Overwrite threshold default for the banner content container */
-.section-wrapper {
-  .multi-media {
-    &.content {
-      --threshold: 50rem;
+.section-wrapper.multi-media {
+  .content {
+    --threshold: 50rem;
 
-      column-gap: 0;
-      container-type: inline-size;
+    column-gap: 0;
+    container-type: inline-size;
 
-      .text {
-        background-color: var(--glass-background);
-        box-shadow: var(--glass-box-shadow);
-        backdrop-filter: var(--glass-backdrop-filter);
-        border: var(--glass-border);
-        border-radius: var(--glass-border-radius);
-        padding: var(--space-s-l);
-        overflow: hidden;
-        position: relative;
-        top: var(--space-s-m);
-        left: -1rem;
-        z-index: 1;
+    .text {
+      background-color: var(--glass-background);
+      box-shadow: var(--glass-box-shadow);
+      backdrop-filter: var(--glass-backdrop-filter);
+      border: var(--glass-border);
+      border-radius: var(--glass-border-radius);
+      padding: var(--space-s-l);
+      overflow: hidden;
+      position: relative;
+      top: var(--space-s-m);
+      left: -1rem;
+      z-index: 1;
+    }
+
+    .media {
+      overflow: hidden;
+      border-radius: var(--glass-border-radius);
+      position: relative;
+    }
+
+    .icon-wrapper {
+      align-items: stretch;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--glass-border-radius);
+      position: relative;
+
+      svg {
+        width: auto;
+        height: 80%;
+        stroke: var(--color-text);
       }
+    }
 
-      .media {
-        overflow: hidden;
-        border-radius: var(--glass-border-radius);
-        position: relative;
+    /* When container is narrow enough that elements would wrap */
+    @container (max-width: 50rem) {
+      .text {
+        left: 0;
+      }
+    }
+
+    &.is-reverse {
+      .text {
+        left: 0;
+        top: var(--space-s-m);
       }
 
       .icon-wrapper {
-        align-items: stretch;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid var(--color-border-light);
-        border-radius: var(--glass-border-radius);
-        position: relative;
+        left: -1rem;
+      }
 
-        svg {
-          width: auto;
-          height: 80%;
-          stroke: var(--color-text);
-        }
+      .media {
+        top: -var(--space-s-m);
+        left: -1rem;
       }
 
       /* When container is narrow enough that elements would wrap */
       @container (max-width: 50rem) {
-        .text {
-          left: 0;
-        }
-      }
-
-      &.is-reverse {
-        .text {
-          left: 0;
-          top: var(--space-s-m);
-        }
-
-        .icon-wrapper {
-          left: -1rem;
-        }
-
         .media {
-          top: -var(--space-s-m);
-          left: -1rem;
-        }
-
-        /* When container is narrow enough that elements would wrap */
-        @container (max-width: 50rem) {
-          .media {
-            left: 0;
-          }
+          left: 0;
         }
       }
     }

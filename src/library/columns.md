@@ -2,23 +2,23 @@
 layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
-title: Commposed
+title: Columns
 
 navigation:
-  navLabel: 'Composed Section'
+  navLabel: 'Columns Section'
   navIndex: 3
 
 card:
-  title: 'Composed'
+  title: 'Columns'
   description: 'Create custom multi-column layouts. Combine text, images, and CTAs in flexible column arrangements.'
   image: '/assets/images/sample5.jpg'
 
 seo:
-  title: Composed Section - Flexible Multi-Column Layouts for Metalsmith
-  description: 'Create custom multi-column layouts with the composed section component. Combine text, images, and CTAs in flexible column arrangements for Metalsmith sites.'
+  title: Columns Section - Flexible Multi-Column Layouts for Metalsmith
+  description: 'Create custom multi-column layouts with the columns section component. Combine text, images, and CTAs in flexible column arrangements for Metalsmith sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
-  keywords: 'metalsmith composed section, multi-column layout, flexible layouts, custom sections, column blocks, image gallery component, composable layouts'
+  keywords: 'metalsmith columns section, multi-column layout, flexible layouts, custom sections, column blocks, image gallery component, composable layouts'
 
 sections:
   - sectionType: text-only
@@ -41,16 +41,16 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
-      title: 'Composed Section'
+      title: 'Columns Section'
       titleTag: 'h1'
       subTitle: ''
       prose: |-
         A flexible multi-column section that allows custom layouts by composing different content blocks. Each column can contain multiple blocks.
 
-        The example below can be used to merge with a previous hero section. The hero section has a class of `merge-with-next` which removes the bottom margin. The composed section has `containerFields.noMargin.top` set to true which removes the top margin. The composed section also has `inContainer` set to `true` which wraps the section in a container. This is a popular visual pattern in corporate and marketing websites.
+        The example below can be used to merge with a previous hero section. The hero section has a class of `merge-with-next` which removes the bottom margin. The columns section has `containerFields.noMargin.top` set to true which removes the top margin. The columns section also has `inContainer` set to `true` which wraps the section in a container. This is a popular visual pattern in corporate and marketing websites.
 
         ```yaml
-        - sectionType: composed
+        - sectionType: columns
           containerTag: section
           classes: 'media-image hero-cta'
           # more settings
@@ -120,7 +120,7 @@ sections:
         isButton: true
         buttonStyle: 'primary'
 
-  - sectionType: composed
+  - sectionType: columns
     containerTag: section
     classes: 'media-image hero-cta'
     id: ''
@@ -198,7 +198,7 @@ sections:
         isButton: true
         buttonStyle: 'primary'
 
-  - sectionType: composed
+  - sectionType: columns
     containerTag: section
     classes: 'image-gallery'
     id: 'section-id'

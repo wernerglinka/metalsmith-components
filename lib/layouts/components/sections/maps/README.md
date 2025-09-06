@@ -1,4 +1,4 @@
-# Unified Mapping Section Component
+# Unified Maps Section Component
 
 A flexible section component that renders interactive maps using either Leaflet or OpenLayers providers. Supports custom SVG markers, popups, and dynamic library loading with consistent API across both mapping libraries.
 
@@ -10,7 +10,7 @@ A flexible section component that renders interactive maps using either Leaflet 
 ## Data Structure
 
 ```yaml
-- sectionType: mapping
+- sectionType: maps
   containerTag: section  # aside, section, or div
   disabled: false
   id: ""
@@ -222,7 +222,7 @@ const svgMarker = `
 
 ### Simple Leaflet Map
 ```yaml
-- sectionType: mapping
+- sectionType: maps
   mapProvider: leaflet
   latitude: 40.7128
   longitude: -74.0060
@@ -241,7 +241,7 @@ const svgMarker = `
 
 ### OpenLayers with Multiple Markers
 ```yaml
-- sectionType: mapping
+- sectionType: maps
   mapProvider: openlayers
   latitude: 40.7128
   longitude: -74.0060
@@ -268,7 +268,7 @@ const svgMarker = `
 
 ### Map with Call-to-Actions
 ```yaml
-- sectionType: mapping
+- sectionType: maps
   mapProvider: leaflet
   latitude: 40.7128
   longitude: -74.0060

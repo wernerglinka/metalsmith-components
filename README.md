@@ -128,7 +128,7 @@ npm run fix    # Run both format and lint in sequence
 │   │   ├── banner.md          # Banner component examples
 │   │   ├── hero.md            # Hero section examples
 │   │   ├── media-image.md     # Media section examples
-│   │   ├── mapping.md         # Interactive mapping examples
+│   │   ├── maps.md            # Interactive maps examples
 │   │   └── ...                # More component examples
 │   ├── section-anatomy.md     # Component structure documentation
 │   ├── yaml-to-html.md        # Build process documentation
@@ -145,13 +145,13 @@ npm run fix    # Run both format and lint in sequence
 │       ├── components/
 │       │   ├── _partials/     # Reusable UI elements
 │       │   └── sections/      # Page section components
-│       │       └── mapping/   # Interactive mapping component
+│       │       └── maps/      # Interactive maps component
 │       │           ├── modules/
 │       │           │   ├── providers/    # Leaflet & OpenLayers providers
 │       │           │   └── helpers/      # Utilities & icon registry
 │       └── pages/             # Page templates
 ├── plugins/                   # Custom build plugins
-│   └── generate-mapping-icons.js  # Dynamic icon registry generator
+│   └── generate-maps-icons.js     # Dynamic icon registry generator
 ├── metalsmith.js              # Build configuration
 └── package.json               # Project dependencies
 ```
@@ -214,7 +214,7 @@ The system automatically manages component assets:
 
 ### JSON Data Architecture
 
-For complex components like mapping, the system uses external JSON files for data management:
+For complex components like maps, the system uses external JSON files for data management:
 
 - **Clean Separation**: UI configuration stays in page frontmatter, content data in JSON files
 - **Scalable Data**: Handle large datasets (many markers, locations, etc.) without cluttering pages

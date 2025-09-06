@@ -6,7 +6,7 @@
 {% from "components/_partials/video/video.njk" import video %}
 {% from "components/_partials/lottie/lottie.njk" import lottie %}
 
-<div class="multi-media content {% if section.isReverse %}is-reverse{% endif %}">
+<div class="content {% if section.isReverse %}is-reverse{% endif %}">
   
   {% if section.mediaType === "audio" %}
     <div class="media">{{ audio(section.audio)}}</div>

@@ -1,4 +1,4 @@
-# Composed Section Component
+# Columns Section Component
 
 A flexible multi-column section component that enables custom layouts by composing different content blocks. Each column can contain one or more blocks like text, images, or CTAs, providing maximum layout flexibility and reusability.
 
@@ -16,7 +16,7 @@ A flexible multi-column section component that enables custom layouts by composi
 ## Data Structure
 
 ```yaml
-- sectionType: composed
+- sectionType: columns
   containerTag: section  # section, article, or div
   disabled: false
   id: ""
@@ -198,7 +198,7 @@ Unknown block types display an error message:
 
 ### Basic Two-Column Layout
 ```yaml
-- sectionType: composed
+- sectionType: columns
   classes: "basic-two-column"
   columns:
     - column:
@@ -217,7 +217,7 @@ Unknown block types display an error message:
 
 ### Text-Image-CTA Layout
 ```yaml
-- sectionType: composed
+- sectionType: columns
   classes: "text-image-cta"
   containerFields:
     inContainer: true
@@ -248,7 +248,7 @@ Unknown block types display an error message:
 
 ### Image Gallery Layout
 ```yaml
-- sectionType: composed
+- sectionType: columns
   classes: "image-gallery"
   columns:
     - column:
@@ -273,7 +273,7 @@ Unknown block types display an error message:
 
 ### Mixed Content Columns
 ```yaml
-- sectionType: composed
+- sectionType: columns
   columns:
     - column:
         columnClasses: "text-and-cta"

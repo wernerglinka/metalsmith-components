@@ -1,5 +1,5 @@
 /* Banner component styles following hero-slider patterns */
-.section-wrapper .banner {
+.section-wrapper.banner {
   /* Use consistent threshold with other components */
   --threshold: 50rem;
 

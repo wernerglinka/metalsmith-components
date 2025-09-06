@@ -104,8 +104,8 @@ sections:
         top: true
         bottom: false
       noPadding:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       background:
         color: lightgray
         image: ''

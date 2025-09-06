@@ -12,7 +12,7 @@
    - 'reset' class: Instant off-screen positioning without animation
 */
 
-.section-wrapper .slider {
+.section-wrapper.slider {
   .slider-wrapper {
     position: relative;
     /* Fluid height that adapts to content */

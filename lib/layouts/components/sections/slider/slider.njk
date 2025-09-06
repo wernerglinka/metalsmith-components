@@ -3,7 +3,7 @@
 {% from "components/_partials/image/image.njk" import image %}
 {% from "components/_partials/slider-pagination/slider-pagination.njk" import sliderPagination %}
 
-<div class="container slider {% if section.config === 'isTabs' %}is-tabs{% endif %}">
+<div class="container {% if section.config === 'isTabs' %}is-tabs{% endif %}">
   <div
     class="slider-wrapper"
     role="region"

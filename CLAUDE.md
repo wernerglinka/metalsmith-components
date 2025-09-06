@@ -69,7 +69,7 @@ Small, reusable UI elements:
 
 Large page sections:
 
-- hero, banner, media-image, text-only, slider, flip-cards, logos-list, testimonial, composed, blog-list, mapping
+- hero, banner, media-image, text-only, slider, flip-cards, logos-list, testimonial, columns, blog-list, maps
 - Main building blocks for page layouts
 
 ### Component Structure
@@ -94,21 +94,21 @@ The `metalsmith-bundled-components` plugin automatically:
 
 ### Mapping Component Features
 
-The mapping component provides comprehensive interactive mapping capabilities with:
+The maps component provides comprehensive interactive mapping capabilities with:
 
 #### Dual Provider Support
-- **Leaflet**: Lightweight mapping library (145KB) ideal for basic mapping needs
-- **OpenLayers**: Enterprise-grade mapping with advanced vector capabilities
+- **Leaflet**: Lightweight mapping library (145KB) ideal for basic maps needs
+- **OpenLayers**: Enterprise-grade maps with advanced vector capabilities
 - **Unified API**: Switch providers by changing just the `mapProvider` field
 
 #### Dynamic Library Loading
-- Libraries loaded from CDN only when mapping components are used
+- Libraries loaded from CDN only when maps components are used
 - Keeps initial bundle size small with tree-shaking optimization
 - Supports multiple maps per page with different providers
 
 #### Advanced Marker System
 - **JSON Data Architecture**: Map content stored in external JSON files (`/lib/data/maps/`) for clean separation from page configuration
-- **Dynamic Icon Registry**: Build-time generation of icon registry from Feather icons used in mapping sections
+- **Dynamic Icon Registry**: Build-time generation of icon registry from Feather icons used in maps sections
 - **Consistent SVG Markers**: Unified marker design across both providers (48px standardized size)
 - **Custom Icons**: Support for custom marker icons with automatic fallbacks
 - **Interactive Popups**: Rich popup content with titles, descriptions, and external links
@@ -120,7 +120,7 @@ The mapping component provides comprehensive interactive mapping capabilities wi
 - **Interactive Expansion**: Click clusters to zoom in or expand at maximum zoom level
 
 #### Technical Architecture
-- **Modular Structure**: Organized into providers (`leaflet.js`, `openlayers.js`) and helpers (`mapping-utils.js`, `icon-loader.js`)
+- **Modular Structure**: Organized into providers (`leaflet.js`, `openlayers.js`) and helpers (`maps-utils.js`, `icon-loader.js`)
 - **Data Management**: Recursive JSON loading from `/lib/data/maps/` with automatic `data.maps.filename` access
 - **Build-Time Optimization**: Icon registry auto-generated during build to include only icons actually used
 - **Error Handling**: Graceful fallbacks for missing icons and failed library loads
@@ -134,13 +134,13 @@ The mapping component provides comprehensive interactive mapping capabilities wi
 - `package.json` - Dependencies, scripts, and project metadata
 - `eslint.config.js` - ESLint configuration
 - `prettier.config.js` - Prettier formatting rules
-- `plugins/generate-mapping-icons.js` - Build-time icon registry generation for mapping components
+- `plugins/generate-maps-icons.js` - Build-time icon registry generation for maps components
 
 ### Content Structure
 
 - `src/` - Source content pages (Markdown files with frontmatter)
 - `lib/data/` - Global JSON data files (site.json, author.json, etc.)
-- `lib/data/maps/` - Map data JSON files for mapping components
+- `lib/data/maps/` - Map data JSON files for maps components
 - `lib/layouts/` - Templates, components, and icons
 - `lib/assets/` - Images, main CSS/JS entry points, and global styles
 

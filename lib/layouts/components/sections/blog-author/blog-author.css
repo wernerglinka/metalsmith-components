@@ -1,4 +1,4 @@
-.section-wrapper .blog-author {
+.section-wrapper.blog-author {
   /* 
     the threshold determines the viewport width in which the container switches 
     from horizontal to vertical layout. Depends on the text size.

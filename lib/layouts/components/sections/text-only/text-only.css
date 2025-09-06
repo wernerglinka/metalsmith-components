@@ -1,5 +1,5 @@
 /* Overwrite threashold default for the banner content container */
-.section-wrapper .text-only {
+.section-wrapper.text-only {
   > * {
     max-width: clamp(45ch, 65ch, 80ch); /* Fluid reading width */
     margin-inline: auto; /* Center the text block */
