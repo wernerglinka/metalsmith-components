@@ -1,3 +1,10 @@
+/**
+ * Styles for Shikwasa Podcast Player
+ * Copied from:
+ * - https://github.com/jessuni/shikwasa/blob/main/src/css/base.css
+ * - https://github.com/jessuni/shikwasa/blob/main/src/css/chapter.css
+ */
+
 .shk {
   --color-primary: #0d6efd;
   --color-opac: #b9b9b94d;
@@ -27,11 +34,18 @@
   --shadow-handle-mobile: 2px 2px 8px -2px var(--color-handle-shadow-mobile);
 }
 .shk[data-theme='dark'] {
+  --color-bar-played: linear-gradient(90deg, #4158d0, #c850c0, #ffcc70);
+  --color-bar-loaded: repeating-linear-gradient(45deg, #797979, grey 10px, #969696 0, #969696 20px);
+  --color-primary: #ffcc70;
   --color-theme: #333;
-  --color-secondary: #b9b6b6;
-  --color-text: #f8f9fa;
-  --color-handle-shadow-mobile: #141414;
-  --color-shadow: #14141480;
+  --color-button: #fff;
+  --color-handle: #ffcc70;
+  --color-text: #fff;
+  --color-title: #fff;
+  --color-artist: #888;
+  --color-secondary: #eee;
+  --shadow-body: 0px 0px 9px -3px rgba(0, 0, 0, 0.8);
+  --shadow-handle: 0px 0px 9px -3px rgba(0, 0, 0, 0.8);
 }
 @media (prefers-color-scheme: dark) {
   .shk[data-theme='auto'] {
@@ -87,9 +101,7 @@
   font-family: inherit;
 }
 .shk-player {
-  height: 120px;
-  box-sizing: border-box;
-  border-radius: 2px;
+  height: 100%;
   background: var(--background-body);
   position: relative;
   z-index: 10;
@@ -404,7 +416,6 @@ svg.shk-btn_mute,
 }
 @media (min-width: 641px) {
   .shk-player {
-    margin-top: 4px;
     padding: 20px 16px;
     box-shadow: var(--shadow-body);
   }
@@ -484,8 +495,6 @@ svg.shk-btn_mute,
   }
   .shk-text {
     flex: 0 0 auto;
-  }
-  .shk-text {
     width: 100%;
     text-align: center;
   }
@@ -763,10 +772,43 @@ svg.shk-btn_mute,
 }
 
 .podcast-header {
+  position: relative;
+  padding: var(--space-m-l) var(--space-xs-s);
+  overflow: hidden;
+  border-radius: var(--glass-border-radius, 1rem);
+  box-shadow: var(--glass-box-shadow);
+  margin-bottom: 2rem;
+  color: var(--color-text-light, #fff);
+  min-height: 200px;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+
+  .background-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
+      pointer-events: none;
+    }
+  }
+}
+
+.podcast-info {
+  position: relative;
+  z-index: 2;
 }
 
 .podcast-cover {
@@ -919,7 +961,7 @@ svg.shk-btn_mute,
 }
 
 .episode-duration::before {
-  content: "•";
+  content: '•';
   margin-right: 0.5rem;
 }
 

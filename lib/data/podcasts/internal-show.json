@@ -1,8 +1,8 @@
 {
   "title": "Internal Tech Talk",
   "description": "Weekly discussions about web development and technology",
-  "coverImage": "/assets/images/internal-cover.jpg",
-  "platform": "internal", 
+  "coverImage": "/assets/images/sample17.jpg",
+  "platform": "internal",
   "episodes": [
     {
       "id": "episode-1",
@@ -17,7 +17,7 @@
     {
       "id": "episode-2",
       "title": "Modern CSS Techniques",
-      "episodeNumber": "002", 
+      "episodeNumber": "002",
       "publishDate": "2024-01-15",
       "duration": "18:30",
       "audioFile": "/assets/audio/shattered-reflections.mp3",

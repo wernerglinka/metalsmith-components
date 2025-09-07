@@ -9,20 +9,34 @@
            data-theme="{{ section.options.theme or 'auto' }}"
            data-theme-color="{{ section.options.themeColor or '#007aff' }}"
            data-autoplay="{{ section.options.autoplay or false }}">
-        <div class="podcast-header">
-          {% if podcastData.coverImage %}
-            <img src="{{ podcastData.coverImage }}" alt="{{ podcastData.title }}" class="podcast-cover">
-          {% endif %}
-          <div class="podcast-info">
-            <h2 class="podcast-title">{{ podcastData.title }}</h2>
-            {% if podcastData.description %}
-              <p class="podcast-description">{{ podcastData.description }}</p>
-            {% endif %}
+        {% if section.options.showHeader !== false %}
+          <div class="podcast-header">
+            <div class="background-screen" style="background-image: url('{{ podcastData.coverImage }}');"></div>
+            <div class="podcast-info">
+              <h2 class="podcast-title">{{ podcastData.title }}</h2>
+              {% if podcastData.description %}
+                <p class="podcast-description">{{ podcastData.description }}</p>
+              {% endif %}
+            </div>
           </div>
-        </div>
+        {% endif %}
         
         <!-- Main podcast player -->
         <div class="main-player" id="main-player"></div>
+        
+        {% if podcastData.episodes %}
+          <!-- Always render first episode data for player initialization (hidden if showEpisodeList is false) -->
+          {% set firstEpisode = podcastData.episodes[0] %}
+          <div class="episode-data" style="display: none;">
+            <div class="episode-item" 
+                 data-episode-id="{{ firstEpisode.id }}" 
+                 data-audio-file="{{ firstEpisode.audioFile }}"
+                 data-episode-title="{{ firstEpisode.title }}"
+                 data-episode-duration="{{ firstEpisode.duration }}"
+                 data-episode-thumbnail="{{ firstEpisode.thumbnail or podcastData.coverImage }}">
+            </div>
+          </div>
+        {% endif %}
         
         {% if section.options.showEpisodeList !== false %}
           <div class="episode-list">

@@ -21,34 +21,6 @@ seo:
   keywords: 'metalsmith podcast player, RSS feed parser, shikwasa audio player, podcast component, dynamic episodes, progressive loading, podcast website'
 
 sections:
-  - sectionType: podcast
-    containerTag: section
-    classes: ''
-    id: ''
-    isDisabled: false
-    isAnimated: true
-    containerFields:
-      inContainer: false
-      noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none' # light, dark, none
-    podcast: 'ai-fireside-chat'
-    options:
-      showEpisodeList: true
-      autoplay: false
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
-
   - sectionType: text-only
     containerTag: article
     classes: ''
@@ -182,19 +154,81 @@ sections:
     isDisabled: false
     isAnimated: true
     containerFields:
-      inContainer: true
+      inContainer: false
       noMargin:
+        top: true
+        bottom: true
+      noPadding:
         top: false
         bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    podcast: 'ai-fireside-chat'
+    options:
+      showEpisodeList: true
+      autoplay: false
+      theme: 'dark'
+    ctas:
+      - url: ''
+        label: ''
+        isButton: true
+        buttonStyle: 'primary'
+
+  - sectionType: text-only
+    containerTag: article
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Podcast Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: |-
+        A minimal internal example with:
+
+        ```yml
+        showHeader: false
+        showEpisodeList: false
+        autoplay: false
+        ```
+
+  - sectionType: podcast
+    containerTag: section
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
       noPadding:
         top: true
         bottom: true
       background:
-        color: '#f0f4f8'
+        color: ''
         image: ''
         imageScreen: 'none' # light, dark, none
     podcast: 'internal-show'
     options:
+      showHeader: false
       showEpisodeList: false
       autoplay: false
     ctas: []
@@ -218,13 +252,10 @@ sections:
         color: ''
         image: '/assets/images/sample10.jpg'
         imageScreen: 'dark' # light, dark, none
-    podcast: 'internal-show'
+    podcast: 'anthropic'
     options:
+      showHeader: false
       showEpisodeList: true
       autoplay: false
-    ctas:
-      - url: 'https://example.com/more-episodes'
-        label: 'More Episodes'
-        isButton: true
-        buttonStyle: 'inverted'
+    ctas: []
 ---

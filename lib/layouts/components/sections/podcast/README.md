@@ -1,6 +1,8 @@
 # Podcast Section Component
 
-A comprehensive podcast player section component that dynamically fetches episodes from RSS feeds using the professional Shikwasa audio player. Features a single main player with episode selection, progressive loading, and fallback support for optimal user experience.
+A comprehensive podcast player section component that dynamically fetches episodes from RSS feeds using the professional [Shikwasa audio player](https://shikwasa.js.org/). Features a single main player with episode selection, progressive loading, and fallback support for optimal user experience.
+
+Shikwasa on [GitHub](https://github.com/jessuni/shikwasa)
 
 ## Features
 
@@ -22,14 +24,14 @@ A comprehensive podcast player section component that dynamically fetches episod
 ```yaml
 - sectionType: podcast
   containerTag: section
-  podcast: 'ai-fireside-chat'    # References data/podcasts/ai-fireside-chat.json
+  podcast: 'ai-fireside-chat' # References data/podcasts/ai-fireside-chat.json
   options:
-    showEpisodeList: true        # Display episode list (default: true)
-    initialEpisodes: 5           # Episodes shown initially (default: 5)
-    maxEpisodes: 50              # Max episodes to fetch (default: 50)
-    autoplay: false              # Auto-play first episode (default: false)
-    theme: 'auto'                # Player theme: 'light', 'dark', 'auto'
-    themeColor: '#007aff'        # Player accent color
+    showEpisodeList: true # Display episode list (default: true)
+    initialEpisodes: 5 # Episodes shown initially (default: 5)
+    maxEpisodes: 50 # Max episodes to fetch (default: 50)
+    autoplay: false # Auto-play first episode (default: false)
+    theme: 'auto' # Player theme: 'light', 'dark', 'auto'
+    themeColor: '#007aff' # Player accent color
   ctas:
     - url: 'https://example.com/subscribe'
       label: 'Subscribe to Podcast'
@@ -82,6 +84,7 @@ A comprehensive podcast player section component that dynamically fetches episod
 ## Optional Properties
 
 ### Podcast Player Options
+
 - `options.showEpisodeList` (boolean, default: true): Display the episode selection list
 - `options.initialEpisodes` (number, default: 5): Number of episodes shown initially
 - `options.maxEpisodes` (number, default: 50): Maximum episodes to fetch from RSS
@@ -90,6 +93,7 @@ A comprehensive podcast player section component that dynamically fetches episod
 - `options.themeColor` (string, default: '#007aff'): Player accent color (hex)
 
 ### Container Configuration
+
 - `containerTag` (string): HTML tag for section container (`section`, `article`, `aside`, `div`)
 - `classes` (string): Additional CSS classes for the section
 - `containerFields`: Standard container styling options
@@ -104,6 +108,7 @@ A comprehensive podcast player section component that dynamically fetches episod
     - `imageScreen` (string): Image overlay ('light', 'dark', 'none')
 
 ### Call-to-Action Options
+
 - `ctas` (array): Optional call-to-action buttons
   - `url` (string): Link destination
   - `label` (string): Button text
@@ -188,6 +193,7 @@ The component automatically parses RSS feeds and extracts:
 ## Fallback Strategy
 
 When Shikwasa fails to load:
+
 1. **HTML5 Audio**: Falls back to native browser audio controls
 2. **Episode Switching**: Maintains episode selection functionality
 3. **Loading Indicator**: Shows fallback state to user
@@ -230,17 +236,20 @@ When Shikwasa fails to load:
 ## Use Cases
 
 ### Professional Podcasts
+
 - **RSS Integration**: Automatic episode updates from hosting platforms
 - **Platform Links**: Direct links to Apple Podcasts, Spotify, etc.
 - **Rich Metadata**: Episode descriptions, thumbnails, publish dates
 - **Subscribe CTAs**: Encourage platform subscriptions
 
 ### Internal Company Podcasts
+
 - **Mixed Content**: Combine RSS feeds with internal audio files
 - **Custom Branding**: Match company colors and themes
 - **Progressive Disclosure**: Don't overwhelm with too many episodes
 
 ### Educational Content
+
 - **Course Series**: Sequential lessons with clear progression
 - **Topic Organization**: Group related episodes logically
 - **Accessibility**: Full keyboard navigation and screen reader support
@@ -324,6 +333,7 @@ For optimal compatibility, RSS feeds should include:
 ### Debug Mode
 
 Enable console logging by checking browser developer tools for detailed parsing information including:
+
 - RSS fetch method used (direct vs proxy)
 - Number of episodes found
 - XML parsing results

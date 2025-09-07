@@ -35,6 +35,11 @@
         "type": "boolean",
         "default": true
       },
+      "options.showHeader": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show the podcast header with title, description, and cover image"
+      },
       "options.autoplay": {
         "type": "boolean",
         "default": false
