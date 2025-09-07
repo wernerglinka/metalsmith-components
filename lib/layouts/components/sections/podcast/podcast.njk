@@ -1,0 +1,81 @@
+{% from "components/_partials/ctas/ctas.njk" import ctas %}
+
+<div class="content container">
+  {% if section.podcast %}
+    {% set podcastData = data.podcasts[section.podcast] %}
+    {% if podcastData %}
+      <div class="podcast-wrapper" 
+           data-rss-url="{{ podcastData.rssUrl }}"
+           data-theme="{{ section.options.theme or 'auto' }}"
+           data-theme-color="{{ section.options.themeColor or '#007aff' }}"
+           data-autoplay="{{ section.options.autoplay or false }}">
+        <div class="podcast-header">
+          {% if podcastData.coverImage %}
+            <img src="{{ podcastData.coverImage }}" alt="{{ podcastData.title }}" class="podcast-cover">
+          {% endif %}
+          <div class="podcast-info">
+            <h2 class="podcast-title">{{ podcastData.title }}</h2>
+            {% if podcastData.description %}
+              <p class="podcast-description">{{ podcastData.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+        
+        <!-- Main podcast player -->
+        <div class="main-player" id="main-player"></div>
+        
+        {% if section.options.showEpisodeList !== false %}
+          <div class="episode-list">
+            {% if podcastData.episodes %}
+              <!-- Static episodes (pre-defined) -->
+              {% for episode in podcastData.episodes %}
+                <div class="episode-item" 
+                     data-episode-id="{{ episode.id }}" 
+                     data-audio-file="{{ episode.audioFile }}"
+                     data-episode-title="{{ episode.title }}"
+                     data-episode-duration="{{ episode.duration }}"
+                     data-episode-thumbnail="{{ episode.thumbnail or podcastData.coverImage }}">
+                  <button class="episode-selector">
+                    <div class="episode-thumbnail">
+                      <img src="{{ episode.thumbnail or podcastData.coverImage }}" alt="{{ episode.title }}">
+                      <div class="play-indicator">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="episode-info">
+                      <h3 class="episode-title">{{ episode.title }}</h3>
+                      {% if episode.description %}
+                        <p class="episode-description">{{ episode.description }}</p>
+                      {% endif %}
+                      <div class="episode-meta">
+                        {% if episode.publishDate %}
+                          <span class="episode-date">{{ episode.publishDate }}</span>
+                        {% endif %}
+                        {% if episode.duration %}
+                          <span class="episode-duration">{{ episode.duration }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              {% endfor %}
+            {% elif podcastData.rssUrl %}
+              <!-- Placeholder for RSS-loaded episodes -->
+              <div class="loading-episodes">Loading episodes from RSS feed...</div>
+            {% else %}
+              <p class="no-episodes">No episodes available for this podcast.</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
+  
+  {% if section.ctas | hasCtas %}
+    <div class="ctas-wrapper">
+      {{ ctas(section.ctas) }}
+    </div>
+  {% endif %}
+</div>
