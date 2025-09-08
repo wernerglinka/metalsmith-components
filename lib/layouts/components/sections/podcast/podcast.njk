@@ -6,9 +6,13 @@
     {% if podcastData %}
       <div class="podcast-wrapper" 
            data-rss-url="{{ podcastData.rssUrl }}"
+           data-podcast-title="{{ podcastData.title }}"
            data-theme="{{ section.options.theme or 'auto' }}"
            data-theme-color="{{ section.options.themeColor or '#007aff' }}"
-           data-autoplay="{{ section.options.autoplay or false }}">
+           data-autoplay="{{ section.options.autoplay or false }}"
+           data-initial-episodes="{{ section.options.initialEpisodes or 5 }}"
+           data-max-episodes="{{ section.options.maxEpisodes or 50 }}"
+           data-simple-episodes-list="{{ section.options.simpleEpisodesList or false }}">
         {% if section.options.showHeader !== false %}
           <div class="podcast-header">
             <div class="background-screen" style="background-image: url('{{ podcastData.coverImage }}');"></div>

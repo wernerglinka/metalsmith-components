@@ -147,6 +147,42 @@ sections:
 
         This component is perfect for professional podcasts, educational content, company communications, or any audio content that benefits from RSS automation and professional playback controls.
 
+  - sectionType: text-only
+    containerTag: article
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Podcast Section Examples'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: |-
+        #### The default section using these options:
+
+        ```yml
+          options:
+            showEpisodeList: true # Display episode list (default: true)
+            initialEpisodes: 5 # Episodes shown initially (default: 5)
+            maxEpisodes: 20 # Max episodes to fetch (default: 50)
+            autoplay: false # Auto-play first episode (default: false)
+            theme: 'dark' # Player theme: 'light', 'dark', 'auto'
+            themeColor: '#007aff' # Player accent color
+        ```
+
   - sectionType: podcast
     containerTag: section
     classes: ''
@@ -196,16 +232,19 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
-      title: 'Podcast Section'
-      titleTag: 'h3'
+      title: 'A minimal internal example'
+      titleTag: 'h4'
       subTitle: ''
       prose: |-
-        A minimal internal example with:
-
         ```yml
-        showHeader: false
-        showEpisodeList: false
-        autoplay: false
+        options:
+          showHeader: false
+          showEpisodeList: false 
+          initialEpisodes: 5
+          maxEpisodes: 20
+          autoplay: false
+          theme: 'auto'
+          themeColor: '#666'
         ```
 
   - sectionType: podcast
@@ -231,7 +270,44 @@ sections:
       showHeader: false
       showEpisodeList: false
       autoplay: false
+      themeColor: '#666'
     ctas: []
+
+  - sectionType: text-only
+    containerTag: article
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Example with image background'
+      titleTag: 'h4'
+      subTitle: ''
+      prose: |-
+        ```yml
+        options:
+          showHeader: false
+          showEpisodeList: true 
+          initialEpisodes: 3
+          simpleEpisodesList: true
+          maxEpisodes: 20
+          autoplay: false
+          theme: 'auto'
+          themeColor: '#666'
+        ```
 
   - sectionType: podcast
     containerTag: section
@@ -242,20 +318,25 @@ sections:
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       background:
         isDark: true
         color: ''
         image: '/assets/images/sample10.jpg'
         imageScreen: 'dark' # light, dark, none
-    podcast: 'anthropic'
+    podcast: 'artificial-intelligence'
     options:
       showHeader: false
       showEpisodeList: true
+      initialEpisodes: 3
+      simpleEpisodesList: true
+      maxEpisodes: 20
       autoplay: false
+      theme: 'auto'
+      themeColor: '#666'
     ctas: []
 ---
