@@ -21,6 +21,47 @@ seo:
   keywords: 'metalsmith compound section, section wrapper, shared configuration, multi-section component'
 
 sections:
+  - sectionType: hero
+    containerTag: section
+    classes: 'first-section'
+    id: ''
+    description: "This is a full screen hero section with a background image and text overlay. The proporty 'isFullScreen' is set to true, which turn a standard hero section into full screen."
+    isDisabled: false
+    isReverse: false
+    isAnimated: true
+    isFullScreen: false
+    targetId: 'first-section'
+    date: ''
+    author: ''
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: true
+        color: ''
+        image: '/assets/images/under-construction.jpg'
+        imageScreen: 'dark' # light, dark, none
+    text:
+      leadIn: 'Metalsmith Components Library'
+      title: Compound Section
+      titleTag: 'h1'
+      subTitle:
+      prose: Under Construction
+    ctas:
+      - url: ''
+        label: ''
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
+
   - sectionType: compound
     containerTag: article
     classes: ''
@@ -46,7 +87,7 @@ sections:
         text:
           leadIn: ''
           title: 'First Compound Section'
-          titleTag: 'h21'
+          titleTag: 'h2'
           subTitle: ''
           prose: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
