@@ -27,6 +27,8 @@ import prism from 'metalsmith-prism';
 
 import componentDependencyBundler from 'metalsmith-bundled-components';
 
+import search from 'metalsmith-search'; // Adds search functionality
+
 import assets from 'metalsmith-static-files'; // Copies static assets to build
 import optimizeImages from 'metalsmith-optimize-images'; // Optimizes images for web
 import htmlMinifier from 'metalsmith-optimize-html'; // Minifies HTML in production
@@ -201,13 +203,6 @@ metalsmith
     } )
   )
 
-  //.use( function( files, metalsmith, done ) {
-  //  for ( const file in files ) {
-  //    console.log( files[ file ] );
-  //  }
-  //  done();
-  //} )
-
   /**
    * Create metadata for blog pagination as pages are built
    * with individual page components so we can't use the
@@ -226,6 +221,17 @@ metalsmith
       pagesPerPage: 6,
       blogDirectory: 'library/',
       mainTemplate: 'library.md'
+    } )
+  )
+
+  .use( function( files, metalsmith, done ) {
+    console.log( 'Files right before search plugin:', Object.keys( files ).filter( f => f.includes( '.md' ) ).slice( 0, 10 ) );
+    done();
+  } )
+
+  .use(
+    search( {
+      ignore: [ '**/search.md', '**/search-index.json' ]
     } )
   )
 
@@ -249,7 +255,7 @@ metalsmith
     menus( {
       metadataKey: 'mainMenu', // Where to store menu data
       usePermalinks: true, // Use clean URLs in menu
-      navExcludePatterns: [ '404.html', 'robots.txt' ] // Files to exclude from menu
+      navExcludePatterns: [ '404.html', 'robots.txt', 'search-index.json' ] // Files to exclude from menu
     } )
   )
 
