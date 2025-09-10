@@ -18,20 +18,5 @@
     background-color: var(--glass-background-dark);
     border-radius: var(--glass-border-radius);
     box-shadow: var(--glass-box-shadow);
-
-    input {
-      border: none;
-      background: none;
-      border-bottom: 2px solid var(--color-text-light);
-      padding: 0 var(--space-2xs-xs) var(--space-2xs-xs);
-      font-size: var(--font-p);
-      color: var(--color-text-light);
-
-      /* color of the placeholder */
-      &::placeholder {
-        color: var(--color-text-light);
-        opacity: 0.6;
-      }
-    }
   }
 }

@@ -1,46 +1,17 @@
-.search-title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  text-align: center;
-  margin-bottom: var(--space-md);
-  color: var(--color-text-primary);
-}
-
-.search-subtitle {
-  font-size: var(--font-size-lg);
-  text-align: center;
-  margin-bottom: var(--space-xl);
-  color: var(--color-text-secondary);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.search-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.search-input-container {
-  position: relative;
-  margin-bottom: var(--space-lg);
-}
-
 .search-input {
   width: 100%;
-  padding: var(--space-md) var(--space-lg);
-  font-size: var(--font-size-lg);
-  border: 2px solid var(--color-border);
-  border-radius: var(--border-radius-lg);
-  background: var(--color-background);
-  color: var(--color-text-primary);
-  transition: all 0.2s ease;
-}
+  border: none;
+  background: none;
+  border-bottom: 2px solid var(--color-text-light);
+  padding: 0 var(--space-2xs-xs) var(--space-2xs-xs);
+  font-size: var(--font-p);
+  color: var(--color-text-light);
 
-.search-input:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+  /* color of the placeholder */
+  &::placeholder {
+    color: var(--color-text-light);
+    opacity: 0.6;
+  }
 }
 
 .search-clear {
@@ -66,32 +37,6 @@
 .search-input:not(:placeholder-shown) + .search-clear {
   opacity: 1;
   visibility: visible;
-}
-
-.search-filters {
-  display: flex;
-  gap: var(--space-md);
-  margin-bottom: var(--space-lg);
-  flex-wrap: wrap;
-}
-
-.category-filter,
-.component-type-filter {
-  flex: 1;
-  min-width: 200px;
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  background: var(--color-background);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-base);
-}
-
-.category-filter:focus,
-.component-type-filter:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.1);
 }
 
 .search-status {
