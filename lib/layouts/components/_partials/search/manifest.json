@@ -5,27 +5,19 @@
   "scripts": ["search.js"],
   "validation": {
     "properties": {
-      "text.title": {
+      "title": {
         "type": "string"
       },
-      "text.subtitle": {
+      "subtitle": {
         "type": "string"
       },
-      "settings.placeholder": {
+      "placeholder": {
         "type": "string",
         "default": "Search..."
-      },
-      "settings.showCategories": {
-        "type": "boolean",
-        "default": false
       },
       "settings.maxResults": {
         "type": "number",
         "default": 20
-      },
-      "settings.resultTypes": {
-        "type": "array",
-        "default": ["page", "section"]
       },
       "settings.showRelevanceScore": {
         "type": "boolean",

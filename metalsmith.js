@@ -19,6 +19,7 @@ import drafts from '@metalsmith/drafts'; // Excludes draft content from builds
 import generateMapsIcons from './plugins/generate-maps-icons.js'; // Generates maps icon registry
 import collections from '@metalsmith/collections';
 import paginatePages from 'metalsmith-sectioned-blog-pagination';
+import search from 'metalsmith-search'; // Adds search functionality
 import permalinks from '@metalsmith/permalinks'; // Creates clean URLs
 import menus from 'metalsmith-menu-plus'; // Generates navigation menus
 import layouts from '@metalsmith/layouts'; // Applies templates to content
@@ -27,12 +28,9 @@ import prism from 'metalsmith-prism';
 
 import componentDependencyBundler from 'metalsmith-bundled-components';
 
-import search from 'metalsmith-search'; // Adds search functionality
-
 import assets from 'metalsmith-static-files'; // Copies static assets to build
 import optimizeImages from 'metalsmith-optimize-images'; // Optimizes images for web
 import htmlMinifier from 'metalsmith-optimize-html'; // Minifies HTML in production
-import sitemap from 'metalsmith-sitemap'; // Generates a sitemap.xml file
 
 import seo from 'metalsmith-seo'; // Adds SEO metadata to pages
 
@@ -218,12 +216,16 @@ metalsmith
 
   .use(
     paginatePages( {
-      pagesPerPage: 6,
+      pagesPerPage: 8,
       blogDirectory: 'library/',
       mainTemplate: 'library.md'
     } )
   )
 
+  /**
+   * Add search functionality
+   * Learn more: https://github.com/wernerglinka/metalsmith-search
+   */
   .use(
     search( {
       ignore: [ '**/search.md', '**/search-index.json' ]

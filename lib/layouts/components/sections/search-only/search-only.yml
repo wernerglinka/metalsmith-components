@@ -3,30 +3,26 @@
 
 # Basic search-only section
 sectionType: search-only
-search:
+text:
   title: "Search Components"
   subtitle: "Find components, features, and documentation"
-  placeholder: "Search components and documentation..."
-  settings:
-    showCategories: true
-    maxResults: 20
-    resultTypes: ['page', 'section']
+placeholder: "Search components and documentation..."
+settings:
+  maxResults: 20
+  enableHighlighting: true
 
 # Alternative minimal configuration
 # sectionType: search-only
-# search:
-#   placeholder: "Search..."
+# placeholder: "Search..."
 
 # Advanced configuration example
 # sectionType: search-only
-# search:
+# text:
 #   title: "Find What You Need"
 #   subtitle: "Search through all component documentation"
-#   placeholder: "Type to search components, guides, examples..."
-#   settings:
-#     showCategories: true
-#     maxResults: 15
-#     resultTypes: ['page', 'section']
-#     showRelevanceScore: true
-#     enableHighlighting: true
-#     minCharacters: 2
+# placeholder: "Type to search components, guides, examples..."
+# settings:
+#   maxResults: 15
+#   showRelevanceScore: true
+#   enableHighlighting: true
+#   minCharacters: 2

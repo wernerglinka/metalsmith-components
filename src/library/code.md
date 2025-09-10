@@ -12,7 +12,7 @@ navigation:
 card:
   title: 'Code'
   description: 'Syntax-highlighted code blocks with language tabs, copy-to-clipboard functionality, and dynamic Prism theme loading.'
-  image: '/assets/images/sample16.jpg'
+  image: '/assets/images/sample17.jpg'
 
 seo:
   title: Code Component - Syntax Highlighted Code Blocks for Metalsmith

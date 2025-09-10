@@ -11,7 +11,7 @@ navigation:
 card:
   title: 'Video Only'
   description: 'Dedicated video section supporting YouTube, Vimeo, and Cloudinary with modal and inline playback options.'
-  image: '/assets/images/sample16.jpg'
+  image: '/assets/images/sample21.jpg'
 
 seo:
   title: Video Only Component - Video Sections for Metalsmith
@@ -21,35 +21,6 @@ seo:
   keywords: 'metalsmith video section, video component, youtube embed, vimeo player, video-only layout, media section, video content'
 
 sections:
-  - sectionType: video-only
-    containerTag: section
-    classes: ''
-    id: ''
-    isDisabled: false
-    isAnimated: true
-    containerFields:
-      inContainer: false
-      noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none' # light, dark, none
-    video:
-      id: 'dQw4w9WgXcQ'
-      src: 'youtube'
-      tn: '/assets/images/video-thumbnail.jpg'
-      inline: false
-    ctas:
-      - url: 'https://example.com/videos'
-        label: 'More Videos'
-        isButton: true
-        buttonStyle: 'primary'
-
   - sectionType: text-only
     containerTag: article
     classes: ''
@@ -82,13 +53,13 @@ sections:
           # container settings
 
           video:
-            id: 'dQw4w9WgXcQ'          # Video ID from the platform
-            src: 'youtube'             # Platform: youtube, vimeo, cloudinary
+            id: 'dQw4w9WgXcQ'            # Video ID from the platform
+            src: 'youtube'               # Platform: youtube, vimeo, cloudinary
             tn: '/path/to/thumbnail.jpg' # Thumbnail image
-            inline: false              # Modal (false) or inline (true) playback
-            cloudname: 'your-cloud'    # Required for Cloudinary videos
-            start: 30                  # Optional start time in seconds
-            end: 120                   # Optional end time in seconds
+            inline: false                # Modal (false) or inline (true) playback
+            cloudname: 'your-cloud'      # Required for Cloudinary videos
+            start: 30                    # Optional start time in seconds
+            end: 120                     # Optional end time in seconds
           ctas:
             - url: 'https://example.com/playlist'
               label: 'View Playlist'
@@ -120,7 +91,7 @@ sections:
 
   - sectionType: video-only
     containerTag: section
-    classes: ''
+    classes: 'inline-example'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -133,7 +104,7 @@ sections:
         top: true
         bottom: true
       background:
-        color: '#f0f4f8'
+        color: ''
         image: ''
         imageScreen: 'none' # light, dark, none
     video:
@@ -159,8 +130,8 @@ sections:
         top: false
         bottom: false
       noPadding:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       background:
         isDark: true
         color: ''

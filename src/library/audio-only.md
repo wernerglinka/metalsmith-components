@@ -11,7 +11,7 @@ navigation:
 card:
   title: 'Audio Only'
   description: 'Dedicated audio section for podcasts, music, and audio content with optional background images.'
-  image: '/assets/images/sample16.jpg'
+  image: '/assets/images/sample24.jpg'
 
 seo:
   title: Audio Only Component - Audio Sections for Metalsmith
@@ -21,45 +21,16 @@ seo:
   keywords: 'metalsmith audio section, audio component, podcast player, music section, audio-only layout, media section, audio content'
 
 sections:
-  - sectionType: audio-only
-    containerTag: section
-    classes: ''
-    id: ''
-    isDisabled: false
-    isAnimated: true
-    containerFields:
-      inContainer: false
-      noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none' # light, dark, none
-    audio:
-      ogg: '/assets/audio/shattered-reflections.ogg'
-      mpeg: '/assets/audio/shattered-reflections.mp3'
-      bgImage: '/assets/images/sample12.jpg'
-      alt: 'Album cover for sample audio track'
-    ctas:
-      - url: 'https://example.com/playlist'
-        label: 'Full Playlist'
-        isButton: true
-        buttonStyle: 'primary'
-
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: true
+        top: false
         bottom: true
       noPadding:
         top: false
@@ -123,31 +94,6 @@ sections:
     isDisabled: false
     isAnimated: true
     containerFields:
-      inContainer: true
-      noMargin:
-        top: false
-        bottom: false
-      noPadding:
-        top: true
-        bottom: true
-      background:
-        color: '#f0f4f8'
-        image: ''
-        imageScreen: 'none' # light, dark, none
-    audio:
-      ogg: '/assets/audio/shattered-reflections.ogg'
-      mpeg: '/assets/audio/shattered-reflections.mp3'
-      bgImage: ''
-      alt: ''
-    ctas: []
-
-  - sectionType: audio-only
-    containerTag: section
-    classes: ''
-    id: ''
-    isDisabled: false
-    isAnimated: true
-    containerFields:
       inContainer: false
       noMargin:
         top: false
@@ -158,16 +104,16 @@ sections:
       background:
         isDark: true
         color: ''
-        image: '/assets/images/sample10.jpg'
-        imageScreen: 'dark' # light, dark, none
+        image: ''
+        imageScreen: 'none' # light, dark, none
     audio:
       ogg: '/assets/audio/shattered-reflections.ogg'
       mpeg: '/assets/audio/shattered-reflections.mp3'
       bgImage: '/assets/images/sample8.jpg'
       alt: 'Music album cover'
     ctas:
-      - url: ''
-        label: 'Download Track'
+      - url: 'https://suno.com/s/eQgA4HNfXWCFSPwK'
+        label: 'Another Track'
         isButton: true
         buttonStyle: 'inverted'
 ---

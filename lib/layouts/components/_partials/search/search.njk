@@ -25,32 +25,6 @@
       </button>
     </div>
     
-    {% if info.settings and info.settings.showCategories %}
-    <div class="search-filters">
-      <select id="category-filter" class="category-filter">
-        <option value="all">All Content</option>
-        <option value="page">Pages</option>
-        <option value="section">Sections</option>
-      </select>
-      
-      <select id="component-type-filter" class="component-type-filter">
-        <option value="all">All Components</option>
-        <option value="hero">Hero</option>
-        <option value="text-only">Text Only</option>
-        <option value="media-image">Media Image</option>
-        <option value="cta">Call to Action</option>
-        <option value="banner">Banner</option>
-        <option value="slider">Slider</option>
-        <option value="flip-cards">Flip Cards</option>
-        <option value="logos-list">Logos List</option>
-        <option value="testimonial">Testimonial</option>
-        <option value="columns">Columns</option>
-        <option value="blog-list">Blog List</option>
-        <option value="maps">Maps</option>
-      </select>
-    </div>
-    {% endif %}
-    
     <div class="search-status" id="search-status" aria-live="polite"></div>
     
     <div id="search-results" class="search-results" role="region" aria-label="Search results"></div>
