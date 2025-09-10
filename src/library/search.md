@@ -73,7 +73,7 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
-      title: 'Search Components'
+      title: 'Search'
       titleTag: 'h2'
       subTitle: 'Find components, examples, and documentation'
       prose:
