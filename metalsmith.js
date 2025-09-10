@@ -224,11 +224,6 @@ metalsmith
     } )
   )
 
-  .use( function( files, metalsmith, done ) {
-    console.log( 'Files right before search plugin:', Object.keys( files ).filter( f => f.includes( '.md' ) ).slice( 0, 10 ) );
-    done();
-  } )
-
   .use(
     search( {
       ignore: [ '**/search.md', '**/search-index.json' ]

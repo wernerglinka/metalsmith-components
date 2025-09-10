@@ -1,7 +1,3 @@
-.search-section {
-  padding: var(--section-padding) 0;
-}
-
 .search-title {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
@@ -229,12 +225,12 @@
   .search-filters {
     flex-direction: column;
   }
-  
+
   .category-filter,
   .component-type-filter {
     min-width: unset;
   }
-  
+
   .search-result .meta {
     flex-direction: column;
     align-items: flex-start;

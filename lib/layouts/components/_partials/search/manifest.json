@@ -1,23 +1,17 @@
 {
   "name": "search",
-  "type": "section",
+  "type": "partial",
   "styles": ["search.css"],
   "scripts": ["search.js"],
-  "requires": ["text"],
   "validation": {
-    "required": ["sectionType"],
     "properties": {
-      "sectionType": {
-        "type": "string",
-        "const": "search"
-      },
       "text.title": {
         "type": "string"
       },
       "text.subtitle": {
         "type": "string"
       },
-      "text.placeholder": {
+      "settings.placeholder": {
         "type": "string",
         "default": "Search..."
       },

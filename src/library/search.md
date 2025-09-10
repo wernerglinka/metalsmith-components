@@ -21,7 +21,39 @@ seo:
   keywords: 'metalsmith search, fuzzy search, search component, fuse.js, interactive search, site search, content discovery'
 
 sections:
-  - sectionType: search
+  - sectionType: hero
+    containerTag: section
+    classes: 'first-section'
+    id: ''
+    description: "This is a full screen hero section with a background image and text overlay. The proporty 'isFullScreen' is set to true, which turn a standard hero section into full screen."
+    isDisabled: false
+    isReverse: false
+    isAnimated: true
+    isFullScreen: false
+    targetId: 'first-section'
+    date: ''
+    author: ''
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: true
+        color: ''
+        image: '/assets/images/under-construction.jpg'
+        imageScreen: 'dark' # light, dark, none
+    text:
+      leadIn: 'Metalsmith Components Library'
+      title: Search Section
+      titleTag: 'h1'
+      subTitle:
+      prose: Under Construction
+
+  - sectionType: search-only
     containerTag: section
     classes: ''
     id: ''
@@ -40,14 +72,20 @@ sections:
         image: ''
         imageScreen: 'none' # light, dark, none
     text:
+      leadIn: ''
       title: 'Search Components'
-      subtitle: 'Find components, examples, and documentation'
-      placeholder: 'Search components, features, or documentation...'
+      titleTag: 'h2'
+      subTitle: 'Find components, examples, and documentation'
+      prose:
+
     settings:
+      placeholder: 'Search components, features, or documentation...'
       showCategories: true
       maxResults: 15
+      resultTypes: []
       enableHighlighting: true
       showRelevanceScore: true
+      minCharacters: 3
 
   - sectionType: text-only
     containerTag: article

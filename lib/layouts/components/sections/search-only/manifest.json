@@ -1,0 +1,56 @@
+{
+  "name": "search-only",
+  "type": "section",
+  "styles": ["search-only.css"],
+  "scripts": [],
+  "requires": ["search", "text", "commons"],
+  "validation": {
+    "required": ["sectionType"],
+    "properties": {
+      "sectionType": {
+        "type": "string",
+        "const": "search-only"
+      },
+      "containerFields.inContainer": {
+        "type": "boolean"
+      },
+      "containerFields.isAnimated": {
+        "type": "boolean"
+      },
+      "text.title": {
+        "type": "string"
+      },
+      "text.subtitle": {
+        "type": "string"
+      },
+      "settings.placeholder": {
+        "type": "string",
+        "default": "Search..."
+      },
+      "settings.showCategories": {
+        "type": "boolean",
+        "default": false
+      },
+      "settings.maxResults": {
+        "type": "number",
+        "default": 20
+      },
+      "settings.resultTypes": {
+        "type": "array",
+        "default": ["page", "section"]
+      },
+      "settings.showRelevanceScore": {
+        "type": "boolean",
+        "default": true
+      },
+      "settings.enableHighlighting": {
+        "type": "boolean",
+        "default": true
+      },
+      "settings.minCharacters": {
+        "type": "number",
+        "default": 2
+      }
+    }
+  }
+}
