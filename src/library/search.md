@@ -213,14 +213,14 @@ sections:
           });
         ```
 
-        ### Pipeline Positioning Strategy
+        ### Plugin Position
 
-        **Critical**: Place the search plugin **early** in the Metalsmith pipeline for optimal content extraction:
+        **Critical**: Place the search plugin before templating is applied for optimal content extraction:
 
-        - ✅ **Clean Content**: Processes original markdown files before HTML conversion
-        - ✅ **Better Search Results**: Avoids HTML navigation and page structure pollution  
-        - ✅ **Smaller Index**: Only meaningful content is indexed
-        - ✅ **Faster Processing**: Less content to parse and clean
+        - **Clean Content**: Processes original markdown files before HTML conversion
+        - **Better Search Results**: Avoids HTML navigation and page structure pollution  
+        - **Smaller Index**: Only meaningful content is indexed
+        - **Faster Processing**: Less content to parse and clean
 
         ### Configuration Options
 
@@ -295,11 +295,11 @@ sections:
       titleTag: 'h2'
       subTitle: ''
       prose: |-
-        ## Component-Based vs Traditional Content
+        ## Structured Content vs Traditional Content
 
         The metalsmith-search plugin intelligently handles both modern component-based architecture and traditional long-form content.
 
-        ### Modern Component-Based Sites
+        ### Structured Content Sites
 
         For sites using structured frontmatter with component sections:
 
