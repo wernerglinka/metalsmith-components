@@ -1,0 +1,15 @@
+.text-link {
+  display: inline-block;
+  font-size: var(--font-s);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-bottom-color: currentColor;
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-bottom-color: currentColor;
+  }
+}

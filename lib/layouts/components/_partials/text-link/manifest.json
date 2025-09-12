@@ -1,0 +1,7 @@
+{
+  "name": "text-link",
+  "type": "_partials",
+  "styles": ["text-link.css"],
+  "scripts": [],
+  "requires": []
+}

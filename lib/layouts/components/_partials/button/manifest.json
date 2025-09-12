@@ -1,0 +1,7 @@
+{
+  "name": "button",
+  "type": "_partials",
+  "styles": ["button.css"],
+  "scripts": [],
+  "requires": []
+}

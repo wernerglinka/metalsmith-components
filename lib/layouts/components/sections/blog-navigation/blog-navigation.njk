@@ -8,7 +8,7 @@
   <nav class="blog-navigation container" aria-label="Blog post navigation">
     {% if previous %}
       <a href="{{ previous.urlPath }}" class="blog-nav-link blog-nav-prev">
-        <span class="blog-nav-label">← Previous</span>
+        <span class="blog-nav-label">« Previous</span>
         <span class="blog-nav-title">{{ previous.card.title }}</span>
       </a>
     {% endif %}
@@ -16,7 +16,7 @@
     {% if next %}
       <a href="{{ next.urlPath }}" class="blog-nav-link blog-nav-next">
         <span class="blog-nav-title">{{ next.card.title }}</span>
-        <span class="blog-nav-label">Next →</span>
+        <span class="blog-nav-label">Next »</span>
       </a>
     {% endif %}
   </nav>

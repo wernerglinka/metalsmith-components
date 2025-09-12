@@ -188,31 +188,12 @@ svg {
 /**
  * Clear highlights button
  */
-.clear-highlights-button {
+.clear-highlights {
   position: fixed;
-  top: var(--space-lg);
-  right: var(--space-lg);
-  background: var(--color-background-secondary);
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  padding: var(--space-xs) var(--space-sm);
-  font-size: var(--font-size-sm);
-  cursor: pointer;
+  top: 80%;
+  left: 2rem;
   z-index: 1000;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    background: var(--color-background-tertiary);
-    color: var(--color-text-primary);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
+  border: none;
 }
 
 /**
