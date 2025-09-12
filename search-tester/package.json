@@ -1,0 +1,45 @@
+{
+  "name": "universal-search-tester",
+  "version": "1.0.0",
+  "description": "A comprehensive search testing framework for validating website search functionality with 500+ English language test terms",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "search-test": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "search",
+    "testing",
+    "fuzzy-search",
+    "fuse.js",
+    "website-testing",
+    "search-quality",
+    "english-language",
+    "automation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "fuse.js": "^7.0.0",
+    "commander": "^11.0.0",
+    "chalk": "^5.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/universal-search-tester.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/universal-search-tester/issues"
+  },
+  "homepage": "https://github.com/yourusername/universal-search-tester#readme"
+}

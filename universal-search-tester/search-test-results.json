@@ -1,0 +1,4883 @@
+{
+  "results": [
+    {
+      "term": "time",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Contact Information",
+          "url": "/contact",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "leadIn",
+              "matchedText": "time"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 1
+    },
+    {
+      "term": "person",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "person"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 1
+    },
+    {
+      "term": "year",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "About Our Company",
+          "url": "/about",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "year"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 1
+    },
+    {
+      "term": "way",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "day",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "thing",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Product Catalog",
+          "url": "/products",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "thing"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 1
+    },
+    {
+      "term": "man",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "world",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "life",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "hand",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "part",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "child",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "eye",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "woman",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "place",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "work",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "week",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "case",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "point",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "government",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "company",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "number",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "group",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "problem",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "fact",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "water",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "money",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "story",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "month",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "book",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "system",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "program",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "question",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Contact Information",
+          "url": "/contact",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "question"
+            }
+          ]
+        },
+        {
+          "title": "Customer Support",
+          "url": "/support",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "question"
+            }
+          ]
+        }
+      ],
+      "totalResults": 2,
+      "relevantResults": 2,
+      "executionTime": 0
+    },
+    {
+      "term": "right",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "business",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "issue",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Customer Support",
+          "url": "/support",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "issue"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "side",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "area",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "information",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Welcome to Our Website",
+          "url": "/",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "information"
+            }
+          ]
+        },
+        {
+          "title": "Contact Information",
+          "url": "/contact",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "title",
+              "matchedText": "Information"
+            }
+          ]
+        },
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "information"
+            }
+          ]
+        }
+      ],
+      "totalResults": 3,
+      "relevantResults": 3,
+      "executionTime": 1
+    },
+    {
+      "term": "house",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "family",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "health",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "school",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "service",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "room",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "name",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "research",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "community",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "level",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "state",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "make",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "About Our Company",
+          "url": "/about",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "make"
+            }
+          ]
+        },
+        {
+          "title": "Hero Section",
+          "url": "/#hero",
+          "type": "section",
+          "sectionType": "hero",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "make"
+            }
+          ]
+        }
+      ],
+      "totalResults": 2,
+      "relevantResults": 2,
+      "executionTime": 0
+    },
+    {
+      "term": "take",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "come",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "give",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "look",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "use",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "find",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Welcome to Our Website",
+          "url": "/",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "find"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "want",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "work",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "call",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "try",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ask",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "need",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Welcome to Our Website",
+          "url": "/",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "need"
+            }
+          ]
+        },
+        {
+          "title": "Product Catalog",
+          "url": "/products",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "leadIn",
+              "matchedText": "need"
+            }
+          ]
+        }
+      ],
+      "totalResults": 2,
+      "relevantResults": 2,
+      "executionTime": 0
+    },
+    {
+      "term": "feel",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "become",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "leave",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "move",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "play",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "turn",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "start",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "show",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Image Gallery",
+          "url": "/gallery",
+          "type": "section",
+          "sectionType": "gallery",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "show"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "hear",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "talk",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "provide",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Our Services",
+          "url": "/services",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "provide"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 1
+    },
+    {
+      "term": "allow",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "include",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "continue",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "follow",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "learn",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "About Our Company",
+          "url": "/about",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "Learn"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "change",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "lead",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "understand",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "leadIn",
+              "matchedText": "Understand"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 1
+    },
+    {
+      "term": "watch",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "stop",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "create",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "speak",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "read",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "spend",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "grow",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "open",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "walk",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "win",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "build",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "teach",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "offer",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Welcome to Our Website",
+          "url": "/",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "offer"
+            }
+          ]
+        },
+        {
+          "title": "Product Catalog",
+          "url": "/products",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "offer"
+            }
+          ]
+        }
+      ],
+      "totalResults": 2,
+      "relevantResults": 2,
+      "executionTime": 0
+    },
+    {
+      "term": "remember",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "consider",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "appear",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "buy",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "serve",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "good",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "new",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "first",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "last",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "long",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "great",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "About Our Company",
+          "url": "/about",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "great"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "little",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "own",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "other",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "old",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "right",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "big",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "high",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Product Catalog",
+          "url": "/products",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "high"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "different",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "small",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "large",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "next",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "early",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "young",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "important",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "important"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "few",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "public",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "bad",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "same",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "able",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Customer Support",
+          "url": "/support",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "able"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "local",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "sure",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "human",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "far",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "open",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "white",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "real",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "best",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "possible",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "social",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "available",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Customer Support",
+          "url": "/support",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "available"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "free",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "special",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Hero Section",
+          "url": "/#hero",
+          "type": "section",
+          "sectionType": "hero",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "special"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "clear",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "black",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "whole",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "medical",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "common",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "hard",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "simple",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "recent",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "strong",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "easy",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ready",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "natural",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "home",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "page",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Welcome to Our Website",
+          "url": "/",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "page"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "website",
+      "category": "validTerms",
+      "results": [
+        {
+          "title": "Welcome to Our Website",
+          "url": "/",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "title",
+              "matchedText": "Website"
+            }
+          ]
+        },
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "website"
+            }
+          ]
+        },
+        {
+          "title": "Hero Section",
+          "url": "/#hero",
+          "type": "section",
+          "sectionType": "hero",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "website"
+            }
+          ]
+        }
+      ],
+      "totalResults": 3,
+      "relevantResults": 3,
+      "executionTime": 0
+    },
+    {
+      "term": "search",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "help",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "support",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "contact",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "about",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "news",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "blog",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "login",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "register",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "profile",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "account",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "settings",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "privacy",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "terms",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "policy",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "subscribe",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "download",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "email",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "phone",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "address",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "location",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "map",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "directions",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "hours",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "menu",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "prices",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "events",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "gallery",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "photos",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "images",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "video",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "audio",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "documents",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "resources",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "links",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "tools",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "services",
+      "category": "validTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "asdf",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "qwerty",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "zxcv",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "hjkl",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "poiu",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "mnbv",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "lkjh",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "qaze",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "wsdx",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "edcr",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "rfvt",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "tgby",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "yhnu",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ujmi",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ikol",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "olpk",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "plmn",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "xzaq",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "cdev",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "vfrt",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "xyzt",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "qwxz",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "zqpx",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "mvnx",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "bklz",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "jpqx",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "wxyz",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "qpzm",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "xlnv",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "ztpq",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "mnkj",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "bgtr",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "hylp",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "qzwx",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "xvnm",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "plkj",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "zxyw",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "qmwn",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "bvnx",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "zyxw",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ing",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "tion",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "ness",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "ment",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "able",
+      "category": "invalidTerms",
+      "results": [
+        {
+          "title": "Customer Support",
+          "url": "/support",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "able"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "ible",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ful",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "less",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ous",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ive",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ize",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ise",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "age",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ery",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ary",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ity",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ify",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ure",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ite",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ate",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "pre",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "pro",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "anti",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "over",
+      "category": "invalidTerms",
+      "results": [
+        {
+          "title": "About Our Company",
+          "url": "/about",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "leadIn",
+              "matchedText": "over"
+            },
+            {
+              "field": "content",
+              "matchedText": "over"
+            }
+          ]
+        },
+        {
+          "title": "Hero Section",
+          "url": "/#hero",
+          "type": "section",
+          "sectionType": "hero",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "over"
+            }
+          ]
+        }
+      ],
+      "totalResults": 2,
+      "relevantResults": 2,
+      "executionTime": 0
+    },
+    {
+      "term": "under",
+      "category": "invalidTerms",
+      "results": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "leadIn",
+              "matchedText": "Under"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "out",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "super",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "sub",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "inter",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "non",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "x",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "z",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "q",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "j",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "xx",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "zz",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "qq",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "jj",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "xxx",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "zzz",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "teh",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "adn",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "recieve",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "seperate",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "occured",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "neccessary",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "begining",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "sucess",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "writting",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "freind",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "diffrent",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "usualy",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "everthing",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "somthing",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "comming",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "goverment",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "busines",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "proffesional",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "managment",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "develope",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "beleive",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "truely",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "finaly",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "basicaly",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "orignal",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "similiar",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "definitly",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "realy",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "actualy",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "generaly",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ecneidua",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "tnetnoc",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "egami",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "txet",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "noitamrofni",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ecivres",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "tcudorp",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "swen",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "yrots",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "eman",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "aBcDe",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "XyZaB",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "QwErT",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "mNbVc",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "pLkJh",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "zXcVb",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "rTyUi",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "dFgHj",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "sAlKd",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "wEqAz",
+      "category": "invalidTerms",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": " ",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "  ",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "\t",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "\n",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "\r",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "   ",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "\t\n",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": " \t ",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "\r\n",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "a",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "i",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "I",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "o",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "u",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "e",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "y",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "ab",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "it",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "is",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "to",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "of",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "at",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "on",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "in",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "be",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "or",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "an",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "as",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "by",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "the",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "and",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "for",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "are",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "but",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "not",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "you",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "all",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "can",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "had",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "her",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "was",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "one",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "our",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "out",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "day",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "get",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "has",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "him",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "his",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "how",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "its",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "may",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "new",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "now",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "old",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "see",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "two",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "who",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "boy",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "did",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "man",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "TEST",
+      "category": "edgeCases",
+      "results": [
+        {
+          "title": "Latest News and Updates",
+          "url": "/news",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "title",
+              "matchedText": "test"
+            },
+            {
+              "field": "leadIn",
+              "matchedText": "test"
+            },
+            {
+              "field": "content",
+              "matchedText": "test"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "Test",
+      "category": "edgeCases",
+      "results": [
+        {
+          "title": "Latest News and Updates",
+          "url": "/news",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "title",
+              "matchedText": "test"
+            },
+            {
+              "field": "leadIn",
+              "matchedText": "test"
+            },
+            {
+              "field": "content",
+              "matchedText": "test"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "test",
+      "category": "edgeCases",
+      "results": [
+        {
+          "title": "Latest News and Updates",
+          "url": "/news",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "title",
+              "matchedText": "test"
+            },
+            {
+              "field": "leadIn",
+              "matchedText": "test"
+            },
+            {
+              "field": "content",
+              "matchedText": "test"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "tEsT",
+      "category": "edgeCases",
+      "results": [
+        {
+          "title": "Latest News and Updates",
+          "url": "/news",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "title",
+              "matchedText": "test"
+            },
+            {
+              "field": "leadIn",
+              "matchedText": "test"
+            },
+            {
+              "field": "content",
+              "matchedText": "test"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "HOME",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "Home",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "home",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "hOmE",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1,
+      "error": "fieldValue.substring is not a function"
+    },
+    {
+      "term": "SEARCH",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "Search",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "search",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "sEaRcH",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "CONTENT",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "Content",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "content",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "cOnTeNt",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "1",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "2",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "10",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "100",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "1000",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "2023",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "2024",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "2025",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "123",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "456",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "789",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "page1",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "item2",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "section3",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "chapter4",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "part5",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "step6",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "level7",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "phase8",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "stage9",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "round10",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "@",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "#",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "$",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "%",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "&",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "*",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "!",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "?",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": ".",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": ",",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": ";",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": ":",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "|",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "\\",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "/",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "-",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "_",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "+",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "=",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0,
+      "error": "Term too short (1 < 2)"
+    },
+    {
+      "term": "test@",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "#test",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "$test",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "test%",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "test&",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "test*",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "test!",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "test?",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "test.",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "test,",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "hello world",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "test case",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "user name",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "web site",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "home page",
+      "category": "edgeCases",
+      "results": [
+        {
+          "title": "Welcome to Our Website",
+          "url": "/",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "content",
+              "matchedText": "home page"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "contact us",
+      "category": "edgeCases",
+      "results": [
+        {
+          "title": "Contact Information",
+          "url": "/contact",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "pageName",
+              "matchedText": "Contact Us"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "about us",
+      "category": "edgeCases",
+      "results": [
+        {
+          "title": "About Our Company",
+          "url": "/about",
+          "type": "page",
+          "score": 90,
+          "matches": [
+            {
+              "field": "pageName",
+              "matchedText": "About Us"
+            }
+          ]
+        }
+      ],
+      "totalResults": 1,
+      "relevantResults": 1,
+      "executionTime": 0
+    },
+    {
+      "term": "sign up",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "log in",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "check out",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "find out",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "learn more",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "get started",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "try now",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "click here",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "read more",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "user-name",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "user_name",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "web-site",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "web_site",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "home-page",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "home_page",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "check-out",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "check_out",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "sign-up",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "sign_up",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "log-in",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "log_in",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "e-mail",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "e_mail",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "real-time",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "real_time",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "supercalifragilisticexpialidocious",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "pneumonoultramicroscopicsilicovolcanoconiosis",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "antidisestablishmentarianism",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "floccinaucinihilipilification",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "pseudopseudohypoparathyroidism",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "verylongterminatenglishlanguagethatprobablywontmatchanything",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "extremelylongcompoundwordwithoutspaces",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "café",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "naïve",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "résumé",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "piña",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "jalapeño",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "über",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "façade",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "cliché",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "fiancé",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "protégé",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 1
+    },
+    {
+      "term": "jpg",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "png",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "gif",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "pdf",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "doc",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "txt",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "html",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "css",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "js",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "json",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "xml",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "csv",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "www",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "com",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "org",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "net",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "edu",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "gov",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "http",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "https",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "ftp",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    },
+    {
+      "term": "mailto",
+      "category": "edgeCases",
+      "results": [],
+      "totalResults": 0,
+      "relevantResults": 0,
+      "executionTime": 0
+    }
+  ],
+  "analysis": {
+    "summary": {
+      "totalTerms": 519,
+      "termsWithResults": 33,
+      "termsWithErrors": 60,
+      "avgExecutionTime": 0
+    },
+    "byCategory": {
+      "validTerms": {
+        "totalTerms": 190,
+        "termsWithResults": 23,
+        "avgResults": 0,
+        "successRate": 12
+      },
+      "invalidTerms": {
+        "totalTerms": 130,
+        "termsWithResults": 3,
+        "avgResults": 0,
+        "successRate": 2
+      },
+      "edgeCases": {
+        "totalTerms": 199,
+        "termsWithResults": 7,
+        "avgResults": 0,
+        "successRate": 4
+      }
+    },
+    "issues": [
+      {
+        "type": "false_positives",
+        "severity": "high",
+        "count": 3,
+        "terms": [
+          "able",
+          "over",
+          "under"
+        ],
+        "description": "Invalid terms returning results"
+      },
+      {
+        "type": "false_negatives",
+        "severity": "high",
+        "count": 167,
+        "terms": [
+          "way",
+          "day",
+          "man",
+          "world",
+          "life",
+          "hand",
+          "part",
+          "child",
+          "eye",
+          "woman"
+        ],
+        "description": "Valid terms returning no results"
+      }
+    ],
+    "recommendations": [
+      "Increase search threshold to reduce false positives",
+      "Reduce search threshold to improve recall for valid terms"
+    ],
+    "qualityScore": 60
+  },
+  "config": {
+    "relevanceThreshold": 70,
+    "maxResults": 20,
+    "minCharacters": 2,
+    "categories": [
+      "validTerms",
+      "invalidTerms",
+      "edgeCases"
+    ],
+    "generateHtmlReport": true,
+    "outputFile": "search-test-results.json",
+    "htmlReport": "search-test-report.html",
+    "verbose": true
+  },
+  "timestamp": "2025-09-12T16:28:51.638Z",
+  "metadata": {
+    "totalTerms": 519,
+    "categories": [
+      "validTerms",
+      "invalidTerms",
+      "edgeCases"
+    ],
+    "indexSize": 10,
+    "executionTime": 49
+  }
+}

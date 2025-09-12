@@ -1,0 +1,95 @@
+{
+  "entries": [
+    {
+      "title": "Welcome to Our Website",
+      "content": "This is the home page where you can find information about our company, services, and products. We offer comprehensive solutions for your business needs.",
+      "url": "/",
+      "type": "page",
+      "pageName": "Home",
+      "tags": ["home", "welcome", "company", "business"]
+    },
+    {
+      "title": "About Our Company",
+      "content": "Learn about our history, mission, and the dedicated team that makes our company great. We have been serving customers for over 20 years with excellent service and quality products.",
+      "url": "/about",
+      "type": "page",
+      "pageName": "About Us",
+      "leadIn": "Discover who we are and what we stand for",
+      "tags": ["about", "company", "history", "team", "mission"]
+    },
+    {
+      "title": "Contact Information",
+      "content": "Get in touch with our team through various channels. We're here to help with any questions about our services or products.",
+      "url": "/contact",
+      "type": "page",
+      "pageName": "Contact Us",
+      "leadIn": "Reach out to us anytime",
+      "tags": ["contact", "support", "help", "phone", "email"]
+    },
+    {
+      "title": "Our Services",
+      "content": "We provide a wide range of professional services including consulting, development, and ongoing support. Each service is tailored to meet your specific business requirements.",
+      "url": "/services",
+      "type": "page",
+      "pageName": "Services",
+      "leadIn": "Comprehensive solutions for your business",
+      "tags": ["services", "consulting", "development", "support", "professional"]
+    },
+    {
+      "title": "Product Catalog",
+      "content": "Browse our extensive catalog of high-quality products. From basic essentials to premium offerings, we have something for everyone.",
+      "url": "/products",
+      "type": "page",
+      "pageName": "Products",
+      "leadIn": "Quality products for all your needs",
+      "tags": ["products", "catalog", "quality", "premium", "essentials"]
+    },
+    {
+      "title": "Latest News and Updates",
+      "content": "Stay informed with our latest company news, product announcements, and industry insights. We regularly publish articles to keep you updated.",
+      "url": "/news",
+      "type": "page",
+      "pageName": "News",
+      "leadIn": "Stay up to date with our latest developments",
+      "tags": ["news", "updates", "announcements", "insights", "articles"]
+    },
+    {
+      "title": "Customer Support",
+      "content": "Our dedicated support team is available to assist you with any questions or technical issues. We pride ourselves on responsive and helpful customer service.",
+      "url": "/support",
+      "type": "page",
+      "pageName": "Support",
+      "leadIn": "We're here to help you succeed",
+      "tags": ["support", "customer", "help", "technical", "service"]
+    },
+    {
+      "title": "Privacy Policy",
+      "content": "Your privacy is important to us. This document outlines how we collect, use, and protect your personal information when you use our website and services.",
+      "url": "/privacy",
+      "type": "page",
+      "pageName": "Privacy Policy",
+      "leadIn": "Understanding how we protect your data",
+      "tags": ["privacy", "policy", "data", "protection", "security"]
+    },
+    {
+      "title": "Hero Section",
+      "content": "Welcome to our amazing website. Discover what makes us special and how we can help transform your business.",
+      "url": "/#hero",
+      "type": "section",
+      "sectionType": "hero",
+      "pageName": "Home",
+      "prose": "Transform your business with our innovative solutions",
+      "tags": ["hero", "welcome", "transform", "business", "innovative"]
+    },
+    {
+      "title": "Image Gallery",
+      "content": "View our collection of professional images showcasing our work, team, and facilities. Each image tells a story about our commitment to excellence.",
+      "url": "/gallery",
+      "type": "section",
+      "sectionType": "gallery",
+      "pageName": "Gallery",
+      "prose": "Professional imagery that captures our essence",
+      "tags": ["gallery", "images", "professional", "work", "excellence"]
+    }
+  ]
+}

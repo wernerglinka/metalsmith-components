@@ -88,6 +88,22 @@ sectionType: search
 
 ## Search Functionality
 
+### Two-Layer Search Architecture
+
+This component implements a sophisticated two-step search process for optimal user experience:
+
+#### Layer 1: Fuzzy Discovery (Algorithm Layer)
+- **Fuzzy Matching**: Uses Fuse.js to find potential matches with typo tolerance
+- **Weighted Results**: Titles and headings weighted higher than body content
+- **Multi-field Search**: Searches across titles, content, tags, and metadata
+- **Broad Discovery**: Casts a wide net to find all potentially relevant content
+
+#### Layer 2: User Experience Filtering (UX Layer)
+- **Exact Substring Verification**: Only shows results where the search term actually appears in the content
+- **Meaningful Match Filtering**: Prevents confusing partial matches (e.g., "dors" won't match "doors")
+- **Relevance Threshold**: Applies minimum relevance scores for quality results
+- **User-Focused Results**: Ensures users see content that genuinely contains their search terms
+
 ### Content Types Searched
 
 The search component can find content in:
@@ -96,12 +112,21 @@ The search component can find content in:
 - **Sections**: Individual component sections within pages
 - **Component Types**: Specific types like hero, text-only, media-image, etc.
 
-### Search Features
+### Search Behavior Examples
 
-- **Fuzzy Matching**: Finds results even with typos or partial matches
-- **Weighted Results**: Titles and headings are weighted higher than body content
-- **Multi-field Search**: Searches across titles, content, and metadata
-- **Real-time**: Results update as you type (with 300ms debounce)
+✅ **Valid Matches**:
+- "hero" → finds "Hero Section", "hero banner"
+- "tion" → finds "information", "navigation" (valid word endings)
+- "contact" → finds "Contact Us", "contact form"
+
+❌ **Filtered Out**:
+- "dors" → won't match "doors" (meaningless partial match)
+- "xyz" → won't match anything (nonsense term)
+- Low relevance fuzzy matches that don't contain the actual search term
+
+### Real-time Features
+- **Debounced Input**: 300ms delay prevents excessive searching while typing
+- **Progressive Results**: Results update instantly as you type
 
 ### Filtering Options
 
@@ -184,6 +209,32 @@ import search from 'metalsmith-search';
   sectionTypes: ['hero', 'text-only', 'media-image', 'cta', 'banner', 'slider', 'flip-cards', 'logos-list', 'testimonial', 'columns', 'blog-list', 'maps']
 }))
 ```
+
+## Search Quality Testing
+
+This search component works in conjunction with the **Universal Search Tester** for quality assurance:
+
+### Testing Architecture
+- **Universal Search Tester**: Tests the raw search algorithm and index quality (build-time)
+- **This Component**: Applies user experience filtering on top of the raw results (runtime)
+
+### Quality Workflow
+```bash
+# 1. Build your site and search index
+npm run build
+
+# 2. Test raw search algorithm quality
+node universal-search-tester/search-tester.js build/search-index.json
+
+# 3. This component automatically applies UX filtering for end users
+```
+
+### Optimization Process
+1. **Algorithm Layer**: Use Universal Search Tester to optimize search index and algorithm
+2. **UX Layer**: This component handles user experience filtering automatically
+3. **Iterative Improvement**: Test → Optimize → Validate → Deploy
+
+The Universal Search Tester validates that content **can be found**, while this component ensures only meaningful results **should be shown** to users.
 
 ## Troubleshooting
 
