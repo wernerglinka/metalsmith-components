@@ -23,6 +23,10 @@
       height: 7rem;
       border-radius: 50%;
       overflow: hidden;
+
+      img {
+        height: auto;
+      }
     }
 
     .name {

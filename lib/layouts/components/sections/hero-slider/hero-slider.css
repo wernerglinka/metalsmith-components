@@ -73,6 +73,11 @@
       z-index: 1;
     }
 
+    picture {
+      width: 100%;
+      height: 100%;
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -90,11 +95,11 @@
     max-width: var(--container-width);
     margin: 0 auto;
     gap: var(--space-m-l);
-    
+
     /* Fluid layout system similar to multi-media */
     --threshold: 50rem;
     flex-wrap: wrap;
-    
+
     > * {
       flex-grow: 1;
       flex-basis: calc((var(--threshold) - 100%) * 999);
@@ -114,6 +119,13 @@
     justify-content: center;
     align-items: center;
 
+    &.has-image {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
     * {
       margin: 0;
       /* All content starts translated to the right for slide-in effect */
@@ -125,11 +137,11 @@
     &.is-text-centered * {
       text-align: center;
     }
-    
+
     /* Left-align text content when not centered (better for split layouts) */
     &:not(.is-text-centered) {
       align-items: flex-start;
-      
+
       * {
         text-align: left;
       }
