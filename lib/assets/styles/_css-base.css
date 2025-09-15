@@ -9,9 +9,7 @@
   box-sizing: border-box;
 }
 
-html {
-  -moz-text-size-adjust: none; /* Prevent font size inflation */
-  -webkit-text-size-adjust: none;
+html { /* Prevent font size inflation */
   text-size-adjust: none;
   font-size: var(--default-font-size);
   scroll-behavior: smooth;
@@ -41,6 +39,7 @@ body {
 :is(h1, h2, h3, h4, button, input, textarea) {
   line-height: var(--smaller-line-height);
 }
+
 label {
   line-height: var(--smaller-line-height);
 }

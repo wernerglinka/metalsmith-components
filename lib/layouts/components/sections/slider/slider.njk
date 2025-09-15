@@ -3,7 +3,7 @@
 {% from "components/_partials/image/image.njk" import image %}
 {% from "components/_partials/slider-pagination/slider-pagination.njk" import sliderPagination %}
 
-<div class="container {% if section.config === 'isTabs' %}is-tabs{% endif %}">
+<div class="slider container {% if section.config === 'isTabs' %}is-tabs{% endif %}">
   <div
     class="slider-wrapper"
     role="region"
@@ -18,7 +18,7 @@
     <ul class="slides" aria-live="polite" aria-atomic="false">
       {% for slide in section.slides %}
         <li
-        class="slide {{ slide.slideClasses }} {% if loop.index == 1 %}is-visible{% endif %}"
+        class="slide {{ slide.slideClasses }} {% if loop.index == 1 %}is-selected{% endif %}"
         role="group"
         aria-label="{% if slide.text.title %}{{ slide.text.title }}{% else %}Slide {{ loop.index }} of {{ section.slides | length }}{% endif %}"
       >

@@ -4,11 +4,11 @@
 .breadcrumbs {
   position: absolute;
   top: var(--space-2xl-3xl);
+
   /* position into the middle of the page */
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-
   width: 100%;
   max-width: var(--wrapper-max-width, 85rem);
   margin: 0 auto var(--space-s-l);
@@ -24,7 +24,7 @@
     transition: color var(--transition-fast);
 
     /* Separator between items */
-    &:after {
+    &::after {
       content: '›'; /* Using a nicer character for separator */
       margin-left: var(--space-s);
       color: var(--color-primary);
@@ -56,7 +56,7 @@
 }
 
 .is-dark .breadcrumbs {
-  li:after {
+  li::after {
     color: var(--color-text-highlight-light);
   }
 

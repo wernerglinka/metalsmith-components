@@ -60,6 +60,7 @@
 nav {
   margin-left: auto;
 }
+
 .main-menu {
   display: flex;
   justify-content: flex-end;
@@ -89,7 +90,7 @@ nav {
 }
 
 /* Mobile menu styles */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .hamburger-menu {
     display: block;
     margin-left: auto;
@@ -162,6 +163,7 @@ nav {
 .main-menu li.active-path a,
 .main-menu a.active-path {
   color: var(--color-link-in-path) !important;
+
   /* Keep pointer events so users can still navigate to parent section */
 }
 
@@ -179,7 +181,7 @@ nav {
     border-bottom-color: var(--color-border-dark);
   }
   
-  @media (max-width: 767px) {
+  @media (width <= 767px) {
     .main-menu {
       background-color: var(--color-background-dark);
       box-shadow: 0 5px 10px var(--color-shadow-dark);

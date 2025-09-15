@@ -2,9 +2,9 @@
  * Default button style is glass
  */
 .button {
-  --primary-button-color: rgba(218, 30, 40, 0.8);
-  --secondary-button-color: rgba(0, 0, 0, 0.6);
-  --tertiary-button-color: rgba(255, 255, 255, 0.8);
+  --primary-button-color: rgb(218 30 40 / 80%);
+  --secondary-button-color: rgb(0 0 0 / 60%);
+  --tertiary-button-color: rgb(255 255 255 / 80%);
 
   display: inline-block;
   text-align: center;
@@ -13,7 +13,7 @@
   font-weight: 500;
   letter-spacing: var(--default-letter-spacing);
   color: var(--color-text-light);
-  background: rgba(218, 30, 40, 0.8);
+  background: rgb(218 30 40 / 80%);
   backdrop-filter: var(--glass-backdrop-filter);
   isolation: isolate;
   box-shadow: var(--glass-box-shadow);
@@ -27,9 +27,11 @@
   &.primary {
     background: var(--primary-button-color);
   }
+
   &.secondary {
     background: var(--secondary-button-color);
   }
+
   &.tertiary {
     background: var(--tertiary-button-color);
     color: var(--color-text);
@@ -44,9 +46,10 @@
   &:focus {
     outline: 2px solid var(--color-text-light);
     outline-offset: 2px;
+
     /* Ensure focus is visible on glass background */
     box-shadow:
       var(--glass-box-shadow),
-      0 0 0 4px rgba(255, 255, 255, 0.3);
+      0 0 0 4px rgb(255 255 255 / 30%);
   }
 }

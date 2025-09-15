@@ -15,6 +15,7 @@
 .slider {
   .slider-wrapper {
     position: relative;
+
     /* Fluid height that adapts to content */
     height: clamp(30rem, 35rem, 40rem);
     margin-block-end: var(--space-2xl);

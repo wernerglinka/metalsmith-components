@@ -5,7 +5,7 @@
   color: var(--color-text-inactive);
   margin-top: var(--space-s);
 
-  &:before {
+  &::before {
     content: 'By ';
     margin-right: 0.25em;
   }
@@ -20,6 +20,7 @@
     time {
       display: block;
     }
+
     time {
       flex: 0 0 100%;
     }

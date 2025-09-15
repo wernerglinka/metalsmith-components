@@ -4,12 +4,12 @@
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    border-bottom-color: currentColor;
+    border-bottom-color: currentcolor;
   }
 
   &:focus {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
-    border-bottom-color: currentColor;
+    border-bottom-color: currentcolor;
   }
 }

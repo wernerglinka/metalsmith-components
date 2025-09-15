@@ -26,7 +26,8 @@
     "test:watch": "mocha test/**/*.test.js --watch",
     "format": "prettier --write \"**/*.{js,json,njk,css}\"",
     "lint": "eslint --fix .",
-    "fix": "npm run format && npm run lint",
+    "lint:css": "stylelint \"lib/**/*.css\" --fix",
+    "fix": "npm run format && npm run lint && npm run lint:css",
     "depcheck": "depcheck",
     "release": "./scripts/release.sh",
     "release:patch": "./scripts/release.sh patch",
@@ -42,7 +43,9 @@
     "postcss-import": "^16.1.1",
     "prettier": "^3.6.2",
     "prettier-plugin-jinja-template": "^2.1.0",
-    "release-it": "^19.0.4"
+    "release-it": "^19.0.4",
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard": "^39.0.0"
   },
   "dependencies": {
     "@metalsmith/collections": "^1.3.1",

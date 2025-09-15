@@ -21,6 +21,7 @@
     margin-bottom: var(--space-m-l);
     text-align: center;
   }
+
   .ctas {
     margin-top: var(--space-m-l);
   }
@@ -52,8 +53,8 @@
   }
 
   /* when scrolling, add gradients for fade-out effect before and after the logos */
-  .mask:has(.play):before,
-  .mask:has(.play):after {
+  .mask:has(.play)::before,
+  .mask:has(.play)::after {
     content: '';
     position: absolute;
     z-index: 1000;
@@ -64,26 +65,26 @@
     pointer-events: none;
     background-image: linear-gradient(
       to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.95) 20%,
-      rgba(255, 255, 255, 0.8) 40%,
-      rgba(255, 255, 255, 0.4) 60%,
-      rgba(255, 255, 255, 0.1) 80%,
+      rgb(255 255 255 / 100%) 0%,
+      rgb(255 255 255 / 95%) 20%,
+      rgb(255 255 255 / 80%) 40%,
+      rgb(255 255 255 / 40%) 60%,
+      rgb(255 255 255 / 10%) 80%,
       transparent 100%
     );
   }
 
-  .mask:has(.play):after {
+  .mask:has(.play)::after {
     left: auto;
     right: 0;
     background-image: linear-gradient(
       to right,
       transparent 0%,
-      rgba(255, 255, 255, 0.1) 20%,
-      rgba(255, 255, 255, 0.4) 40%,
-      rgba(255, 255, 255, 0.8) 60%,
-      rgba(255, 255, 255, 0.95) 80%,
-      rgba(255, 255, 255, 1) 100%
+      rgb(255 255 255 / 10%) 20%,
+      rgb(255 255 255 / 40%) 40%,
+      rgb(255 255 255 / 80%) 60%,
+      rgb(255 255 255 / 95%) 80%,
+      rgb(255 255 255 / 100%) 100%
     );
   }
 
@@ -127,6 +128,7 @@
 
       a:hover svg {
         stroke: var(--color-primary);
+
         * {
           stroke: var(--color-primary);
         }

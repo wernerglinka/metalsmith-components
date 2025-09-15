@@ -54,6 +54,36 @@ sections:
       alt: ''
       caption: ''
 
+  - sectionType: search-only
+    containerTag: section
+    classes: 'library-search'
+    id: 'library-search'
+    description: 'Search component library'
+    isDisabled: false
+    containerFields:
+      inContainer: true
+      isAnimated: false
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      title: 'Find Components'
+      prose: 'Search our component library to quickly find the building blocks you need.'
+    placeholder: 'Search for components (e.g., hero, faq, slider...)'
+    source: '/library-search-index.json'
+    searchType: 'library'
+    settings:
+      maxResults: 10
+      enableHighlighting: true
+
   - sectionType: collection-list
     collectionName: 'library'
     domainName: 'library'

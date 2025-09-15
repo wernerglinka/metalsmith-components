@@ -6,6 +6,7 @@
   text-align: center;
   max-width: 100%;
 }
+
 .prose {
   /* Ensure proper spacing for markdown content */
   & > * + * {
@@ -115,21 +116,21 @@
   }
 
   code {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(255 255 255 / 10%);
     color: var(--color-text-light);
   }
 
   th {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(255 255 255 / 10%);
   }
 
   th,
   td {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgb(255 255 255 / 20%);
   }
 
   hr {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(255 255 255 / 20%);
   }
 }
 
@@ -138,6 +139,7 @@
   pre code {
     color: var(--color-text-light);
   }
+
   code {
     color: var(--color-text);
   }

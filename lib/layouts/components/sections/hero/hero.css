@@ -11,6 +11,7 @@
     --hero-text-width: calc(100% - clamp(0px, calc((100vw - 600px) * N), 40%))
   */
   --hero-text-width: calc(100% - clamp(0px, calc((100vw - 600px) * 2), 40%));
+
   .background-image {
     background-size: cover;
   }
@@ -18,7 +19,6 @@
   .text {
     width: var(--hero-text-width);
     padding: var(--space-s-l);
-
     border-radius: var(--space-2xs-xs);
     overflow: hidden;
   }

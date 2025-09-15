@@ -3,7 +3,7 @@
   "type": "section",
   "styles": ["slider.css"],
   "scripts": ["slider.js"],
-  "requires": ["ctas", "text", "image", "commons"],
+  "requires": ["ctas", "text", "image", "commons", "slider-pagination"],
   "validation": {
     "required": ["sectionType"],
     "properties": {

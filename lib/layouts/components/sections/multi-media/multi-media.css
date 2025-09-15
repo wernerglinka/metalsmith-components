@@ -27,7 +27,6 @@
     }
 
     .icon-wrapper {
-      align-items: stretch;
       width: 100%;
       display: flex;
       flex-direction: column;

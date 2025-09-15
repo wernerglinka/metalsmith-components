@@ -81,6 +81,7 @@
     a {
       font-size: var(--font-p);
       font-weight: 500;
+
       /* limit length to 60 characters with three dots */
       overflow: hidden;
       text-overflow: ellipsis;
@@ -127,7 +128,7 @@
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .search-filters {
     flex-direction: column;
   }
@@ -160,6 +161,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

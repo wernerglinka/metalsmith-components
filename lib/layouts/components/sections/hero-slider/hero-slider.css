@@ -2,6 +2,7 @@
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+
   /* Fluid height: 680px at 1240px viewport, 480px at 500px viewport */
   --slider-height: clamp(
     480px,
@@ -51,7 +52,7 @@
     /*
       Media background container
     */
-    &.has-dark-screen:after {
+    &.has-dark-screen::after {
       content: '';
       position: absolute;
       top: 0;
@@ -62,7 +63,7 @@
       z-index: 1;
     }
 
-    &.has-light-screen:after {
+    &.has-light-screen::after {
       content: '';
       position: absolute;
       top: 0;
@@ -98,6 +99,7 @@
 
     /* Fluid layout system similar to multi-media */
     --threshold: 50rem;
+
     flex-wrap: wrap;
 
     > * {
@@ -128,6 +130,7 @@
 
     * {
       margin: 0;
+
       /* All content starts translated to the right for slide-in effect */
       opacity: 0;
       transform: translateX(10rem);
@@ -301,7 +304,6 @@
     color: var(--slider-nav-color);
     transition: color var(--transition-base);
     user-select: none;
-    -webkit-user-select: none;
   }
 }
 
@@ -354,7 +356,7 @@
   Without the '-webkit-' prefix, the line-clamp property will work but the ellipsis 
   will not be shown
 */
-@media only screen and (max-width: 500px) {
+@media only screen and (width <= 500px) {
   .hero-slide .hero-content {
     .prose,
     p {
@@ -369,7 +371,7 @@
 }
 
 /* Mobile adjustments - Must come AFTER regular styles for proper cascade */
-@media only screen and (max-width: 768px) {
+@media only screen and (width <= 768px) {
   .hero-content {
     &.has-image {
       display: none;
@@ -419,14 +421,14 @@
       padding: 0;
       margin: 0 auto;
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgb(255 255 255 / 30%);
       font-size: 0; /* Hide text */
       overflow: hidden;
       text-indent: -9999px; /* Extra measure to hide text */
       transition: background-color 1s ease; /* Fade transition for dots */
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgb(255 255 255 / 50%);
       }
     }
 

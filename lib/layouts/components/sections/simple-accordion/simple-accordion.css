@@ -60,7 +60,7 @@
     &:focus {
       outline: 2px solid var(--color-primary, #007acc);
       outline-offset: 2px;
-      background-color: var(--color-surface-hover, rgba(0, 0, 0, 0.05));
+      background-color: var(--color-surface-hover, rgb(0 0 0 / 5%));
     }
 
     /* Remove default focus outline */
@@ -75,7 +75,7 @@
       text-align: left;
       position: relative;
 
-      &:after {
+      &::after {
         position: absolute;
         right: 0;
         top: 50%;
@@ -83,10 +83,12 @@
         font-size: inherit;
       }
     }
+
     /* Change icon based on aria-expanded */
     &[aria-expanded='false'] .title::after {
       content: '+';
     }
+
     &[aria-expanded='true'] .title::after {
       content: '-';
     }
@@ -100,4 +102,3 @@
       padding-bottom: 1rem;
     }
   }
-}

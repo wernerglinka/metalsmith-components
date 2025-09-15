@@ -1,7 +1,14 @@
 {% macro search(info) %}
+  <!-- Extract settings from different possible structures for backward compatibility -->
+  {% set searchSource = info.source or info.settings.source or '/search-index.json' %}
+  {% set searchType = info.searchType or info.settings.searchType or 'default' %}
+  {% set searchId = info.id or info.settings.id or 'default' %}
+  {% set searchPlaceholder = info.placeholder or info.settings.placeholder or 'Search...' %}
+
   <div class="search-container"
-       data-search-source="{{ info.source or '/search-index.json' }}"
-       data-search-type="{{ info.searchType or 'default' }}">
+       data-search-source="{{ searchSource }}"
+       data-search-type="{{ searchType }}">
+
     {% if info.title %}
       <h2 class="search-title">{{ info.title }}</h2>
     {% endif %}
@@ -13,15 +20,15 @@
     <div class="search-input-container">
       <input
         type="text"
-        id="search-input-{{ info.id or 'default' }}"
-        placeholder="{{ info.placeholder or 'Search...' }}"
+        id="search-input-{{ searchId }}"
+        placeholder="{{ searchPlaceholder }}"
         class="search-input"
         autocomplete="off"
         spellcheck="false"
-        aria-describedby="search-status-{{ info.id or 'default' }}"
+        aria-describedby="search-status-{{ searchId }}"
       />
       <button type="button"
-              id="search-clear-{{ info.id or 'default' }}"
+              id="search-clear-{{ searchId }}"
               class="search-clear"
               aria-label="Clear search">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -32,10 +39,10 @@
     </div>
 
     <div class="search-status"
-         id="search-status-{{ info.id or 'default' }}"
+         id="search-status-{{ searchId }}"
          aria-live="polite"></div>
 
-    <div id="search-results-{{ info.id or 'default' }}"
+    <div id="search-results-{{ searchId }}"
          class="search-results flow"
          role="region"
          aria-label="Search results"></div>

@@ -22,7 +22,7 @@
       cursor: pointer;
       opacity: 0.8;
 
-      &:after {
+      &::after {
         position: absolute;
         top: 12px;
         left: 20px;
@@ -42,7 +42,7 @@
       .play-button {
         background-color: #666;
 
-        &:after {
+        &::after {
           border-color: transparent transparent transparent #fff;
         }
       }

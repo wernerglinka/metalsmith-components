@@ -13,6 +13,8 @@ card:
   description: 'Interactive search component with fuzzy search, filtering, and real-time results using Fuse.js and metalsmith-search plugin.'
   image: '/assets/images/sample19.jpg'
 
+tags: ['search', 'find', 'filter', 'site-search', 'fuzzy-search']
+
 seo:
   title: Search Component - Interactive Search for Metalsmith
   description: 'Interactive search component with fuzzy search, filtering, and real-time results. Perfect for component libraries, documentation sites, and content-heavy Metalsmith static sites.'
