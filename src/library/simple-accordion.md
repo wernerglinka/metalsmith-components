@@ -142,49 +142,6 @@ sections:
         type: 'primary'
         isExternal: false
 
-  - sectionType: simple-accordion
-    containerTag: section
-    classes: ''
-    id: 'demo-centered-faqs'
-    isDisabled: false
-    containerFields:
-      inContainer: true
-      isAnimated: true
-      noMargin:
-        top: false
-        bottom: false
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none'
-    text:
-      leadIn: 'Example 3'
-      title: 'Centered Layout'
-      titleTag: 'h2'
-      subTitle: ''
-      prose: 'This example shows FAQs with centered text and content alignment.'
-    faqs:
-      scope: 'selections'
-      source: 'faqs'
-      selections:
-        - 'How does the automatic bundling work?'
-        - 'How do I test my components?'
-    expandFirst: false
-    allowMultiple: false
-    hasCenteredContent: true
-    ctas:
-      - url: '#'
-        text: 'Learn More'
-        type: 'secondary'
-        isExternal: false
-      - url: '#'
-        text: 'Contact Support'
-        type: 'primary'
-        isExternal: false
-
   - sectionType: text-only
     containerTag: section
     classes: ''
