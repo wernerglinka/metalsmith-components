@@ -55,7 +55,7 @@
                      data-episode-thumbnail="{{ episode.thumbnail or podcastData.coverImage }}">
                   <button class="episode-selector">
                     <div class="episode-thumbnail">
-                      <img src="{{ episode.thumbnail or podcastData.coverImage }}" alt="{{ episode.title }}">
+                      <img src="{{ episode.thumbnail or podcastData.coverImage }}" alt="Episode thumbnail: {{ episode.title }}">
                       <div class="play-indicator">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                           <path d="M8 5v14l11-7z"/>
@@ -81,9 +81,15 @@
               {% endfor %}
             {% elif podcastData.rssUrl %}
               <!-- Placeholder for RSS-loaded episodes -->
-              <div class="loading-episodes">Loading episodes from RSS feed...</div>
+              <div class="loading-episodes" role="status" aria-live="polite" aria-label="Loading episodes">
+                <span class="sr-only">Loading episodes from RSS feed, please wait...</span>
+                Loading episodes from RSS feed...
+              </div>
             {% else %}
-              <p class="no-episodes">No episodes available for this podcast.</p>
+              <p class="no-episodes" role="status" aria-live="polite">
+                <span class="sr-only">Notice: </span>
+                No episodes available for this podcast.
+              </p>
             {% endif %}
           </div>
         {% endif %}

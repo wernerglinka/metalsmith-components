@@ -1,32 +1,43 @@
 {% macro search(info) %}
-  <div class="search-container">
+  <div class="search-container"
+       data-search-source="{{ info.source or '/search-index.json' }}"
+       data-search-type="{{ info.searchType or 'default' }}">
     {% if info.title %}
       <h2 class="search-title">{{ info.title }}</h2>
     {% endif %}
-    
+
     {% if info.subtitle %}
       <p class="search-subtitle">{{ info.subtitle }}</p>
     {% endif %}
-    
+
     <div class="search-input-container">
-      <input 
-        type="text" 
-        id="search-input" 
+      <input
+        type="text"
+        id="search-input-{{ info.id or 'default' }}"
         placeholder="{{ info.placeholder or 'Search...' }}"
         class="search-input"
         autocomplete="off"
         spellcheck="false"
+        aria-describedby="search-status-{{ info.id or 'default' }}"
       />
-      <button type="button" id="search-clear" class="search-clear" aria-label="Clear search">
+      <button type="button"
+              id="search-clear-{{ info.id or 'default' }}"
+              class="search-clear"
+              aria-label="Clear search">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
-    
-    <div class="search-status" id="search-status" aria-live="polite"></div>
-    
-    <div id="search-results" class="search-results flow" role="region" aria-label="Search results"></div>
+
+    <div class="search-status"
+         id="search-status-{{ info.id or 'default' }}"
+         aria-live="polite"></div>
+
+    <div id="search-results-{{ info.id or 'default' }}"
+         class="search-results flow"
+         role="region"
+         aria-label="Search results"></div>
   </div>
 {% endmacro %}

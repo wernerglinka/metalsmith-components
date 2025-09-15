@@ -26,7 +26,7 @@
         <div class="play-button"></div>
         {% set imageData = {
           src: info.tn,
-          alt: ""
+          alt: info.alt or "Video thumbnail - click to play"
         } %}
         {{ image(imageData) }}
       </button>
@@ -44,7 +44,7 @@
         <div class="play-button"></div>
         {% set imageData = {
           src: info.tn,
-          alt: ""
+          alt: info.alt or "Video thumbnail - click to play"
         } %}
         {{ image(imageData) }}
       </button>

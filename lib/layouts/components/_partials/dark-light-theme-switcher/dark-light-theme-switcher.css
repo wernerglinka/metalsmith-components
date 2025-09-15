@@ -1,10 +1,23 @@
 .theme-toggle {
   background: transparent;
   border: none;
-  padding: 0;
+  padding: 8px;
   cursor: pointer;
   position: relative;
   margin-left: var(--space-m);
+  border-radius: 4px;
+  transition: outline 0.2s ease;
+
+  /* Focus indicator */
+  &:focus {
+    outline: 2px solid var(--color-primary, #007acc);
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus outline */
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 .theme-toggle span {

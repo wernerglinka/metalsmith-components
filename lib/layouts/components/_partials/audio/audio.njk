@@ -11,7 +11,7 @@
       {{ image(imageData) }}
     {% endif %}
 
-    <audio controls>
+    <audio controls aria-label="Audio player{% if info.title %}: {{ info.title }}{% endif %}">
       <source src={{info.ogg}} type="audio/ogg"/>
       <source src={{info.mpeg}} type="audio/mpeg"/>
       Your browser does not support the audio element.

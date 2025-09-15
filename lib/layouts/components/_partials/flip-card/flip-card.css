@@ -8,8 +8,19 @@
   color: var(--color-text);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transition: transform 0.8s;
+  transition: transform 0.8s, outline 0.2s ease;
   transform-style: preserve-3d;
+
+  /* Focus indicator */
+  &:focus {
+    outline: 2px solid var(--color-primary, #007acc);
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus outline */
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 
   /* font sizes for card are constant for all viewport widths */
   .lead-in {

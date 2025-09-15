@@ -112,6 +112,7 @@ sections:
       src: youtube
       id: 'OorZcOzNcgE'
       tn: '/assets/images/sample13.jpg'
+      alt: 'YouTube video tutorial - inline playback example'
     ctas:
       - url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video'
         label: 'Learn More'
@@ -142,6 +143,7 @@ sections:
       src: vimeo
       id: '347119375'
       tn: '/assets/images/sample10.jpg'
+      alt: 'Vimeo video showcase - click to open in modal'
     ctas:
       - url: 'https://metalsmith.io'
         label: 'Learn More'

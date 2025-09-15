@@ -8,6 +8,19 @@
   cursor: pointer;
   z-index: 1000;
   position: relative;
+  padding: 8px;
+  border-radius: 4px;
+
+  /* Focus indicator */
+  &:focus {
+    outline: 2px solid var(--color-primary, #007acc);
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus outline */
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 .hamburger-menu span {
@@ -59,6 +72,20 @@ nav {
 /* Desktop menu links */
 .main-menu a {
   color: inherit;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: outline 0.2s ease;
+
+  /* Focus indicator */
+  &:focus {
+    outline: 2px solid var(--color-primary, #007acc);
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus outline */
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 /* Mobile menu styles */

@@ -201,6 +201,16 @@ metalsmith
     } )
   )
 
+  .use( ( files, metalsmithInstance, done ) => {
+    // show the collections object for debug purposes
+    const metadata = metalsmithInstance.metadata();
+    console.log( 'Collections metadata:', metadata.collections );
+
+    done();
+  } )
+
+
+
   /**
    * Create metadata for blog pagination as pages are built
    * with individual page components so we can't use the

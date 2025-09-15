@@ -4,7 +4,7 @@
 
 {% macro card(props) %}
   {% if props.horizontal %}
-    <a href="{{ props.link }}">
+    <a href="{{ props.link }}" aria-label="Read more: {{ props.title }}">
       <div class="image-wrapper">
         <img src="{{ props.thumbnail }}" alt="{{ props.title }}"/>
       </div>
@@ -23,7 +23,7 @@
       </div>
     </a>
   {% else %}
-    <a href="{{ props.link }}">
+    <a href="{{ props.link }}" aria-label="Read more: {{ props.title }}">
       <div class="image-wrapper">
         <img src="{{ props.thumbnail }}" alt="{{ props.title }}"/>
       </div>

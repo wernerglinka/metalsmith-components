@@ -348,6 +348,7 @@ sections:
             src: 'vimeo'
             id: '76979871'
             tn: '/assets/images/vimeo-thumb.jpg'
+            alt: 'Vimeo background video for hero slider'
           imageScreen: 'dark'
 
   - sectionType: text-only

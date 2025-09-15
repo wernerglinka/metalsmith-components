@@ -242,11 +242,24 @@
           background: none;
           border: none;
           cursor: pointer;
-          transition: background-color 0.2s ease;
+          transition: background-color 0.2s ease, outline 0.2s ease;
           text-align: left;
-          
+          border-radius: 4px;
+
           &:hover {
             background: var(--color-background-subtle);
+          }
+
+          /* Focus indicator */
+          &:focus {
+            outline: 2px solid var(--color-primary, #007acc);
+            outline-offset: 2px;
+            background: var(--color-background-subtle);
+          }
+
+          /* Remove default focus outline */
+          &:focus:not(:focus-visible) {
+            outline: none;
           }
           
           .track-thumbnail-small {

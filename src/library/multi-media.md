@@ -288,6 +288,7 @@ sections:
       src: youtube
       id: 'OorZcOzNcgE'
       tn: '/assets/images/sample13.jpg'
+      alt: 'YouTube tutorial video demonstrating inline video integration'
 
   - sectionType: multi-media
     containerTag: aside
@@ -325,6 +326,7 @@ sections:
       src: vimeo
       id: '347119375'
       tn: '/assets/images/sample10.jpg'
+      alt: 'Vimeo video demonstration - cinematic modal experience'
 
   - sectionType: text-only
     containerTag: section

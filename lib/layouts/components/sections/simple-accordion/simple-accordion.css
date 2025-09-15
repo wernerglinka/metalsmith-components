@@ -14,9 +14,23 @@
     margin-bottom: var(--space-s);
     text-transform: uppercase;
     font-size: 0.7em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: outline 0.2s ease;
 
     &:hover {
       text-decoration: none;
+    }
+
+    /* Focus indicator */
+    &:focus {
+      outline: 2px solid var(--color-primary, #007acc);
+      outline-offset: 2px;
+    }
+
+    /* Remove default focus outline */
+    &:focus:not(:focus-visible) {
+      outline: none;
     }
   }
 
@@ -35,13 +49,25 @@
     background: none;
     padding: 0;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, outline 0.2s ease;
 
     &:hover {
       background-color: var(--color-surface-hover);
     }
+
+    /* Focus indicator */
     &:focus {
+      outline: 2px solid var(--color-primary, #007acc);
+      outline-offset: 2px;
+      background-color: var(--color-surface-hover, rgba(0, 0, 0, 0.05));
+    }
+
+    /* Remove default focus outline */
+    &:focus:not(:focus-visible) {
       outline: none;
     }
+  }
 
     .title {
       margin: 0;

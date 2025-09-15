@@ -4,8 +4,11 @@
 {% macro audioPlaylist(playlistName, options = {}, playlistsData = {}) %}
   {% set playlist = playlistsData[playlistName] %}
   {% if not playlist %}
-    <div class="audio-playlist-error">
-      <p>Playlist "{{ playlistName }}" not found</p>
+    <div class="audio-playlist-error" role="alert" aria-live="assertive">
+      <p>
+        <span class="sr-only">Error: </span>
+        Playlist "{{ playlistName }}" not found
+      </p>
     </div>
   {% else %}
     <div class="audio-playlist" data-playlist="{{ playlistName }}" data-platform="{{ playlist.platform }}" data-podcast-url="{{ playlist.podcastUrl }}">
@@ -62,7 +65,7 @@
         
         <!-- Audio Player for Internal Tracks -->
         <div class="audio-player" data-audio-player style="display: none;">
-          <audio controls data-audio-element>
+          <audio controls data-audio-element aria-label="Playlist audio player">
             <source src="" type="audio/ogg" data-audio-ogg>
             <source src="" type="audio/mpeg" data-audio-mp3>
             Your browser does not support the audio element.
@@ -93,7 +96,7 @@
           <ul class="tracks">
             {% for track in playlist.episodes %}
               <li class="track-item" data-track-id="{{ track.id }}">
-                <button class="track-button" data-track-button>
+                <button class="track-button" data-track-button aria-label="Play episode: {{ track.title }}">
                   <div class="track-thumbnail-small">
                     {% if track.thumbnail %}
                       {% set thumbData = {
