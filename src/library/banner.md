@@ -251,7 +251,7 @@ sections:
 
   - sectionType: banner
     containerTag: aside
-    classes: 'accordion-header'
+    classes: 'banner-accordion-header'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -277,7 +277,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'accordion-content is-closed'
+    classes: 'banner-accordion-content is-closed'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -311,7 +311,7 @@ sections:
 
   - sectionType: banner
     containerTag: aside
-    classes: 'accordion-header'
+    classes: 'banner-accordion-header'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -337,7 +337,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'accordion-content is-closed'
+    classes: 'banner-accordion-content is-closed'
     id: ''
     isDisabled: false
     isAnimated: true

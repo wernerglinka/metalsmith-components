@@ -32,9 +32,15 @@
 
   {# render the accordion #}
   {% if faqsList | hasItems %}
-    <div class="accordion js-accordion" 
-         data-allow-multiple="{{ section.allowMultiple }}"
-         data-expand-first="{{ section.expandFirst }}">
+    <div class="accordion js-accordion"
+         {% if section.allowMultiple %}data-allow-multiple{% endif %}
+         {% if section.expandFirst %}data-expand-first{% endif %}>
+      {# Add toggle all link when multiple panels are allowed #}
+      {% if section.allowMultiple %}
+        <a href="#" class="accordion-toggle-all js-accordion-toggle-all" aria-label="Toggle all panels">
+          <span class="toggle-text">Open All</span>
+        </a>
+      {% endif %}
       {% for faq in faqsList %}
         <div class="accordion-item">
           <button class="accordion-header js-accordion-header" 
