@@ -5,11 +5,11 @@
 import assert from 'assert';
 import { SearchTester } from '../index.js';
 
-describe('Universal Search Tester', function() {
+describe('Universal Search Tester', () => {
   let tester;
   let sampleSearchIndex;
 
-  before(function() {
+  before(() => {
     // Create sample search index
     sampleSearchIndex = {
       entries: [
@@ -50,45 +50,45 @@ describe('Universal Search Tester', function() {
     });
   });
 
-  describe('Initialization', function() {
-    it('should create SearchTester instance', function() {
+  describe('Initialization', () => {
+    it('should create SearchTester instance', () => {
       assert.ok(tester instanceof SearchTester);
     });
 
-    it('should load search index', async function() {
+    it('should load search index', async () => {
       await tester.loadSearchIndex(sampleSearchIndex);
       assert.ok(tester.searchData);
       assert.equal(tester.searchData.entries.length, 4);
     });
   });
 
-  describe('Term Testing', function() {
-    it('should find results for valid terms', function() {
+  describe('Term Testing', () => {
+    it('should find results for valid terms', () => {
       const result = tester.testSearchTerm('home', 'validTerms');
       assert.equal(result.term, 'home');
       assert.equal(result.category, 'validTerms');
       assert.ok(result.totalResults >= 0);
     });
 
-    it('should handle empty terms', function() {
+    it('should handle empty terms', () => {
       const result = tester.testSearchTerm('', 'edgeCases');
       assert.equal(result.results.length, 0);
       assert.ok(result.error || result.totalResults === 0);
     });
 
-    it('should handle short terms', function() {
+    it('should handle short terms', () => {
       const result = tester.testSearchTerm('a', 'edgeCases');
       assert.equal(result.term, 'a');
       assert.ok(result.error || result.results.length >= 0);
     });
 
-    it('should return execution time', function() {
+    it('should return execution time', () => {
       const result = tester.testSearchTerm('test', 'validTerms');
       assert.ok(result.executionTime >= 0);
     });
   });
 
-  describe('Comprehensive Testing', function() {
+  describe('Comprehensive Testing', () => {
     it('should run full test suite', async function() {
       this.timeout(10000); // Increase timeout for comprehensive tests
       
@@ -104,7 +104,7 @@ describe('Universal Search Tester', function() {
       assert.ok(results.results.length > 0);
     });
 
-    it('should provide quality analysis', async function() {
+    it('should provide quality analysis', async () => {
       const results = await tester.runTests(null, {
         categories: ['validTerms'],
         saveResults: false
@@ -120,14 +120,14 @@ describe('Universal Search Tester', function() {
     });
   });
 
-  describe('Configuration', function() {
-    it('should use default configuration', function() {
+  describe('Configuration', () => {
+    it('should use default configuration', () => {
       const defaultTester = new SearchTester();
       assert.equal(defaultTester.config.relevanceThreshold, 70);
       assert.equal(defaultTester.config.maxResults, 20);
     });
 
-    it('should merge custom configuration', function() {
+    it('should merge custom configuration', () => {
       const customTester = new SearchTester({
         relevanceThreshold: 80,
         maxResults: 5
@@ -138,8 +138,8 @@ describe('Universal Search Tester', function() {
     });
   });
 
-  describe('Static Methods', function() {
-    it('should provide test terms', function() {
+  describe('Static Methods', () => {
+    it('should provide test terms', () => {
       const terms = SearchTester.getTestTerms();
       assert.ok(terms);
       assert.ok(terms.validTerms);
@@ -149,15 +149,15 @@ describe('Universal Search Tester', function() {
       assert.ok(terms.validTerms.length > 0);
     });
 
-    it('should create instance via static method', function() {
+    it('should create instance via static method', () => {
       const instance = SearchTester.create({ relevanceThreshold: 90 });
       assert.ok(instance instanceof SearchTester);
       assert.equal(instance.config.relevanceThreshold, 90);
     });
   });
 
-  describe('Error Handling', function() {
-    it('should handle invalid search index', async function() {
+  describe('Error Handling', () => {
+    it('should handle invalid search index', async () => {
       const badTester = new SearchTester();
       try {
         await badTester.loadSearchIndex('/nonexistent/file.json');
@@ -167,7 +167,7 @@ describe('Universal Search Tester', function() {
       }
     });
 
-    it('should handle testing without loaded index', function() {
+    it('should handle testing without loaded index', () => {
       const emptyTester = new SearchTester();
       try {
         emptyTester.testSearchTerm('test', 'validTerms');
@@ -178,8 +178,8 @@ describe('Universal Search Tester', function() {
     });
   });
 
-  describe('Results Format', function() {
-    it('should return properly formatted results', function() {
+  describe('Results Format', () => {
+    it('should return properly formatted results', () => {
       const result = tester.testSearchTerm('contact', 'validTerms');
       
       assert.ok(result.term);

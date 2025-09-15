@@ -112,7 +112,7 @@ export class SearchTester {
     
     try {
       // Perform search
-      let results = this.fuse.search(term);
+      const results = this.fuse.search(term);
       
       // Filter by relevance
       const relevantResults = results.filter(result => {
@@ -251,7 +251,7 @@ export class SearchTester {
    * Extract matched text from indices
    */
   _getMatchedText(fieldValue, indices) {
-    if (!indices || !fieldValue) return '';
+    if (!indices || !fieldValue) {return '';}
     return indices.map(([start, end]) => 
       fieldValue.substring(start, end + 1)
     ).join(', ');

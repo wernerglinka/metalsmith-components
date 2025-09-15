@@ -1,0 +1,67 @@
+.simple-accordion {
+  .content {
+    display: block;
+  }
+
+  .text,
+  .accordion {
+    max-width: clamp(45ch, 65ch, 80ch);
+    margin-inline: auto;
+    margin-bottom: var(--space-m);
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid var(--color-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .accordion-header {
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-surface-hover);
+    }
+    &:focus {
+      outline: none;
+    }
+
+    .title {
+      margin: 0;
+      padding-block: var(--space-s);
+      text-align: left;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: inherit;
+      }
+    }
+    /* Change icon based on aria-expanded */
+    &[aria-expanded='false'] .title::after {
+      content: '+';
+    }
+    &[aria-expanded='true'] .title::after {
+      content: '-';
+    }
+  }
+
+  .accordion-panel {
+    height: 0;
+    overflow: hidden;
+
+    p {
+      padding-bottom: 1rem;
+    }
+  }
+}

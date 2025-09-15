@@ -92,6 +92,107 @@ The `metalsmith-bundled-components` plugin automatically:
 3. Applies PostCSS processing (autoprefixing, minification)
 4. Generates per-page assets with no unused code
 
+### Scaffolding a New Component
+
+When creating a new component, follow these steps to ensure proper integration:
+
+#### 1. Create Component Directory
+```bash
+mkdir -p lib/layouts/components/sections/[component-name]
+# or for partials:
+mkdir -p lib/layouts/components/_partials/[component-name]
+```
+
+#### 2. Required Files
+
+**manifest.json** - Must follow this exact structure:
+```json
+{
+  "name": "component-name",
+  "type": "section",  // or "partial"
+  "styles": ["component-name.css"],  // array of CSS files
+  "scripts": ["component-name.js"],  // array of JS files
+  "requires": ["text", "ctas", "commons"],  // required partials
+  "validation": {
+    "required": ["sectionType"],
+    "properties": {
+      "sectionType": {
+        "type": "string",
+        "const": "component-name"
+      }
+      // additional validation rules
+    }
+  }
+}
+```
+
+**Important**: Do NOT use the following structure (this is outdated):
+```json
+// WRONG - Don't use this format
+{
+  "dependencies": {
+    "partials": ["text", "ctas"],
+    "helpers": ["hasText", "hasCtas"]
+  },
+  "assets": {
+    "css": ["component.css"],
+    "js": ["component.js"]
+  }
+}
+```
+
+**component-name.yml** - Example frontmatter configuration
+**component-name.njk** - Nunjucks template
+**component-name.css** - Component styles (optional)
+**component-name.js** - Component JavaScript (optional)
+
+#### 3. Data Loading Pattern
+
+For components that load data from `lib/data/`:
+
+```njk
+{# Load all items from data source #}
+{% if section.items.scope === "all" %}
+  {% set itemsList = data[section.items.source] %}
+{% endif %}
+
+{# Load selected items by ID #}
+{% if section.items.scope === "selections" %}
+  {% set itemsList = data[section.items.source] | getSelections(section.items.selections) %}
+{% endif %}
+```
+
+#### 4. Helper Functions
+
+Common helper functions are globally available in templates:
+- `hasText` - Check if text object has content
+- `hasCtas` - Check if CTAs array exists and has items
+- `getSelections` - Filter data array by ID selections
+
+These are NOT declared in manifest.json - they're provided by the build system.
+
+#### 5. Creating Demo Pages
+
+Add a demo page in `src/library/component-name.md` with:
+- Multiple examples showing different configurations
+- Clear section explaining features and options
+- Implementation notes if needed
+
+The library page (`src/library.md`) uses a `collection-list` section that automatically includes all pages in the `/library/` folder - no manual linking needed.
+
+#### 6. Testing
+
+After creating a component:
+1. Run `npm test` to ensure manifest validation passes
+2. Run `npm run build` to verify the component bundles correctly
+3. Run `npm start` to test the component in the development server
+
+Common issues:
+- Missing `type` field in manifest.json
+- Using deprecated manifest structure
+- Incorrect `requires` dependencies
+- Template syntax errors with helper functions
+
 ### Mapping Component Features
 
 The maps component provides comprehensive interactive mapping capabilities with:

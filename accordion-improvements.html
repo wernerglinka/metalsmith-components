@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smooth Simultaneous Accordion</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .accordion {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .accordion-item {
+        border-bottom: 1px solid #ddd;
+      }
+
+      .accordion-item:last-child {
+        border-bottom: none;
+      }
+
+      .accordion-header {
+        background: #f5f5f5;
+        padding: 1rem;
+        cursor: pointer;
+        user-select: none;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+      }
+
+      .accordion-header:hover {
+        background: #e9e9e9;
+      }
+
+      .accordion-header.active {
+        background: #007acc;
+        color: white;
+      }
+
+      .accordion-content {
+        overflow: hidden;
+        height: 0;
+      }
+
+      .accordion-content-inner {
+        padding: 1rem;
+        background: white;
+      }
+
+      .demo-controls {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background: #f9f9f9;
+        border-radius: 4px;
+      }
+
+      .demo-controls button {
+        margin-right: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ccc;
+        background: white;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .demo-controls button:hover {
+        background: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Smooth Simultaneous Accordion</h1>
+
+    <div class="demo-controls">
+      <button onclick="accordion.openPanel(0)">Open Panel 1</button>
+      <button onclick="accordion.openPanel(1)">Open Panel 2</button>
+      <button onclick="accordion.openPanel(2)">Open Panel 3</button>
+      <button onclick="accordion.closeAll()">Close All</button>
+    </div>
+
+    <div class="accordion" id="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" data-index="0">Panel 1: JavaScript Fundamentals</div>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <p>
+              JavaScript is a versatile programming language that powers web interactivity. It supports multiple
+              programming paradigms including functional programming, which emphasizes immutable data and pure
+              functions.
+            </p>
+            <p>
+              Key concepts include closures, higher-order functions, and the event loop. Understanding these
+              fundamentals is crucial for writing maintainable code.
+            </p>
+            <p>
+              Modern JavaScript also includes features like destructuring, template literals, and async/await for
+              handling asynchronous operations cleanly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" data-index="1">Panel 2: Functional Programming Patterns</div>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <p>
+              Functional programming emphasizes writing code as a composition of pure functions. This approach leads to
+              more predictable and testable code.
+            </p>
+            <p>
+              Core principles include immutability, avoiding side effects, and using functions as first-class citizens.
+              Array methods like map, filter, and reduce are excellent examples of functional patterns.
+            </p>
+            <p>
+              Benefits include easier debugging, better testability, and reduced complexity in state management.
+              Functions should be small, focused, and do one thing well.
+            </p>
+            <p>
+              Dependency injection becomes natural in functional programming as dependencies are explicitly passed as
+              parameters rather than being hidden in global scope.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" data-index="2">Panel 3: Animation Performance</div>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <p>
+              Smooth animations require understanding the browser's rendering pipeline. The key is to avoid layout
+              thrashing and ensure animations run at 60fps.
+            </p>
+            <p>
+              requestAnimationFrame provides the optimal timing for animations by syncing with the browser's refresh
+              rate. This prevents the sequential animation issues common in accordion implementations.
+            </p>
+            <p>
+              By manually controlling height changes and coordinating multiple elements in a single animation loop, we
+              can achieve truly simultaneous animations that feel natural and responsive.
+            </p>
+            <p>
+              Performance considerations include minimizing DOM queries, caching measurements, and using transform
+              properties when possible for hardware acceleration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /**
+       * Creates a smooth accordion with simultaneous panel animations
+       * @param {string} selector - CSS selector for the accordion container
+       * @param {Object} options - Configuration options
+       * @returns {Object} Public API for the accordion
+       */
+      function createSmoothAccordion(selector, options = {}) {
+        const container = document.querySelector(selector);
+        const duration = options.duration || 300;
+        const easing = options.easing || easeInOutCubic;
+
+        let currentPanel = null;
+        let isAnimating = false;
+
+        /**
+         * Cubic easing function for smooth animations
+         * @param {number} t - Progress from 0 to 1
+         * @returns {number} Eased value
+         */
+        function easeInOutCubic(t) {
+          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        /**
+         * Gets the natural height of a content element
+         * @param {HTMLElement} contentElement - The content container
+         * @returns {number} Natural height in pixels
+         */
+        function getContentHeight(contentElement) {
+          // Store original styles
+          const originalHeight = contentElement.style.height;
+          const originalOverflow = contentElement.style.overflow;
+
+          // Temporarily set styles to measure natural height
+          contentElement.style.height = 'auto';
+          contentElement.style.overflow = 'visible';
+
+          // Get the height while maintaining layout context
+          const height = contentElement.scrollHeight;
+
+          // Restore original styles
+          contentElement.style.height = originalHeight;
+          contentElement.style.overflow = originalOverflow;
+
+          return height;
+        }
+
+        /**
+         * Animates height changes for multiple elements simultaneously
+         * @param {Array} animations - Array of animation configurations
+         * @param {Function} onComplete - Callback function when animation completes
+         */
+        function animateHeights(animations, onComplete) {
+          if (isAnimating) return;
+
+          isAnimating = true;
+          const startTime = performance.now();
+
+          function animate(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easing(progress);
+
+            animations.forEach(({ element, startHeight, endHeight }) => {
+              const currentHeight = startHeight + (endHeight - startHeight) * easedProgress;
+              element.style.height = `${currentHeight}px`;
+            });
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              isAnimating = false;
+              if (onComplete) onComplete();
+            }
+          }
+
+          requestAnimationFrame(animate);
+        }
+
+        /**
+         * Updates header active states
+         * @param {number|null} activeIndex - Index of active panel or null for none
+         */
+        function updateHeaders(activeIndex) {
+          const headers = container.querySelectorAll('.accordion-header');
+          headers.forEach((header, index) => {
+            header.classList.toggle('active', index === activeIndex);
+          });
+        }
+
+        /**
+         * Opens a specific panel, closing any currently open panel
+         * @param {number} panelIndex - Zero-based index of panel to open
+         */
+        function openPanel(panelIndex) {
+          if (isAnimating) return;
+
+          const panels = container.querySelectorAll('.accordion-content');
+          const targetPanel = panels[panelIndex];
+
+          if (!targetPanel) return;
+
+          const animations = [];
+
+          // If there's a currently open panel, close it
+          if (currentPanel !== null && currentPanel !== panelIndex) {
+            const currentPanelElement = panels[currentPanel];
+            animations.push({
+              element: currentPanelElement,
+              startHeight: currentPanelElement.offsetHeight,
+              endHeight: 0
+            });
+          }
+
+          // Open the target panel
+          if (currentPanel !== panelIndex) {
+            const targetHeight = getContentHeight(targetPanel);
+            animations.push({
+              element: targetPanel,
+              startHeight: targetPanel.offsetHeight,
+              endHeight: targetHeight
+            });
+
+            currentPanel = panelIndex;
+          } else {
+            // If clicking the same panel, close it
+            animations.push({
+              element: targetPanel,
+              startHeight: targetPanel.offsetHeight,
+              endHeight: 0
+            });
+
+            currentPanel = null;
+          }
+
+          updateHeaders(currentPanel);
+
+          if (animations.length > 0) {
+            animateHeights(animations);
+          }
+        }
+
+        /**
+         * Closes all panels
+         */
+        function closeAll() {
+          if (isAnimating || currentPanel === null) return;
+
+          const panels = container.querySelectorAll('.accordion-content');
+          const animations = [];
+
+          panels.forEach((panel) => {
+            if (panel.offsetHeight > 0) {
+              animations.push({
+                element: panel,
+                startHeight: panel.offsetHeight,
+                endHeight: 0
+              });
+            }
+          });
+
+          currentPanel = null;
+          updateHeaders(null);
+
+          if (animations.length > 0) {
+            animateHeights(animations);
+          }
+        }
+
+        /**
+         * Handles click events on accordion headers
+         * @param {Event} event - Click event
+         */
+        function handleHeaderClick(event) {
+          const header = event.target.closest('.accordion-header');
+          if (!header) return;
+
+          const panelIndex = parseInt(header.dataset.index, 10);
+          openPanel(panelIndex);
+        }
+
+        // Initialize event listeners
+        container.addEventListener('click', handleHeaderClick);
+
+        // Public API
+        return {
+          openPanel,
+          closeAll,
+          getCurrentPanel: () => currentPanel,
+          isAnimating: () => isAnimating
+        };
+      }
+
+      // Initialize the accordion
+      const accordion = createSmoothAccordion('#accordion', {
+        duration: 400
+      });
+
+      // Optional: Add keyboard navigation
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          accordion.closeAll();
+        }
+      });
+    </script>
+  </body>
+</html>

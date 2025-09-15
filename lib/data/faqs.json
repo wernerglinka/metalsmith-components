@@ -1,0 +1,27 @@
+[
+  {
+    "id": "getting-started",
+    "title": "How do I get started with Metalsmith Components?",
+    "answer": "Start by cloning the repository and running `npm install` to install dependencies. Then use `npm start` to launch the development server. The component library will be available at [http://localhost:3000](http://localhost:3000), where you can explore all available components and their documentation."
+  },
+  {
+    "id": "component-structure",
+    "title": "What is the structure of a component?",
+    "answer": "Each component contains several key files: a `.yml` file with frontmatter examples, a `.njk` Nunjucks template for markup, optional `.css` for component-specific styles, optional `.js` for interactive behavior, a `manifest.json` for dependencies and metadata, and an optional `README.md` for documentation."
+  },
+  {
+    "id": "bundling-process",
+    "title": "How does the automatic bundling work?",
+    "answer": "The metalsmith-bundled-components plugin automatically scans pages to identify which components are used, then bundles only the required CSS and JavaScript for optimal performance. It applies PostCSS processing for autoprefixing and minification, generating per-page assets with no unused code."
+  },
+  {
+    "id": "custom-components",
+    "title": "Can I create custom components?",
+    "answer": "Yes! Follow the established component structure: create a new folder in either `lib/layouts/components/_partials/` for small UI elements or `lib/layouts/components/sections/` for large page sections. Include the necessary files (template, manifest, optional styles and scripts) and ensure your component follows the project's conventions for semantic HTML and accessibility."
+  },
+  {
+    "id": "testing-components",
+    "title": "How do I test my components?",
+    "answer": "Use the comprehensive Mocha test suite by running `npm test`. When adding new components, ensure you add test cases for the component's manifest, test with various configuration options, verify the component renders without errors, test responsive behavior and accessibility, and validate against the Metalsmith2025 Starter structure."
+  }
+]

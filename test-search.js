@@ -187,7 +187,7 @@ function testSearchTerm(fuse, term, category = 'unknown') {
   
   try {
     // Perform search
-    let results = fuse.search(term);
+    const results = fuse.search(term);
     
     // Filter by relevance (match search.js logic)
     const relevantResults = results.filter(result => {
@@ -235,7 +235,7 @@ function testSearchTerm(fuse, term, category = 'unknown') {
  * Extract matched text from indices
  */
 function getMatchedText(fieldValue, indices) {
-  if (!indices || !fieldValue) return '';
+  if (!indices || !fieldValue) {return '';}
   return indices.map(([start, end]) => 
     fieldValue.substring(start, end + 1)
   ).join(', ');

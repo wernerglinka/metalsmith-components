@@ -368,7 +368,28 @@ const hasUrl = ( url ) => {
   return url.trim() !== '';
 };
 
-export {
+/**
+ * Checks if an array or object has items/properties
+ * @param {Array|Object} items - The array or object to check
+ * @returns {boolean} True if there are items/properties, false otherwise
+ */
+const hasItems = ( items ) => {
+  if ( !items ) {
+    return false;
+  }
+
+  // If it's an array, check if it has length
+  if ( Array.isArray( items ) ) {
+    return items.length > 0;
+  }
+
+  // If it's an object, check if it has keys
+  if ( typeof items === 'object' ) {
+    return Object.keys( items ).length > 0;
+  }
+
+  return false;
+}; export {
   toLower,
   toUpper,
   spaceToDash,
@@ -395,5 +416,6 @@ export {
   hasCtas,
   hasText,
   hasAuthor,
-  hasUrl
+  hasUrl,
+  hasItems
 };

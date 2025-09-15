@@ -26,7 +26,7 @@ export function analyzeResults(allResults) {
   const categories = ['validTerms', 'invalidTerms', 'edgeCases'];
   categories.forEach(category => {
     const categoryResults = allResults.filter(r => r.category === category);
-    if (categoryResults.length === 0) return;
+    if (categoryResults.length === 0) {return;}
 
     analysis.byCategory[category] = {
       totalTerms: categoryResults.length,
@@ -59,7 +59,7 @@ export function analyzeResults(allResults) {
  */
 function calculateAvgScore(categoryResults) {
   const resultsWithScore = categoryResults.filter(r => r.results.length > 0);
-  if (resultsWithScore.length === 0) return 0;
+  if (resultsWithScore.length === 0) {return 0;}
 
   const totalScore = resultsWithScore.reduce((sum, r) => {
     const avgScore = r.results.reduce((s, res) => s + res.score, 0) / r.results.length;
@@ -235,8 +235,8 @@ function calculateQualityScore(analysis) {
   // Bonus points for good performance
   const validCategory = analysis.byCategory.validTerms;
   if (validCategory) {
-    if (validCategory.successRate > 80) score += 5;
-    if (validCategory.avgScore > 85) score += 5;
+    if (validCategory.successRate > 80) {score += 5;}
+    if (validCategory.avgScore > 85) {score += 5;}
   }
 
   const invalidCategory = analysis.byCategory.invalidTerms;
@@ -255,9 +255,9 @@ function calculateQualityScore(analysis) {
  * Get quality grade based on score
  */
 export function getQualityGrade(score) {
-  if (score >= 90) return 'A';
-  if (score >= 80) return 'B';
-  if (score >= 70) return 'C';
-  if (score >= 60) return 'D';
+  if (score >= 90) {return 'A';}
+  if (score >= 80) {return 'B';}
+  if (score >= 70) {return 'C';}
+  if (score >= 60) {return 'D';}
   return 'F';
 }

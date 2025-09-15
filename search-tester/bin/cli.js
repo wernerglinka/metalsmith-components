@@ -201,10 +201,10 @@ function displayRecommendations(recommendations) {
 }
 
 function getScoreColor(score) {
-  if (score >= 90) return chalk.green.bold(`${score}/100 (Grade A)`);
-  if (score >= 80) return chalk.blue.bold(`${score}/100 (Grade B)`);
-  if (score >= 70) return chalk.yellow.bold(`${score}/100 (Grade C)`);
-  if (score >= 60) return chalk.orange.bold(`${score}/100 (Grade D)`);
+  if (score >= 90) {return chalk.green.bold(`${score}/100 (Grade A)`);}
+  if (score >= 80) {return chalk.blue.bold(`${score}/100 (Grade B)`);}
+  if (score >= 70) {return chalk.yellow.bold(`${score}/100 (Grade C)`);}
+  if (score >= 60) {return chalk.orange.bold(`${score}/100 (Grade D)`);}
   return chalk.red.bold(`${score}/100 (Grade F)`);
 }
 
