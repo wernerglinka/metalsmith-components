@@ -116,7 +116,7 @@ sections:
       title: 'Art Museum Example'
       titleTag: 'h2'
       subTitle: ''
-      prose: 'Display logos from art museums collection with 200px width.'
+      prose: 'Display logos from art museums collection with 200px width. The width of all museum logos is wider than the max container, so this list always scrolls'
     logos:
       source: 'artMuseums'
       logoWidth: 200
@@ -152,8 +152,7 @@ sections:
       title: Social Links Example
       titleTag: 'h2'
       subTitle: ''
-      prose: |-
-        Display social media links with smaller 90px width icons and reversed animation for small screens.
+      prose: 'Display social media links with smaller 90px width icons and reversed animation for small screens. These icons fit on a wide screen, no scrolling needed but for smaller screen they start scrolling.'
     logos:
       source: 'socialLinks'
       logoWidth: 90

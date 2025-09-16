@@ -8,7 +8,7 @@
   It can be configured to show all logos or a selection of logos based on the provided IDs.
 #}
 <div class="container content">
-  {# we need two copies so the auto scroll works properly #}
+  {# we need two copies to create the illusion of a continuous scroll #}
 {% set copies = 2 %}
 
 {# 
@@ -38,9 +38,9 @@
   </div>
 {% endif %}
 
-<div class="marquee {% if isReverse %}is-reverse{% endif %}" style="--list-width: {{ logosListLength }}">
+<div class="marquee-container {% if isReverse %}is-reverse{% endif %}" style="--single-list-width: {{ logosListLength }}">
   <div class="mask">
-    <div class="logos-wrapper">
+    <div class="marquee">
       {% for i in range(0, copies) -%}
         <ul class="logos js-logos-list">
           {% for item in logosList %}

@@ -244,7 +244,11 @@ metalsmith
    */
   .use(
     search( {
-      ignore: [ '**/search.md', '**/search-index.json' ]
+      ignore: [
+        '**/search.md',
+        '**/search-index.json',
+        '**/library-search-index.json'
+      ]
     } )
   )
 

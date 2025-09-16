@@ -1,10 +1,10 @@
 @keyframes marquee {
   0% {
-    transform: translate3d(var(--start-position, 0%), 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translate3d(var(--end-position, -50%), 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
@@ -26,29 +26,9 @@
     margin-top: var(--space-m-l);
   }
 
-  .logos-wrapper {
-    --logo-padding: 20px;
-    --list-height: 160px;
-    --start-position: 0%;
-    --end-position: -50%;
-    --animation-speed: 15s;
-
-    position: relative;
-    width: fit-content;
-    display: flex;
-    transform: translate3d(var(--start-position, 0%), 0, 0);
-    animation: marquee var(--animation-speed) linear infinite;
-    animation-play-state: paused;
-
-    &.play {
-      animation-play-state: running;
-    }
-  }
-
-  .marquee {
-    width: var(--list-width);
-    max-width: 100%;
-    margin: 0 auto;
+  .marquee-container {
+    width: 100%;
+    margin: 0 auto 3rem auto;
     overflow: hidden;
   }
 
@@ -93,20 +73,49 @@
     font-size: 1.2rem;
   }
 
-  .marquee:hover .logos-wrapper {
-    animation-play-state: paused;
-    transition-duration: 0.8s;
+  .marquee-container {
+    width: var(--single-list-width); /* important to set this to the width of one list */
+    max-width: 100%;
+    margin-inline: auto;
+
+    &:hover .marquee {
+      animation-play-state: paused;
+      transition-duration: 0.8s;
+    }
   }
 
+  .marquee {
+    --logo-padding: 20px;
+    --list-height: 160px;
+    --animation-speed: 15s;
+
+    position: relative;
+    width: var(--single-list-width); /* important to set this to the width of one list */
+    display: flex;
+    gap: 0;
+    transform: translate3d(0, 0, 0);
+    animation: marquee var(--animation-speed) linear infinite;
+    animation-play-state: paused;
+
+    &.play {
+      animation-play-state: running;
+    }
+
+    /* Pause animation when reduced-motion is set */
+    @media (prefers-reduced-motion: reduce) {
+      animation-play-state: paused !important;
+    }
+  }
+
+  /* marquee content */
   .logos {
     display: flex;
-    width: var(--list-width);
+    width: var(--single-list-width);
     padding: 0;
-    margin: 0 0 3rem;
+    margin: 0;
+    flex-shrink: 0;
 
     li {
-      padding: 0 var(--logo-padding);
-
       .icon-wrapper {
         width: 100%;
       }
@@ -141,6 +150,7 @@
       justify-content: center;
       height: 100%;
       border: none;
+      padding: 0 var(--logo-padding);
     }
 
     a:hover {
