@@ -12,6 +12,7 @@ card:
   title: 'Columns'
   description: 'Create custom multi-column layouts. Combine text, images, and CTAs in flexible column arrangements.'
   image: '/assets/images/sample5.jpg'
+  tags: ['columns', 'layout', 'grid', 'multi-column', 'flexible', 'responsive']
 
 seo:
   title: Columns Section - Flexible Multi-Column Layouts for Metalsmith

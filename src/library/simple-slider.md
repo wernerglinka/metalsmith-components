@@ -12,6 +12,7 @@ card:
   title: 'Simple Slider'
   description: 'Interactive slider component with standard pagination or tabbed interface.'
   image: '/assets/images/sample14.jpg'
+  tags: ['slider', 'carousel', 'tabs', 'pagination', 'slideshow', 'interactive']
 
 seo:
   title: Simple Slider Component - Carousel & Tabbed Content for Metalsmith

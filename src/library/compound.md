@@ -12,6 +12,7 @@ card:
   title: 'Compound'
   description: 'Wrap multiple sections to share common fields and styling.'
   image: '/assets/images/sample18.jpg'
+  tags: ['compound', 'wrapper', 'container', 'grouped', 'sections', 'layout']
 
 seo:
   title: Compound Section - Wrap Multiple Sections for Metalsmith

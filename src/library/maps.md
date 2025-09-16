@@ -12,6 +12,7 @@ card:
   title: 'Maps'
   description: 'Map component supporting Leaflet and OpenLayers providers with dynamic library loading, custom SVG markers, and popup interactions.'
   image: '/assets/images/sample11.jpg'
+  tags: ['maps', 'location', 'leaflet', 'openlayers', 'markers', 'interactive', 'geolocation']
 
 seo:
   title: Map Component - Interactive Maps with Leaflet and OpenLayers for Metalsmith

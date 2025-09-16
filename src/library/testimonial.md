@@ -12,6 +12,7 @@ card:
   title: 'Testimonial'
   description: 'Display customer testimonials with quotes, citations, portraits, and company logos.'
   image: '/assets/images/sample23.jpg'
+  tags: ['testimonial', 'review', 'quote', 'customer', 'feedback', 'social-proof']
 
 seo:
   title: Testimonial Component - Customer Quotes & Reviews for Metalsmith

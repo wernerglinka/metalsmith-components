@@ -12,6 +12,7 @@ card:
   title: 'Hero Slider'
   description: 'Hero slider with various background media, smooth transitions, and autoplay.'
   image: '/assets/images/sample7.jpg'
+  tags: ['hero', 'slider', 'carousel', 'slideshow', 'autoplay', 'fullscreen', 'media']
 
 seo:
   title: Hero Slider Component - Multi-Slide Hero Sections for Metalsmith

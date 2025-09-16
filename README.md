@@ -26,6 +26,7 @@ Explore a comprehensive collection of production-ready components:
 - **Interactive Elements**: Sliders, flip cards, and logo carousels
 - **Mapping Components**: Interactive maps with Leaflet and OpenLayers support, JSON data files, custom markers, and clustering
 - **Composed Sections**: Multi-column layouts for custom content arrangements
+- **Search Functionality**: Real-time component search with fuzzy matching across titles, descriptions, and tags
 
 ### Documentation & Learning
 
@@ -41,6 +42,7 @@ Explore a comprehensive collection of production-ready components:
 - **PostCSS Processing**: Built-in autoprefixing and CSS optimization
 - **True Component Encapsulation**: Each component manages its own styles, scripts, and templates
 - **No Framework Overhead**: Pure HTML/CSS/JS output without React, Vue, or other runtime dependencies
+- **Searchable Component Library**: Build-time search index generation with component tagging system
 
 ## Getting Started with Metalsmith Components
 
@@ -151,7 +153,8 @@ npm run fix    # Run both format and lint in sequence
 │       │           │   └── helpers/      # Utilities & icon registry
 │       └── pages/             # Page templates
 ├── plugins/                   # Custom build plugins
-│   └── generate-maps-icons.js     # Dynamic icon registry generator
+│   ├── generate-maps-icons.js     # Dynamic icon registry generator
+│   └── generate-library-search-index.js  # Search index generator
 ├── metalsmith.js              # Build configuration
 └── package.json               # Project dependencies
 ```
@@ -236,6 +239,7 @@ For complex components like maps, the system uses external JSON files for data m
 - **Flip Cards**: Interactive cards with front/back content
 - **Logos List**: Auto-scrolling logo carousels
 - **Testimonial**: Customer quotes with attribution
+- **Search**: Real-time fuzzy search with Fuse.js integration
 
 ### Mapping Components
 

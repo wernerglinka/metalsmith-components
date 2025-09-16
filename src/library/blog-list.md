@@ -12,6 +12,7 @@ card:
   title: 'Collection List'
   description: 'Universal collection listing component with pagination and card-based layout. Works with any collection (blog, components, etc.).'
   image: '/assets/images/sample4.jpg'
+  tags: ['blog', 'collection', 'list', 'grid', 'cards', 'pagination', 'archive']
 
 seo:
   title: Collection List Component - Universal Paginated Collection Grid for Metalsmith

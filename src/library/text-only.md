@@ -12,6 +12,7 @@ card:
   title: 'Text Only'
   description: 'Versatile text section for articles, documentation, code snippets, and content-heavy layouts. '
   image: '/assets/images/sample16.jpg'
+  tags: ['text', 'content', 'article', 'documentation', 'prose', 'typography']
 
 seo:
   title: Text Only Component - Content Sections for Metalsmith

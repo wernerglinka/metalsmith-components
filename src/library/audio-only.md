@@ -12,6 +12,7 @@ card:
   title: 'Audio Only'
   description: 'Dedicated audio section for podcasts, music, and audio content with optional background images.'
   image: '/assets/images/sample24.jpg'
+  tags: ['audio', 'music', 'podcast', 'sound', 'media', 'player']
 
 seo:
   title: Audio Only Component - Audio Sections for Metalsmith

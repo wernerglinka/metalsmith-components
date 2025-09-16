@@ -12,6 +12,7 @@ card:
   title: 'Video Only'
   description: 'Dedicated video section supporting YouTube, Vimeo, and Cloudinary with modal and inline playback options.'
   image: '/assets/images/sample21.jpg'
+  tags: ['video', 'youtube', 'vimeo', 'cloudinary', 'media', 'player', 'modal']
 
 seo:
   title: Video Only Component - Video Sections for Metalsmith

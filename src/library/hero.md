@@ -12,8 +12,7 @@ card:
   title: 'Hero'
   description: 'Hero section with background images, text overlays, and CTAs.'
   image: '/assets/images/sample8.jpg'
-
-tags: ['hero', 'banner', 'header', 'landing-page', 'fullscreen', 'cta']
+  tags: ['hero', 'banner', 'header', 'landing-page', 'fullscreen', 'cta']
 
 seo:
   title: Hero Section Component - Full Screen & Standard Heroes for Metalsmith

@@ -12,6 +12,7 @@ card:
   title: 'Podcast'
   description: 'Professional podcast player with RSS feed integration, Shikwasa player, progressive loading, and episode selection.'
   image: '/assets/images/sample20.jpg'
+  tags: ['podcast', 'audio', 'rss', 'player', 'episodes', 'shikwasa', 'streaming']
 
 seo:
   title: Podcast Component - RSS-Powered Player for Metalsmith

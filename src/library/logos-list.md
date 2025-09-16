@@ -12,6 +12,7 @@ card:
   title: 'Logos List'
   description: 'Display collections of logos, client brands, partner organizations, or social media icons with auto-scrolling support.'
   image: '/assets/images/sample10.jpg'
+  tags: ['logos', 'brands', 'partners', 'clients', 'sponsors', 'auto-scroll', 'carousel']
 
 seo:
   title: Logos List Component - Client & Partner Logo Display for Metalsmith

@@ -35,7 +35,7 @@ function generateLibrarySearchIndex(options = {}) {
         title: file.title,
         description: (file.card && file.card.description) || '',
         url: '/library/' + componentName + '/',
-        tags: file.tags || []
+        tags: (file.card && file.card.tags) || []
       };
 
       searchIndex.push(searchEntry);

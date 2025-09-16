@@ -12,6 +12,7 @@ card:
   title: 'CTA Banner'
   description: 'Create eye-catching CTA banners with background images or colors. Includes accordion header functionality.'
   image: '/assets/images/sample9.jpg'
+  tags: ['banner', 'cta', 'call-to-action', 'announcement', 'full-width', 'accordion']
 
 seo:
   title: Banner Component - Metalsmith Call-to-Action Section

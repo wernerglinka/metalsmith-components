@@ -12,6 +12,7 @@ card:
   title: 'Flip Cards'
   description: 'Interactive flip card components with front and back content, icons, and CTAs.'
   image: '/assets/images/sample6.jpg'
+  tags: ['flip-cards', 'interactive', 'cards', 'animation', 'hover-effects', 'cta']
 
 seo:
   title: Flip Cards Component - Interactive Card UI for Metalsmith

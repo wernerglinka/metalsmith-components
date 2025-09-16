@@ -12,6 +12,7 @@ card:
   title: 'Multi Media'
   description: 'Flexible media section combining text, optional CTAs, and various multi media with reversible layouts.'
   image: '/assets/images/sample13.jpg'
+  tags: ['media', 'video', 'image', 'audio', 'multimedia', 'flexible', 'content']
 
 seo:
   title: Multi Media Component - Text & Image, Video, Icon, Audio and Lottie Animation  Layouts for Metalsmith

@@ -1,0 +1,17 @@
+.blurbs {
+  .container.content {
+    display: block;
+  }
+
+  .blurb-list {
+    margin: 0;
+    padding-block: var(--space-s-m);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    li {
+      flex: 1 1 300px;
+    }
+  }
+}

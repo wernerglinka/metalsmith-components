@@ -12,8 +12,7 @@ card:
   title: 'Simple Accordion'
   description: 'Interactive accordion component for FAQs with expand/collapse functionality and flexible data loading.'
   image: '/assets/images/sample24.jpg'
-
-tags: ['faq', 'accordion', 'collapse', 'questions', 'expandable']
+  tags: ['faq', 'accordion', 'collapse', 'questions', 'expandable']
 
 seo:
   title: Simple Accordion Component - FAQ Section for Metalsmith

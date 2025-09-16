@@ -389,7 +389,22 @@ const hasItems = ( items ) => {
   }
 
   return false;
-}; export {
+};
+
+/**
+ * Checks if an object has an icon property with meaningful content
+ * @param {Object} obj - The object to check for an icon property
+ * @returns {boolean} True if the object has a non-empty icon property, false otherwise
+ */
+const hasIcon = ( obj ) => {
+  if ( !obj || typeof obj !== 'object' ) {
+    return false;
+  }
+
+  return obj.icon && typeof obj.icon === 'string' && obj.icon.trim() !== '';
+};
+
+export {
   toLower,
   toUpper,
   spaceToDash,
@@ -417,5 +432,6 @@ const hasItems = ( items ) => {
   hasText,
   hasAuthor,
   hasUrl,
-  hasItems
+  hasItems,
+  hasIcon
 };

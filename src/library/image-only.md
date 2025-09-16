@@ -12,6 +12,7 @@ card:
   title: 'Image Only'
   description: 'Dedicated image section for showcasing visuals with optional captions and CTAs.'
   image: '/assets/images/sample15.jpg'
+  tags: ['image', 'media', 'visual', 'gallery', 'photo', 'picture']
 
 seo:
   title: Image Only Component - Visual Sections for Metalsmith

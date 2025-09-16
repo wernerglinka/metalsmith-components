@@ -227,6 +227,35 @@ The maps component provides comprehensive interactive mapping capabilities with:
 - **Error Handling**: Graceful fallbacks for missing icons and failed library loads
 - **Accessibility**: Proper ARIA attributes and screen reader support
 
+### Library Search System
+
+The component library includes a dedicated search system for discovering components by name, description, or tags.
+
+#### Search Index Generation
+- **Plugin**: `plugins/generate-library-search-index.js` generates a JSON search index at build time
+- **Output**: Creates `library-search-index.json` with metadata for all library components
+- **Data Structure**: Includes title, description, URL, and tags for each component
+
+#### Component Tagging
+- **Location**: Tags are stored in the `card.tags` array in each library page's frontmatter
+- **Purpose**: Enable discovery by functionality, use case, or component type
+- **Examples**: `['hero', 'banner', 'fullscreen', 'cta']` for hero components
+
+#### Search Implementation
+- **Search Partial**: `lib/layouts/components/_partials/search/` provides the search UI
+- **Client-Side**: Uses Fuse.js for fuzzy search capabilities
+- **Real-Time**: Instant search results as users type
+- **Search Fields**: Searches across title, description, and tags
+
+#### Using Search in Pages
+To add search functionality to any page, include the search partial in your frontmatter:
+```yaml
+sections:
+  - sectionType: search
+    searchIndex: '/library-search-index.json'
+    placeholder: 'Search components...'
+```
+
 ## Key Files & Configuration
 
 ### Build Configuration
@@ -236,6 +265,7 @@ The maps component provides comprehensive interactive mapping capabilities with:
 - `eslint.config.js` - ESLint configuration
 - `prettier.config.js` - Prettier formatting rules
 - `plugins/generate-maps-icons.js` - Build-time icon registry generation for maps components
+- `plugins/generate-library-search-index.js` - Build-time search index generation for library components
 
 ### Content Structure
 
