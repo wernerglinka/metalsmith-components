@@ -1,0 +1,97 @@
+[
+  {
+    "featured": true,
+    "decoration": {
+      "icon": "",
+      "image": {
+        "src": "/assets/images/tree-featured.jpg",
+        "alt": "A Tree"
+      },
+      "url": "",
+      "title": ""
+    },
+    "text": {
+      "leadIn": "",
+      "title": "Our Featured Tree",
+      "titleTag": "h4",
+      "subTitle": "",
+      "prose": "Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui."
+    }
+  },
+  {
+    "featured": false,
+    "decoration": {
+      "icon": "",
+      "image": {
+        "src": "/assets/images/tree2.jpg",
+        "alt": "A Tree"
+      },
+      "url": "",
+      "title": ""
+    },
+    "text": {
+      "leadIn": "",
+      "title": "Another Tree",
+      "titleTag": "h4",
+      "subTitle": "",
+      "prose": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. "
+    }
+  },
+  {
+    "featured": false,
+    "decoration": {
+      "icon": "",
+      "image": {
+        "src": "/assets/images/tree3.jpg",
+        "alt": "A Tree"
+      },
+      "url": "",
+      "title": ""
+    },
+    "text": {
+      "leadIn": "",
+      "title": "Yet Another Tree",
+      "titleTag": "h4",
+      "subTitle": "",
+      "prose": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis."
+    }
+  },
+  {
+    "featured": false,
+    "decoration": {
+      "icon": "",
+      "image": {
+        "src": "/assets/images/tree4.jpg",
+        "alt": "A Tree"
+      },
+      "url": "",
+      "title": ""
+    },
+    "text": {
+      "leadIn": "",
+      "title": "And Another One",
+      "titleTag": "h4",
+      "subTitle": "",
+      "prose": "Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla."
+    }
+  },
+  {
+    "featured": false,
+    "decoration": {
+      "icon": "",
+      "image": {
+        "src": "/assets/images/tree1.jpg",
+        "alt": "A Tree"
+      },
+      "url": "",
+      "title": ""
+    },
+    "text": {
+      "leadIn": "",
+      "title": "Last One",
+      "titleTag": "h4",
+      "subTitle": "",
+      "prose": "Donec sed odio dui. Curabitur blandit tempus porttitor. Nullam quis."
+    }
+  }
+]

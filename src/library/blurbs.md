@@ -60,7 +60,7 @@ sections:
           
         ```
 
-        ### Common Properties (all media types)
+        ### Properties
 
   - sectionType: blurbs
     containerTag: aside
@@ -91,4 +91,34 @@ sections:
     blurbs:
       source: 'inline-icon-example' # data file in 'lib/assets/data/blurbs'
       layout: 'inline' # inline, featurePlus,
+
+  - sectionType: blurbs
+    containerTag: aside
+    classes: ''
+    id: ''
+    isDisabled: false
+    isReverse: false
+    containerFields:
+      inContainer: true
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: true
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text: # intro text
+      leadIn: ''
+      title: 'Grid with Feature with Images'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: 'This could all be done with icons as well'
+
+    blurbs:
+      source: 'grid-with-feature-example' # data file in 'lib/assets/data/blurbs'
+      layout: 'featurePlus' # inline, featurePlus,
 ---
