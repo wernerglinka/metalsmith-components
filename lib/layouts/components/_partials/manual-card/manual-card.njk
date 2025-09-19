@@ -80,9 +80,7 @@
 
       {# CTAs - only if no link wrapper #}
       {% if props.ctas and not props.link %}
-        <div class="ctas-wrapper">
-          {{ ctas(props.ctas) }}
-        </div>
+        {{ ctas(props.ctas) }}
       {% endif %}
     </div>
   {% endif %}

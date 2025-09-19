@@ -44,6 +44,8 @@
   }
 
   .info {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     padding: var(--space-s-m);
     background-color: var(--glass-background-light);
@@ -67,6 +69,16 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     max-height: 4.5em; /* Fallback for browsers without line-clamp support */
+  }
+
+  .ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+  }
+  .button {
+    margin: var(--space-s) auto 0;
   }
 
   &.has-image-background {

@@ -329,21 +329,21 @@ sections:
           icon: ''
           title: ''
         text:
-          leadIn: 'Background Image'
+          leadIn: 'Background CSS Pattern'
           title: 'Full Text Section'
           titleTag: 'h3'
           subTitle: 'With Sub Title'
           prose: |
-            Simple text section with markdown text and a single CTA.
+            Simple text section with _markdown text_ and a couple of bottons.
         ctas:
           - url: '/blog/'
             label: 'Go to Sample Blog'
-            isButton: false
-            buttonStyle: 'primary'
+            isButton: true
+            buttonStyle: 'primary small'
           - url: 'https://ibm.com'
             label: 'Go to Big Brother'
             isButton: true
-            buttonStyle: 'primary'
+            buttonStyle: 'tertiary small'
       - link: ''
         background:
           hasImage: true
@@ -381,7 +381,7 @@ sections:
           icon: ''
           title: ''
         text:
-          leadIn: 'Background Image'
+          leadIn: 'Background CSS Pattern'
           title: 'Full Text Section'
           titleTag: 'h3'
           subTitle: 'With Sub Title'
