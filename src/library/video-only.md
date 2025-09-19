@@ -79,16 +79,25 @@ sections:
         - **Modal**: Video opens in a modal overlay (default)
         - **Inline**: Video embeds directly in the page
 
-        ### Specific video-only properties
+        ### Configuration Options
 
-        - `video.id`: Video identifier from the platform (required)
-        - `video.src`: Video platform - 'youtube', 'vimeo', or 'cloudinary' (required)
-        - `video.tn`: Thumbnail image path (required)
-        - `video.inline`: Boolean for inline vs modal playback
-        - `video.cloudname`: Cloudinary cloud name (required for Cloudinary)
-        - `video.start`: Start time in seconds (optional)
-        - `video.end`: End time in seconds (optional)
-        - `ctas`: Optional array of call-to-action buttons
+        #### Video Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `video.id` | string | Yes | Video identifier from the platform |
+        | `video.src` | string | Yes | Video platform - 'youtube', 'vimeo', or 'cloudinary' |
+        | `video.tn` | string | Yes | Thumbnail image path |
+        | `video.inline` | boolean | No | Boolean for inline vs modal playback |
+        | `video.cloudname` | string | Conditional | Cloudinary cloud name (required for Cloudinary) |
+        | `video.start` | number | No | Start time in seconds |
+        | `video.end` | number | No | End time in seconds |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `ctas` | array | No | Optional array of call-to-action buttons |
 
   - sectionType: video-only
     containerTag: section

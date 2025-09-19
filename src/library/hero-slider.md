@@ -244,13 +244,14 @@ sections:
 
         ### Slide Configuration Options
 
-        Each slide supports:
-        - **navLabel** - Text shown in navigation
-        - **isReverse** - Reverse content layout direction
-        - **text** - Text content (title, subtitle, prose, etc.)
-        - **ctas** - Call-to-action buttons
-        - **image** - Content image (shown alongside text)
-        - **background** - Background configuration with color, image, or video
+        | Property | Type | Description |
+        |----------|------|-------------|
+        | `navLabel` | string | Text shown in navigation |
+        | `isReverse` | boolean | Reverse content layout direction |
+        | `text` | object | Text content (title, subtitle, prose, etc.) |
+        | `ctas` | array | Call-to-action buttons |
+        | `image` | object | Content image (shown alongside text) |
+        | `background` | object | Background configuration with color, image, or video |
 
   - sectionType: hero-slider
     containerTag: section

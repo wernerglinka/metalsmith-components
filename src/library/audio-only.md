@@ -48,6 +48,18 @@ sections:
       prose: |-
         A specialized section for audio content including podcasts, music, sound effects, or any audio media. Supports multiple audio formats with optional background imagery.
 
+        ### Key Features
+
+        - **Multiple Audio Formats**: Supports both OGG and MP3 for maximum browser compatibility
+        - **Background Images**: Optional cover art, album artwork, or related imagery
+        - **Responsive Design**: Audio player adapts to different screen sizes
+        - **Custom Styling**: Audio controls match your site's design theme
+        - **Call-to-Action Support**: Optional buttons for subscription, download, or related actions
+
+        Perfect for podcasts, music samples, audio testimonials, or any audio-focused content.
+
+        ### Implementation Example
+
         ```yaml
         - sectionType: audio-only
           containerTag: section
@@ -65,28 +77,24 @@ sections:
               buttonStyle: 'primary'
         ```
 
-        ### Audio Format Support
+        ### Configuration Options
 
-        The audio component supports multiple formats for maximum browser compatibility:
-        - **OGG**: Open-source audio format, excellent quality
-        - **MP3**: Widely supported audio format
-        - Browsers automatically choose the best supported format
+        #### Audio Properties
 
-        ### Visual Enhancement
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `audio.ogg` | string | One required* | Path to OGG audio file (recommended for quality) |
+        | `audio.mpeg` | string | One required* | Path to MP3 audio file (widely supported) |
+        | `audio.bgImage` | string | No | Optional background/cover image path |
+        | `audio.alt` | string | No | Alternative text for the background image |
 
-        - **Background Image**: Optional cover art, album artwork, or related imagery
-        - **Responsive Design**: Audio player adapts to different screen sizes
-        - **Custom Styling**: Audio controls match your site's design theme
+        #### Content
 
-        ### Specific audio-only properties
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `ctas` | array | No | Optional array of call-to-action buttons |
 
-        - `audio.ogg`: Path to OGG audio file (recommended for quality)
-        - `audio.mpeg`: Path to MP3 audio file (required for compatibility)  
-        - `audio.bgImage`: Optional background/cover image path
-        - `audio.alt`: Alternative text for the background image
-        - `ctas`: Optional array of call-to-action buttons
-
-        This component is perfect for podcasts, music samples, audio testimonials, or any audio-focused content.
+        *At least one audio format (OGG or MP3) must be provided
 
   - sectionType: audio-only
     containerTag: section

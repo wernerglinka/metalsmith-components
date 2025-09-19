@@ -77,12 +77,31 @@ sections:
                       This is an example of a composed section. Rather then using a monolithic section, the composed section allows for multiple columns of content. Allowing the composition of custom layouts.
         ```
 
-        ### Specific composed section properties
-        - `columns`: Array of column definitions
-        - `column.columnClasses`: CSS classes for styling individual columns
-        - `column.blocks`: Array of content blocks within a column
-        - Block types include: `text`, `image`, `ctas`, and other partial types
-        - Multiple blocks can be combined within a single column
+        ### Configuration Options
+
+        #### Column Layout
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `contentClasses` | string | No | CSS classes applied to the content wrapper |
+        | `columns` | array | Yes | Array of column definitions |
+
+        #### Column Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `column.columnClasses` | string | No | CSS classes for styling individual columns |
+        | `column.blocks` | array | Yes | Array of content blocks within a column |
+
+        #### Block Types
+
+        | Block Type | Description |
+        |------------|-------------|
+        | `text` | Text content block with leadIn, title, titleTag, subTitle, and prose |
+        | `image` | Image block with src, alt, and caption |
+        | `ctas` | Call-to-action buttons or links |
+
+        Multiple blocks can be combined within a single column to create custom layouts.
 
     ctas:
       - url: ''

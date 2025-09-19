@@ -48,6 +48,19 @@ sections:
       prose: |-
         A comprehensive podcast player component that dynamically fetches episodes from RSS feeds using the professional Shikwasa audio player. Features a single main player with episode selection, progressive loading, and fallback support for optimal user experience.
 
+        ### Key Features
+
+        - **Dynamic RSS Parsing**: Automatically fetches episodes from podcast RSS feeds
+        - **Professional Audio Player**: Powered by Shikwasa with advanced controls and speed adjustment
+        - **Progressive Loading**: Shows 5 episodes initially with "Load More" functionality
+        - **Single Main Player**: Clean UI with one player and episode selection list
+        - **CORS Proxy Fallback**: Handles cross-origin RSS feeds automatically
+        - **iTunes Metadata Support**: Full support for iTunes podcast tags and namespaces
+        - **Mobile Optimized**: Touch-friendly controls and responsive design
+        - **Graceful Fallbacks**: HTML5 audio fallback when Shikwasa fails to load
+
+        ### Implementation Example
+
         ```yaml
         - sectionType: podcast
           containerTag: section
@@ -135,16 +148,30 @@ sections:
         3. **Batch Loading** - Loads 5 more episodes per click
         4. **Auto-removal** - Button disappears when all episodes loaded
 
-        ### Specific podcast properties
+        ### Configuration Options
 
-        - `podcast`: Name of JSON file in `data/podcasts/` (required)
-        - `options.showEpisodeList`: Display episode selection list (default: true)
-        - `options.initialEpisodes`: Episodes shown initially (default: 5)
-        - `options.maxEpisodes`: Maximum episodes to fetch from RSS (default: 50)
-        - `options.autoplay`: Auto-play first episode on load (default: false)
-        - `options.theme`: Player theme - 'light', 'dark', 'auto' (default: 'auto')
-        - `options.themeColor`: Player accent color in hex (default: '#007aff')
-        - `ctas`: Optional array of call-to-action buttons
+        #### Podcast Data
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `podcast` | string | Yes | Name of JSON file in `data/podcasts/` directory |
+
+        #### Player Options
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `showEpisodeList` | boolean | No | Display episode selection list (default: true) |
+        | `initialEpisodes` | number | No | Episodes shown initially (default: 5) |
+        | `maxEpisodes` | number | No | Maximum episodes to fetch from RSS (default: 50) |
+        | `autoplay` | boolean | No | Auto-play first episode on load (default: false) |
+        | `theme` | string | No | Player theme - 'light', 'dark', 'auto' (default: 'auto') |
+        | `themeColor` | string | No | Player accent color in hex format (default: '#007aff') |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `ctas` | array | No | Optional array of call-to-action buttons |
 
         This component is perfect for professional podcasts, educational content, company communications, or any audio content that benefits from RSS automation and professional playback controls.
 

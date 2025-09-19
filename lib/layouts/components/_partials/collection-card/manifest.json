@@ -1,0 +1,7 @@
+{
+  "name": "collection-card",
+  "type": "_partials",
+  "styles": ["collection-card.css"],
+  "scripts": [],
+  "requires": []
+}

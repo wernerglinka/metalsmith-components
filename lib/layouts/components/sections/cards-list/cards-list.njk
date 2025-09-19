@@ -1,0 +1,42 @@
+{#
+  Cards List Section - Displays a list of manual cards
+  
+  Properties:
+  - text: object - (optional) section heading and description
+  - cards: array - array of card configurations for manual-card component
+  - ctas: array - (optional) array of call-to-action objects
+#}
+{% from "components/_partials/text/text.njk" import text %}
+{% from "components/_partials/ctas/ctas.njk" import ctas %}
+{% from "components/_partials/manual-card/manual-card.njk" import manualCard %}
+
+<div class="container content">
+
+  {% if section.text | hasText %}
+    <div class="text flow">
+      {{ text(section.text) }}
+    </div>
+  {% endif %}
+
+  {# Cards grid #}
+  {% if section.cards and section.cards.length > 0 %}
+    <ul class="manual-cards-list">
+      {# Loop through each card configuration and render manualCard #}
+      {% for card in section.cards %}
+        {# Inherit horizontal layout from section if not specified on card #}
+        {% set cardConfig = card %}
+        {% if section.isHorizontal and not card.isHorizontal is defined %}
+          {% set cardConfig = card | merge({ isHorizontal: true }) %}
+        {% endif %}
+
+        <li>
+          {{ manualCard(cardConfig) }}
+        </li>
+      {% endfor %}
+      </ul>
+  {% endif %}
+
+  {% if section.ctas | hasCtas %}
+    {{ ctas(section.ctas) }}
+  {% endif %}
+</div>

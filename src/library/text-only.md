@@ -46,7 +46,18 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A versatile section for displaying text content including lead-in text, titles, subtitles, and prose. Perfect for article content, documentation, or any text-focused layouts. Text sections can include background colors or images for visual variety.
+        A versatile section for displaying text content including lead-in text, titles, subtitles, and prose. Perfect for article content, documentation, or any text-focused layouts.
+
+        ### Key Features
+
+        - **Flexible Text Elements**: Support for lead-in, title, subtitle, and prose content
+        - **Markdown Support**: Full markdown formatting in prose content
+        - **Background Options**: Support for background colors and images with screen overlays
+        - **Semantic HTML**: Clean, semantic HTML output with proper heading hierarchy
+        - **Call-to-Action Support**: Optional CTA buttons for user engagement
+        - **Container Options**: Full-width or contained layout options
+
+        ### Implementation Example
 
         ```yaml
         - sectionType: text-only
@@ -81,14 +92,23 @@ sections:
               isButton: false
               buttonStyle: 'secondary'
         ```
-        ### Specific text-only properties
+        ### Configuration Options
 
-        - `text.leadIn`: Optional introductory text above the title
-        - `text.title`: Main heading text
-        - `text.titleTag`: HTML heading tag (h1-h6)
-        - `text.subTitle`: Optional subtitle below the main title
-        - `text.prose`: Markdown-formatted body content
-        - `ctas`: Optional array of call-to-action buttons or links
+        #### Text Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text.leadIn` | string | No | Optional introductory text above the title |
+        | `text.title` | string | No | Main heading text |
+        | `text.titleTag` | string | No | HTML heading tag (h1-h6) |
+        | `text.subTitle` | string | No | Optional subtitle below the main title |
+        | `text.prose` | string | No | Markdown-formatted body content |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `ctas` | array | No | Optional array of call-to-action buttons or links |
 
     ctas:
       - url: ''

@@ -12,7 +12,7 @@
   - pageStart: number - starting index for current page
 #}
 {% from "components/_partials/author-date/author-date.njk" import authorDate %}
-{% from "components/_partials/card/card.njk" import card %}
+{% from "components/_partials/collection-card/collection-card.njk" import collectionCard %}
 {% from "components/_partials/collection-pagination/collection-pagination.njk" import collectionPagination %}
 
 <div class="container">
@@ -37,13 +37,12 @@
           prose: item.card.excerpt or item.card.description,
           thumbnail: item.card.image,
           link: "/" ~ item.permalink,
-          horizontal: false,
           date: item.card.date,
           author: item.card.author
         } %}
         
-        <li class="simple-card{% if params.horizontal %} is-horizontal{% endif %}">
-          {{ card(thisCard) }}
+        <li class="collection-card{% if params.horizontal %} is-horizontal{% endif %}">
+          {{ collectionCard(thisCard) }}
         </li>
       {% endif %}
     {% endfor %}

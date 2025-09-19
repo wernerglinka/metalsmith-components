@@ -46,7 +46,18 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        And here is an example of group of flip cards. The flip cards are rendered in a flex container, so they can be rendered in any order. Flip card content may include an icon, lead-in, title, and prose. The title and image are optional. The prose is markdown text. A CTA may be added to the back of the card.
+        Interactive flip card components with front and back content, icons, and CTAs. The flip cards are rendered in a flex container with responsive layout and smooth flip animations.
+
+        ### Key Features
+
+        - **Interactive Flip Animation**: Smooth card flip transitions on hover or click
+        - **Dual-Side Content**: Separate content for front and back of each card
+        - **Icon Support**: Front side can include icons from the icon library
+        - **Flexible Content**: Support for text, markdown, and call-to-action buttons
+        - **Responsive Layout**: Flexible container adapts to different screen sizes
+        - **Customizable Styling**: Full control over card appearance and behavior
+
+        ### Implementation Example
 
         ```yaml
         - sectionType: flip-cards
@@ -70,91 +81,38 @@ sections:
                   titleTag: 'h3'
                   subTitle: ''
                   prose: |-
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam.
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
                 ctas:
                   - url: 'https://apple.com'
                     label: 'Go Apple'
                     isButton: false
                     buttonStyle: 'primary'
 
-            - front:
-                icon: 'airplay'
-                text:
-                  leadIn: 'Simple Text Section'
-                  title: The Second Card Title
-                  titleTag: 'h3'
-                  subTitle: ''
-                  prose: |-
-                    Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-
-              back:
-                text:
-                  leadIn: ''
-                  title: The Back
-                  titleTag: 'h3'
-                  subTitle: ''
-                  prose: |-
-                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-                ctas:
-                  - url: ''
-                    label: ''
-                    isButton: true
-                    buttonStyle: 'primary'
-
-            - front:
-                icon: 'paperclip'
-                text:
-                  leadIn: 'Simple Text Section'
-                  title: The Third Card Title
-                  titleTag: 'h3'
-                  subTitle: ''
-                  prose: |-
-                    Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo.
-
-              back:
-                text:
-                  leadIn: ''
-                  title: The Back
-                  titleTag: 'h3'
-                  subTitle: ''
-                  prose: |-
-                    Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.
-                ctas:
-                  - url: ''
-                    label: ''
-                    isButton: true
-                    buttonStyle: 'primary'
-
-            - front:
-                icon: 'paperclip'
-                text:
-                  leadIn: 'Simple Text Section'
-                  title: The Third Card Title
-                  titleTag: 'h3'
-                  subTitle: ''
-                  prose: |-
-                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.
-
-              back:
-                text:
-                  leadIn: ''
-                  title: The Back Title
-                  titleTag: 'h4'
-                  subTitle: ''
-                  prose: |-
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                ctas:
-                  - url: 'http://glinka.co'
-                    label: 'Learn More'
-                    isButton: true
-                    buttonStyle: 'primary small'
+            # other flipcards
         ```
 
-        ### Specific Flip Card Properties
+        ### Configuration Options
 
-        - `cards[n].icon`: Add the icon name here. All icons are located in lib/layouts/icons
-        - `front`: The front of the card
-        - `back`: The back of the card
+        #### Card Layout
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `cards` | array | Yes | Array of flip card definitions |
+
+        #### Individual Card Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `cards[n].front` | object | Yes | Front side content of the card |
+        | `cards[n].back` | object | Yes | Back side content of the card |
+
+        #### Front/Back Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `icon` | string | No | Icon name from lib/layouts/icons (front side only) |
+        | `text` | object | No | Text content with leadIn, title, titleTag, subTitle, and prose |
+        | `ctas` | array | No | Call-to-action buttons (typically on back side) |
 
     ctas:
       - url: ''

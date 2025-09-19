@@ -80,12 +80,27 @@ sections:
             company: 'New York Yankees'
             logo: '/assets/images/new-york-yankees-logo.svg'
         ```
-        ### Specific testimonial properties
+        ### Configuration Options
 
-        - `quote`: The quote and an optional 'cite' URL
-        - `quotee`: All properties of the person who is quoted
+        #### Quote Content
 
-        **Note**: Background color is applied via `containerFields.background.color`, this insures that the background is applied accross the whole viewport if `inContainer: false`
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `quote.text` | string | Yes | The testimonial quote text |
+        | `quote.cite` | string | No | Optional URL for quote citation |
+
+        #### Quotee Information
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `quotee.portrait.src` | string | No | Path to portrait image |
+        | `quotee.portrait.alt` | string | No | Alt text for portrait image |
+        | `quotee.name` | string | No | Name of the person quoted |
+        | `quotee.title` | string | No | Job title or role |
+        | `quotee.company` | string | No | Company or organization name |
+        | `quotee.logo` | string | No | Path to company logo image |
+
+        **Note**: Background color is applied via `containerFields.background.color`, this ensures that the background is applied across the whole viewport if `inContainer: false`
     ctas:
       - url: ''
         label: ''

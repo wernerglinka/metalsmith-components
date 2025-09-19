@@ -250,50 +250,92 @@ sections:
 
         ### Configuration Options
 
+        **File Processing:**
+
+        | Property | Type | Default | Description |
+        |----------|------|---------|-------------|
+        | `pattern` | string | '**/*.md' | Files to index |
+        | `ignore` | array | ['**/search.md'] | Exclude specific files |
+
+        **Index Configuration:**
+
+        | Property | Type | Default | Description |
+        |----------|------|---------|-------------|
+        | `indexPath` | string | 'search-index.json' | Output file path |
+        | `indexLevels` | array | ['page', 'section'] | Content levels to index |
+        | `sectionsField` | string | 'sections' | Component array field name |
+
+        **Component Processing:**
+
+        | Property | Type | Default | Description |
+        |----------|------|---------|-------------|
+        | `autoDetectSectionTypes` | boolean | true | Auto-discover component types |
+        | `sectionTypeField` | string | 'sectionType' | Component type field |
+
+        **Content Processing:**
+
+        | Property | Type | Default | Description |
+        |----------|------|---------|-------------|
+        | `stripHtml` | boolean | true | Remove HTML markup |
+        | `generateAnchors` | boolean | true | Create section anchors |
+        | `maxSectionLength` | number | 2000 | Split long sections (characters) |
+        | `chunkSize` | number | 1500 | Target chunk size (characters) |
+        | `minSectionLength` | number | 50 | Skip tiny sections (characters) |
+        | `processMarkdownFields` | boolean | true | Process markdown in frontmatter |
+        | `frontmatterFields` | array | ['summary', 'intro', 'leadIn'] | Fields to process |
+
+        **Performance Options:**
+
+        | Property | Type | Default | Description |
+        |----------|------|---------|-------------|
+        | `batchSize` | number | 10 | Process files in batches (file count) |
+        | `async` | boolean | false | Enable for very large sites |
+
+        **Complete Example:**
         ```javascript
         .use(search({
           // File processing
-          pattern: '**/*.md',                    // Files to index (default)
-          ignore: ['**/search.md'],             // Exclude search page itself
-          
-          // Index configuration  
-          indexPath: 'search-index.json',       // Output file path
-          indexLevels: ['page', 'section'],     // Content levels to index
-          sectionsField: 'sections',            // Component array field name
-          
+          pattern: '**/*.md',
+          ignore: ['**/search.md'],
+
+          // Index configuration
+          indexPath: 'search-index.json',
+          indexLevels: ['page', 'section'],
+          sectionsField: 'sections',
+
           // Component-based processing
-          autoDetectSectionTypes: true,         // Auto-discover component types
-          sectionTypeField: 'sectionType',      // Component type field
-          
+          autoDetectSectionTypes: true,
+          sectionTypeField: 'sectionType',
+
           // Content processing
-          stripHtml: true,                      // Remove HTML markup
-          generateAnchors: true,                // Create section anchors
-          maxSectionLength: 2000,               // Split long sections
-          chunkSize: 1500,                      // Target chunk size
-          minSectionLength: 50,                 // Skip tiny sections
-          
+          stripHtml: true,
+          generateAnchors: true,
+          maxSectionLength: 2000,
+          chunkSize: 1500,
+          minSectionLength: 50,
+
           // Frontmatter markdown processing
-          processMarkdownFields: true,          // Process markdown in frontmatter
+          processMarkdownFields: true,
           frontmatterFields: ['summary', 'intro', 'leadIn'],
-          
+
           // Enhanced Fuse.js search configuration
           fuseOptions: {
             keys: [
-              { name: 'title', weight: 10 },    // Page/section titles
-              { name: 'tags', weight: 8 },      // Content tags
-              { name: 'leadIn', weight: 5 },    // Lead-in text
-              { name: 'prose', weight: 3 },     // Main content
-              { name: 'content', weight: 1 }    // Generated full content
+              { name: 'title', weight: 10 },
+              { name: 'tags', weight: 8 },
+              { name: 'leadIn', weight: 5 },
+              { name: 'prose', weight: 3 },
+              { name: 'content', weight: 1 }
             ],
-            threshold: 0.3,                     // Search sensitivity
+            threshold: 0.3,                     // Search sensitivity (0.0 = exact, 1.0 = loose)
             includeScore: true,                 // Include relevance scores
-            includeMatches: true,              // Include match highlighting
-            minMatchCharLength: 3              // Minimum match length
+            includeMatches: true,              // Include match highlighting data
+            minMatchCharLength: 3              // Minimum characters for match
           },
-          
+
           // Performance options
-          batchSize: 10,                       // Process files in batches
-          async: false                         // Enable for very large sites
+          batchSize: 10,
+          async: false
         }))
         ```
 
@@ -506,8 +548,8 @@ sections:
 
         **Large bundle size:**
         - Use `stripHtml: true` to remove HTML markup from content
-        - Increase `minSectionLength` to filter out short content chunks
-        - Enable `async: true` and adjust `batchSize` for better performance
+        - Increase `minSectionLength` to filter out short content chunks (characters)
+        - Enable `async: true` and adjust `batchSize` for better performance (file count)
 
         **Missing anchor links:**
         - Ensure `generateAnchors: true` in plugin configuration
@@ -520,11 +562,11 @@ sections:
         ```javascript
         .use(search({
           async: true,                    // Enable async processing
-          batchSize: 50,                  // Larger batches
-          maxSectionLength: 1500,         // Optimize content chunking
-          chunkSize: 1000,
+          batchSize: 50,                  // Larger batches (file count)
+          maxSectionLength: 1500,         // Optimize content chunking (characters)
+          chunkSize: 1000,                // Target chunk size (characters)
           stripHtml: true,                // Reduce index size (default)
-          minSectionLength: 100
+          minSectionLength: 100           // Skip short sections (characters)
         }))
         ```
 
@@ -539,8 +581,8 @@ sections:
           .use(search({
             indexPath: 'search-index.json',
             // Optimize for production builds
-            minSectionLength: 100,
-            batchSize: 20
+            minSectionLength: 100,        // Skip short sections (characters)
+            batchSize: 20                 // Process files in batches (file count)
           }))
           
           .use(layouts())

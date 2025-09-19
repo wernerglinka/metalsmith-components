@@ -46,7 +46,19 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A flexible section for displaying logo collections from various sources. Can be used for client logos, partner organizations, awards, social proof, or social media links. Lists will start scrolling horizontally if viewport width is smaller than list width. Now supports optional text content and CTAs.
+        A flexible section for displaying logo collections from various sources. Can be used for client logos, partner organizations, awards, social proof, or social media links.
+
+        ### Key Features
+
+        - **Auto-Scrolling**: Lists scroll horizontally when viewport width is smaller than list width
+        - **Multiple Data Sources**: Support for art museums, social links, awards, or custom sources
+        - **Flexible Selection**: Display all logos or curated selections
+        - **Logo Sizing**: Configurable maximum width for consistent display
+        - **Title Display**: Optional titles under logos (useful for awards)
+        - **Text Support**: Optional intro text and call-to-action buttons
+        - **Responsive Design**: Adapts to different screen sizes with smooth scrolling
+
+        ### Implementation Example
 
         ```yaml
         - sectionType: logos-list
@@ -74,17 +86,31 @@ sections:
               buttonStyle: 'primary'
         ```
 
-        ### Specific logos list properties
+        ### Configuration Options
 
-        - `isReverse`: Defines scrolling direction, `false` is right-to-left
-        - `hasCenteredContent`: Centers text and CTAs when `true`
-        - `text`: Optional text block with leadIn, title, titleTag, subTitle, and prose
-        - `logos.source`: Data source for logos - `'artMuseums'`, `'socialLinks'`, `'awards'` or custom source
-        - `logos.logoWidth`: Maximum width for logos in pixels
-        - `logos.scope`: `'all'` to display all logos, or `'selections'` for subset
-        - `logos.selections`: Array of specific logo selections if scope is `'selections'`
-        - `logos.showTitle`: Display title under each logo (useful for awards)
-        - `ctas`: Optional array of call-to-action buttons
+        #### Layout Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `isReverse` | boolean | No | Defines scrolling direction, `false` is right-to-left |
+        | `hasCenteredContent` | boolean | No | Centers text and CTAs when `true` |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text` | object | No | Optional text block with leadIn, title, titleTag, subTitle, and prose |
+        | `ctas` | array | No | Optional array of call-to-action buttons |
+
+        #### Logo Configuration
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `source` | string | Yes | Data source for logos ('artMuseums', 'socialLinks', 'awards', or custom) |
+        | `logoWidth` | number | Yes | Maximum width for logos in pixels |
+        | `scope` | string | Yes | 'all' to display all logos, or 'selections' for subset |
+        | `selections` | array | No | Array of specific logo selections (required if scope is 'selections') |
+        | `showTitle` | boolean | No | Display title under each logo (useful for awards) |
 
     ctas:
       - url: ''

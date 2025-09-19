@@ -1,0 +1,7 @@
+{
+  "name": "manual-card",
+  "type": "_partials",
+  "styles": ["manual-card.css"],
+  "scripts": [],
+  "requires": ["text", "ctas", "image", "icon"]
+}

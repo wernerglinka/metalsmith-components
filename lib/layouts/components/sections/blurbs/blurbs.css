@@ -1,6 +1,10 @@
 .blurbs {
   .container.content {
     display: block;
+
+    img {
+      aspect-ratio: 1;
+    }
   }
 
   .blurbs-header {
@@ -52,12 +56,11 @@
 
     .is-feature {
       .decoration {
-        padding-block: var(--space-s-m);
+        padding-block-end: var(--space-s-m);
 
         img {
           width: 100%;
           height: auto;
-          aspect-ratio: 16 / 9;
           object-fit: cover;
         }
 

@@ -119,12 +119,25 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
-      title: 'Specific slider properties'
+      title: 'Configuration Options'
       titleTag: 'h3'
       subTitle: ''
       prose: |-
-        - `config`: `""`, `isTabs`
-        - `slides.slideClasses`: May be used for slide style variations
+        #### Slider Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `config` | string | No | Slider type - `""` for default pagination, `"isTabs"` for tabbed interface |
+
+        #### Slide Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `slides` | array | Yes | Array of slide definitions |
+        | `slides[n].slideClasses` | string | No | CSS classes for slide style variations |
+        | `slides[n].image` | object | No | Image with src, alt, and caption |
+        | `slides[n].text` | object | No | Text content with leadIn, title, titleTag, subTitle, and prose |
+        | `slides[n].ctas` | array | No | Call-to-action buttons for the slide |
     ctas:
       - url: ''
         label: ''

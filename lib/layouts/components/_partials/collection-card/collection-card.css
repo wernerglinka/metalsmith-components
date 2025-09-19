@@ -1,4 +1,4 @@
-.simple-card {
+.collection-card {
   position: relative;
   max-width: 30rem;
   color: var(--color-text);
@@ -70,7 +70,7 @@
 }
 
 /** Style variations for dark theme */
-.dark-theme .simple-card {
+.dark-theme .collection-card {
   border: none;
 
   * {

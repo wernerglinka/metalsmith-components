@@ -59,7 +59,7 @@ sections:
         - **Accessibility**: ARIA labels and keyboard support
         - **File Names**: Optional filename display in the header
 
-        ### Basic Configuration
+        ### Implementation Example
 
         ```yaml
         - sectionType: code
@@ -78,13 +78,18 @@ sections:
               }
         ```
 
-        ### Code-specific Properties
+        ### Configuration Options
 
-        - `code.language`: Programming language for syntax highlighting (javascript, css, html, python, etc.)
-        - `code.theme`: Prism theme to load dynamically from CDN
-        - `code.filename`: Optional filename to display in the header
-        - `code.showCopy`: Boolean to show/hide the copy button (default: true)
-        - `code.content`: The actual code content using YAML literal block syntax (|)
+        #### Code Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `language` | string | Yes | Programming language for syntax highlighting (javascript, css, html, python, etc.) |
+        | `content` | string | Yes | The actual code content using YAML literal block syntax |
+        | `theme` | string | No | Prism theme to load dynamically from CDN (default: 'default') |
+        | `filename` | string | No | Optional filename to display in the header |
+        | `showCopy` | boolean | No | Show/hide the copy button (default: true) |
+
 
         ### Supported Languages
 

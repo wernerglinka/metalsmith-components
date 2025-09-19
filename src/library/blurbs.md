@@ -48,19 +48,49 @@ sections:
       prose: |-
         The blurb section is a short description of a subject written for promotional purposes and appearing in a card with an image or icon. An optional CTA provides a link to more info.
 
-        The `isReverse` property switches the feature/blurbs column order. The component handles responsive layouts automatically and includes lazy loading for media assets.
+        ### Key Features
+
+        - **Responsive Layouts**: Handles responsive layouts automatically
+        - **Multiple Layout Types**: Supports 'inline' and 'featurePlus' layout options
+        - **Data-Driven Content**: Loads content from JSON data files
+        - **Media Asset Support**: Includes lazy loading for images and icons
+        - **Flexible Ordering**: Reversible column order with `isReverse` option
+        - **Optional Intro Text**: Support for section titles and descriptions
+
+        ### Implementation Example
 
         ```yaml
         - sectionType: blurbs
           containerTag: aside
-          
-          isReverse: false
-          # more settings
-
-          
+          isReverse: false              # Default column order
+          text:
+            title: 'Inline blurbs with Icons'
+            prose: 'Use the included feather icons or add your own'
+          blurbs:
+            source: 'features-list'     # Loads from lib/data/blurbs/features-list.json
+            layout: 'inline'            # Options: inline, featurePlus
         ```
 
-        ### Properties
+        ### Configuration Options
+
+        #### Layout Options
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `isReverse` | boolean | No | Switches the feature/blurbs column order |
+        | `blurbs.layout` | string | Yes | Layout type ('inline', 'featurePlus') |
+
+        #### Data Loading
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `blurbs.source` | string | Yes | Data file name in `lib/data/blurbs/` directory |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text` | object | No | Optional intro text with title, subtitle, and prose |
 
   - sectionType: blurbs
     containerTag: aside

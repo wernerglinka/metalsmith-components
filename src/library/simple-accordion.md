@@ -58,15 +58,24 @@ sections:
 
         ## Configuration Options
 
+        | Property | Type | Description |
+        |----------|------|-------------|
+        | `faqs.scope` | string | "all" or "selections" - determines data loading |
+        | `faqs.source` | string | data source in lib/data/ (e.g., "faqs") |
+        | `faqs.selections` | array | array of IDs when scope is "selections" |
+        | `expandFirst` | boolean | expand first item by default |
+        | `allowMultiple` | boolean | allow multiple expanded items |
+
+        **Example:**
         ```yaml
         faqs:
-          scope: "all"  # "all" or "selections"
-          source: "faqs"  # data source in lib/data/faqs
-          selections:  # used when scope is "selections"
+          scope: "all"
+          source: "faqs"
+          selections:
             - "getting-started"
             - "component-structure"
-        expandFirst: false  # expand first item by default
-        allowMultiple: false  # allow multiple expanded items
+        expandFirst: false
+        allowMultiple: false
         ```
     ctas: []
 

@@ -1,0 +1,119 @@
+/**
+ * Manual Card Component Styles
+ * A versatile card component for custom content layouts
+ */
+
+.manual-card {
+  position: relative;
+  max-width: 30rem;
+  height: 100%;
+  background-color: var(--glass-background);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--space-2xs-xs);
+  overflow: hidden;
+  box-shadow: var(--glass-box-shadow);
+
+  &.is-dark .info * {
+    color: var(--color-text-light);
+  }
+
+  .decoration {
+    height: 12rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .icon-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        height: 80%;
+        width: 80%;
+        stroke: black;
+      }
+    }
+  }
+
+  .info {
+    flex-grow: 1;
+    padding: var(--space-s-m);
+    background-color: var(--glass-background-light);
+  }
+
+  .title {
+    font-size: var(--font-h5);
+    text-transform: uppercase;
+    color: var(--color-text);
+  }
+  .sub-title {
+    margin-block-start: var(--space-3xs);
+    font-size: var(--font-s);
+    font-style: italic;
+  }
+  /* restrict prose to three lines with ellipsis */
+  .prose {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-height: 4.5em; /* Fallback for browsers without line-clamp support */
+  }
+
+  &.has-image-background {
+    .image-background {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  &[class*='pattern'] {
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+
+    .info {
+      background: none;
+      padding: var(--space-l-xl) var(--space-s-m);
+    }
+  }
+
+  &.pattern1 {
+    background-image: var(--pattern1);
+  }
+  &.pattern2 {
+    background-image: var(--pattern2);
+  }
+
+  &[class*='pattern'],
+  &.has-image-background {
+    .info {
+      height: 100%;
+      padding: var(--space-l-xl) var(--space-s-m);
+    }
+
+    /* restrict prose to seven lines with ellipsis */
+    .prose {
+      -webkit-line-clamp: 7;
+      max-height: 20em; /* Fallback for browsers without line-clamp support */
+    }
+  }
+}

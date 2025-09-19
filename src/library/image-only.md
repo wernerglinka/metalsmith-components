@@ -72,14 +72,21 @@ sections:
         - Responsive image sizing
         - Accessibility-focused alt text support
 
-        ### Specific image-only properties
+        ### Configuration Options
 
-        - `image.src`: Path to the image file (required)
-        - `image.alt`: Alternative text for accessibility (required)
-        - `image.caption`: Optional caption text displayed below the image
-        - `ctas`: Optional array of call-to-action buttons or links
+        #### Image Properties
 
-        This component is ideal for hero images, featured content, portfolio pieces, or any scenario where the image is the primary content focus.
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `image.src` | string | Yes | Path to the image file |
+        | `image.alt` | string | Yes | Alternative text for accessibility |
+        | `image.caption` | string | No | Optional caption text displayed below the image |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `ctas` | array | No | Optional array of call-to-action buttons or links |
 
   - sectionType: image-only
     containerTag: section

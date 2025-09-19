@@ -48,7 +48,18 @@ sections:
       prose: |-
         A section component that renders text content alongside media. Supports five media types via the `mediaType` property: **image** (with optional caption), **video** (YouTube/Vimeo/self-hosted, inline or modal display), **audio** (MP3/OGG with background image), **icon** (SVG from icon library), and **lottie** (JSON animations with playback controls).
 
-        The `isReverse` property switches the media/text column order. All text fields (leadIn, title, subtitle, prose) and CTAs are optional. The component handles responsive layouts automatically and includes lazy loading for media assets.
+        ### Key Features
+
+        - **Five Media Types**: Image, video, audio, icon, and Lottie animation support
+        - **Flexible Video Sources**: YouTube, Vimeo, and Cloudinary integration
+        - **Modal & Inline Video**: Choose between modal overlays or inline embedding
+        - **Audio with Visuals**: Audio players with background images
+        - **SVG Icon Library**: Scalable vector icons from comprehensive library
+        - **Lottie Animations**: JSON-based animations with playback controls
+        - **Reversible Layout**: Switch media and text column positions
+        - **Responsive Design**: Automatic layout adaptation with lazy loading
+
+        ### Implementation Example
 
         ```yaml
         - sectionType: multi-media
@@ -81,13 +92,22 @@ sections:
             # video properties
         ```
 
-        ### Common Properties (all media types)
+        ### Configuration Options
 
-        - `isReverse`: Boolean flag to reverse the media/text layout (default: false)
-        - `text`: Standard text block with leadIn, title, subtitle, and prose
-        - `text.isCentered`: Centers the text content within its container
-        - `ctas`: Array of call-to-action buttons or links
-        - `mediaType`: Specifies the type of media ('image', 'video', 'audio', 'icon', 'lottie')
+        #### Layout Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `isReverse` | boolean | No | Reverse the media/text layout (default: false) |
+        | `mediaType` | string | Yes | Type of media ('image', 'video', 'audio', 'icon', 'lottie') |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text` | object | No | Standard text block with leadIn, title, subtitle, and prose |
+        | `text.isCentered` | boolean | No | Centers the text content within its container |
+        | `ctas` | array | No | Array of call-to-action buttons or links |
 
     ctas:
       - url: ''
@@ -119,9 +139,11 @@ sections:
       titleTag: 'h3'
       subTitle: ''
       prose: |-
-        - `image.src`: Path to the image file
-        - `image.alt`: Alternative text for accessibility
-        - `image.caption`: Optional caption displayed below the image
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `image.src` | string | Yes | Path to the image file |
+        | `image.alt` | string | Yes | Alternative text for accessibility |
+        | `image.caption` | string | No | Optional caption displayed below the image |
 
   - sectionType: multi-media
     containerTag: aside
@@ -183,9 +205,13 @@ sections:
       titleTag: 'h3'
       subTitle: ''
       prose: |-
-        - `audio.bgImage`: Background image displayed with audio player
-        - `audio.ogg`: Path to OGG audio file
-        - `audio.mpeg`: Path to MP3 audio file
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `audio.bgImage` | string | No | Background image displayed with audio player |
+        | `audio.ogg` | string | One required* | Path to OGG audio file |
+        | `audio.mpeg` | string | One required* | Path to MP3 audio file |
+
+        *At least one audio format must be provided
 
   - sectionType: multi-media
     containerTag: aside
@@ -247,11 +273,13 @@ sections:
       titleTag: 'h3'
       subTitle: ''
       prose: |-
-        - `video.inline`: Display inline (true) or in modal (false)
-        - `video.src`: Video source ('youtube', 'vimeo', or claudinary)
-        - `video.id`: Video ID for YouTube/Vimeo
-        - `video.cloudname`: Something like "demo" # For Cloudinary only
-        - `video.tn`: Thumbnail image path for modal display
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `video.inline` | boolean | No | Display inline (true) or in modal (false) |
+        | `video.src` | string | Yes | Video source ('youtube', 'vimeo', or 'cloudinary') |
+        | `video.id` | string | Yes | Video ID for YouTube/Vimeo |
+        | `video.cloudname` | string | Conditional | Required for Cloudinary videos only |
+        | `video.tn` | string | Yes | Thumbnail image path for modal display |
 
   - sectionType: multi-media
     containerTag: aside
@@ -353,9 +381,11 @@ sections:
       titleTag: 'h3'
       subTitle: ''
       prose: |-
-        - `icon.icon`: Icon identifier from the icon library
-        - `icon.title`: Icon title for accessibility
-        - `icon.url`: Optional link URL for the icon
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `icon.icon` | string | Yes | Icon identifier from the icon library |
+        | `icon.title` | string | Yes | Icon title for accessibility |
+        | `icon.url` | string | No | Optional link URL for the icon |
 
   - sectionType: multi-media
     containerTag: aside
@@ -417,9 +447,11 @@ sections:
       titleTag: 'h3'
       subTitle: ''
       prose: |-
-        - `lottie.src`: Path to Lottie JSON animation file
-        - `lottie.control.autoplay`: Start animation automatically (default: true)
-        - `lottie.control.loop`: Loop the animation (default: true)
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `lottie.src` | string | Yes | Path to Lottie JSON animation file |
+        | `lottie.control.autoplay` | boolean | No | Start animation automatically (default: true) |
+        | `lottie.control.loop` | boolean | No | Loop the animation (default: true) |
 
   - sectionType: multi-media
     containerTag: aside

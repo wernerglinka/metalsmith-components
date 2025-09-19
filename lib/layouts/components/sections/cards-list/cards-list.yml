@@ -1,0 +1,144 @@
+# Example configuration for cards-list section
+
+# Basic cards grid with 3 columns
+- sectionType: cards-list
+  containerTag: section
+  classes: ''
+  id: 'features-cards'
+  isDisabled: false
+  isAnimated: true
+  inContainer: true
+  text:
+    title: 'Our Features'
+    titleTag: h2
+    headingLevel: h3
+    prose: 'Explore our comprehensive feature set designed to meet your needs.'
+  columns: 3
+  cards:
+    - image:
+        src: '/assets/images/feature1.jpg'
+        alt: 'Feature 1'
+      text:
+        title: 'Fast Performance'
+        prose: 'Optimized for speed and efficiency.'
+      ctas:
+        - url: '/features/performance'
+          label: 'Learn More'
+    - icon: 'zap'
+      text:
+        title: 'Lightning Quick'
+        prose: 'Instant response times for all operations.'
+      ctas:
+        - url: '/features/speed'
+          label: 'Explore'
+    - image:
+        src: '/assets/images/feature3.jpg'
+        alt: 'Feature 3'
+      text:
+        title: 'Secure by Default'
+        prose: 'Built-in security features protect your data.'
+      ctas:
+        - url: '/features/security'
+          label: 'Details'
+
+# Cards with background images
+- sectionType: cards-list
+  containerTag: section
+  classes: 'featured-cards'
+  id: ''
+  isDisabled: false
+  isAnimated: true
+  inContainer: true
+  text:
+    title: 'Featured Content'
+    titleTag: h2
+  columns: 2
+  cards:
+    - hasImageBackground: true
+      image:
+        src: '/assets/images/bg1.jpg'
+        alt: 'Background 1'
+      icon: 'star'
+      text:
+        title: 'Premium Feature'
+        prose: 'Experience our most advanced capabilities.'
+      ctas:
+        - url: '#'
+          label: 'Try Now'
+    - hasImageBackground: true
+      image:
+        src: '/assets/images/bg2.jpg'
+        alt: 'Background 2'
+      icon: 'award'
+      text:
+        title: 'Award Winning'
+        prose: 'Recognized for excellence in innovation.'
+      ctas:
+        - url: '#'
+          label: 'See Awards'
+
+# Linked cards (entire card is clickable)
+- sectionType: cards-list
+  containerTag: section
+  classes: ''
+  id: 'navigation-cards'
+  isDisabled: false
+  isAnimated: false
+  inContainer: true
+  text:
+    title: 'Quick Navigation'
+  columns: 4
+  cards:
+    - link: '/products'
+      icon: 'package'
+      text:
+        title: 'Products'
+        prose: 'Browse our product catalog'
+    - link: '/services'
+      icon: 'tool'
+      text:
+        title: 'Services'
+        prose: 'Explore our service offerings'
+    - link: '/about'
+      icon: 'info'
+      text:
+        title: 'About Us'
+        prose: 'Learn about our company'
+    - link: '/contact'
+      icon: 'mail'
+      text:
+        title: 'Contact'
+        prose: 'Get in touch with us'
+
+# Horizontal layout cards
+- sectionType: cards-list
+  containerTag: section
+  classes: ''
+  id: ''
+  isDisabled: false
+  isAnimated: true
+  inContainer: true
+  isHorizontal: true
+  text:
+    title: 'Case Studies'
+    prose: 'See how our solutions have helped businesses succeed.'
+  columns: 1
+  cards:
+    - image:
+        src: '/assets/images/case1.jpg'
+        alt: 'Case Study 1'
+      text:
+        title: 'Digital Transformation Success'
+        prose: 'How Company X increased efficiency by 40% using our platform. Read about their journey from legacy systems to modern cloud infrastructure.'
+      ctas:
+        - url: '/case-studies/company-x'
+          label: 'Read Case Study'
+    - image:
+        src: '/assets/images/case2.jpg'
+        alt: 'Case Study 2'
+      text:
+        title: 'Scaling for Growth'
+        prose: 'Learn how Startup Y scaled from 100 to 10,000 users seamlessly with our scalable architecture and support team.'
+      ctas:
+        - url: '/case-studies/startup-y'
+          label: 'View Details'

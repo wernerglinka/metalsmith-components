@@ -48,6 +48,16 @@ sections:
       prose: |-
         A universal collection listing component that displays a grid of items with pagination support. Works with any collection (blog posts, components, products, etc.) and automatically detects available fields like author and date.
 
+        ### Key Features
+
+        - **Universal Collection Support**: Works with any collection type (blog, components, products, etc.)
+        - **Automatic Pagination**: Seamless pagination with automatic parameter calculation
+        - **Card-Based Layout**: Clean grid display with responsive design
+        - **Author/Date Detection**: Automatically includes author and date information if available
+        - **Metalsmith Integration**: Requires `metalsmith-sectioned-blog-pagination` plugin
+
+        ### Implementation Example
+
         ```yaml
         - sectionType: collection-list
           collectionName: 'blog'  # Required: name of collection to display
@@ -78,11 +88,24 @@ sections:
             pageNumber: ""          # Current page number (auto-populated)
         ```
 
-        ### Collection List Properties
+        ### Configuration Options
 
-        - `collectionName`: **Required** - Name of the collection to display ('blog', 'components', 'products', etc.)
-        - `hasPagingParams`: Enables pagination functionality
-        - `pagingParams.*`: Auto-populated pagination parameters
+        #### Collection Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `collectionName` | string | Yes | Name of the collection to display ('blog', 'components', 'products', etc.) |
+
+        #### Pagination Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `hasPagingParams` | boolean | No | Enables pagination functionality |
+        | `pagingParams.numberOfBlogs` | string | No | Total number of items (auto-populated) |
+        | `pagingParams.numberOfPages` | string | No | Total pages needed (auto-populated) |
+        | `pagingParams.pageLength` | string | No | Items per page (auto-populated) |
+        | `pagingParams.pageStart` | string | No | Starting index for current page (auto-populated) |
+        | `pagingParams.pageNumber` | string | No | Current page number (auto-populated) |
 
         The component automatically includes author/date information if present in collection items.
 

@@ -74,17 +74,23 @@ sections:
         ### Core Properties
 
         **Page Frontmatter (UI Configuration):**
-        - `mapProvider`: Map library to use ('leaflet' or 'openlayers')
-        - `mapData`: Reference to JSON file in lib/data/maps/ (e.g., 'london-landmarks')
-        - `height`: Optional custom map height (e.g., '500px', '50vh') - defaults to 400px
-        - `text`: Standard text block with leadIn, title, subtitle, and prose
-        - `ctas`: Array of call-to-action buttons or links
+
+        | Property | Type | Description |
+        |----------|------|-------------|
+        | `mapProvider` | string | Map library to use ('leaflet' or 'openlayers') |
+        | `mapData` | string | Reference to JSON file in lib/data/maps/ (e.g., 'london-landmarks') |
+        | `height` | string | Optional custom map height (e.g., '500px', '50vh') - defaults to 400px |
+        | `text` | object | Standard text block with leadIn, title, subtitle, and prose |
+        | `ctas` | array | Array of call-to-action buttons or links |
 
         **JSON Data File (Map Content):**
-        - `latitude`/`longitude`: Map center coordinates
-        - `zoom`: Initial zoom level
-        - `clustering`: Optional clustering configuration object
-        - `markers`: Array of marker objects with coordinates and popup content
+
+        | Property | Type | Description |
+        |----------|------|-------------|
+        | `latitude`/`longitude` | number | Map center coordinates |
+        | `zoom` | number | Initial zoom level |
+        | `clustering` | object | Optional clustering configuration object |
+        | `markers` | array | Array of marker objects with coordinates and popup content |
 
         ### JSON Data Structure
 
@@ -427,15 +433,17 @@ sections:
         For maps with many markers, clustering groups nearby markers together to improve performance and reduce visual clutter. Clustering works with both Leaflet and OpenLayers providers.
 
         **Clustering Properties:**
-        - `enabled`: Boolean to enable/disable clustering (default: false)
-        - `maxZoom`: Zoom level beyond which clustering is disabled (default: 15)
-        - `radius`: Cluster radius in pixels for grouping markers (default: 50)
-        - `minClusterSize`: Minimum markers required to form a cluster (default: 2)
-        - `style`: Visual styling for cluster markers
-          - `backgroundColor`: Cluster background color (default: '#4285f4')
-          - `textColor`: Text color for marker count (default: '#ffffff')
-          - `borderColor`: Cluster border color (default: '#1976d2')
-          - `borderWidth`: Border width in pixels (default: 2)
+
+        | Property | Type | Default | Description |
+        |----------|------|---------|-------------|
+        | `enabled` | boolean | false | Enable/disable clustering |
+        | `maxZoom` | number | 15 | Zoom level beyond which clustering is disabled |
+        | `radius` | number | 50 | Cluster radius in pixels for grouping markers |
+        | `minClusterSize` | number | 2 | Minimum markers required to form a cluster |
+        | `style.backgroundColor` | string | '#4285f4' | Cluster background color |
+        | `style.textColor` | string | '#ffffff' | Text color for marker count |
+        | `style.borderColor` | string | '#1976d2' | Cluster border color |
+        | `style.borderWidth` | number | 2 | Border width in pixels |
 
         **Clustering Code Example:**
 

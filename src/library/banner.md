@@ -48,6 +48,17 @@ sections:
       prose: |-
         A prominent call-to-action banner section that can use either a background image or color. Perfect for highlighting important messages, promotions, or calls to action.
 
+        ### Key Features
+
+        - **Flexible Backgrounds**: Support for both background images and solid colors
+        - **Screen Overlays**: Light or dark overlays for improved text readability
+        - **Layout Options**: Full-width viewport stretching or contained width
+        - **Text Color Adaptation**: Automatic text color adjustment for dark backgrounds
+        - **Call-to-Action Support**: Multiple CTA buttons with flexible styling
+        - **Accordion Header Mode**: Can function as an interactive accordion header
+
+        ### Implementation Example
+
         ```yaml
         - sectionType: banner
           containerTag: aside
@@ -57,7 +68,7 @@ sections:
           isReverse: false
           isAnimated: true
           containerFields:
-            inContainer: false
+            inContainer: false          # Stretch across viewport
             noMargin:
               top: true
               bottom: true
@@ -67,7 +78,7 @@ sections:
             background:
               color: ''
               image: '/assets/images/sample8.jpg'
-              imageScreen: 'light' # light, dark, none
+              imageScreen: 'light'     # Options: light, dark, none
           text:
             leadIn: 'With Background Image'
             title: CTA Banner Example
@@ -85,14 +96,30 @@ sections:
               buttonStyle: 'primary'
         ```
 
-        ### Specific banner properties
+        ### Configuration Options
 
-        - `containerFields.inContainer` : `true` restricts width to content width, `false` stretches banner accross viewport.
-        - `containerFields.background.image`: Background image URL (optional)
-        - `containerFields.background.color`: Background color (optional)
-        - `containerFields.background.imageScreen`: Screen overlay for better text readability (`'light'`, `'dark'`, `'none'`)
-        - `text`: Standard text block with leadIn, title, subtitle, and prose
-        - `ctas`: Array of call-to-action buttons or links
+        #### Container Layout
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `inContainer` | boolean | No | `true` restricts width to content width, `false` stretches banner across viewport |
+
+        #### Background Options
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `image` | string | No | Background image URL |
+        | `color` | string | No | Background color |
+        | `isDark` | boolean | No | Indicates dark background for text color adjustment |
+        | `imageScreen` | string | No | Screen overlay for better text readability ('light', 'dark', 'none') |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text` | object | Yes | Standard text block with leadIn, title, subtitle, and prose |
+        | `ctas` | array | No | Array of call-to-action buttons or links |
+
 
     ctas:
       - url: ''
