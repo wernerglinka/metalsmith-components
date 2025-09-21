@@ -148,67 +148,83 @@ sections:
 
         ##### Core Properties:
 
-        - `sectionType`: Determines which template renders this section. Each section type (hero, content, gallery, etc.) has a corresponding template file.
-        - `containerTag`: The HTML element that wraps the section. Choose section for standalone content, aside for complementary content, article for self-contained compositions, or div for generic containers.
-        - `classes`: Additional CSS classes for custom styling or JavaScript behavior hooks.
-        - `id`: HTML ID attribute, primarily used as an anchor target for in-page navigation or specific styling.
+        | Name | Description |
+        |------|-------------|
+        | `sectionType` | Determines which template renders this section. Each section type (hero, content, gallery, etc.) has a corresponding template file. |
+        | `containerTag` | The HTML element that wraps the section. Choose section for standalone content, aside for complementary content, article for self-contained compositions, or div for generic containers. |
+        | `classes` | Additional CSS classes for custom styling or JavaScript behavior hooks. |
+        | `id` | HTML ID attribute, primarily used as an anchor target for in-page navigation or specific styling. |
 
         ##### Control Properties:
 
-        - `description`: Human-readable note about the section's purpose. This helps content editors understand the section's role but doesn't affect rendering.
-        - `isDisabled`: Temporarily removes the section from rendering without deleting its configuration. Useful during development or content updates.
-        - `isFullScreen`: Makes the section occupy the entire viewport height, creating immersive banner experiences.
-        - `isReverse`: Reverses the visual order of content columns (image/text) in multi-column layouts. Doesn't apply to single-column sections.
+        | Name | Description |
+        |------|-------------|
+        | `description` | Human-readable note about the section's purpose. This helps content editors understand the section's role but doesn't affect rendering. |
+        | `isDisabled` | Temporarily removes the section from rendering without deleting its configuration. Useful during development or content updates. |
+        | `isFullScreen` | Makes the section occupy the entire viewport height, creating immersive banner experiences. |
+        | `isReverse` | Reverses the visual order of content columns (image/text) in multi-column layouts. Doesn't apply to single-column sections. |
 
         #### 2. Container Properties
         Container properties manage the section's visual presentation and spacing behavior:
 
         ##### Layout Control:
 
-        - `inContainer`: When false, the section's background extends edge-to-edge across the viewport while content remains centered within the standard container width. When true, both background and content are constrained.
-        - `isAnimated`: Enables scroll-triggered animations for the section, typically a fade-in or slide-in effect as the user scrolls.
+        | Name | Description |
+        |------|-------------|
+        | `inContainer` | When false, the section's background extends edge-to-edge across the viewport while content remains centered within the standard container width. When true, both background and content are constrained. |
+        | `isAnimated` | Enables scroll-triggered animations for the section, typically a fade-in or slide-in effect as the user scrolls. |
 
         ##### Spacing Control:
         The margin and padding objects provide granular control over section spacing:
 
-        - `noMargin.top`: When true, removes the top margin, allowing sections to connect visually.
-        - `noMargin.bottom`: When true, removes the bottom margin for seamless transitions.
-        - `noPadding.top`: When true, removes internal top padding, bringing content closer to the section edge.
-        - `noPadding.bottom`: When true, removes internal bottom padding.
+        | Name | Description |
+        |------|-------------|
+        | `noMargin.top` | When true, removes the top margin, allowing sections to connect visually.|
+        | `noMargin.bottom` | When true, removes the bottom margin for seamless transitions.|
+        | `noPadding.top` | When true, removes internal top padding, bringing content closer to the section edge.|
+        | `noPadding.bottom` | When true, removes internal bottom padding.|
 
         ##### Background Treatment:
         The background object creates rich visual layers:
 
-        - `isDark`: When true, automatically sets text colors to light values for contrast against dark backgrounds.
-        - `color`: Accepts hex color values (#RRGGBB format) for solid background colors.
-        - `image`: Path to a background image file, typically relative to your assets directory.
-        - `imageScreen`: Applies a semi-transparent overlay to background images. Use `dark` for a dark overlay (lightens text), `light` for a light overlay (darkens text), or `none` for no overlay.
+        | Name | Description |
+        |------|-------------|
+        |`isDark` | When true, automatically sets text colors to light values for contrast against dark backgrounds. |
+        | `color` | Accepts hex color values (#RRGGBB format) for solid background colors. |
+        | `image` | Path to a background image file, typically relative to your assets directory. |
+        | `imageScreen` | Applies a semi-transparent overlay to background images. Use `dark` for a dark overlay (lightens text), `light` for a light overlay (darkens text), or `none` for no overlay. |
 
         #### 3. Functional Properties
         These properties contain the actual content that users see:
         ##### Text Component:
         The text object structures your written content hierarchically:
 
-        - `leadIn`: Introductory text that appears above the main title, often styled smaller or differently to establish context.
-        - `title`: The primary heading text that captures attention and communicates the main message.
-        - `titleTag`: Specifies the semantic HTML heading level (h1-h6). Use h1 for page titles, h2 for major sections, and so on for proper document outline.
-        - `subTitle`: Secondary heading that elaborates on the title, typically rendered larger than body text but smaller than the title.
-        - `prose`: Body content that supports markdown formatting, allowing for rich text, links, lists, and emphasis within your content.
+        | Name | Description |
+        |------|-------------|
+        | `leadIn` | Introductory text that appears above the main title, often styled smaller or differently to establish context. |
+        | `title` | The primary heading text that captures attention and communicates the main message. |
+        | `titleTag` | Specifies the semantic HTML heading level (h1-h6). Use h1 for page titles, h2 for major sections, and so on for proper document outline. |
+        | `subTitle` | Secondary heading that elaborates on the title, typically rendered larger than body text but smaller than the title. |
+        | `prose` | Body content that supports markdown formatting, allowing for rich text, links, lists, and emphasis within your content. |
 
         ##### Call-to-Action (CTA) Component:
         The CTA array enables multiple action buttons or links:
 
-        - `url`: The destination URL when clicked. Can be relative (/about) or absolute (https://example.com).
-        - `label`: The visible text on the button or link.
-        - `isButton`: Boolean flag that determines whether to style as a button (true) or text link (false).
-        - `buttonStyle`: Visual variant when isButton is true. Common values include 'primary', 'secondary', 'outline', or 'link'.
+        | Name | Description |
+        |------|-------------|
+        | `url` | The destination URL when clicked. Can be relative (/about) or absolute (https://example.com). |
+        | `label` | The visible text on the button or link. |
+        | `isButton` | Boolean flag that determines whether to style as a button (true) or text link (false). |
+        | `buttonStyle` | Visual variant when isButton is true. Common values include 'primary', 'secondary', 'outline', or 'link'. |
 
         ##### Image Component:
         The image object handles visual media:
 
-        - `src`: Path to the image file, relative to your site root.
-        - `alt`: Alternative text for accessibility, describing the image content for screen readers and when images fail to load.
-        - `caption`: Optional descriptive text displayed below the image, providing context or attribution.
+        | Name | Description |
+        |------|-------------|
+        | `src` | Path to the image file, relative to your site root. |
+        | `alt` | Alternative text for accessibility, describing the image content for screen readers and when images fail to load. |
+        | `caption` | Optional descriptive text displayed below the image, providing context or attribution. |
 
         ### How Components Compose Pages
         Sections stack vertically to create complete pages. The configuration order determines the rendering order. For example, a typical landing page might consist of:

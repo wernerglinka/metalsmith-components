@@ -404,6 +404,27 @@ const hasIcon = ( obj ) => {
   return obj.icon && typeof obj.icon === 'string' && obj.icon.trim() !== '';
 };
 
+/**
+ * Merges properties into each object in an array
+ * If a property exists, it will be updated; if not, it will be added
+ * @param {Array} items - The array of objects to transform
+ * @param {Object} propsToMerge - Object containing properties to merge into each item
+ * @returns {Array} The transformed array with merged properties
+ * @example
+ * // Returns [{name: 'Item 1', isHorizontal: true}, {name: 'Item 2', isHorizontal: true}]
+ * mergeProps([{name: 'Item 1'}, {name: 'Item 2'}], {isHorizontal: true})
+ */
+const mergeProps = ( items, propsToMerge ) => {
+  if ( !Array.isArray( items ) || !propsToMerge || typeof propsToMerge !== 'object' ) {
+    return items;
+  }
+
+  return items.map( item => ( {
+    ...item,
+    ...propsToMerge
+  } ) );
+};
+
 export {
   toLower,
   toUpper,
@@ -433,5 +454,6 @@ export {
   hasAuthor,
   hasUrl,
   hasItems,
-  hasIcon
+  hasIcon,
+  mergeProps
 };

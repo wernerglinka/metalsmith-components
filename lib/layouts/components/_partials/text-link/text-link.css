@@ -3,8 +3,19 @@
   font-size: var(--font-s);
   transition: all 0.3s ease-in-out;
 
+  &:after {
+    content: '»';
+    display: inline-block;
+    margin-left: 0.25em;
+    transition: margin 0.3s ease-in-out;
+  }
+
   &:hover {
     border-bottom-color: currentcolor;
+
+    &:after {
+      margin-left: 0.5em;
+    }
   }
 
   &:focus {

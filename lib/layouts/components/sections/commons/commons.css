@@ -171,7 +171,6 @@
     .sub-title,
     .prose {
       max-width: 80ch;
-      margin-inline: auto;
     }
   }
 

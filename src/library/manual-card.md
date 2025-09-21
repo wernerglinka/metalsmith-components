@@ -53,6 +53,7 @@ sections:
         ### Implementation Example
 
         ```yaml
+        hasHorizontalCards: false # true for horizontal card layout
         cards:
           - link: ''
             background:
@@ -77,7 +78,6 @@ sections:
                 label: ''
                 isButton: true
                 buttonStyle: 'primary'
-
         # other manual cards
         ```
 
@@ -101,7 +101,7 @@ sections:
         image: ''
         imageScreen: 'none'
     text:
-      title: 'Configuration Options'
+      title: 'Card Configuration Options'
       titleTag: h2
       prose: |
         ### Properties
@@ -265,10 +265,10 @@ sections:
         image: ''
         imageScreen: 'none'
     text:
-      title: 'Background Image Cards'
+      title: 'Various Backgrounds'
       titleTag: h2
       prose: |
-        Cards can use images as full backgrounds with content overlays. When `hasImageBackground` is true, the image spans the entire card as a background layer.
+        Cards can use images or CSS patterns as full backgrounds with content overlays. When `hasImageBackground` is true, the image spans the entire card as a background layer.
 
         This creates visually striking cards perfect for featured content, hero sections, or any design that benefits from rich imagery with text overlays.
 
@@ -439,31 +439,89 @@ sections:
         imageScreen: 'none'
     cards:
       - link: '/library/hero'
+        background:
+          hasImage: false
+          pattern: ''
+          isDark: false
         image:
           src: '/assets/images/sample10.jpg'
           alt: 'Hero component'
+        icon:
+          url: ''
+          icon: ''
+          title: ''
         text:
+          leadIn: 'Image Decoration'
           title: 'Hero Component'
-          prose: 'Click anywhere on this card to navigate to the Hero component page.'
-      - link: '/library/flip-cards'
-        icon: 'layers'
-        text:
-          title: 'Flip Cards'
-          prose: 'This entire card is a link to the Flip Cards component demo.'
-      - link: '/library/simple-slider'
-        hasImageBackground: true
-        image:
-          src: '/assets/images/sample11.jpg'
-          alt: 'Slider'
-        icon: 'play'
-        text:
-          title: 'Slider Component'
-          prose: 'Background image card that links to the Slider demo.'
+          titleTag: 'h3'
+          subTitle: 'With Sub Title'
+          prose: |
+            Click `anywhere` on this card to navigate to the Hero component page.
 
-  - sectionType: columns
+      - link: '/library/hero-slider'
+        background:
+          hasImage: true
+          pattern: ''
+          isDark: false
+        image:
+          src: '/assets/images/sample10.jpg'
+          alt: 'Hero component'
+        icon:
+          url: ''
+          icon: ''
+          title: ''
+        text:
+          leadIn: 'Image Decoration'
+          title: 'Hero Slider Component'
+          titleTag: 'h3'
+          subTitle: 'With Sub Title'
+          prose: |
+            Click `anywhere` on this card to navigate to the Hero Slider component page.
+
+      - link: '/library/flip-cards'
+        background:
+          hasImage: false
+          pattern: 'pattern3'
+          isDark: true
+        image:
+          src: ''
+          alt: ''
+        icon:
+          url: ''
+          icon: ''
+          title: ''
+        text:
+          leadIn: 'Background CSS Pattern'
+          title: 'Flip Card Component'
+          titleTag: 'h3'
+          subTitle: 'With Sub Title'
+          prose: |
+            Click `anywhere` on this card to navigate to the Flip Cards component page.
+
+      - link: '/library/simple-accordion'
+        background:
+          hasImage: false
+          pattern: 'pattern4'
+          isDark: true
+        image:
+          src: ''
+          alt: ''
+        icon:
+          url: ''
+          icon: 'feather'
+          title: ''
+        text:
+          leadIn: 'Background CSS Pattern'
+          title: 'Simple Accordion Component'
+          titleTag: 'h3'
+          subTitle: 'With Sub Title'
+          prose: |
+            Click `anywhere` on this card to navigate to the Siomple Accordion component page.
+
+  - sectionType: text-only
     containerTag: article
     classes: 'demo-section'
-    id: 'horizontal-layout'
+    id: 'horizontal-cards'
     isDisabled: false
     isAnimated: true
     inContainer: true
@@ -480,23 +538,113 @@ sections:
         image: ''
         imageScreen: 'none'
     text:
-      title: 'Horizontal Layout'
+      title: 'Horizontal Layout Cards'
       titleTag: h2
-      prose: 'Cards can be displayed in a horizontal layout where the image/icon and text content are arranged side by side rather than stacked vertically.'
-    columns:
-      - text:
-          prose: |
-            ### Horizontal Card Example
+      prose: |
+        For a horizontal card layout all that is needed, set the `isHorizontal: true`.
 
-            When `isHorizontal: true` is set, the card switches to a horizontal layout. This is ideal for feature lists, testimonials, or any content that benefits from a wider format.
-        classes: 'col-span-6'
-      - text:
+  - sectionType: cards-list
+    containerTag: article
+    classes: 'demo-section linked-cards'
+    id: 'linked-examples'
+    isDisabled: false
+    isAnimated: true
+    inContainer: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    hasHorizontalCards: true
+    cards:
+      - link: '/library/hero'
+        isHorizontal: true
+        background:
+          hasImage: false
+          pattern: ''
+          isDark: false
+        image:
+          src: '/assets/images/sample10.jpg'
+          alt: 'Hero component'
+        icon:
+          url: ''
+          icon: ''
+          title: ''
+        text:
+          leadIn: 'Image Decoration'
+          title: 'Hero Component'
+          titleTag: 'h3'
+          subTitle: 'With Sub Title'
           prose: |
-            ### Use Cases
+            Click `anywhere` on this card to navigate to the Hero component page.
 
-            - Feature highlights with descriptions
-            - Team member profiles
-            - Product showcases
-            - Service offerings
-        classes: 'col-span-6'
+      - link: '/library/hero-slider'
+        isHorizontal: true
+        background:
+          hasImage: true
+          pattern: ''
+          isDark: false
+        image:
+          src: '/assets/images/sample10.jpg'
+          alt: 'Hero component'
+        icon:
+          url: ''
+          icon: ''
+          title: ''
+        text:
+          leadIn: 'Image Decoration'
+          title: 'Hero Slider Component'
+          titleTag: 'h3'
+          subTitle: 'With Sub Title'
+          prose: |
+            Click `anywhere` on this card to navigate to the Hero Slider component page.
+
+      - link: '/library/flip-cards'
+        isHorizontal: true
+        background:
+          hasImage: false
+          pattern: 'pattern3'
+          isDark: true
+        image:
+          src: ''
+          alt: ''
+        icon:
+          url: ''
+          icon: ''
+          title: ''
+        text:
+          leadIn: 'Background CSS Pattern'
+          title: 'Flip Card Component'
+          titleTag: 'h3'
+          subTitle: 'With Sub Title'
+          prose: |
+            Click `anywhere` on this card to navigate to the Flip Cards component page.
+
+      - link: '/library/simple-accordion'
+        isHorizontal: true
+        background:
+          hasImage: false
+          pattern: 'pattern4'
+          isDark: true
+        image:
+          src: ''
+          alt: ''
+        icon:
+          url: ''
+          icon: 'feather'
+          title: ''
+        text:
+          leadIn: 'Background CSS Pattern'
+          title: 'Simple Accordion Component'
+          titleTag: 'h3'
+          subTitle: 'With Sub Title'
+          prose: |
+            Click `anywhere` on this card to navigate to the Simple Accordion component page.
 ---

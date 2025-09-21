@@ -32,8 +32,11 @@
 
   {# If link is present, wrap entire card #}
   {% if props.link %}
-    <a href="{{ props.link }}" class="{{ cardClasses }}" aria-label="{% if props.text.title %}{{ props.text.title }}{% else %}Learn more{% endif %}">
+    <a href="{{ props.link }}" class="{{ cardClasses }} link-wrapper" aria-label="{% if props.text.title %}{{ props.text.title }}{% else %}Learn more{% endif %}">
       {{ cardContent(props) }}
+      <div class="link-indicator">
+        {{ icon({icon: "arrow-right", url: ''}) }}
+      </div>
     </a>
   {% else %}
     <div class="{{ cardClasses }}">

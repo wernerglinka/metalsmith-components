@@ -4,6 +4,7 @@
  */
 
 .manual-card {
+  display: block;
   position: relative;
   max-width: 30rem;
   height: 100%;
@@ -48,6 +49,7 @@
     flex-direction: column;
     flex-grow: 1;
     padding: var(--space-s-m);
+    padding-block-end: 3rem;
     background-color: var(--glass-background-light);
   }
 
@@ -57,7 +59,7 @@
     color: var(--color-text);
   }
   .sub-title {
-    margin-block-start: var(--space-3xs);
+    margin: var(--space-3xs) 0 0;
     font-size: var(--font-s);
     font-style: italic;
   }
@@ -75,6 +77,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-block-start: var(--space-s);
     margin-top: auto;
   }
   .button {
@@ -114,18 +117,113 @@
   &.pattern2 {
     background-image: var(--pattern2);
   }
+  &.pattern3 {
+    background-image: var(--pattern3);
+  }
+  &.pattern4 {
+    background-image: var(--pattern4);
+  }
+  &.pattern5 {
+    background-image: var(--pattern5);
+  }
 
   &[class*='pattern'],
   &.has-image-background {
+    display: flex;
+    flex-direction: column;
+
     .info {
-      height: 100%;
+      flex: 1 1 auto;
       padding: var(--space-l-xl) var(--space-s-m);
+    }
+
+    .decoration + .info {
+      padding-block-start: var(--space-s-m);
     }
 
     /* restrict prose to seven lines with ellipsis */
     .prose {
       -webkit-line-clamp: 7;
       max-height: 20em; /* Fallback for browsers without line-clamp support */
+    }
+  }
+
+  /**
+   * Whole card is a link 
+   */
+  &.link-wrapper {
+    color: var(--color-text);
+
+    .link-indicator {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      padding-inline: var(--space-s-m);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &.is-dark svg {
+      stroke: var(--color-text-light);
+    }
+  }
+
+  /**
+   * Horizontal layout
+   */
+  &.is-horizontal {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    height: auto;
+
+    .decoration {
+      flex: 0 0 20rem;
+      height: auto;
+      min-height: 15rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .icon-wrapper {
+        padding: var(--space-l);
+      }
+    }
+
+    .info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: var(--space-m-l);
+    }
+
+    /* Remove prose line clamp for horizontal layout */
+    .prose {
+      -webkit-line-clamp: unset;
+      max-height: unset;
+    }
+
+    /* Adjust link indicator for horizontal layout */
+    &.link-wrapper .link-indicator {
+      padding-block: var(--space-s);
+    }
+
+    /* Responsive behavior for smaller screens */
+    @media (max-width: 48rem) {
+      flex-direction: column;
+
+      .decoration {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 12rem;
+      }
+      li {
+        max-width: 17.5rem;
+      }
     }
   }
 }
