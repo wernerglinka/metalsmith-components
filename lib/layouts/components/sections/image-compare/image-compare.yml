@@ -1,0 +1,13 @@
+# Example frontmatter for image-compare section
+sectionType: image-compare
+
+# other section properties
+
+imageBefore:
+  src: /assets/images/before-example.jpg
+  alt: Before image example
+  label: Before
+imageAfter:
+  src: /assets/images/after-example.jpg
+  alt: After image example
+  label: After
