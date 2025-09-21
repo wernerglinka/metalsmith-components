@@ -18,6 +18,7 @@ import Metalsmith from 'metalsmith'; // The core static site generator
 import drafts from '@metalsmith/drafts'; // Excludes draft content from builds
 import generateMapsIcons from './plugins/generate-maps-icons.js'; // Generates maps icon registry
 import generateLibrarySearchIndex from './plugins/generate-library-search-index.js'; // Generates library search index
+import generatePartialsSearchIndex from './plugins/generate-partials-search-index.js'; // Generates partials search index
 import collections from '@metalsmith/collections';
 import paginatePages from 'metalsmith-sectioned-blog-pagination';
 import search from 'metalsmith-search'; // Adds search functionality
@@ -199,12 +200,20 @@ metalsmith
         pattern: 'library/*.md',
         sortBy: 'seo.title',
         reverse: false
+      },
+      partials: {
+        pattern: 'partials/*.md',
+        sortBy: 'seo.title',
+        reverse: false
       }
     } )
   )
 
   // Generate search index for library components (after collections)
   .use( generateLibrarySearchIndex() )
+
+  // Generate search index for partials components
+  .use( generatePartialsSearchIndex() )
 
   /*
     .use( ( files, metalsmithInstance, done ) => {
@@ -247,7 +256,8 @@ metalsmith
       ignore: [
         '**/search.md',
         '**/search-index.json',
-        '**/library-search-index.json'
+        '**/library-search-index.json',
+        '**/partials-search-index.json'
       ]
     } )
   )
@@ -272,7 +282,7 @@ metalsmith
     menus( {
       metadataKey: 'mainMenu', // Where to store menu data
       usePermalinks: true, // Use clean URLs in menu
-      navExcludePatterns: [ '404.html', 'robots.txt', 'search-index.json', 'library-search-index.json' ] // Files to exclude from menu
+      navExcludePatterns: [ '404.html', 'robots.txt', 'search-index.json', 'library-search-index.json', 'partials-search-index.json' ] // Files to exclude from menu
     } )
   )
 

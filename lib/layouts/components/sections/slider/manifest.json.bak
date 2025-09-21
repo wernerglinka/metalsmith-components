@@ -1,18 +1,15 @@
 {
-  "name": "banner",
+  "name": "slider",
   "type": "section",
-  "styles": ["banner.css"],
-  "scripts": ["banner.js"],
-  "requires": ["ctas", "text", "image", "commons"],
+  "styles": ["slider.css"],
+  "scripts": ["slider.js"],
+  "requires": ["ctas", "text", "image", "commons", "slider-pagination"],
   "validation": {
     "required": ["sectionType"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "banner"
-      },
-      "isReverse": {
-        "type": "boolean"
+        "const": "slider"
       },
       "isDisabled": {
         "type": "boolean"
@@ -29,31 +26,46 @@
       "containerFields.noMargin.bottom": {
         "type": "boolean"
       },
+      "containerFields.noPadding.top": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.bottom": {
+        "type": "boolean"
+      },
       "containerFields.background.isDark": {
         "type": "boolean"
       },
-      "containerFields.background.imageScreen": {
+      "config": {
         "type": "string",
-        "enum": ["light", "dark", "none"]
+        "enum": ["", "isTabs"]
       },
       "text.titleTag": {
         "type": "string",
         "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
         "default": "h2"
       },
-      "ctas": {
+      "slides": {
         "type": "array",
         "items": {
           "properties": {
-            "isButton": {
-              "type": "boolean"
-            },
-            "buttonStyle": {
+            "text.titleTag": {
               "type": "string",
-              "enum": ["primary", "secondary", "tertiary", "inverted"]
+              "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
+              "default": "h3"
             },
-            "isSmall": {
-              "type": "boolean"
+            "ctas": {
+              "type": "array",
+              "items": {
+                "properties": {
+                  "isButton": {
+                    "type": "boolean"
+                  },
+                  "buttonStyle": {
+                    "type": "string",
+                    "enum": ["primary", "secondary", "tertiary", "inverted"]
+                  }
+                }
+              }
             }
           }
         }

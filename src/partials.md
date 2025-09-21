@@ -18,7 +18,7 @@ sections:
     containerTag: section
     classes: 'first-section'
     id: ''
-    description: "Hero section for the partials library"
+    description: 'Hero section for the partials library'
     isDisabled: false
     isFullScreen: false
     isReverse: false

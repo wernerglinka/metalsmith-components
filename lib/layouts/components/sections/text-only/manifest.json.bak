@@ -1,40 +1,21 @@
 {
-  "name": "banner",
+  "name": "text-only",
   "type": "section",
-  "styles": ["banner.css"],
-  "scripts": ["banner.js"],
-  "requires": ["ctas", "text", "image", "commons"],
+  "styles": ["text-only.css"],
+  "scripts": [],
+  "requires": ["ctas", "text", "commons"],
   "validation": {
     "required": ["sectionType"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "banner"
-      },
-      "isReverse": {
-        "type": "boolean"
-      },
-      "isDisabled": {
-        "type": "boolean"
+        "const": "text-only"
       },
       "containerFields.inContainer": {
         "type": "boolean"
       },
       "containerFields.isAnimated": {
         "type": "boolean"
-      },
-      "containerFields.noMargin.top": {
-        "type": "boolean"
-      },
-      "containerFields.noMargin.bottom": {
-        "type": "boolean"
-      },
-      "containerFields.background.isDark": {
-        "type": "boolean"
-      },
-      "containerFields.background.imageScreen": {
-        "type": "string",
-        "enum": ["light", "dark", "none"]
       },
       "text.titleTag": {
         "type": "string",
@@ -51,9 +32,6 @@
             "buttonStyle": {
               "type": "string",
               "enum": ["primary", "secondary", "tertiary", "inverted"]
-            },
-            "isSmall": {
-              "type": "boolean"
             }
           }
         }

@@ -1,18 +1,30 @@
 {
-  "name": "banner",
+  "name": "maps",
   "type": "section",
-  "styles": ["banner.css"],
-  "scripts": ["banner.js"],
-  "requires": ["ctas", "text", "image", "commons"],
+  "styles": ["maps.css"],
+  "scripts": ["maps.js"],
+  "requires": ["ctas", "text", "commons"],
+  "modules": {
+    "providers": ["leaflet.js", "openlayers.js"],
+    "helpers": ["load-script.js", "load-styles.js", "maps-utils.js", "icon-loader.js"]
+  },
   "validation": {
-    "required": ["sectionType"],
+    "required": ["sectionType", "mapProvider", "mapData"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "banner"
+        "const": "maps"
       },
-      "isReverse": {
-        "type": "boolean"
+      "mapProvider": {
+        "type": "string",
+        "enum": ["leaflet", "openlayers"],
+        "default": "leaflet"
+      },
+      "mapData": {
+        "type": "string"
+      },
+      "height": {
+        "type": "string"
       },
       "isDisabled": {
         "type": "boolean"
@@ -27,6 +39,12 @@
         "type": "boolean"
       },
       "containerFields.noMargin.bottom": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.top": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.bottom": {
         "type": "boolean"
       },
       "containerFields.background.isDark": {
@@ -51,9 +69,6 @@
             "buttonStyle": {
               "type": "string",
               "enum": ["primary", "secondary", "tertiary", "inverted"]
-            },
-            "isSmall": {
-              "type": "boolean"
             }
           }
         }

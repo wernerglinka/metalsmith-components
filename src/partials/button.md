@@ -7,10 +7,6 @@ seo:
   description: 'Button partial component for creating consistent call-to-action buttons across your site'
   socialImage: '/assets/images/metalsmith-starter-social.png'
 
-collections:
-  - name: 'partials'
-    order: 1
-
 card:
   title: 'Button'
   description: 'Configurable button component with multiple styles and states'
@@ -61,6 +57,15 @@ sections:
           isButton: true,
           buttonStyle: 'primary'
         }) }}
+
+        {# Small button example #}
+        {{ button({
+          url: '/contact',
+          label: 'Small Button',
+          isButton: true,
+          buttonStyle: 'secondary',
+          isSmall: true
+        }) }}
         ```
 
         ## Configuration Options
@@ -70,9 +75,8 @@ sections:
         | `url` | string | Yes | - | Link destination URL |
         | `label` | string | Yes | - | Button text |
         | `isButton` | boolean | No | false | Render as button (true) or link (false) |
-        | `buttonStyle` | string | No | 'primary' | Visual style: 'primary', 'secondary', 'outline' |
-        | `isExternal` | boolean | No | false | Opens in new tab/window |
-        | `ariaLabel` | string | No | - | Accessibility label |
+        | `buttonStyle` | string | No | 'primary' | Visual style: 'primary', 'secondary', 'tertiary' |
+        | `isSmall` | boolean | No | false | Render as small button |
 
   - sectionType: text-only
     containerTag: section
@@ -80,7 +84,7 @@ sections:
       inContainer: true
       isAnimated: true
       background:
-        isDark: true
+        isDark: false
     text:
       title: 'Examples'
       titleTag: 'h2'
@@ -95,12 +99,17 @@ sections:
         isButton: true
         buttonStyle: 'secondary'
       - url: '#'
-        label: 'Outline Button'
+        label: 'Tertiary Button'
         isButton: true
-        buttonStyle: 'outline'
+        buttonStyle: 'tertiary'
       - url: '#'
         label: 'Text Link'
         isButton: false
+      - url: '#'
+        label: 'Small Button'
+        isButton: true
+        buttonStyle: 'primary'
+        isSmall: true
 
   - sectionType: text-only
     containerTag: section
@@ -122,7 +131,7 @@ sections:
         - And many more...
 
         ### Notes
-        - Buttons automatically receive focus styles for accessibility
-        - External links include appropriate rel attributes for security
-        - Button styles are defined in the global design tokens
+        - **External links automatically detected**: URLs starting with `http://` or `https://` automatically open in new windows with proper `rel` attributes
+        - **Accessibility built-in**: External links get automatic aria-labels and focus styles
+        - **Button styles**: Defined in global design tokens for consistency
 ---

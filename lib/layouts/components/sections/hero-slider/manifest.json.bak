@@ -1,15 +1,23 @@
 {
-  "name": "slider",
+  "name": "hero-slider",
   "type": "section",
-  "styles": ["slider.css"],
-  "scripts": ["slider.js"],
-  "requires": ["ctas", "text", "image", "commons", "slider-pagination"],
+  "scripts": ["hero-slider.js"],
+  "styles": ["hero-slider.css"],
+  "requires": ["ctas", "text", "image", "video", "commons"],
   "validation": {
     "required": ["sectionType"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "slider"
+        "const": "hero-slider"
+      },
+      "autoplay": {
+        "type": "boolean",
+        "default": false
+      },
+      "autoPlayDelay": {
+        "type": "number",
+        "default": 5000
       },
       "isDisabled": {
         "type": "boolean"
@@ -35,23 +43,25 @@
       "containerFields.background.isDark": {
         "type": "boolean"
       },
-      "config": {
+      "containerFields.background.imageScreen": {
         "type": "string",
-        "enum": ["", "isTabs"]
-      },
-      "text.titleTag": {
-        "type": "string",
-        "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
-        "default": "h2"
+        "enum": ["light", "dark", "none"]
       },
       "slides": {
         "type": "array",
         "items": {
+          "type": "object",
           "properties": {
+            "navLabel": {
+              "type": "string"
+            },
+            "isReverse": {
+              "type": "boolean"
+            },
             "text.titleTag": {
               "type": "string",
               "enum": ["h1", "h2", "h3", "h4", "h5", "h6"],
-              "default": "h3"
+              "default": "h1"
             },
             "ctas": {
               "type": "array",
@@ -63,11 +73,17 @@
                   "buttonStyle": {
                     "type": "string",
                     "enum": ["primary", "secondary", "tertiary", "inverted"]
-            },
-            "isSmall": {
-              "type": "boolean"                  }
+                  }
                 }
               }
+            },
+            "background.isDark": {
+              "type": "boolean"
+            },
+            "background.imageScreen": {
+              "type": "string",
+              "enum": ["none", "light", "dark"],
+              "default": "none"
             }
           }
         }

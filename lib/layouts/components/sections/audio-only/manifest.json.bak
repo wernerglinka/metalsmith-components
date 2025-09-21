@@ -1,15 +1,15 @@
 {
-  "name": "video-only",
+  "name": "audio-only",
   "type": "section",
-  "styles": ["video-only.css"],
-  "scripts": ["video-only.js"],
-  "requires": ["ctas", "video", "commons"],
+  "styles": ["audio-only.css"],
+  "scripts": [],
+  "requires": ["ctas", "audio", "commons"],
   "validation": {
-    "required": ["sectionType", "video"],
+    "required": ["sectionType", "audio"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "video-only"
+        "const": "audio-only"
       },
       "containerFields.inContainer": {
         "type": "boolean"
@@ -17,18 +17,17 @@
       "containerFields.isAnimated": {
         "type": "boolean"
       },
-      "video.id": {
+      "audio.ogg": {
         "type": "string"
       },
-      "video.src": {
-        "type": "string",
-        "enum": ["youtube", "vimeo", "cloudinary"]
-      },
-      "video.tn": {
+      "audio.mpeg": {
         "type": "string"
       },
-      "video.inline": {
-        "type": "boolean"
+      "audio.bgImage": {
+        "type": "string"
+      },
+      "audio.alt": {
+        "type": "string"
       },
       "ctas": {
         "type": "array",
@@ -40,9 +39,7 @@
             "buttonStyle": {
               "type": "string",
               "enum": ["primary", "secondary", "tertiary", "inverted"]
-            },
-            "isSmall": {
-              "type": "boolean"            }
+            }
           }
         }
       }

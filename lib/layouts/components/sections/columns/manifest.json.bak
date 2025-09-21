@@ -1,15 +1,15 @@
 {
-  "name": "banner",
+  "name": "columns",
   "type": "section",
-  "styles": ["banner.css"],
-  "scripts": ["banner.js"],
-  "requires": ["ctas", "text", "image", "commons"],
+  "styles": ["columns.css"],
+  "scripts": [],
+  "requires": ["commons"],
   "validation": {
     "required": ["sectionType"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "banner"
+        "const": "columns"
       },
       "isReverse": {
         "type": "boolean"
@@ -27,6 +27,12 @@
         "type": "boolean"
       },
       "containerFields.noMargin.bottom": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.top": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.bottom": {
         "type": "boolean"
       },
       "containerFields.background.isDark": {
@@ -51,9 +57,6 @@
             "buttonStyle": {
               "type": "string",
               "enum": ["primary", "secondary", "tertiary", "inverted"]
-            },
-            "isSmall": {
-              "type": "boolean"
             }
           }
         }

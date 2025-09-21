@@ -1,21 +1,29 @@
 {
-  "name": "banner",
+  "name": "multi-media",
   "type": "section",
-  "styles": ["banner.css"],
-  "scripts": ["banner.js"],
-  "requires": ["ctas", "text", "image", "commons"],
+  "styles": ["multi-media.css"],
+  "scripts": [],
+  "requires": ["ctas", "text", "image", "video", "audio", "icon", "lottie", "commons"],
   "validation": {
-    "required": ["sectionType"],
+    "required": ["sectionType", "mediaType"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "banner"
+        "const": "multi-media"
+      },
+      "mediaType": {
+        "type": "string",
+        "enum": ["image", "video", "audio", "icon", "lottie"]
       },
       "isReverse": {
         "type": "boolean"
       },
       "isDisabled": {
         "type": "boolean"
+      },
+      "containerTag": {
+        "type": "string",
+        "enum": ["section", "aside", "div", "article"]
       },
       "containerFields.inContainer": {
         "type": "boolean"
@@ -27,6 +35,12 @@
         "type": "boolean"
       },
       "containerFields.noMargin.bottom": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.top": {
+        "type": "boolean"
+      },
+      "containerFields.noPadding.bottom": {
         "type": "boolean"
       },
       "containerFields.background.isDark": {
@@ -51,9 +65,6 @@
             "buttonStyle": {
               "type": "string",
               "enum": ["primary", "secondary", "tertiary", "inverted"]
-            },
-            "isSmall": {
-              "type": "boolean"
             }
           }
         }

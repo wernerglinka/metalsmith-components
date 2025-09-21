@@ -215,7 +215,7 @@ sections:
         | `url` | The destination URL when clicked. Can be relative (/about) or absolute (https://example.com). |
         | `label` | The visible text on the button or link. |
         | `isButton` | Boolean flag that determines whether to style as a button (true) or text link (false). |
-        | `buttonStyle` | Visual variant when isButton is true. Common values include 'primary', 'secondary', 'outline', or 'link'. |
+        | `buttonStyle` | Visual variant when isButton is true. Common values include 'primary', 'secondary', 'tertiary', or 'inverted'. |
 
         ##### Image Component:
         The image object handles visual media:
