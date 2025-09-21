@@ -10,6 +10,7 @@ seo:
 card:
   title: 'CTAs'
   description: 'Manages groups of call-to-action buttons and links'
+  pattern: 'simple-gray2'
   tags: ['cta', 'buttons', 'actions', 'group', 'navigation']
 
 sections:

@@ -67,17 +67,13 @@
     font-size: var(--font-p);
     margin-block: var(--space-s-m) 0;
   }
-}
 
-/** Style variations for dark theme */
-.dark-theme .collection-card {
-  border: none;
-
-  * {
-    color: var(--color-text-light);
-  }
-
-  .text-wrapper {
-    background-color: var(--glass-background-dark-card);
+  &.has-pattern {
+    .image-wrapper {
+      display: none;
+    }
+    .text-wrapper {
+      background: none;
+    }
   }
 }

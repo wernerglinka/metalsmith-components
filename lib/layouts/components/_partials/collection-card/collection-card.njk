@@ -8,6 +8,7 @@
 
   props:
     - link: URL for the card link
+    - pattern: background pattern for the card
     - thumbnail: image URL for the card thumbnail
     - title: title text for the card
     - prose: excerpt or description text for the card
@@ -16,20 +17,21 @@
 #}
 {% macro collectionCard(props) %}
   <a href="{{ props.link }}" aria-label="Read more: {{ props.title }}">
-    <div class="image-wrapper">
-      <img src="{{ props.thumbnail }}" alt="{{ props.title }}"/>
-    </div>
+    {% if props.thumbnail %}
+      <div class="image-wrapper">
+        <img src="{{ props.thumbnail }}" alt="{{ props.title }}"/>
+      </div>
+    {% endif %}
 
     <div class="text-wrapper flow">
       <h3 class="title">{{ props.title }}</h3>
 
       {% if props.author | hasAuthor or props.date %}
-      {% set info = {
-        author: props.author,
-        date: props.date
-      } %}
-
-      <div class="author-date is-vertical">{{ authorDate(info) }}</div>
+        {% set info = {
+          author: props.author,
+          date: props.date
+        } %}
+        <div class="author-date is-vertical">{{ authorDate(info) }}</div>
       {% endif %}
 
       <div class="prose">{{ props.prose | safe }}</div>
@@ -37,7 +39,6 @@
       {# right arrow icon #}
       {% set iconProps = { icon: "arrow-right", url: '' } %}
       {{ icon(iconProps) }}
-
     </div>
   </a>
 {% endmacro %}

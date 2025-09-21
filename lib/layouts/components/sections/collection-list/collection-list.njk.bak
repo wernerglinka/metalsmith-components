@@ -1,13 +1,13 @@
-{#
+{# 
   Collection List - Renders a paginated list of items from any collection
   Dynamically displays collection items with automatic author/date detection
-
+  
   Required section properties:
   - collectionName: string - name of the collection to display (e.g., 'blog', 'components')
-
+  
   Pagination params (populated by metalsmith-sectioned-blog-pagination):
   - numberOfPages: number - total number of pagination pages
-  - pageNumber: number - current page number
+  - pageNumber: number - current page number  
   - pageLength: number - items per page
   - pageStart: number - starting index for current page
 #}
@@ -18,7 +18,7 @@
 <div class="container">
   {% set params = section.pagingParams %}
   {% set collection = collections[section.collectionName] %}
-
+  
   {% if params.numberOfPages > 1 %}
     {{ collectionPagination(params.numberOfPages, params.pageNumber, section.domainName) }}
     {% set startPage = params.pageStart %}
@@ -41,10 +41,10 @@
           date: item.card.date,
           author: item.card.author
         } %}
-
+        
         <li
           class="collection-card{% if params.horizontal %} is-horizontal{% endif %}{% if thisCard.pattern %} has-pattern{% endif %}"
-          {% if thisCard.pattern %}style="background: var(--{{ thisCard.pattern }})"{% endif %}
+          {% if thisCard.pattern %} style="background: var(--{{ thisCard.pattern }})" {% endif %}
         >
           {{ collectionCard(thisCard) }}
         </li>

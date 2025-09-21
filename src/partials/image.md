@@ -10,6 +10,7 @@ seo:
 card:
   title: 'Image'
   description: 'Responsive image component with lazy loading and optimization'
+  pattern: 'simple-gray3'
   tags: ['image', 'media', 'responsive', 'lazy-load', 'picture']
 
 sections:

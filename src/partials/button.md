@@ -10,6 +10,7 @@ seo:
 card:
   title: 'Button'
   description: 'Configurable button component with multiple styles and states'
+  pattern: 'simple-gray1'
   tags: ['button', 'cta', 'action', 'link', 'ui']
 
 sections:
