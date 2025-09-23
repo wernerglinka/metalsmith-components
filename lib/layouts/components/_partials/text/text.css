@@ -110,7 +110,7 @@
 /** Dark Theme style variations */
 .dark-theme .prose {
   pre code {
-    color: var(--color-text-light);
+    /* color: var(--color-text-light); */
   }
 
   code {

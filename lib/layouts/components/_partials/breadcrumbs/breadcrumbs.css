@@ -55,13 +55,8 @@
   }
 }
 
-.is-dark .breadcrumbs {
-  li::after {
-    color: var(--color-text-highlight-light);
-  }
-
-  a {
-    color: var(--color-text-highlight-light);
-    border-bottom-color: var(--color-text-highlight-light);
-  }
+body.with-sidebar .page-wrapper .breadcrumbs {
+  position: static;
+  transform: none;
+  padding-left: 0;
 }

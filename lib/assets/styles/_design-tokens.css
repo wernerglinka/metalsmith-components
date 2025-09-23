@@ -16,6 +16,7 @@
   --color-text-inactive: #999;
   --color-link-inactive: #666;
   --color-link-in-path: #888;
+  --background-color-link-hover: rgb(0 0 0 / 5%);
   --color-pagination-active: #666;
   --color-background: #fff;
   --color-background-light: #f4f4f4;
@@ -109,6 +110,7 @@
   --smaller-line-height: 1;
 
   /* Layout */
+  --header-height
   --container-width: 1024px;
   --gutter: var(--space-s-l); /* Default spacing for grid/flex gaps */
 

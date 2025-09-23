@@ -16,7 +16,7 @@
     background:
       color: ''
       image: ''
-  contentClasses: 'glass-background'
+  contentClasses: ''
   columns:
     - column:
       columnClasses: 'image'

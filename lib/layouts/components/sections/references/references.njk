@@ -5,25 +5,27 @@
 {% set partials = collections['partials'] %}
 {% set sections = collections['library'] %}
 
-<h3>Documentation</h3>
-<h4>Partials</h4>
-<ul class="references-list">
-  {% for item in partials %}
-    <li>
-      <a href="/{{ item.permalink }}">
-        {{ item.card.title }}  
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+<div class="js-accordion" data-expand-first>
+  <h3>Documentation</h3>
+  <h4 class="accordion-header js-accordion-header">Partials</h4>
+  <ul class="references-list accordion-panel js-accordion-panel">
+    {% for item in partials %}
+      <li>
+        <a href="/{{ item.permalink }}">
+          {{ item.card.title }}  
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 
-<h4>Sections</h4>
-<ul class="references-list">
-  {% for item in sections %}
-    <li>
-      <a href="/{{ item.permalink }}">
-        {{ item.card.title }}  
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+  <h4 class="accordion-header js-accordion-header">Sections</h4>
+  <ul class="references-list accordion-panel js-accordion-panel">
+    {% for item in sections %}
+      <li>
+        <a href="/{{ item.permalink }}">
+          {{ item.card.title }}  
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

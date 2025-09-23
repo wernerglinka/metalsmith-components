@@ -1,9 +1,10 @@
 {% from "components/_partials/branding/branding.njk" import branding %}
 {% from "components/_partials/navigation/navigation.njk" import navigation %}
 {% from "components/_partials/dark-light-theme-switcher/dark-light-theme-switcher.njk" import darkLightThemeSwitcher %}
+{% from "components/_partials/icon/icon.njk" import icon %}
 
 <header>
-  <div class="container">
+
     {% set link = '/' %}
     {% set img = { src: '/assets/images/metalsmith2025-logo-bug.png', alt: 'Metalsmith Starter' } %}
 
@@ -11,6 +12,12 @@
 
     {{ navigation( mainMenu, urlPath )}}
 
-    {{ darkLightThemeSwitcher() }}
-  </div>
+    <div class="misc">
+      {{ darkLightThemeSwitcher() }}
+      {{ icon( { 
+        url: "https://github.com/wernerglinka/metalsmith-components", 
+        icon: "github", 
+        title: "GitHub Icon" 
+      } ) }}
+    </div>
 </header>

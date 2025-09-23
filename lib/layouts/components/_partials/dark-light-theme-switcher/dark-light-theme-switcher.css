@@ -1,12 +1,10 @@
 .theme-toggle {
   background: transparent;
   border: none;
-  padding: 8px;
   cursor: pointer;
   position: relative;
-  margin-left: var(--space-m);
-  border-radius: 4px;
-  transition: outline 0.2s ease;
+  width: var(--space-m-l);
+  height: var(--space-m-l);
 
   /* Focus indicator */
   &:focus {
@@ -18,42 +16,34 @@
   &:focus:not(:focus-visible) {
     outline: none;
   }
-}
 
-.theme-toggle span {
-  position: relative;
-  top: -2px;
-}
+  span {
+    position: relative;
+    top: -2px;
+  }
 
-.theme-toggle a {
-  border-bottom: none;
-}
+  a {
+    border-bottom: none;
 
-.theme-toggle a svg {
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
-}
+    svg {
+      width: 1.4em;
+      height: 1.4em;
+      vertical-align: middle;
 
-.theme-toggle a svg * {
-  stroke: var(--color-text);
-  transition: all 0.5s ease-in-out;
-}
+      * {
+        stroke: var(--color-text);
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
 
-.theme-toggle a:hover {
-  border-bottom: none;
-}
+  .dark {
+    display: none;
+  }
 
-.theme-toggle a:hover svg * {
-  stroke: red;
-}
-
-.theme-toggle .dark {
-  display: none;
-}
-
-.theme-toggle .light {
-  display: inline;
+  .light {
+    display: inline;
+  }
 }
 
 .dark-theme .theme-toggle .dark {

@@ -56,7 +56,7 @@ sections:
           classes: 'media-image hero-cta'
           # more settings
 
-          contentClasses: 'glass-background'
+          contentClasses: ''
           columns:
             - column:
               columnClasses: 'image'
@@ -158,7 +158,7 @@ sections:
       background:
         color: ''
         image: ''
-    contentClasses: 'glass-background'
+    contentClasses: ''
     columns:
       - column:
         columnClasses: 'image'

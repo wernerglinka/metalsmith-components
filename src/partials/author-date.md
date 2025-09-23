@@ -1,5 +1,5 @@
 ---
-layout: pages/sections.njk
+layout: pages/sections-with-sidebar.njk
 bodyClass: ''
 
 seo:
@@ -14,42 +14,30 @@ card:
   tags: ['author', 'date', 'metadata', 'blog', 'article', 'time']
 
 sections:
-  - sectionType: hero
-    containerTag: section
-    classes: 'first-section partial-hero'
-    containerFields:
-      inContainer: false
-      isAnimated: true
-      noMargin:
-        top: true
-        bottom: false
-      background:
-        isDark: true
-        color: ''
-        image: '/assets/images/sample10.jpg'
-        imageScreen: 'dark'
-    text:
-      leadIn: 'Partial Component'
-      title: 'Author-Date'
-      titleTag: 'h1'
-      prose: 'Display author and publication metadata for blog posts'
-
   - sectionType: text-only
     containerTag: section
     containerFields:
       inContainer: true
       isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
       background:
         isDark: false
     text:
-      title: 'Overview'
-      titleTag: 'h2'
+      leadIn: 'Partial Component'
+      title: 'Author-Date'
+      titleTag: 'h1'
       prose: |
-        The Author-Date partial renders author information and publication dates for blog posts and articles. It intelligently handles both single authors and multiple co-authors, and formats dates using a blog-friendly format.
+        The Author-Date partial renders author information and publication dates for blog posts and articles. It handles both single authors and multiple co-authors, and formats dates using a blog-friendly format.
+
+        Example:
+
+        **By Albert Einstein , Isaac Newton | June 1, 2025**
 
         ## Usage in Templates
 
-        ```njk
+        ```liquid
         {% from "components/_partials/author-date/author-date.njk" import authorDate %}
 
         {{ authorDate(post) }}

@@ -1,21 +1,19 @@
 .text-link {
   display: inline-block;
+  padding: 2px;
   font-size: var(--font-s);
-  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
 
   &:after {
     content: '»';
     display: inline-block;
     margin-left: 0.25em;
-    transition: margin 0.3s ease-in-out;
+    padding-right: 2px;
   }
 
   &:hover {
-    border-bottom-color: currentcolor;
-
-    &:after {
-      margin-left: 0.5em;
-    }
+    background-color: var(--background-color-link-hover);
   }
 
   &:focus {

@@ -24,15 +24,24 @@ sections:
       inContainer: true
       isAnimated: true
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         isDark: false
     text:
-      title: 'Understanding Partials'
+      title: 'Metalsmith Components Reference Overview'
       titleTag: 'h2'
-      prose: 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
+      prose: |
+        This section provides detailed reference documentation for working with Metalsmith Components. For an introduction to Metalsmith Components, please visit the [Home](/) page, followed by [Section Anatomy](/section-anatomy/) and finally [From YAML to HTML](/yaml-to-html/).
+
+        The Metalsmith Components reference documentation is divided into two subsections:
+
+        ### Partials
+        Partials are the smallest template building units that are used to compose page sections.
+
+        ### Sections
+        Sections are self contained page components, built from smaller, reusable partials.
 ---

@@ -14,7 +14,7 @@
   {% endif %}
 
   {% if section.text or (section.ctas | hasCtas) %}
-    <div class="text flow glass-background">
+    <div class="text flow">
       {% if section.text %}
         <div class="flow">{{ text(section.text)}}</div>
       {% endif %}
@@ -28,7 +28,7 @@
   {% endif %}
   {% if section.isFullScreen %}
     {# scroll to first section after the hero #}
-    <a class="full-screen glass-background" href="#first-section" aria-label="Scroll to next section">
+    <a class="full-screen" href="#first-section" aria-label="Scroll to next section">
       {% include "icons/arrow-down.njk" %}
       <span class="sr-only">Scroll to next section</span>
     </a>

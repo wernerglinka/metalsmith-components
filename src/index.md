@@ -262,10 +262,6 @@ sections:
       subTitle: ''
       prose: Example of a media section with text and image. Change the image/text positions by setting the 'isReverse' property in the section data. The text area has a lead-in, title, sub-title, and prose. The prose is markdown text. All of the text parts are optional. There can be multiple CTAs, which are optional and may be buttons or links.
     ctas:
-      - url: 'https://metalsmith.io'
-        label: 'Metalsmith Central'
-        isButton: true
-        buttonStyle: 'primary'
       - url: 'https://wernerglinka.substack.com/p/a-better-way-to-build-web-pages'
         label: 'Read more about this'
         isButton: false
