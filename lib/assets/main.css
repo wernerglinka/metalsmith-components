@@ -251,3 +251,11 @@ mark[data-highlight] {
 .css-background1 {
   background-image: var(--pattern5);
 }
+
+/**
+ * Page with sidebar layout adjustments
+ */
+body.with-sidebar .page-wrapper {
+  display: flex;
+  gap: 2rem;
+}

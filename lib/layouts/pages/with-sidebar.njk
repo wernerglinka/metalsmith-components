@@ -1,0 +1,35 @@
+{% from "components/_partials/breadcrumbs/breadcrumbs.njk" import breadcrumbs %}
+
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    {% include "components/_partials/head/head.njk" %}
+  </head>
+
+  <body class="with-sidebar {{ bodyClasses }}">
+    <span id="top"></span>
+    {% include "components/sections/header/header.njk" %}
+
+    <div class="page-wrapper">
+      <aside class="references sidebar">
+        {% include "components/sections/references/references.njk" %}
+      </aside>
+
+      <main>
+        {{ breadcrumbs(navigation.breadcrumbs) }}
+
+        {% block body %}
+          {# will be replaced by page content #}
+        {% endblock %}
+
+        {% include "components/sections/footer/footer.njk" %}
+      </main>
+    </div>
+
+    <script src="/assets/main.js"></script>
+
+    <a class="to-top glass-background" href="#top">
+      {% include "icons/arrow-up.njk" %}
+    </a>
+  </body>
+</html>

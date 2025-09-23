@@ -1,0 +1,29 @@
+{% from "components/_partials/icon/icon.njk" import icon %}
+
+{% set thisIcon = { url: '', icon: "file", title: "File Icon" } %}
+
+{% set partials = collections['partials'] %}
+{% set sections = collections['library'] %}
+
+<h3>Documentation</h3>
+<h4>Partials</h4>
+<ul class="references-list">
+  {% for item in partials %}
+    <li>
+      <a href="/{{ item.permalink }}">
+        {{ item.card.title }}  
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h4>Sections</h4>
+<ul class="references-list">
+  {% for item in sections %}
+    <li>
+      <a href="/{{ item.permalink }}">
+        {{ item.card.title }}  
+      </a>
+    </li>
+  {% endfor %}
+</ul>
