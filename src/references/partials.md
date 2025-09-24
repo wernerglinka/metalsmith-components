@@ -1,5 +1,5 @@
 ---
-layout: pages/sections.njk
+layout: pages/sections-with-sidebar.njk
 bodyClass: ''
 
 navigation:
@@ -13,15 +13,19 @@ seo:
   canonicalOverwrite: ''
   keywords: 'metalsmith partials, UI components, reusable elements, component building blocks, static site components'
 
+card:
+  title: 'Partials'
+  description: 'Partials for composing section components'
+  pattern: 'simple-gray7'
+  tags: ['author', 'date', 'metadata', 'blog', 'article', 'time']
+
 sections:
-  - sectionType: hero
+  - sectionType: text-only
     containerTag: section
-    classes: 'first-section'
+    classes: ''
     id: ''
-    description: 'Hero section for the partials library'
+    description: 'Introduction to partials'
     isDisabled: false
-    isFullScreen: false
-    isReverse: false
     containerFields:
       inContainer: false
       isAnimated: true
@@ -32,35 +36,9 @@ sections:
         top: false
         bottom: false
       background:
-        isDark: true
-        color: ''
-        image: '/assets/images/sample10.jpg'
-        imageScreen: 'dark'
-    text:
-      leadIn: 'Component Building Blocks'
-      title: Partials Library
-      titleTag: 'h1'
-      subTitle: ''
-      prose: 'Explore the reusable UI elements that power our section components'
-
-  - sectionType: text-only
-    containerTag: section
-    classes: ''
-    id: ''
-    description: 'Introduction to partials'
-    isDisabled: false
-    containerFields:
-      inContainer: true
-      isAnimated: true
-      noMargin:
-        top: false
-        bottom: false
-      noPadding:
-        top: false
-        bottom: false
-      background:
         isDark: false
     text:
+      leadIn: 'Component Building Blocks'
       title: 'Understanding Partials'
       titleTag: 'h2'
       prose: |
@@ -96,63 +74,4 @@ sections:
         - **Logo**: Brand logo display
         - **Dark/Light Theme Switcher**: Theme toggle control
         - **Slider Pagination**: Pagination for sliders
-
-  - sectionType: search-only
-    containerTag: section
-    classes: 'partials-search'
-    id: 'partials-search'
-    description: 'Search partials library'
-    isDisabled: false
-    containerFields:
-      inContainer: true
-      isAnimated: false
-      noMargin:
-        top: false
-        bottom: false
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        isDark: false
-    text:
-      title: 'Find Partials'
-      prose: 'Search our partials library to quickly find the UI elements you need.'
-    placeholder: 'Search for partials (e.g., button, image, navigation...)'
-    source: '/partials-search-index.json'
-    searchType: 'partials'
-    settings:
-      maxResults: 10
-      enableHighlighting: true
-
-  - sectionType: collection-list
-    collectionName: 'partials'
-    domainName: 'partials'
-    containerTag: section
-    classes: ''
-    id: ''
-    description: 'List of all partial components'
-    isDisabled: false
-    isFullScreen: false
-    isReverse: false
-    containerFields:
-      inContainer: false
-      isAnimated: true
-      noMargin:
-        top: true
-        bottom: false
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        isDark: true
-        color: ''
-        image: ''
-        imageScreen: 'none'
-    hasPagingParams: true
-    pagingParams:
-      numberOfBlogs: ''
-      numberOfPages: ''
-      pageLength: ''
-      pageStart: ''
-      pageNumber: ''
 ---

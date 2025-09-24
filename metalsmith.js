@@ -196,13 +196,13 @@ metalsmith
         sortBy: 'card.date',
         reverse: false
       },
-      library: {
-        pattern: 'library/*.md',
+      sections: {
+        pattern: 'references/sections/*.md',
         sortBy: 'seo.title',
         reverse: false
       },
       partials: {
-        pattern: 'partials/*.md',
+        pattern: 'references/partials/*.md',
         sortBy: 'seo.title',
         reverse: false
       }

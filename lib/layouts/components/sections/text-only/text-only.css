@@ -49,7 +49,7 @@ https://prismjs.com/download#themes=prism&languages=markup+css+clike+javascript+
 code[class*='language-'],
 pre[class*='language-'] {
   color: black;
-  background: none;
+  background: #fcfcfc;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 0.8em;
   text-align: left;

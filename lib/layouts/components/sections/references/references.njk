@@ -3,12 +3,17 @@
 {% set thisIcon = { url: '', icon: "file", title: "File Icon" } %}
 
 {% set partials = collections['partials'] %}
-{% set sections = collections['library'] %}
+{% set sections = collections['sections'] %}
 
 <div class="js-accordion" data-expand-first>
   <h3>Documentation</h3>
   <h4 class="accordion-header js-accordion-header">Partials</h4>
   <ul class="references-list accordion-panel js-accordion-panel">
+    <li>
+      <a href="/references/partials/">
+        About Partials
+      </a>
+    </li>
     {% for item in partials %}
       <li>
         <a href="/{{ item.permalink }}">
@@ -20,6 +25,11 @@
 
   <h4 class="accordion-header js-accordion-header">Sections</h4>
   <ul class="references-list accordion-panel js-accordion-panel">
+    <li>
+      <a href="/references/sections/">
+        About Sections
+      </a>
+    </li>
     {% for item in sections %}
       <li>
         <a href="/{{ item.permalink }}">

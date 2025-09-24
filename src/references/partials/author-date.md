@@ -35,6 +35,7 @@ sections:
 
         **By Albert Einstein , Isaac Newton | June 1, 2025**
 
+
         ## Usage in Templates
 
         ```liquid
@@ -65,8 +66,11 @@ sections:
   - sectionType: text-only
     containerTag: section
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
       background:
         isDark: false
     text:
@@ -123,6 +127,9 @@ sections:
     containerTag: section
     containerFields:
       inContainer: true
+      noMargin:
+        top: true
+        bottom: true
       background:
         isDark: false
     text:

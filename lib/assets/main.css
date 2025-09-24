@@ -228,10 +228,13 @@ body.with-sidebar {
   padding-block-start: var(--space-2xl-3xl);
 
   .page-wrapper {
+    flex: 1;
     display: flex;
     gap: 2rem;
 
     main {
+      display: flex;
+      flex-direction: column;
       margin-left: 25rem;
 
       .section-wrapper {
@@ -241,9 +244,20 @@ body.with-sidebar {
           padding-left: 0;
         }
 
-        &:first-of-type .text {
+        .text {
           padding-top: 0;
+          max-width: none;
         }
+
+        &.example-left-align {
+          .ctas {
+            justify-content: flex-start;
+          }
+        }
+      }
+
+      footer {
+        margin-top: auto;
       }
     }
 
@@ -265,7 +279,21 @@ body.with-sidebar {
           margin: 0;
         }
         h4 {
+          padding: 3px 5px;
+          border-radius: 0.25rem;
+          overflow: hidden;
           font-size: var(--font-h5);
+          background-color: var(--color-background-light);
+          cursor: pointer;
+
+          &:after {
+            content: '+';
+            float: right;
+          }
+
+          &[aria-expanded='true']:after {
+            content: '−';
+          }
         }
 
         .references-list {
