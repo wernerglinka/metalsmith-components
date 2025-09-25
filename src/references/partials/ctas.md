@@ -1,5 +1,5 @@
 ---
-layout: pages/sections.njk
+layout: pages/sections-with-sidebar.njk
 bodyClass: ''
 
 seo:
@@ -14,60 +14,40 @@ card:
   tags: ['cta', 'buttons', 'actions', 'group', 'navigation']
 
 sections:
-  - sectionType: hero
-    containerTag: section
-    classes: 'first-section partial-hero'
-    containerFields:
-      inContainer: false
-      isAnimated: true
-      noMargin:
-        top: true
-        bottom: false
-      background:
-        isDark: true
-        color: ''
-        image: '/assets/images/sample10.jpg'
-        imageScreen: 'dark'
-    text:
-      leadIn: 'Partial Component'
-      title: 'CTAs (Call-to-Actions)'
-      titleTag: 'h1'
-      prose: 'Flexible component for managing groups of action elements'
-
   - sectionType: text-only
     containerTag: section
     containerFields:
       inContainer: true
       isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
       background:
         isDark: false
     text:
-      title: 'Overview'
-      titleTag: 'h2'
+      leadIn: 'Partial Component'
+      title: 'CTAs (Call-to-Actions)'
+      titleTag: 'h1'
       prose: |
         The CTAs partial manages groups of call-to-action elements, providing consistent spacing and alignment for multiple buttons or links. It uses the Button partial internally for each CTA element.
 
-        ## Usage in Section Components
+        ### Manifest
 
-        When creating new section components, import and use the CTAs partial like this:
-
-        ```njk
-        {% from "components/_partials/ctas/ctas.njk" import ctas %}
-
-        {% if section.ctas | hasCtas %}
-          {{ ctas(section.ctas) }}
-        {% endif %}
+        ```json
+        {
+          "name": "ctas",
+          "type": "_partials",
+          "styles": ["ctas.css"],
+          "scripts": [],
+          "requires": []
+        }
         ```
 
-        The `hasCtas` filter checks if a valid CTAs array exists before rendering.
-
-        ## Configuration
-
-        The CTAs partial accepts an array of CTA objects:
+        ### Configuration
 
         ```yaml
         ctas:
-          - url: '/contact'
+          - url: '/'
             label: 'Get Started'
             isButton: true
             buttonStyle: 'primary'
@@ -80,53 +60,72 @@ sections:
             isButton: false
         ```
 
-        ### CTA Object Properties
+        ### Configuration Options
+
+        The CTAs partial accepts an array of CTA objects with the following properties:
 
         | Property | Type | Required | Default | Description |
         |----------|------|----------|---------|-------------|
         | `url` | string | Yes | - | Link destination |
         | `label` | string | Yes | - | Button/link text |
         | `isButton` | boolean | No | false | Render as button or link |
-        | `buttonStyle` | string | No | 'primary' | Button style variant |
-        | `isExternal` | boolean | No | false | Open in new window |
+        | `buttonStyle` | string | No | 'primary' | Button style variant (primary, secondary, tertiary) |
+        | `isSmall` | boolean | No | false | Render as small button |
 
-  - sectionType: text-only
+        ### Example
+
+  - sectionType: hero
     containerTag: section
+    isFullScreen: true
     containerFields:
       inContainer: true
       isAnimated: true
       background:
-        isDark: false
+        color: ''
     text:
-      title: 'Examples'
-      titleTag: 'h2'
-      prose: 'Different CTA group configurations:'
+      title: 'Hero with Multiple CTAs'
+      titleTag: 'h1'
+      prose: 'Demonstrating different CTA styles and configurations in a hero section.'
     ctas:
-      - url: '#primary-secondary'
-        label: 'Primary Action'
+      - url: '/get-started'
+        label: 'Get Started'
         isButton: true
         buttonStyle: 'primary'
-      - url: '#primary-secondary'
-        label: 'Secondary Action'
+      - url: '/learn-more'
+        label: 'Learn More'
         isButton: true
         buttonStyle: 'secondary'
+      - url: '/docs'
+        label: 'View Documentation'
+        isButton: false
 
   - sectionType: text-only
     containerTag: section
     containerFields:
-      inContainer: true
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: false
       background:
         isDark: false
     text:
-      title: 'Multiple CTAs Example'
-      prose: 'CTAs can include a mix of buttons and text links:'
+      title: 'Additional CTA Examples'
+      titleTag: 'h2'
+      prose: ''
     ctas:
-      - url: '#'
-        label: 'Start Free Trial'
+      - url: '#primary-secondary'
+        label: 'Small Primary'
         isButton: true
         buttonStyle: 'primary'
-      - url: '#'
-        label: 'View Pricing'
+        isSmall: true
+      - url: '#primary-secondary'
+        label: 'Small Secondary'
+        isButton: true
+        buttonStyle: 'secondary'
+        isSmall: true
+      - url: '#primary-secondary'
+        label: 'Tertiary Button'
         isButton: true
         buttonStyle: 'tertiary'
       - url: '#'
@@ -136,31 +135,43 @@ sections:
   - sectionType: text-only
     containerTag: section
     containerFields:
-      inContainer: true
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
       background:
         isDark: false
     text:
-      title: 'Integration & Usage'
+      title: 'Usage in Templates'
       titleTag: 'h2'
       prose: |
-        ### Composition Pattern
-        The CTAs partial demonstrates the composition pattern in our component system:
-        - Uses the Button partial for individual elements
-        - Manages layout and spacing between buttons
-        - Provides consistent behavior across all sections
+        ```liquid
+        {% from "components/_partials/ctas/ctas.njk" import ctas %}
 
-        ### Used By
-        Most section components support CTAs:
-        - Hero sections
-        - Banner sections
-        - Text sections
-        - Media sections
-        - Card components
-        - And many more...
+        {% if section.ctas | hasCtas %}
+          {{ ctas(section.ctas) }}
+        {% endif %}
+        ```
 
-        ### Styling Notes
-        - CTAs are typically displayed inline with spacing
-        - Responsive stacking on mobile devices
-        - Consistent alignment with section content
-        - Follows design system spacing tokens
+        The `hasCtas` filter checks if a valid CTAs array exists before rendering.
+
+  - sectionType: text-only
+    containerTag: section
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      background:
+        isDark: false
+    text:
+      title: 'Features'
+      titleTag: 'h2'
+      prose: |
+        - **Multiple Button Styles**: Primary, secondary, and tertiary button variants
+        - **Mixed Content**: Combines buttons and text links in same group
+        - **Size Variants**: Regular and small button options
+        - **Flexible Layout**: Automatic spacing and alignment for multiple CTAs
+        - **Helper Integration**: Uses Button partial for consistent styling
+        - **Accessibility**: Full keyboard navigation and screen reader support
 ---

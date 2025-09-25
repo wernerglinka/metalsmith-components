@@ -15,9 +15,7 @@ card:
   date: '2025-06-08'
   author:
     - Niels Bohr
-  image: '/assets/images/sample7.jpg'
-  featuredBlogpost: true
-  featuredBlogpostOrder: 1
+  thumbnail: '/assets/images/sample7.jpg'
   excerpt: |-
     Begin by exploring the existing page configurations to understand how content is organized.
 

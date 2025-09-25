@@ -29,55 +29,68 @@ sections:
       title: 'Button'
       titleTag: 'h1'
       prose: |
-        The Button partial is a fundamental UI element used throughout the component system. It provides consistent styling and behavior for call-to-action elements, supporting multiple visual styles and states.
+        The Button partial is a base UI element used throughout the component system. It provides consistent styling and behavior for call-to-action elements, supporting multiple visual styles.
 
-        ## Usage in Templates
+        ### Manifest
 
-        ```njk
-        {% from "components/_partials/button/button.njk" import button %}
-
-        {{ button({
-          url: '/contact',
-          label: 'Get Started',
-          isButton: true,
-          buttonStyle: 'primary'
-        }) }}
-
-        {# Small button example #}
-        {{ button({
-          url: '/contact',
-          label: 'Small Button',
-          isButton: true,
-          buttonStyle: 'secondary',
-          isSmall: true
-        }) }}
+        ```json
+        {
+          "name": "button",
+          "type": "_partials",
+          "styles": ["button.css"],
+          "scripts": [],
+          "requires": []
+        }
         ```
 
-        ## Configuration Options
+        ### Configuration
+
+        ```yaml
+        ctas:
+          - url: '/contact'
+            label: 'Get Started'
+            isButton: true
+            buttonStyle: 'primary'
+          - url: '/learn-more'
+            label: 'Learn More'
+            isButton: true
+            buttonStyle: 'secondary'
+            isSmall: true
+        ```
+
+        ### Configuration Options
 
         | Property | Type | Required | Default | Description |
         |----------|------|----------|---------|-------------|
         | `url` | string | Yes | - | Link destination URL |
         | `label` | string | Yes | - | Button text |
-        | `isButton` | boolean | No | false | Render as button (true) or link (false) |
+        | `isButton` | boolean | No | true | Render as button vs text link |
         | `buttonStyle` | string | No | 'primary' | Visual style: 'primary', 'secondary', 'tertiary' |
         | `isSmall` | boolean | No | false | Render as small button |
 
   - sectionType: text-only
     containerTag: section
-    classes: 'example-left-align'
+    classes: ''
+    id: ''
+    isDisabled: false
+    isReverse: false
     containerFields:
       inContainer: false
       isAnimated: true
       noMargin:
         top: true
         bottom: true
+      noPadding:
+        top: false
+        bottom: false
       background:
-        isDark: false
+        color: ''
+        image: ''
+        imageScreen: 'none'
     text:
       title: 'Examples'
       titleTag: 'h2'
-      prose: 'Below are examples of the button partial with different configurations:'
+      prose: 'Standard button sizes in all three styles:'
     ctas:
       - url: '#'
         label: 'Primary Button'
@@ -91,13 +104,49 @@ sections:
         label: 'Tertiary Button'
         isButton: true
         buttonStyle: 'tertiary'
-      - url: '#'
-        label: 'Text Link'
-        isButton: false
 
   - sectionType: text-only
     containerTag: section
-    classes: 'example-left-align'
+    classes: ''
+    id: ''
+    isDisabled: false
+    isReverse: false
+    containerFields:
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      title: ''
+      titleTag: 'h2'
+      prose: 'Small buttons for compact UI elements:'
+    ctas:
+      - url: '#'
+        label: 'Small Primary'
+        isButton: true
+        buttonStyle: 'primary'
+        isSmall: true
+      - url: '#'
+        label: 'Small Secondary'
+        isButton: true
+        buttonStyle: 'secondary'
+        isSmall: true
+      - url: '#'
+        label: 'Small Tertiary'
+        isButton: true
+        buttonStyle: 'tertiary'
+        isSmall: true
+
+  - sectionType: text-only
+    containerTag: section
     containerFields:
       inContainer: false
       isAnimated: true
@@ -107,25 +156,15 @@ sections:
       background:
         isDark: false
     text:
-      title: ''
+      leadIn: ''
+      title: 'Usage in Templates'
       titleTag: 'h2'
-      prose: 'And the small variety:'
-    ctas:
-      - url: '#'
-        label: 'Small Button'
-        isButton: true
-        buttonStyle: 'primary'
-        isSmall: true
-      - url: '#'
-        label: 'Small Button'
-        isButton: true
-        buttonStyle: 'secondary'
-        isSmall: true
-      - url: '#'
-        label: 'Small Button'
-        isButton: true
-        buttonStyle: 'tertiary'
-        isSmall: true
+      prose: |
+        ```liquid
+        {% from "components/_partials/button/button.njk" import button %}
+
+        {{ button(cta) }}
+        ```
 
   - sectionType: text-only
     containerTag: section
@@ -138,8 +177,11 @@ sections:
         isDark: false
     text:
       title: 'Notes'
-      titleTag: 'h2'
+      titleTag: 'h3'
       prose: |
-        - **External links automatically detected**: URLs starting with `http://` or `https://` automatically open in new windows with proper `rel` attributes
-        - **Accessibility built-in**: External links get automatic aria-labels and focus styles
+        - Primary, secondary, and tertiary visual styles
+        - Standard and small button sizes
+        - External Links open new window handling with proper rel attributes
+        - ARIA labels and keyboard navigation support
+        - Interactive visual feedback
 ---

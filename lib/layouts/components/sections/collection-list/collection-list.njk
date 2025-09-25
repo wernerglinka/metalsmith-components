@@ -31,22 +31,14 @@
   <ul class="collection-list">
     {% for item in collection %}
       {% if loop.index > startPage and loop.index <= endPage %}
-        {# Build card object with all possible fields #}
-        {% set thisCard = {
-          title: item.card.title,
-          prose: item.card.excerpt or item.card.description,
-          thumbnail: item.card.image,
-          link: "/" ~ item.permalink,
-          pattern: item.card.pattern,
-          date: item.card.date,
-          author: item.card.author
-        } %}
-
         <li
-          class="collection-card{% if params.horizontal %} is-horizontal{% endif %}{% if thisCard.pattern %} has-pattern{% endif %}"
-          {% if thisCard.pattern %}style="background: var(--{{ thisCard.pattern }})"{% endif %}
+          class="collection-card{% if params.horizontal %} is-horizontal{% endif %}{% if item.card.pattern %} has-pattern{% endif %}"
+          {% if item.card.pattern %}style="background: var(--{{ item.card.pattern }})"{% endif %}
         >
-          {{ collectionCard(thisCard) }}
+          {# Merge item permalink into card props for linking #}
+          {% set item = item.card | merge({ link: item.permalink }) %}
+  
+          {{ collectionCard(item) }}
         </li>
       {% endif %}
     {% endfor %}

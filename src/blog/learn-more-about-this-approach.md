@@ -15,9 +15,7 @@ card:
   date: '2025-06-10'
   author:
     - Stephen Hawking
-  image: '/assets/images/sample6.jpg'
-  featuredBlogpost: true
-  featuredBlogpostOrder: 1
+  thumbnail: '/assets/images/sample6.jpg'
   excerpt: |-
     This starter accompanies a comprehensive exploration of structured content approaches in static site generation.
 

@@ -283,6 +283,49 @@ const isArray = ( value ) => {
 };
 
 /**
+ * Checks if a value is a string
+ * @param {any} value - The value to check
+ * @returns {boolean} True if the value is a string, false otherwise
+ */
+const isString = ( value ) => {
+  return typeof value === 'string';
+};
+
+/**
+ * Normalizes icon input to always return a valid icon object
+ * If input is a string, creates an icon object with that string as the icon name
+ * If input is already a valid icon object, passes it through unchanged
+ * @param {string|Object} input - The icon input (string name or object)
+ * @returns {Object} A valid icon object with icon, url, and title properties
+ */
+const normalizeIcon = ( input ) => {
+  // If it's a string, create an icon object
+  if ( typeof input === 'string' ) {
+    return {
+      icon: input,
+      url: null,
+      title: null
+    };
+  }
+
+  // If it's already an object with an icon property, pass it through
+  if ( input && typeof input === 'object' && input.icon ) {
+    return {
+      icon: input.icon,
+      url: input.url || null,
+      title: input.title || null
+    };
+  }
+
+  // Fallback for invalid input
+  return {
+    icon: null,
+    url: null,
+    title: null
+  };
+};
+
+/**
  * Checks if an image object has a valid src property
  * @param {Object} imageObj - The image object to check
  * @returns {boolean} True if the image has a valid src, false otherwise
@@ -425,6 +468,27 @@ const mergeProps = ( items, propsToMerge ) => {
   } ) );
 };
 
+/**
+ * Merges properties into a single object
+ * If a property exists, it will be updated; if not, it will be added
+ * @param {Object} obj - The object to merge properties into
+ * @param {Object} propsToMerge - Object containing properties to merge
+ * @returns {Object} The object with merged properties
+ * @example
+ * // Returns {name: 'Item 1', link: '/page', isActive: true}
+ * merge({name: 'Item 1'}, {link: '/page', isActive: true})
+ */
+const merge = ( obj, propsToMerge ) => {
+  if ( !obj || typeof obj !== 'object' || !propsToMerge || typeof propsToMerge !== 'object' ) {
+    return obj;
+  }
+
+  return {
+    ...obj,
+    ...propsToMerge
+  };
+};
+
 export {
   toLower,
   toUpper,
@@ -448,6 +512,8 @@ export {
   isExternal,
   getArrayLength,
   isArray,
+  isString,
+  normalizeIcon,
   hasImage,
   hasCtas,
   hasText,
@@ -455,5 +521,6 @@ export {
   hasUrl,
   hasItems,
   hasIcon,
-  mergeProps
+  mergeProps,
+  merge
 };

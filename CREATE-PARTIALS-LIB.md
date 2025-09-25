@@ -120,9 +120,6 @@ card:
   description: 'Search description'
   tags: ['relevant', 'search', 'tags']
 sections:
-  - sectionType: hero
-    # Standard hero introducing the partial
-
   - sectionType: text-only
     # Overview and usage in templates
 
@@ -153,7 +150,7 @@ sections:
 
 ### Content Organization
 
-1. **Hero section** - Brief introduction to the partial's purpose
+1. **Text section** - Brief introduction to the partial's purpose
 2. **Usage section** - How developers integrate it into new sections
 3. **Configuration section** - Exact properties and their types
 4. **Examples section** - Live demonstrations of different configurations

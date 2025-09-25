@@ -1,32 +1,38 @@
 [
   {
     "url": "",
-    "logo": "/assets/awards/award1.png",
-    "title": "Best Award"
+    "src": "/assets/awards/award1.png",
+    "alt": "Best Award",
+    "caption": ""
   },
   {
     "url": "",
-    "logo": "/assets/awards/award2.png",
-    "title": "More Better Award"
+    "src": "/assets/awards/award2.png",
+    "alt": "More Better Award",
+    "caption": ""
   },
   {
     "url": "/",
-    "logo": "/assets/awards/award3.png",
-    "title": "Bigga Award"
+    "src": "/assets/awards/award3.png",
+    "alt": "Bigga Award",
+    "caption": ""
   },
   {
     "url": "#",
-    "logo": "/assets/awards/service-award.png",
-    "title": "Even More Bigga"
+    "src": "/assets/awards/service-award.png",
+    "alt": "Even More Bigga",
+    "caption": ""
   },
   {
     "url": "https://github.com/",
     "icon": "github",
-    "title": "GitHub"
+    "alt": "GitHub",
+    "caption": ""
   },
   {
     "url": "https://feathericons.com/",
     "icon": "feather",
-    "title": "Feather Icons"
+    "alt": "Feather Icons",
+    "caption": ""
   }
 ]

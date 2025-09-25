@@ -1,5 +1,5 @@
 ---
-layout: pages/sections.njk
+layout: pages/sections-with-sidebar.njk
 bodyClass: ''
 
 seo:
@@ -14,55 +14,48 @@ card:
   tags: ['text', 'content', 'typography', 'headlines', 'prose', 'markdown']
 
 sections:
-  - sectionType: hero
+  - sectionType: text-only
     containerTag: section
-    classes: 'first-section partial-hero'
     containerFields:
       inContainer: false
       isAnimated: true
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       background:
-        isDark: true
-        color: ''
-        image: '/assets/images/sample10.jpg'
-        imageScreen: 'dark'
+        isDark: false
     text:
       leadIn: 'Partial Component'
       title: 'Text'
       titleTag: 'h1'
-      prose: 'A versatile text content component for structured typography'
-
-  - sectionType: text-only
-    containerTag: section
-    containerFields:
-      inContainer: true
-      isAnimated: true
-      background:
-        isDark: false
-    text:
-      title: 'Overview'
-      titleTag: 'h2'
       prose: |
-        The Text partial is the foundational content component that provides flexible text rendering with support for lead-ins, titles, subtitles, and markdown-formatted prose content. It serves as the primary text building block for most section components.
+        The Text partial provides flexible text rendering with support for lead-ins, titles, subtitles, and markdown-formatted prose content. It serves as the primary text building block for most section components.
 
-        ## Usage in Templates
+        ### Manifest
 
-        ```njk
-        {% from "components/_partials/text/text.njk" import text %}
-
-        {{ text(section.text) }}
-
-        {# With conditional rendering #}
-        {% if hasText(section.text) %}
-          <div class="text-wrapper">
-            {{ text(section.text) }}
-          </div>
-        {% endif %}
+        ```json
+        {
+          "name": "text",
+          "type": "_partials",
+          "styles": ["text.css"],
+          "scripts": [],
+          "requires": []
+        }
         ```
 
-        ## Configuration Options
+        ### Configuration
+
+        ```yaml
+        text:
+          leadIn: 'Introduction'
+          title: 'Main Heading'
+          titleTag: 'h2'
+          subTitle: 'Supporting text'
+          prose: |
+            Main content with **markdown** support including lists, links, and formatting.
+        ```
+
+        ### Configuration Options
 
         | Property | Type | Required | Default | Description |
         |----------|------|----------|---------|-------------|
@@ -71,13 +64,17 @@ sections:
         | `titleTag` | string | No | 'h2' | HTML tag for title (h1-h6) |
         | `subTitle` | string | No | - | Supporting text below title |
         | `prose` | string | No | - | Main content with markdown support |
-        | `isCentered` | boolean | No | false | Centers the title text |
+
+        ### Example
 
   - sectionType: text-only
     containerTag: section
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
       background:
         isDark: false
     text:
@@ -87,9 +84,15 @@ sections:
 
   - sectionType: text-only
     containerTag: section
+    classes: 'has-demo-background'
     containerFields:
-      inContainer: true
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: false
       background:
+        color: '#fafafa'
         isDark: false
     text:
       leadIn: 'Complete Example'
@@ -107,7 +110,11 @@ sections:
   - sectionType: text-only
     containerTag: section
     containerFields:
-      inContainer: true
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
       background:
         isDark: false
     text:
@@ -121,41 +128,17 @@ sections:
   - sectionType: text-only
     containerTag: section
     containerFields:
-      inContainer: true
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
       background:
         isDark: false
     text:
-      title: 'Integration with Sections'
-      titleTag: 'h2'
+      title: 'Notes'
+      titleTag: 'h3'
       prose: |
-        The Text partial is used extensively throughout the component system and works seamlessly with other partials.
-
-        ### Used By
-        - Hero sections
-        - Banner sections
-        - Text-only sections
-        - Media sections
-        - And virtually all content sections
-
-        ### Helper Function
-        The `hasText` helper function is commonly used to conditionally render text content:
-
-        ```njk
-        {% if hasText(section.text) %}
-          {{ text(section.text) }}
-        {% endif %}
-        ```
-
-        ### CSS Classes Generated
-        - `.lead-in` - Applied to lead-in paragraph
-        - `.title` - Applied to title element
-        - `.is-centered` - Added when isCentered is true
-        - `.sub-title` - Applied to subtitle paragraph
-        - `.prose` - Applied to prose content wrapper
-        - `.flow` - Added for vertical rhythm
-
-        ### Notes
-        - **Markdown processing**: Prose content is processed through the `mdToHTML` filter
-        - **Semantic HTML**: Uses appropriate heading tags and semantic structure
-        - **Flexible layout**: Works with any container or background configuration
+        - Prose content is processed through the `mdToHTML` filter
+        - Uses appropriate heading tags and semantic structure
 ---

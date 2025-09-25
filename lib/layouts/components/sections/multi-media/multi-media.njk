@@ -7,7 +7,6 @@
 {% from "components/_partials/lottie/lottie.njk" import lottie %}
 
 <div class="content {% if section.isReverse %}is-reverse{% endif %}">
-  
   {% if section.mediaType === "audio" %}
     <div class="media">{{ audio(section.audio)}}</div>
   {% endif %}
@@ -29,7 +28,7 @@
     <div class="media">{{ lottie(section.lottie) }}</div>
   {% endif %}
 
-  {% if section.text and section.ctas | length > 0 %}
+  {% if section.text | hasText %}
     <div class="text flow">
       {% if section.text %}
         <div class="prose flow">{{ text(section.text)}}</div>

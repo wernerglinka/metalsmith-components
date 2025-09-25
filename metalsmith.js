@@ -321,7 +321,8 @@ metalsmith
    */
   .use(
     prism( {
-      decode: true
+      decode: true,
+      preLoad: ['liquid']
     } )
   )
 

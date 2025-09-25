@@ -1,0 +1,32 @@
+[
+  {
+    "url": "",
+    "logo": "/assets/awards/award1.png",
+    "title": "Best Award"
+  },
+  {
+    "url": "",
+    "logo": "/assets/awards/award2.png",
+    "title": "More Better Award"
+  },
+  {
+    "url": "/",
+    "logo": "/assets/awards/award3.png",
+    "title": "Bigga Award"
+  },
+  {
+    "url": "#",
+    "logo": "/assets/awards/service-award.png",
+    "title": "Even More Bigga"
+  },
+  {
+    "url": "https://github.com/",
+    "icon": "github",
+    "title": "GitHub"
+  },
+  {
+    "url": "https://feathericons.com/",
+    "icon": "feather",
+    "title": "Feather Icons"
+  }
+]

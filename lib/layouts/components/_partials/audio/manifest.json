@@ -2,6 +2,6 @@
   "name": "audio",
   "type": "_partials",
   "styles": ["audio.css"],
-  "scripts": [],
+  "scripts": ["audio.js"],
   "requires": []
 }

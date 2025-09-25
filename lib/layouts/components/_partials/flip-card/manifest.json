@@ -2,6 +2,6 @@
   "name": "flip-card",
   "type": "_partials",
   "styles": ["flip-card.css"],
-  "scripts": [],
+  "scripts": ["flip-card.js"],
   "requires": ["ctas", "text", "image", "commons"]
 }

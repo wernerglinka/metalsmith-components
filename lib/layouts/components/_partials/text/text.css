@@ -60,7 +60,7 @@
     code {
       background: none;
       padding: 0;
-      color: var(--color-text-light);
+      color: var(--color-text);
     }
   }
 
@@ -72,7 +72,7 @@
   }
 
   /* Strong and emphasis */
-  strong {
+  strong { 
     font-weight: 600;
   }
 
@@ -104,16 +104,5 @@
 
   hr {
     background-color: rgb(255 255 255 / 20%);
-  }
-}
-
-/** Dark Theme style variations */
-.dark-theme .prose {
-  pre code {
-    /* color: var(--color-text-light); */
-  }
-
-  code {
-    color: var(--color-text);
   }
 }

@@ -8,7 +8,7 @@
       {{ icon(card.front) }}
     {% endif %}
 
-    <span class="flip-icon">{{ icon("rotate-cw") }}</span>
+    <span class="flip-icon">{{ icon({icon:"rotate-cw", url: ''}) }}</span>
 
     {% if card.front.text %}
       <div class="text flow">{{ text(card.front.text) }}</div>

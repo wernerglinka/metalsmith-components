@@ -2,6 +2,8 @@
   "extends": ["stylelint-config-standard"],
   "rules": {
     "block-no-empty": true,
+    "block-closing-brace-newline-before": "always-multi-line",
+    "block-opening-brace-space-after": "always-single-line",
     "declaration-block-no-duplicate-properties": true,
     "no-invalid-double-slash-comments": true,
     "selector-pseudo-class-no-unknown": [

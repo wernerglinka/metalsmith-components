@@ -1,37 +1,44 @@
 [
   {
     "url": "https://theartunit.com/",
-    "logo": "/assets/images/art/art-unit.svg",
-    "title": "Art Unit"
+    "src": "/assets/images/art/art-unit.svg",
+    "alt": "Art Unit",
+    "caption": ""
   },
   {
     "url": "https://designmuseum.org/",
-    "logo": "/assets/images/art/design-museum.svg",
-    "title": "Design Museum"
+    "src": "/assets/images/art/design-museum.svg",
+    "alt": "Design Museum",
+    "caption": ""
   },
   {
     "url": "https://www.museumofflight.org/",
-    "logo": "/assets/images/art/museum-of-flight.svg",
-    "title": "Museum of Flight"
+    "src": "/assets/images/art/museum-of-flight.svg",
+    "alt": "Museum of Flight",
+    "caption": ""
   },
   {
     "url": "https://www.moma.org/",
-    "logo": "/assets/images/art/museum-of-modern-art.svg",
-    "title": "Museum of Modern Art"
+    "src": "/assets/images/art/museum-of-modern-art.svg",
+    "alt": "Museum of Modern Art",
+    "caption": ""
   },
   {
     "url": "https://nelson-atkins.org/",
-    "logo": "/assets/images/art/nelson-atkins-museum-of-art.svg",
-    "title": "Nelson Atkins Museum of Art"
+    "src": "/assets/images/art/nelson-atkins-museum-of-art.svg",
+    "alt": "Nelson Atkins Museum of Art",
+    "caption": ""
   },
   {
     "url": "https://new.smm.org/",
-    "logo": "/assets/images/art/science-museum-of-minnesota.svg",
-    "title": "Science Museum of Minnesota"
+    "src": "/assets/images/art/science-museum-of-minnesota.svg",
+    "alt": "Science Museum of Minnesota",
+    "caption": ""
   },
   {
     "url": "https://www.sfmoma.org/",
-    "logo": "/assets/images/art/sfmoma.svg",
-    "title": "SFMOMA"
+    "src": "/assets/images/art/sfmoma.svg",
+    "alt": "SFMOMA",
+    "caption": ""
   }
 ]

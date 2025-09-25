@@ -9,15 +9,16 @@
   <h3>Documentation</h3>
   <h4 class="accordion-header js-accordion-header">Partials</h4>
   <ul class="references-list accordion-panel js-accordion-panel">
-    <li>
+    <li {% if urlPath == '/references/partials/' %}class="active"{% endif %}>
       <a href="/references/partials/">
         About Partials
       </a>
     </li>
     {% for item in partials %}
-      <li>
+      {% set itemPath = '/' ~ item.permalink ~ '/' %}
+      <li {% if itemPath == urlPath %}class="active"{% endif %}>
         <a href="/{{ item.permalink }}">
-          {{ item.card.title }}  
+          {{ item.card.title }}
         </a>
       </li>
     {% endfor %}
@@ -25,15 +26,16 @@
 
   <h4 class="accordion-header js-accordion-header">Sections</h4>
   <ul class="references-list accordion-panel js-accordion-panel">
-    <li>
+    <li {% if urlPath == '/references/sections/' %}class="active"{% endif %}>
       <a href="/references/sections/">
         About Sections
       </a>
     </li>
     {% for item in sections %}
-      <li>
+      {% set itemPath = '/' ~ item.permalink ~ '/' %}
+      <li {% if itemPath == urlPath %}class="active"{% endif %}>
         <a href="/{{ item.permalink }}">
-          {{ item.card.title }}  
+          {{ item.card.title }}
         </a>
       </li>
     {% endfor %}

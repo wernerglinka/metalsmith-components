@@ -239,6 +239,7 @@ body.with-sidebar {
 
       .section-wrapper {
         padding-left: 0;
+        padding-top: 0;
 
         .container {
           padding-left: 0;
@@ -253,6 +254,12 @@ body.with-sidebar {
           .ctas {
             justify-content: flex-start;
           }
+        }
+
+        &.has-demo-background {
+          max-width: 80ch;
+          padding-top: var(--space-s-l);
+          padding-left: var(--space-s-l);
         }
       }
 
@@ -299,6 +306,18 @@ body.with-sidebar {
         .references-list {
           li {
             margin-bottom: var(--space-3xs-2xs);
+
+            a {
+              color: var(--color-text);
+            }
+
+            &.active {
+              a {
+                color: #999;
+                cursor: default;
+                pointer-events: none;
+              }
+            }
           }
         }
       }

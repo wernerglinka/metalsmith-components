@@ -1,7 +1,7 @@
-{% from "components/_partials/logo/logo.njk" import logo %}
 {% from "components/_partials/icon/icon.njk" import icon %}
 {% from "components/_partials/text/text.njk" import text %}
 {% from "components/_partials/ctas/ctas.njk" import ctas %}
+{% from "components/_partials/image/image.njk" import image %}
 
 {# 
   This section is used to display a list of logos or icons in a horizontal scrolling list.
@@ -45,15 +45,15 @@
         <ul class="logos js-logos-list">
           {% for item in logosList %}
             <li style="width: {{ logoWidth }}px;">
-              {% if item.logo %}
-                {{ logo(item) }}
+              {% if item.src %}
+                {{ image(item) }}
               {% endif %}
               {% if item.icon %}
                 {{ icon(item) }}
               {% endif %}
 
               {% if section.logos.showTitle %}
-                <div class="logo-title">{{ item.title }}</div>
+                <div class="logo-title">{{ item.alt }}</div>
               {% endif %}
             </li>
           {% endfor %}
