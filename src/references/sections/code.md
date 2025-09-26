@@ -1,5 +1,5 @@
 ---
-layout: pages/sections.njk
+layout: pages/sections-with-sidebar.njk
 bodyClasses: 'sections-page'
 hasHero: true
 title: Code
@@ -242,7 +242,7 @@ sections:
       content: |
         ```yaml
         ---
-        layout: pages/sections.njk
+        layout: pages/sections-with-sidebar.njk
         title: 'My Page Title'
         sections:
           - sectionType: hero

@@ -255,7 +255,7 @@ describe('Build Integration', () => {
 
         // Check that clean URLs are generated (directories with index.html)
         assert.ok(existsSync(join(testBuildDir, 'index.html')), 'Root index.html should exist');
-        assert.ok(existsSync(join(testBuildDir, 'library/index.html')), 'Library page should have clean URL');
+        assert.ok(existsSync(join(testBuildDir, 'references/sections/index.html')), 'Sections reference page should have clean URL');
         assert.ok(existsSync(join(testBuildDir, 'blog/index.html')), 'Blog index should have clean URL');
 
         done();

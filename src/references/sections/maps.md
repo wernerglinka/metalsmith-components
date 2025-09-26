@@ -1,5 +1,5 @@
 ---
-layout: pages/sections.njk
+layout: pages/sections-with-sidebar.njk
 bodyClasses: 'sections-page'
 hasHero: true
 title: Maps

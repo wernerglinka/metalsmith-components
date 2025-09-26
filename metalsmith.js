@@ -5,9 +5,6 @@
  * to help beginners understand what's happening at each step.
  */
 
-// File API polyfill no longer needed - Node 20+ includes File API natively
-// import './file-polyfill.js';
-
 // These are built-in Node.js modules needed for file paths and operations
 import { fileURLToPath } from 'node:url'; // Converts file:// URLs to file paths
 import path, { dirname } from 'node:path'; // Handles file paths across different OS

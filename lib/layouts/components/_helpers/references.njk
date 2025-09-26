@@ -5,7 +5,9 @@
 {% set partials = collections['partials'] %}
 {% set sections = collections['sections'] %}
 
-<div class="js-accordion" data-expand-first>
+{% set isPartialsSection = '/references/partials' in urlPath %}
+{% set isSectionsSection = '/references/sections' in urlPath %}
+<div class="js-accordion" {% if isPartialsSection %}data-expand-index="0"{% elif isSectionsSection %}data-expand-index="1"{% else %}data-expand-index="0"{% endif %}>
   <h3>Documentation</h3>
   <h4 class="accordion-header js-accordion-header">Partials</h4>
   <ul class="references-list accordion-panel js-accordion-panel">

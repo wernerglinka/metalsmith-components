@@ -1,5 +1,5 @@
 ---
-layout: pages/sections.njk
+layout: pages/sections-with-sidebar.njk
 bodyClasses: 'sections-page'
 hasHero: true
 title: Simple Accordion
@@ -63,7 +63,7 @@ sections:
         | `faqs.scope` | string | "all" or "selections" - determines data loading |
         | `faqs.source` | string | data source in lib/data/ (e.g., "faqs") |
         | `faqs.selections` | array | array of IDs when scope is "selections" |
-        | `expandFirst` | boolean | expand first item by default |
+        | `expandIndex` | number | index of item to expand by default (0-based) |
         | `allowMultiple` | boolean | allow multiple expanded items |
 
         **Example:**
@@ -74,7 +74,7 @@ sections:
           selections:
             - "getting-started"
             - "component-structure"
-        expandFirst: false
+        expandIndex: 0
         allowMultiple: false
         ```
     ctas: []
@@ -107,7 +107,7 @@ sections:
       scope: 'all'
       source: 'faqs'
       selections: []
-    expandFirst: true
+    expandIndex: 0
     allowMultiple: false
     hasCenteredContent: false
     ctas: []
@@ -143,7 +143,7 @@ sections:
         - 'How do I get started with Metalsmith Components?'
         - 'What is the structure of a component?'
         - 'Can I create custom components?'
-    expandFirst: false
+    expandIndex: null
     allowMultiple: true
     hasCenteredContent: false
     ctas:

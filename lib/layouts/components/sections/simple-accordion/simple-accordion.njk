@@ -34,7 +34,7 @@
   {% if faqsList | hasItems %}
     <div class="accordion js-accordion"
          {% if section.allowMultiple %}data-allow-multiple{% endif %}
-         {% if section.expandFirst %}data-expand-first{% endif %}>
+         {% if section.expandIndex is not null %}data-expand-index="{{ section.expandIndex }}"{% endif %}>
       {# Add toggle all link when multiple panels are allowed #}
       {% if section.allowMultiple %}
         <a href="#" class="accordion-toggle-all js-accordion-toggle-all" aria-label="Toggle all panels">
@@ -43,13 +43,13 @@
       {% endif %}
       {% for faq in faqsList %}
         <div class="accordion-item">
-          <button class="accordion-header js-accordion-header" 
-                  aria-expanded="{% if section.expandFirst and loop.first %}true{% else %}false{% endif %}"
+          <button class="accordion-header js-accordion-header"
+                  aria-expanded="{% if section.expandIndex == loop.index0 %}true{% else %}false{% endif %}"
                   aria-controls="accordion-panel-{{ loop.index }}">
             <p class="title">{{ faq.title }}</p>
           </button>
-          <div id="accordion-panel-{{ loop.index }}" 
-               class="accordion-panel js-accordion-panel {% if not (section.expandFirst and loop.first) %} is-closed{% endif %}">
+          <div id="accordion-panel-{{ loop.index }}"
+               class="accordion-panel js-accordion-panel {% if section.expandIndex != loop.index0 %} is-closed{% endif %}">
             {{ faq.answer | mdToHTML | safe }}
           </div>
         </div>
