@@ -10,10 +10,8 @@
     aria-label="{% if section.text.title %}{{ section.text.title }}{% else %}Image carousel{% endif %}"
     tabindex="0"
   >
-    {% if section.config === "isTabs" %}
-      {% set slides = section.slides %}
-      {{ sliderPagination(slides, isTabs=true) }}
-    {% endif %}
+    {{ sliderPagination(section.slides, section.isTabs) }}
+  
 
     <ul class="slides" aria-live="polite" aria-atomic="false">
       {% for slide in section.slides %}
@@ -41,11 +39,6 @@
         </li>
       {% endfor %}
     </ul>
-
-    {% if not section.config %}
-      {% set slides = section.slides %}
-      {{ sliderPagination(slides, isTabs=false) }}
-    {% endif %}
   </div>
 
   <!-- .slider-wrapper -->

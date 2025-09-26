@@ -1,15 +1,15 @@
 mediaType: video
 video:
   # Basic modal YouTube video (default provider)
-  inline: false
+  inSitu: false
   src: youtube # can be youtube, vimeo, or cloudinary
   id: '5Ak12PBrTuw'
   tn: '/assets/images/sample10.jpg'
 # Additional examples for different providers and configurations:
 
-# YouTube inline video with start/end times
+# YouTube in-situ video with start/end times
 # video:
-#   inline: true
+#   inSitu: true
 #   src: youtube
 #   id: 'dQw4w9WgXcQ'
 #   start: 30
@@ -18,14 +18,14 @@ video:
 
 # Vimeo modal video
 # video:
-#   inline: false
+#   inSitu: false
 #   src: vimeo
 #   id: '347119375'
 #   tn: '/assets/images/sample13.jpg'
 
-# Cloudinary inline video
+# Cloudinary in-situ video
 # video:
-#   inline: true
+#   inSitu: true
 #   src: cloudinary
 #   id: 'hourglass_timer'
 #   cloudname: 'demo'
@@ -33,6 +33,6 @@ video:
 
 # Backward compatibility - YouTube without src specified
 # video:
-#   inline: false
+#   inSitu: false
 #   id: 'dQw4w9WgXcQ'
 #   tn: '/assets/images/sample13.jpg'

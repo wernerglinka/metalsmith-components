@@ -35,7 +35,7 @@
     alt: 'Image description'
     caption: ''
   video:
-    inline: true
+    inSitu: true
     src: 'youtube'
     id: 'VIDEO_ID'
     tn: '/assets/images/video-thumbnail.jpg'

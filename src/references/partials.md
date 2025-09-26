@@ -71,7 +71,6 @@ sections:
 
         ### Utilities
         - **Icon**: Feather icon renderer
-        - **Logo**: Brand logo display
         - **Dark/Light Theme Switcher**: Theme toggle control
         - **Slider Pagination**: Pagination for sliders
 ---

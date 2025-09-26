@@ -2,8 +2,8 @@
 {% from "components/_partials/icon/icon.njk" import icon %}
 
 {% macro video(info) %}
-  {% if info.inline %}
-    <div class="video media inline">
+  {% if info.inSitu %}
+    <div class="video media in-situ">
       <span class="close">
         {% set item = {
           url: '',
@@ -12,8 +12,8 @@
         {{ icon(item) }}
       </span>
       
-      <div class="inline-video-wrapper js-inline-video-wrapper">
-        <div class="js-inline-video inline-video" 
+      <div class="in-situ-video-wrapper js-in-situ-video-wrapper">
+        <div class="js-in-situ-video in-situ-video" 
           data-videoid="{{ info.id }}" 
           data-videosrc="{{ info.src or 'youtube' }}"
           {% if info.cloudname %}data-cloudname="{{ info.cloudname }}"{% endif %}

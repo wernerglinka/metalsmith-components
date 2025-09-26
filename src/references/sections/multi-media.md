@@ -46,13 +46,13 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A section component that renders text content alongside media. Supports five media types via the `mediaType` property: **image** (with optional caption), **video** (YouTube/Vimeo/self-hosted, inline or modal display), **audio** (MP3/OGG with background image), **icon** (SVG from icon library), and **lottie** (JSON animations with playback controls).
+        A section component that renders text content alongside media. Supports five media types via the `mediaType` property: **image** (with optional caption), **video** (YouTube/Vimeo/self-hosted, inSitu or modal display), **audio** (MP3/OGG with background image), **icon** (SVG from icon library), and **lottie** (JSON animations with playback controls).
 
         ### Key Features
 
         - **Five Media Types**: Image, video, audio, icon, and Lottie animation support
         - **Flexible Video Sources**: YouTube, Vimeo, and Cloudinary integration
-        - **Modal & Inline Video**: Choose between modal overlays or inline embedding
+        - **Modal & inSitu Video**: Choose between modal overlays or inSitu embedding
         - **Audio with Visuals**: Audio players with background images
         - **SVG Icon Library**: Scalable vector icons from comprehensive library
         - **Lottie Animations**: JSON-based animations with playback controls
@@ -275,7 +275,7 @@ sections:
       prose: |-
         | Property | Type | Required | Description |
         |----------|------|----------|-------------|
-        | `video.inline` | boolean | No | Display inline (true) or in modal (false) |
+        | `video.inSitu` | boolean | No | Display inSitu (true) or in modal (false) |
         | `video.src` | string | Yes | Video source ('youtube', 'vimeo', or 'cloudinary') |
         | `video.id` | string | Yes | Video ID for YouTube/Vimeo |
         | `video.cloudname` | string | Conditional | Required for Cloudinary videos only |
@@ -301,11 +301,11 @@ sections:
         image: ''
         imageScreen: 'none' # light, dark, none
     text:
-      leadIn: 'Inline Video'
+      leadIn: 'inSitu Video'
       title: 'Seamless Video Integration'
       titleTag: 'h2'
       subTitle: 'Play videos directly in the page flow'
-      prose: Inline video playback keeps users engaged without disrupting their browsing experience. This configuration embeds videos directly within your content layout, perfect for tutorials, product demonstrations, or promotional content. The component supports YouTube, Vimeo, and self-hosted videos, automatically handling responsive sizing and providing a clean, distraction-free viewing experience.
+      prose: inSitu video playback keeps users engaged without disrupting their browsing experience. This configuration embeds videos directly within your content layout, perfect for tutorials, product demonstrations, or promotional content. The component supports YouTube, Vimeo, and self-hosted videos, automatically handling responsive sizing and providing a clean, distraction-free viewing experience.
     ctas:
       - url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video'
         label: 'Learn More'
@@ -313,11 +313,11 @@ sections:
         buttonStyle: 'tertiary'
     mediaType: video
     video:
-      inline: true
+      inSitu: true
       src: youtube
       id: 'OorZcOzNcgE'
       tn: '/assets/images/sample13.jpg'
-      alt: 'YouTube tutorial video demonstrating inline video integration'
+      alt: 'YouTube tutorial video demonstrating inSitu video integration'
 
   - sectionType: multi-media
     containerTag: aside
@@ -351,7 +351,7 @@ sections:
         buttonStyle: 'primary'
     mediaType: video
     video:
-      inline: false
+      inSitu: false
       src: vimeo
       id: '347119375'
       tn: '/assets/images/sample10.jpg'

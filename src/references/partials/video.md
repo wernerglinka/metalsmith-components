@@ -9,9 +9,9 @@ seo:
 
 card:
   title: 'Video'
-  description: 'Multi-platform video player with modal and inline modes'
-  pattern: 'simple-gray1'
-  tags: ['video', 'player', 'youtube', 'vimeo', 'modal', 'inline']
+  description: 'Multi-platform video player with modal and in situ modes'
+  pattern: ''
+  tags: ['video', 'player', 'youtube', 'vimeo', 'modal', 'in situ', in place]
 
 sections:
   - sectionType: text-only
@@ -29,7 +29,7 @@ sections:
       title: 'Video'
       titleTag: 'h1'
       prose: |
-        The Video partial provides a flexible video player that supports YouTube, Vimeo, and Cloudinary video sources. It can display videos in modal overlays or inline, with customizable thumbnails and play controls.
+        The Video partial provides a flexible video player that supports YouTube, Vimeo, and Cloudinary video sources. It can display videos in modal overlays or in situ, with customizable thumbnails and play controls.
 
         ### Manifest
 
@@ -51,7 +51,7 @@ sections:
           src: 'youtube'
           tn: '/assets/images/video-thumb.jpg'
           alt: 'Video description'
-          inline: false
+          inSitu: false
           start: 0
           end: null
         ```
@@ -64,12 +64,13 @@ sections:
         | `src` | string | No | Platform: 'youtube', 'vimeo' (default: 'youtube') |
         | `tn` | string | Yes | Thumbnail image path |
         | `alt` | string | No | Alt text for thumbnail |
-        | `inline` | boolean | No | Display inline instead of modal |
+        | `inSitu` | boolean | No | Display in situ, not modal |
         | `cloudname` | string | No | Cloudinary cloud name (for Cloudinary videos) |
         | `start` | number | No | Start time in seconds |
         | `end` | number | No | End time in seconds |
 
         ### Example
+        Here is a cheesy example of a video playing in a modal overlay.
 
   - sectionType: video-only
     containerTag: section
@@ -84,9 +85,9 @@ sections:
     video:
       id: 'dQw4w9WgXcQ'
       src: 'youtube'
-      tn: '/assets/images/sample1.jpg'
+      tn: '/assets/images/dancing.jpg'
       alt: 'Demo video thumbnail'
-      inline: false
+      inSitu: false
 
   - sectionType: text-only
     containerTag: section
@@ -106,14 +107,12 @@ sections:
 
         {# Modal video (default) #}
         {{ video({
-          id: 'dQw4w9WgXcQ',
-          src: 'youtube',
-          tn: '/assets/images/video-thumb.jpg',
-          alt: 'Video description'
+          id: 'dQw4w9WgXcQ'
+          src: 'youtube'
+          tn: '/assets/images/dancing.jpg'
+          alt: 'Demo video thumbnail'
+          inSitu: false
         }) }}
-
-        {# Inline video #}
-        {{ video(section.video) }}
         ```
 
   - sectionType: text-only
@@ -126,14 +125,11 @@ sections:
       background:
         isDark: false
     text:
-      title: 'Features'
-      titleTag: 'h2'
+      title: 'Notes'
+      titleTag: 'h3'
       prose: |
-        - **Multi-Platform**: YouTube, Vimeo, and Cloudinary support
-        - **Dual Modes**: Modal popup or inline embedding
-        - **Time Control**: Start and end time parameters
-        - **Custom Thumbnails**: Use your own preview images
-        - **Accessible**: Proper alt text and button labeling
-        - **Overlay Integration**: Uses overlay partial for modal functionality
-        - **JavaScript Enhanced**: Interactive player with video.js
+        - Supports YouTube, Vimeo, and Cloudinary videos
+        - Modal popup or in situ embedding
+        - Start and end time parameters
+        - Use your own thumbnails
 ---

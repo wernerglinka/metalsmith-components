@@ -10,13 +10,13 @@ navigation:
 
 card:
   title: 'Video Only'
-  description: 'Dedicated video section supporting YouTube, Vimeo, and Cloudinary with modal and inline playback options.'
+  description: 'Dedicated video section supporting YouTube, Vimeo, and Cloudinary with modal and inSitu playback options.'
   image: '/assets/images/sample21.jpg'
   tags: ['video', 'youtube', 'vimeo', 'cloudinary', 'media', 'player', 'modal']
 
 seo:
   title: Video Only Component - Video Sections for Metalsmith
-  description: 'Dedicated video section supporting YouTube, Vimeo, and Cloudinary with modal and inline playback options. Perfect for video content, tutorials, and media-rich Metalsmith static sites.'
+  description: 'Dedicated video section supporting YouTube, Vimeo, and Cloudinary with modal and inSitu playback options. Perfect for video content, tutorials, and media-rich Metalsmith static sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
   keywords: 'metalsmith video section, video component, youtube embed, vimeo player, video-only layout, media section, video content'
@@ -46,7 +46,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A specialized section for displaying video content from multiple sources including YouTube, Vimeo, and Cloudinary. Supports both modal and inline video playback options.
+        A specialized section for displaying video content from multiple sources including YouTube, Vimeo, and Cloudinary. Supports both modal and inSitu video playback options.
 
         ```yaml
         - sectionType: video-only
@@ -57,7 +57,7 @@ sections:
             id: 'dQw4w9WgXcQ'            # Video ID from the platform
             src: 'youtube'               # Platform: youtube, vimeo, cloudinary
             tn: '/path/to/thumbnail.jpg' # Thumbnail image
-            inline: false                # Modal (false) or inline (true) playback
+            inSitu: false                # Modal (false) or inSitu (true) playback
             cloudname: 'your-cloud'      # Required for Cloudinary videos
             start: 30                    # Optional start time in seconds
             end: 120                     # Optional end time in seconds
@@ -77,7 +77,7 @@ sections:
         ### Playback Options
 
         - **Modal**: Video opens in a modal overlay (default)
-        - **Inline**: Video embeds directly in the page
+        - **inSitu**: Video embeds directly in the page
 
         ### Configuration Options
 
@@ -88,7 +88,7 @@ sections:
         | `video.id` | string | Yes | Video identifier from the platform |
         | `video.src` | string | Yes | Video platform - 'youtube', 'vimeo', or 'cloudinary' |
         | `video.tn` | string | Yes | Thumbnail image path |
-        | `video.inline` | boolean | No | Boolean for inline vs modal playback |
+        | `video.inSitu` | boolean | No | Boolean for inSitu vs modal playback |
         | `video.cloudname` | string | Conditional | Cloudinary cloud name (required for Cloudinary) |
         | `video.start` | number | No | Start time in seconds |
         | `video.end` | number | No | End time in seconds |
@@ -101,7 +101,7 @@ sections:
 
   - sectionType: video-only
     containerTag: section
-    classes: 'inline-example'
+    classes: 'inSitu-example'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -118,11 +118,11 @@ sections:
         image: ''
         imageScreen: 'none' # light, dark, none
     video:
-      inline: true
+      inSitu: true
       src: youtube
       id: 'OorZcOzNcgE'
       tn: '/assets/images/sample13.jpg'
-      alt: 'YouTube video tutorial - inline playback example'
+      alt: 'YouTube video tutorial - inSitu playback example'
     ctas:
       - url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video'
         label: 'Learn More'
@@ -149,7 +149,7 @@ sections:
         image: '/assets/images/sample10.jpg'
         imageScreen: 'dark' # light, dark, none
     video:
-      inline: false
+      inSitu: false
       src: vimeo
       id: '347119375'
       tn: '/assets/images/sample10.jpg'

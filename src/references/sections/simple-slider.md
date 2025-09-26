@@ -147,7 +147,7 @@ sections:
   - sectionType: text-only
     containerTag: article
     classes: ''
-    id: 'first-section'
+    id: 'default-example'
     isDisabled: false
     isAnimated: true
     containerFields:
@@ -297,7 +297,7 @@ sections:
         isDark: false
         color: ''
         image: ''
-    config: 'isTabs' # "" = default slides, isTabs
+    isTabs: true
     slides:
       - slideClasses: ''
         image:

@@ -5,7 +5,7 @@ A flexible section component that renders text content alongside various media t
 ## Supported Media Types
 
 - **image**: Static images with optional captions
-- **video**: YouTube, Vimeo, or self-hosted videos (inline or modal display)
+- **video**: YouTube, Vimeo, or self-hosted videos (inSitu or modal display)
 - **audio**: MP3/OGG audio with background image
 - **icon**: SVG icons from the component library
 - **lottie**: JSON animations with playback controls
@@ -62,7 +62,7 @@ image:
 ```yaml
 mediaType: video
 video:
-  inline: true          # true for inline, false for modal
+  inSitu: true          # true for inSitu, false for modal
   src: youtube          # 'youtube', 'vimeo', or video file path
   id: "VIDEO_ID"        # For YouTube/Vimeo
   tn: "/assets/images/thumbnail.jpg"  # Thumbnail for modal
@@ -130,7 +130,7 @@ Uses the Every Layout Switcher pattern for responsive behavior:
 ```css
 .section-wrapper .multi-media.content {
   --threshold: 50rem;  /* Breakpoint for layout switch */
-  container-type: inline-size;
+  container-type: inSitu-size;
 }
 ```
 
@@ -195,7 +195,7 @@ Fine-tuned responsive adjustments:
     caption: "Figure 1: Feature in action"
 ```
 
-### Inline Video
+### inSitu Video
 ```yaml
 - sectionType: multi-media
   mediaType: video
@@ -204,7 +204,7 @@ Fine-tuned responsive adjustments:
     title: "Video Tutorial"
     prose: "Learn how to use this feature"
   video:
-    inline: true
+    inSitu: true
     src: youtube
     id: "dQw4w9WgXcQ"
 ```
@@ -262,7 +262,7 @@ Fine-tuned responsive adjustments:
 2. **Video Thumbnails**: Provide thumbnails for modal videos
 3. **Audio Formats**: Include both OGG and MP3 for compatibility
 4. **Lottie File Size**: Keep animation files under 100KB
-5. **Icon Loading**: Icons are inlined as SVG
+5. **Icon Loading**: Icons are inSitud as SVG
 
 ## Accessibility
 

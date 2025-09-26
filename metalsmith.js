@@ -5,8 +5,8 @@
  * to help beginners understand what's happening at each step.
  */
 
-// Apply File API polyfill if needed (for GitHub Actions compatibility)
-import './file-polyfill.js';
+// File API polyfill no longer needed - Node 20+ includes File API natively
+// import './file-polyfill.js';
 
 // These are built-in Node.js modules needed for file paths and operations
 import { fileURLToPath } from 'node:url'; // Converts file:// URLs to file paths
@@ -239,14 +239,6 @@ metalsmith
     } )
   )
 
-  .use(
-    paginatePages( {
-      pagesPerPage: 8,
-      blogDirectory: 'library/',
-      mainTemplate: 'library.md'
-    } )
-  )
-
   /**
    * Add search functionality
    * Learn more: https://github.com/wernerglinka/metalsmith-search
@@ -322,7 +314,7 @@ metalsmith
   .use(
     prism( {
       decode: true,
-      preLoad: ['liquid']
+      preLoad: [ 'liquid' ]
     } )
   )
 

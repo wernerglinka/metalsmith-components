@@ -29,7 +29,7 @@ sections:
       title: 'Text'
       titleTag: 'h1'
       prose: |
-        The Text partial provides flexible text rendering with support for lead-ins, titles, subtitles, and markdown-formatted prose content. It serves as the primary text building block for most section components.
+        The Text partial provides flexible text rendering with support for lead-ins, titles, subtitles, and markdown-formatted prose content. It is the primary text building block for most section components.
 
         ### Manifest
 
@@ -64,8 +64,6 @@ sections:
         | `titleTag` | string | No | 'h2' | HTML tag for title (h1-h6) |
         | `subTitle` | string | No | - | Supporting text below title |
         | `prose` | string | No | - | Main content with markdown support |
-
-        ### Example
 
   - sectionType: text-only
     containerTag: section
@@ -109,13 +107,15 @@ sections:
 
   - sectionType: text-only
     containerTag: section
+    classes: 'has-demo-background'
     containerFields:
       inContainer: false
       isAnimated: true
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       background:
+        color: '#fafafa'
         isDark: false
     text:
       title: 'Minimal Configuration'

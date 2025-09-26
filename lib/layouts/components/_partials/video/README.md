@@ -1,11 +1,11 @@
 # Video Component
 
-The video component provides a flexible solution for embedding videos from multiple providers into a Metalsmith site. Rather than implementing separate components for each video platform or display mode, this unified component handles YouTube, Vimeo, and Cloudinary videos seamlessly, presenting them either inline within your content flow or as modal overlays. The component employs modern web development practices including lazy loading with Intersection Observer, dynamic script loading to minimize initial page weight, and a single-player architecture that ensures only one video plays at a time across your entire page. Through event-driven design and factory pattern, the component maintains clean separation between providers while offering consistent behavior and user experience regardless of the video source. The architecture prioritizes performance through intelligent resource management, loading provider APIs only when needed and automatically cleaning up resources when videos are closed or switched, making it an ideal choice for content-rich sites where video engagement is important but page performance cannot be compromised.
+The video component provides a flexible solution for embedding videos from multiple providers into a Metalsmith site. Rather than implementing separate components for each video platform or display mode, this unified component handles YouTube, Vimeo, and Cloudinary videos seamlessly, presenting them either inSitu within your content flow or as modal overlays. The component employs modern web development practices including lazy loading with Intersection Observer, dynamic script loading to minimize initial page weight, and a single-player architecture that ensures only one video plays at a time across your entire page. Through event-driven design and factory pattern, the component maintains clean separation between providers while offering consistent behavior and user experience regardless of the video source. The architecture prioritizes performance through intelligent resource management, loading provider APIs only when needed and automatically cleaning up resources when videos are closed or switched, making it an ideal choice for content-rich sites where video engagement is important but page performance cannot be compromised.
 
 ## Features
 
 - **Multiple Providers**: YouTube, Vimeo, and Cloudinary support
-- **Display Modes**: Inline playback or modal overlay
+- **Display Modes**: inSitu playback or modal overlay
 - **Responsive Design**: Automatic sizing across all devices
 - **Performance Optimized**: Lazy loading, script caching, intersection observer
 - **Time Controls**: Start and end time support for YouTube
@@ -38,7 +38,7 @@ The video component provides a flexible solution for embedding videos from multi
 
 ```yaml
 video:
-  inline: true # true for inline, false for modal
+  inSitu: true # true for inSitu, false for modal
   src: 'youtube' # 'youtube', 'vimeo', or 'cloudinary'
   id: 'dQw4w9WgXcQ' # Video ID or public ID
   cloudname: 'my-cloud' # Required for Cloudinary
@@ -50,7 +50,7 @@ video:
 
 ## Properties
 
-- `inline`: Display video inline (true) or in modal overlay (false)
+- `inSitu`: Display video inSitu (true) or in modal overlay (false)
 - `src`: Video provider ('youtube', 'vimeo', 'cloudinary'). Defaults to 'youtube' for backward compatibility
 - `id`: Video identifier (YouTube video ID, Vimeo ID, or Cloudinary public ID)
 - `cloudname`: Cloudinary cloud name (required for Cloudinary videos)
@@ -65,7 +65,7 @@ video:
 
 ```yaml
 video:
-  inline: false
+  inSitu: false
   src: youtube
   id: 'dQw4w9WgXcQ'
   tn: '/assets/images/youtube-thumb.jpg'
@@ -77,7 +77,7 @@ video:
 
 ```yaml
 video:
-  inline: false # false for modal
+  inSitu: false # false for modal
   src: vimeo
   id: '123456789'
   tn: '/assets/images/vimeo-thumb.jpg'
@@ -87,7 +87,7 @@ video:
 
 ```yaml
 video:
-  inline: false # false for modal
+  inSitu: false # false for modal
   src: cloudinary
   id: 'my-video-public-id'
   cloudname: 'my-cloud-name'
@@ -96,13 +96,13 @@ video:
 
 ## HTML Structure
 
-### Inline Video
+### inSitu Video
 
 ```html
-<div class="video media inline">
-  <div class="inline-video-wrapper js-inline-video-wrapper">
+<div class="video media inSitu">
+  <div class="inSitu-video-wrapper js-inSitu-video-wrapper">
     <div
-      class="js-inline-video"
+      class="js-inSitu-video"
       data-videoid="dQw4w9WgXcQ"
       data-videosrc="youtube"
       data-starttime="30"
@@ -150,9 +150,9 @@ video/
 │   │   ├── load-youtube-api.js # YouTube API loader
 │   │   └── video-utils.js      # DOM utilities, modal controls, observers
 │   └── providers/
-│       ├── youtube.js      # YouTube provider (modal & inline)
-│       ├── vimeo.js        # Vimeo provider (modal & inline)
-│       └── cloudinary.js   # Cloudinary provider (modal & inline)
+│       ├── youtube.js      # YouTube provider (modal & inSitu)
+│       ├── vimeo.js        # Vimeo provider (modal & inSitu)
+│       └── cloudinary.js   # Cloudinary provider (modal & inSitu)
 ```
 
 ### Provider Interface
@@ -160,7 +160,7 @@ video/
 Each provider implements:
 
 - `createProviderModalPlayer(videoId, targetId, cloudName, options)` - Creates modal player
-- `createProviderInlinePlayer(element, videoId, cloudName, options)` - Creates inline player
+- `createProviderinSituPlayer(element, videoId, cloudName, options)` - Creates inSitu player
 - **Single-player architecture** - automatically stops other players when starting
 - **Event-driven state management** - emits standardized events
 - **Error handling with recovery** - proper error reporting via events
@@ -206,7 +206,7 @@ const playerVars = {
 - **Close Button**: Click the [Close] button to close the modal
 - **Fade Animations**: Smooth fade in/out transitions using CSS animations
 - **Scroll Lock**: Prevents background scrolling when modal is open (via `body.modal-active`)
-- **Single Player**: Opening a modal stops any playing inline videos
+- **Single Player**: Opening a modal stops any playing inSitu videos
 - **Auto Cleanup**: Player and DOM elements are cleaned up on close
 
 ### Modal Overlay Structure
@@ -226,12 +226,12 @@ const playerVars = {
 
 - `.video`: Main video container
 - `.media`: Media wrapper class
-- `.inline`: Inline display mode
-- `.js-inline-video`: JavaScript hook for inline videos
+- `.inSitu`: inSitu display mode
+- `.js-inSitu-video`: JavaScript hook for inSitu videos
 - `.js-modal-video`: JavaScript hook for modal videos
-- `.js-inline-video-wrapper`: Wrapper for inline video containers
+- `.js-inSitu-video-wrapper`: Wrapper for inSitu video containers
 - `.video-playing`: Applied during video playback
-- `.video-trigger`: Play button for inline videos
+- `.video-trigger`: Play button for inSitu videos
 - `.play-button`: Play button styling
 
 ## Performance Optimization
@@ -255,10 +255,10 @@ await loadStyles('https://unpkg.com/cloudinary-video-player@latest/dist/cld-vide
 
 ### Lazy Loading with Intersection Observer
 
-- **Viewport Detection**: Inline videos initialize when entering viewport
+- **Viewport Detection**: inSitu videos initialize when entering viewport
 - **Root Margin**: 100px before viewport edge (hardcoded)
 - **Graceful Fallback**: Works without IntersectionObserver support
-- **Note**: Always enabled for inline videos, cannot be configured
+- **Note**: Always enabled for inSitu videos, cannot be configured
 
 ### Single-Player Management
 
@@ -307,7 +307,7 @@ videoConfig.set({
     youtube: {
       defaultPlayerVars: {
         modestbranding: 1,
-        playsinline: 1
+        playsinSitu: 1
       }
     }
   }
@@ -397,7 +397,7 @@ This pattern ensures the component works whether the script loads before or afte
 ### Key Features
 
 1. **Backward compatible** - Works with existing templates
-2. **Lazy loading** - Automatic for inline videos (always enabled)
+2. **Lazy loading** - Automatic for inSitu videos (always enabled)
 3. **Single-player management** - Only one video plays at a time
 4. **Smooth animations** - Modal uses CSS animations with `animationend` events
 
@@ -406,7 +406,7 @@ This pattern ensures the component works whether the script loads before or afte
 To add a new provider using functional patterns:
 
 1. Create provider module in `modules/providers/` using factory pattern
-2. Implement modal and inline player factory functions
+2. Implement modal and inSitu player factory functions
 3. Export provider configuration and utilities
 4. Add to provider maps in main modules
 5. Update templates with new provider data attributes
@@ -430,8 +430,8 @@ export const createNewProviderModalPlayer = async (videoId, targetId, options) =
   return player;
 };
 
-export const createNewProviderInlinePlayer = async (element, videoId, options) => {
-  // Similar pattern for inline players
+export const createNewProviderinSituPlayer = async (element, videoId, options) => {
+  // Similar pattern for inSitu players
   // Include trigger/close button setup
   // Integrate with single-player management
 };

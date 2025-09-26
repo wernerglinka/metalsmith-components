@@ -49,11 +49,11 @@
     }
   }
 
-  &.inline {
+  &.in-situ {
     position: relative;
     background-color: var(--color-background-light);
 
-    .inline-video-wrapper {
+    .in-situ-video-wrapper {
       width: 100%;
       height: 100%;
       position: absolute;
@@ -114,7 +114,7 @@
         pointer-events: none;
       }
 
-      .inline-video-wrapper {
+      .in-situ-video-wrapper {
         opacity: 1;
       }
 
@@ -125,7 +125,7 @@
   }
 }
 
-.inline-video-wrapper {
+.in-situ-video-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -140,8 +140,8 @@
   }
 }
 
-.inline-video-link {
-  display: inline-block;
+.in-situ-video-link {
+  display: in-situ-block;
   height: 1.4em;
   width: 1.4em;
   line-height: 1.3;
@@ -154,7 +154,7 @@
 }
 
 .cld-video-player,
-.inline-video {
+.in-situ-video {
   width: 100%;
   height: 100%;
 }
