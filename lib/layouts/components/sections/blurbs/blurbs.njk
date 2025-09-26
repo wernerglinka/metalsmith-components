@@ -96,4 +96,8 @@
     {% endif %}
   {% endif %}
 
+  {% if section.ctas | hasCtas %}
+    {{ ctas(section.ctas) }}
+  {% endif %}
+
 </div>

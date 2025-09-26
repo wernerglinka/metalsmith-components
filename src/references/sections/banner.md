@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -46,19 +46,66 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A prominent call-to-action banner section that can use either a background image or color. Perfect for highlighting important messages, promotions, or calls to action.
+        A prominent call-to-action banner section that can use either a background image or color.
 
-        ### Key Features
+  - sectionType: banner
+    containerTag: aside
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: '/assets/images/sample8.jpg'
+        imageScreen: 'light' # light, dark, none
+    text:
+      leadIn: 'With Background Image'
+      title: CTA Banner Example
+      titleTag: 'h2'
+      subTitle: Uses light image screen for better text contrast
+      prose: Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies.
+    ctas:
+      - url: 'https://apple.com'
+        label: 'go to apple'
+        isButton: true
+        buttonStyle: 'primary'
+      - url: 'https://ibm.com'
+        label: 'go to big brother'
+        isButton: false
+        buttonStyle: 'primary'
 
-        - **Flexible Backgrounds**: Support for both background images and solid colors
-        - **Screen Overlays**: Light or dark overlays for improved text readability
-        - **Layout Options**: Full-width viewport stretching or contained width
-        - **Text Color Adaptation**: Automatic text color adjustment for dark backgrounds
-        - **Call-to-Action Support**: Multiple CTA buttons with flexible styling
-        - **Accordion Header Mode**: Can function as an interactive accordion header
-
-        ### Implementation Example
-
+  - sectionType: text-only
+    containerTag: article
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
         ```yaml
         - sectionType: banner
           containerTag: aside
@@ -120,80 +167,10 @@ sections:
         | `text` | object | Yes | Standard text block with leadIn, title, subtitle, and prose |
         | `ctas` | array | No | Array of call-to-action buttons or links |
 
-
     ctas:
       - url: ''
         label: ''
         isButton: true
-        buttonStyle: 'primary'
-
-  - sectionType: banner
-    containerTag: aside
-    classes: ''
-    id: ''
-    isDisabled: false
-    isAnimated: true
-    containerFields:
-      inContainer: false
-      noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: '/assets/images/sample8.jpg'
-        imageScreen: 'light' # light, dark, none
-    text:
-      leadIn: 'With Background Image'
-      title: CTA Banner Example
-      titleTag: 'h2'
-      subTitle: Uses light image screen for better text contrast
-      prose: Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies.
-    ctas:
-      - url: 'https://apple.com'
-        label: 'go to apple'
-        isButton: true
-        buttonStyle: 'primary'
-      - url: 'https://ibm.com'
-        label: 'go to big brother'
-        isButton: false
-        buttonStyle: 'primary'
-
-  - sectionType: banner
-    containerTag: aside
-    classes: ''
-    id: ''
-    isDisabled: false
-    isAnimated: true
-    containerFields:
-      inContainer: false
-      noMargin:
-        top: false
-        bottom: false
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: '#333333'
-        isDark: true
-        image: ''
-        imageScreen: 'none' # light, dark, none
-    text:
-      leadIn: 'With Background Color'
-      title: CTA Banner Example
-      titleTag: 'h2'
-      subTitle: ''
-      prose: Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies.
-    ctas:
-      - url: 'https://apple.com'
-        label: 'go to apple'
-        isButton: true
-        buttonStyle: 'primary'
-      - url: 'https://ibm.com'
-        label: 'go to big brother'
-        isButton: false
         buttonStyle: 'primary'
 
   - sectionType: text-only
@@ -220,7 +197,7 @@ sections:
       titleTag: 'h2'
       subTitle: ''
       prose: |-
-        The banner can be used as a prominent accordion header. Add `accordion-header` to `classes`, select an appropriate background and an appropriate `imageScreen` and leave the other field empty.
+        The banner can be used as a prominent accordion header. Add `accordion-header` to `classes`, select an appropriate background and an appropriate `imageScreen` and leave the other fields empty.
 
         ```yaml
         - sectionType: banner
@@ -270,12 +247,6 @@ sections:
         ```
 
         ... **et voilà**.
-
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
 
   - sectionType: banner
     containerTag: aside

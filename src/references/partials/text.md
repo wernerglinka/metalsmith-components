@@ -71,8 +71,8 @@ sections:
       inContainer: false
       isAnimated: true
       noMargin:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       background:
         isDark: false
     text:

@@ -107,7 +107,7 @@ sections:
     isDisabled: false
     isReverse: false
     containerFields:
-      inContainer: false
+      inContainer: true
       isAnimated: true
       noMargin:
         top: true

@@ -236,18 +236,30 @@ body.with-sidebar {
       display: flex;
       flex-direction: column;
       margin-left: 25rem;
+      max-width: 80ch;
 
       .section-wrapper {
-        padding-left: 0;
-        padding-top: 0;
+        padding: 0;
 
         .container {
-          padding-left: 0;
+          padding: 0;
         }
 
         .text {
           padding-top: 0;
           max-width: none;
+        }
+
+        &.banner-accordion-header {
+          .text {
+            padding-block-start: var(--space-xs-s);
+          }
+        }
+
+        &.banner-accordion-content {
+          .text {
+            padding-block: var(--space-xs-s);
+          }
         }
 
         &.example-left-align {
@@ -257,9 +269,7 @@ body.with-sidebar {
         }
 
         &.has-demo-background {
-          max-width: 80ch;
-          padding-top: var(--space-s-l);
-          padding-left: var(--space-s-l);
+          padding: var(--space-s-m);
         }
       }
 

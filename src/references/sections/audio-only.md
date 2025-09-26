@@ -31,7 +31,7 @@ sections:
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: true
       noPadding:
         top: false
@@ -46,55 +46,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A specialized section for audio content including podcasts, music, sound effects, or any audio media. Supports multiple audio formats with optional background imagery.
-
-        ### Key Features
-
-        - **Multiple Audio Formats**: Supports both OGG and MP3 for maximum browser compatibility
-        - **Background Images**: Optional cover art, album artwork, or related imagery
-        - **Responsive Design**: Audio player adapts to different screen sizes
-        - **Custom Styling**: Audio controls match your site's design theme
-        - **Call-to-Action Support**: Optional buttons for subscription, download, or related actions
-
-        Perfect for podcasts, music samples, audio testimonials, or any audio-focused content.
-
-        ### Implementation Example
-
-        ```yaml
-        - sectionType: audio-only
-          containerTag: section
-          # container settings
-
-          audio:
-            ogg: '/assets/audio/podcast-episode.ogg'    # OGG audio file
-            mpeg: '/assets/audio/podcast-episode.mp3'   # MP3 audio file
-            bgImage: '/assets/images/podcast-cover.jpg' # Optional cover image
-            alt: 'Podcast episode cover art'           # Alt text for cover image
-          ctas:
-            - url: 'https://example.com/podcast'
-              label: 'Subscribe to Podcast'
-              isButton: true
-              buttonStyle: 'primary'
-        ```
-
-        ### Configuration Options
-
-        #### Audio Properties
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `audio.ogg` | string | One required* | Path to OGG audio file (recommended for quality) |
-        | `audio.mpeg` | string | One required* | Path to MP3 audio file (widely supported) |
-        | `audio.bgImage` | string | No | Optional background/cover image path |
-        | `audio.alt` | string | No | Alternative text for the background image |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `ctas` | array | No | Optional array of call-to-action buttons |
-
-        *At least one audio format (OGG or MP3) must be provided
+        A section for audio content with an optional CTA. Essentially a section wrapper for the audio partial.
 
   - sectionType: audio-only
     containerTag: section
@@ -121,8 +73,64 @@ sections:
       bgImage: '/assets/images/sample8.jpg'
       alt: 'Music album cover'
     ctas:
-      - url: 'https://suno.com/s/eQgA4HNfXWCFSPwK'
-        label: 'Another Track'
+      - url: 'https://suno.com/'
+        label: 'Make your own Music'
         isButton: true
-        buttonStyle: 'inverted'
+        buttonStyle: 'tertiary'
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: ''
+      titleTag: 'h1'
+      subTitle: ''
+      prose: |-
+        ### Configuration
+
+        ```yaml
+        - sectionType: audio-only
+          containerTag: section
+          # container settings
+
+          audio:
+            ogg: '/assets/audio/shattered-reflections.ogg'
+            mpeg: '/assets/audio/shattered-reflections.mp3'
+            bgImage: '/assets/images/sample8.jpg'
+            alt: 'Music album cover'
+          ctas:
+            - url: 'https://suno.com/'
+              label: 'Make your own Music'
+              isButton: true
+              buttonStyle: 'tertiary'
+        ```
+
+        ### Configuration Options
+
+        #### Audio Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `audio.ogg` | string | One required* | Path to OGG audio file (recommended for quality) |
+        | `audio.mpeg` | string | One required* | Path to MP3 audio file (widely supported) |
+        | `audio.bgImage` | string | No | Optional background/cover image path |
+        | `audio.alt` | string | No | Alternative text for the background image |
+
+        **At least one audio format (OGG or MP3) must be provided**
 ---

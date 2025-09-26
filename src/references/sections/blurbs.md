@@ -46,18 +46,9 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        The blurb section is a short description of a subject written for promotional purposes and appearing in a card with an image or icon. An optional CTA provides a link to more info.
+        The blurb section is a short description of a subject written for promotional purposes and appearing in a card with an image or icon. It supports _inline_ and _featurePlus_ layout options. An optional CTA provides a link to more info.
 
-        ### Key Features
-
-        - **Responsive Layouts**: Handles responsive layouts automatically
-        - **Multiple Layout Types**: Supports 'inline' and 'featurePlus' layout options
-        - **Data-Driven Content**: Loads content from JSON data files
-        - **Media Asset Support**: Includes lazy loading for images and icons
-        - **Flexible Ordering**: Reversible column order with `isReverse` option
-        - **Optional Intro Text**: Support for section titles and descriptions
-
-        ### Implementation Example
+        ### configurayion
 
         ```yaml
         - sectionType: blurbs
@@ -102,8 +93,8 @@ sections:
       inContainer: true
       isAnimated: true
       noMargin:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       noPadding:
         top: true
         bottom: false
@@ -117,7 +108,11 @@ sections:
       titleTag: 'h2'
       subTitle: ''
       prose: 'Use the included feather icons or add your own'
-
+    ctas:
+      - url: '/'
+        label: 'See All'
+        isButton: true
+        buttonStyle: 'primary'
     blurbs:
       source: 'inline-icon-example' # data file in 'lib/assets/data/blurbs'
       layout: 'inline' # inline, featurePlus,
@@ -132,8 +127,8 @@ sections:
       inContainer: true
       isAnimated: true
       noMargin:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       noPadding:
         top: true
         bottom: false
@@ -147,7 +142,6 @@ sections:
       titleTag: 'h2'
       subTitle: ''
       prose: 'This could all be done with icons as well'
-
     blurbs:
       source: 'grid-with-feature-example' # data file in 'lib/assets/data/blurbs'
       layout: 'featurePlus' # inline, featurePlus,
