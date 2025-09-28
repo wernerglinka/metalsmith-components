@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -45,89 +45,7 @@ sections:
       title: 'Maps'
       titleTag: 'h1'
       subTitle: ''
-      prose: |-
-        A maps component that supports Leaflet and OpenLayers providers with clean separation between UI configuration and map data. Uses external JSON files for map content, making it ideal for complex maps with many markers while keeping page frontmatter minimal.
-
-        Features dynamic library loading, custom SVG markers, interactive popups, marker clustering, and responsive design across all devices. The component handles multiple maps per page with independent configurations and provider selection. All text fields and CTAs are optional, and maps automatically adapt to container dimensions with accessibility features for screen readers.
-
-        ```yaml
-        - sectionType: maps
-          containerTag: section
-          
-          mapProvider: 'leaflet' # 'leaflet' or 'openlayers'
-          mapData: 'london-landmarks' # references lib/data/maps/london-landmarks.json
-          height: '500px' # optional custom height (defaults to 400px)
-
-          text:
-            leadIn: 'Interactive Mapping'
-            title: Explore London Landmarks
-            titleTag: 'h2'
-            subTitle: 'Discover famous locations across the city'
-            prose: Interactive maps provide engaging ways to showcase locations, whether for business directories, travel guides, or event venues...
-          ctas:
-            - url: 'https://leafletjs.com'
-              label: 'Learn More'
-              isButton: true
-              buttonStyle: 'primary'
-        ```
-
-        ### Core Properties
-
-        **Page Frontmatter (UI Configuration):**
-
-        | Property | Type | Description |
-        |----------|------|-------------|
-        | `mapProvider` | string | Map library to use ('leaflet' or 'openlayers') |
-        | `mapData` | string | Reference to JSON file in lib/data/maps/ (e.g., 'london-landmarks') |
-        | `height` | string | Optional custom map height (e.g., '500px', '50vh') - defaults to 400px |
-        | `text` | object | Standard text block with leadIn, title, subtitle, and prose |
-        | `ctas` | array | Array of call-to-action buttons or links |
-
-        **JSON Data File (Map Content):**
-
-        | Property | Type | Description |
-        |----------|------|-------------|
-        | `latitude`/`longitude` | number | Map center coordinates |
-        | `zoom` | number | Initial zoom level |
-        | `clustering` | object | Optional clustering configuration object |
-        | `markers` | array | Array of marker objects with coordinates and popup content |
-
-        ### JSON Data Structure
-
-        Map data is stored in `/lib/data/maps/{mapData}.json` files with the following structure:
-
-        ```json
-        {
-          "latitude": 51.509865,
-          "longitude": -0.118092,
-          "zoom": 10,
-          "clustering": {
-            "enabled": true,
-            "maxZoom": 15,
-            "radius": 50,
-            "minClusterSize": 2,
-            "style": {
-              "backgroundColor": "#4285f4",
-              "textColor": "#ffffff",
-              "borderColor": "#1976d2",
-              "borderWidth": 2
-            }
-          },
-          "markers": [
-            {
-              "latitude": 51.509865,
-              "longitude": -0.118092,
-              "title": "London",
-              "icon": "star",
-              "content": {
-                "title": "London",
-                "body": "Description text...",
-                "link": "https://example.com"
-              }
-            }
-          ]
-        }
-        ```
+      prose: 'A maps component that supports Leaflet and OpenLayers providers with clean separation between UI configuration and map data. Uses external JSON files for map content, making it ideal for complex maps with many markers while keeping page frontmatter minimal.'
 
     ctas:
       - url: ''
@@ -488,4 +406,113 @@ sections:
         ```
 
         When clustering is enabled, markers within the specified radius are grouped together and displayed as numbered cluster markers. Clicking a cluster will zoom in to reveal individual markers, or expand the cluster if at maximum zoom level.
+
+  - sectionType: text-only
+    containerTag: section
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: maps
+          containerTag: section
+
+          mapProvider: 'leaflet' # 'leaflet' or 'openlayers'
+          mapData: 'london-landmarks' # references lib/data/maps/london-landmarks.json
+          height: '500px' # optional custom height (defaults to 400px)
+
+          text:
+            leadIn: 'Interactive Mapping'
+            title: Explore London Landmarks
+            titleTag: 'h2'
+            subTitle: 'Discover famous locations across the city'
+            prose: Interactive maps provide engaging ways to showcase locations, whether for business directories, travel guides, or event venues...
+          ctas:
+            - url: 'https://leafletjs.com'
+              label: 'Learn More'
+              isButton: true
+              buttonStyle: 'primary'
+        ```
+
+        ### Notes
+
+        - Dynamic library loading, custom SVG markers, interactive popups, marker clustering
+        - Responsive design across all devices with accessibility features for screen readers
+        - Multiple maps per page with independent configurations and provider selection
+        - All text fields and CTAs are optional
+        - Maps automatically adapt to container dimensions
+
+        **Page Frontmatter (UI Configuration):**
+
+        | Property | Type | Description |
+        |----------|------|-------------|
+        | `mapProvider` | string | Map library to use ('leaflet' or 'openlayers') |
+        | `mapData` | string | Reference to JSON file in lib/data/maps/ (e.g., 'london-landmarks') |
+        | `height` | string | Optional custom map height (e.g., '500px', '50vh') - defaults to 400px |
+        | `text` | object | Standard text block with leadIn, title, subtitle, and prose |
+        | `ctas` | array | Array of call-to-action buttons or links |
+
+        **JSON Data File (Map Content):**
+
+        | Property | Type | Description |
+        |----------|------|-------------|
+        | `latitude`/`longitude` | number | Map center coordinates |
+        | `zoom` | number | Initial zoom level |
+        | `clustering` | object | Optional clustering configuration object |
+        | `markers` | array | Array of marker objects with coordinates and popup content |
+
+        ### JSON Data Structure
+
+        Map data is stored in `/lib/data/maps/{mapData}.json` files with the following structure:
+
+        ```json
+        {
+          "latitude": 51.509865,
+          "longitude": -0.118092,
+          "zoom": 10,
+          "clustering": {
+            "enabled": true,
+            "maxZoom": 15,
+            "radius": 50,
+            "minClusterSize": 2,
+            "style": {
+              "backgroundColor": "#4285f4",
+              "textColor": "#ffffff",
+              "borderColor": "#1976d2",
+              "borderWidth": 2
+            }
+          },
+          "markers": [
+            {
+              "latitude": 51.509865,
+              "longitude": -0.118092,
+              "title": "London",
+              "icon": "star",
+              "content": {
+                "title": "London",
+                "body": "Description text...",
+                "link": "https://example.com"
+              }
+            }
+          ]
+        }
+        ```
 ---

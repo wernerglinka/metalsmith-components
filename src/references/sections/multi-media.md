@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -45,105 +45,7 @@ sections:
       title: 'Multi Media'
       titleTag: 'h1'
       subTitle: ''
-      prose: |-
-        A section component that renders text content alongside media. Supports five media types via the `mediaType` property: **image** (with optional caption), **video** (YouTube/Vimeo/self-hosted, inSitu or modal display), **audio** (MP3/OGG with background image), **icon** (SVG from icon library), and **lottie** (JSON animations with playback controls).
-
-        ### Key Features
-
-        - **Five Media Types**: Image, video, audio, icon, and Lottie animation support
-        - **Flexible Video Sources**: YouTube, Vimeo, and Cloudinary integration
-        - **Modal & inSitu Video**: Choose between modal overlays or inSitu embedding
-        - **Audio with Visuals**: Audio players with background images
-        - **SVG Icon Library**: Scalable vector icons from comprehensive library
-        - **Lottie Animations**: JSON-based animations with playback controls
-        - **Reversible Layout**: Switch media and text column positions
-        - **Responsive Design**: Automatic layout adaptation with lazy loading
-
-        ### Implementation Example
-
-        ```yaml
-        - sectionType: multi-media
-          containerTag: aside
-          
-          isReverse: false
-          # more settings
-
-          text:
-            leadIn: 'Image Example'
-            title: Rich Visual Content with Images
-            titleTag: 'h2'
-            subTitle: 'Enhance your message with compelling visuals'
-            prose: Images are the cornerstone of visual storytelling on the web. This section showcases how images integrate seamlessly with text content, creating engaging layouts that capture attention...
-          ctas:
-            - url: 'https://metalsmith.io'
-              label: 'Learn More'
-              isButton: true
-              buttonStyle: 'primary'
-          mediaType: image # may be 'audio', 'icon', lottie','image', or 'video', 
-          image:
-            # image properties
-          audio:
-            # audio properties
-          icon:
-            # icon properties
-          lottie:
-            # lottie properties
-          video:
-            # video properties
-        ```
-
-        ### Configuration Options
-
-        #### Layout Settings
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `isReverse` | boolean | No | Reverse the media/text layout (default: false) |
-        | `mediaType` | string | Yes | Type of media ('image', 'video', 'audio', 'icon', 'lottie') |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `text` | object | No | Standard text block with leadIn, title, subtitle, and prose |
-        | `text.isCentered` | boolean | No | Centers the text content within its container |
-        | `ctas` | array | No | Array of call-to-action buttons or links |
-
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
-
-  - sectionType: text-only
-    containerTag: section
-    classes: ''
-    id: ''
-    isDisabled: false
-    isAnimated: false
-    containerFields:
-      inContainer: true
-      noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none'
-    text:
-      leadIn: ''
-      title: 'Image Properties'
-      titleTag: 'h3'
-      subTitle: ''
-      prose: |-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `image.src` | string | Yes | Path to the image file |
-        | `image.alt` | string | Yes | Alternative text for accessibility |
-        | `image.caption` | string | No | Optional caption displayed below the image |
+      prose: 'A section component that renders text content alongside media. Supports five media types: image, video, audio, icon, and Lottie animations with flexible layout options.'
 
   - sectionType: multi-media
     containerTag: aside
@@ -152,11 +54,11 @@ sections:
     isDisabled: false
     isReverse: false
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
       noMargin:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       noPadding:
         top: true
         bottom: true
@@ -188,9 +90,9 @@ sections:
     isDisabled: false
     isAnimated: false
     containerFields:
-      inContainer: true
+      inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: true
       noPadding:
         top: false
@@ -201,17 +103,15 @@ sections:
         imageScreen: 'none'
     text:
       leadIn: ''
-      title: 'Audio Properties'
+      title: 'Image Properties'
       titleTag: 'h3'
       subTitle: ''
       prose: |-
         | Property | Type | Required | Description |
         |----------|------|----------|-------------|
-        | `audio.bgImage` | string | No | Background image displayed with audio player |
-        | `audio.ogg` | string | One required* | Path to OGG audio file |
-        | `audio.mpeg` | string | One required* | Path to MP3 audio file |
-
-        *At least one audio format must be provided
+        | `image.src` | string | Yes | Path to the image file |
+        | `image.alt` | string | Yes | Alternative text for accessibility |
+        | `image.caption` | string | No | Optional caption displayed below the image |
 
   - sectionType: multi-media
     containerTag: aside
@@ -220,10 +120,10 @@ sections:
     isDisabled: false
     isReverse: true
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
       noMargin:
-        top: true
+        top: false
         bottom: false
       noPadding:
         top: true
@@ -256,7 +156,115 @@ sections:
     isDisabled: false
     isAnimated: false
     containerFields:
-      inContainer: true
+      inContainer: false
+      noMargin:
+        top: false
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Audio Properties'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: |-
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `audio.bgImage` | string | No | Background image displayed with audio player |
+        | `audio.ogg` | string | One required* | Path to OGG audio file |
+        | `audio.mpeg` | string | One required* | Path to MP3 audio file |
+
+        *At least one audio format must be provided
+
+  - sectionType: multi-media
+    containerTag: aside
+    classes: ''
+    id: ''
+    isDisabled: false
+    isReverse: false
+    containerFields:
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: true
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: 'inSitu Video'
+      title: 'Seamless Video Integration'
+      titleTag: 'h2'
+      subTitle: 'Play videos directly in the page flow'
+      prose: inSitu video playback keeps users engaged without disrupting their browsing experience. This configuration embeds videos directly within your content layout, perfect for tutorials, product demonstrations, or promotional content. The component supports YouTube, Vimeo, and self-hosted videos, automatically handling responsive sizing and providing a clean, distraction-free viewing experience.
+    ctas:
+      - url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video'
+        label: 'Learn More'
+        isButton: true
+        buttonStyle: 'tertiary'
+    mediaType: video
+    video:
+      inSitu: true
+      src: 'youtube'
+      id: 'OorZcOzNcgE'
+      tn: '/assets/images/sample13.jpg'
+      alt: 'YouTube tutorial video demonstrating inSitu video integration'
+
+  - sectionType: multi-media
+    containerTag: aside
+    classes: ''
+    id: ''
+    isDisabled: false
+    isReverse: true
+    containerFields:
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: 'Modal Video'
+      title: 'Cinematic Modal Video Experience'
+      titleTag: 'h2'
+      subTitle: 'Focus attention with full-screen playback'
+      prose: Modal video presentation creates a theater-like viewing experience that commands full attention. When activated, the video opens in an elegant overlay that dims the background, eliminating distractions and maximizing impact. Ideal for feature films, detailed demonstrations, or any content that deserves the spotlight. The thumbnail preview entices viewers while maintaining fast page load times.
+    ctas:
+      - url: 'https://metalsmith.io'
+        label: 'Learn More'
+        isButton: false
+        buttonStyle: 'primary'
+    mediaType: video
+    video:
+      inSitu: false
+      src: 'vimeo'
+      id: '347119375'
+      tn: '/assets/images/sample10.jpg'
+      alt: 'Vimeo video demonstration - cinematic modal experience'
+
+  - sectionType: text-only
+    containerTag: section
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: false
+    containerFields:
+      inContainer: false
       noMargin:
         top: true
         bottom: true
@@ -288,116 +296,10 @@ sections:
     isDisabled: false
     isReverse: false
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
       noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: true
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none' # light, dark, none
-    text:
-      leadIn: 'inSitu Video'
-      title: 'Seamless Video Integration'
-      titleTag: 'h2'
-      subTitle: 'Play videos directly in the page flow'
-      prose: inSitu video playback keeps users engaged without disrupting their browsing experience. This configuration embeds videos directly within your content layout, perfect for tutorials, product demonstrations, or promotional content. The component supports YouTube, Vimeo, and self-hosted videos, automatically handling responsive sizing and providing a clean, distraction-free viewing experience.
-    ctas:
-      - url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video'
-        label: 'Learn More'
-        isButton: true
-        buttonStyle: 'tertiary'
-    mediaType: video
-    video:
-      inSitu: true
-      src: youtube
-      id: 'OorZcOzNcgE'
-      tn: '/assets/images/sample13.jpg'
-      alt: 'YouTube tutorial video demonstrating inSitu video integration'
-
-  - sectionType: multi-media
-    containerTag: aside
-    classes: ''
-    id: ''
-    isDisabled: false
-    isReverse: true
-    containerFields:
-      inContainer: true
-      isAnimated: true
-      noMargin:
-        top: true
-        bottom: false
-      noPadding:
         top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none' # light, dark, none
-    text:
-      leadIn: 'Modal Video'
-      title: 'Cinematic Modal Video Experience'
-      titleTag: 'h2'
-      subTitle: 'Focus attention with full-screen playback'
-      prose: Modal video presentation creates a theater-like viewing experience that commands full attention. When activated, the video opens in an elegant overlay that dims the background, eliminating distractions and maximizing impact. Ideal for feature films, detailed demonstrations, or any content that deserves the spotlight. The thumbnail preview entices viewers while maintaining fast page load times.
-    ctas:
-      - url: 'https://metalsmith.io'
-        label: 'Learn More'
-        isButton: false
-        buttonStyle: 'primary'
-    mediaType: video
-    video:
-      inSitu: false
-      src: vimeo
-      id: '347119375'
-      tn: '/assets/images/sample10.jpg'
-      alt: 'Vimeo video demonstration - cinematic modal experience'
-
-  - sectionType: text-only
-    containerTag: section
-    classes: ''
-    id: ''
-    isDisabled: false
-    isAnimated: false
-    containerFields:
-      inContainer: true
-      noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none'
-    text:
-      leadIn: ''
-      title: 'Icon Properties'
-      titleTag: 'h3'
-      subTitle: ''
-      prose: |-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `icon.icon` | string | Yes | Icon identifier from the icon library |
-        | `icon.title` | string | Yes | Icon title for accessibility |
-        | `icon.url` | string | No | Optional link URL for the icon |
-
-  - sectionType: multi-media
-    containerTag: aside
-    classes: ''
-    id: ''
-    isDisabled: false
-    isReverse: false
-    containerFields:
-      inContainer: true
-      isAnimated: true
-      noMargin:
-        top: true
         bottom: false
       noPadding:
         top: true
@@ -430,7 +332,7 @@ sections:
     isDisabled: false
     isAnimated: false
     containerFields:
-      inContainer: true
+      inContainer: false
       noMargin:
         top: true
         bottom: true
@@ -443,15 +345,15 @@ sections:
         imageScreen: 'none'
     text:
       leadIn: ''
-      title: 'Lottie Animation Properties'
+      title: 'Icon Properties'
       titleTag: 'h3'
       subTitle: ''
       prose: |-
         | Property | Type | Required | Description |
         |----------|------|----------|-------------|
-        | `lottie.src` | string | Yes | Path to Lottie JSON animation file |
-        | `lottie.control.autoplay` | boolean | No | Start animation automatically (default: true) |
-        | `lottie.control.loop` | boolean | No | Loop the animation (default: true) |
+        | `icon.icon` | string | Yes | Icon identifier from the icon library |
+        | `icon.title` | string | Yes | Icon title for accessibility |
+        | `icon.url` | string | No | Optional link URL for the icon |
 
   - sectionType: multi-media
     containerTag: aside
@@ -460,13 +362,13 @@ sections:
     isDisabled: false
     isReverse: true
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
       noMargin:
-        top: true
+        top: false
         bottom: false
       noPadding:
-        top: true
+        top: false
         bottom: false
       background:
         color: ''
@@ -489,4 +391,116 @@ sections:
       control:
         autoplay: true
         loop: true
+
+  - sectionType: text-only
+    containerTag: section
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: false
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Lottie Animation Properties'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: |-
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `lottie.src` | string | Yes | Path to Lottie JSON animation file |
+        | `lottie.control.autoplay` | boolean | No | Start animation automatically (default: true) |
+        | `lottie.control.loop` | boolean | No | Loop the animation (default: true) |
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: multi-media
+          containerTag: aside
+          isReverse: false
+          # more settings
+
+          text:
+            leadIn: 'Image Example'
+            title: Rich Visual Content with Images
+            titleTag: 'h2'
+            subTitle: 'Enhance your message with compelling visuals'
+            prose: Images are the cornerstone of visual storytelling on the web...
+          ctas:
+            - url: 'https://metalsmith.io'
+              label: 'Learn More'
+              isButton: true
+              buttonStyle: 'primary'
+          mediaType: image # may be 'audio', 'icon', lottie','image', or 'video',
+          image:
+            # image properties
+          audio:
+            # audio properties
+          icon:
+            # icon properties
+          lottie:
+            # lottie properties
+          video:
+            # video properties
+        ```
+
+        ### Configuration Options
+
+        #### Layout Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `isReverse` | boolean | No | Reverse the media/text layout (default: false) |
+        | `mediaType` | string | Yes | Type of media ('image', 'video', 'audio', 'icon', 'lottie') |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text` | object | No | Standard text block with leadIn, title, subtitle, and prose |
+        | `text.isCentered` | boolean | No | Centers the text content within its container |
+        | `ctas` | array | No | Array of call-to-action buttons or links |
+
+        ### Notes
+
+        - **Five Media Types**: Image, video, audio, icon, and Lottie animation support
+        - **Flexible Video Sources**: YouTube, Vimeo, and Cloudinary integration
+        - **Modal & inSitu Video**: Choose between modal overlays or inSitu embedding
+        - **Audio with Visuals**: Audio players with background images
+        - **SVG Icon Library**: Scalable vector icons from comprehensive library
+        - **Lottie Animations**: JSON-based animations with playback controls
+        - **Reversible Layout**: Switch media and text column positions
+        - **Responsive Design**: Automatic layout adaptation with lazy loading
 ---

@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -46,42 +46,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        The blurb section is a short description of a subject written for promotional purposes and appearing in a card with an image or icon. It supports _inline_ and _featurePlus_ layout options. An optional CTA provides a link to more info.
-
-        ### configurayion
-
-        ```yaml
-        - sectionType: blurbs
-          containerTag: aside
-          isReverse: false              # Default column order
-          text:
-            title: 'Inline blurbs with Icons'
-            prose: 'Use the included feather icons or add your own'
-          blurbs:
-            source: 'features-list'     # Loads from lib/data/blurbs/features-list.json
-            layout: 'inline'            # Options: inline, featurePlus
-        ```
-
-        ### Configuration Options
-
-        #### Layout Options
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `isReverse` | boolean | No | Switches the feature/blurbs column order |
-        | `blurbs.layout` | string | Yes | Layout type ('inline', 'featurePlus') |
-
-        #### Data Loading
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `blurbs.source` | string | Yes | Data file name in `lib/data/blurbs/` directory |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `text` | object | No | Optional intro text with title, subtitle, and prose |
+        The blurb section is a short description of a subject written for promotional purposes and appearing in a card with an image or icon. It supports _inline_ and _featurePlus_ layout options.
 
   - sectionType: blurbs
     containerTag: aside
@@ -145,4 +110,61 @@ sections:
     blurbs:
       source: 'grid-with-feature-example' # data file in 'lib/assets/data/blurbs'
       layout: 'featurePlus' # inline, featurePlus,
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: blurbs
+          containerTag: aside
+          isReverse: false              # Default column order
+          text:
+            title: 'Inline blurbs with Icons'
+            prose: 'Use the included feather icons or add your own'
+          blurbs:
+            source: 'features-list'     # Loads from lib/data/blurbs/features-list.json
+            layout: 'inline'            # Options: inline, featurePlus
+        ```
+
+        ### Configuration Options
+
+        #### Layout Options
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `isReverse` | boolean | No | Switches the feature/blurbs column order |
+        | `blurbs.layout` | string | Yes | Layout type ('inline', 'featurePlus') |
+
+        #### Data Loading
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `blurbs.source` | string | Yes | Data file name in `lib/data/blurbs/` directory |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text` | object | No | Optional intro text with title, subtitle, and prose |
 ---

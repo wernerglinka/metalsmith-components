@@ -54,41 +54,6 @@ sections:
       subTitle:
       prose: |-
         A wrapper section that groups multiple sections together, allowing them to share common configuration and styling properties. Perfect for organizing related content sections.
-
-        ### Configuration Options
-
-        #### Wrapper Settings
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `compoundSections` | array | Yes | Array of sections to be wrapped and rendered together |
-
-        #### Individual Section Properties
-
-        Each section within `compoundSections` supports standard section properties:
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `sectionType` | string | Yes | Type of section ('text-only', 'media-image', etc.) |
-        | `containerTag` | string | No | HTML tag for the section wrapper |
-        | `isDisabled` | boolean | No | Disable the section |
-        | `text` | object | No | Text content for the section |
-        | `ctas` | array | No | Call-to-action buttons for the section |
-
-        All wrapped sections inherit the compound section's container fields while maintaining their individual configurations.
-
-        ```yaml
-        - sectionType: compound
-          compoundSections:
-            - sectionType: text-only
-              text:
-                title: 'First Section'
-                prose: 'Content for first section'
-            - sectionType: text-only
-              text:
-                title: 'Second Section'
-                prose: 'Content for second section'
-        ```
     ctas:
       - url: ''
         label: ''
@@ -151,4 +116,65 @@ sections:
             label: 'Big Brother watching'
             isButton: true
             buttonStyle: 'primary'
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: compound
+          compoundSections:
+            - sectionType: text-only
+              text:
+                title: 'First Section'
+                prose: 'Content for first section'
+            - sectionType: text-only
+              text:
+                title: 'Second Section'
+                prose: 'Content for second section'
+        ```
+
+        ### Configuration Options
+
+        #### Wrapper Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `compoundSections` | array | Yes | Array of sections to be wrapped and rendered together |
+
+        #### Individual Section Properties
+
+        Each section within `compoundSections` supports standard section properties:
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `sectionType` | string | Yes | Type of section ('text-only', 'media-image', etc.) |
+        | `containerTag` | string | No | HTML tag for the section wrapper |
+        | `isDisabled` | boolean | No | Disable the section |
+        | `text` | object | No | Text content for the section |
+        | `ctas` | array | No | Call-to-action buttons for the section |
+
+        ### Notes
+
+        All wrapped sections inherit the compound section's container fields while maintaining their individual configurations.
 ---

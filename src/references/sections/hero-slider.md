@@ -22,6 +22,32 @@ seo:
   keywords: 'metalsmith hero slider, carousel hero, slideshow hero, hero carousel, multi-slide hero, hero with transitions, autoplay hero'
 
 sections:
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Hero Slider'
+      titleTag: 'h1'
+      subTitle: ''
+      prose: |-
+        Hero slider with various background media, smooth transitions, and autoplay functionality.
+
   - sectionType: hero-slider
     containerTag: section
     classes: 'first-section'
@@ -141,117 +167,6 @@ sections:
             tn: ''
           imageScreen: 'none'
 
-  - sectionType: text-only
-    containerTag: article
-    classes: ''
-    id: 'features'
-    isDisabled: false
-    isAnimated: true
-    containerFields:
-      inContainer: true
-      noMargin:
-        top: false
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none'
-    text:
-      leadIn: ''
-      title: 'Hero Slider Features'
-      titleTag: 'h2'
-      subTitle: ''
-      prose: |-
-        The hero slider component transforms static hero sections into dynamic, engaging experiences. Each slide can contain unique combinations of text, images, and backgrounds, allowing you to tell a complete story or showcase multiple aspects of your product or service.
-
-        ### Key Features
-
-        - **Multiple Slides** - Unlimited slides with individual configurations
-        - **Rich Media Backgrounds** - Support for colors, images, and videos
-        - **Autoplay Control** - Optional automatic progression with configurable timing
-        - **Smooth Transitions** - Hardware-accelerated CSS animations
-        - **Responsive Design** - Adapts seamlessly to all screen sizes
-        - **Navigation Controls** - Bottom navigation with labeled indicators
-        - **Layout Flexibility** - Support for reversed layouts and content positioning
-        - **Screen Overlays** - Optional overlays for better text readability
-
-  - sectionType: text-only
-    containerTag: article
-    classes: ''
-    id: 'examples'
-    isDisabled: false
-    isAnimated: true
-    containerFields:
-      inContainer: true
-      noMargin:
-        top: true
-        bottom: false
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none'
-    text:
-      leadIn: ''
-      title: 'Configuration Example'
-      titleTag: 'h2'
-      subTitle: ''
-      prose: |-
-        ```yaml
-        sections:
-          - sectionType: hero-slider
-            # other settings
-
-            autoplay: true
-            autoPlayDelay: 5000
-            slides:
-              - navLabel: 'Welcome'
-                isReverse: false
-                text:
-                  title: 'Welcome to Our Site'
-                  titleTag: 'h1'
-                  prose: 'Engaging content that captures attention'
-                  isCentered: true
-                ctas:
-                  - url: '/get-started'
-                    label: 'Get Started'
-                    isButton: true
-                    buttonStyle: 'primary'
-                background:
-                  color: '#2c3e50'
-                  isDark: true
-                  image:
-                    src: '/assets/images/hero-bg.jpg'
-                    alt: 'Hero background'
-                  imageScreen: 'dark'
-              - navLabel: 'Features'
-                isReverse: true
-                text:
-                  title: 'Amazing Features'
-                  prose: 'Discover what makes us different'
-                image:
-                  src: '/assets/images/feature.jpg'
-                  alt: 'Feature image'
-                background:
-                  color: '#34495e'
-                  isDark: true
-        ```
-
-        ### Slide Configuration Options
-
-        | Property | Type | Description |
-        |----------|------|-------------|
-        | `navLabel` | string | Text shown in navigation |
-        | `isReverse` | boolean | Reverse content layout direction |
-        | `text` | object | Text content (title, subtitle, prose, etc.) |
-        | `ctas` | array | Call-to-action buttons |
-        | `image` | object | Content image (shown alongside text) |
-        | `background` | object | Background configuration with color, image, or video |
 
   - sectionType: hero-slider
     containerTag: section
@@ -355,14 +270,14 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
-      inContainer: true
+      inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
@@ -373,11 +288,77 @@ sections:
         imageScreen: 'none'
     text:
       leadIn: ''
-      title: 'Implementation Notes'
+      title: 'Configuration'
       titleTag: 'h2'
       subTitle: ''
       prose: |-
-        ### Best Practices
+        ```yaml
+        sections:
+          - sectionType: hero-slider
+            # other settings
+
+            autoplay: true
+            autoPlayDelay: 5000
+            slides:
+              - navLabel: 'Welcome'
+                isReverse: false
+                text:
+                  title: 'Welcome to Our Site'
+                  titleTag: 'h1'
+                  prose: 'Engaging content that captures attention'
+                  isCentered: true
+                ctas:
+                  - url: '/get-started'
+                    label: 'Get Started'
+                    isButton: true
+                    buttonStyle: 'primary'
+                background:
+                  color: '#2c3e50'
+                  isDark: true
+                  image:
+                    src: '/assets/images/hero-bg.jpg'
+                    alt: 'Hero background'
+                  imageScreen: 'dark'
+              - navLabel: 'Features'
+                isReverse: true
+                text:
+                  title: 'Amazing Features'
+                  prose: 'Discover what makes us different'
+                image:
+                  src: '/assets/images/feature.jpg'
+                  alt: 'Feature image'
+                background:
+                  color: '#34495e'
+                  isDark: true
+        ```
+
+        ### Configuration Options
+
+        | Property | Type | Description |
+        |----------|------|-------------|
+        | `navLabel` | string | Text shown in navigation |
+        | `isReverse` | boolean | Reverse content layout direction |
+        | `text` | object | Text content (title, subtitle, prose, etc.) |
+        | `ctas` | array | Call-to-action buttons |
+        | `image` | object | Content image (shown alongside text) |
+        | `background` | object | Background configuration with color, image, or video |
+
+        ### Notes
+
+        The hero slider component transforms static hero sections into dynamic, engaging experiences. Each slide can contain unique combinations of text, images, and backgrounds, allowing you to tell a complete story or showcase multiple aspects of your product or service.
+
+        #### Key Features
+
+        - **Multiple Slides** - Unlimited slides with individual configurations
+        - **Rich Media Backgrounds** - Support for colors, images, and videos
+        - **Autoplay Control** - Optional automatic progression with configurable timing
+        - **Smooth Transitions** - Hardware-accelerated CSS animations
+        - **Responsive Design** - Adapts seamlessly to all screen sizes
+        - **Navigation Controls** - Bottom navigation with labeled indicators
+        - **Layout Flexibility** - Support for reversed layouts and content positioning
+        - **Screen Overlays** - Optional overlays for better text readability
+
+        #### Best Practices
 
         1. **Slide Count** - Keep to 3-5 slides for optimal user experience
         2. **Navigation Labels** - Use short, descriptive labels (1-2 words)
@@ -386,7 +367,7 @@ sections:
         5. **Text Contrast** - Use screen overlays when text overlays images
         6. **Mobile Experience** - Content images automatically hide on mobile devices
 
-        ### Performance
+        #### Performance
 
         The hero slider implements several performance optimizations:
         - Hardware-accelerated CSS transforms for smooth transitions
@@ -395,7 +376,7 @@ sections:
         - Automatic cleanup of transitions
         - Intelligent video playback management
 
-        ### Accessibility
+        #### Accessibility
 
         - Semantic HTML structure with proper heading hierarchy
         - ARIA labels on navigation elements

@@ -13,21 +13,20 @@
     <span id="top"></span>
     {% include "components/sections/header/header.njk" %}
 
-    <div class="page-wrapper">
-      <aside class="references sidebar">
-        {% include "components/_helpers/references.njk" %}
-      </aside>
+    <aside class="references sidebar">
+      {% include "components/_helpers/references.njk" %}
+    </aside>
 
-      <main>
-        {{ breadcrumbs(navigation.breadcrumbs) }}
+    <main>
+      {{ breadcrumbs(navigation.breadcrumbs) }}
 
-        {% block body %}
-          {# will be replaced by page content #}
-        {% endblock %}
+      {% block body %}
+        {# will be replaced by page content #}
+      {% endblock %}
 
-        {% include "components/sections/footer/footer.njk" %}
-      </main>
-    </div>
+      {% include "components/sections/footer/footer.njk" %}
+    </main>
+
 
     <script src="/assets/main.js"></script>
 

@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -45,41 +45,7 @@ sections:
       title: 'Image compare Section'
       titleTag: 'h1'
       subTitle: ''
-      prose: |-
-        A section for comparing before and after images.
-
-        ```yaml
-        - sectionType: image-compare
-          containerTag: section
-          # container settings
-
-          imageBefore:
-            src: '/assets/images/before-photo.jpg'
-            alt: 'Description of the image for accessibility'
-            caption: ''
-          imageAfter:
-            src: '/assets/images/after-photo.jpg'
-            alt: 'Description of the image for accessibility'
-            caption: ''
-        ```
-
-        ### Configuration Options
-
-        #### Image Properties
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `imageBefore` | object | Yes | the before image |
-        | `imageAfter` | object | Yes | the after image |
-
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `src` | string | Yes | Path to the image file |
-        | `alt` | string | Yes | Alternative text for accessibility |
-        | `caption` | string | No | Optional caption text displayed below the image |
-
-        ## Example
+      prose: 'A section for comparing before and after images.'
 
   - sectionType: image-compare
     containerTag: section
@@ -107,4 +73,59 @@ sections:
       src: '/assets/images/after.jpg'
       alt: 'Description of the image for accessibility'
       caption: ''
+
+  - sectionType: text-only
+    containerTag: section
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: image-compare
+          containerTag: section
+          # container settings
+
+          imageBefore:
+            src: '/assets/images/before-photo.jpg'
+            alt: 'Description of the image for accessibility'
+            caption: ''
+          imageAfter:
+            src: '/assets/images/after-photo.jpg'
+            alt: 'Description of the image for accessibility'
+            caption: ''
+        ```
+
+        ### Notes
+
+        #### Image Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `imageBefore` | object | Yes | the before image |
+        | `imageAfter` | object | Yes | the after image |
+
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `src` | string | Yes | Path to the image file |
+        | `alt` | string | Yes | Alternative text for accessibility |
+        | `caption` | string | No | Optional caption text displayed below the image |
 ---

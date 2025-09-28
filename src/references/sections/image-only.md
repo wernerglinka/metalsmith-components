@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -46,47 +46,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A focused section for displaying images with optional captions and call-to-action buttons. Perfect for showcasing featured images.
-
-        ```yaml
-        - sectionType: image-only
-          containerTag: section
-          # container settings
-
-          image:
-            src: '/assets/images/featured-photo.jpg'
-            alt: 'Description of the image for accessibility'
-            caption: 'Optional caption providing context or description'
-          ctas:
-            - url: 'https://example.com/gallery'
-              label: 'View Full Gallery'
-              isButton: true
-              buttonStyle: 'primary'
-        ```
-
-        ### Key Features
-
-        - Clean, centered image display
-        - Optional image captions
-        - Support for multiple CTA buttons
-        - Responsive image sizing
-        - Accessibility-focused alt text support
-
-        ### Configuration Options
-
-        #### Image Properties
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `image.src` | string | Yes | Path to the image file |
-        | `image.alt` | string | Yes | Alternative text for accessibility |
-        | `image.caption` | string | No | Optional caption text displayed below the image |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `ctas` | array | No | Optional array of call-to-action buttons or links |
+        A section for displaying images with optional captions and CTAs. Essentially a section wrapper for the image partial.
 
   - sectionType: image-only
     containerTag: section
@@ -115,6 +75,64 @@ sections:
         label: 'View Gallery'
         isButton: true
         buttonStyle: 'primary'
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: ''
+      titleTag: 'h1'
+      subTitle: ''
+      prose: |-
+        ### Configuration
+
+        ```yaml
+        - sectionType: image-only
+          containerTag: section
+          # container settings
+
+          image:
+            src: '/assets/images/featured-photo.jpg'
+            alt: 'Description of the image for accessibility'
+            caption: 'Optional caption providing context or description'
+          ctas:
+            - url: 'https://example.com/gallery'
+              label: 'View Full Gallery'
+              isButton: true
+              buttonStyle: 'primary'
+        ```
+
+        ### Configuration Options
+
+        #### Image Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `image.src` | string | Yes | Path to the image file |
+        | `image.alt` | string | Yes | Alternative text for accessibility |
+        | `image.caption` | string | No | Optional caption text displayed below the image |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `ctas` | array | No | Optional array of call-to-action buttons or links |
 
   - sectionType: image-only
     containerTag: section

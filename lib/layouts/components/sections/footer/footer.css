@@ -20,7 +20,7 @@ footer {
   }
 }
 
-body.with-sidebar .page-wrapper footer {
+body.with-sidebar footer {
   background: none;
   box-shadow: none;
   padding-left: 0;

@@ -25,7 +25,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -33,7 +33,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -47,78 +47,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A specialized component for displaying syntax-highlighted code blocks with enhanced features. Extends the existing [Prism.js](https://prismjs.com/) implementation used in text-only sections with additional functionality for better user experience.
-
-        ### Key Features
-
-        - **Syntax Highlighting**: Uses Prism.js for accurate syntax highlighting across multiple programming languages
-        - **Language Labels**: Displays the programming language in a styled tab
-        - **Copy to Clipboard**: One-click copying with visual feedback
-        - **Dynamic Theme Loading**: Load Prism themes on-demand from CDN
-        - **Responsive Design**: Mobile-friendly layout with proper scaling
-        - **Accessibility**: ARIA labels and keyboard support
-        - **File Names**: Optional filename display in the header
-
-        ### Implementation Example
-
-        ```yaml
-        - sectionType: code
-          containerTag: section
-          containerFields:
-            inContainer: true
-            isAnimated: true
-          code:
-            language: "javascript"      # Programming language for highlighting
-            theme: "default"           # Prism theme (default, tomorrow, okaidia, etc.)
-            filename: "app.js"         # Optional filename display
-            showCopy: true             # Enable/disable copy button
-            content: |                 # The code content
-              function example() {
-                console.log('Hello, World!');
-              }
-        ```
-
-        ### Configuration Options
-
-        #### Code Properties
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `language` | string | Yes | Programming language for syntax highlighting (javascript, css, html, python, etc.) |
-        | `content` | string | Yes | The actual code content using YAML literal block syntax |
-        | `theme` | string | No | Prism theme to load dynamically from CDN (default: 'default') |
-        | `filename` | string | No | Optional filename to display in the header |
-        | `showCopy` | boolean | No | Show/hide the copy button (default: true) |
-
-
-        ### Supported Languages
-
-        The component supports all languages available in [Prism.js](https://prismjs.com/) including:
-        - JavaScript, TypeScript, JSX
-        - HTML, CSS, SCSS, Less
-        - Python, PHP, Ruby, Java
-        - Go, Rust, C++, C#
-        - YAML, JSON, Markdown
-        - Bash, PowerShell, SQL
-        - And many more...
-
-        ### Available Themes
-
-        The component supports multiple Prism themes that are loaded dynamically:
-        - `default` - Uses the existing theme from text-only component
-        - `tomorrow` - GitHub-style dark theme
-        - `okaidia` - Monokai-inspired theme
-        - `twilight` - TextMate twilight theme
-        - `prism` - Clean light theme
-        - `dark` - High contrast dark theme
-        - `solarizedlight` - Solarized light theme
-        - `coy` - Minimal light theme
-
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
+        A specialized component for displaying syntax-highlighted code blocks with enhanced features. Extends the existing [Prism.js](https://prismjs.com/) implementation used in text-only sections with additional functionality.
 
   - sectionType: code
     containerTag: section
@@ -258,4 +187,82 @@ sections:
                 console.log('Hello from Metalsmith!');
         ---
         ```
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: code
+          containerTag: section
+          containerFields:
+            inContainer: true
+            isAnimated: true
+          code:
+            language: "javascript"      # Programming language for highlighting
+            theme: "default"           # Prism theme (default, tomorrow, okaidia, etc.)
+            filename: "app.js"         # Optional filename display
+            showCopy: true             # Enable/disable copy button
+            content: |                 # The code content
+              function example() {
+                console.log('Hello, World!');
+              }
+        ```
+
+        ### Configuration Options
+
+        #### Code Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `language` | string | Yes | Programming language for syntax highlighting (javascript, css, html, python, etc.) |
+        | `content` | string | Yes | The actual code content using YAML literal block syntax |
+        | `theme` | string | No | Prism theme to load dynamically from CDN (default: 'default') |
+        | `filename` | string | No | Optional filename to display in the header |
+        | `showCopy` | boolean | No | Show/hide the copy button (default: true) |
+
+        ### Notes
+
+        #### Supported Languages
+
+        The component supports all languages available in [Prism.js](https://prismjs.com/) including:
+        - JavaScript, TypeScript, JSX
+        - HTML, CSS, SCSS, Less
+        - Python, PHP, Ruby, Java
+        - Go, Rust, C++, C#
+        - YAML, JSON, Markdown
+        - Bash, PowerShell, SQL
+        - And many more...
+
+        #### Available Themes
+
+        The component supports multiple Prism themes that are loaded dynamically:
+        - `default` - Uses the existing theme from text-only component
+        - `tomorrow` - GitHub-style dark theme
+        - `okaidia` - Monokai-inspired theme
+        - `twilight` - TextMate twilight theme
+        - `prism` - Clean light theme
+        - `dark` - High contrast dark theme
+        - `solarizedlight` - Solarized light theme
+        - `coy` - Minimal light theme
 ---

@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -46,47 +46,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A focused section for displaying images with optional captions and call-to-action buttons. Perfect for showcasing featured images.
-
-        ```yaml
-        - sectionType: image-only
-          containerTag: section
-          # container settings
-
-          image:
-            src: '/assets/images/featured-photo.jpg'
-            alt: 'Description of the image for accessibility'
-            caption: 'Optional caption providing context or description'
-          ctas:
-            - url: 'https://example.com/gallery'
-              label: 'View Full Gallery'
-              isButton: true
-              buttonStyle: 'primary'
-        ```
-
-        ### Key Features
-
-        - Clean, centered image display
-        - Optional image captions
-        - Support for multiple CTA buttons
-        - Responsive image sizing
-        - Accessibility-focused alt text support
-
-        ### Configuration Options
-
-        #### Image Properties
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `image.src` | string | Yes | Path to the image file |
-        | `image.alt` | string | Yes | Alternative text for accessibility |
-        | `image.caption` | string | No | Optional caption text displayed below the image |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `ctas` | array | No | Optional array of call-to-action buttons or links |
+        A section for displaying SVG icons with optional links. Essentially a section wrapper for the icon partial.
 
   - sectionType: icon-only
     containerTag: section
@@ -111,32 +71,50 @@ sections:
       title: 'Feather'
       url: ''
 
-  - sectionType: image-only
-    containerTag: section
-    classes: ''
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
         bottom: false
       background:
-        isDark: true
         color: ''
-        image: '/assets/images/sample10.jpg'
-        imageScreen: 'dark' # light, dark, none
-    image:
-      src: '/assets/images/sample6.jpg'
-      alt: 'Image with dark background treatment'
-      caption: 'Full-width background with overlay image'
-    ctas:
-      - url: ''
-        label: 'Learn More'
-        isButton: true
-        buttonStyle: 'inverted'
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: ''
+      titleTag: 'h1'
+      subTitle: ''
+      prose: |-
+        ### Configuration
+
+        ```yaml
+        - sectionType: icon-only
+          containerTag: section
+          # container settings
+
+          icon:
+            icon: 'feather'  # Name of the Feather icon
+            title: 'Feather'
+            url: ''          # Optional link URL
+        ```
+
+        ### Configuration Options
+
+        #### Icon Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `icon.icon` | string | Yes | Name of the Feather icon to display |
+        | `icon.title` | string | No | Title/tooltip text for the icon |
+        | `icon.url` | string | No | Optional URL to make the icon clickable |
 ---

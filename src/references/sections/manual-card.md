@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -45,13 +45,31 @@ sections:
       title: 'Manual Cards List Component'
       titleTag: h1
       subTitle: ''
+      prose: 'Manual Cards provide complete control over content and presentation. Unlike the collection-card which automatically displays collection items, the manual-card allows for custom combinations of images, text, icons, and CTAs with various layout options.'
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: 'configuration'
+    isDisabled: false
+    isAnimated: true
+    inContainer: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      title: 'Configuration'
+      titleTag: h2
       prose: |
-        Manual Cards provide complete control over content and presentation. Unlike the collection-card which automatically displays collection items, the manual-card allows for custom combinations of images, text, icons, and CTAs with various layout options.
-
-        Key features include support for background images, decorative icons, pattern backgrounds, horizontal layouts, and the ability to make the entire card clickable with a link wrapper.
-
-        ### Implementation Example
-
         ```yaml
         hasHorizontalCards: false # true for horizontal card layout
         cards:
@@ -81,30 +99,14 @@ sections:
         # other manual cards
         ```
 
-  - sectionType: text-only
-    containerTag: article
-    classes: ''
-    id: 'configuration'
-    isDisabled: false
-    isAnimated: true
-    inContainer: true
-    containerFields:
-      inContainer: false
-      noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none'
-    text:
-      title: 'Card Configuration Options'
-      titleTag: h2
-      prose: |
-        ### Properties
+        ### Notes
+
+        - Support for background images, decorative icons, pattern backgrounds, horizontal layouts
+        - Entire card can be made clickable with a link wrapper
+        - Complete control over content and presentation
+        - Custom combinations of images, text, icons, and CTAs
+
+        #### Properties
 
         | Property | Type | Description |
         |----------|------|-------------|

@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -45,38 +45,7 @@ sections:
       title: 'Simple Accordion Section'
       titleTag: 'h1'
       subTitle: ''
-      prose: |-
-        An interactive accordion component for displaying frequently asked questions or any collapsible content. Features smooth animations, accessibility support, and flexible data loading from JSON files.
-
-        ## Features
-
-        - **Dynamic Data Loading**: Load all FAQs or select specific ones by ID
-        - **Flexible Configuration**: Control expand behavior and multiple item expansion
-        - **Accessible**: Full keyboard navigation and screen reader support
-        - **Smooth Animations**: CSS-based transitions for expand/collapse
-        - **Responsive Design**: Adapts to mobile and desktop screens
-
-        ## Configuration Options
-
-        | Property | Type | Description |
-        |----------|------|-------------|
-        | `faqs.scope` | string | "all" or "selections" - determines data loading |
-        | `faqs.source` | string | data source in lib/data/ (e.g., "faqs") |
-        | `faqs.selections` | array | array of IDs when scope is "selections" |
-        | `expandIndex` | number | index of item to expand by default (0-based) |
-        | `allowMultiple` | boolean | allow multiple expanded items |
-
-        **Example:**
-        ```yaml
-        faqs:
-          scope: "all"
-          source: "faqs"
-          selections:
-            - "getting-started"
-            - "component-structure"
-        expandIndex: 0
-        allowMultiple: false
-        ```
+      prose: 'An interactive accordion component for displaying frequently asked questions or any collapsible content. Features smooth animations, accessibility support, and flexible data loading from JSON files.'
     ctas: []
 
   - sectionType: simple-accordion
@@ -203,5 +172,57 @@ sections:
         - Hover and focus states for accessibility
         - Customizable through CSS variables
         - Mobile-optimized spacing and typography
+    ctas: []
+
+  - sectionType: text-only
+    containerTag: section
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        faqs:
+          scope: "all"
+          source: "faqs"
+          selections:
+            - "getting-started"
+            - "component-structure"
+        expandIndex: 0
+        allowMultiple: false
+        ```
+
+        ### Notes
+
+        - **Dynamic Data Loading**: Load all FAQs or select specific ones by ID
+        - **Flexible Configuration**: Control expand behavior and multiple item expansion
+        - **Accessible**: Full keyboard navigation and screen reader support
+        - **Smooth Animations**: CSS-based transitions for expand/collapse
+        - **Responsive Design**: Adapts to mobile and desktop screens
+
+        | Property | Type | Description |
+        |----------|------|-------------|
+        | `faqs.scope` | string | "all" or "selections" - determines data loading |
+        | `faqs.source` | string | data source in lib/data/ (e.g., "faqs") |
+        | `faqs.selections` | array | array of IDs when scope is "selections" |
+        | `expandIndex` | number | index of item to expand by default (0-based) |
+        | `allowMultiple` | boolean | allow multiple expanded items |
     ctas: []
 ---

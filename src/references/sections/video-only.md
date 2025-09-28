@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -46,58 +46,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A specialized section for displaying video content from multiple sources including YouTube, Vimeo, and Cloudinary. Supports both modal and inSitu video playback options.
-
-        ```yaml
-        - sectionType: video-only
-          containerTag: section
-          # container settings
-
-          video:
-            id: 'dQw4w9WgXcQ'            # Video ID from the platform
-            src: 'youtube'               # Platform: youtube, vimeo, cloudinary
-            tn: '/path/to/thumbnail.jpg' # Thumbnail image
-            inSitu: false                # Modal (false) or inSitu (true) playback
-            cloudname: 'your-cloud'      # Required for Cloudinary videos
-            start: 30                    # Optional start time in seconds
-            end: 120                     # Optional end time in seconds
-          ctas:
-            - url: 'https://example.com/playlist'
-              label: 'View Playlist'
-              isButton: true
-              buttonStyle: 'primary'
-        ```
-
-        ### Video Sources Supported
-
-        - **YouTube**: Use video ID from YouTube URL
-        - **Vimeo**: Use video ID from Vimeo URL  
-        - **Cloudinary**: Requires cloudname parameter for video delivery
-
-        ### Playback Options
-
-        - **Modal**: Video opens in a modal overlay (default)
-        - **inSitu**: Video embeds directly in the page
-
-        ### Configuration Options
-
-        #### Video Properties
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `video.id` | string | Yes | Video identifier from the platform |
-        | `video.src` | string | Yes | Video platform - 'youtube', 'vimeo', or 'cloudinary' |
-        | `video.tn` | string | Yes | Thumbnail image path |
-        | `video.inSitu` | boolean | No | Boolean for inSitu vs modal playback |
-        | `video.cloudname` | string | Conditional | Cloudinary cloud name (required for Cloudinary) |
-        | `video.start` | number | No | Start time in seconds |
-        | `video.end` | number | No | End time in seconds |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `ctas` | array | No | Optional array of call-to-action buttons |
+        A section for displaying video content from YouTube, Vimeo, and Cloudinary with modal and inSitu playback options. Essentially a section wrapper for the video partial.
 
   - sectionType: video-only
     containerTag: section
@@ -159,4 +108,76 @@ sections:
         label: 'Learn More'
         isButton: true
         buttonStyle: 'inverted'
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: ''
+      titleTag: 'h1'
+      subTitle: ''
+      prose: |-
+        ### Configuration
+
+        ```yaml
+        - sectionType: video-only
+          containerTag: section
+          # container settings
+
+          video:
+            id: 'dQw4w9WgXcQ'            # Video ID from the platform
+            src: 'youtube'               # Platform: youtube, vimeo, cloudinary
+            tn: '/path/to/thumbnail.jpg' # Thumbnail image
+            inSitu: false                # Modal (false) or inSitu (true) playback
+            cloudname: 'your-cloud'      # Required for Cloudinary videos
+            start: 30                    # Optional start time in seconds
+            end: 120                     # Optional end time in seconds
+          ctas:
+            - url: 'https://example.com/playlist'
+              label: 'View Playlist'
+              isButton: true
+              buttonStyle: 'primary'
+        ```
+
+        ### Configuration Options
+
+        #### Video Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `video.id` | string | Yes | Video identifier from the platform |
+        | `video.src` | string | Yes | Video platform - 'youtube', 'vimeo', or 'cloudinary' |
+        | `video.tn` | string | Yes | Thumbnail image path |
+        | `video.inSitu` | boolean | No | Boolean for inSitu vs modal playback |
+        | `video.cloudname` | string | Conditional | Cloudinary cloud name (required for Cloudinary) |
+        | `video.start` | number | No | Start time in seconds |
+        | `video.end` | number | No | End time in seconds |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `ctas` | array | No | Optional array of call-to-action buttons |
+
+        ### Notes
+
+        - **Video Sources**: Supports YouTube, Vimeo, and Cloudinary
+        - **Modal Playback**: Video opens in a modal overlay (default)
+        - **inSitu Playback**: Video embeds directly in the page
 ---

@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: 'first-section'
     isDisabled: false
     isAnimated: true
@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: true
@@ -47,78 +47,6 @@ sections:
       subTitle: ''
       prose: |-
         Interactive flip card components with front and back content, icons, and CTAs. The flip cards are rendered in a flex container with responsive layout and smooth flip animations.
-
-        ### Key Features
-
-        - **Interactive Flip Animation**: Smooth card flip transitions on hover or click
-        - **Dual-Side Content**: Separate content for front and back of each card
-        - **Icon Support**: Front side can include icons from the icon library
-        - **Flexible Content**: Support for text, markdown, and call-to-action buttons
-        - **Responsive Layout**: Flexible container adapts to different screen sizes
-        - **Customizable Styling**: Full control over card appearance and behavior
-
-        ### Implementation Example
-
-        ```yaml
-        - sectionType: flip-cards
-          containerTag: aside
-          #more settings
-
-          cards:
-            - front:
-                icon: 'activity'
-                text:
-                  leadIn: 'Simple Text Section'
-                  title: The Card Title
-                  titleTag: 'h3'
-                  subTitle: ''
-                  prose: |-
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-              back:
-                text:
-                  leadIn: ''
-                  title: This is the back
-                  titleTag: 'h3'
-                  subTitle: ''
-                  prose: |-
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                ctas:
-                  - url: 'https://apple.com'
-                    label: 'Go Apple'
-                    isButton: false
-                    buttonStyle: 'primary'
-
-            # other flipcards
-        ```
-
-        ### Configuration Options
-
-        #### Card Layout
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `cards` | array | Yes | Array of flip card definitions |
-
-        #### Individual Card Properties
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `cards[n].front` | object | Yes | Front side content of the card |
-        | `cards[n].back` | object | Yes | Back side content of the card |
-
-        #### Front/Back Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `icon` | string | No | Icon name from lib/layouts/icons (front side only) |
-        | `text` | object | No | Text content with leadIn, title, titleTag, subTitle, and prose |
-        | `ctas` | array | No | Call-to-action buttons (typically on back side) |
-
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
 
   - sectionType: flip-cards
     containerTag: aside
@@ -234,4 +162,92 @@ sections:
               label: 'Learn More'
               isButton: true
               buttonStyle: 'primary small'
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: flip-cards
+          containerTag: aside
+          #more settings
+
+          cards:
+            - front:
+                icon: 'activity'
+                text:
+                  leadIn: 'Simple Text Section'
+                  title: The Card Title
+                  titleTag: 'h3'
+                  subTitle: ''
+                  prose: |-
+                    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+              back:
+                text:
+                  leadIn: ''
+                  title: This is the back
+                  titleTag: 'h3'
+                  subTitle: ''
+                  prose: |-
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                ctas:
+                  - url: 'https://apple.com'
+                    label: 'Go Apple'
+                    isButton: false
+                    buttonStyle: 'primary'
+
+            # other flipcards
+        ```
+
+        ### Configuration Options
+
+        #### Card Layout
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `cards` | array | Yes | Array of flip card definitions |
+
+        #### Individual Card Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `cards[n].front` | object | Yes | Front side content of the card |
+        | `cards[n].back` | object | Yes | Back side content of the card |
+
+        #### Front/Back Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `icon` | string | No | Icon name from lib/layouts/icons (front side only) |
+        | `text` | object | No | Text content with leadIn, title, titleTag, subTitle, and prose |
+        | `ctas` | array | No | Call-to-action buttons (typically on back side) |
+
+        ### Notes
+
+        - **Interactive Flip Animation**: Smooth card flip transitions on hover or click
+        - **Dual-Side Content**: Separate content for front and back of each card
+        - **Icon Support**: Front side can include icons from the icon library
+        - **Flexible Content**: Support for text, markdown, and call-to-action buttons
+        - **Responsive Layout**: Flexible container adapts to different screen sizes
+        - **Customizable Styling**: Full control over card appearance and behavior
 ---

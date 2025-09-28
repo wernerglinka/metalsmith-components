@@ -138,66 +138,6 @@ sections:
         ---
         ```
 
-        ### Key Features
-
-        - **Full-Screen Mode**: Optional full-screen hero sections with scroll targeting
-        - **Background Support**: Flexible background images with screen overlays
-        - **Scroll Navigation**: Interactive down-arrow for smooth section scrolling
-        - **Breadcrumb Integration**: Breadcrumbs positioned inside hero when enabled
-        - **Return-to-Top**: Automatic up-arrow for easy navigation back to top
-        - **Flexible Content**: Support for text, CTAs, and optional hero images
-
-        ### Implementation Example
-
-        ```yaml
-        - sectionType: hero
-          containerTag: section
-          classes: 'first-section'
-          isFullScreen: true
-          targetId: 'first-section'
-          containerFields:
-            inContainer: false
-            background:
-              isDark: false
-              image: '/assets/images/sample13.jpg'
-              imageScreen: 'none'
-          text:
-            leadIn: 'Metalsmith Components Library'
-            title: Hero
-            titleTag: 'h1'
-            prose: Examples of hero sections including full page. Click the down arrow at the bottom to scroll down.
-          ctas:
-            - url: '/'
-              label: 'go home'
-              isButton: true
-              buttonStyle: 'primary'
-        ```
-
-        ### Configuration Options
-
-        #### Hero Layout
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `isFullScreen` | boolean | No | Enable full-screen hero section (default: false) |
-        | `targetId` | string | No | ID of section to scroll to when down arrow is clicked |
-        | `isReverse` | boolean | No | Reverse the layout order |
-
-        #### Page Settings
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `hasHero` | boolean | No | Must be `true` for breadcrumbs to be placed inside hero |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `text` | object | Yes | Text content with leadIn, title, titleTag, subTitle, and prose |
-        | `ctas` | array | No | Call-to-action buttons |
-        | `image` | object | No | Optional hero image with src, alt, and caption |
-
-        **Note:** The `targetId` should be set to the `id` of the section to scroll to when the down arrow in the full-screen hero is clicked. Notice the up-arrow in the bottom right screen corner when scrolling starts, to return to the top of the page.
 
     ctas:
       - url: ''
@@ -277,4 +217,87 @@ sections:
       src: ''
       alt: ''
       caption: ''
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: hero
+          containerTag: section
+          classes: 'first-section'
+          isFullScreen: true
+          targetId: 'first-section'
+          containerFields:
+            inContainer: false
+            background:
+              isDark: false
+              image: '/assets/images/sample13.jpg'
+              imageScreen: 'none'
+          text:
+            leadIn: 'Metalsmith Components Library'
+            title: Hero
+            titleTag: 'h1'
+            prose: Examples of hero sections including full page. Click the down arrow at the bottom to scroll down.
+          ctas:
+            - url: '/'
+              label: 'go home'
+              isButton: true
+              buttonStyle: 'primary'
+        ```
+
+        ### Configuration Options
+
+        #### Hero Layout
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `isFullScreen` | boolean | No | Enable full-screen hero section (default: false) |
+        | `targetId` | string | No | ID of section to scroll to when down arrow is clicked |
+        | `isReverse` | boolean | No | Reverse the layout order |
+
+        #### Page Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `hasHero` | boolean | No | Must be `true` for breadcrumbs to be placed inside hero |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text` | object | Yes | Text content with leadIn, title, titleTag, subTitle, and prose |
+        | `ctas` | array | No | Call-to-action buttons |
+        | `image` | object | No | Optional hero image with src, alt, and caption |
+
+        ### Notes
+
+        - **Full-Screen Mode**: Optional full-screen hero sections with scroll targeting
+        - **Background Support**: Flexible background images with screen overlays
+        - **Scroll Navigation**: Interactive down-arrow for smooth section scrolling
+        - **Breadcrumb Integration**: Breadcrumbs positioned inside hero when enabled
+        - **Return-to-Top**: Automatic up-arrow for easy navigation back to top
+        - **Flexible Content**: Support for text, CTAs, and optional hero images
+
+        **Note:** The `targetId` should be set to the `id` of the section to scroll to when the down arrow in the full-screen hero is clicked. Notice the up-arrow in the bottom right screen corner when scrolling starts, to return to the top of the page.
 ---

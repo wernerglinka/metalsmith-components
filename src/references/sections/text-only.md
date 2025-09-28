@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -46,75 +46,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        A versatile section for displaying text content including lead-in text, titles, subtitles, and prose. Perfect for article content, documentation, or any text-focused layouts.
-
-        ### Key Features
-
-        - **Flexible Text Elements**: Support for lead-in, title, subtitle, and prose content
-        - **Markdown Support**: Full markdown formatting in prose content
-        - **Background Options**: Support for background colors and images with screen overlays
-        - **Semantic HTML**: Clean, semantic HTML output with proper heading hierarchy
-        - **Call-to-Action Support**: Optional CTA buttons for user engagement
-        - **Container Options**: Full-width or contained layout options
-
-        ### Implementation Example
-
-        ```yaml
-        - sectionType: text-only
-          containerTag: article
-          # more settings
-
-          text:
-            leadIn: 'Introduction'
-            title: 'Welcome to Our Platform'
-            titleTag: 'h2'
-            subTitle: 'Everything you need to know'
-            prose: |-
-              This is an example of a text-only section with all text elements populated. Notice how the lead-in text appears above the title, providing context for what follows.
-
-              The prose content supports **markdown formatting**, allowing you to create *emphasized text*, [hyperlinks](https://example.com), and structured content with ease.
-
-              ### Key Features
-
-              - Clean, semantic HTML output
-              - Full markdown support in prose content
-              - Flexible heading hierarchy
-              - Optional CTAs for user engagement
-
-              This section type is ideal for documentation, blog posts, or any content-heavy pages where text is the primary focus.
-          ctas:
-            - url: 'https://example.com/docs'
-              label: 'Read Documentation'
-              isButton: true
-              buttonStyle: 'primary'
-            - url: 'https://example.com/tutorial'
-              label: 'View Tutorial'
-              isButton: false
-              buttonStyle: 'secondary'
-        ```
-        ### Configuration Options
-
-        #### Text Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `text.leadIn` | string | No | Optional introductory text above the title |
-        | `text.title` | string | No | Main heading text |
-        | `text.titleTag` | string | No | HTML heading tag (h1-h6) |
-        | `text.subTitle` | string | No | Optional subtitle below the main title |
-        | `text.prose` | string | No | Markdown-formatted body content |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `ctas` | array | No | Optional array of call-to-action buttons or links |
-
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
+        A section for displaying text content with optional CTAs. Essentially a section wrapper for the text partial. Supports lead-in text, titles, subtitles, markdown-formatted prose, and flexible background options.
 
   - sectionType: text-only
     containerTag: article
@@ -221,9 +153,68 @@ sections:
       subTitle: 'With an image, dark screen and full screen width'
       prose: |-
         This text-only section demonstrates how background images with screens can be used. The screen is used so text above the image has enough contrast to be readable. `containerFields.inContainer: false` will render the background accross the whole screen width.
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: ''
+      titleTag: 'h1'
+      subTitle: ''
+      prose: |-
+        ### Configuration
+
+        ```yaml
+        - sectionType: text-only
+          containerTag: article
+          # container settings
+
+          text:
+            leadIn: 'Introduction'
+            title: 'Welcome to Our Platform'
+            titleTag: 'h2'
+            subTitle: 'Everything you need to know'
+            prose: |-
+              This is an example of a text-only section with all text elements populated.
+              The prose content supports **markdown formatting**.
+          ctas:
+            - url: 'https://example.com/docs'
+              label: 'Read Documentation'
+              isButton: true
+              buttonStyle: 'primary'
+        ```
+
+        ### Configuration Options
+
+        #### Text Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `text.leadIn` | string | No | Optional introductory text above the title |
+        | `text.title` | string | No | Main heading text |
+        | `text.titleTag` | string | No | HTML heading tag (h1-h6) |
+        | `text.subTitle` | string | No | Optional subtitle below the main title |
+        | `text.prose` | string | No | Markdown-formatted body content |
+
+        #### Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `ctas` | array | No | Optional array of call-to-action buttons or links |
 ---

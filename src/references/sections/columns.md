@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -47,67 +47,6 @@ sections:
       subTitle: ''
       prose: |-
         A flexible multi-column section that allows custom layouts by composing different content blocks. Each column can contain multiple blocks.
-
-        The example below can be used to merge with a previous hero section. The hero section has a class of `merge-with-next` which removes the bottom margin. The columns section has `containerFields.noMargin.top` set to true which removes the top margin. The columns section also has `inContainer` set to `true` which wraps the section in a container. This is a popular visual pattern in corporate and marketing websites.
-
-        ```yaml
-        - sectionType: columns
-          containerTag: section
-          classes: 'media-image hero-cta'
-          # more settings
-
-          contentClasses: ''
-          columns:
-            - column:
-              columnClasses: 'image'
-              blocks:
-                - image:
-                    src: '/assets/images/sample3.jpg'
-                    alt: 'sample image'
-                    caption: ''
-            - column:
-              columnClasses: 'text flow'
-              blocks:
-                - text:
-                    leadIn: This is different
-                    title: The Power of Composable Pages
-                    titleTag: 'h2'
-                    subTitle: ''
-                    prose: |-
-                      This is an example of a composed section. Rather then using a monolithic section, the composed section allows for multiple columns of content. Allowing the composition of custom layouts.
-        ```
-
-        ### Configuration Options
-
-        #### Column Layout
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `contentClasses` | string | No | CSS classes applied to the content wrapper |
-        | `columns` | array | Yes | Array of column definitions |
-
-        #### Column Properties
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `column.columnClasses` | string | No | CSS classes for styling individual columns |
-        | `column.blocks` | array | Yes | Array of content blocks within a column |
-
-        #### Block Types
-
-        | Block Type | Description |
-        |------------|-------------|
-        | `text` | Text content block with leadIn, title, titleTag, subTitle, and prose |
-        | `image` | Image block with src, alt, and caption |
-        | `ctas` | Call-to-action buttons or links |
-
-        Multiple blocks can be combined within a single column to create custom layouts.
-
-    ctas:
-      - url: ''
-        label: ''
-        isButton: true
-        buttonStyle: 'primary'
 
   - sectionType: text-only
     containerTag: article
@@ -261,4 +200,85 @@ sections:
               src: '/assets/images/sample9.jpg'
               alt: 'sample image 9'
               caption: ''
+
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: columns
+          containerTag: section
+          classes: 'media-image hero-cta'
+          # more settings
+
+          contentClasses: ''
+          columns:
+            - column:
+              columnClasses: 'image'
+              blocks:
+                - image:
+                    src: '/assets/images/sample3.jpg'
+                    alt: 'sample image'
+                    caption: ''
+            - column:
+              columnClasses: 'text flow'
+              blocks:
+                - text:
+                    leadIn: This is different
+                    title: The Power of Composable Pages
+                    titleTag: 'h2'
+                    subTitle: ''
+                    prose: |-
+                      This is an example of a composed section. Rather then using a monolithic section, the composed section allows for multiple columns of content. Allowing the composition of custom layouts.
+        ```
+
+        ### Configuration Options
+
+        #### Column Layout
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `contentClasses` | string | No | CSS classes applied to the content wrapper |
+        | `columns` | array | Yes | Array of column definitions |
+
+        #### Column Properties
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `column.columnClasses` | string | No | CSS classes for styling individual columns |
+        | `column.blocks` | array | Yes | Array of content blocks within a column |
+
+        #### Block Types
+
+        | Block Type | Description |
+        |------------|-------------|
+        | `text` | Text content block with leadIn, title, titleTag, subTitle, and prose |
+        | `image` | Image block with src, alt, and caption |
+        | `ctas` | Call-to-action buttons or links |
+
+        ### Notes
+
+        Multiple blocks can be combined within a single column to create custom layouts.
+
+        The example below can be used to merge with a previous hero section. The hero section has a class of `merge-with-next` which removes the bottom margin. The columns section has `containerFields.noMargin.top` set to true which removes the top margin. The columns section also has `inContainer` set to `true` which wraps the section in a container. This is a popular visual pattern in corporate and marketing websites.
 ---

@@ -137,4 +137,87 @@ sections:
       title: 'Baseball Great'
       company: 'New York Yankees'
       logo: '/assets/images/new-york-yankees-logo.svg'
+
+  - sectionType: text-only
+    containerTag: section
+    classes: 'first-text-section'
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: false
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Configuration'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        ```yaml
+        - sectionType: testimonial
+          containerTag: aside
+          classes: ''
+          id: ''
+          isDisabled: false
+          isReverse: false
+          containerFields:
+            inContainer: false
+            isAnimated: true
+            noMargin:
+              top: true
+              bottom: false
+            noPadding:
+              top: false
+              bottom: false
+            background:
+              color: 'lightgray'
+              image: ''
+              imageScreen: 'none' # light, dark, none
+          quote:
+            text: "You've got to be very careful if you don't know where you are going, because you might not get there."
+            cite: 'https://en.wikipedia.org/wiki/Yogi_Berra'
+          quotee:
+            portrait:
+              src: '/assets/images/yogi-berra-baseball-great.jpg'
+              alt: "Lawrence Peter 'Yogi' Berra"
+            name: 'Yogi Berra'
+            title: 'Baseball Great'
+            company: 'New York Yankees'
+            logo: '/assets/images/new-york-yankees-logo.svg'
+        ```
+
+        ### Notes
+
+        - Display customer testimonials with quotes, citations, portraits, and company logos
+        - Professional testimonial section for building trust and social proof
+        - Flexible layout with optional portrait, name, title, company, and logo
+        - All quotee elements are optional and can be omitted as needed
+
+        #### Quote Content
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `quote.text` | string | Yes | The testimonial quote text |
+        | `quote.cite` | string | No | Optional URL for quote citation |
+
+        #### Quotee Information
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `quotee.portrait.src` | string | No | Path to portrait image |
+        | `quotee.portrait.alt` | string | No | Alt text for portrait image |
+        | `quotee.name` | string | No | Name of the person quoted |
+        | `quotee.title` | string | No | Job title or role |
+        | `quotee.company` | string | No | Company or organization name |
+        | `quotee.logo` | string | No | Path to company/organization logo |
+    ctas: []
 ---
