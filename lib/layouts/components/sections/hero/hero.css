@@ -25,13 +25,13 @@
 
   .full-screen {
     position: absolute;
-    bottom: 2rem;
+    bottom: var(--space-m);
     left: 55%;
     transform: translateX(-50%);
     border: none;
-    width: 2.6rem;
-    height: 2.6rem;
-    padding: 0.3rem;
+    width: var(--space-l);
+    height: var(--space-l);
+    padding: var(--space-3xs);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -48,11 +48,6 @@
       svg {
         stroke-width: 2px;
       }
-    }
-
-    &:focus {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
     }
   }
 
@@ -72,8 +67,4 @@
   &.is-reverse .text {
     margin-left: auto;
   }
-}
-
-/** Dark Theme styles variations */
-.dark-theme .section-wrapper.hero {
 }

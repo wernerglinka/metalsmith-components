@@ -225,3 +225,69 @@
   z-index: 1000;
   border-radius: 4px;
 }
+
+/**
+ * Focus Indicator Utility
+ * Provides consistent focus styles across all interactive elements
+ */
+button:focus,
+a:focus,
+[tabindex]:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+[tabindex]:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/**
+ * Glass Morphism Utilities
+ * Reusable glass effect patterns used across multiple components
+ */
+.glass-surface {
+  background-color: var(--glass-background);
+  border: var(--glass-border);
+  border-radius: var(--glass-border-radius);
+  box-shadow: var(--glass-box-shadow);
+  backdrop-filter: var(--glass-backdrop-filter);
+}
+
+.glass-surface-light {
+  background-color: var(--glass-background-light);
+}
+
+.glass-surface-dark {
+  background-color: var(--glass-background-dark);
+}
+
+.glass-surface-dark-card {
+  background-color: var(--glass-background-dark-card);
+}
+
+/**
+ * Text Content Width Utility
+ * Constrains text to optimal reading width and centers it
+ */
+.text-content-width {
+  max-width: clamp(45ch, 65ch, 80ch);
+  margin-inline: auto;
+}
+
+/**
+ * List Reset Utility
+ * Removes default list styling
+ */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

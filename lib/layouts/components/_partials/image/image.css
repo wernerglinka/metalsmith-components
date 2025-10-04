@@ -33,6 +33,6 @@
     width: 100%;
     font-size: var(--font-xs);
     padding: var(--space-xs);
-    color: #ccc;
+    color: var(--color-text-dark);
   }
 }

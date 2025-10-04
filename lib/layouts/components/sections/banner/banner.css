@@ -55,17 +55,6 @@
     opacity: 0.8;
   }
 
-  /* Focus indicator */
-  &:focus {
-    outline: 2px solid var(--color-primary, #007acc);
-    outline-offset: 2px;
-  }
-
-  /* Remove default focus outline */
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   /* Plus/minus indicators using design tokens */
   h2::after,
   h3::after {

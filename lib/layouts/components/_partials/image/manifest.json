@@ -1,7 +1,24 @@
 {
   "name": "image",
-  "type": "_partials",
+  "type": "partial",
   "styles": ["image.css"],
   "scripts": [],
-  "requires": []
+  "requires": [],
+  "validation": {
+    "required": ["src", "alt"],
+    "properties": {
+      "src": {
+        "type": "string"
+      },
+      "alt": {
+        "type": "string"
+      },
+      "caption": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      }
+    }
+  }
 }

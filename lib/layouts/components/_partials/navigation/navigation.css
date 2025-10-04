@@ -11,17 +11,6 @@
   padding: 8px;
   border-radius: 4px;
 
-  /* Focus indicator */
-  &:focus {
-    outline: 2px solid var(--color-primary, #007acc);
-    outline-offset: 2px;
-  }
-
-  /* Remove default focus outline */
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   span {
     display: block;
     width: 25px;
@@ -74,17 +63,6 @@
   padding: 8px 12px;
   border-radius: 4px;
   transition: outline 0.2s ease;
-
-  /* Focus indicator */
-  &:focus {
-    outline: 2px solid var(--color-primary, #007acc);
-    outline-offset: 2px;
-  }
-
-  /* Remove default focus outline */
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
 }
 
 /* Mobile menu styles */

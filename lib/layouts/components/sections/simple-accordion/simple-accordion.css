@@ -21,17 +21,6 @@
     &:hover {
       text-decoration: none;
     }
-
-    /* Focus indicator */
-    &:focus {
-      outline: 2px solid var(--color-primary, #007acc);
-      outline-offset: 2px;
-    }
-
-    /* Remove default focus outline */
-    &:focus:not(:focus-visible) {
-      outline: none;
-    }
   }
 
   .accordion-item {
@@ -56,16 +45,8 @@
       background-color: var(--color-surface-hover);
     }
 
-    /* Focus indicator */
     &:focus {
-      outline: 2px solid var(--color-primary, #007acc);
-      outline-offset: 2px;
       background-color: var(--color-surface-hover, rgb(0 0 0 / 5%));
-    }
-
-    /* Remove default focus outline */
-    &:focus:not(:focus-visible) {
-      outline: none;
     }
   }
 

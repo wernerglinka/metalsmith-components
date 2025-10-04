@@ -4,6 +4,8 @@
  */
 
 .manual-card {
+  container-type: inline-size;
+  container-name: manual-card;
   display: block;
   position: relative;
   max-width: 30rem;
@@ -213,7 +215,7 @@
     }
 
     /* Responsive behavior for smaller screens */
-    @media (max-width: 48rem) {
+    @container manual-card (max-width: 48rem) {
       flex-direction: column;
 
       .decoration {

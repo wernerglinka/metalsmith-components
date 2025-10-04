@@ -2,6 +2,11 @@
  * Unified Maps Component Styles
  * Shared styles for both Leaflet and OpenLayers providers
  */
+.maps {
+  container-type: inline-size;
+  container-name: maps;
+}
+
 .maps:not(.in-container) {
   padding: 0;
 }
@@ -229,7 +234,7 @@
 }
 
 /* Responsive design */
-@media (width <= 768px) {
+@container maps (max-width: 768px) {
   .js-leaflet-map,
   .js-openlayers-map {
     height: 300px;

@@ -1,7 +1,21 @@
 {
   "name": "icon",
-  "type": "_partials",
+  "type": "partial",
   "styles": ["icon.css"],
   "scripts": [],
-  "requires": []
+  "requires": [],
+  "validation": {
+    "required": ["icon"],
+    "properties": {
+      "icon": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      }
+    }
+  }
 }

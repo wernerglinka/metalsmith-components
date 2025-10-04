@@ -1,7 +1,11 @@
 {
   "name": "dark-light-theme-switcher",
-  "type": "_partials",
+  "type": "partial",
   "styles": ["dark-light-theme-switcher.css"],
   "scripts": ["dark-light-theme-switcher.js"],
-  "requires": []
+  "requires": ["icon"],
+  "validation": {
+    "required": [],
+    "properties": {}
+  }
 }

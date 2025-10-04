@@ -19,8 +19,8 @@
     text-align: center;
 
     .portrait {
-      width: 7rem;
-      height: 7rem;
+      width: var(--space-3xl);
+      height: var(--space-3xl);
       border-radius: 50%;
       overflow: hidden;
 
@@ -46,9 +46,9 @@
     }
 
     .logo {
-      margin-block-start: 1.5em;
-      width: 3rem;
-      height: 3rem;
+      margin-block-start: var(--space-m);
+      width: var(--space-xl);
+      height: var(--space-xl);
       overflow: hidden;
 
       picture {
@@ -79,8 +79,4 @@
       font-size: inherit;
     }
   }
-}
-
-/** Dark Theme styles variations */
-.dark-theme .section-wrapper.testimonial {
 }

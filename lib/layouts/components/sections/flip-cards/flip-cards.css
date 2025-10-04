@@ -10,11 +10,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
-    gap: 1rem;
+    gap: var(--space-s-m);
 
     > * {
-      height: 30rem;
-      width: 18rem;
+      height: clamp(25rem, 30rem, 35rem);
+      width: clamp(15rem, 18rem, 20rem);
       background-color: transparent;
       perspective: 1000px;
     }
@@ -32,8 +32,4 @@
       margin: 0;
     }
   }
-}
-
-/** Dark Theme styles variations */
-.dark-theme .section-wrapper.flip-cards {
 }

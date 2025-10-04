@@ -12,28 +12,17 @@
     outline 0.2s ease;
   transform-style: preserve-3d;
 
-  /* Focus indicator */
-  &:focus {
-    outline: 2px solid var(--color-primary, #007acc);
-    outline-offset: 2px;
-  }
-
-  /* Remove default focus outline */
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
   /* font sizes for card are constant for all viewport widths */
   .lead-in {
-    font-size: 0.75rem;
+    font-size: var(--font-xs);
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: var(--font-h5);
   }
 
   .prose {
-    font-size: 1rem;
+    font-size: var(--font-p);
   }
 
   .flip-icon {
@@ -67,7 +56,7 @@
 
     g,
     path {
-      fill: #fff;
+      fill: var(--color-background);
     }
   }
 }

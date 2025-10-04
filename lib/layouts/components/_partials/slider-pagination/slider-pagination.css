@@ -41,16 +41,8 @@
       cursor: default;
     }
 
-    /* Focus indicator */
     &:focus {
-      outline: 2px solid var(--color-primary, #007acc);
-      outline-offset: 2px;
       background: var(--color-primary-light, var(--color-primary));
-    }
-
-    /* Remove default focus outline */
-    &:focus:not(:focus-visible) {
-      outline: none;
     }
   }
 

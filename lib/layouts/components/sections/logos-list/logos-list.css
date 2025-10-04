@@ -70,7 +70,7 @@
 
   .hint {
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: var(--font-h5);
   }
 
   .marquee-container {
@@ -121,7 +121,7 @@
       }
 
       svg {
-        stroke: black;
+        stroke: var(--color-text);
         stroke-width: 1px;
         fill: none;
         width: 100%;
@@ -130,7 +130,7 @@
 
         * {
           fill: none;
-          stroke: black;
+          stroke: var(--color-text);
           stroke-width: 1px;
         }
       }
@@ -169,7 +169,7 @@
     }
 
     .logo-title {
-      font-size: 1rem;
+      font-size: var(--font-p);
       text-align: center;
     }
   }

@@ -126,6 +126,42 @@ mkdir -p lib/layouts/components/_partials/[component-name]
 }
 ```
 
+**Advanced: Multi-Provider Components with Modules**
+
+For components supporting multiple provider libraries (maps, video, podcast players), use the `modules` field:
+```json
+{
+  "name": "maps",
+  "type": "section",
+  "styles": ["maps.css"],
+  "scripts": ["maps.js"],
+  "requires": ["ctas", "text", "commons"],
+  "modules": {
+    "providers": ["leaflet.js", "openlayers.js"],
+    "helpers": ["load-script.js", "load-styles.js", "maps-utils.js", "icon-loader.js"]
+  }
+}
+```
+
+Components using the modules pattern:
+- **maps**: Supports Leaflet and OpenLayers providers via `mapProvider` field
+- **video**: Supports YouTube, Vimeo, and Cloudinary via `video.src` enum
+- **podcast**: Uses Shikwasa player with RSS parsing via dedicated modules
+
+Module organization:
+```
+component-name/
+├── modules/
+│   ├── providers/       # Alternative library implementations
+│   │   ├── provider-a.js
+│   │   └── provider-b.js
+│   └── helpers/         # Shared utilities
+│       ├── load-script.js
+│       └── utils.js
+├── manifest.json        # Includes "modules" field
+└── component-name.js    # Main entry point, loads appropriate provider
+```
+
 **Important**: Do NOT use the following structure (this is outdated):
 ```json
 // WRONG - Don't use this format
@@ -192,6 +228,42 @@ Common issues:
 - Using deprecated manifest structure
 - Incorrect `requires` dependencies
 - Template syntax errors with helper functions
+
+See [DEVELOPER-GUIDE.md](DEVELOPER-GUIDE.md) for detailed best practices, lessons learned, and troubleshooting tips.
+
+### Component Documentation
+
+When creating documentation pages for components (`src/library/` or `src/partials/`):
+
+**Structure:**
+```yaml
+---
+layout: pages/sections.njk
+seo:
+  title: [Component Name] - Metalsmith Components
+  description: 'Brief SEO description'
+card:
+  title: '[Component Name]'
+  description: 'Description for search and cards'
+  tags: ['relevant', 'search', 'tags']  # For search functionality
+sections:
+  - sectionType: text-only
+    # Overview section
+  - sectionType: text-only
+    # Usage examples with code
+  - sectionType: component-name
+    # Live example
+  - sectionType: text-only
+    # Integration notes
+---
+```
+
+**Best Practices:**
+- Focus on developer audience (how to use in templates)
+- Include import statements and integration patterns
+- Document only actual component features (not build plugin features)
+- Provide multiple examples showing different configurations
+- Add relevant tags for search discoverability
 
 ### Mapping Component Features
 

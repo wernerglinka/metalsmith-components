@@ -28,7 +28,6 @@
       border: 1px solid var(--color-border-light);
       border-radius: var(--glass-border-radius);
       position: relative;
-      position: relative;
     }
 
     .icon-wrapper {
@@ -99,8 +98,4 @@
       }
     }
   }
-}
-
-/** Dark Theme styles variations */
-.dark-theme .section-wrapper.multi-media {
 }

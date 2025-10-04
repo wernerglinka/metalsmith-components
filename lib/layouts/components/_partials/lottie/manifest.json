@@ -1,7 +1,25 @@
 {
   "name": "lottie",
-  "type": "_partials",
+  "type": "partial",
   "styles": ["lottie.css"],
   "scripts": [],
-  "requires": []
+  "requires": [],
+  "validation": {
+    "required": ["src"],
+    "properties": {
+      "src": {
+        "type": "string"
+      },
+      "speed": {
+        "type": "number",
+        "default": 1
+      },
+      "control.loop": {
+        "type": "boolean"
+      },
+      "control.autoplay": {
+        "type": "boolean"
+      }
+    }
+  }
 }

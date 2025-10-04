@@ -3,6 +3,10 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 
+  /* Enable container queries for responsive behavior */
+  container-type: inline-size;
+  container-name: hero-slider;
+
   /* Fluid height: 680px at 1240px viewport, 480px at 500px viewport */
   --slider-height: clamp(
     480px,
@@ -350,13 +354,13 @@
   }
 }
 
-/* 
-  Small screen prose truncation 
+/*
+  Small screen prose truncation
   NOTE: display: -webkit-box; is required for text-overflow: ellipsis to work
-  Without the '-webkit-' prefix, the line-clamp property will work but the ellipsis 
+  Without the '-webkit-' prefix, the line-clamp property will work but the ellipsis
   will not be shown
 */
-@media only screen and (width <= 500px) {
+@container hero-slider (max-width: 500px) {
   .hero-slide .hero-content {
     .prose,
     p {
@@ -371,7 +375,7 @@
 }
 
 /* Mobile adjustments - Must come AFTER regular styles for proper cascade */
-@media only screen and (width <= 768px) {
+@container hero-slider (max-width: 768px) {
   .hero-content {
     &.has-image {
       display: none;

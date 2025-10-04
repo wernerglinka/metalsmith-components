@@ -1,7 +1,25 @@
 {
   "name": "button",
-  "type": "_partials",
+  "type": "partial",
   "styles": ["button.css"],
   "scripts": [],
-  "requires": []
+  "requires": [],
+  "validation": {
+    "required": ["url", "label"],
+    "properties": {
+      "url": {
+        "type": "string"
+      },
+      "label": {
+        "type": "string"
+      },
+      "buttonStyle": {
+        "type": "string",
+        "enum": ["primary", "secondary", "tertiary", "inverted"]
+      },
+      "isSmall": {
+        "type": "boolean"
+      }
+    }
+  }
 }
