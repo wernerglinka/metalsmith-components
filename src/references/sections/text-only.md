@@ -106,8 +106,8 @@ sections:
         top: false
         bottom: false
       noPadding:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       background:
         color: '#f0f4f8'
         image: ''
@@ -139,8 +139,8 @@ sections:
         top: false
         bottom: false
       noPadding:
-        top: true
-        bottom: true
+        top: false
+        bottom: false
       background:
         isDark: true
         color: ''

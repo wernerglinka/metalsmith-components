@@ -327,8 +327,6 @@ body.with-sidebar {
     margin-left: 25rem;
 
     .section-wrapper {
-      padding: 0;
-
       .container {
         padding: 0;
       }

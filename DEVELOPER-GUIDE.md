@@ -324,6 +324,98 @@ Some components use build-time plugins for optimization:
 3. Verify CSS selectors match template structure
 4. Check build output for bundled CSS
 
+### Using Chrome DevTools MCP for Advanced Debugging
+
+The Chrome DevTools MCP server enables AI-assisted debugging by giving direct access to a live browser instance. This is particularly valuable for CSS issues where computed styles differ from source code.
+
+**Setup:**
+```bash
+# Add the MCP server (one-time setup)
+claude mcp add chrome-devtools npx "chrome-devtools-mcp@latest"
+
+# Verify it's connected
+claude mcp list
+```
+
+**Note**: After adding the MCP server, restart your conversation for the tools to become available.
+
+**Available Tools:**
+- `mcp__chrome-devtools__navigate_page` - Navigate to URLs
+- `mcp__chrome-devtools__evaluate_script` - Run JavaScript in browser context
+- `mcp__chrome-devtools__take_screenshot` - Capture visual state
+- `mcp__chrome-devtools__take_snapshot` - Get DOM structure
+- `mcp__chrome-devtools__list_console_messages` - Check console output
+- `mcp__chrome-devtools__list_network_requests` - Analyze network activity
+- `mcp__chrome-devtools__performance_start_trace` - Profile performance
+
+**Example: Debugging CSS Padding Issues**
+
+When visual padding doesn't match expectations:
+
+```javascript
+// Navigate to the page
+mcp__chrome-devtools__navigate_page("http://localhost:3002/your-page/")
+
+// Inspect computed styles
+mcp__chrome-devtools__evaluate_script(() => {
+  const section = document.querySelector('.section-wrapper');
+  const styles = window.getComputedStyle(section);
+
+  return {
+    classes: section.className,
+    computedPadding: styles.padding,
+    paddingTop: styles.paddingTop,
+    cssVariables: {
+      '--space-s-l': styles.getPropertyValue('--space-s-l'),
+      '--section-padding': styles.getPropertyValue('--section-padding')
+    }
+  };
+})
+```
+
+**Real Example from This Project:**
+
+Problem: Sections on sidebar pages had no padding despite CSS defining `padding: var(--space-s-l)`.
+
+Using MCP to debug:
+1. Navigated to page: `mcp__chrome-devtools__navigate_page(url)`
+2. Inspected computed padding: Returned `"padding": "0px"`
+3. Checked CSS variables: `--space-s-l` was defined but not applied
+4. Discovered override: `body.with-sidebar .section-wrapper { padding: 0; }` in main.css
+5. Verified fix by re-checking computed styles: Now showing `"padding": "39.0428px"`
+
+**Advantages Over Source Code Inspection:**
+- See actual computed values, not just CSS rules
+- Identify specificity and cascade issues
+- Verify CSS variable resolution
+- Catch runtime JavaScript modifications
+- Test responsive behavior at different viewports
+- Validate accessibility attributes
+
+**Typical Workflow:**
+```bash
+# 1. Start dev server
+npm start
+
+# 2. In conversation, navigate to page
+# Use: mcp__chrome-devtools__navigate_page("http://localhost:3002/page/")
+
+# 3. Inspect computed styles
+# Use: mcp__chrome-devtools__evaluate_script to run JS
+
+# 4. Take screenshots to verify fixes
+# Use: mcp__chrome-devtools__take_screenshot({ fullPage: true })
+```
+
+**When to Use MCP Tools:**
+- Debugging CSS specificity issues
+- Investigating computed style mismatches
+- Checking responsive behavior
+- Analyzing network requests
+- Performance profiling
+- Accessibility testing
+- Form interaction testing
+
 ### Validation Errors
 
 1. Check manifest validation schema
