@@ -54,9 +54,3 @@
     }
   }
 }
-
-body.with-sidebar .breadcrumbs {
-  position: static;
-  transform: none;
-  padding-left: 0;
-}

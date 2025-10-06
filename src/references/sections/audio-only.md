@@ -34,8 +34,8 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -80,7 +80,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
@@ -98,12 +98,10 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
-      title: ''
-      titleTag: 'h1'
+      title: 'Configuration'
+      titleTag: 'h2'
       subTitle: ''
       prose: |-
-        ### Configuration
-
         ```yaml
         - sectionType: audio-only
           containerTag: section
@@ -122,8 +120,6 @@ sections:
         ```
 
         ### Configuration Options
-
-        #### Audio Properties
 
         | Property | Type | Required | Description |
         |----------|------|----------|-------------|

@@ -5,7 +5,7 @@ hasHero: true
 title: Blog List
 
 navigation:
-  navLabel: 'Blog List'
+  navLabel: 'collection List'
   navIndex: 10
 
 card:
@@ -34,8 +34,8 @@ sections:
         top: true
         bottom: false
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -59,7 +59,7 @@ sections:
       isAnimated: true
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -167,20 +167,20 @@ sections:
 
         #### Blog Post Data Structure
 
-        Each blog post in the collection needs specific frontmatter fields for the blog-list component to render properly:
+        Each blog post in the collection needs a card object for the blog-list component to render properly:
 
         ```yaml
         # In individual blog post frontmatter
         card:
-        title: 'Architecture Philosophy'
-        date: '2025-06-02'
-        author:
-          - Albert Einstein
-          - Isaac Newton
-        image: '/assets/images/sample9.jpg'
-        featuredBlogpost: true
-        featuredBlogpostOrder: 1
-        excerpt: |-
+          title: 'Architecture Philosophy'
+          date: '2025-06-02'
+          author:
+            - Albert Einstein
+            - Isaac Newton
+          image: '/assets/images/sample9.jpg'
+          featuredBlogpost: true
+          featuredBlogpostOrder: 1
+          excerpt: |-
           This starter embodies several key principles that make structured content management both powerful and approachable.
 
         ```

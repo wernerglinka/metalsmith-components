@@ -33,10 +33,10 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''

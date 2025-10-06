@@ -34,7 +34,7 @@ sections:
         top: true
         bottom: false
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         color: ''
@@ -71,8 +71,8 @@ sections:
       leadIn: ''
       title: 'Inline blurbs with Icons'
       titleTag: 'h2'
-      subTitle: ''
-      prose: 'Use the included feather icons or add your own'
+      subTitle: 'Use the included feather icons or add your own'
+      prose: ''
     ctas:
       - url: '/'
         label: 'See All'

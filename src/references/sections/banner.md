@@ -9,7 +9,7 @@ navigation:
   navIndex: 3
 
 card:
-  title: 'CTA Banner'
+  title: 'Banner'
   description: 'Create eye-catching CTA banners with background images or colors. Includes accordion header functionality.'
   image: '/assets/images/sample9.jpg'
   tags: ['banner', 'cta', 'call-to-action', 'announcement', 'full-width', 'accordion']
@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -34,8 +34,8 @@ sections:
         top: true
         bottom: false
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -92,10 +92,10 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: false
-        bottom: false
+        bottom: true
       background:
         color: ''
         image: ''

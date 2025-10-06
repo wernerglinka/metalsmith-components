@@ -32,10 +32,10 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -138,7 +138,7 @@ sections:
         bottom: true
       noPadding:
         top: false
-        bottom: false
+        bottom: true
       background:
         color: ''
         image: ''
@@ -167,7 +167,7 @@ sections:
     containerFields:
       inContainer: true
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: true
@@ -275,10 +275,4 @@ sections:
         | `text` | Text content block with leadIn, title, titleTag, subTitle, and prose |
         | `image` | Image block with src, alt, and caption |
         | `ctas` | Call-to-action buttons or links |
-
-        ### Notes
-
-        Multiple blocks can be combined within a single column to create custom layouts.
-
-        The example below can be used to merge with a previous hero section. The hero section has a class of `merge-with-next` which removes the bottom margin. The columns section has `containerFields.noMargin.top` set to true which removes the top margin. The columns section also has `inContainer` set to `true` which wraps the section in a container. This is a popular visual pattern in corporate and marketing websites.
 ---

@@ -16,10 +16,14 @@ card:
 sections:
   - sectionType: text-only
     containerTag: section
+    classes: 'first-text-section'
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
       noMargin:
+        top: true
+        bottom: true
+      noPadding:
         top: true
         bottom: true
       background:

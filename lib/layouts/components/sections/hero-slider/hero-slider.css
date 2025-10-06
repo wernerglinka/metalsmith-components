@@ -1,7 +1,6 @@
 .hero-slider {
   position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
 
   /* Enable container queries for responsive behavior */
   container-type: inline-size;
@@ -15,16 +14,28 @@
   );
   --slider-nav-height: 80px;
   --slider-nav-color: var(--color-text-light);
-  --slider-nav-background-color: var(--glass-background-dark);
+  --slider-nav-background-color: var(--glass-background-dark-card);
   --slider-nav-item-width: 120px;
   --slider-nav-item-hover-color: var(--glass-background);
   --slider-nav-item-is-selected-color: var(--color-text-highlight);
   --slider-nav-item-is-selected-background-color: var(--glass-background-light);
 }
 
+/* Container mode: constrain to max-width */
+.hero-slider.in-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
 .hero-slider-list {
   position: relative;
   height: var(--slider-height);
+  width: 100%;
+}
+
+.hero-slides {
+  position: relative;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   margin: 0;
@@ -235,13 +246,15 @@
 /* Slider navigation */
 .hero-nav {
   position: absolute;
-  width: 100%;
+  left: 0;
+  right: 0;
   bottom: 0;
   z-index: 2;
   display: flex;
   justify-content: center;
   height: var(--slider-nav-height);
   background-color: var(--slider-nav-background-color);
+  backdrop-filter: var(--glass-backdrop-filter);
 
   ul {
     height: 100%;
@@ -256,11 +269,16 @@
     flex: 0 0 var(--slider-nav-item-width);
     margin: 0;
     background-color: transparent;
+    backdrop-filter: var(--glass-backdrop-filter);
     transition: background-color 1s ease;
     position: relative;
 
     &:hover {
-      background-color: var(--slider-nav-item-hover-color);
+      background-color: var(--background-color-link-hover);
+
+      a {
+        color: var(--color-text-dark);
+      }
     }
 
     &.is-selected {
@@ -389,6 +407,11 @@
   /* Convert navigation tabs to dots on small screens */
   .hero-nav {
     height: 3rem;
+
+    ul {
+      width: auto;
+      gap: 0.5rem;
+    }
 
     li {
       display: flex;

@@ -7,10 +7,8 @@
 
   /* 
     Default section margin 
-    Can be overwritten by declaring 
-    --section-space on the individualsection element.
   */
-  margin-block: var(--section-space, var(--space-l-2xl)) var(--section-space, var(--space-l-2xl));
+  margin-block: var(--space-l-2xl);
 
   /* Remove margin on first section */
   &:first-child {
@@ -19,10 +17,8 @@
 
   /*
     Default padding
-    Can be overwritten by declaring 
-    --section-padding on the individualsection element.
   */
-  padding: var(--section-padding, var(--space-s-l));
+  padding: var(--space-s-l);
 
   /* remove top or bottom margin if set in the markdown file */
   &.no-top-margin {
@@ -47,12 +43,16 @@
     so we need to move the section up and behind to compensate.
   */
   &.first-section {
-    margin-top: calc(-1 * (var(--space-2xl-3xl)));
+    /* margin-top: calc(-1 * (var(--space-2xl-3xl))); */
     padding-top: var(--space-3xl-4xl);
 
     &.demo {
-      margin-top: var(--section-space, var(--space-l-2xl));
+      margin-top: var(--space-l-2xl);
     }
+  }
+
+  &.first-text-section .text {
+    padding-block: 0 !important;
   }
 
   /* 
@@ -165,13 +165,6 @@
     &.is-reverse {
       flex-direction: row-reverse;
     }
-
-    .leadin,
-    .title,
-    .sub-title,
-    .prose {
-      max-width: 80ch;
-    }
   }
 
   /*
@@ -179,11 +172,11 @@
     container if one exists
   */
   &.no-top-padding .text {
-    padding-block-start: var(--section-padding, var(--space-s-l));
+    padding-block-start: var(--space-s-l);
   }
 
   &.no-bottom-padding .text {
-    padding-block-end: var(--section-padding, var(--space-s-l));
+    padding-block-end: var(--space-s-l);
   }
 }
 

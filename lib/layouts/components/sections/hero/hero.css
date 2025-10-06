@@ -19,6 +19,9 @@
   .text {
     width: var(--hero-text-width);
     padding: var(--space-s-l);
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--glass-box-shadow);
     border-radius: var(--space-2xs-xs);
     overflow: hidden;
   }
@@ -28,7 +31,11 @@
     bottom: var(--space-m);
     left: 55%;
     transform: translateX(-50%);
-    border: none;
+    background: var(--glass-background-light);
+    border: var(--glass-border);
+    border-radius: 50%;
+    box-shadow: var(--glass-box-shadow);
+    backdrop-filter: blur(10px);
     width: var(--space-l);
     height: var(--space-l);
     padding: var(--space-3xs);

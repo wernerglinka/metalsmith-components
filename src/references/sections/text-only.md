@@ -32,21 +32,23 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
         imageScreen: 'none' # light, dark, none
     text:
-      leadIn: ''
-      title: 'Text Only Section'
+      leadIn: 'Section Component'
+      title: 'Text Only'
       titleTag: 'h1'
       subTitle: ''
       prose: |-
         A section for displaying text content with optional CTAs. Essentially a section wrapper for the text partial. Supports lead-in text, titles, subtitles, markdown-formatted prose, and flexible background options.
+
+        ## Examples
 
   - sectionType: text-only
     containerTag: article
@@ -69,14 +71,14 @@ sections:
     text:
       leadIn: 'Introduction'
       title: 'Welcome to Our Platform'
-      titleTag: 'h2'
+      titleTag: 'h3'
       subTitle: 'Everything you need to know'
       prose: |-
         This is an example of a text-only section with all text elements populated. Notice how the lead-in text appears above the title, providing context for what follows.
 
         The prose content supports **markdown formatting**, allowing you to create *emphasized text*, [hyperlinks](https://example.com), and structured content with ease.
 
-        ### Key Features
+        #### Key Features
 
         - Clean, semantic HTML output
         - Full markdown support in prose content
@@ -156,7 +158,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
@@ -178,7 +180,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        ### Configuration
+        ## Configuration
 
         ```yaml
         - sectionType: text-only
@@ -200,9 +202,7 @@ sections:
               buttonStyle: 'primary'
         ```
 
-        ### Configuration Options
-
-        #### Text Content
+        #### Configuration Options
 
         | Property | Type | Required | Description |
         |----------|------|----------|-------------|
@@ -211,10 +211,5 @@ sections:
         | `text.titleTag` | string | No | HTML heading tag (h1-h6) |
         | `text.subTitle` | string | No | Optional subtitle below the main title |
         | `text.prose` | string | No | Markdown-formatted body content |
-
-        #### Content
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `ctas` | array | No | Optional array of call-to-action buttons or links |
+        | `ctas` | array | No | [Optional array](/references/partials/ctas/) of call-to-action buttons or links |
 ---

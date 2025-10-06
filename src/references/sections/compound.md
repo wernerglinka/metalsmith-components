@@ -49,7 +49,7 @@ sections:
         imageScreen: 'dark' # light, dark, none
     text:
       leadIn: 'Metalsmith Components Library'
-      title: Compound Section
+      title: Compound Section UNDER CONSTRUCTION!
       titleTag: 'h1'
       subTitle:
       prose: |-

@@ -34,8 +34,8 @@ sections:
         top: true
         bottom: false
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -46,7 +46,7 @@ sections:
       titleTag: 'h1'
       subTitle: ''
       prose: |-
-        Hero slider with various background media, smooth transitions, and autoplay functionality.
+        Hero slider with various background media, smooth transitions, and autoplay functionality. Each slide can contain combinations of text, images, and backgrounds.
 
   - sectionType: hero-slider
     containerTag: section
@@ -56,7 +56,7 @@ sections:
     isDisabled: false
     isFullScreen: false
     containerFields:
-      inContainer: false
+      inContainer: true
       isAnimated: false
       noMargin:
         top: true
@@ -167,7 +167,6 @@ sections:
             tn: ''
           imageScreen: 'none'
 
-
   - sectionType: hero-slider
     containerTag: section
     classes: 'demo'
@@ -179,7 +178,7 @@ sections:
       isAnimated: false
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: true
@@ -270,14 +269,14 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: true
+        top: false
         bottom: false
       noPadding:
         top: false
@@ -343,44 +342,15 @@ sections:
         | `image` | object | Content image (shown alongside text) |
         | `background` | object | Background configuration with color, image, or video |
 
-        ### Notes
+        #### Notes
 
-        The hero slider component transforms static hero sections into dynamic, engaging experiences. Each slide can contain unique combinations of text, images, and backgrounds, allowing you to tell a complete story or showcase multiple aspects of your product or service.
-
-        #### Key Features
-
-        - **Multiple Slides** - Unlimited slides with individual configurations
-        - **Rich Media Backgrounds** - Support for colors, images, and videos
-        - **Autoplay Control** - Optional automatic progression with configurable timing
-        - **Smooth Transitions** - Hardware-accelerated CSS animations
-        - **Responsive Design** - Adapts seamlessly to all screen sizes
-        - **Navigation Controls** - Bottom navigation with labeled indicators
-        - **Layout Flexibility** - Support for reversed layouts and content positioning
-        - **Screen Overlays** - Optional overlays for better text readability
-
-        #### Best Practices
-
-        1. **Slide Count** - Keep to 3-5 slides for optimal user experience
-        2. **Navigation Labels** - Use short, descriptive labels (1-2 words)
-        3. **Autoplay Timing** - 5-7 seconds per slide is recommended
-        4. **Image Optimization** - Use appropriately sized images for backgrounds
-        5. **Text Contrast** - Use screen overlays when text overlays images
-        6. **Mobile Experience** - Content images automatically hide on mobile devices
-
-        #### Performance
-
-        The hero slider implements several performance optimizations:
-        - Hardware-accelerated CSS transforms for smooth transitions
-        - Lazy loading of slide content
-        - Efficient event delegation
-        - Automatic cleanup of transitions
-        - Intelligent video playback management
+        - Keep to 3-5 slides for optimal user experience
+        - Use short, descriptive labels (1-2 words)
+        - 5-7 seconds per slide is recommended
+        - Content images automatically hide on mobile devices
 
         #### Accessibility
-
-        - Semantic HTML structure with proper heading hierarchy
         - ARIA labels on navigation elements
         - Keyboard navigation support
         - Pause autoplay on user interaction
-        - High contrast mode support with screen overlays
 ---

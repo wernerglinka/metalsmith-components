@@ -32,9 +32,9 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: true
       background:
         color: ''
@@ -59,7 +59,7 @@ sections:
       isAnimated: true
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -165,7 +165,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
@@ -241,13 +241,4 @@ sections:
         | `icon` | string | No | Icon name from lib/layouts/icons (front side only) |
         | `text` | object | No | Text content with leadIn, title, titleTag, subTitle, and prose |
         | `ctas` | array | No | Call-to-action buttons (typically on back side) |
-
-        ### Notes
-
-        - **Interactive Flip Animation**: Smooth card flip transitions on hover or click
-        - **Dual-Side Content**: Separate content for front and back of each card
-        - **Icon Support**: Front side can include icons from the icon library
-        - **Flexible Content**: Support for text, markdown, and call-to-action buttons
-        - **Responsive Layout**: Flexible container adapts to different screen sizes
-        - **Customizable Styling**: Full control over card appearance and behavior
 ---

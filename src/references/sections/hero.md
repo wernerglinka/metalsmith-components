@@ -52,7 +52,7 @@ sections:
       title: Hero
       titleTag: 'h1'
       subTitle:
-      prose: Examples of hero sections including full page. Click the down arrow at the bottom of the screen to scroll down.
+      prose: Examples of hero sections including a full page layout. Click the down arrow at the bottom of the screen to scroll down.
     ctas:
       - url: '/'
         label: 'go home'
@@ -83,10 +83,11 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
-      title:
+      title: 'Configuration'
       titleTag: 'h2'
       subTitle: ''
       prose: |-
+        Note the page property `hasHero: true` and in the section configuration `isFullScreen: true`
         ```yaml
         ---
         hasHero: true
@@ -138,7 +139,6 @@ sections:
         ---
         ```
 
-
     ctas:
       - url: ''
         label: ''
@@ -158,7 +158,7 @@ sections:
         bottom: true
       noPadding:
         top: false
-        bottom: false
+        bottom: true
       background:
         color: ''
         image: ''
@@ -169,7 +169,7 @@ sections:
       titleTag: 'h2'
       subTitle: ''
       prose: |-
-        In this case `isFullScreen` is set to `false`
+        In this case `isFullScreen` is set to `false`. Examples of a default hero can be seen on the [home page](/), [Section Anatomy](/section-anatomy/) and [From YAML to HTML](/yaml-to-html/)
 
     ctas:
       - url: ''
@@ -179,7 +179,7 @@ sections:
 
   - sectionType: hero
     containerTag: section
-    classes: 'first-section demo'
+    classes: ''
     id: ''
     description: 'This is a regular hero section with a background image and text overlay.'
     isDisabled: false
@@ -192,7 +192,7 @@ sections:
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
@@ -246,7 +246,7 @@ sections:
         - sectionType: hero
           containerTag: section
           classes: 'first-section'
-          isFullScreen: true
+          isFullScreen: false
           targetId: 'first-section'
           containerFields:
             inContainer: false
@@ -268,6 +268,12 @@ sections:
 
         ### Configuration Options
 
+        #### Page Settings
+
+        | Property | Type | Required | Description |
+        |----------|------|----------|-------------|
+        | `hasHero` | boolean | No | Must be `true` for breadcrumbs to be placed inside hero |
+
         #### Hero Layout
 
         | Property | Type | Required | Description |
@@ -276,11 +282,6 @@ sections:
         | `targetId` | string | No | ID of section to scroll to when down arrow is clicked |
         | `isReverse` | boolean | No | Reverse the layout order |
 
-        #### Page Settings
-
-        | Property | Type | Required | Description |
-        |----------|------|----------|-------------|
-        | `hasHero` | boolean | No | Must be `true` for breadcrumbs to be placed inside hero |
 
         #### Content
 
@@ -289,15 +290,6 @@ sections:
         | `text` | object | Yes | Text content with leadIn, title, titleTag, subTitle, and prose |
         | `ctas` | array | No | Call-to-action buttons |
         | `image` | object | No | Optional hero image with src, alt, and caption |
-
-        ### Notes
-
-        - **Full-Screen Mode**: Optional full-screen hero sections with scroll targeting
-        - **Background Support**: Flexible background images with screen overlays
-        - **Scroll Navigation**: Interactive down-arrow for smooth section scrolling
-        - **Breadcrumb Integration**: Breadcrumbs positioned inside hero when enabled
-        - **Return-to-Top**: Automatic up-arrow for easy navigation back to top
-        - **Flexible Content**: Support for text, CTAs, and optional hero images
 
         **Note:** The `targetId` should be set to the `id` of the section to scroll to when the down arrow in the full-screen hero is clicked. Notice the up-arrow in the bottom right screen corner when scrolling starts, to return to the top of the page.
 ---

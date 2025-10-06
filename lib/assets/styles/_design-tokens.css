@@ -35,7 +35,7 @@
   --glass-border: 1px solid rgb(255 255 255 / 80%);
   --glass-border-dark: 1px solid rgb(0 0 0 / 80%);
   --glass-border-radius: 1rem;
-  --glass-box-shadow: 0 4px 16px rgb(0 0 0 / 20%), inset 0 4px 20px rgb(255 255 255 / 30%);
+  --glass-background-dark: 0 4px 16px rgb(0 0 0 / 20%), inset 0 4px 20px rgb(255 255 255 / 30%);
 
   /**
   * Fluid typography is created with https://utopia.fyi/
