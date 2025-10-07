@@ -22,7 +22,7 @@ card:
 sections:
   - sectionType: text-only
     containerTag: section
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     description: 'Introduction to partials'
     isDisabled: false

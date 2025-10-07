@@ -32,9 +32,9 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         color: ''
@@ -124,7 +124,7 @@ sections:
       isAnimated: true
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: false
@@ -230,7 +230,7 @@ sections:
       isAnimated: true
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -300,7 +300,7 @@ sections:
       isAnimated: true
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: false
@@ -366,7 +366,7 @@ sections:
       isAnimated: true
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -401,8 +401,8 @@ sections:
     containerFields:
       inContainer: false
       noMargin:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -424,14 +424,14 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
@@ -495,12 +495,10 @@ sections:
 
         ### Notes
 
-        - **Five Media Types**: Image, video, audio, icon, and Lottie animation support
-        - **Flexible Video Sources**: YouTube, Vimeo, and Cloudinary integration
-        - **Modal & inSitu Video**: Choose between modal overlays or inSitu embedding
-        - **Audio with Visuals**: Audio players with background images
-        - **SVG Icon Library**: Scalable vector icons from comprehensive library
-        - **Lottie Animations**: JSON-based animations with playback controls
-        - **Reversible Layout**: Switch media and text column positions
-        - **Responsive Design**: Automatic layout adaptation with lazy loading
+        - Image, video, audio, icon, and Lottie animation support
+        - YouTube, Vimeo, and Cloudinary integration
+        - Viedeo modal overlays or inSitu embedding
+        - Audio players with background images
+        - Scalable vector icons from comprehensive library
+        - JSON-based animations with playback controls
 ---

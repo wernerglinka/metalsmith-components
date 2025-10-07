@@ -34,8 +34,8 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
-        bottom: true
+        top: true
+        bottom: false
       background:
         color: ''
         image: ''
@@ -67,7 +67,7 @@ sections:
         bottom: true
       noPadding:
         top: true
-        bottom: false
+        bottom: true
       background:
         color: ''
         image: ''
@@ -185,7 +185,7 @@ sections:
         bottom: true
       noPadding:
         top: true
-        bottom: false
+        bottom: true
       background:
         color: ''
         image: ''
@@ -211,7 +211,7 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: true
       background:
         color: ''
@@ -294,14 +294,14 @@ sections:
 
   - sectionType: text-only
     containerTag: section
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
@@ -344,13 +344,12 @@ sections:
 
         ### Notes
 
-        - **Auto-Scrolling**: Lists scroll horizontally when viewport width is smaller than list width
-        - **Multiple Data Sources**: Support for art museums, social links, awards, or custom sources
-        - **Flexible Selection**: Display all logos or curated selections
-        - **Logo Sizing**: Configurable maximum width for consistent display
-        - **Title Display**: Optional titles under logos (useful for awards)
-        - **Text Support**: Optional intro text and call-to-action buttons
-        - **Responsive Design**: Adapts to different screen sizes with smooth scrolling
+        - Lists auto scroll horizontally when viewport width is smaller than list width
+        - Display all logos or curated selections
+        - Configurable maximum width for consistent display
+        - Optional titles under logos (useful for awards)
+        - Optional intro text and call-to-action buttons
+        - Adapts to different screen sizes with smooth scrolling
 
         #### Layout Settings
 

@@ -35,8 +35,8 @@ sections:
         top: false
         bottom: true
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -49,7 +49,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: 'configuration'
     isDisabled: false
     isAnimated: true
@@ -60,7 +60,7 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         color: ''

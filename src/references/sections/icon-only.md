@@ -34,7 +34,7 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         color: ''
@@ -50,7 +50,7 @@ sections:
 
   - sectionType: icon-only
     containerTag: section
-    classes: ''
+    classes: 'demo'
     id: ''
     isDisabled: false
     isAnimated: true
@@ -73,7 +73,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true

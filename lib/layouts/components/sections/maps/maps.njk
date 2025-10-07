@@ -15,7 +15,7 @@
   {% set mapMarkers = mapData.markers %}
   {% set mapClustering = mapData.clustering %}
 
-  {% set mapStyle = "style=\"" + ("--map-default-height: " + section.height + ";" if section.height else "") + "\"" %}
+  {% set mapStyle = ("style=\"--map-default-height: " + section.height + ";\"" if section.height else "") %}
 
   {% if section.mapProvider === "leaflet" %}
     <div class="js-leaflet-map map-wrapper"

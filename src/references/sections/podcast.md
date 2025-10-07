@@ -34,7 +34,7 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         color: ''
@@ -93,7 +93,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
@@ -157,7 +157,7 @@ sections:
       inContainer: true
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: true
         bottom: true
@@ -242,14 +242,14 @@ sections:
 
   - sectionType: text-only
     containerTag: section
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
@@ -283,17 +283,6 @@ sections:
               isButton: true
               buttonStyle: 'primary'
         ```
-
-        ### Notes
-
-        - **Dynamic RSS Parsing**: Automatically fetches episodes from podcast RSS feeds
-        - **Professional Audio Player**: Powered by Shikwasa with advanced controls and speed adjustment
-        - **Progressive Loading**: Shows 5 episodes initially with "Load More" functionality
-        - **Single Main Player**: Clean UI with one player and episode selection list
-        - **CORS Proxy Fallback**: Handles cross-origin RSS feeds automatically
-        - **iTunes Metadata Support**: Full support for iTunes podcast tags and namespaces
-        - **Mobile Optimized**: Touch-friendly controls and responsive design
-        - **Graceful Fallbacks**: HTML5 audio fallback when Shikwasa fails to load
 
         ### Data Structure - RSS-Based (Recommended)
 
@@ -344,12 +333,6 @@ sections:
         - **Download Option** - Built-in download functionality
         - **Theme Support** - Light, dark, and auto (system preference) themes
 
-        ### Progressive Loading
-
-        1. **Initial Load** - Shows first 5 episodes (configurable)
-        2. **Load More Button** - Displays remaining episode count
-        3. **Batch Loading** - Loads 5 more episodes per click
-        4. **Auto-removal** - Button disappears when all episodes loaded
 
         #### Podcast Data
 
@@ -373,6 +356,4 @@ sections:
         | Property | Type | Required | Description |
         |----------|------|----------|-------------|
         | `ctas` | array | No | Optional array of call-to-action buttons |
-
-        This component is perfect for professional podcasts, educational content, company communications, or any audio content that benefits from RSS automation and professional playback controls.
 ---

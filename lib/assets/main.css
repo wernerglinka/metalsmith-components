@@ -330,6 +330,9 @@ body.with-sidebar {
     width: calc(100vw - 20rem - var(--space-m-l));
     position: relative;
     margin-left: 20rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
     .section-wrapper {
       &.hero.full-screen {
@@ -364,6 +367,22 @@ body.with-sidebar {
 
       &.has-demo-background {
         padding: var(--space-s-m);
+      }
+
+      &.demo .media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > .icon-wrapper {
+          height: var(--space-3xl-4xl);
+          width: var(--space-3xl-4xl);
+
+          svg {
+            width: auto;
+            height: 100%;
+          }
+        }
       }
     }
 

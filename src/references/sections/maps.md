@@ -34,8 +34,8 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -73,8 +73,8 @@ sections:
         imageScreen: 'none'
     text:
       leadIn: ''
-      title: 'Leaflet Properties'
-      titleTag: 'h3'
+      title: 'Leaflet'
+      titleTag: 'h2'
       subTitle: ''
       prose: |-
         **Choose Leaflet when you need:**
@@ -95,7 +95,7 @@ sections:
       isAnimated: true
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: true
         bottom: true
@@ -131,14 +131,14 @@ sections:
         bottom: true
       noPadding:
         top: false
-        bottom: false
+        bottom: true
       background:
         color: ''
         image: ''
         imageScreen: 'none'
     text:
       leadIn: ''
-      title: 'OpenLayers Properties'
+      title: 'OpenLayers'
       titleTag: 'h3'
       subTitle: ''
       prose: |-
@@ -258,8 +258,8 @@ sections:
     containerFields:
       inContainer: true
       noMargin:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -301,9 +301,9 @@ sections:
       isAnimated: true
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         color: ''
@@ -333,8 +333,8 @@ sections:
     containerFields:
       inContainer: true
       noMargin:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -409,14 +409,14 @@ sections:
 
   - sectionType: text-only
     containerTag: section
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false

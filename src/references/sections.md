@@ -3,7 +3,7 @@ layout: pages/sections-with-sidebar.njk
 bodyClass: ''
 
 navigation:
-  navLabel: 'Library'
+  navLabel: 'Sections'
   navIndex: 3
 
 seo:
@@ -22,7 +22,7 @@ card:
 sections:
   - sectionType: text-only
     containerTag: section
-    classes: ''
+    classes: 'first-text-section'
     id: ''
     description: 'Introduction to section components'
     isDisabled: false

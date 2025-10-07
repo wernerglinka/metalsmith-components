@@ -24,7 +24,7 @@
   --color-dark-background: #323232;
   --color-border-light: #e0e0e0;
   --color-border: #393939;
-  --color-shadow: rgb(57 57 57 / 10%);
+  --color-shadow: 0px 0px 20px 3px rgb(57 57 57 / 10%);
 
   /* Glass Morphism */
   --glass-background: rgb(255 255 255 / 15%);

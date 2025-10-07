@@ -30,6 +30,7 @@
   }
 
   &.in-container {
+    width: 100%;
     max-width: var(--wrapper-max-width, 85rem);
     margin-inline: auto;
   }
