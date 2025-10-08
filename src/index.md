@@ -75,6 +75,44 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
+      title: Before We Start
+      titleTag: 'h2'
+      isCentered: false
+      subTitle: ''
+      prose: |-
+        ### Why This Approach?
+
+        Metalsmith has always been exceptional at one thing: staying out of your way. Unlike opinionated frameworks that dictate how you must structure content, organize files, or build pages, Metalsmith provides the foundation and lets you make the architectural decisions. That's why I chose it years ago, and it's why I still use it today.
+
+        This component library represents one way to use Metalsmith—specifically, a structured content approach where pages are composed from reusable sections defined in frontmatter rather than written in Markdown. Some might argue this is "too specific" for a tool designed to be flexible. I see it differently.
+
+        Every tool becomes specific the moment you use it. The choices you make—how you organize content, structure templates, handle assets—these decisions define your project's architecture. The question isn't whether to make opinionated choices, but whether those choices align with modern web development practices and scale with your needs.
+
+        Component-based architecture isn't just my preference—it's become a widely acknowledged pattern for building maintainable websites. React, Vue, and modern frontend frameworks have proven the value of composable, reusable components. This library brings that same paradigm to static site generation with Metalsmith, demonstrating that you can have both the flexibility of a minimal build tool and the structure of a component system.
+
+        Metalsmith gives you the freedom to find your own way. This is mine. If you value component reusability, separation of concerns, and a clear content model that scales from simple landing pages to complex multi-section layouts, this approach might be yours too.
+
+  - sectionType: text-only
+    containerTag: article
+    classes: ''
+    id: ''
+    isDisabled: false
+    isReverse: false
+    containerFields:
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
       title: Building Pages with Metalsmith Components
       titleTag: 'h2'
       isCentered: false
