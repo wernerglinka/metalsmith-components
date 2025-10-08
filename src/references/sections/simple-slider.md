@@ -32,10 +32,10 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       background:
         color: ''
         image: ''
@@ -45,7 +45,11 @@ sections:
       title: 'Simple Slider'
       titleTag: 'h1'
       subTitle: ''
-      prose: 'Interactive slider component with standard pagination or tabbed interface options for displaying multiple content slides.'
+      prose: |-
+        Interactive slider component with standard pagination or tabbed interface options for displaying multiple content slides.
+
+        ## Slider as Tabs
+        Uses the slide title as tab text
 
   - sectionType: slider
     containerTag: section
@@ -67,7 +71,7 @@ sections:
         color: ''
         image: ''
         imageScreen: 'none' # light, dark, none
-    config: '' # "" = default slides, isTabs
+    isTabs: true
     slides:
       - slideClasses: ''
         image:
@@ -110,6 +114,32 @@ sections:
           prose: |-
             Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna.
 
+  - sectionType: text-only
+    containerTag: article
+    classes: ''
+    id: ''
+    isDisabled: false
+    isAnimated: true
+    containerFields:
+      inContainer: false
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: true
+        bottom: true
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none' # light, dark, none
+    text:
+      leadIn: ''
+      title: 'Traditional Slider'
+      titleTag: 'h2'
+      subTitle: ''
+      prose: |-
+        Uses the traditional slider pagination
+
   - sectionType: slider
     containerTag: section
     classes: ''
@@ -120,8 +150,8 @@ sections:
     containerFields:
       inContainer: false
       noMargin:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       noPadding:
         top: true
         bottom: false
@@ -130,7 +160,7 @@ sections:
         color: ''
         image: ''
         imageScreen: 'none' # light, dark, none
-    config: 'isTabs'
+    isTabs: false
     slides:
       - slideClasses: ''
         image:
@@ -179,7 +209,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
@@ -246,9 +276,8 @@ sections:
 
         ### Notes
 
-        - **Two Interface Types**: Standard pagination dots or tabbed navigation
-        - **Flexible Content**: Each slide supports images, text, and CTAs
-        - **Responsive Design**: Adapts to different screen sizes automatically
-        - **Interactive Navigation**: Click pagination dots or tabs to navigate
-        - **Smooth Transitions**: CSS-based slide transitions for smooth user experience
+        - Standard pagination dots or tabbed navigation
+        - Each slide supports images, text, and CTAs
+        - Adapts to different screen sizes
+        - CSS-based slide transitions for smooth user experience
 ---

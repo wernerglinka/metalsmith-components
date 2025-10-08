@@ -34,7 +34,7 @@ sections:
         top: true
         bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         color: ''
@@ -57,13 +57,13 @@ sections:
       inContainer: true
       isAnimated: true
       noMargin:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       noPadding:
         top: false
         bottom: false
       background:
-        color: ''
+        color: '#f8f8f8'
         image: ''
         imageScreen: 'none'
     text:
@@ -71,7 +71,7 @@ sections:
       title: 'All FAQs'
       titleTag: 'h2'
       subTitle: ''
-      prose: 'This example shows all available FAQs from the data source.'
+      prose: 'This example shows all available FAQs from the data source with a background color. The first accordion id open by default. Open a new accordion will close the old one.'
     faqs:
       scope: 'all'
       source: 'faqs'
@@ -91,7 +91,7 @@ sections:
       isAnimated: true
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -104,7 +104,7 @@ sections:
       title: 'Selected FAQs'
       titleTag: 'h2'
       subTitle: 'Curated Content'
-      prose: 'This example shows only selected FAQs, allows multiple items to be expanded, and has a background color.'
+      prose: 'This example shows only selected FAQs, allows multiple items to be expanded, and has no background color. Note the OPEN/CLOSE ALL link above the first accordion. '
     faqs:
       scope: 'selections'
       source: 'faqs'
@@ -130,8 +130,8 @@ sections:
     containerFields:
       inContainer: true
       noMargin:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -145,9 +145,9 @@ sections:
       titleTag: 'h2'
       subTitle: ''
       prose: |-
-        ## Data Structure
+        ### Data Structure
 
-        FAQ data files are stored in `lib/data/faqs/` as JSON files. Each FAQ file should have the following structure:
+        For our examples, FAQ data files are stored in `lib/data/faqs/` as JSON files. Each FAQ file should have the following structure:
 
         ```json
         {
@@ -157,7 +157,7 @@ sections:
         }
         ```
 
-        ## JavaScript Functionality
+        ### JavaScript Functionality
 
         The accordion JavaScript handles:
         - Click events on accordion headers
@@ -165,25 +165,23 @@ sections:
         - Single or multiple item expansion based on configuration
         - Initial state management (expand first item if configured)
 
-        ## Styling
+        ### Styling
 
         The component includes responsive styles with:
         - Smooth CSS transitions for expand/collapse animations
         - Hover and focus states for accessibility
         - Customizable through CSS variables
-        - Mobile-optimized spacing and typography
-    ctas: []
 
   - sectionType: text-only
     containerTag: section
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
@@ -211,11 +209,10 @@ sections:
 
         ### Notes
 
-        - **Dynamic Data Loading**: Load all FAQs or select specific ones by ID
-        - **Flexible Configuration**: Control expand behavior and multiple item expansion
-        - **Accessible**: Full keyboard navigation and screen reader support
-        - **Smooth Animations**: CSS-based transitions for expand/collapse
-        - **Responsive Design**: Adapts to mobile and desktop screens
+        - Load all FAQs or select specific ones by ID
+        - Control expand behavior and multiple item expansion
+        - Full keyboard navigation and screen reader support
+        - CSS-based transitions for expand/collapse
 
         | Property | Type | Description |
         |----------|------|-------------|
@@ -224,5 +221,4 @@ sections:
         | `faqs.selections` | array | array of IDs when scope is "selections" |
         | `expandIndex` | number | index of item to expand by default (0-based) |
         | `allowMultiple` | boolean | allow multiple expanded items |
-    ctas: []
 ---

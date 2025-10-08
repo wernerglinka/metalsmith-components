@@ -33,7 +33,7 @@ sections:
         top: true
         bottom: false
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         isDark: false

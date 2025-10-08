@@ -32,9 +32,9 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
         color: ''
@@ -111,7 +111,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
@@ -177,7 +177,6 @@ sections:
 
         ### Notes
 
-        - **Video Sources**: Supports YouTube, Vimeo, and Cloudinary
-        - **Modal Playback**: Video opens in a modal overlay (default)
-        - **inSitu Playback**: Video embeds directly in the page
+        - Supports YouTube, Vimeo, and Cloudinary
+        - Supports modal overlay (default) or inSitu Playback
 ---

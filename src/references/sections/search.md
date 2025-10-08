@@ -22,37 +22,30 @@ seo:
   keywords: 'metalsmith search, fuzzy search, search component, fuse.js, interactive search, site search, content discovery'
 
 sections:
-  - sectionType: hero
-    containerTag: section
-    classes: 'first-section'
+  - sectionType: text-only
+    containerTag: article
+    classes: 'first-text-section'
     id: ''
-    description: "This is a full screen hero section with a background image and text overlay. The proporty 'isFullScreen' is set to true, which turn a standard hero section into full screen."
     isDisabled: false
-    isReverse: false
     isAnimated: true
-    isFullScreen: false
-    targetId: 'first-section'
-    date: ''
-    author: ''
     containerFields:
-      inContainer: false
+      inContainer: true
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
-        top: false
+        top: true
         bottom: false
       background:
-        isDark: true
         color: ''
-        image: '/assets/images/under-construction.jpg'
-        imageScreen: 'dark' # light, dark, none
+        image: ''
+        imageScreen: 'none' # light, dark, none
     text:
-      leadIn: 'Metalsmith Components Library'
-      title: Search Section
+      leadIn: ''
+      title: 'Search Section'
       titleTag: 'h1'
-      subTitle:
-      prose: Under Construction
+      subTitle: ''
+      prose: 'An interactive search component that provides search functionality across your Metalsmith site content using [Fuse.js](https://www.fusejs.io/) and the metalsmith-search plugin. The section component provides a wrapper for the [search particle](/references/partials/search). Please refer to it for more info.'
 
   - sectionType: search-only
     containerTag: section
@@ -78,7 +71,6 @@ sections:
       titleTag: 'h2'
       subTitle: 'Find components, examples, and documentation'
       prose:
-
     settings:
       placeholder: 'Search components, features, or documentation...'
       showCategories: true
@@ -87,31 +79,6 @@ sections:
       enableHighlighting: true
       showRelevanceScore: true
       minCharacters: 3
-
-  - sectionType: text-only
-    containerTag: article
-    classes: 'first-text-section'
-    id: ''
-    isDisabled: false
-    isAnimated: true
-    containerFields:
-      inContainer: true
-      noMargin:
-        top: true
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        color: ''
-        image: ''
-        imageScreen: 'none' # light, dark, none
-    text:
-      leadIn: ''
-      title: 'Search Section'
-      titleTag: 'h1'
-      subTitle: ''
-      prose: 'An interactive search component that provides fuzzy/exact search functionality across your Metalsmith site content using Fuse.js and the metalsmith-search plugin.'
 
   - sectionType: text-only
     containerTag: article

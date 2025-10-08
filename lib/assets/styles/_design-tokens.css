@@ -25,6 +25,8 @@
   --color-border-light: #e0e0e0;
   --color-border: #393939;
   --color-shadow: 0px 0px 20px 3px rgb(57 57 57 / 10%);
+  --color-surface-hover: rgb(0 0 0 / 3%);
+  --color-surface-focus: rgb(0 0 0 / 5%);
 
   /* Glass Morphism */
   --glass-background: rgb(255 255 255 / 15%);
@@ -35,7 +37,7 @@
   --glass-border: 1px solid rgb(255 255 255 / 80%);
   --glass-border-dark: 1px solid rgb(0 0 0 / 80%);
   --glass-border-radius: 1rem;
-  --glass-background-dark: 0 4px 16px rgb(0 0 0 / 20%), inset 0 4px 20px rgb(255 255 255 / 30%);
+  --glass-box-shadow: 0 4px 16px rgb(0 0 0 / 20%), inset 0 4px 20px rgb(255 255 255 / 30%);
 
   /**
   * Fluid typography is created with https://utopia.fyi/
@@ -110,12 +112,14 @@
   --smaller-line-height: 1;
 
   /* Layout */
-  --header-height
+  --header-height: 80px;
   --container-width: 1024px;
   --gutter: var(--space-s-l); /* Default spacing for grid/flex gaps */
 
   /* Borders */
-  --default-border-width: 0.2rem /* Animation Timing Functions */;
+  --default-border-width: 0.2rem;
+
+  /* Animation Timing Functions */
   --transition-base: 400ms ease-in-out; /* Standard transition */
 
   --transition-movement: 200ms linear; /* For position animations */
