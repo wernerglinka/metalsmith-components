@@ -20,8 +20,9 @@ This is a Metalsmith Components library - a comprehensive showcase and reference
 - `npm test` - Run all tests using Mocha
 - `npm run test:watch` - Run tests in watch mode
 - `npm run format` - Format all code with Prettier (excludes .njk files)
-- `npm run lint` - Lint and fix code with ESLint
-- `npm run fix` - Run both format and lint in sequence
+- `npm run lint` - Lint and fix JavaScript with ESLint
+- `npm run lint:css` - Lint and fix CSS with Stylelint
+- `npm run fix` - Run format, lint, and lint:css in sequence
 
 ### Release Process
 

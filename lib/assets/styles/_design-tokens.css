@@ -165,3 +165,72 @@
   --token-important: #e90;
   --token-variable: #e90;
 }
+
+/* Dark Theme */
+body.dark-theme {
+  /* Colors */
+  --color-primary: #ff6b6b;
+  --color-secondary: #ff8787;
+  --color-text: #e5e5e5;
+  /* --color-text-light and --color-text-dark are for local contrast, not theming */
+  --color-text-highlight: #ffa94d;
+  --color-text-highlight-light: #ffc078;
+  --color-text-inactive: #888;
+  --color-link-inactive: #aaa;
+  --color-link-in-path: #999;
+  --background-color-link-hover: rgb(255 255 255 / 10%);
+  --color-pagination-active: #ccc;
+  --color-background: #1a1a1a;
+  --color-background-light: #2d2d2d;
+  --color-highlight-background: #4a3020;
+  --color-dark-background: #0d0d0d;
+  --color-border-light: #404040;
+  --color-border: #e0e0e0;
+  --color-shadow: 0px 0px 20px 3px rgb(0 0 0 / 50%);
+  --color-surface-hover: rgb(255 255 255 / 5%);
+  --color-surface-focus: rgb(255 255 255 / 8%);
+
+  /* Glass Morphism */
+  --glass-background: rgb(0 0 0 / 30%);
+  --glass-background-light: rgb(0 0 0 / 70%);
+  --glass-background-dark: rgb(255 255 255 / 15%);
+  --glass-background-dark-card: rgb(255 255 255 / 30%);
+  --glass-backdrop-filter: blur(2px) saturate(180%);
+  --glass-border: 1px solid rgb(255 255 255 / 20%);
+  --glass-border-dark: 1px solid rgb(255 255 255 / 40%);
+
+  /* Screen colors */
+  --light-screen: rgb(0 0 0 / 70%);
+  --dark-screen: rgb(255 255 255 / 20%);
+
+  /* Code Syntax Highlighting (PrismJS) - Dark Theme */
+  --code-bg: #2d2d2d;
+  --code-text: #e5e5e5;
+  --code-selection-bg: #4a4a4a;
+  --token-comment: #8e9aaf;
+  --token-punctuation: #b3b3b3;
+  --token-property: #ff8787;
+  --token-tag: #ff8787;
+  --token-boolean: #ff8787;
+  --token-number: #ff8787;
+  --token-constant: #ff8787;
+  --token-symbol: #ff8787;
+  --token-deleted: #ff8787;
+  --token-selector: #a8e6a1;
+  --token-attr-name: #a8e6a1;
+  --token-string: #a8e6a1;
+  --token-char: #a8e6a1;
+  --token-builtin: #a8e6a1;
+  --token-inserted: #a8e6a1;
+  --token-operator: #d4a574;
+  --token-entity: #d4a574;
+  --token-url: #d4a574;
+  --token-atrule: #66b3ff;
+  --token-attr-value: #66b3ff;
+  --token-keyword: #66b3ff;
+  --token-function: #ff6b9d;
+  --token-class-name: #ff6b9d;
+  --token-regex: #ffa94d;
+  --token-important: #ffa94d;
+  --token-variable: #ffa94d;
+}
