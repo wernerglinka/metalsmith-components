@@ -16,6 +16,7 @@
   --color-text-inactive: #999;
   --color-link-inactive: #666;
   --color-link-in-path: #888;
+  --color-link-navigation: #161616;
   --background-color-link-hover: rgb(0 0 0 / 5%);
   --color-pagination-active: #666;
   --color-background: #fff;
@@ -28,6 +29,14 @@
   --color-surface-hover: rgb(0 0 0 / 3%);
   --color-surface-focus: rgb(0 0 0 / 5%);
 
+  /* Button Colors */
+  --primary-button-color: rgb(218 30 40 / 80%);
+  --primary-button-text-color: var(--color-text-light);
+  --secondary-button-color: rgb(0 0 0 / 60%);
+  --secondary-button-text-color: var(--color-text-light);
+  --tertiary-button-color: rgb(255 255 255 / 80%);
+  --tertiary-button-text-color: var(--color-text);
+
   /* Glass Morphism */
   --glass-background: rgb(255 255 255 / 15%);
   --glass-background-light: rgb(255 255 255 / 85%);
@@ -38,6 +47,9 @@
   --glass-border-dark: 1px solid rgb(0 0 0 / 80%);
   --glass-border-radius: 1rem;
   --glass-box-shadow: 0 4px 16px rgb(0 0 0 / 20%), inset 0 4px 20px rgb(255 255 255 / 30%);
+
+  /* color constant regardless of theme */
+  --color-footer-text-light: #f4f4f4;
 
   /**
   * Fluid typography is created with https://utopia.fyi/
@@ -133,6 +145,9 @@
   /* Screen colors */
   --light-screen: rgb(255 255 255 / 90%);
   --dark-screen: rgb(0 0 0 / 60%);
+  /* some screens may be changed with the theme selection */
+  --theme-light-screen: rgb(255 255 255 / 90%);
+  --theme-dark-screen: rgb(0 0 0 / 60%);
 
   /* Code Syntax Highlighting (PrismJS) */
   --code-bg: #fcfcfc;
@@ -172,7 +187,8 @@ body.dark-theme {
   --color-primary: #ff6b6b;
   --color-secondary: #ff8787;
   --color-text: #e5e5e5;
-  /* --color-text-light and --color-text-dark are for local contrast, not theming */
+  --color-text-light: #161616;
+  --color-text-dark: #999;
   --color-text-highlight: #ffa94d;
   --color-text-highlight-light: #ffc078;
   --color-text-inactive: #888;
@@ -190,18 +206,16 @@ body.dark-theme {
   --color-surface-hover: rgb(255 255 255 / 5%);
   --color-surface-focus: rgb(255 255 255 / 8%);
 
-  /* Glass Morphism */
-  --glass-background: rgb(0 0 0 / 30%);
-  --glass-background-light: rgb(0 0 0 / 70%);
-  --glass-background-dark: rgb(255 255 255 / 15%);
-  --glass-background-dark-card: rgb(255 255 255 / 30%);
-  --glass-backdrop-filter: blur(2px) saturate(180%);
-  --glass-border: 1px solid rgb(255 255 255 / 20%);
-  --glass-border-dark: 1px solid rgb(255 255 255 / 40%);
+  /* Button Colors */
+  --primary-button-color: rgb(218 30 40 / 80%);
+  --primary-button-text-color: var(--color-text);
+  --secondary-button-color: rgb(0 0 0 / 60%);
+  --secondary-button-text-color: var(--color-text);
+  --tertiary-button-color: rgb(255 255 255 / 80%);
+  --tertiary-button-text-color: var(--color-text-light);
 
-  /* Screen colors */
-  --light-screen: rgb(0 0 0 / 70%);
-  --dark-screen: rgb(255 255 255 / 20%);
+  /* Glass Morphism */
+  --glass-border: none;
 
   /* Code Syntax Highlighting (PrismJS) - Dark Theme */
   --code-bg: #2d2d2d;

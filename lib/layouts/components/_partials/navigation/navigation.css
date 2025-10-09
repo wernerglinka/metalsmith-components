@@ -30,8 +30,6 @@
   }
 }
 
-
-
 /* Hamburger to X animation when active */
 .hamburger-menu.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
@@ -59,7 +57,7 @@
 
 /* Desktop menu links */
 .main-menu a {
-  color: inherit;
+  color: var(--color-link-navigation);
   padding: 8px 12px;
   border-radius: 4px;
   transition: outline 0.2s ease;

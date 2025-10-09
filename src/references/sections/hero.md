@@ -43,7 +43,7 @@ sections:
         top: false
         bottom: false
       background:
-        isDark: false
+        isDark: true
         color: ''
         image: '/assets/images/sample13.jpg'
         imageScreen: 'none' # light, dark, none

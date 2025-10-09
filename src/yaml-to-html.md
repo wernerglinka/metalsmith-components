@@ -35,8 +35,8 @@ sections:
       background:
         isDark: true
         color: ''
-        image: '/assets/images/sample8.jpg'
-        imageScreen: 'dark' # light, dark, none
+        image: '/assets/images/sample18.jpg'
+        imageScreen: 'none' # light, dark, none
     text:
       leadIn: 'Metalsmith Components'
       title: Building Structured Pages
@@ -351,7 +351,7 @@ sections:
       background:
         color: ''
         image: '/assets/images/sample7.jpg'
-        imageScreen: 'light' # light, dark, none
+        imageScreen: 'dark' # light, dark, none
     text:
       leadIn: ''
       title: ''

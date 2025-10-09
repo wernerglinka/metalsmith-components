@@ -31,7 +31,7 @@
       vertical-align: middle;
 
       * {
-        stroke: var(--color-text);
+        stroke: var(--color-link-navigation);
         transition: all 0.5s ease-in-out;
       }
     }

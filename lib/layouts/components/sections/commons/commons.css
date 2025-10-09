@@ -126,7 +126,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--dark-screen);
+    background: var(--theme-dark-screen);
     z-index: 1;
   }
 
@@ -137,7 +137,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--light-screen);
+    background: var(--theme-light-screen);
     z-index: 1;
   }
 
@@ -178,6 +178,14 @@
 
   &.no-bottom-padding .text {
     padding-block-end: var(--space-s-l);
+  }
+}
+
+.dark-theme {
+  .section-wrapper {
+    &.is-dark {
+      color: var(--color-text);
+    }
   }
 }
 

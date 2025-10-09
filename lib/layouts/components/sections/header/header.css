@@ -35,7 +35,7 @@ header {
       }
 
       svg {
-        stroke: var(--color-text);
+        stroke: var(--color-link-navigation);
         stroke-width: 1px;
       }
     }

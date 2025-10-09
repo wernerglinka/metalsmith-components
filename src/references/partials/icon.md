@@ -74,7 +74,7 @@ sections:
 
   - sectionType: icon-only
     containerTag: section
-    classes: ''
+    classes: 'demo'
     id: ''
     isDisabled: false
     isAnimated: true

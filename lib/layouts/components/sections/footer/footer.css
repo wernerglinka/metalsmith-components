@@ -1,16 +1,18 @@
 /**
  * Footer
+ * Background for regular footer is a dark css pattern, 
+ * ergo text is light
  */
+
 footer {
   background: var(--color-dark-background);
   padding: var(--space-s-l);
   font-size: var(--font-p);
-  color: var(--color-text-light);
+  color: var(--color-footer-text-light);
   margin-top: auto; /* Push footer to bottom */
-  box-shadow: 0 -2px 4px var(--color-shadow);
 
   a {
-    color: var(--color-text-light);
+    color: inherit;
     text-decoration: underline;
     transition: opacity var(--transition-fade);
 
@@ -20,6 +22,11 @@ footer {
   }
 }
 
+/**
+  * Adjust footer styles when sidebar is present
+  * Background is dependent on theme light or dark, ergo 
+  * text color is always dark
+  */
 body.with-sidebar footer {
   background: none;
   box-shadow: none;

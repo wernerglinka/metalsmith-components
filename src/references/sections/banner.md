@@ -264,9 +264,9 @@ sections:
         bottom: false
       background:
         color: ''
-        isDark: true
+        isDark: false
         image: '/assets/images/sample9.jpg'
-        imageScreen: 'dark' # light, dark, none
+        imageScreen: 'light' # light, dark, none
     text:
       leadIn: ''
       title: Fancy Accordion Header
@@ -324,9 +324,9 @@ sections:
         bottom: false
       background:
         color: ''
-        isDark: true
+        isDark: false
         image: '/assets/images/sample10.jpg'
-        imageScreen: 'dark' # light, dark, none
+        imageScreen: 'light' # light, dark, none
     text:
       leadIn: ''
       title: Second Fancy Accordion Header

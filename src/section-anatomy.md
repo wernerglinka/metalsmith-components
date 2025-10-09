@@ -282,7 +282,7 @@ sections:
       background:
         color: ''
         image: '/assets/images/sample7.jpg'
-        imageScreen: 'light' # light, dark, none
+        imageScreen: 'dark' # light, dark, none
     text:
       leadIn: ''
       title: ''

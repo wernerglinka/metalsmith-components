@@ -438,7 +438,7 @@ body.with-sidebar {
           }
 
           &.active {
-            background-color: #f8f8f8;
+            background-color: var(--color-background-light);
             border-radius: 0.5rem;
             a {
               color: #999;

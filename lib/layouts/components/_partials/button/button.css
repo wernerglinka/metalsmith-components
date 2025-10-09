@@ -2,17 +2,12 @@
  * Default button style is glass
  */
 .button {
-  --primary-button-color: rgb(218 30 40 / 80%);
-  --secondary-button-color: rgb(0 0 0 / 60%);
-  --tertiary-button-color: rgb(255 255 255 / 80%);
-
   display: inline-block;
   text-align: center;
   padding: var(--space-2xs-xs) var(--space-s-m);
   transition: all 0.3s ease-in-out;
   font-weight: 500;
   letter-spacing: var(--default-letter-spacing);
-  color: var(--color-text-light);
   background: rgb(218 30 40 / 80%);
   backdrop-filter: var(--glass-backdrop-filter);
   isolation: isolate;
@@ -25,16 +20,18 @@
   }
 
   &.primary {
+    color: var(--primary-button-text-color);
     background: var(--primary-button-color);
   }
 
   &.secondary {
+    color: var(--secondary-button-text-color);
     background: var(--secondary-button-color);
   }
 
   &.tertiary {
     background: var(--tertiary-button-color);
-    color: var(--color-text);
+    color: var(--tertiary-button-text-color);
     border: 1px solid var(--color-border-light);
   }
 
