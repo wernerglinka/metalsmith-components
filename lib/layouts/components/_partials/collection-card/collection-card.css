@@ -1,3 +1,18 @@
+/**
+ * Collection Card Component Styles
+ *
+ * Design Tokens:
+ * - --color-text
+ * - --glass-background
+ * - --color-border-light
+ * - --space-2xs-xs
+ * - --glass-box-shadow
+ * - --space-s-m
+ * - --space-l-xl
+ * - --glass-background-light
+ * - --font-h5
+ * - --font-p
+ */
 .collection-card {
   position: relative;
   max-width: 30rem;

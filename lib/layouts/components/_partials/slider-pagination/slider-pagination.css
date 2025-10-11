@@ -1,8 +1,13 @@
-/* 
-  Slider Pagination Controls
-  Positioned at bottom center of slider.
-  Provides visual indicators and click targets for direct slide navigation.
-*/
+/**
+ * Slider Pagination Component Styles
+ *
+ * Design Tokens:
+ * - --color-text
+ * - --color-border-light
+ * - --color-primary-light
+ * - --color-primary
+ * - --space-m
+ */
 .slider-pagination {
   padding: 0;
   margin: 0;

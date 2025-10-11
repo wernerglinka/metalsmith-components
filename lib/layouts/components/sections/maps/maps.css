@@ -1,7 +1,17 @@
 /**
- * Unified Maps Component Styles
- * Shared styles for both Leaflet and OpenLayers providers
+ * Maps Section Styles
+ *
+ * Design Tokens:
+ * - --space-l
+ * - --border-radius
+ * - --shadow-m
+ * - --color-primary
+ * - --font-size-s
+ * - --font-size-m
+ * - --font-size-xs
+ * - --space-m
  */
+
 .maps {
   container-type: inline-size;
   container-name: maps;

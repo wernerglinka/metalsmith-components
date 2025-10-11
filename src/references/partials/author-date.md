@@ -84,7 +84,7 @@ sections:
         top: false
         bottom: false
       background:
-        color: '#f8f8f8'
+        color: 'var(--color-background-light)'
         image: ''
         imageScreen: 'none'
     text:

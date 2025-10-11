@@ -64,7 +64,7 @@ sections:
         top: false
         bottom: false
       background:
-        color: lightgray
+        color: 'var(--color-background-light)'
         image: ''
         imageScreen: 'none' # light, dark, none
     quote:
@@ -121,7 +121,7 @@ sections:
               top: false
               bottom: false
             background:
-              color: 'lightgray'
+              color: 'var(--color-background-light)'
               image: ''
               imageScreen: 'none' # light, dark, none
           quote:

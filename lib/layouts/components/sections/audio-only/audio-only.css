@@ -1,3 +1,10 @@
+/**
+ * Audio Only Section Styles
+ *
+ * Design Tokens:
+ * - --space-m
+ */
+
 .audio-only {
   width: 100%;
 

@@ -1,4 +1,12 @@
-/* Code component styles that extend the default Prism theme from text-only.css */
+/**
+ * Code Section Styles
+ *
+ * Design Tokens:
+ * - --space-s-m
+ * - --space-2xs-xs
+ * - --color-text
+ */
+
 .code {
   .code-block {
     margin: 2rem 0;

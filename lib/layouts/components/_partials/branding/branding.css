@@ -1,6 +1,11 @@
 /**
- * Site branding
+ * Site Branding Component Styles
+ *
+ * Design Tokens:
+ * - --space-2xs
+ * - --space-l-xl
  */
+
 .brand {
   flex: 0 0 auto; /* for the media query less menu management */
   display: flex;

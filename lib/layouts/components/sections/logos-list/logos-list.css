@@ -1,3 +1,15 @@
+/**
+ * Logos List Section Styles
+ *
+ * Design Tokens:
+ * - --space-m-l
+ * - --single-list-width
+ * - --font-h5
+ * - --color-text
+ * - --color-primary
+ * - --font-p
+ */
+
 @keyframes marquee {
   0% {
     transform: translate3d(0, 0, 0);
@@ -177,5 +189,32 @@
   /* Reverse animation */
   .is-reverse .logos-wrapper.play {
     animation-direction: reverse;
+  }
+}
+
+/* Dark theme: change gradient masks to dark */
+.dark-theme .logos-list .content {
+  .mask:has(.play)::before {
+    background-image: linear-gradient(
+      to right,
+      rgb(26 26 26 / 100%) 0%,
+      rgb(26 26 26 / 95%) 20%,
+      rgb(26 26 26 / 80%) 40%,
+      rgb(26 26 26 / 40%) 60%,
+      rgb(26 26 26 / 10%) 80%,
+      transparent 100%
+    );
+  }
+
+  .mask:has(.play)::after {
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgb(26 26 26 / 10%) 20%,
+      rgb(26 26 26 / 40%) 40%,
+      rgb(26 26 26 / 80%) 60%,
+      rgb(26 26 26 / 95%) 80%,
+      rgb(26 26 26 / 100%) 100%
+    );
   }
 }

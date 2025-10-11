@@ -1,3 +1,30 @@
+/**
+ * Hero Slider Section Styles
+ *
+ * Design Tokens:
+ * - --color-text-light
+ * - --glass-background-dark-card
+ * - --glass-background
+ * - --color-text-highlight
+ * - --glass-background-light
+ * - --container-width
+ * - --gutter
+ * - --space-m-l
+ * - --space-m
+ * - --space-xl
+ * - --transition-fade
+ * - --dark-screen
+ * - --light-screen
+ * - --contrast-text-on-dark
+ * - --space-s
+ * - --font-s
+ * - --transition-base
+ * - --glass-backdrop-filter
+ * - --background-color-link-hover
+ * - --color-text-dark
+ * - --color-secondary
+ */
+
 .hero-slider {
   position: relative;
   width: 100%;
@@ -232,13 +259,37 @@
     }
   }
 
-  /* Dark theme for slides */
+  /* Dark slides always have light text, regardless of global theme */
   &.is-dark {
-    color: var(--color-text-light);
+    color: var(--contrast-text-on-dark);
 
     .hero-content :is(h1, h2, h3, h4, h5, h6),
     .hero-content p {
-      color: var(--color-text-light);
+      color: var(--contrast-text-on-dark);
+    }
+  }
+}
+
+/* Override dark theme to maintain slide-specific styling */
+/* Hero slider slides are self-contained and don't adapt to global theme */
+.dark-theme .hero-slide {
+  &.is-dark {
+    /* Dark slides always have light text, regardless of global theme */
+    color: #f4f4f4;
+
+    .hero-content :is(h1, h2, h3, h4, h5, h6),
+    .hero-content p {
+      color: #f4f4f4;
+    }
+  }
+
+  /* Light slides always have dark text, regardless of global theme */
+  &:not(.is-dark) {
+    color: #161616;
+
+    .hero-content :is(h1, h2, h3, h4, h5, h6),
+    .hero-content p {
+      color: #161616;
     }
   }
 }

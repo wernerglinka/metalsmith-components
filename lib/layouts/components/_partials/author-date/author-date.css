@@ -1,3 +1,13 @@
+/**
+ * Author Date Component Styles
+ *
+ * Design Tokens:
+ * - --font-xs
+ * - --color-text-inactive
+ * - --space-s
+ * - --space-2xs
+ */
+
 .author-date {
   display: flex;
   flex-wrap: wrap;

@@ -1,3 +1,20 @@
+/**
+ * Hero Section Styles
+ *
+ * Design Tokens:
+ * - --space-s-l
+ * - --glass-background
+ * - --glass-box-shadow
+ * - --space-2xs-xs
+ * - --space-m
+ * - --glass-background-light
+ * - --glass-border
+ * - --space-l
+ * - --space-3xs
+ * - --glass-background-dark
+ * - --color-text
+ */
+
 .hero.first-section {
   /*
     The text container should be 100% of the viewport width at 600px and smaller.
@@ -73,5 +90,13 @@
 
   &.is-reverse .text {
     margin-left: auto;
+  }
+}
+
+/* Dark theme: adjust glass background to be darker and text to be lighter */
+.dark-theme .hero.first-section {
+  .text {
+    background: var(--glass-background-dark);
+    color: var(--color-text);
   }
 }

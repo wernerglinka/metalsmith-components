@@ -1,4 +1,11 @@
 /**
+ * Columns Section Styles
+ *
+ * Design Tokens:
+ * - --space-xl-2xl
+ */
+
+/**
  * Custom composition with text, image and cta, from left to right
  */
 .text-image-cta {

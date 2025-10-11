@@ -1,3 +1,11 @@
+/**
+ * Text Link Component Styles
+ *
+ * Design Tokens:
+ * - --font-s
+ * - --background-color-link-hover
+ * - --color-primary
+ */
 .text-link {
   display: inline-block;
   padding: 2px;

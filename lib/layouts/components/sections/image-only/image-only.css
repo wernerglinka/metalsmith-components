@@ -1,3 +1,15 @@
+/**
+ * Image Only Section Styles
+ *
+ * Design Tokens:
+ * - --glass-border-radius
+ * - --space-xs
+ * - --color-text-muted
+ * - --step--1
+ * - --space-m
+ * - --space-m-l
+ */
+
 .image-only {
   .content {
     display: block; /* Override flex layout */

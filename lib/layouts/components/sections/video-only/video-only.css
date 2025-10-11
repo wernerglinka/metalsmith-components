@@ -1,3 +1,10 @@
+/**
+ * Video Only Section Styles
+ *
+ * Design Tokens:
+ * - --glass-border-radius
+ */
+
 .video-only {
   .content {
     display: block; /* Override flex layout */

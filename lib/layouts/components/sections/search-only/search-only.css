@@ -1,3 +1,14 @@
+/**
+ * Search Only Section Styles
+ *
+ * Design Tokens:
+ * - --space-m-l
+ * - --space-s-m
+ * - --glass-background-dark
+ * - --glass-border-radius
+ * - --glass-box-shadow
+ */
+
 .search-only {
   .content {
     display: block;

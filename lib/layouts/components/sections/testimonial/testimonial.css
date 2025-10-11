@@ -1,7 +1,16 @@
-/* 
-    the threshold determines the viewport width in which the container switches 
-    from horizontal to vertical layout. Depends on the text size.
-  */
+/**
+ * Testimonial Section Styles
+ *
+ * Design Tokens:
+ * - --space-l-2xl
+ * - --space-3xl
+ * - --font-h5
+ * - --font-p
+ * - --space-m
+ * - --space-s
+ * - --font-h2
+ */
+
 .testimonial {
   --threshold: 25ch !important;
 
@@ -47,18 +56,24 @@
 
     .logo {
       margin-block-start: var(--space-m);
-      width: var(--space-xl);
-      height: var(--space-xl);
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(var(--space-3xl) + var(--space-m));
+      height: calc(var(--space-3xl) + var(--space-m));
+      padding: var(--space-s);
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
 
       picture {
         display: block;
-        width: 100%;
-        height: 100%;
+        width: var(--space-3xl);
+        height: var(--space-3xl);
 
         img {
           width: 100%;
-          max-height: 100%;
+          height: 100%;
+          object-fit: contain;
         }
       }
     }
@@ -79,4 +94,9 @@
       font-size: inherit;
     }
   }
+}
+
+/* Dark theme: add subtle background to logo for visibility */
+.dark-theme .testimonial .quotee .logo {
+  background-color: rgb(255 255 255 / 15%);
 }

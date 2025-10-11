@@ -1,8 +1,28 @@
 /**
  * Manual Card Component Styles
- * A versatile card component for custom content layouts
+ *
+ * Design Tokens:
+ * - --glass-background
+ * - --color-border-light
+ * - --space-2xs-xs
+ * - --glass-box-shadow
+ * - --contrast-text-on-dark
+ * - --color-icon-default
+ * - --space-s-m
+ * - --glass-background-light
+ * - --font-h5
+ * - --color-text
+ * - --font-s
+ * - --font-p
+ * - --space-3xs
+ * - --space-s
+ * - --space-l-xl
+ * - --pattern1
+ * - --pattern2
+ * - --pattern3
+ * - --pattern4
+ * - --pattern5
  */
-
 .manual-card {
   container-type: inline-size;
   container-name: manual-card;
@@ -17,7 +37,7 @@
   box-shadow: var(--glass-box-shadow);
 
   &.is-dark .info * {
-    color: var(--color-text-light);
+    color: var(--contrast-text-on-dark);
   }
 
   .decoration {
@@ -41,7 +61,7 @@
       svg {
         height: 80%;
         width: 80%;
-        stroke: black;
+        stroke: var(--color-icon-default);
       }
     }
   }
@@ -167,7 +187,7 @@
     }
 
     &.is-dark svg {
-      stroke: var(--color-text-light);
+      stroke: var(--contrast-text-on-dark);
     }
   }
 

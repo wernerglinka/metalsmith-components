@@ -1,3 +1,11 @@
+/**
+ * Dark Light Theme Switcher Component Styles
+ *
+ * Design Tokens:
+ * - --space-m-l
+ * - --color-primary
+ * - --color-link-navigation
+ */
 .theme-toggle {
   background: transparent;
   border: none;

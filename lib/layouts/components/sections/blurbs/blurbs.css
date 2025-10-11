@@ -1,3 +1,18 @@
+/**
+ * Blurbs Section Styles
+ *
+ * Design Tokens:
+ * - --space-s-m
+ * - --color-border-light
+ * - --space-m
+ * - --space-2xl
+ * - --space-m-l
+ * - --space-l-2xl
+ * - --space-xl
+ * - --font-h5
+ * - --font-p
+ */
+
 .blurbs {
   .container.content {
     display: block;

@@ -1,5 +1,19 @@
 /**
- * Hamburger menu button - hidden by default on desktop
+ * Navigation Component Styles
+ *
+ * Design Tokens:
+ * - --space-s
+ * - --color-link-navigation
+ * - --color-background
+ * - --color-shadow
+ * - --color-border-light
+ * - --transition-base
+ * - --color-primary
+ * - --color-link-inactive
+ * - --color-link-in-path
+ * - --color-background-dark
+ * - --color-border-dark
+ * - --color-shadow-dark
  */
 .hamburger-menu {
   display: none; /* Hidden on desktop */

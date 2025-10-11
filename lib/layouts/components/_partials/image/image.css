@@ -1,5 +1,10 @@
-/*
- * Image Styles
+/**
+ * Image Component Styles
+ *
+ * Design Tokens:
+ * - --font-xs
+ * - --space-xs
+ * - --color-text-dark
  */
 .image,
 .media {

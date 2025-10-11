@@ -1,7 +1,14 @@
 /**
- * Footer
- * Background for regular footer is a dark css pattern, 
- * ergo text is light
+ * Footer Section Styles
+ *
+ * Design Tokens:
+ * - --color-dark-background
+ * - --space-s-l
+ * - --font-p
+ * - --color-footer-text-light
+ * - --transition-fade
+ * - --color-border-light
+ * - --color-text
  */
 
 footer {

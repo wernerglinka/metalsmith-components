@@ -1,6 +1,18 @@
 /**
- * Text Partial Component Styles
- * Enhances the global typography system with specific prose styling
+ * Text Component Styles
+ *
+ * Design Tokens:
+ * - --flow-space
+ * - --space-xs-s
+ * - --space-2xs
+ * - --color-primary
+ * - --space-s
+ * - --color-text-inactive
+ * - --color-background-light
+ * - --color-dark-background
+ * - --color-text
+ * - --contrast-text-on-dark
+ * - --color-primary-light
  */
 .is-centered {
   text-align: center;
@@ -85,12 +97,12 @@
 .is-dark .prose {
   blockquote {
     border-left-color: var(--color-primary-light, var(--color-primary));
-    color: var(--color-text-light);
+    color: var(--contrast-text-on-dark);
   }
 
   code {
     background-color: rgb(255 255 255 / 10%);
-    color: var(--color-text-light);
+    color: var(--contrast-text-on-dark);
   }
 
   th {

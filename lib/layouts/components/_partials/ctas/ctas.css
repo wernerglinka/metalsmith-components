@@ -1,7 +1,10 @@
 /**
- * CTAs Component
- * Imports button styles from button.css
- * Only CTA-specific layout styles are defined here
+ * CTAs Component Styles
+ *
+ * Design Tokens:
+ * - --space-m-l
+ * - --font-s
+ * - --color-primary
  */
 .ctas {
   --flow-space: var(--space-m-l);

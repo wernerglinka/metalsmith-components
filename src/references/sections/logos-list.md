@@ -270,7 +270,7 @@ sections:
         top: true
         bottom: false
       background:
-        color: '#f8f8f8'
+        color: 'var(--color-background-light)'
         image: ''
         imageScreen: 'none' # light, dark, none
     text:

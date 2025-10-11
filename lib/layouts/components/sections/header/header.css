@@ -1,6 +1,15 @@
 /**
- * Header & Navigation
+ * Header Section Styles
+ *
+ * Design Tokens:
+ * - --color-shadow
+ * - --gutter
+ * - --space-s
+ * - --space-m-l
+ * - --background-color-link-hover
+ * - --color-link-navigation
  */
+
 header {
   position: fixed;
   top: 0;

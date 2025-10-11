@@ -94,7 +94,7 @@ sections:
         top: true
         bottom: false
       background:
-        color: '#fafafa'
+        color: 'var(--color-background-light)'
         isDark: false
     text:
       leadIn: 'Complete Example'
@@ -119,7 +119,7 @@ sections:
         top: true
         bottom: false
       background:
-        color: '#fafafa'
+        color: 'var(--color-background-light)'
         isDark: false
     text:
       title: 'Minimal Configuration'

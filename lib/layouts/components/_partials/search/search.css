@@ -1,16 +1,39 @@
+/**
+ * Search Component Styles
+ *
+ * Design Tokens:
+ * - --space-2xs-xs
+ * - --font-p
+ * - --color-text
+ * - --color-primary
+ * - --color-text-tertiary
+ * - --color-background-secondary
+ * - --color-text-secondary
+ * - --space-md
+ * - --font-size-sm
+ * - --space-xl
+ * - --space-lg
+ * - --color-error
+ * - --color-error-light
+ * - --border-radius
+ * - --color-highlight
+ * - --color-text-primary
+ * - --font-weight-medium
+ * - --space-xs
+ */
 .search-input {
   width: 100%;
   border: none;
   background: none;
-  border-bottom: 2px solid var(--color-text-light);
+  border-bottom: 2px solid var(--color-text);
   padding: 0 var(--space-2xs-xs) var(--space-2xs-xs);
   font-size: var(--font-p);
-  color: var(--color-text-light);
+  color: var(--color-text);
   transition: border-color 0.2s ease, outline 0.2s ease;
 
   /* color of the placeholder */
   &::placeholder {
-    color: var(--color-text-light);
+    color: var(--color-text);
     opacity: 0.6;
   }
 

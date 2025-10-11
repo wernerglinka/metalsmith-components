@@ -1,4 +1,20 @@
-/* Overwrite threshold default for the banner content container */
+/**
+ * Multi Media Section Styles
+ *
+ * Design Tokens:
+ * - --glass-background
+ * - --color-shadow
+ * - --glass-backdrop-filter
+ * - --glass-border
+ * - --glass-border-radius
+ * - --space-s-l
+ * - --space-s-m
+ * - --color-border-light
+ * - --color-text
+ * - --wrapper-max-width
+ * - --gutter
+ */
+
 .section-wrapper.multi-media {
   .content {
     --threshold: 50rem;

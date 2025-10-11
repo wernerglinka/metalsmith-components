@@ -43,7 +43,7 @@ sections:
         top: false
         bottom: false
       background:
-        isDark: true
+        isDark: false
         color: ''
         image: '/assets/images/sample13.jpg'
         imageScreen: 'none' # light, dark, none
@@ -180,7 +180,7 @@ sections:
   - sectionType: hero
     containerTag: section
     classes: ''
-    id: ''
+    id: 'hero2'
     description: 'This is a regular hero section with a background image and text overlay.'
     isDisabled: false
     isReverse: false

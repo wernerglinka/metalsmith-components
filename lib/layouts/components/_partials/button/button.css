@@ -1,5 +1,21 @@
 /**
- * Default button style is glass
+ * Button Component Styles
+ *
+ * Design Tokens:
+ * - --space-2xs-xs
+ * - --space-s-m
+ * - --default-letter-spacing
+ * - --glass-backdrop-filter
+ * - --glass-box-shadow
+ * - --primary-button-text-color
+ * - --primary-button-color
+ * - --secondary-button-text-color
+ * - --secondary-button-color
+ * - --tertiary-button-color
+ * - --tertiary-button-text-color
+ * - --color-border-light
+ * - --font-xs
+ * - --color-text-light
  */
 .button {
   display: inline-block;
@@ -14,9 +30,11 @@
   box-shadow: var(--glass-box-shadow);
   border-radius: 0.5rem;
   cursor: pointer;
+  color: #f4f4f4; /* Default button text color - override global anchor color */
 
   &:hover {
     transform: scale(1.05);
+    background-color: transparent; /* Override global anchor hover */
   }
 
   &.primary {

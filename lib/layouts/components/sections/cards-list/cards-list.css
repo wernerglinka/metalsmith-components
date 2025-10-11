@@ -1,3 +1,10 @@
+/**
+ * Cards List Section Styles
+ *
+ * Design Tokens:
+ * - --space-l-xl
+ */
+
 .cards-list {
   container-type: inline-size;
   container-name: cards-list;

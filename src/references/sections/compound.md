@@ -79,7 +79,7 @@ sections:
         top: false
         bottom: false
       background:
-        color: '#f5f5f5'
+        color: 'var(--color-background-light)'
         image: ''
         imageScreen: 'none'
     compoundSections:

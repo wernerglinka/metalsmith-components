@@ -80,7 +80,7 @@ sections:
 
   - sectionType: hero
     containerTag: section
-    isFullScreen: true
+    isFullScreen: false
     containerFields:
       inContainer: true
       isAnimated: true

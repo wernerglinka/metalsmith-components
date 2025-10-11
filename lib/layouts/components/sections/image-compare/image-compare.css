@@ -1,3 +1,14 @@
+/**
+ * Image Compare Section Styles
+ *
+ * Design Tokens:
+ * - --space-xs-s
+ * - --glass-background-light
+ * - --glass-backdrop-filter
+ * - --glass-box-shadow
+ * - --glass-background
+ */
+
 .image-compare {
   --handle-size: 2.6rem;
 

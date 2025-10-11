@@ -28,14 +28,15 @@
   --color-shadow: 0px 0px 20px 3px rgb(57 57 57 / 10%);
   --color-surface-hover: rgb(0 0 0 / 3%);
   --color-surface-focus: rgb(0 0 0 / 5%);
+  --color-icon-default: #161616;
 
   /* Button Colors */
   --primary-button-color: rgb(218 30 40 / 80%);
-  --primary-button-text-color: var(--color-text-light);
+  --primary-button-text-color: #f4f4f4; /* Always light text on red */
   --secondary-button-color: rgb(0 0 0 / 60%);
-  --secondary-button-text-color: var(--color-text-light);
+  --secondary-button-text-color: #f4f4f4; /* Always light text on black */
   --tertiary-button-color: rgb(255 255 255 / 80%);
-  --tertiary-button-text-color: var(--color-text);
+  --tertiary-button-text-color: #161616; /* Always dark text on white */
 
   /* Glass Morphism */
   --glass-background: rgb(255 255 255 / 15%);
@@ -50,6 +51,15 @@
 
   /* color constant regardless of theme */
   --color-footer-text-light: #f4f4f4;
+
+  /* Screen colors - always use fixed values regardless of theme */
+  /* These provide overlay contrast for text on images */
+  --light-screen: rgb(255 255 255 / 90%); /* Lightens image for dark text */
+  --dark-screen: rgb(0 0 0 / 60%);         /* Darkens image for light text */
+
+  /* Contrast colors - automatically select appropriate contrast based on context */
+  --contrast-text-on-light: var(--color-text);
+  --contrast-text-on-dark: var(--color-text-light);
 
   /**
   * Fluid typography is created with https://utopia.fyi/
@@ -142,13 +152,6 @@
   --tracking: -0.05ch; /* Standard letter spacing */
   --tracking-s: -0.075ch; /* Tighter letter spacing */
 
-  /* Screen colors */
-  --light-screen: rgb(255 255 255 / 90%);
-  --dark-screen: rgb(0 0 0 / 60%);
-  /* some screens may be changed with the theme selection */
-  --theme-light-screen: rgb(255 255 255 / 90%);
-  --theme-dark-screen: rgb(0 0 0 / 60%);
-
   /* Code Syntax Highlighting (PrismJS) */
   --code-bg: #fcfcfc;
   --code-text: var(--color-text);
@@ -205,17 +208,25 @@ body.dark-theme {
   --color-shadow: 0px 0px 20px 3px rgb(0 0 0 / 50%);
   --color-surface-hover: rgb(255 255 255 / 5%);
   --color-surface-focus: rgb(255 255 255 / 8%);
+  --color-icon-default: #999;
 
-  /* Button Colors */
+  /* Button Colors - keep same as light theme */
   --primary-button-color: rgb(218 30 40 / 80%);
-  --primary-button-text-color: var(--color-text);
+  --primary-button-text-color: #f4f4f4; /* Always light text on red */
   --secondary-button-color: rgb(0 0 0 / 60%);
-  --secondary-button-text-color: var(--color-text);
+  --secondary-button-text-color: #f4f4f4; /* Always light text on black */
   --tertiary-button-color: rgb(255 255 255 / 80%);
-  --tertiary-button-text-color: var(--color-text-light);
+  --tertiary-button-text-color: #161616; /* Always dark text on white */
 
   /* Glass Morphism */
   --glass-border: none;
+  --glass-background-light: rgb(0 0 0 / 70%);
+
+  /* Screen colors remain the same - they're image overlays, not theme-dependent */
+
+  /* Contrast colors - inverted for dark theme */
+  --contrast-text-on-light: var(--color-text-light);
+  --contrast-text-on-dark: var(--color-text);
 
   /* Code Syntax Highlighting (PrismJS) - Dark Theme */
   --code-bg: #2d2d2d;

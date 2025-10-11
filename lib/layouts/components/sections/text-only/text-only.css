@@ -1,4 +1,23 @@
-/* Overwrite threshold default for the banner content container */
+/**
+ * Text Only Section Styles
+ *
+ * Design Tokens:
+ * - --space-s
+ * - --space-m-l
+ * - --code-text
+ * - --code-bg
+ * - --code-selection-bg
+ * - --color-border-light
+ * - --token-comment
+ * - --token-punctuation
+ * - --token-property
+ * - --token-selector
+ * - --token-operator
+ * - --token-atrule
+ * - --token-function
+ * - --token-regex
+ */
+
 .text-only {
   /* Override commons.css .content flex layout for text-only sections */
   .content {

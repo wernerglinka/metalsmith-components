@@ -1,5 +1,10 @@
 /**
- * Pagination
+ * Collection Pagination Component Styles
+ *
+ * Design Tokens:
+ * - --color-background-light
+ * - --color-pagination-active
+ * - --contrast-text-on-dark
  */
 .blogs-pagination {
   display: flex;
@@ -32,7 +37,7 @@
       pointer-events: none;
 
       span {
-        color: var(--color-text-light);
+        color: var(--contrast-text-on-dark);
       }
     }
 

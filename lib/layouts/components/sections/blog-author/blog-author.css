@@ -1,6 +1,18 @@
+/**
+ * Blog Author Section Styles
+ *
+ * Design Tokens:
+ * - --space-l-2xl
+ * - --glass-border-radius
+ * - --color-border-light
+ * - --space-s
+ * - --color-text
+ * - --color-primary
+ */
+
 .blog-author {
-  /* 
-    the threshold determines the viewport width in which the container switches 
+  /*
+    the threshold determines the viewport width in which the container switches
     from horizontal to vertical layout. Depends on the text size.
 
     The .content class in commons.css implements the Switcher pattern with the key line:
@@ -60,7 +72,7 @@
       margin-block-start: var(--space-s);
 
       svg {
-        stroke: black;
+        stroke: var(--color-text);
         stroke-width: 1px;
         fill: none;
         width: 100%;
@@ -72,13 +84,13 @@
           top: 3px;
 
           * {
-            fill: black;
+            fill: var(--color-text);
           }
         }
 
         * {
           fill: none;
-          stroke: black;
+          stroke: var(--color-text);
           stroke-width: 1px;
           transition: all 0.3s ease-in-out;
         }
@@ -100,7 +112,7 @@
 
           &.wikipedia {
             * {
-              fill: red;
+              fill: var(--color-primary);
             }
           }
         }
@@ -126,4 +138,7 @@
 
 /** Dark Theme styles variations */
 .dark-theme .section-wrapper.blog-author {
+  .content {
+    border-color: var(--color-border-light);
+  }
 }

@@ -1,4 +1,14 @@
-/* Banner component styles following hero-slider patterns */
+/**
+ * Banner Section Styles
+ *
+ * Design Tokens:
+ * - --space-s-l
+ * - --space-m-l
+ * - --glass-border-radius
+ * - --color-primary
+ * - --space-s
+ */
+
 .banner {
   /* Use consistent threshold with other components */
   --threshold: 50rem;

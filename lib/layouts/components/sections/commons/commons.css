@@ -1,5 +1,19 @@
 /**
- * Common Styles for all sections
+ * Commons Section Styles
+ *
+ * Design Tokens:
+ * - --space-l-2xl
+ * - --space-s-l
+ * - --wrapper-max-width
+ * - --contrast-text-on-dark
+ * - --space-2xl-3xl
+ * - --space-3xl-4xl
+ * - --space-xl-2xl
+ * - --dark-screen
+ * - --contrast-text-on-light
+ * - --light-screen
+ * - --content-gap
+ * - --color-primary
  */
 
 .section-wrapper {
@@ -36,11 +50,11 @@
   }
 
   &.is-dark {
-    color: var(--color-text-light);
+    color: var(--contrast-text-on-dark);
   }
 
-  /* 
-    Adjust the section height for transpartent header. Header is fixed 
+  /*
+    Adjust the section height for transpartent header. Header is fixed
     so we need to move the section up and behind to compensate.
   */
   &.first-section {
@@ -119,26 +133,36 @@
     z-index: -1;
   }
 
-  &.has-dark-screen .background-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--theme-dark-screen);
-    z-index: 1;
+  &.has-dark-screen {
+    /* Dark screen = dark overlay for light text */
+    color: var(--contrast-text-on-dark);
+
+    .background-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dark-screen);
+      z-index: 1;
+    }
   }
 
-  &.has-light-screen .background-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--theme-light-screen);
-    z-index: 1;
+  &.has-light-screen {
+    /* Light screen = light overlay for dark text */
+    color: var(--contrast-text-on-light);
+
+    .background-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--light-screen);
+      z-index: 1;
+    }
   }
 
   /*
@@ -181,11 +205,22 @@
   }
 }
 
+/* Dark theme: invert screens ONLY if not explicitly marked as is-dark */
+/* Sections with is-dark are design choices that should stay dark in both themes */
 .dark-theme {
   .section-wrapper {
-    &.is-dark {
-      color: var(--color-text);
+    /* Only invert if NOT explicitly marked as dark */
+    &.has-light-screen:not(.is-dark) {
+      /* In dark theme, light screen becomes dark, so text should be light */
+      color: var(--contrast-text-on-dark);
+
+      .background-image::after {
+        background: var(--dark-screen);
+      }
     }
+
+    /* Sections with is-dark stay dark (don't invert) */
+    /* They already have the right screen and text color from light theme rules */
   }
 }
 
