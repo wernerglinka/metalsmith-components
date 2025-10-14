@@ -329,6 +329,24 @@ sections:
     placeholder: 'Search components...'
 ```
 
+### Partials Search System
+
+Similar to the library search, there's a dedicated search for partials components:
+
+#### Search Index Generation
+- **Plugin**: `plugins/generate-partials-search-index.js` generates `partials-search-index.json`
+- **Collection**: Uses the `partials` collection (from `src/references/partials/*.md`)
+- **Output**: Creates search index with metadata for all partials components
+- **Implementation**: Same search UI pattern as library search
+
+#### Using Partials Search
+```yaml
+sections:
+  - sectionType: search
+    searchIndex: '/partials-search-index.json'
+    placeholder: 'Search partials...'
+```
+
 ## Key Files & Configuration
 
 ### Build Configuration
@@ -339,6 +357,7 @@ sections:
 - `prettier.config.js` - Prettier formatting rules
 - `plugins/generate-maps-icons.js` - Build-time icon registry generation for maps components
 - `plugins/generate-library-search-index.js` - Build-time search index generation for library components
+- `plugins/generate-partials-search-index.js` - Build-time search index generation for partials components
 
 ### Content Structure
 
@@ -374,6 +393,20 @@ When adding components:
 5. Validate against the Metalsmith2025 Starter structure
 
 ## Important Development Notes
+
+### Collections
+
+Three collections are automatically created during the build:
+
+- **blog**: Blog posts from `blog/*.md`, sorted by `card.date`
+- **sections**: Section documentation from `references/sections/*.md`, sorted by `seo.title`
+- **partials**: Partial documentation from `references/partials/*.md`, sorted by `seo.title`
+
+These collections power the blog pagination, library search, and partials search features.
+
+### Watch Mode Exclusions
+
+The `icon-loader.js` file in the maps component is excluded from watch mode (`lib/layouts/components/sections/maps/modules/helpers/icon-loader.js`) because it's auto-generated during builds. Including it would cause infinite rebuild loops.
 
 ### Nunjucks Template Formatting
 
