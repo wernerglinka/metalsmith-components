@@ -30,19 +30,28 @@ Explore a comprehensive collection of production-ready components:
 
 ### Documentation & Learning
 
-- **Section Anatomy**: Deep dive into component structure and properties
-- **Build Process Guide**: Understanding the journey from YAML to HTML
-- **Template Hierarchy**: Learn how components compose into complete pages
-- **Best Practices**: Component configuration and optimization techniques
-- **Sample Blog**: See the component system in action with real content
+The blog includes comprehensive guides for developers:
+
+- **Building Pages with Components**: Learn the structured frontmatter approach
+- **How Component Bundling Works**: Understand automatic asset optimization
+- **Site-Wide Search System**: Two-layer architecture for quality search results
+- **Working with Data**: Using JSON data files in components
+- **Building Interactive Components**: JavaScript patterns without frameworks
+- **Component Validation**: Catch errors with manifest schemas
+- **Theming Architecture**: Dark mode implementation strategies
+- **Section Anatomy**: Deep dive into component structure
+- **Build Process Guide**: YAML to HTML rendering pipeline
 
 ### Technical Features
 
-- **Component Dependency Bundling**: Automatically bundles only the CSS and JavaScript needed for components used on each page
-- **PostCSS Processing**: Built-in autoprefixing and CSS optimization
-- **True Component Encapsulation**: Each component manages its own styles, scripts, and templates
+- **Component Dependency Bundling**: Automatically scans all pages and bundles only the CSS/JS for components actually used across the site
+- **Intelligent Caching**: Single optimized bundle shared across all pages with browser caching
+- **PostCSS Processing**: Built-in autoprefixing, linting, and CSS optimization
+- **True Component Encapsulation**: Each component manages its own styles, scripts, templates, and validation
 - **No Framework Overhead**: Pure HTML/CSS/JS output without React, Vue, or other runtime dependencies
-- **Searchable Component Library**: Build-time search index generation with component tagging system
+- **Two-Layer Search**: metalsmith-search plugin for indexing + client-side filtering for quality results
+- **Data-Driven Components**: JSON data files for clean separation of content and configuration
+- **Manifest Validation**: Build-time validation with JSON Schema prevents configuration errors
 
 ## Getting Started with Metalsmith Components
 
@@ -207,12 +216,15 @@ Each component is self-contained with:
 
 ### Component Dependency Bundler
 
-The system automatically manages component assets:
+The system automatically manages component assets using the `metalsmith-bundled-components` plugin:
 
-1. **Scans pages** to identify which components are used
-2. **Bundles only required CSS/JS** for optimal performance
-3. **Applies PostCSS processing** for autoprefixing and minification
-4. **Generates per-page assets** with no unused code
+1. **Scans all pages** across the entire site to identify which components are used
+2. **Bundles site-wide assets** containing only the CSS/JS for components actually used
+3. **Creates single optimized files** shared across all pages for optimal browser caching
+4. **Applies PostCSS processing** for autoprefixing, linting, and minification
+5. **Tree-shakes unused code** with esbuild for minimal bundle sizes
+
+Learn more in the blog post: [How Component Bundling Works](/blog/how-component-bundling-works/)
 
 ### JSON Data Architecture
 
@@ -222,6 +234,9 @@ For complex components like maps, the system uses external JSON files for data m
 - **Scalable Data**: Handle large datasets (many markers, locations, etc.) without cluttering pages
 - **Reusable Content**: Same JSON data can be used across multiple pages
 - **Build Integration**: JSON files in `/lib/data/` are automatically loaded and accessible as `data.maps.filename`
+- **Filtering Support**: Use `getSelections()` filter to show subsets of data
+
+Learn more in the blog post: [Working with Data in Metalsmith Components](/blog/working-with-data-in-metalsmith/)
 
 ## Available Components
 
@@ -238,7 +253,11 @@ For complex components like maps, the system uses external JSON files for data m
 - **Flip Cards**: Interactive cards with front/back content
 - **Logos List**: Auto-scrolling logo carousels
 - **Testimonial**: Customer quotes with attribution
-- **Search**: Real-time fuzzy search with Fuse.js integration
+- **Search**: Two-layer search with metalsmith-search plugin + client-side Fuse.js filtering
+- **Image Compare**: Before/after image comparison with draggable handle
+- **Simple Accordion**: Expandable/collapsible content sections
+
+Learn more about interactive patterns: [Building Interactive Components with JavaScript](/blog/building-interactive-components/)
 
 ### Mapping Components
 
@@ -278,10 +297,19 @@ For deployment to subdirectories (e.g., GitHub Pages), the [metalsmith-safe-link
 
 ### Documentation
 
+Explore comprehensive developer guides:
+
 - [Component Library](/library) - Browse all available components with live examples
-- [Section Anatomy](/section-anatomy) - Deep dive into component structure and properties
-- [Build Process Guide](/yaml-to-html) - Understanding the YAML to HTML rendering pipeline
-- [Sample Blog](/blog) - See components in action with real content
+- [Blog](/blog) - In-depth guides covering:
+  - Building Pages with Components
+  - How Component Bundling Works
+  - Site-Wide Search System
+  - Working with Data in Metalsmith
+  - Building Interactive Components with JavaScript
+  - Understanding Component Validation
+  - Theming Architecture
+  - Section Anatomy
+  - Build Process Guide
 
 ## Contributing
 
