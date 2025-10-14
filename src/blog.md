@@ -3,12 +3,12 @@ layout: pages/sections.njk
 bodyClass: ''
 
 navigation:
-  navLabel: 'Sample Blog'
-  navIndex: 4
+  navLabel: 'Blog'
+  navIndex: 2
 
 seo:
-  title: Blog - Metalsmith Components & Architecture Examples
-  description: 'Explore articles about building with Metalsmith components, structured content patterns, and modern static site architecture. Learn best practices for component-based development.'
+  title: Blog - Component-Based Architecture Guide
+  description: 'Learn how to build modern websites with Metalsmith components. Guides, tutorials, and deep dives into component-based architecture, structured content, and build processes.'
   socialImage: '/assets/images/metalsmith-starter-social.png'
   canonicalOverwrite: ''
   keywords: 'metalsmith blog, static site tutorials, component architecture, structured content, web development articles, metalsmith patterns, static site best practices'
@@ -39,11 +39,11 @@ sections:
         image: '/assets/images/sample10.jpg'
         imageScreen: 'dark' # light, dark, none
     text:
-      leadIn: 'Metalsmith Components'
-      title: Blog Example
+      leadIn: 'Component-Based Architecture'
+      title: Blog
       titleTag: 'h1'
-      subTitle: 'Read on'
-      prose: 'This blog section demonstrates a blog with five blog posts from the Metalsmith2025 starter. Blog index pages feature pagination. For this demo each index page shows three blogs using a card metaphor.'
+      subTitle: 'Guides and tutorials for building modern websites'
+      prose: 'Learn how to build, structure, and optimize component-based Metalsmith sites. From architecture fundamentals to advanced techniques.'
     ctas:
       - url: ''
         label: ''

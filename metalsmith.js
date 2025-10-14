@@ -14,8 +14,6 @@ import * as fs from 'node:fs'; // File system operations (read/write files)
 import Metalsmith from 'metalsmith'; // The core static site generator
 import drafts from '@metalsmith/drafts'; // Excludes draft content from builds
 import generateMapsIcons from './plugins/generate-maps-icons.js'; // Generates maps icon registry
-import generateLibrarySearchIndex from './plugins/generate-library-search-index.js'; // Generates library search index
-import generatePartialsSearchIndex from './plugins/generate-partials-search-index.js'; // Generates partials search index
 import collections from '@metalsmith/collections';
 import paginatePages from 'metalsmith-sectioned-blog-pagination';
 import search from 'metalsmith-search'; // Adds search functionality
@@ -191,7 +189,7 @@ metalsmith
       blog: {
         pattern: 'blog/*.md',
         sortBy: 'card.date',
-        reverse: false
+        reverse: true
       },
       sections: {
         pattern: 'references/sections/*.md',
@@ -206,23 +204,6 @@ metalsmith
     } )
   )
 
-  // Generate search index for library components (after collections)
-  .use( generateLibrarySearchIndex() )
-
-  // Generate search index for partials components
-  .use( generatePartialsSearchIndex() )
-
-  /*
-    .use( ( files, metalsmithInstance, done ) => {
-      // show the collections object for debug purposes
-      const metadata = metalsmithInstance.metadata();
-      console.log( 'Collections metadata:', metadata.collections );
-  
-      done();
-    } )
-  */
-
-
   /**
    * Create metadata for blog pagination as pages are built
    * with individual page components so we can't use the
@@ -231,7 +212,7 @@ metalsmith
    */
   .use(
     paginatePages( {
-      pagesPerPage: 3,
+      pagesPerPage: 6,
       blogDirectory: 'blog/'
     } )
   )
@@ -244,9 +225,7 @@ metalsmith
     search( {
       ignore: [
         '**/search.md',
-        '**/search-index.json',
-        '**/library-search-index.json',
-        '**/partials-search-index.json'
+        '**/search-index.json'
       ]
     } )
   )
@@ -271,7 +250,7 @@ metalsmith
     menus( {
       metadataKey: 'mainMenu', // Where to store menu data
       usePermalinks: true, // Use clean URLs in menu
-      navExcludePatterns: [ '404.html', 'robots.txt', 'search-index.json', 'library-search-index.json', 'partials-search-index.json' ] // Files to exclude from menu
+      navExcludePatterns: [ '404.html', 'robots.txt', 'search-index.json' ] // Files to exclude from menu
     } )
   )
 

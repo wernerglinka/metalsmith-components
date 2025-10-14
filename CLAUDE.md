@@ -300,52 +300,42 @@ The maps component provides comprehensive interactive mapping capabilities with:
 - **Error Handling**: Graceful fallbacks for missing icons and failed library loads
 - **Accessibility**: Proper ARIA attributes and screen reader support
 
-### Library Search System
+### Site-Wide Search System
 
-The component library includes a dedicated search system for discovering components by name, description, or tags.
+The component library includes a comprehensive search system for discovering content across the entire site.
 
-#### Search Index Generation
-- **Plugin**: `plugins/generate-library-search-index.js` generates a JSON search index at build time
-- **Output**: Creates `library-search-index.json` with metadata for all library components
-- **Data Structure**: Includes title, description, URL, and tags for each component
+#### Search Architecture (Two-Layer Design)
 
-#### Component Tagging
-- **Location**: Tags are stored in the `card.tags` array in each library page's frontmatter
-- **Purpose**: Enable discovery by functionality, use case, or component type
-- **Examples**: `['hero', 'banner', 'fullscreen', 'cta']` for hero components
+**Layer 1: Build-Time Index Generation**
+- **Plugin**: `metalsmith-search` generates a unified search index at build time
+- **Output**: Creates `search-index.json` with 200+ entries including pages, sections, and structured content
+- **Data Structure**: Indexes title, content, tags, leadIn, prose, and section-level content
+- **Comprehensive**: Single index covers all site content (library components, partials, blog posts, documentation)
 
-#### Search Implementation
-- **Search Partial**: `lib/layouts/components/_partials/search/` provides the search UI
-- **Client-Side**: Uses Fuse.js for fuzzy search capabilities
-- **Real-Time**: Instant search results as users type
-- **Search Fields**: Searches across title, description, and tags
+**Layer 2: Client-Side Filtering**
+- **Search Component**: `lib/layouts/components/_partials/search/` provides the search UI
+- **Fuzzy Search**: Uses Fuse.js for initial fuzzy matching
+- **Strict Filtering**: JavaScript applies exact substring matching to eliminate false positives
+- **Real-Time**: Instant search results as users type with quality filtering
+
+#### Search Quality Features
+- **Relevance Threshold**: Minimum 50% relevance score required
+- **Exact Match Requirement**: Search term must exist as substring in result content
+- **Multi-Field Search**: Searches across title, pageName, content, tags, leadIn, prose, and section content
+- **False Positive Prevention**: Two-layer approach ensures only valid matches reach users
 
 #### Using Search in Pages
-To add search functionality to any page, include the search partial in your frontmatter:
+To add search functionality to any page, include the search section in your frontmatter:
 ```yaml
 sections:
   - sectionType: search
-    searchIndex: '/library-search-index.json'
     placeholder: 'Search components...'
+    settings:
+      maxResults: 20
+      minCharacters: 2
 ```
 
-### Partials Search System
-
-Similar to the library search, there's a dedicated search for partials components:
-
-#### Search Index Generation
-- **Plugin**: `plugins/generate-partials-search-index.js` generates `partials-search-index.json`
-- **Collection**: Uses the `partials` collection (from `src/references/partials/*.md`)
-- **Output**: Creates search index with metadata for all partials components
-- **Implementation**: Same search UI pattern as library search
-
-#### Using Partials Search
-```yaml
-sections:
-  - sectionType: search
-    searchIndex: '/partials-search-index.json'
-    placeholder: 'Search partials...'
-```
+The search automatically uses `/search-index.json` unless a custom source is specified via `source` or `settings.source`.
 
 ## Key Files & Configuration
 
@@ -356,8 +346,6 @@ sections:
 - `eslint.config.js` - ESLint configuration
 - `prettier.config.js` - Prettier formatting rules
 - `plugins/generate-maps-icons.js` - Build-time icon registry generation for maps components
-- `plugins/generate-library-search-index.js` - Build-time search index generation for library components
-- `plugins/generate-partials-search-index.js` - Build-time search index generation for partials components
 
 ### Content Structure
 

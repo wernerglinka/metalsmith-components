@@ -1,12 +1,19 @@
 ---
 layout: pages/sections.njk
 bodyClasses: 'documentation-page'
-title: Theming
+hasHero: true
+
+card:
+  title: 'Theming Architecture'
+  description: 'Comprehensive guide to implementing dark mode in component-based static sites. Learn about semantic color tokens, adaptive vs. design choice sections, and component-level theme considerations.'
+  date: '2025-06-27'
+  author: 'Metalsmith Components Team'
+  thumbnail: '/assets/images/sample23.jpg'
 
 seo:
   title: Theming Architecture - Dark Mode Implementation for Metalsmith Components
   description: 'Comprehensive guide to implementing dark mode in component-based static sites. Learn about semantic color tokens, adaptive vs. design choice sections, and component-level theme considerations.'
-  socialImage: '/assets/images/sample.jpg'
+  socialImage: '/assets/images/sample23.jpg'
   canonicalURL: ''
   keywords: 'dark mode, theming, CSS variables, semantic tokens, component architecture, metalsmith theming, dark theme implementation'
 
@@ -33,8 +40,8 @@ sections:
         image: '/assets/images/sample23.jpg'
         imageScreen: 'dark'
     text:
-      leadIn: 'Theming Architecture'
-      title: 'Theming'
+      leadIn: 'Theming'
+      title: 'Theming Architecture'
       titleTag: 'h1'
       subTitle: 'Dark Mode Implementation for Component-Based Sites'
       prose: 'A guide of how we implemented dark mode for this component-based static site, covering semantic color tokens, adaptive sections, and practical patterns for building theme-aware components.'
@@ -581,9 +588,9 @@ sections:
 
         This balance between centralized theming and component-level awareness creates a maintainable, flexible theming system that respects both design intent and user preference.
 
-  - sectionType: banner
-    containerTag: aside
-    classes: 'cta-banner'
+  - sectionType: blog-navigation
+    containerTag: section
+    classes: ''
     id: ''
     isDisabled: false
     isReverse: false
@@ -592,28 +599,12 @@ sections:
       isAnimated: true
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
       background:
         color: ''
-        image: '/assets/images/sample7.jpg'
-        imageScreen: 'dark' # light, dark, none
-    text:
-      leadIn: ''
-      title: ''
-      titleTag: 'h3'
-      isCentered: false
-      subTitle: ''
-      prose: ''
-    ctas:
-      - url: '/library'
-        label: 'Explore Components'
-        isButton: true
-        buttonStyle: 'primary'
-      - url: '/'
-        label: 'Back to Home'
-        isButton: true
-        buttonStyle: 'secondary'
+        image: ''
+        imageScreen: 'none'
 ---

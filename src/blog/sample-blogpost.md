@@ -4,21 +4,21 @@ bodyClass: ''
 draft: false
 
 seo:
-  title: Architecture Philosophy - Building with Metalsmith Components
-  description: 'Explore the core principles behind Metalsmith component architecture: true encapsulation, separation of concerns, and declarative content management for modern static sites.'
-  socialImage: 'https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png'
+  title: Sample Blog Post Structure - Example Template
+  description: 'Example blog post demonstrating the structure with hero section, multiple authors, and blog navigation. Use this as a template for creating new blog posts.'
+  socialImage: '/assets/images/sample9.jpg'
   canonicalOverwrite: ''
-  keywords: 'metalsmith architecture, component philosophy, structured content, separation of concerns, component encapsulation, declarative content, static site architecture'
+  keywords: 'blog post example, template structure, author cards, blog navigation'
 
 card:
-  title: 'Architecture Philosophy'
+  title: 'Sample Blog Post Structure'
   date: '2025-06-02'
   author:
     - Albert Einstein
     - Isaac Newton
   thumbnail: '/assets/images/sample9.jpg'
   excerpt: |-
-    This starter embodies several key principles that make structured content management both powerful and approachable.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui nullam quis risus eget urna mollis ornare.
 
 sections:
   - sectionType: hero
@@ -49,9 +49,9 @@ sections:
         imageScreen: 'dark' # light, dark, none
     text:
       leadIn: 'Metalsmith Components'
-      title: Architecture Philosophy
+      title: Sample Blog Post Structure
       titleTag: 'h1'
-      subTitle: 'Sample Blog'
+      subTitle: 'Example Template'
       prose: ''
     ctas:
       - url: ''
@@ -84,16 +84,37 @@ sections:
         imageScreen: 'none' # light, dark, none
     text:
       leadIn: ''
-      title: ''
+      title: 'Lorem Ipsum Dolor'
       titleTag: 'h2'
       subTitle: ''
       prose: |-
-        This starter embodies several key principles that make structured content management both powerful and approachable. Each page is composed of independent sections that can be arranged, rearranged, and reused across different contexts. Content is defined declaratively through configuration rather than embedded within template files.
-        The component system provides flexibility without complexity. You can create sophisticated page layouts by combining simple, focused components. Each component has a single responsibility and a clear interface, making the entire system easier to understand and maintain.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.
 
-        True component encapsulation means that each component manages not just its template logic, but also its associated styles and JavaScript behavior. This starter demonstrates how components can be truly self-contained units that include their CSS and JavaScript dependencies, with automatic asset bundling and dependency resolution handled transparently by the build system.
+        Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod.
 
-        Unlike traditional CMS approaches that mix content with presentation, this starter maintains strict separation of concerns. Content creators work with structured data. Template authors focus on presentation logic. The build system handles asset management and component dependencies automatically, ensuring that components load in the correct order and their styles don't conflict with each other.
+        ```css
+        /* Light theme - white gradient */
+        .mask::before {
+          background-image: linear-gradient(
+            to right,
+            rgb(255 255 255 / 100%) 0%,
+            transparent 100%
+          );
+        }
+
+        /* Dark theme - dark gradient */
+        .dark-theme .mask::before {
+          background-image: linear-gradient(
+            to right,
+            rgb(26 26 26 / 100%) 0%,
+            transparent 100%
+          );
+        }
+        ```
+
+        Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+
+        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
     ctas:
       - url: ''

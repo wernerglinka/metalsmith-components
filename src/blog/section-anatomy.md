@@ -3,9 +3,12 @@ layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
 
-navigation:
-  navLabel: 'Section Anatomy'
-  navIndex: 1
+card:
+  title: 'Section Anatomy'
+  description: 'Deep dive into Metalsmith component architecture. Learn how hero sections, content blocks, and page sections are structured with YAML configuration and Nunjucks templates.'
+  date: '2025-06-16'
+  author: 'Metalsmith Components Team'
+  thumbnail: '/assets/images/sample12.jpg'
 
 seo:
   title: Section Anatomy - Understanding Metalsmith Component Structure
@@ -264,9 +267,9 @@ sections:
         isButton: true
         buttonStyle: 'primary'
 
-  - sectionType: banner
-    containerTag: aside
-    classes: 'cta-banner'
+  - sectionType: blog-navigation
+    containerTag: section
+    classes: ''
     id: ''
     isDisabled: false
     isReverse: false
@@ -275,24 +278,12 @@ sections:
       isAnimated: true
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
       background:
         color: ''
-        image: '/assets/images/sample7.jpg'
-        imageScreen: 'dark' # light, dark, none
-    text:
-      leadIn: ''
-      title: ''
-      titleTag: 'h3'
-      isCentered: false
-      subTitle: ''
-      prose: ''
-    ctas:
-      - url: '/yaml-to-html'
-        label: 'Follow the journey from YAML to HTML'
-        isButton: true
-        buttonStyle: 'primary'
+        image: ''
+        imageScreen: 'none'
 ---

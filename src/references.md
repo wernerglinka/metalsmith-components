@@ -4,7 +4,7 @@ bodyClass: ''
 
 navigation:
   navLabel: 'References'
-  navIndex: 5
+  navIndex: 1
 
 seo:
   title: Metalsmith Component Library References

@@ -3,9 +3,12 @@ layout: pages/sections.njk
 bodyClasses: 'sections-page'
 hasHero: true
 
-navigation:
-  navLabel: 'From YAML to HTML'
-  navIndex: 2
+card:
+  title: 'Building Structured Pages'
+  description: 'Complete guide to understanding how Metalsmith transforms YAML configurations into HTML pages. Learn the template hierarchy, Nunjucks macros, data flow, and debugging techniques.'
+  date: '2025-06-22'
+  author: 'Metalsmith Components Team'
+  thumbnail: '/assets/images/sample18.jpg'
 
 seo:
   title: From YAML to HTML - Metalsmith Component Build Process
@@ -333,9 +336,9 @@ sections:
         isButton: true
         buttonStyle: 'primary'
 
-  - sectionType: banner
-    containerTag: aside
-    classes: 'cta-banner'
+  - sectionType: blog-navigation
+    containerTag: section
+    classes: ''
     id: ''
     isDisabled: false
     isReverse: false
@@ -344,24 +347,12 @@ sections:
       isAnimated: true
       noMargin:
         top: true
-        bottom: true
+        bottom: false
       noPadding:
         top: false
         bottom: false
       background:
         color: ''
-        image: '/assets/images/sample7.jpg'
-        imageScreen: 'dark' # light, dark, none
-    text:
-      leadIn: ''
-      title: ''
-      titleTag: 'h3'
-      isCentered: false
-      subTitle: ''
-      prose: ''
-    ctas:
-      - url: '/library'
-        label: 'Browse the component library'
-        isButton: true
-        buttonStyle: 'primary'
+        image: ''
+        imageScreen: 'none'
 ---

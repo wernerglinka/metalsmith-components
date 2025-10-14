@@ -153,8 +153,7 @@ npm run fix    # Run both format and lint in sequence
 │       │           │   └── helpers/      # Utilities & icon registry
 │       └── pages/             # Page templates
 ├── plugins/                   # Custom build plugins
-│   ├── generate-maps-icons.js     # Dynamic icon registry generator
-│   └── generate-library-search-index.js  # Search index generator
+│   └── generate-maps-icons.js     # Dynamic icon registry generator
 ├── metalsmith.js              # Build configuration
 └── package.json               # Project dependencies
 ```
