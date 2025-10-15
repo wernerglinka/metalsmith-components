@@ -135,4 +135,41 @@ sections:
         - Automatically detects external URLs and adds target="_blank' and `rel="noopener noreferrer"`
         - ARIA labels for external links
         - Used within CTAs partial for non-button links
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'text-link'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Text Link Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete text-link component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/text-link.zip'
+        label: 'Download Text Link Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

@@ -103,4 +103,41 @@ sections:
           caption: 'Example image rendered with the image partial'
         }) }}
         ```
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'image'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Image Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete image component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/image.zip'
+        label: 'Download Image Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

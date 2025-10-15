@@ -212,4 +212,41 @@ sections:
         | `text.subTitle` | string | No | Optional subtitle below the main title |
         | `text.prose` | string | No | Markdown-formatted body content |
         | `ctas` | array | No | [Optional array](/references/partials/ctas/) of call-to-action buttons or links |
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'text-only'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Text Only Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete text-only component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/text-only.zip'
+        label: 'Download Text Only Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

@@ -356,4 +356,41 @@ sections:
         | Property | Type | Required | Description |
         |----------|------|----------|-------------|
         | `ctas` | array | No | Optional array of call-to-action buttons |
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'podcast'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Podcast Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete podcast component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/podcast.zip'
+        label: 'Download Podcast Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

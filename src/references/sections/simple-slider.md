@@ -280,4 +280,41 @@ sections:
         - Each slide supports images, text, and CTAs
         - Adapts to different screen sizes
         - CSS-based slide transitions for smooth user experience
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'simple-slider'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Simple Slider Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete simple-slider component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/simple-slider.zip'
+        label: 'Download Simple Slider Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

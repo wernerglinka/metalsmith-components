@@ -292,4 +292,37 @@ sections:
         | `image` | object | No | Optional hero image with src, alt, and caption |
 
         **Note:** The `targetId` should be set to the `id` of the section to scroll to when the down arrow in the full-screen hero is clicked. Notice the up-arrow in the bottom right screen corner when scrolling starts, to return to the top of the page.
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'hero'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Hero Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete hero component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/hero.zip'
+        label: 'Download Hero Section'
+        isButton: true
+        buttonStyle: 'primary'
 ---

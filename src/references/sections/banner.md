@@ -367,4 +367,41 @@ sections:
         label: ''
         isButton: true
         buttonStyle: 'primary'
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'banner'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Banner Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete banner component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/banner.zip'
+        label: 'Download Banner Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

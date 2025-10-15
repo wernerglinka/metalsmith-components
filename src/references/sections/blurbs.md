@@ -167,4 +167,41 @@ sections:
         | Property | Type | Required | Description |
         |----------|------|----------|-------------|
         | `text` | object | No | Optional intro text with title, subtitle, and prose |
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'blurbs'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Blurbs Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete blurbs component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/blurbs.zip'
+        label: 'Download Blurbs Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

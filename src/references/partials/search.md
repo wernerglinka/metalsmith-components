@@ -150,4 +150,41 @@ sections:
         - **Status Updates**: Search status announcements for screen readers
         - **Configurable Results**: Limit results and minimum character thresholds
         - **Search Highlighting**: Optional highlighting of matching terms
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'search'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Search Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete search component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/search.zip'
+        label: 'Download Search Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

@@ -374,4 +374,41 @@ sections:
         | `scope` | string | Yes | 'all' to display all logos, or 'selections' for subset |
         | `selections` | array | No | Array of specific logo selections (required if scope is 'selections') |
         | `showTitle` | boolean | No | Display title under each logo (useful for awards) |
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'logos-list'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Logos List Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete logos-list component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/logos-list.zip'
+        label: 'Download Logos List Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

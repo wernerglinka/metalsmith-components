@@ -129,4 +129,41 @@ sections:
         | `audio.alt` | string | No | Alternative text for the background image |
 
         **At least one audio format (OGG or MP3) must be provided**
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'audio-only'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Audio Only Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete audio-only component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/audio-only.zip'
+        label: 'Download Audio Only Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

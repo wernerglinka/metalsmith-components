@@ -241,4 +241,41 @@ sections:
         | `icon` | string | No | Icon name from lib/layouts/icons (front side only) |
         | `text` | object | No | Text content with leadIn, title, titleTag, subTitle, and prose |
         | `ctas` | array | No | Call-to-action buttons (typically on back side) |
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'flip-cards'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Flip Cards Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete flip-cards component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/flip-cards.zip'
+        label: 'Download Flip Cards Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

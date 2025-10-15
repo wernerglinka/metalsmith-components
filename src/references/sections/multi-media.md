@@ -501,4 +501,41 @@ sections:
         - Audio players with background images
         - Scalable vector icons from comprehensive library
         - JSON-based animations with playback controls
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'multi-media'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Multi Media Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete multi-media component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/multi-media.zip'
+        label: 'Download Multi Media Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

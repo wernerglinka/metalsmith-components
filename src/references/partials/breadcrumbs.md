@@ -102,4 +102,41 @@ sections:
         - Applies ARIA labels and current page indication
         - CSS-customizable separator styles
         - Fully keyboard accessible
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'breadcrumbs'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Breadcrumbs Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete breadcrumbs component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/breadcrumbs.zip'
+        label: 'Download Breadcrumbs Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

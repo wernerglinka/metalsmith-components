@@ -175,4 +175,41 @@ sections:
         - Hover or press Enter/Space to flip
         - Rotate icon shows interactive nature
         - CSS-powered flip animation
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'flip-card'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Flip Card Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete flip-card component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/flip-card.zip'
+        label: 'Download Flip Card Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

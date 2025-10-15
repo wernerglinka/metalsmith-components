@@ -136,4 +136,41 @@ sections:
         - **Background Images**: Optional album art or visual accompaniment
         - **Accessible**: Proper ARIA labels and keyboard controls
         - **Responsive**: Adapts to container width
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'audio'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Audio Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete audio component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/audio.zip'
+        label: 'Download Audio Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

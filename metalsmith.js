@@ -14,6 +14,7 @@ import * as fs from 'node:fs'; // File system operations (read/write files)
 import Metalsmith from 'metalsmith'; // The core static site generator
 import drafts from '@metalsmith/drafts'; // Excludes draft content from builds
 import generateMapsIcons from './plugins/generate-maps-icons.js'; // Generates maps icon registry
+import componentPackageGenerator from './lib/plugins/component-package-generator.js'; // Generates downloadable component packages
 import collections from '@metalsmith/collections';
 import paginatePages from 'metalsmith-sectioned-blog-pagination';
 import search from 'metalsmith-search'; // Adds search functionality
@@ -339,6 +340,19 @@ metalsmith
 // These plugins only run in production mode to optimize the site
 if ( isProduction ) {
   metalsmith
+    /**
+     * Generate downloadable component packages
+     * Learn more: See COMPONENT-PACKAGE-SPEC.md
+     */
+    .use(
+      componentPackageGenerator( {
+        componentsPath: 'lib/layouts/components',
+        examplesPath: 'lib/layouts/components/examples',
+        outputPath: 'downloads',
+        generateBundle: true,
+        generateChecksums: true
+      } )
+    )
     /**
      * Optimize images for faster loading
      * Learn more: https://github.com/wernerglinka/metalsmith-optimize-images

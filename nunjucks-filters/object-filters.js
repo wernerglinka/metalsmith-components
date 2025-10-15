@@ -77,3 +77,37 @@ export const merge = ( obj, propsToMerge ) => {
     ...propsToMerge
   };
 };
+
+/**
+ * Gets the download URL for a component package
+ * Searches both sections and partials for the component
+ * @param {Object} componentPackages - The componentPackages metadata object
+ * @param {string} componentName - Name of the component
+ * @returns {string|null} The download URL or null if not found
+ * @example
+ * // Returns '/downloads/sections/hero-v0.0.1.zip'
+ * getDownloadUrl(componentPackages, 'hero')
+ */
+export const getDownloadUrl = ( componentPackages, componentName ) => {
+  if ( !componentPackages || !componentName ) {
+    return null;
+  }
+
+  // Search in sections
+  if ( componentPackages.sections ) {
+    const section = componentPackages.sections.find( pkg => pkg.name === componentName );
+    if ( section ) {
+      return section.downloadUrl;
+    }
+  }
+
+  // Search in partials
+  if ( componentPackages.partials ) {
+    const partial = componentPackages.partials.find( pkg => pkg.name === componentName );
+    if ( partial ) {
+      return partial.downloadUrl;
+    }
+  }
+
+  return null;
+};

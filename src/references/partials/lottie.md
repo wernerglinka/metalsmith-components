@@ -126,4 +126,41 @@ sections:
         - Loads Lottie player from CDN
         - Speed, loop, and autoplay configuration
         - Uses the modern lottie-player web component
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'lottie'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Lottie Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete lottie component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/lottie.zip'
+        label: 'Download Lottie Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

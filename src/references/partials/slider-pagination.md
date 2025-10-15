@@ -105,4 +105,41 @@ sections:
         - Numbered buttons or named tabs
         - ARIA labels and disabled state management
         - First slide is active by default
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'slider-pagination'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Slider Pagination Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete slider-pagination component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/slider-pagination.zip'
+        label: 'Download Slider Pagination Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

@@ -137,4 +137,41 @@ sections:
         - **Flexible Rendering**: Displays author, date, or both
         - **Semantic HTML**: Uses proper time elements with datetime attributes
         - **Accessibility**: Screen reader friendly markup
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'author-date'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Author Date Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete author-date component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/author-date.zip'
+        label: 'Download Author Date Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

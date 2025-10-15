@@ -126,4 +126,41 @@ sections:
         - Optional metadata display with author-date partial
         - Proper ARIA labels for screen readers
         - Optional background patterns for visual variety
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'collection-card'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Collection Card Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete collection-card component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/collection-card.zip'
+        label: 'Download Collection Card Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

@@ -353,4 +353,41 @@ sections:
         - ARIA labels on navigation elements
         - Keyboard navigation support
         - Pause autoplay on user interaction
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'hero-slider'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Hero Slider Section'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete hero-slider component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/sections/hero-slider.zip'
+        label: 'Download Hero Slider Section'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

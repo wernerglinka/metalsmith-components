@@ -55,13 +55,10 @@ sections:
         Sections are complete, self-contained page components that you compose in your frontmatter to build pages. For architectural details, see [Section Anatomy](/section-anatomy/) and [From YAML to HTML](/yaml-to-html/).
 
         Use the sidebar to quickly navigate between different section types, or explore them all below.
+
     ctas:
       - url: ''
         label: ''
         isButton: false
         buttonStyle: 'primary'
-    image:
-      src: ''
-      alt: ''
-      caption: ''
 ---

@@ -44,4 +44,37 @@ sections:
 
         ### Sections
         Sections are self contained page components, built from smaller, reusable partials.
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'hero'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: false
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download All Components'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete components package including partials and sections'
+    ctas:
+      - url: '/downloads/metalsmith-components.zip'
+        label: 'Download All Components'
+        isButton: true
+        buttonStyle: 'primary'
 ---

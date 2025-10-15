@@ -61,5 +61,6 @@ export {
 export {
   normalizeIcon,
   mergeProps,
-  merge
+  merge,
+  getDownloadUrl
 } from './object-filters.js';

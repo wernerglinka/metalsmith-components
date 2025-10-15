@@ -86,4 +86,41 @@ sections:
         - Proper ARIA labels and keyboard navigation
         - Click or keyboard activation
         - Maintains state via local storage between sessions
+
+  - sectionType: banner
+    containerTag: aside
+    classes: 'download-banner'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    isAnimated: false
+    componentDownload: 'dark-light-theme-switcher'
+    containerFields:
+      inContainer: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: false
+        color: 'var(--color-background-light)'
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Download Dark Light Theme Switcher Partial'
+      titleTag: 'h3'
+      subTitle: ''
+      prose: 'Get the complete dark-light-theme-switcher component package including template, styles, manifest, examples, and installation script.'
+    ctas:
+      - url: '/downloads/partials/dark-light-theme-switcher.zip'
+        label: 'Download Dark Light Theme Switcher Partial'
+        isButton: true
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
 ---

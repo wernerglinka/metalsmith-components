@@ -359,6 +359,10 @@ body.with-sidebar {
         }
       }
 
+      &.download-banner {
+        padding: 0;
+      }
+
       &.example-left-align {
         .ctas {
           justify-content: flex-start;
