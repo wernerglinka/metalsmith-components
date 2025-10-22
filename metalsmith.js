@@ -218,18 +218,7 @@ metalsmith
     } )
   )
 
-  /**
-   * Add search functionality
-   * Learn more: https://github.com/wernerglinka/metalsmith-search
-   */
-  .use(
-    search( {
-      ignore: [
-        '**/search.md',
-        '**/search-index.json'
-      ]
-    } )
-  )
+
 
   /**
    * We are not using any markdown contents, only frontmatter
@@ -265,6 +254,19 @@ metalsmith
       transform: 'nunjucks', // Template engine to use
       pattern: [ '**/*.html' ], // Files to apply templates to
       engineOptions // Options for the template engine
+    } )
+  )
+
+  /**
+   * Add search functionality
+   * Learn more: https://github.com/wernerglinka/metalsmith-search
+   */
+  .use(
+    search( {
+      ignore: [
+        '**/search.md',
+        '**/search-index.json'
+      ]
     } )
   )
 
