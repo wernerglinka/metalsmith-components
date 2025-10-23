@@ -33,7 +33,7 @@ sections:
         isDark: false
     text:
       title: 'Metalsmith Components Reference Overview'
-      titleTag: 'h2'
+      titleTag: 'h1'
       prose: |
         This section provides detailed reference documentation for working with Metalsmith Components. For an introduction to Metalsmith Components, please visit the [Home](/) page, followed by [Section Anatomy](/section-anatomy/) and finally [From YAML to HTML](/yaml-to-html/).
 
