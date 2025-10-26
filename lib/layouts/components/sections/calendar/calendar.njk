@@ -1,0 +1,111 @@
+{# Calendar Section Component #}
+{# Displays Google Calendar events in a monthly grid view #}
+
+{% from "components/_partials/text/text.njk" import text %}
+
+{# Load calendar configuration #}
+{# Priority: inline config > data source file #}
+{% if section.calendars.apiKey %}
+  {# Inline configuration in YAML #}
+  {% set calendarConfig = section.calendars %}
+{% elif section.calendars.source %}
+  {# External data file #}
+  {% set calendarConfig = data.calendars[section.calendars.source] %}
+{% else %}
+  {% set calendarConfig = null %}
+{% endif %}
+
+<section class="calendar {{ section.container }}"
+         data-component="calendar"
+         {% if calendarConfig %}
+         data-calendar-config='{{ calendarConfig | dump | safe }}'
+         {% endif %}>
+  <div class="calendar__inner inner-container">
+
+    {# Header with optional title and prose #}
+    {% if section.text | hasText %}
+      <div class="calendar__header">
+        {{ text(section.text) }}
+      </div>
+    {% endif %}
+
+    {# Calendar controls and month navigation #}
+    <div class="calendar__controls">
+      <button class="calendar__nav calendar__nav--prev"
+              aria-label="Previous month"
+              data-action="prev-month">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <h2 class="calendar__month-title" data-calendar-title>
+        Loading...
+      </h2>
+
+      <button class="calendar__nav calendar__nav--next"
+              aria-label="Next month"
+              data-action="next-month">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    {# Loading state #}
+    <div class="calendar__loading" data-calendar-loading>
+      <p>Loading calendar events...</p>
+    </div>
+
+    {# Error state #}
+    <div class="calendar__error" data-calendar-error style="display: none;">
+      <p>Calendar temporarily unavailable. Please try again later.</p>
+    </div>
+
+    {# Calendar grid container (populated by JavaScript) #}
+    <div class="calendar__grid" data-calendar-grid>
+      {# Weekday headers #}
+      <div class="calendar__weekdays">
+        <div class="calendar__weekday">Sun</div>
+        <div class="calendar__weekday">Mon</div>
+        <div class="calendar__weekday">Tue</div>
+        <div class="calendar__weekday">Wed</div>
+        <div class="calendar__weekday">Thu</div>
+        <div class="calendar__weekday">Fri</div>
+        <div class="calendar__weekday">Sat</div>
+      </div>
+
+      {# Days grid (populated by JavaScript) #}
+      <div class="calendar__days" data-calendar-days>
+        {# Will be populated with day cells via JavaScript #}
+      </div>
+    </div>
+
+    {# Event details modal/panel #}
+    <div class="calendar__event-details"
+         data-event-details
+         style="display: none;"
+         role="dialog"
+         aria-labelledby="event-details-title">
+      <div class="calendar__event-details-content">
+        <button class="calendar__event-details-close"
+                aria-label="Close event details"
+                data-close-details>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <h3 id="event-details-title" data-event-title></h3>
+        <div data-event-time class="calendar__event-time"></div>
+        <div data-event-location class="calendar__event-location"></div>
+        <div data-event-description class="calendar__event-description"></div>
+        <div data-event-calendar class="calendar__event-calendar"></div>
+        <a data-event-link class="calendar__event-link" target="_blank" rel="noopener noreferrer">
+          View in Google Calendar
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,51 @@
+# Calendar Component Example Frontmatter
+# Displays Google Calendar events in a monthly grid view
+
+# Method 1: Inline Configuration (Recommended)
+# Basic calendar with single calendar source
+- sectionType: calendar
+  calendars:
+    apiKey: 'YOUR_GOOGLE_CALENDAR_API_KEY'
+    calendars:
+      - id: 'en.usa#holiday@group.v.calendar.google.com'
+        name: 'US Holidays'
+        category: 'holiday'
+  text:
+    title: 'Event Calendar'
+    prose: 'View upcoming events and important dates'
+
+# Multiple calendars inline
+- sectionType: calendar
+  container: 'has-background-light'
+  calendars:
+    apiKey: 'YOUR_GOOGLE_CALENDAR_API_KEY'
+    calendars:
+      - id: 'en.usa#holiday@group.v.calendar.google.com'
+        name: 'US Holidays'
+        category: 'holiday'
+      - id: 'your-personal-calendar@gmail.com'
+        name: 'Personal Events'
+        category: 'personal'
+      - id: 'work-calendar@company.com'
+        name: 'Work Events'
+        category: 'work'
+  text:
+    title: 'All Calendars'
+    prose: 'Combined view of holidays, personal events, and work schedule'
+
+# Calendar without header text
+- sectionType: calendar
+  calendars:
+    apiKey: 'YOUR_GOOGLE_CALENDAR_API_KEY'
+    calendars:
+      - id: 'en.uk#holiday@group.v.calendar.google.com'
+        name: 'UK Holidays'
+        category: 'holiday'
+
+# Method 2: External Data File (Optional)
+# For reusable configurations across multiple pages
+- sectionType: calendar
+  calendars:
+    source: 'holidays'  # References lib/data/calendars/holidays.json
+  text:
+    title: 'Holiday Calendar'

@@ -143,7 +143,7 @@ Sections specify required partials using semantic versioning ranges:
 Two sources for examples:
 
 1. **Dedicated examples directory:** `lib/layouts/components/examples/[component-name].yaml`
-2. **Fallback to documentation pages:** Extract from `src/library/[component-name].md` or `src/references/partials/[component-name].md`
+2. **Fallback to documentation pages:** Extract from `src/references/sections/[component-name].md` or `src/references/partials/[component-name].md`
 
 ### Example Structure
 ```yaml

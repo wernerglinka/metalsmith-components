@@ -219,7 +219,7 @@ Add .yml file showing typical usage patterns
 ### 7. Test and Document
 
 - Run `npm test`
-- Create demo page in `src/library/`
+- Create reference page in `src/references/sections/` or `src/references/partials/`
 - Add tags for searchability
 - Document integration patterns
 

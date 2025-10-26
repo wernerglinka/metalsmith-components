@@ -80,7 +80,7 @@ When creating new components for the library:
    - `component-name.js` - Component JavaScript (if needed)
    - `manifest.json` - Dependencies and validation rules
    - `README.md` - Component documentation
-3. **Create Documentation Page**: Add a showcase page in `src/library/` with:
+3. **Create Reference Page**: Add a showcase page in `src/references/sections/` (for sections) or `src/references/partials/` (for partials) with:
    - Live examples of the component
    - Configuration options
    - Usage patterns
@@ -88,7 +88,6 @@ When creating new components for the library:
 4. **Use Semantic HTML**: Ensure accessible markup and proper ARIA attributes
 5. **Add JSDoc Comments**: Explain the component's purpose and parameters
 6. **Update Tests**: Include the new component in the test suite
-7. **Update Library Index**: Add the component to `src/library.md`
 
 ### Component Compatibility
 
@@ -103,7 +102,7 @@ Ensure components are compatible with the [Metalsmith2025 Structured Content Sta
 
 When adding or updating components:
 
-1. **Component Documentation**: Each component should have clear documentation in `src/library/component-name.md`
+1. **Component Documentation**: Each component should have clear documentation in `src/references/sections/component-name.md` or `src/references/partials/component-name.md`
 2. **Code Examples**: Provide complete YAML configuration examples
 3. **Property Descriptions**: Document all component properties and their effects
 4. **Visual Examples**: Include working examples that render on the page
@@ -150,16 +149,14 @@ If you want to add a "Timeline" component:
    - `manifest.json` - Dependencies and configuration
    - `README.md` - Component documentation
 
-2. Create showcase page at `src/library/timeline.md`:
+2. Create reference page at `src/references/sections/timeline.md`:
    - Multiple examples showing different configurations
    - Property documentation
    - Usage guidelines
 
-3. Update `src/library.md` to include link to timeline component
+3. Test the component with the Metalsmith2025 Starter to ensure compatibility
 
-4. Test the component with the Metalsmith2025 Starter to ensure compatibility
-
-5. Submit PR with title: `feat: add timeline component for chronological content`
+4. Submit PR with title: `feat: add timeline component for chronological content`
 
 ## Questions?
 

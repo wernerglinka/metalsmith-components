@@ -2,7 +2,7 @@
   "name": "header",
   "type": "section",
   "styles": ["header.css"],
-  "scripts": [],
+  "scripts": ["header.js"],
   "requires": ["branding", "navigation"],
   "validation": {
     "required": ["sectionType"],

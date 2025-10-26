@@ -114,7 +114,7 @@ sections:
       isCentered: false
       subTitle: ''
       prose: |-
-        The `metalsmith-search` plugin generates a comprehensive search index during your build. It automatically indexes all your content, including pages, sections, and structured frontmatter data.
+        The `metalsmith-search` plugin (v0.2.0+) uses an HTML-first architecture, processing final rendered HTML pages using Cheerio for accurate content indexing. This ensures the search index reflects exactly what users see in their browsers.
 
         ### Installing the Plugin
 
@@ -124,8 +124,11 @@ sections:
 
         ### Configuring in metalsmith.js
 
+        **Critical**: The search plugin must run **AFTER** layouts/templates in your pipeline to process rendered HTML:
+
         ```javascript
         import search from 'metalsmith-search';
+        import layouts from '@metalsmith/layouts';
 
         metalsmith
           .use(collections({
@@ -135,7 +138,13 @@ sections:
               reverse: true
             }
           }))
+          .use(layouts({
+            directory: 'lib/layouts',
+            transform: 'nunjucks'
+          }))
           .use(search({
+            pattern: '**/*.html',           // Process HTML not Markdown
+            excludeSelectors: ['nav', 'header', 'footer'],  // Optional: exclude site chrome
             ignore: [
               '**/search.md',
               '**/search-index.json'
@@ -143,7 +152,7 @@ sections:
           }))
         ```
 
-        The plugin runs after collections are created, ensuring all your content is properly indexed. It automatically excludes the search page itself and the generated index file.
+        The plugin processes HTML files after layout rendering, using Cheerio to parse the DOM and extract text content. This HTML-first approach ensures accurate indexing of the actual page content users will see.
 
   - sectionType: text-only
     containerTag: article
@@ -171,37 +180,44 @@ sections:
       isCentered: false
       subTitle: ''
       prose: |-
-        The plugin creates a rich, multi-level index with weighted fields:
+        The HTML-first architecture creates page-level search entries by parsing rendered HTML:
 
-        - **Page-level entries**: Title, URL, tags, and full content
-        - **Section-level entries**: Individual sections from structured frontmatter
-        - **Weighted fields**: Title (weight: 10), pageName (8), tags (6), leadIn (5), prose (3), content (1)
+        **How It Works**:
+        1. **HTML Parsing**: Uses Cheerio to parse final rendered HTML pages
+        2. **Content Exclusion**: Removes navigation, header, footer elements (configurable via `excludeSelectors`)
+        3. **Text Extraction**: Extracts all text content from the remaining HTML
+        4. **Heading Processing**: Finds all h1-h6 headings and ensures they have IDs for scroll-to functionality
+        5. **Frontmatter Integration**: Includes metadata fields like title, description, tags from page frontmatter
+        6. **Anchor Generation**: Automatically generates IDs for headings without them
 
-        The generated `search-index.json` includes metadata about the index configuration:
+        **Each page generates a single search entry**:
 
         ```json
         {
-          "version": "1.0.0",
-          "generator": "metalsmith-search",
-          "generated": "2025-10-14T20:17:57.193Z",
-          "totalEntries": 227,
-          "config": {
-            "fuseOptions": {
-              "keys": [
-                {"name": "pageName", "weight": 10},
-                {"name": "title", "weight": 8},
-                {"name": "tags", "weight": 6},
-                {"name": "leadIn", "weight": 5},
-                {"name": "prose", "weight": 3},
-                {"name": "content", "weight": 1}
-              ],
-              "threshold": 0.3,
-              "includeScore": true
-            }
-          },
-          "entries": [...]
+          "id": "page:/blog/post",
+          "type": "page",
+          "url": "/blog/post",
+          "title": "Blog Post Title",
+          "description": "Page description from frontmatter",
+          "tags": ["javascript", "tutorial"],
+          "content": "All page text content extracted from HTML...",
+          "headings": [
+            {"level": "h2", "id": "introduction", "title": "Introduction"},
+            {"level": "h3", "id": "overview", "title": "Overview"}
+          ],
+          "wordCount": 1523
         }
         ```
+
+        **The `headings` array enables scroll-to functionality** - when Fuse.js finds matches, client-side JavaScript can determine which section the match is in and scroll users to the nearest heading anchor.
+
+        **Weighted Search Fields** (configured via `fuseOptions.keys`):
+        - `title` (weight: 10) - Page titles get highest priority
+        - `content` (weight: 5) - Main text content
+        - `description` (weight: 3) - Page descriptions from frontmatter
+        - `tags` (weight: 7) - Content tags
+
+        You can customize which frontmatter fields are indexed using the `contentFields` option.
 
   - sectionType: text-only
     containerTag: article
@@ -261,7 +277,7 @@ sections:
       isCentered: false
       subTitle: ''
       prose: |-
-        The key to quality search results is in `search.js`, specifically the `handleSearch()` function. This is where you can customize the filtering logic. Here's the core filtering algorithm from `lib/layouts/components/_partials/search/search.js`:
+        The key to quality search results is in `search.js`, specifically the `handleSearch()` function. This filtering works with the page-level search entries generated by the HTML-first indexing. Here's the core filtering algorithm from `lib/layouts/components/_partials/search/search.js`:
 
         ```javascript
         // From search.js - the two-layer filtering logic
@@ -280,23 +296,19 @@ sections:
             // Require minimum relevance score (tune this for your needs)
             if (relevance < 50) return false;
 
-            // Collect all searchable fields
+            // Collect all searchable fields from page-level entry
             const searchableFields = [];
             if (item.title) searchableFields.push(item.title);
-            if (item.pageName) searchableFields.push(item.pageName);
+            if (item.description) searchableFields.push(item.description);
             if (item.content) searchableFields.push(item.content);
-            if (item.leadIn) searchableFields.push(item.leadIn);
-            if (item.prose) searchableFields.push(item.prose);
             if (Array.isArray(item.tags)) {
               searchableFields.push(...item.tags);
             }
 
-            // Check sections for structured content
-            if (Array.isArray(item.sections)) {
-              item.sections.forEach(section => {
-                if (section.title) searchableFields.push(section.title);
-                if (section.content) searchableFields.push(section.content);
-                if (section.prose) searchableFields.push(section.prose);
+            // Include heading titles for better matching
+            if (Array.isArray(item.headings)) {
+              item.headings.forEach(heading => {
+                if (heading.title) searchableFields.push(heading.title);
               });
             }
 
@@ -315,8 +327,9 @@ sections:
 
         You can tune these values in `search.js` to match your content:
 
-        - **Relevance threshold** (line 12): Change `50` to be more strict (70+) or more permissive (30)
-        - **Searchable fields**: Add or remove fields based on your frontmatter structure
+        - **Relevance threshold**: Change `50` to be more strict (70+) or more permissive (30)
+        - **Searchable fields**: The HTML-first approach extracts content from rendered HTML, so you're working with clean text content plus frontmatter fields
+        - **Heading integration**: The `headings` array enables scroll-to functionality and provides additional search context
         - **Exact match requirement**: This prevents false positives - keep this unless you have specific reasons to remove it
 
   - sectionType: text-only
@@ -382,6 +395,105 @@ sections:
         imageScreen: 'none'
     text:
       leadIn: ''
+      title: 'Multi-Purpose Search: Three Implementation Patterns'
+      titleTag: 'h2'
+      isCentered: false
+      subTitle: ''
+      prose: |-
+        The search partial is designed to be multi-purpose, supporting three different usage patterns with the same underlying code:
+
+        ### 1. Inline Search (Page Sections)
+
+        Embed search functionality directly into any page using the `search-only` section:
+
+        ```yaml
+        sections:
+          - sectionType: search-only
+            placeholder: 'Search components...'
+            settings:
+              maxResults: 20
+              minCharacters: 2
+        ```
+
+        Results display inline on the same page - perfect for dedicated search pages or content-specific search areas.
+
+        ### 2. Header Search Bar → Dedicated Results Page
+
+        This library implements a global search bar in the site header that redirects to a dedicated search results page. This provides a professional search experience users expect from modern sites.
+
+        **How it works:**
+
+        - Search input in header (`header.njk`)
+        - Form submission redirects to `/search/?q=query`
+        - Search page reads URL parameter and auto-executes search
+        - Results display on dedicated full-page layout
+
+        **Implementation:**
+
+        The header search form is simple - it just redirects:
+
+        ```html
+        <form class="header-search-form" action="/search/" method="get">
+          <input type="search" name="q" placeholder="Search..." />
+          <button type="submit">Search</button>
+        </form>
+        ```
+
+        The `search.js` automatically detects the `?q=` parameter and executes the search:
+
+        ```javascript
+        function autoExecuteFromURL() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const query = urlParams.get('q');
+
+          if (query && query.trim().length > 0) {
+            // Find search instance and execute
+            const searchInstance = searchInstances.values().next().value;
+            if (searchInstance) {
+              searchInstance.searchInput.value = query;
+              handleSearch(searchInstance);
+            }
+          }
+        }
+        ```
+
+        **Benefits:**
+        - Global search access from any page
+        - Shareable search URLs (`/search/?q=maps`)
+        - Browser history support (back button works)
+        - Keyboard shortcut support (Cmd/Ctrl + K to focus)
+
+        ### 3. Direct URL Access
+
+        Users can visit search URLs directly or share them:
+        - `/search/?q=maps` - Pre-filled search for "maps"
+        - `/search/?q=accordion` - Pre-filled search for "accordion"
+
+        The search page auto-executes and displays results immediately.
+
+        **All three patterns use the same search partial** - it adapts to different contexts automatically. This is the power of multi-purpose partials in component-based architecture.
+
+  - sectionType: text-only
+    containerTag: article
+    classes: ''
+    id: ''
+    isDisabled: false
+    isReverse: false
+    containerFields:
+      inContainer: true
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
       title: 'Why This Architecture Works'
       titleTag: 'h2'
       isCentered: false
@@ -389,24 +501,32 @@ sections:
       prose: |-
         This two-layer search architecture is a proven, industry-standard pattern used by major documentation sites and platforms including GitHub Docs, React documentation (via Algolia DocSearch), Vue.js docs, Hugo sites, and many Gatsby-powered sites.
 
-        The approach provides the best of both worlds:
+        The HTML-first approach provides unique advantages:
 
         **Build-time benefits:**
-        - Comprehensive indexing of all content
-        - Automatic weight assignments for field importance
-        - Optimized JSON structure for fast loading
-        - No server-side processing required
-        - CDN-friendly static file delivery
+        - **Accurate indexing**: Indexes exactly what users see in their browsers (rendered HTML, not source Markdown)
+        - **Cheerio HTML parsing**: Reliable DOM traversal and text extraction
+        - **Automatic heading extraction**: All h1-h6 headings indexed with IDs for scroll-to functionality
+        - **Configurable exclusions**: Remove navigation, header, footer via CSS selectors
+        - **Frontmatter integration**: Metadata fields (title, description, tags) included in index
+        - **Optimized JSON structure**: Single page-level entries with headings array
+        - **CDN-friendly**: Static file delivery with no server-side processing
 
         **Client-side benefits:**
-        - Fuzzy matching for typo tolerance
+        - Fuzzy matching for typo tolerance via Fuse.js
         - Exact match requirement prevents false positives
         - Real-time filtering as users type
         - Customizable relevance thresholds
-        - Support for structured content (sections)
+        - Scroll-to functionality using heading anchors
+
+        **Why HTML-first matters:**
+        - Indexes final rendered content, not source Markdown
+        - Handles template interpolation, component rendering, and dynamic content generation
+        - Ensures search index matches user experience
+        - Supports complex component-based architectures
 
         **Why it scales:**
-        - The pre-computed index means instant searches regardless of content volume
+        - Pre-computed index means instant searches regardless of content volume
         - No server infrastructure or search service subscriptions needed
         - Global CDN distribution ensures fast loading worldwide
         - Quality filtering ensures users only see relevant results
@@ -441,14 +561,20 @@ sections:
       prose: |-
         To implement this in your own project:
 
-        1. Install `metalsmith-search` plugin
-        2. Configure it to run after collections in your build pipeline
-        3. Create the search component partial with Fuse.js integration
-        4. Implement the two-layer filtering logic
-        5. Add search sections to your pages
-        6. Tune the relevance threshold and minimum character requirements based on your content
+        1. Install `metalsmith-search` plugin (v0.2.0+)
+        2. **Critical**: Configure it to run **AFTER** layouts/templates in your build pipeline
+        3. Set `pattern: '**/*.html'` to process rendered HTML files
+        4. Configure `excludeSelectors` to remove site chrome (nav, header, footer) from indexing
+        5. Create the search component partial with Fuse.js integration
+        6. Implement the two-layer filtering logic that works with page-level entries and headings
+        7. Add search sections to your pages
+        8. Tune the relevance threshold and minimum character requirements based on your content
 
-        The key insight is that fuzzy search casts a wide net, while strict client-side filtering ensures only quality matches reach your users.
+        **Key insights**:
+        - HTML-first indexing ensures accuracy - the search index matches what users see
+        - Fuzzy search casts a wide net for typo tolerance
+        - Strict client-side filtering ensures only quality matches reach your users
+        - The `headings` array enables advanced features like scroll-to-section functionality
 
   - sectionType: blog-navigation
     containerTag: section

@@ -1,0 +1,10 @@
+{
+  "apiKey": "YOUR_GOOGLE_CALENDAR_API_KEY",
+  "calendars": [
+    {
+      "id": "en.usa#holiday@group.v.calendar.google.com",
+      "name": "US Holidays",
+      "category": "holiday"
+    }
+  ]
+}

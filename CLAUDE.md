@@ -13,6 +13,7 @@ This is a Metalsmith Components library - a comprehensive showcase and reference
 - `npm start` - Start development server with watch mode and live reloading at http://localhost:3000
 - `npm run start:debug` - Start development server with debug output for all @metalsmith\* plugins
 - `npm run build` - Create production build in `build/` directory
+- `npm run build:debug` - Production build with debug output for metalsmith-optimize-html
 - `npm run serve` - Serve the build directory with Browser-Sync
 
 ### Code Quality & Testing
@@ -23,6 +24,10 @@ This is a Metalsmith Components library - a comprehensive showcase and reference
 - `npm run lint` - Lint and fix JavaScript with ESLint
 - `npm run lint:css` - Lint and fix CSS with Stylelint
 - `npm run fix` - Run format, lint, and lint:css in sequence
+
+### Utility Scripts
+
+- `npm run depcheck` - Check for unused dependencies
 
 ### Release Process
 
@@ -59,19 +64,66 @@ sections:
 
 Components are organized in two main categories:
 
-#### Partials (`lib/layouts/components/_partials/`)
+#### Partials (`lib/layouts/components/_partials/`) - 21 Components
 
-Small, reusable UI elements:
+Small, reusable UI elements used within larger sections or as standalone elements:
 
-- author-date, branding, breadcrumbs, ctas, head, image, logo, navigation, text
-- Used within larger sections or as standalone elements
+- **audio** - Audio player element
+- **author-date** - Author and publication date display
+- **branding** - Logo and branding element
+- **breadcrumbs** - Navigation breadcrumbs
+- **button** - CTA button element
+- **collection-card** - Card for displaying collection items
+- **collection-pagination** - Pagination controls for collections
+- **ctas** - Call-to-action links/buttons array
+- **dark-light-theme-switcher** - Theme toggle control
+- **flip-card** - Single flip card element
+- **icon** - Icon display element
+- **image** - Image element with caption support
+- **lottie** - Lottie animation element
+- **manual-card** - Manually configured card element
+- **navigation** - Main navigation menu
+- **overlay** - Overlay/modal element
+- **search** - Search interface element
+- **slider-pagination** - Pagination controls for sliders
+- **text** - Text content element (title, prose, etc.)
+- **text-link** - Styled text link element
+- **video** - Video player element (supports YouTube, Vimeo, Cloudinary)
 
-#### Sections (`lib/layouts/components/sections/`)
+#### Sections (`lib/layouts/components/sections/`) - 30 Components
 
-Large page sections:
+Large page sections and main building blocks for page layouts:
 
-- hero, banner, media-image, text-only, slider, flip-cards, logos-list, testimonial, columns, blog-list, maps
-- Main building blocks for page layouts
+- **audio-only** - Audio player sections
+- **banner** - Call-to-action banner sections with flexible backgrounds
+- **blog-author** - Author information for blog posts
+- **blog-navigation** - Previous/next blog post navigation
+- **blurbs** - Grid of content blurbs (text cards)
+- **cards-list** - Displays cards from data or array
+- **code** - Code block display with syntax highlighting
+- **collection-list** - Lists collections (blog posts, references, etc.)
+- **columns** - Multi-column layout for custom content
+- **commons** - Base container and styling component (required dependency for most sections)
+- **compound** - Composable multi-section layout
+- **flip-cards** - Interactive flip card animations
+- **footer** - Site footer
+- **header** - Site header/navigation
+- **hero** - Full-screen or standard hero sections with background images
+- **hero-slider** - Hero section with image carousel
+- **icon-only** - Display-only icon section
+- **image-compare** - Before/after image comparison slider
+- **image-only** - Image display section
+- **logos-list** - Auto-scrolling logo carousel
+- **lottie-only** - Lottie animation display
+- **maps** - Interactive maps with Leaflet/OpenLayers providers (multi-provider component)
+- **multi-media** - Combined media sections
+- **podcast** - Podcast player with RSS parsing (multi-provider component)
+- **search-only** - Search functionality section
+- **simple-accordion** - Expandable/collapsible content sections
+- **slider** - Image/content carousel with pagination
+- **testimonial** - Customer quotes/testimonials with attribution
+- **text-only** - Pure content sections with markdown support
+- **video-only** - Video player section
 
 ### Component Structure
 
@@ -146,8 +198,9 @@ For components supporting multiple provider libraries (maps, video, podcast play
 
 Components using the modules pattern:
 - **maps**: Supports Leaflet and OpenLayers providers via `mapProvider` field
-- **video**: Supports YouTube, Vimeo, and Cloudinary via `video.src` enum
 - **podcast**: Uses Shikwasa player with RSS parsing via dedicated modules
+
+Note: The **video** partial supports multiple providers (YouTube, Vimeo, Cloudinary) but does not use the modules pattern - it handles provider switching internally.
 
 Module organization:
 ```
@@ -208,14 +261,14 @@ Common helper functions are globally available in templates:
 
 These are NOT declared in manifest.json - they're provided by the build system.
 
-#### 5. Creating Demo Pages
+#### 5. Creating Reference Pages
 
-Add a demo page in `src/library/component-name.md` with:
+Add a reference page in `src/references/sections/component-name.md` (for sections) or `src/references/partials/component-name.md` (for partials) with:
 - Multiple examples showing different configurations
 - Clear section explaining features and options
 - Implementation notes if needed
 
-The library page (`src/library.md`) uses a `collection-list` section that automatically includes all pages in the `/library/` folder - no manual linking needed.
+The references pages are automatically included in their respective collections (sections or partials) - no manual linking needed.
 
 #### 6. Testing
 
@@ -234,7 +287,7 @@ See [DEVELOPER-GUIDE.md](DEVELOPER-GUIDE.md) for detailed best practices, lesson
 
 ### Component Documentation
 
-When creating documentation pages for components (`src/library/` or `src/partials/`):
+When creating documentation pages for components (`src/references/sections/` or `src/references/partials/`):
 
 **Structure:**
 ```yaml
@@ -266,7 +319,9 @@ sections:
 - Provide multiple examples showing different configurations
 - Add relevant tags for search discoverability
 
-### Mapping Component Features
+### Advanced Component Features
+
+#### Mapping Component Features
 
 The maps component provides comprehensive interactive mapping capabilities with:
 
@@ -294,11 +349,41 @@ The maps component provides comprehensive interactive mapping capabilities with:
 - **Interactive Expansion**: Click clusters to zoom in or expand at maximum zoom level
 
 #### Technical Architecture
-- **Modular Structure**: Organized into providers (`leaflet.js`, `openlayers.js`) and helpers (`maps-utils.js`, `icon-loader.js`)
+- **Modular Structure**: Organized into providers (`leaflet.js`, `openlayers.js`) and helpers (`maps-utils.js`, `icon-loader.js`, `load-script.js`, `load-styles.js`)
 - **Data Management**: Recursive JSON loading from `/lib/data/maps/` with automatic `data.maps.filename` access
-- **Build-Time Optimization**: Icon registry auto-generated during build to include only icons actually used
+- **Build-Time Optimization**: Icon registry auto-generated during build by `plugins/generate-maps-icons.js` to include only icons actually used
+- **Icon Library**: 299 Feather icons available in `lib/layouts/icons/` for marker customization
 - **Error Handling**: Graceful fallbacks for missing icons and failed library loads
 - **Accessibility**: Proper ARIA attributes and screen reader support
+
+#### Podcast Component Features
+
+The podcast component provides audio playback with RSS feed integration:
+
+- **Shikwasa Player Integration**: Modern, lightweight audio player
+- **RSS Feed Parsing**: Automatic episode loading from podcast RSS feeds
+- **JSON Data Architecture**: Podcast feed configurations stored in `lib/data/podcasts/`
+- **Modular Structure**: Organized with `rss-parser.js` and `load-shikwasa.js` modules
+- **Dynamic Loading**: Player library loaded only when podcast components are used
+- **Multiple Shows**: Support for multiple podcast feeds on a single page
+
+#### Video Component Features
+
+The video partial supports multiple video providers:
+
+- **Multi-Provider Support**: YouTube, Vimeo, and Cloudinary
+- **Responsive Embeds**: Automatic aspect ratio handling
+- **Provider Detection**: Automatic provider selection based on URL
+- **Lightweight**: No external dependencies for basic video embedding
+
+#### Other Interactive Components
+
+- **image-compare**: Before/after image comparison with draggable slider handle
+- **simple-accordion**: Expandable/collapsible content sections
+- **flip-cards**: Interactive card animations with front/back content
+- **slider**: Carousel with pagination or tabbed interface
+- **logos-list**: Auto-scrolling logo carousel with infinite loop
+- **hero-slider**: Hero section with image carousel functionality
 
 ### Site-Wide Search System
 
@@ -337,27 +422,75 @@ sections:
 
 The search automatically uses `/search-index.json` unless a custom source is specified via `source` or `settings.source`.
 
+### Component Packaging System
+
+The component library includes an automated component packaging system that generates downloadable ZIP files for easy component distribution and installation.
+
+#### Build-Time Package Generation
+
+During production builds, the `lib/plugins/component-package-generator.js` plugin automatically:
+
+- **Creates Individual Packages**: Generates ZIP files for each section and partial component
+- **Bundles Complete Sets**: Creates complete section and partial bundle packages
+- **Includes Documentation**: Each package contains README, examples, and usage instructions
+- **Generates Install Scripts**: Automatic installation scripts for easy integration
+- **Version Tracking**: Maintains version information and checksums for each package
+- **Download URLs**: Embeds download URLs in component documentation pages
+
+#### Package Structure
+
+Each component package includes:
+- Component source files (.njk, .css, .js)
+- manifest.json with dependencies
+- Example frontmatter (.yml)
+- README with integration instructions
+- Installation script for automated setup
+
+This system enables developers to quickly download and integrate individual components into their Metalsmith projects.
+
 ## Key Files & Configuration
 
 ### Build Configuration
 
 - `metalsmith.js` - Main build configuration with all plugins and settings
-- `package.json` - Dependencies, scripts, and project metadata
-- `eslint.config.js` - ESLint configuration
-- `prettier.config.js` - Prettier formatting rules
+- `package.json` - Dependencies, scripts, and project metadata (Node.js >=18.0.0 required)
+- `eslint.config.js` - ESLint configuration for JavaScript linting
+- `prettier.config.js` - Prettier formatting rules (excludes .njk files)
 - `plugins/generate-maps-icons.js` - Build-time icon registry generation for maps components
+- `lib/plugins/component-package-generator.js` - Component packaging system (production-only)
 
 ### Content Structure
 
 - `src/` - Source content pages (Markdown files with frontmatter)
-- `lib/data/` - Global JSON data files (site.json, author.json, etc.)
-- `lib/data/maps/` - Map data JSON files for maps components
+  - `src/index.md` - Homepage
+  - `src/blog.md` - Blog index with pagination
+  - `src/blog/` - Blog posts (12 articles)
+  - `src/references/sections/` - Section component reference pages (31 files)
+  - `src/references/partials/` - Partial component reference pages (21 files)
+- `lib/data/` - Global JSON data files
+  - `site.json` - Site configuration
+  - `author.json` - Author information
+  - `socialLinks.json` - Social media links
+  - `lib/data/maps/` - Map data JSON files (london-landmarks.json, paris-monuments.json, nyc-clustering-demo.json)
+  - `lib/data/podcasts/` - Podcast RSS feed configurations (4 files)
+  - `lib/data/blurbs/` - Blurbs content data (2 files)
+  - Additional data: artMuseums.json, awards.json, faqs.json
 - `lib/layouts/` - Templates, components, and icons
+  - `lib/layouts/components/_partials/` - 21 partial components
+  - `lib/layouts/components/sections/` - 30 section components
+  - `lib/layouts/pages/` - Page templates (sections.njk, etc.)
+  - `lib/layouts/icons/` - 299 Feather icon SVG templates
 - `lib/assets/` - Images, main CSS/JS entry points, and global styles
+  - `main.css` - Main CSS entry point (processed through component bundler)
+  - `main.js` - Main JavaScript entry point (bundled with esbuild)
+  - `styles/` - Design tokens and base styles
 
 ### Build Output
 
 - `build/` - Generated static site (git-ignored)
+  - `build/assets/` - Bundled and optimized CSS/JS
+  - `build/search-index.json` - Search index for site-wide search
+  - `build/downloads/` - Component packages (production builds only)
 
 ## Testing Framework
 
@@ -365,10 +498,12 @@ Comprehensive test suite using Mocha:
 
 ### Test Files
 
-- `test/build-integration.test.js` - Validates the Metalsmith build pipeline
-- `test/component-manifests.test.js` - Ensures all components have valid manifests
-- `test/content-structure.test.js` - Verifies frontmatter and data file structure
-- `test/component-dependency-bundler.test.js` - Tests the bundling system
+Four comprehensive test suites using Mocha:
+
+- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 51 components (partials and sections)
+- `test/build-integration.test.js` - Tests complete Metalsmith build pipeline, HTML generation, collections, pagination, and static assets
+- `test/content-structure.test.js` - Verifies frontmatter structure, global data file validity, SEO metadata, and content consistency
+- `test/component-dependency-bundler.test.js` - Tests component directory structure, file associations, manifest dependencies, and bundler integration
 
 ### Testing New Components
 
@@ -419,6 +554,33 @@ This component library demonstrates the same paradigm used by the [Metalsmith202
 - JSDoc comments for functions and classes
 - Functional programming patterns preferred
 - No TypeScript - uses JSDoc type annotations for IDE support
+
+### Nunjucks Filters
+
+46 custom filters available globally in templates across 8 categories:
+
+**String Filters** (`nunjucks-filters/string-filters.js`):
+- `toLower`, `toUpper`, `spaceToDash`, `condenseTitle`, `trimSlashes`, `trimString`
+
+**Date Filters** (`nunjucks-filters/date-filters.js`):
+- `currentYear`, `UTCdate`, `blogDate`, `getDate`, `getMonthYear`
+
+**Markdown Filter** (`nunjucks-filters/markdown-filter.js`):
+- `mdToHTML` - Convert markdown to HTML
+
+**Array Filters** (`nunjucks-filters/array-filters.js`):
+- `getSelections`, `toArray`, `getArrayLength`, `isArray`, `isRelated`
+
+**Debug Filters** (`nunjucks-filters/debug-filters.js`):
+- `objToString`, `myDump`, `safeDump`, `debugCollections`
+
+**Validation Filters** (`nunjucks-filters/validation-filters.js`):
+- `isExternal`, `isString`, `hasImage`, `hasCtas`, `hasText`, `hasAuthor`, `hasUrl`, `hasItems`, `hasIcon`
+
+**Object Filters** (`nunjucks-filters/object-filters.js`):
+- `normalizeIcon`, `mergeProps`, `merge`, `getDownloadUrl`
+
+These filters are essential for template development and are automatically available in all Nunjucks templates.
 
 ### Component Development
 
