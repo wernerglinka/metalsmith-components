@@ -96,7 +96,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -116,7 +116,7 @@ sections:
     text:
       title: 'Event Calendar'
       titleTag: 'h2'
-      prose: 'View upcoming events and important dates. Replace YOUR_GOOGLE_CALENDAR_API_KEY above with your own API key to see live data.'
+      prose: 'View upcoming events and important dates. Replace **YOUR_GOOGLE_CALENDAR_API_KEY** above with your own API key to see live data.'
 
   - sectionType: text-only
     containerTag: article

@@ -83,6 +83,9 @@ p {
   font-size: var(--font-p);
   margin: 0;
 }
+strong {
+  font-size: 0.8em;
+}
 
 a {
   font-size: inherit;
