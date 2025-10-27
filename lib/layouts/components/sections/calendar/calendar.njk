@@ -2,6 +2,7 @@
 {# Displays Google Calendar events in a monthly grid view #}
 
 {% from "components/_partials/text/text.njk" import text %}
+{% from "components/_partials/button/button.njk" import button %}
 
 {# Load calendar configuration #}
 {# Priority: inline config > data source file #}
@@ -32,25 +33,35 @@
 
   {# Calendar controls and month navigation #}
   <div class="controls">
-    <button class="nav nav--prev"
-            aria-label="Previous month"
-            data-action="prev-month">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
+    {{ button({
+      icon: 'chevron-left',
+      ariaLabel: 'Previous month',
+      dataAction: 'prev-month',
+      buttonStyle: 'none'
+    }) }}
 
     <h2 class="month-title" data-calendar-title>
       Loading...
     </h2>
 
-    <button class="nav nav--next"
-            aria-label="Next month"
-            data-action="next-month">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
+    <div class="controls-right">
+      {{ button({
+        label: 'Today',
+        ariaLabel: 'Go to today',
+        dataAction: 'today',
+        buttonStyle: 'primary',
+        isSmall: true
+      }) }}
+
+      {{ button({
+        icon: 'chevron-right',
+        ariaLabel: 'Next month',
+        dataAction: 'next-month',
+        buttonStyle: 'none'
+      }) }}
+    </div>
+
+    
   </div>
 
   {# Loading state #}
@@ -94,14 +105,15 @@
        role="dialog"
        aria-labelledby="event-details-title">
     <div class="event-details-content">
-      <button class="event-details-close"
-              aria-label="Close event details"
-              data-close-details>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
+      <div class="close-button-wrapper">
+        {{ button({
+          icon: 'x',
+          ariaLabel: 'Close event details',
+          dataAction: 'close-details',
+          buttonStyle: 'tertiary',
+          isSmall: true
+        }) }}
+      </div>
       <h3 id="event-details-title" data-event-title></h3>
       <div data-event-time class="event-time"></div>
       <div data-event-location class="event-location"></div>

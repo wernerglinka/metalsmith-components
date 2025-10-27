@@ -6,7 +6,7 @@
 
 .calendar {
   --calendar-bg: var(--color-background, #ffffff);
-  --calendar-border: var(--color-border, #e5e7eb);
+  --calendar-border: var(--color-border-light, #e0e0e0);
   --calendar-text: var(--color-text, #1f2937);
   --calendar-text-muted: var(--color-text-muted, #6b7280);
   --calendar-primary: var(--color-primary, #3b82f6);
@@ -16,6 +16,7 @@
   --calendar-event-holiday: #ef4444;
   --calendar-event-personal: #10b981;
   --calendar-spacing: var(--spacing-md, 1rem);
+  --calendar--control-bg: #f8f8f8;
 
   padding: var(--section-padding, 4rem 0);
 
@@ -43,9 +44,14 @@
   justify-content: space-between;
   margin-bottom: var(--calendar-spacing);
   padding: var(--calendar-spacing);
-  background: var(--calendar-bg);
-  border: 1px solid var(--calendar-border);
+  background: var(--calendar--control-bg);
   border-radius: 8px;
+
+  .controls-right {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
 }
 
 .calendar .month-title {
@@ -53,37 +59,6 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--calendar-text);
-}
-
-.calendar .nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  background: transparent;
-  border: 1px solid var(--calendar-border);
-  border-radius: 6px;
-  color: var(--calendar-text);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.calendar .nav:hover {
-  background: var(--calendar-hover);
-  border-color: var(--calendar-primary);
-  color: var(--calendar-primary);
-}
-
-.calendar .nav:focus {
-  outline: 2px solid var(--calendar-primary);
-  outline-offset: 2px;
-}
-
-.calendar .nav:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 /* Loading and Error States */
@@ -104,7 +79,6 @@
 
 /* Calendar Grid */
 .calendar .grid {
-  border: 1px solid var(--calendar-border);
   border-radius: 8px;
   overflow: hidden;
   background: var(--calendar-bg);
@@ -115,8 +89,11 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   background: var(--calendar-hover);
-  border: 1px solid var(--calendar-border);
-  border-bottom: 2px solid var(--calendar-border);
+  border-top: 1px solid var(--calendar-border);
+  border-left: 1px solid var(--calendar-border);
+  border-right: 1px solid var(--calendar-border);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .calendar .weekday {
@@ -140,11 +117,29 @@
 .calendar .day {
   min-height: 120px;
   padding: 0.5rem;
-  border: 1px solid var(--calendar-border);
-  margin-top: -1px;
-  margin-left: -1px;
+  border-right: 1px solid var(--calendar-border);
+  border-bottom: 1px solid var(--calendar-border);
   background: var(--calendar-bg);
   transition: background-color 0.2s ease;
+}
+
+/* First column gets left border */
+.calendar .day:nth-child(7n + 1) {
+  border-left: 1px solid var(--calendar-border);
+}
+
+/* First row gets top border */
+.calendar .day:nth-child(-n + 7) {
+  border-top: 1px solid var(--calendar-border);
+}
+
+/* Bottom corner border radius to match grid container */
+.calendar .day:nth-last-child(7) {
+  border-bottom-left-radius: 8px;
+}
+
+.calendar .day:last-child {
+  border-bottom-right-radius: 8px;
 }
 
 .calendar .day:hover {
@@ -162,7 +157,6 @@
 
 .calendar .day--today {
   background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-  border: 2px solid var(--calendar-today);
 }
 
 .calendar .day--has-events {
@@ -279,25 +273,10 @@
   padding: calc(var(--calendar-spacing) * 2);
 }
 
-.calendar .event-details-close {
+.calendar .close-button-wrapper {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  background: transparent;
-  border: 1px solid var(--calendar-border);
-  border-radius: 6px;
-  color: var(--calendar-text);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.calendar .event-details-close:hover {
-  background: var(--calendar-hover);
-  border-color: var(--calendar-primary);
-  color: var(--calendar-primary);
 }
 
 .calendar .event-details h3 {
@@ -486,9 +465,7 @@
 }
 
 /* Accessibility */
-.calendar .nav:focus-visible,
-.calendar .event:focus-visible,
-.calendar .event-details-close:focus-visible {
+.calendar .event:focus-visible {
   outline: 2px solid var(--calendar-primary);
   outline-offset: 2px;
 }

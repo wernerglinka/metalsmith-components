@@ -14,7 +14,8 @@ The calendar component provides a complete solution for displaying public Google
 - **Performance Optimized**: Initial three-month data window with on-demand loading for additional months
 - **Event Categorization**: Color-coded events based on calendar category (holiday, personal, work, default)
 - **Event Types**: Visual distinction between all-day and timed events
-- **Responsive Design**: Mobile-friendly layout that adapts to different screen sizes
+- **Responsive Design**: Container query-based responsive layout that switches between grid and list views based on available width (< 768px shows list view)
+- **Complete Calendar Grid**: Displays empty placeholder cells from adjacent months to maintain proper week alignment
 - **Accessibility**: Proper ARIA attributes and keyboard navigation support
 
 ## Architecture
@@ -183,7 +184,7 @@ The component includes four built-in category styles:
 Custom categories can be added by extending the CSS:
 
 ```css
-.calendar__event--custom {
+.calendar .event--custom {
   background: #your-light-color;
   color: #your-dark-color;
   border-left: 3px solid #your-accent-color;
@@ -216,6 +217,17 @@ Custom categories can be added by extending the CSS:
 4. Provides link to view in Google Calendar
 
 ## Data Structure
+
+### Calendar Grid Layout
+
+The calendar automatically fills the grid with empty placeholder cells to maintain proper week alignment:
+
+- **Leading cells**: Empty cells from the previous month (e.g., if month starts on Wednesday, 3 empty cells are added for Sun-Tue)
+- **Month days**: All days in the current month (28-31 days)
+- **Trailing cells**: Empty cells from the next month to complete the last week
+- **Complete weeks**: The grid always shows complete weeks (total cells divisible by 7)
+
+These placeholder cells have the `day--other-month` class with a light gray background and are not interactive.
 
 ### Transformed Calendar Data
 
@@ -265,6 +277,25 @@ Custom categories can be added by extending the CSS:
 }
 ```
 
+## Responsive Behavior
+
+The calendar uses CSS Container Queries to provide responsive layouts based on the component's available width, not the viewport size. This makes it work correctly in sidebars, columns, or any layout context.
+
+### Grid View (Default)
+- Displays when calendar container is **768px or wider**
+- Traditional monthly grid with 7 columns (Sun-Sat)
+- Shows up to 3 events per day with "+X more" indicator
+- Empty placeholder cells from adjacent months maintain proper week alignment
+
+### List View (Narrow Containers)
+- Displays when calendar container is **less than 768px**
+- Vertical list of days with events
+- Shows full event details for each day
+- Only displays days that have events
+- Better for mobile devices and narrow sidebars
+
+The switch between views happens automatically based on the container width, with no JavaScript required for the layout change.
+
 ## Customization
 
 ### CSS Variables
@@ -301,7 +332,13 @@ The component shows up to 3 events per day in the grid view. Additional events a
 - ES6 module support
 - Fetch API
 - Modern CSS Grid support
+- CSS Container Queries support (for responsive layout)
 - JavaScript enabled
+
+**Browser Compatibility:**
+- Chrome/Edge 105+
+- Safari 16+
+- Firefox 110+
 
 ## Performance Considerations
 
