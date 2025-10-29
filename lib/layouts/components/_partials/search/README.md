@@ -1,6 +1,8 @@
-# Search Section Component
+# Search Partial Component
 
-A comprehensive search component that provides fuzzy search functionality across your Metalsmith site content using Fuse.js and the metalsmith-search plugin.
+A comprehensive search partial that provides fuzzy search functionality across your Metalsmith site content using Fuse.js and the metalsmith-search plugin.
+
+**Note**: This is a **partial component** typically used within the `search-only` section component, but can also be integrated directly into custom sections or page templates (like the header search implementation).
 
 ## Features
 
@@ -22,13 +24,35 @@ A comprehensive search component that provides fuzzy search functionality across
 
 ## Basic Usage
 
-Add to any page's frontmatter sections array:
+### Within Section Component
+
+Add to any page's frontmatter sections array using the `search-only` section:
 
 ```yaml
 sections:
-  - sectionType: search
+  - sectionType: search-only
     text:
+      title: "Search Components"
       placeholder: "Search components and documentation..."
+    settings:
+      maxResults: 20
+```
+
+### Direct Template Usage
+
+Import and use the partial directly in templates:
+
+```liquid
+{% from "components/_partials/search/search.njk" import search %}
+
+{{ search({
+  title: "Search",
+  placeholder: "Search...",
+  settings: {
+    maxResults: 20,
+    minCharacters: 2
+  }
+}) }}
 ```
 
 ## Configuration Options
@@ -56,34 +80,48 @@ settings:
 
 ## Examples
 
-### Basic Search
+### Basic Search (via section)
 
 ```yaml
-sectionType: search
+sectionType: search-only
 text:
   placeholder: "Search components..."
 ```
 
-### Advanced Search with Filters
+### Advanced Search with Filters (via section)
 
 ```yaml
-sectionType: search
+sectionType: search-only
 text:
   title: "Find Components"
   subtitle: "Search through all component documentation and examples"
   placeholder: "Search components, guides, examples..."
 settings:
-  showCategories: true
   maxResults: 15
   enableHighlighting: true
   showRelevanceScore: true
 ```
 
-### Minimal Search Bar
+### Minimal Search Bar (via section)
 
 ```yaml
-sectionType: search
+sectionType: search-only
 # Uses all defaults - just a simple search input
+```
+
+### Custom Header Integration (direct partial usage)
+
+```liquid
+{% from "components/_partials/search/search.njk" import search %}
+
+<div class="header-search-overlay">
+  <form class="header-search-form" action="/search/" method="get">
+    {{ search({
+      placeholder: "Search...",
+      id: "header-search"
+    }) }}
+  </form>
+</div>
 ```
 
 ## Search Functionality

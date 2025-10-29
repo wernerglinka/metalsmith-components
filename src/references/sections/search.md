@@ -583,7 +583,6 @@ sections:
         - `settings.enableHighlighting`: Highlight matching terms (default: true)
         - `settings.showRelevanceScore`: Show relevance percentage (default: true)
         - `settings.minCharacters`: Minimum characters to trigger search (default: 2)
-        ```
 
   - sectionType: banner
     containerTag: aside
