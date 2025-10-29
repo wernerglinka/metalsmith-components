@@ -67,6 +67,7 @@ header {
     /* Reset button styles for header buttons - higher specificity than global button styles */
     button.none,
     button.theme-toggle,
+    button.search-icon-toggle,
     button[type='submit'] {
       background: transparent;
       box-shadow: none;
@@ -79,45 +80,31 @@ header {
         background: transparent;
       }
 
-      &:focus {
+      &:focus,
+      &:focus-visible {
         outline: 2px solid var(--color-link-navigation);
         outline-offset: 2px;
         box-shadow: none;
       }
     }
 
-    .header-search-form {
-      position: relative;
+    .search-icon-toggle {
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0;
-      border: 1px solid var(--color-border, #ddd);
-      border-radius: var(--space-3xs, 0.25rem);
-      overflow: hidden;
+      justify-content: center;
+      width: var(--space-m-l);
+      height: var(--space-m-l);
+      transition: opacity 0.3s ease;
 
-      .header-search-input {
-        padding: var(--space-2xs, 0.5rem) var(--space-md, 2.5rem) var(--space-2xs, 0.5rem)
-          var(--space-xs, 0.75rem);
-        border: none;
-        font-size: clamp(0.8125rem, 0.75rem + 0.3vw, 0.875rem);
+      svg {
+        stroke: var(--color-link-navigation);
+        stroke-width: 1px;
+      }
 
-        /* Fluid width that adapts to container size */
-        width: clamp(10rem, 20cqw, 15rem);
-
-        background: var(--background-color-light, #fff);
-        color: var(--color-text);
-        transition: width 0.3s ease;
-
-        &:focus {
-          outline: none;
-          border-color: var(--color-link-navigation);
-          /* Grows on focus, but stays within bounds */
-          width: clamp(11.25rem, 25cqw, 18rem);
-        }
-
-        &::placeholder {
-          color: var(--color-text-muted, #999);
-        }
+      &.search-active {
+        opacity: 0;
+        pointer-events: none;
       }
     }
 
@@ -141,17 +128,81 @@ header {
       }
     }
   }
+}
 
-  /* Container query for narrow headers instead of viewport breakpoint */
-  @container header (max-width: 48rem) {
-    .misc .header-search-form {
-      .header-search-input {
-        /* Smaller base size in narrow containers */
-        width: clamp(8.75rem, 18cqw, 11.25rem);
+/* Header search overlay - positioned below header */
+.header-search-overlay {
+  position: fixed;
+  top: 4rem; /* Adjust based on actual header height */
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(var(--space-xs, 0.3125rem));
+  box-shadow: 0 var(--space-2xs, 0.25rem) var(--space-xs, 0.5rem) var(--color-shadow);
+  padding: var(--space-sm, 1rem) var(--gutter);
 
-        &:focus {
-          width: clamp(10rem, 22cqw, 13.75rem);
-        }
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-1rem);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s 0.3s;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .header-search-form {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 1px solid var(--color-border, #ddd);
+    border-radius: var(--space-3xs, 0.25rem);
+    overflow: hidden;
+    background: var(--background-color-light, #fff);
+
+    .header-search-input {
+      flex: 1;
+      padding: var(--space-xs, 0.75rem) var(--space-xs, 0.75rem);
+      border: none;
+      font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+      background: transparent;
+      color: var(--color-text);
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: var(--color-text-muted, #999);
+      }
+    }
+
+    button[type='submit'] {
+      padding: var(--space-xs, 0.75rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: var(--background-color-link-hover, #f5f5f5);
+      }
+
+      svg {
+        stroke: var(--color-link-navigation);
+        stroke-width: 2px;
       }
     }
   }
