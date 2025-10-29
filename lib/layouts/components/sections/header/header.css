@@ -1,6 +1,12 @@
 /**
  * Header Section Styles
  *
+ * Modern CSS Layout Approach:
+ * - Uses cluster pattern (flex with gap) for horizontal layout
+ * - Container queries for component-level responsiveness
+ * - Fluid sizing with clamp() for search input
+ * - Design tokens for all spacing and colors
+ *
  * Design Tokens:
  * - --color-shadow
  * - --gutter
@@ -8,6 +14,10 @@
  * - --space-m-l
  * - --background-color-link-hover
  * - --color-link-navigation
+ * - --color-border
+ * - --background-color-light
+ * - --color-text
+ * - --color-text-muted
  */
 
 header {
@@ -15,20 +25,66 @@ header {
   top: 0;
   width: 100%;
   z-index: 100;
-  box-shadow: 0 2px 4px var(--color-shadow);
+  box-shadow: 0 var(--space-3xs, 0.125rem) var(--space-2xs, 0.25rem) var(--color-shadow);
   background: rgb(255 255 255 / 60%);
-  backdrop-filter: blur(5px); /* Modern blur effect for header */
+  backdrop-filter: blur(var(--space-xs, 0.3125rem));
 
+  /* Container setup for responsive behavior */
+  container-name: header;
+  container-type: inline-size;
+
+  /* Cluster pattern: horizontal layout with flexible wrapping */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  gap: var(--space-s);
   padding-inline: var(--gutter);
 
+  /* Reset all button styles in header (including hamburger) */
+  button.hamburger-menu {
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+
+    &:hover,
+    &.active,
+    &:focus,
+    &:focus-visible {
+      transform: none;
+      background: transparent;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
   .misc {
+    /* Cluster pattern for misc items */
     display: flex;
     align-items: center;
     gap: var(--space-s);
+
+    /* Reset button styles for header buttons - higher specificity than global button styles */
+    button.none,
+    button.theme-toggle,
+    button[type='submit'] {
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
+      backdrop-filter: none;
+
+      &:hover {
+        transform: none;
+        background: transparent;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-link-navigation);
+        outline-offset: 2px;
+        box-shadow: none;
+      }
+    }
 
     .header-search-form {
       position: relative;
@@ -36,22 +92,27 @@ header {
       align-items: center;
       gap: 0;
       border: 1px solid var(--color-border, #ddd);
-      border-radius: 4px;
+      border-radius: var(--space-3xs, 0.25rem);
       overflow: hidden;
 
       .header-search-input {
-        padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+        padding: var(--space-2xs, 0.5rem) var(--space-md, 2.5rem) var(--space-2xs, 0.5rem)
+          var(--space-xs, 0.75rem);
         border: none;
-        font-size: 0.875rem;
-        width: 180px;
+        font-size: clamp(0.8125rem, 0.75rem + 0.3vw, 0.875rem);
+
+        /* Fluid width that adapts to container size */
+        width: clamp(10rem, 20cqw, 15rem);
+
         background: var(--background-color-light, #fff);
         color: var(--color-text);
-        transition: all 0.3s ease;
+        transition: width 0.3s ease;
 
         &:focus {
           outline: none;
           border-color: var(--color-link-navigation);
-          width: 240px;
+          /* Grows on focus, but stays within bounds */
+          width: clamp(11.25rem, 25cqw, 18rem);
         }
 
         &::placeholder {
@@ -67,7 +128,8 @@ header {
       border-bottom: none;
       width: var(--space-m-l);
       height: var(--space-m-l);
-      transition: all 0.5s ease;
+      background: transparent;
+      transition: background 0.3s ease;
 
       &:hover {
         background: var(--background-color-link-hover);
@@ -80,14 +142,15 @@ header {
     }
   }
 
-  /* Mobile adjustments */
-  @media (max-width: 768px) {
+  /* Container query for narrow headers instead of viewport breakpoint */
+  @container header (max-width: 48rem) {
     .misc .header-search-form {
       .header-search-input {
-        width: 140px;
+        /* Smaller base size in narrow containers */
+        width: clamp(8.75rem, 18cqw, 11.25rem);
 
         &:focus {
-          width: 180px;
+          width: clamp(10rem, 22cqw, 13.75rem);
         }
       }
     }
