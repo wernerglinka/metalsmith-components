@@ -448,6 +448,16 @@ BASE_PATH=/subdirectory npm run build
 - [metalsmith-bundled-components](https://www.npmjs.com/package/metalsmith-bundled-components) - Component dependency bundler plugin
 - [metalsmith-search](https://www.npmjs.com/package/metalsmith-search) - Build-time search index generator
 
+### Developer Documentation
+
+Additional technical documentation for developers is located in the [`docs/`](docs/) directory:
+
+- [Developer Guide](docs/DEVELOPER-GUIDE.md) - Best practices, patterns, and lessons learned
+- [Component Package Specification](docs/COMPONENT-PACKAGE-SPEC.md) - ZIP package structure and implementation
+- [Recurring Events Fix](docs/RECURRING-EVENTS-FIX.md) - Calendar component bug fix documentation
+- [Search Improvement Guide](docs/search-improvement-guide.md) - Search system architecture and enhancements
+- [Adding ZIP Packages](docs/adding-zip-packages.md) - Component packaging system implementation
+
 ### Technical Documentation
 
 The site includes detailed technical guides available at [ms-components-library.netlify.app/blog](https://ms-components-library.netlify.app/blog):
