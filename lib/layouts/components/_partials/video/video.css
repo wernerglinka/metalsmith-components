@@ -4,6 +4,13 @@
  * Design Tokens:
  * - --color-background-light
  * - --glass-background-light
+ * - --contrast-text-on-dark
+ * - --color-background
+ * - --color-text
+ * - --color-text-light
+ * - --color-primary
+ * - --space-xl
+ * - --space-m
  */
 .video {
   button {
@@ -14,43 +21,60 @@
     background: none;
     position: relative;
     padding: 0;
+    overflow: hidden;
+    transform: none; /* Override button.css scale */
+
+    picture,
+    .responsive-wrapper {
+      transition: transform 0.5s ease-in-out;
+      will-change: transform;
+    }
 
     .play-button {
       position: absolute;
       top: 50%;
       left: 50%;
       z-index: 1;
-      margin: -30px 0 0 -30px;
-      width: 60px;
-      height: 60px;
-      border-radius: 30px;
-      background-color: #fff;
-      transition: all 0.5s ease-in-out;
+      margin: calc(var(--space-xl) * -0.5) 0 0 calc(var(--space-xl) * -0.5);
+      width: var(--space-xl);
+      height: var(--space-xl);
+      border-radius: 50%;
+      background-color: var(--color-text-light);
+      transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
       cursor: pointer;
-      opacity: 0.8;
+      opacity: 0.9;
 
       &::after {
         position: absolute;
-        top: 12px;
-        left: 20px;
+        top: 50%;
+        left: 50%;
         display: block;
         content: '';
         width: 0;
         height: 0;
-        border-width: 18px 28px;
+        margin-top: calc(var(--space-m) * -0.5);
+        margin-left: calc(var(--space-m) * -0.35);
+        border-width: calc(var(--space-m) * 0.5) calc(var(--space-m) * 0.75);
         border-style: solid;
-        border-color: transparent transparent transparent #000;
-        transition: all 0.5s ease-in-out;
-        opacity: 0.4;
+        border-color: transparent transparent transparent var(--color-text);
+        transition: border-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        opacity: 0.9;
       }
     }
 
     &:hover {
+      transform: none; /* Ensure no scale on hover */
+
+      picture,
+      .responsive-wrapper {
+        transform: scale(1.05);
+      }
+
       .play-button {
-        background-color: #666;
+        opacity: 0.7;
 
         &::after {
-          border-color: transparent transparent transparent #fff;
+          opacity: 0.7;
         }
       }
     }
@@ -101,15 +125,15 @@
 
       svg {
         line {
-          transition: all 0.6s ease-in-out;
+          transition: stroke 0.5s ease-in-out;
         }
       }
 
       &:hover {
         svg {
           line {
-            transition: all 0.6s ease-in-out;
-            stroke: red;
+            transition: stroke 0.5s ease-in-out;
+            stroke: var(--color-primary);
           }
         }
       }

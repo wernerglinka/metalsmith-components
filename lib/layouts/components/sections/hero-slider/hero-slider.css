@@ -1,8 +1,15 @@
 /**
  * Hero Slider Section Styles
  *
+ * Modern CSS Layout Approach:
+ * - Container queries for component-level responsiveness
+ * - Fluid scaling with clamp() and viewport units
+ * - Design tokens for consistent theming
+ * - Semantic breakpoint values (rem-based)
+ *
  * Design Tokens:
  * - --color-text-light
+ * - --color-text-dark (replaces hardcoded #161616)
  * - --glass-background-dark-card
  * - --glass-background
  * - --color-text-highlight
@@ -15,13 +22,12 @@
  * - --transition-fade
  * - --dark-screen
  * - --light-screen
- * - --contrast-text-on-dark
+ * - --contrast-text-on-dark (replaces hardcoded #f4f4f4)
  * - --space-s
  * - --font-s
  * - --transition-base
  * - --glass-backdrop-filter
  * - --background-color-link-hover
- * - --color-text-dark
  * - --color-secondary
  */
 
@@ -275,21 +281,21 @@
 .dark-theme .hero-slide {
   &.is-dark {
     /* Dark slides always have light text, regardless of global theme */
-    color: #f4f4f4;
+    color: var(--contrast-text-on-dark);
 
     .hero-content :is(h1, h2, h3, h4, h5, h6),
     .hero-content p {
-      color: #f4f4f4;
+      color: var(--contrast-text-on-dark);
     }
   }
 
   /* Light slides always have dark text, regardless of global theme */
   &:not(.is-dark) {
-    color: #161616;
+    color: var(--color-text-dark);
 
     .hero-content :is(h1, h2, h3, h4, h5, h6),
     .hero-content p {
-      color: #161616;
+      color: var(--color-text-dark);
     }
   }
 }
@@ -429,7 +435,7 @@
   Without the '-webkit-' prefix, the line-clamp property will work but the ellipsis
   will not be shown
 */
-@container hero-slider (max-width: 500px) {
+@container hero-slider (max-width: 31rem) {
   .hero-slide .hero-content {
     .prose,
     p {
@@ -444,7 +450,7 @@
 }
 
 /* Mobile adjustments - Must come AFTER regular styles for proper cascade */
-@container hero-slider (max-width: 768px) {
+@container hero-slider (max-width: 48rem) {
   .hero-content {
     &.has-image {
       display: none;

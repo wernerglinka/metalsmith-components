@@ -45,9 +45,9 @@
     position: absolute;
     display: block;
     top: 0;
-    right: 1rem;
-    width: 2rem;
-    height: 2rem;
+    right: var(--space-s-l);
+    width: var(--space-l);
+    height: var(--space-l);
 
     svg {
       width: 100%;
@@ -60,14 +60,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
+    width: var(--space-xl);
+    height: var(--space-xl);
+    border-radius: var(--space-3xs);
   }
 
   svg {
-    width: 4rem;
-    height: 4rem;
+    width: var(--space-2xl);
+    height: var(--space-2xl);
     stroke: var(--color-border);
 
     g,

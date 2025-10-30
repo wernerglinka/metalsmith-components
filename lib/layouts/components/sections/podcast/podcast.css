@@ -1,6 +1,12 @@
 /**
  * Podcast Section Styles
  *
+ * Modern CSS Layout Approach:
+ * - Container queries for component-level responsiveness
+ * - Fluid scaling with container query units
+ * - Design tokens for consistent theming
+ * - Specific transitions instead of "all"
+ *
  * Design Tokens:
  * - --color-primary
  * - --color-opac
@@ -40,6 +46,12 @@
  * - --default-letter-spacing
  * - --glass-backdrop-filter
  */
+
+/* Container setup for responsive behavior */
+.podcast-wrapper {
+  container-name: podcast;
+  container-type: inline-size;
+}
 
 .shk {
   --color-primary: #0d6efd;
@@ -533,7 +545,8 @@ svg.shk-btn_mute,
   display: inline-flex;
 }
 
-@media (width >= 641px) {
+/* Container query for wider layouts (desktop-style player) */
+@container podcast (min-width: 40rem) {
   .shk-player {
     padding: 20px 16px;
     box-shadow: var(--shadow-body);
@@ -571,7 +584,9 @@ svg.shk-btn_mute,
     border: 4px solid transparent;
     box-shadow: var(--shadow-handle);
     transform: scale(0.0001);
-    transition: all 0.1s ease-in;
+    transition:
+      transform 0.1s ease-in,
+      border-color 0.1s ease-in;
   }
 
   .shk-bar-handle.focus-visible,
@@ -595,7 +610,8 @@ svg.shk-btn_mute,
   }
 }
 
-@media (width <= 640px) {
+/* Container query for narrow layouts (mobile-style player) */
+@container podcast (max-width: 40rem) {
   .shk-player {
     padding: 5px 16px;
     box-shadow: var(--shadow-body-mobile);
@@ -935,7 +951,8 @@ svg.shk-btn_mute,
   color: currentcolor;
 }
 
-@media (width <= 640px) {
+/* Container query for chapter display on narrow layouts */
+@container podcast (max-width: 40rem) {
   .shk-chapter {
     left: 10px;
     right: 10px;
@@ -1031,7 +1048,9 @@ svg.shk-btn_mute,
   margin-bottom: 0.5rem;
   border-radius: 8px;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition:
+    box-shadow 0.5s ease,
+    background-color 0.5s ease;
 }
 
 .episode-item:hover {
@@ -1051,17 +1070,12 @@ svg.shk-btn_mute,
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: background-color 0.2s ease;
   gap: 1rem;
   align-items: flex-start;
-}
 
-.episode-selector:hover {
-  background-color: var(--color-surface-hover);
-}
-
-.episode-item.active .episode-selector {
-  background-color: transparent;
+  &:hover {
+    transform: none;
+  }
 }
 
 .episode-thumbnail {

@@ -1,14 +1,18 @@
 /**
  * Overlay Component Styles
  *
- * Theme Notes:
- * Uses hard-coded values only
+ * Design Tokens:
+ * - --overlay-background
+ * - --contrast-text-on-dark
+ * - --color-text-light
+ * - --space-xl
+ * - --font-md
  */
 #video-overlay {
   position: fixed;
   inset: 0;
   z-index: 3000;
-  background-color: rgb(50 50 100 / 95%);
+  background-color: var(--overlay-background, rgb(50 50 100 / 95%));
   display: none;
 
   &.is-open {
@@ -20,12 +24,12 @@
     z-index: 1;
     top: 7vh;
     right: 10vw;
-    font-size: 20px;
-    color: #fff;
+    font-size: var(--font-md, 1.25rem);
+    color: var(--contrast-text-on-dark);
 
     &:hover {
       cursor: pointer;
-      color: #666;
+      color: var(--color-text-light);
     }
   }
 

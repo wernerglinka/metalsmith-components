@@ -177,7 +177,7 @@
   border-radius: 50%;
 }
 
-.calendar .day--today .calendar .day-number {
+.calendar .day--today .day-number {
   background: var(--calendar-today);
   color: #78350f;
   font-weight: 700;
@@ -229,6 +229,12 @@
   background: #e0e7ff;
   color: #3730a3;
   border-left: 3px solid #6366f1;
+}
+
+.calendar .event--test {
+  background: #fef3c7;
+  color: #78350f;
+  border-left: 3px solid #f59e0b;
 }
 
 /* All-day event badge */
@@ -427,6 +433,11 @@
 .calendar .list-event--work {
   background: #e0e7ff;
   border-left: 4px solid #6366f1;
+}
+
+.calendar .list-event--test {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
 }
 
 .calendar .list-event-title {

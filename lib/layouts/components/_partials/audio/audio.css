@@ -1,21 +1,38 @@
 /**
  * Audio Component Styles
  *
+ * Modern CSS Layout Approach:
+ * - CSS custom properties for player dimensions
+ * - Design tokens for consistent spacing and colors
+ * - Consistent use of design token spacing values
+ *
  * Design Tokens:
  * - --space-s-m
  * - --space-s
  * - --space-xs
+ * - --space-2xs (replaces hardcoded 0.5rem)
  * - --glass-border-radius
  * - --color-background-light
  * - --color-text
  * - --color-border-light
  * - --color-primary
+ * - --font-xs (replaces hardcoded 12px)
  */
 
 .custom-audio-player {
   position: relative;
   width: 100%;
   height: 100%;
+
+  /* Audio player dimension custom properties */
+  --audio-controls-height: 4rem;
+  --audio-controls-max-width: 38rem;
+  --audio-icon-size: 2rem;
+  --audio-progress-height: 20px;
+  --audio-progress-bar-height: 6px;
+  --audio-progress-bar-radius: 3px;
+  --audio-progress-handle-size: 14px;
+  --audio-volume-slider-width: 60px;
 
   /* Hide the native audio element */
   audio {
@@ -43,12 +60,12 @@
 
 .audio-controls {
   width: 100%;
-  height: 4rem;
+  height: var(--audio-controls-height);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0 var(--space-s, 12px);
-  max-width: 38rem;
+  gap: var(--space-2xs, 0.5rem);
+  padding: 0 var(--space-s);
+  max-width: var(--audio-controls-max-width);
   margin-inline: auto;
   border-radius: var(--glass-border-radius);
   background-color: var(--color-background-light);
@@ -57,35 +74,43 @@
   svg {
     stroke-width: 1px;
     stroke: var(--color-text);
-    height: 2rem !important;
-    width: 2rem !important;
+    height: var(--audio-icon-size) !important;
+    width: var(--audio-icon-size) !important;
   }
 
   .play-pause-btn {
     background: none;
     border: none;
     cursor: pointer;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
   }
 
   .progress-container {
     flex: 1;
     position: relative;
-    height: 20px;
+    height: var(--audio-progress-height);
     display: flex;
     align-items: center;
 
     .progress-bar {
       width: 100%;
-      height: 6px;
+      height: var(--audio-progress-bar-height);
       background-color: var(--color-border-light);
-      border-radius: 3px;
+      border-radius: var(--audio-progress-bar-radius);
       position: relative;
       cursor: pointer;
 
       .progress-fill {
         height: 100%;
         background-color: var(--color-primary);
-        border-radius: 3px;
+        border-radius: var(--audio-progress-bar-radius);
         width: 0%;
         transition: width 0.1s ease;
       }
@@ -95,8 +120,8 @@
         top: 50%;
         left: 0%;
         transform: translate(-50%, -50%);
-        width: 14px;
-        height: 14px;
+        width: var(--audio-progress-handle-size);
+        height: var(--audio-progress-handle-size);
         background-color: var(--color-primary);
         border-radius: 50%;
         opacity: 0;
@@ -122,8 +147,8 @@
 
   .time-display {
     display: flex;
-    gap: var(--space-xs, 4px);
-    font-size: 12px;
+    gap: var(--space-xs);
+    font-size: var(--font-xs, 0.75rem);
     color: var(--color-text);
     white-space: nowrap;
 
@@ -136,20 +161,25 @@
   .volume-container {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--space-2xs, 0.5rem);
 
     .volume-btn {
       background: none;
       border: none;
       cursor: pointer;
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
 
       &:hover {
         opacity: 0.7;
+        transform: none;
+        box-shadow: none;
       }
     }
 
     .volume-slider {
-      width: 60px;
+      width: var(--audio-volume-slider-width);
       display: flex;
 
       .volume-input {
@@ -157,43 +187,43 @@
         -moz-appearance: none;
         appearance: none;
         width: 100%;
-        height: 6px;
+        height: var(--audio-progress-bar-height);
         background: transparent;
         outline: none;
         cursor: pointer;
-        border-radius: 3px;
+        border-radius: var(--audio-progress-bar-radius);
 
         /* Track styling for WebKit browsers */
         &::-webkit-slider-runnable-track {
           width: 100%;
-          height: 6px;
+          height: var(--audio-progress-bar-height);
           background: inherit; /* Will use the gradient set by JS */
           border: 1px solid var(--color-text);
-          border-radius: 3px;
+          border-radius: var(--audio-progress-bar-radius);
         }
 
         /* Track styling for Firefox - uses progress fill */
         &::-moz-range-track {
           width: 100%;
-          height: 6px;
+          height: var(--audio-progress-bar-height);
           background: white;
           border: 1px solid var(--color-text);
-          border-radius: 3px;
+          border-radius: var(--audio-progress-bar-radius);
         }
 
         /* Firefox progress fill */
         &::-moz-range-progress {
-          height: 6px;
+          height: var(--audio-progress-bar-height);
           background: var(--color-text);
-          border-radius: 3px;
+          border-radius: var(--audio-progress-bar-radius);
         }
 
         /* Thumb styling for WebKit browsers */
         &::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          width: 14px;
-          height: 14px;
+          width: var(--audio-progress-handle-size);
+          height: var(--audio-progress-handle-size);
           background: var(--color-text);
           border-radius: 50%;
           cursor: pointer;
@@ -202,8 +232,8 @@
 
         /* Thumb styling for Firefox */
         &::-moz-range-thumb {
-          width: 14px;
-          height: 14px;
+          width: var(--audio-progress-handle-size);
+          height: var(--audio-progress-handle-size);
           background: var(--color-text);
           border-radius: 50%;
           border: none;

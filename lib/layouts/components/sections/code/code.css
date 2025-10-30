@@ -5,19 +5,34 @@
  * - --space-s-m
  * - --space-2xs-xs
  * - --color-text
+ * - --space-lg
+ * - --space-xs
+ * - --space-s
+ * - --font-sm
+ * - --code-background
+ * - --code-text-color
+ * - --color-text-light
+ * - --color-primary
+ * - --color-success
  */
 
 .code {
   .code-block {
-    margin: 2rem 0;
-    border-radius: 8px;
+    margin: var(--space-lg) 0;
+    border-radius: var(--space-xs);
     overflow: hidden;
 
     pre[class*='language-'] {
       padding: var(--space-s-m);
       border-radius: var(--space-2xs-xs);
       overflow: hidden;
-      font-size: 0.8rem;
+      font-size: 0.8em;
+    }
+
+    /* Override Prism theme font sizes for all theme variants */
+    &[class*='theme-'] pre[class*='language-'],
+    &[class*='theme-'] code[class*='language-'] {
+      font-size: 0.8em;
     }
   }
 
@@ -25,13 +40,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0.75rem 1rem;
+    padding: var(--space-xs) var(--space-s);
 
     .code-info {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 1rem;
+      gap: var(--space-s);
     }
 
     .filename {
@@ -52,16 +67,16 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-xs);
     margin-left: auto;
   }
 
   .language-label {
-    background: #404040;
-    color: #ccc;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
+    background: var(--code-background);
+    color: var(--code-text-color);
+    padding: var(--space-3xs) var(--space-2xs);
+    border-radius: var(--space-3xs);
+    font-size: var(--font-xs);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-transform: uppercase;
     font-weight: 500;
@@ -71,29 +86,30 @@
     background: none;
     border: none;
     padding: 0;
-    width: 2rem;
-    height: 2rem;
+    width: var(--space-lg);
+    height: var(--space-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-shadow: none;
 
     svg {
-      transition: all 0.8s ease;
-      stroke: #666;
+      transition: stroke 0.5s ease-in-out;
+      stroke: var(--color-text-light);
     }
   }
 
   .copy-button:hover {
     svg {
-      stroke: red;
+      stroke: var(--color-primary);
     }
   }
 
   .copy-button.copied {
-    background: #22c55e;
-    border-color: #22c55e;
-    color: white;
+    background: var(--color-success);
+    border-color: var(--color-success);
+    color: var(--contrast-text-on-dark);
   }
 
   .copy-button.copied svg {

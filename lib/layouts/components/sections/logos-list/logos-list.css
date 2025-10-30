@@ -8,6 +8,11 @@
  * - --color-text
  * - --color-primary
  * - --font-p
+ * - --space-xl
+ * - --space-3xl
+ * - --space-s
+ * - --logo-list-height
+ * - --logo-animation-speed
  */
 
 @keyframes marquee {
@@ -40,7 +45,7 @@
 
   .marquee-container {
     width: 100%;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto var(--space-xl) auto;
     overflow: hidden;
   }
 
@@ -52,7 +57,7 @@
     z-index: 1000;
     top: 0;
     left: 0;
-    width: 15rem;
+    width: var(--space-3xl);
     height: 100%;
     pointer-events: none;
     background-image: linear-gradient(
@@ -97,9 +102,9 @@
   }
 
   .marquee {
-    --logo-padding: 20px;
-    --list-height: 160px;
-    --animation-speed: 15s;
+    --logo-padding: var(--space-s);
+    --list-height: var(--logo-list-height, 10rem);
+    --animation-speed: var(--logo-animation-speed, 15s);
 
     position: relative;
     width: var(--single-list-width); /* important to set this to the width of one list */
@@ -138,7 +143,7 @@
         fill: none;
         width: 100%;
         height: 100%;
-        transition: all 0.3s ease-in-out;
+        transition: stroke 0.5s ease-in-out;
 
         * {
           fill: none;
@@ -172,7 +177,7 @@
     img {
       filter: grayscale(100%);
       opacity: 0.5;
-      transition: all 0.3s ease-in-out;
+      transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
 
     img:hover {

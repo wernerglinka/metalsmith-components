@@ -5,22 +5,25 @@
  * - --color-background-light
  * - --color-pagination-active
  * - --contrast-text-on-dark
+ * - --color-border-light
+ * - --space-2xs
+ * - --space-lg
  */
 .blogs-pagination {
   display: flex;
   justify-content: center;
-  gap: 0.625rem;
-  margin: 2rem auto;
+  gap: var(--space-2xs);
+  margin: var(--space-lg) auto;
   padding: 0;
 
   li {
-    width: 2rem;
-    height: 2rem;
+    width: var(--space-lg);
+    height: var(--space-lg);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 0.625rem;
-    border: 1px solid #f0f0f0;
+    padding: 0 var(--space-2xs);
+    border: 1px solid var(--color-border-light);
 
     a {
       border: none;
