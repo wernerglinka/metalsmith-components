@@ -9,8 +9,9 @@
 .brand {
   flex: 0 0 auto; /* for the media query less menu management */
   display: flex;
-  align-items: center;
-  padding: 0.5em 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
 
   .home-link {
     display: flex;

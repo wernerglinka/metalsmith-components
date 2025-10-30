@@ -36,6 +36,10 @@
       background-color: var(--glass-background-dark);
       border-radius: var(--glass-border-radius);
       box-shadow: var(--glass-box-shadow);
+
+      .search-input-container {
+        position: relative;
+      }
     }
   }
 }

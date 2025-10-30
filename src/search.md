@@ -11,6 +11,45 @@ seo:
   keywords: 'search, find components, metalsmith search'
 
 sections:
+  - sectionType: hero
+    containerTag: section
+    classes: 'first-section'
+    id: ''
+    description: 'This is a hero section for the search page'
+    isDisabled: false
+    isFullScreen: false
+    isReverse: false
+    date: ''
+    author: ''
+    containerFields:
+      inContainer: false
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        isDark: true
+        color: ''
+        image: '/assets/images/sample20.jpg'
+        imageScreen: 'dark' # light, dark, none
+    text:
+      leadIn: ''
+      title: Search Results
+      titleTag: 'h1'
+      subTitle: 'Search across all components, documentation, and guides.'
+    ctas:
+      - url: ''
+        label: ''
+        isButton: false
+        buttonStyle: 'primary'
+    image:
+      src: ''
+      alt: ''
+      caption: ''
+
   - sectionType: search-only
     containerTag: section
     classes: 'search-page-section'
@@ -21,7 +60,7 @@ sections:
       inContainer: true
       isAnimated: false
       noMargin:
-        top: false
+        top: true
         bottom: false
       noPadding:
         top: false
@@ -30,8 +69,8 @@ sections:
         color: ''
         image: ''
         imageScreen: 'none'
-    title: 'Search Results'
-    subtitle: 'Search across all components, documentation, and guides'
+    title: ''
+    subtitle: ''
     placeholder: 'Search the entire site...'
     settings:
       maxResults: 50

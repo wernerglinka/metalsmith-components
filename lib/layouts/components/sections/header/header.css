@@ -25,9 +25,12 @@ header {
   top: 0;
   width: 100%;
   z-index: 100;
-  box-shadow: 0 var(--space-3xs, 0.125rem) var(--space-2xs, 0.25rem) var(--color-shadow);
+  /* box-shadow: 0 var(--space-3xs, 0.125rem) var(--space-2xs, 0.25rem) var(--color-shadow); */
   background: rgb(255 255 255 / 60%);
   backdrop-filter: blur(var(--space-xs, 0.3125rem));
+
+  /* Fluid height: 3.25rem at 400px viewport, scales to 5rem at wider screens */
+  height: clamp(3.25rem, 3.25rem + 1.75vw, 5rem);
 
   /* Container setup for responsive behavior */
   container-name: header;
@@ -130,16 +133,20 @@ header {
   }
 }
 
+.search-page header .misc .search-icon-toggle {
+  display: none;
+}
+
 /* Header search overlay - positioned below header */
 .header-search-overlay {
   position: fixed;
-  top: 4rem; /* Adjust based on actual header height */
+  /* Matches fluid header height */
+  top: clamp(3.25rem, 3.25rem + 1.75vw, 5rem);
   left: 0;
   right: 0;
   z-index: 90;
-  background: rgb(255 255 255 / 95%);
+  background: rgb(255 255 255 / 60%);
   backdrop-filter: blur(var(--space-xs, 0.3125rem));
-  box-shadow: 0 var(--space-2xs, 0.25rem) var(--space-xs, 0.5rem) var(--color-shadow);
   padding: var(--space-sm, 1rem) var(--gutter);
 
   /* Hidden by default */
@@ -173,7 +180,7 @@ header {
 
     .header-search-input {
       flex: 1;
-      padding: var(--space-xs, 0.75rem) var(--space-xs, 0.75rem);
+      padding: var(--space-2xs-xs, 0.5rem);
       border: none;
       font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
       background: transparent;
@@ -189,7 +196,7 @@ header {
     }
 
     button[type='submit'] {
-      padding: var(--space-xs, 0.75rem);
+      padding: var(--space-2xs, 0.75rem);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -203,6 +210,8 @@ header {
       svg {
         stroke: var(--color-link-navigation);
         stroke-width: 2px;
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
   }
