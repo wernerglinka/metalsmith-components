@@ -455,7 +455,6 @@ Additional technical documentation for developers is located in the [`docs/`](do
 - [Developer Guide](docs/DEVELOPER-GUIDE.md) - Best practices, patterns, and lessons learned
 - [Component Package Specification](docs/COMPONENT-PACKAGE-SPEC.md) - ZIP package structure and implementation
 - [Recurring Events Fix](docs/RECURRING-EVENTS-FIX.md) - Calendar component bug fix documentation
-- [Search Improvement Guide](docs/search-improvement-guide.md) - Search system architecture and enhancements
 - [Adding ZIP Packages](docs/adding-zip-packages.md) - Component packaging system implementation
 
 ### Technical Documentation
