@@ -271,34 +271,35 @@ sections:
         # Extract the bundle in the project root
         unzip ~/Downloads/metalsmith-components.zip
 
-        # Navigate into the extracted bundle directory
-        cd metalsmith-components
-
         # (Optional) Copy the sample config to customize component paths
-        cp metalsmith-components.config.json ../
+        cp metalsmith-components/metalsmith-components.config.json .
 
-        # Run the master installation script
-        ./install-all.sh
+        # Run the master installation script from project root
+        ./metalsmith-components/install-all.sh
         ```
 
+        **Important:** Always run the install script from your project root directory. The script will automatically find the extracted components and install them to the correct locations based on your configuration.
+
         If you already have components installed, the script will prompt you to choose:
-        - **Install all components** - Adds new components, updates existing ones
-        - **Update existing components only** - Skips components you don't have
+        - **Install all components** - Adds new components, updates existing ones (52 total)
+        - **Update existing components only** - Only updates components you already have (skips new ones)
 
         #### Update-Only Mode
 
         Only update components you're already using:
 
         ```bash
-        ./install-all.sh --update-only
+        ./metalsmith-components/install-all.sh --update-only
         # or use the short form:
-        ./install-all.sh -u
+        ./metalsmith-components/install-all.sh -u
         ```
 
         This mode is perfect for:
         - Getting updates for the specific components you use
         - Avoiding bloat from components you don't need
         - Quick updates when new versions are released
+
+        The update-only mode detects installed components by checking for `manifest.json` files. Only components with matching names will be updated. For example, if you're using the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter), approximately 22 components will be detected and updated.
 
         **Note:** The bundle includes a sample `metalsmith-components.config.json` file. Copy it to your project root before installation if you want to customize where components are installed.
 
@@ -310,9 +311,6 @@ sections:
 
         After installation completes, you can clean up:
         ```bash
-        # Navigate back to project root
-        cd ..
-
         # Remove the extracted bundle folder
         rm -rf metalsmith-components
 

@@ -477,12 +477,21 @@ sections:
         Get all components at once:
 
         1. Download the [complete bundle](/downloads/metalsmith-components.zip)
-        2. Extract and run the master install script:
+        2. Extract and run the master install script from your project root:
            ```bash
-           unzip metalsmith-components.zip
-           cd metalsmith-components
-           ./install-all.sh
+           # Navigate to your project root (where package.json is)
+           cd /path/to/your/metalsmith-project
+
+           # Extract the bundle
+           unzip ~/Downloads/metalsmith-components.zip
+
+           # Run the install script from project root
+           ./metalsmith-components/install-all.sh
            ```
+
+        The script offers two modes:
+        - **Full install** - Installs all 52 components
+        - **Update-only** - Only updates components you already have (22 components in the starter)
 
         For detailed installation instructions, see [Installing Metalsmith Components](/blog/installing-metalsmith-components/).
 

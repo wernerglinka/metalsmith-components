@@ -204,9 +204,24 @@ Files copied:
 ### Bundle Install Script
 **Capabilities:**
 - Install all components in dependency order (partials first, then sections)
+- Two modes: full install (all 52 components) or update-only (existing components)
+- Interactive mode selection or command-line flag (`--update-only` or `-u`)
+- Detects installed components via manifest.json files
+- Manifest-based detection ensures accurate component matching
 - Mass upgrade with single confirmation
 - Detect and resolve version conflicts
-- Provide summary of changes
+- Provide summary with installation counts
+- Must be run from project root directory
+
+**Important:** The install script must be executed from the project root directory (where `metalsmith.js` or `package.json` exists). The script sets `PROJECT_ROOT="$(pwd)"` to capture the current working directory and uses `SCRIPT_DIR` to locate the extracted component files.
+
+**Usage:**
+```bash
+# From project root:
+./metalsmith-components/install-all.sh           # Full install or interactive choice
+./metalsmith-components/install-all.sh -u        # Update existing only
+./metalsmith-components/install-all.sh --update-only  # Update existing only
+```
 
 ## Plugin Architecture
 
@@ -445,6 +460,18 @@ build/
 5. User downloads and installs partial
 6. Re-runs testimonial install script
 7. Installation completes successfully
+
+### Scenario 5: Update-Only Mode (Selective Updates)
+1. User started with Metalsmith2025 Structured Content Starter (includes 22 components)
+2. Component library releases v2.5.0 with bug fixes
+3. User downloads `metalsmith-components-v2.5.0.zip`
+4. Runs: `./metalsmith-components/install-all.sh --update-only`
+5. Script checks for manifest.json in each component directory
+6. Detects 22 installed components (10 partials + 12 sections) by matching names
+7. Skips 30 components not currently installed
+8. Updates only the 22 existing components
+9. Reports: "Installed/Updated: 22 components, Skipped: 30 components"
+10. User keeps their lean project without unwanted components
 
 ## Success Criteria
 
