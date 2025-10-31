@@ -258,7 +258,11 @@ sections:
 
         ### Installing the Complete Bundle
 
-        The bundle includes a master installation script that installs all components in the correct order:
+        The bundle includes a master installation script with two modes: **full install** and **update-only**.
+
+        #### Full Install (Default)
+
+        Install all components or update your existing subset:
 
         ```bash
         # Navigate to your Metalsmith project root
@@ -277,13 +281,32 @@ sections:
         ./install-all.sh
         ```
 
+        If you already have components installed, the script will prompt you to choose:
+        - **Install all components** - Adds new components, updates existing ones
+        - **Update existing components only** - Skips components you don't have
+
+        #### Update-Only Mode
+
+        Only update components you're already using:
+
+        ```bash
+        ./install-all.sh --update-only
+        # or use the short form:
+        ./install-all.sh -u
+        ```
+
+        This mode is perfect for:
+        - Getting updates for the specific components you use
+        - Avoiding bloat from components you don't need
+        - Quick updates when new versions are released
+
         **Note:** The bundle includes a sample `metalsmith-components.config.json` file. Copy it to your project root before installation if you want to customize where components are installed.
 
-        This script automatically:
+        The install script automatically:
         - Installs all partials first (resolving dependencies)
         - Then installs all sections
-        - Handles the entire installation with one command
-        - Reports progress for each component
+        - Reports which components were installed/updated and which were skipped
+        - Provides a summary of the installation
 
         After installation completes, you can clean up:
         ```bash
