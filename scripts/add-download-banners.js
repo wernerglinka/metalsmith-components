@@ -118,14 +118,14 @@ async function addBannerToFile(filePath, componentType) {
 
   // Skip if already has download banner
   if (hasDownloadBanner(content)) {
-    console.log(`  ⊘ ${componentName} - already has download banner`);
+    // console.log(`  ⊘ ${componentName} - already has download banner`);
     return;
   }
 
   // Find frontmatter boundaries
   const boundaries = findFrontmatterBoundaries(content);
   if (!boundaries) {
-    console.log(`  ✗ ${componentName} - invalid frontmatter structure`);
+    // console.log(`  ✗ ${componentName} - invalid frontmatter structure`);
     return;
   }
 
@@ -138,7 +138,7 @@ async function addBannerToFile(filePath, componentType) {
   const newContent = lines.join('\n');
 
   await fs.writeFile(filePath, newContent, 'utf-8');
-  console.log(`  ✓ ${componentName} - banner added`);
+  // console.log(`  ✓ ${componentName} - banner added`);
 }
 
 /**
@@ -150,7 +150,7 @@ async function processDirectory(directory, componentType) {
   const files = await fs.readdir(directory);
   const mdFiles = files.filter(f => f.endsWith('.md'));
 
-  console.log(`\n📦 Processing ${componentType}s (${mdFiles.length} files)...`);
+  // console.log(`\n📦 Processing ${componentType}s (${mdFiles.length} files)...`);
 
   for (const file of mdFiles) {
     const filePath = path.join(directory, file);
@@ -162,7 +162,7 @@ async function processDirectory(directory, componentType) {
  * Main execution
  */
 async function main() {
-  console.log('🚀 Adding download banners to component reference pages...');
+  // console.log('🚀 Adding download banners to component reference pages...');
 
   try {
     // Process sections
@@ -173,7 +173,7 @@ async function main() {
     const partialsDir = path.join(projectRoot, 'src', 'references', 'partials');
     await processDirectory(partialsDir, 'partial');
 
-    console.log('\n✅ Download banners added successfully!');
+    // console.log('\n✅ Download banners added successfully!');
   } catch (error) {
     console.error('\n❌ Error:', error.message);
     process.exit(1);

@@ -5,16 +5,16 @@
 
 import Fuse from 'fuse.js';
 import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// import path from 'path'; // Reserved for future use
+// import { fileURLToPath } from 'url'; // Reserved for future use
 
 // Import test datasets
 import { testTerms } from './lib/test-terms.js';
 import { generateHTMLReport } from './lib/report-generator.js';
 import { analyzeResults } from './lib/analyzer.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url); // Reserved for future use
+// const __dirname = path.dirname(__filename); // Reserved for future use
 
 /**
  * Default configuration
@@ -76,7 +76,7 @@ export class SearchTester {
       // Handle different data formats
       this.searchData = data.entries ? data : { entries: data };
       
-      console.log(`✓ Loaded search index: ${this.searchData.entries.length} entries`);
+      // console.log(`✓ Loaded search index: ${this.searchData.entries.length} entries`);
       
       // Initialize Fuse.js
       this.fuse = new Fuse(this.searchData.entries, this.config.fuseOptions);
@@ -184,11 +184,11 @@ export class SearchTester {
     });
 
     if (verbose) {
-      console.log(`🧪 Testing ${allTests.length} search terms...`);
-      console.log(`📋 Configuration:`);
-      console.log(`- Relevance threshold: ${this.config.relevanceThreshold}%`);
-      console.log(`- Max results: ${this.config.maxResults}`);
-      console.log(`- Min characters: ${this.config.minCharacters}\n`);
+      // console.log(`🧪 Testing ${allTests.length} search terms...`);
+      // console.log(`📋 Configuration:`);
+      // console.log(`- Relevance threshold: ${this.config.relevanceThreshold}%`);
+      // console.log(`- Max results: ${this.config.maxResults}`);
+      // console.log(`- Min characters: ${this.config.minCharacters}\n`);
     }
     
     // Run tests
@@ -207,7 +207,7 @@ export class SearchTester {
     }
     
     if (verbose) {
-      console.log('\n\n📊 Analyzing results...');
+      // console.log('\n\n📊 Analyzing results...');
     }
     
     // Analyze results

@@ -28,9 +28,9 @@ const extractSvgContent = (iconPath) => {
     if (svgMatch && svgMatch[1]) {
       return svgMatch[1].trim();
     }
-    
+
     return null;
-  } catch (error) {
+  } catch {
     console.warn(`Warning: Could not load icon file: ${iconPath}`);
     return null;
   }

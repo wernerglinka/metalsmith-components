@@ -13,11 +13,9 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.join(__dirname, '..');
 
 async function updateFile(filePath) {
-  const componentName = path.basename(filePath, '.md');
   let content = await fs.readFile(filePath, 'utf-8');
 
   if (!content.includes('download-banner')) {
-    console.log(`  ⊘ ${componentName} - no download banner`);
     return;
   }
 
@@ -35,14 +33,13 @@ async function updateFile(filePath) {
   );
 
   await fs.writeFile(filePath, content, 'utf-8');
-  console.log(`  ✓ ${componentName} - updated`);
 }
 
-async function processDirectory(directory, type) {
+async function processDirectory(directory) {
   const files = await fs.readdir(directory);
   const mdFiles = files.filter(f => f.endsWith('.md'));
 
-  console.log(`\n📦 Processing ${type}s (${mdFiles.length} files)...`);
+  // console.log(`\n📦 Processing ${type}s (${mdFiles.length} files)...`);
 
   for (const file of mdFiles) {
     const filePath = path.join(directory, file);
@@ -51,7 +48,7 @@ async function processDirectory(directory, type) {
 }
 
 async function main() {
-  console.log('🔧 Updating download banners...');
+  // console.log('🔧 Updating download banners...');
 
   try {
     const sectionsDir = path.join(projectRoot, 'src', 'references', 'sections');
@@ -60,7 +57,7 @@ async function main() {
     const partialsDir = path.join(projectRoot, 'src', 'references', 'partials');
     await processDirectory(partialsDir, 'partial');
 
-    console.log('\n✅ All download banners updated!');
+    // console.log('\n✅ All download banners updated!');
   } catch (error) {
     console.error('\n❌ Error:', error.message);
     process.exit(1);

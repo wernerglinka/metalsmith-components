@@ -100,7 +100,7 @@ const getGlobalMetadata = () => {
 const globalMetadata = getGlobalMetadata();
 
 // Get the site URL for use in the sitemap plugin
-const siteURL = globalMetadata.site;
+// const siteURL = globalMetadata.site; // Reserved for future use
 
 /**
  * TEMPLATE ENGINE SETUP

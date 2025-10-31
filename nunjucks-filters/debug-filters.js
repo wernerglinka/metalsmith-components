@@ -45,7 +45,7 @@ export const safeDump = ( obj ) => {
   try {
     const seen = [];
     return JSON.stringify( obj, ( key, val ) => {
-      if ( val != null && typeof val === 'object' ) {
+      if ( val !== null && typeof val === 'object' ) {
         if ( seen.indexOf( val ) >= 0 ) {
           return '[Circular Reference]';
         }

@@ -10,7 +10,7 @@
  */
 
 import fs from 'fs/promises';
-import { createWriteStream, createReadStream } from 'fs';
+import { createWriteStream } from 'fs';
 import path from 'path';
 import archiver from 'archiver';
 import { fileURLToPath } from 'url';
@@ -25,7 +25,7 @@ const outputFile = path.join(outputDir, 'feather-icons.zip');
 
 async function packageIcons() {
   try {
-    console.log('📦 Packaging Feather icons...');
+    // console.log('📦 Packaging Feather icons...');
 
     // Ensure output directory exists
     await fs.mkdir(outputDir, { recursive: true });
@@ -36,9 +36,9 @@ async function packageIcons() {
 
     // Handle stream events
     output.on('close', () => {
-      const sizeKB = (archive.pointer() / 1024).toFixed(1);
-      console.log(`✓ Created feather-icons.zip (${sizeKB}KB)`);
-      console.log(`  Location: build/downloads/feather-icons.zip`);
+      // Icon package created successfully
+      // console.log(`✓ Created feather-icons.zip`);
+      // console.log(`  Location: build/downloads/feather-icons.zip`);
     });
 
     archive.on('error', (err) => {
@@ -98,17 +98,15 @@ https://metalsmith-components.netlify.app/references/partials/icon
 
     // Add all icon files to the archive under 'icons/' directory
     const iconFiles = await fs.readdir(iconsSourcePath);
-    let iconCount = 0;
 
     for (const file of iconFiles) {
       if (file.endsWith('.njk')) {
         const filePath = path.join(iconsSourcePath, file);
         archive.file(filePath, { name: `icons/${file}` });
-        iconCount++;
       }
     }
 
-    console.log(`  Added ${iconCount} icon files`);
+    // Icon files added to archive
 
     // Finalize the archive
     await archive.finalize();
