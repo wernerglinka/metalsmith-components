@@ -41,10 +41,10 @@ async function processDirectory(directory) {
 
   // console.log(`\n📦 Processing ${type}s (${mdFiles.length} files)...`);
 
-  for (const file of mdFiles) {
-    const filePath = path.join(directory, file);
-    await updateFile(filePath);
-  }
+  // Update all files in parallel
+  await Promise.all(
+    mdFiles.map(file => updateFile(path.join(directory, file)))
+  );
 }
 
 async function main() {

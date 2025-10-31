@@ -152,10 +152,10 @@ async function processDirectory(directory, componentType) {
 
   // console.log(`\n📦 Processing ${componentType}s (${mdFiles.length} files)...`);
 
-  for (const file of mdFiles) {
-    const filePath = path.join(directory, file);
-    await addBannerToFile(filePath, componentType);
-  }
+  // Process all files in parallel
+  await Promise.all(
+    mdFiles.map(file => addBannerToFile(path.join(directory, file), componentType))
+  );
 }
 
 /**
