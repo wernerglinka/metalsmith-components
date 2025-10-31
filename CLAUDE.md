@@ -64,7 +64,7 @@ sections:
 
 Components are organized in two main categories:
 
-#### Partials (`lib/layouts/components/_partials/`) - 21 Components
+#### Partials (`lib/layouts/components/_partials/`)
 
 Small, reusable UI elements used within larger sections or as standalone elements:
 
@@ -90,7 +90,7 @@ Small, reusable UI elements used within larger sections or as standalone element
 - **text-link** - Styled text link element
 - **video** - Video player element (supports YouTube, Vimeo, Cloudinary)
 
-#### Sections (`lib/layouts/components/sections/`) - 30 Components
+#### Sections (`lib/layouts/components/sections/`)
 
 Large page sections and main building blocks for page layouts:
 
@@ -283,7 +283,7 @@ Common issues:
 - Incorrect `requires` dependencies
 - Template syntax errors with helper functions
 
-See [DEVELOPER-GUIDE.md](DEVELOPER-GUIDE.md) for detailed best practices, lessons learned, and troubleshooting tips.
+See the [Testing Framework](#testing-framework) section below for how to validate your new component, and [DEVELOPER-GUIDE.md](DEVELOPER-GUIDE.md) for detailed best practices, lessons learned, and troubleshooting tips.
 
 ### Component Documentation
 
@@ -321,34 +321,34 @@ sections:
 
 ### Advanced Component Features
 
-#### Mapping Component Features
+#### Maps Component Features
 
 The maps component provides comprehensive interactive mapping capabilities with:
 
-#### Dual Provider Support
+**Dual Provider Support:**
 - **Leaflet**: Lightweight mapping library (145KB) ideal for basic maps needs
 - **OpenLayers**: Enterprise-grade maps with advanced vector capabilities
 - **Unified API**: Switch providers by changing just the `mapProvider` field
 
-#### Dynamic Library Loading
+**Dynamic Library Loading:**
 - Libraries loaded from CDN only when maps components are used
 - Keeps initial bundle size small with tree-shaking optimization
 - Supports multiple maps per page with different providers
 
-#### Advanced Marker System
+**Advanced Marker System:**
 - **JSON Data Architecture**: Map content stored in external JSON files (`/lib/data/maps/`) for clean separation from page configuration
 - **Dynamic Icon Registry**: Build-time generation of icon registry from Feather icons used in maps sections
 - **Consistent SVG Markers**: Unified marker design across both providers (48px standardized size)
 - **Custom Icons**: Support for custom marker icons with automatic fallbacks
 - **Interactive Popups**: Rich popup content with titles, descriptions, and external links
 
-#### Marker Clustering
+**Marker Clustering:**
 - **Performance Optimization**: Groups nearby markers to handle large datasets efficiently
 - **Provider Agnostic**: Works with both Leaflet and OpenLayers
 - **Configurable Clustering**: Customizable radius, zoom thresholds, and visual styling
 - **Interactive Expansion**: Click clusters to zoom in or expand at maximum zoom level
 
-#### Technical Architecture
+**Technical Architecture:**
 - **Modular Structure**: Organized into providers (`leaflet.js`, `openlayers.js`) and helpers (`maps-utils.js`, `icon-loader.js`, `load-script.js`, `load-styles.js`)
 - **Data Management**: Recursive JSON loading from `/lib/data/maps/` with automatic `data.maps.filename` access
 - **Build-Time Optimization**: Icon registry auto-generated during build by `plugins/generate-maps-icons.js` to include only icons actually used
@@ -507,7 +507,7 @@ Four comprehensive test suites using Mocha:
 
 ### Testing New Components
 
-When adding components:
+When adding components (see [Scaffolding a New Component](#scaffolding-a-new-component) for creation steps):
 
 1. Add test cases for the component's manifest
 2. Test with various configuration options
@@ -598,6 +598,131 @@ These filters are essential for template development and are automatically avail
 - Base styles in `_css-base.css`
 
 When working with this codebase, always run tests before committing changes and ensure new components follow the established patterns and validation requirements.
+
+## Troubleshooting Guide
+
+### Common Component Development Issues
+
+#### Component Not Rendering
+
+**Problem:** Component appears in frontmatter but doesn't render on the page.
+
+**Solutions:**
+1. Check `manifest.json` exists and has correct `type` field ("section" or "partial")
+2. Verify `sectionType` in frontmatter matches component name exactly
+3. Check template syntax in `.njk` file for errors
+4. Run `npm run build:debug` to see detailed plugin output
+5. Verify component is in correct directory (`sections/` or `_partials/`)
+
+#### Styles Not Applied
+
+**Problem:** Component renders but CSS styles are missing.
+
+**Solutions:**
+1. Check `manifest.json` has `styles` array with correct CSS filename
+2. Verify CSS file exists in component directory
+3. Clear build directory: `rm -rf build && npm run build`
+4. Check browser console for 404 errors on CSS files
+5. Verify PostCSS syntax is valid (no CSS-in-JS syntax)
+
+#### JavaScript Not Executing
+
+**Problem:** Interactive features don't work.
+
+**Solutions:**
+1. Check `manifest.json` has `scripts` array with correct JS filename
+2. Verify JavaScript file exists in component directory
+3. Check browser console for JavaScript errors
+4. Ensure component has unique selectors (avoid generic class names)
+5. Verify ES module syntax is correct (`export default function`)
+
+#### Missing Dependencies
+
+**Problem:** Component needs partials but they don't render.
+
+**Solutions:**
+1. Add required partials to `requires` array in `manifest.json`
+2. Verify partial names match exactly (case-sensitive)
+3. Check that required partials exist in `_partials/` directory
+4. Run `npm test` to validate manifest structure
+5. See [Component Structure](#component-structure) for manifest format
+
+#### Build Errors
+
+**Problem:** Build fails with errors.
+
+**Solutions:**
+1. Run `npm test` first to catch manifest/content issues early
+2. Check for invalid YAML in `.yml` example files
+3. Verify all required files exist (`.njk`, `manifest.json`)
+4. Look for Nunjucks syntax errors in templates
+5. Check the [Common Issues](#6-testing) list in scaffolding section
+
+#### Module Pattern Issues (Maps, Podcast)
+
+**Problem:** Multi-provider component not loading correct library.
+
+**Solutions:**
+1. Verify `modules` field in `manifest.json` has correct structure
+2. Check provider files exist in `modules/providers/` directory
+3. Ensure helper files are in `modules/helpers/` directory
+4. Verify main component file loads correct provider based on data
+5. Check browser console for CDN loading errors
+6. See [Advanced: Multi-Provider Components](#2-required-files) section
+
+#### Watch Mode Issues
+
+**Problem:** Changes not triggering rebuild in development.
+
+**Solutions:**
+1. Restart development server: `npm start`
+2. Check if file is excluded from watch (like auto-generated files)
+3. Verify file is inside `src/`, `lib/layouts/`, or `lib/assets/`
+4. Clear build directory and restart: `rm -rf build && npm start`
+5. See [Watch Mode Exclusions](#watch-mode-exclusions) section
+
+#### Search Not Finding Content
+
+**Problem:** Component documentation doesn't appear in search results.
+
+**Solutions:**
+1. Add `tags` array to frontmatter `card` object
+2. Ensure `seo.title` and `card.description` are descriptive
+3. Rebuild to regenerate search index: `npm run build`
+4. Verify page is in correct collection (sections/partials)
+5. See [Site-Wide Search System](#site-wide-search-system) section
+
+#### Collection Not Updating
+
+**Problem:** New blog post or reference page not appearing in collection.
+
+**Solutions:**
+1. Verify file is in correct directory (`src/blog/`, `src/references/sections/`, etc.)
+2. Check frontmatter has required fields (`card.date` for blog, `seo.title` for refs)
+3. Ensure file extension is `.md`
+4. Rebuild to regenerate collections: `npm run build`
+5. See [Collections](#collections) section for collection patterns
+
+#### Validation Errors
+
+**Problem:** Content validation fails during build.
+
+**Solutions:**
+1. Check `manifest.json` validation schema matches your content structure
+2. Verify all `required` fields are present in frontmatter
+3. Check property types match schema (`string`, `object`, `array`, etc.)
+4. Run `npm test` to see specific validation errors
+5. Review example `.yml` file for correct structure
+
+### Getting Help
+
+If you encounter issues not covered here:
+
+1. Check the [DEVELOPER-GUIDE.md](DEVELOPER-GUIDE.md) for lessons learned
+2. Run tests for specific error messages: `npm test`
+3. Enable debug output: `npm run build:debug` or `npm run start:debug`
+4. Review component examples in `src/references/` for working patterns
+5. Compare your component structure to working components like `text-only` or `hero`
 
 
 # CSS Layout Development Skill

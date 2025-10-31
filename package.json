@@ -17,8 +17,8 @@
     "url": "https://github.com/wernerglinka/metalsmith-components.git"
   },
   "scripts": {
-    "build": "metalsmith -c metalsmith.js --env NODE_ENV=production",
-    "build:debug": "DEBUG=metalsmith-optimize-html NODE_ENV=production node metalsmith.js",
+    "build": "metalsmith -c metalsmith.js --env NODE_ENV=production && node scripts/package-icons.js",
+    "build:debug": "DEBUG=metalsmith-optimize-html NODE_ENV=production node metalsmith.js && node scripts/package-icons.js",
     "start": "NODE_ENV=development node metalsmith.js --watch",
     "start:debug": "NODE_ENV=development DEBUG=@metalsmith* node metalsmith.js --watch",
     "serve": "browser-sync start --server 'build'",
