@@ -155,17 +155,20 @@ sections:
 
         Let's look at what each file does.
 
-        ### The Template (dark-light-theme-switcher.njk)
+        ### The Template
+        `dark-light-theme-switcher.njk`
 
         This file defines a Nunjucks macro that creates the toggle button. It imports the icon macro for displaying SVG icons, creates a button with both moon (for light mode) and sun (for dark mode) icons, uses semantic HTML with proper ARIA labels for accessibility, and the `js-theme-toggle` class is used for JavaScript targeting.
 
-        ### The JavaScript (dark-light-theme-switcher.js)
+        ### The JavaScript
+        `dark-light-theme-switcher.js`
 
         This handles the toggle interaction. The script waits for the DOM to load, finds the toggle button, toggles the `dark-theme` class on `<body>` when clicked, and saves the preference to localStorage.
 
         **Note:** You'll need to add theme restoration code to your `main.js` file in Step 7 to read from localStorage and apply the saved theme on page load.
 
-        ### The Styles (dark-light-theme-switcher.css)
+        ### The Styles
+        `dark-light-theme-switcher.css`
 
         Component-specific styling that shows the moon icon by default and switches to the sun icon when dark mode is active.
 

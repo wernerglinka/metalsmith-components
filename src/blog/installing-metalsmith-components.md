@@ -91,6 +91,20 @@ sections:
         - Automated installation script
 
         Components are designed to work seamlessly with the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter).
+
+        ### Customizing Component Paths
+
+        By default, components install to `lib/layouts/components/sections/` and `lib/layouts/components/_partials/`. You can customize these paths by creating a `metalsmith-components.config.json` file in your project root:
+
+        ```json
+        {
+          "componentsBasePath": "lib/layouts/components",
+          "sectionsDir": "sections",
+          "partialsDir": "_partials"
+        }
+        ```
+
+        The install scripts automatically read this config file if present, giving you complete control over your project structure while maintaining convention-based defaults.
     ctas:
       - url: ''
         label: ''
@@ -197,16 +211,25 @@ sections:
 
         ### Installing an Individual Component
 
-        After downloading a component package, extract it and run the install script:
+        After downloading a component package, navigate to your Metalsmith project root directory (where your `package.json` file is located), extract the package there, and run the install script:
 
         ```bash
-        # Extract the package
-        unzip hero.zip
+        # Navigate to your Metalsmith project root
+        cd /path/to/your/metalsmith-project
+
+        # Extract the package in the project root
+        unzip ~/Downloads/hero.zip
+
+        # Navigate into the extracted component directory
         cd hero
 
         # Run the installation script
         ./install.sh
         ```
+
+        **Important:** Always extract component packages in your project root directory. The install script needs to be run from within the extracted component folder, but it will copy files to the correct locations (`lib/layouts/components/sections/` or `lib/layouts/components/_partials/`) in your project.
+
+        After installation completes successfully, you can safely delete the extracted component folder (e.g., `hero/`) and the downloaded ZIP file.
 
         The installation script will:
         1. Verify you're in a Metalsmith project directory
@@ -238,19 +261,41 @@ sections:
         The bundle includes a master installation script that installs all components in the correct order:
 
         ```bash
-        # Extract the bundle
-        unzip metalsmith-components.zip
+        # Navigate to your Metalsmith project root
+        cd /path/to/your/metalsmith-project
+
+        # Extract the bundle in the project root
+        unzip ~/Downloads/metalsmith-components.zip
+
+        # Navigate into the extracted bundle directory
         cd metalsmith-components
+
+        # (Optional) Copy the sample config to customize component paths
+        cp metalsmith-components.config.json ../
 
         # Run the master installation script
         ./install-all.sh
         ```
+
+        **Note:** The bundle includes a sample `metalsmith-components.config.json` file. Copy it to your project root before installation if you want to customize where components are installed.
 
         This script automatically:
         - Installs all partials first (resolving dependencies)
         - Then installs all sections
         - Handles the entire installation with one command
         - Reports progress for each component
+
+        After installation completes, you can clean up:
+        ```bash
+        # Navigate back to project root
+        cd ..
+
+        # Remove the extracted bundle folder
+        rm -rf metalsmith-components
+
+        # Optionally remove the downloaded ZIP file
+        rm ~/Downloads/metalsmith-components.zip
+        ```
     ctas:
       - url: ''
         label: ''
@@ -304,27 +349,51 @@ sections:
 
         ### Manual Installation Steps
 
-        1. **Extract the component package**
+        1. **Navigate to your project root and extract the component package**
         ```bash
-        unzip hero.zip
+        # Navigate to your Metalsmith project root
+        cd /path/to/your/metalsmith-project
+
+        # Extract the package in the project root
+        unzip ~/Downloads/hero.zip
         ```
 
         2. **Create the component directory**
         ```bash
+        # For section components
         mkdir -p lib/layouts/components/sections/hero
+
+        # For partial components, use:
+        # mkdir -p lib/layouts/components/_partials/component-name
         ```
 
         3. **Copy the component files**
         ```bash
+        # Copy from extracted folder to component directory
         cp hero/hero.njk lib/layouts/components/sections/hero/
         cp hero/hero.css lib/layouts/components/sections/hero/
         cp hero/manifest.json lib/layouts/components/sections/hero/
+
+        # If the component has JavaScript:
+        # cp hero/hero.js lib/layouts/components/sections/hero/
         ```
 
-        4. **Install required dependencies**
+        4. **Clean up the extracted folder**
+        ```bash
+        # Navigate back to project root
+        cd ..
+
+        # Remove the extracted component folder
+        rm -rf hero
+
+        # Optionally remove the downloaded ZIP file
+        rm ~/Downloads/hero.zip
+        ```
+
+        5. **Install required dependencies**
         Check the manifest.json `requires` field and install any missing partials using the same process.
 
-        5. **Verify installation**
+        6. **Verify installation**
         Build your project to ensure the component is properly integrated:
         ```bash
         npm run build

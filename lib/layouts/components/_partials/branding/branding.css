@@ -18,11 +18,17 @@
     align-items: center;
     justify-content: center;
 
+    /* could be a svg or an img */
+
     svg {
       width: var(--space-l-xl);
       height: var(--space-l-xl);
       transform: scale(1);
       transition: transform 250ms ease;
+    }
+
+    img {
+      max-height: var(--space-l-xl);
     }
   }
 
