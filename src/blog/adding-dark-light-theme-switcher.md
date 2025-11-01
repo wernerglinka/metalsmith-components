@@ -93,7 +93,7 @@ sections:
 
         Before starting, make sure you have:
         - The [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter) set up and running
-        - Access to the [Metalsmith Components library](https://github.com/wernerglinka/ms-components) (either cloned locally or downloaded)
+        - Access to the [Metalsmith Components library](https://github.com/wernerglinka/metalsmith-components) (either cloned locally or downloaded)
         - Basic understanding of HTML, CSS, and JavaScript
         - A code editor and terminal access
 
