@@ -2,30 +2,18 @@
 
 <!doctype html>
 <html class="no-js" lang="">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Open+Sans:wght@300;500&display=swap"/>
-    <link rel="stylesheet" href="/assets/main.css"/>
-  </head>
+  {% include "components/_helpers/head.njk" %}
 
   <body class="{{ bodyClasses }}">
     <span id="top"></span>
-    {% include "components/sections/header/header.njk" %}
-    {{ breadcrumbs(navigation.breadcrumbs) }}
+    {% include "components/sections/header/header.njk" %} {{ breadcrumbs(navigation.breadcrumbs) }}
 
-    <main>
-      {% block body %}
-        {# will be replaced by page content #}
-      {% endblock %}
-    </main>
+    <main>{% block body %} {# will be replaced by page content #} {% endblock %}</main>
 
     {% include "components/sections/footer/footer.njk" %}
 
     <script src="/assets/main.js"></script>
 
-    <a class="to-top " href="#top">
-      {% include "icons/arrow-up.njk" %}
-    </a>
+    <a class="to-top" href="#top"> {% include "icons/arrow-up.njk" %} </a>
   </body>
 </html>
