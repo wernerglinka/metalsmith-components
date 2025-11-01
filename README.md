@@ -11,7 +11,7 @@ A reference implementation and documentation site for building component-based s
 
 This library provides the component catalog for the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). All components are compatible with the starter's architecture and can be integrated into projects using the automated packaging system.
 
-[View the live site](https://ms-components-library.netlify.app/)
+[View the live site](https://metalsmith-components.com)
 
 ## What This Site Provides
 
@@ -20,12 +20,15 @@ This library provides the component catalog for the [Metalsmith2025 Structured C
 The library contains 51 production-ready components organized in two categories:
 
 **21 Partials** - Small, reusable UI elements used within larger sections:
+
 - audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, lottie, manual-card, navigation, overlay, search, slider-pagination, text, text-link, video
 
 **30 Sections** - Large page sections and main building blocks:
+
 - audio-only, banner, blog-author, blog-navigation, blurbs, cards-list, code, collection-list, columns, commons, compound, flip-cards, footer, header, hero, hero-slider, icon-only, image-compare, image-only, logos-list, lottie-only, maps, multi-media, podcast, search-only, simple-accordion, slider, testimonial, text-only, video-only
 
 **Advanced Components**:
+
 - **maps**: Dual provider support (Leaflet, OpenLayers) with JSON data architecture, custom markers from 299 Feather icons, and marker clustering for large datasets
 - **podcast**: Shikwasa player integration with RSS feed parsing from JSON configurations
 - **video**: Multi-provider support (YouTube, Vimeo, Cloudinary) with responsive embeds
@@ -103,17 +106,20 @@ The repository can be forked to create organization-specific or theme-specific c
 ### Local Development
 
 Clone the repository:
+
 ```shell
 git clone https://github.com/wernerglinka/metalsmith-components.git
 cd metalsmith-components
 ```
 
 Install dependencies:
+
 ```shell
 npm install
 ```
 
 Start development server with watch mode and live reloading:
+
 ```shell
 npm start
 ```
@@ -121,6 +127,7 @@ npm start
 The site runs at `http://localhost:3000` with automatic rebuilds on file changes (excludes auto-generated `icon-loader.js` to prevent rebuild loops).
 
 Build for production:
+
 ```shell
 npm run build
 ```
@@ -130,13 +137,15 @@ Production build outputs to `build/` directory with HTML minification, optimized
 ### Available Commands
 
 **Core Development**:
+
 - `npm start` - Development server with watch mode and live reloading at http://localhost:3000
-- `npm run start:debug` - Development server with debug output for all @metalsmith/* plugins
+- `npm run start:debug` - Development server with debug output for all @metalsmith/\* plugins
 - `npm run build` - Production build in `build/` directory
 - `npm run build:debug` - Production build with debug output for metalsmith-optimize-html
 - `npm run serve` - Serve build directory with Browser-Sync
 
 **Code Quality & Testing**:
+
 - `npm test` - Run all Mocha test suites
 - `npm run test:watch` - Run tests in watch mode
 - `npm run format` - Format code with Prettier (excludes .njk files due to compatibility issues)
@@ -145,9 +154,11 @@ Production build outputs to `build/` directory with HTML minification, optimized
 - `npm run fix` - Run format, lint, and lint:css in sequence
 
 **Utility**:
+
 - `npm run depcheck` - Check for unused dependencies
 
 **Release**:
+
 - `npm run release` - Create patch release using secure shell script with GitHub token
 - `npm run release:patch` - Create patch release
 - `npm run release:minor` - Create minor release
@@ -227,6 +238,7 @@ Production build outputs to `build/` directory with HTML minification, optimized
 This library demonstrates the same structured content paradigm used by the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). The starter provides the foundation and build system for component-based Metalsmith sites, while this library provides a catalog of production-ready components that integrate with that system.
 
 Both projects share:
+
 - Component architecture with manifest.json dependency tracking
 - Structured frontmatter approach instead of Markdown body content
 - Metalsmith-bundled-components for asset optimization
@@ -263,16 +275,19 @@ sections:
 Each component is self-contained in its own directory with required and optional files:
 
 **Required Files**:
+
 - `component-name.njk` - Nunjucks template defining HTML structure
 - `manifest.json` - Component metadata with dependency declarations and JSON Schema validation
 
 **Optional Files**:
+
 - `component-name.css` - Component-specific styles (bundled only when component is used)
 - `component-name.js` - Interactive behavior (bundled only when component is used)
 - `component-name.yml` - Example frontmatter configuration for documentation
 - `README.md` - Component documentation
 
 **Manifest Structure**:
+
 ```json
 {
   "name": "component-name",
@@ -282,7 +297,7 @@ Each component is self-contained in its own directory with required and optional
   "requires": ["text", "ctas", "commons"],
   "validation": {
     "required": ["sectionType"],
-    "properties": { }
+    "properties": {}
   }
 }
 ```
@@ -307,12 +322,14 @@ Result: Minimal bundle sizes with optimal browser caching since all pages share 
 Complex components use external JSON files in `lib/data/` for data management:
 
 **Data Organization**:
+
 - `lib/data/maps/` - Map marker data (3 files: London, Paris, NYC clustering demo)
 - `lib/data/podcasts/` - RSS feed configurations (4 podcast shows)
 - `lib/data/blurbs/` - Content blurbs (2 files with grid configurations)
 - Root data files: site.json, author.json, socialLinks.json, faqs.json, etc.
 
 **Benefits**:
+
 - Clean separation of UI configuration (frontmatter) from content data (JSON)
 - Scalable for large datasets without cluttering page files
 - Reusable across multiple pages
@@ -320,6 +337,7 @@ Complex components use external JSON files in `lib/data/` for data management:
 
 **Filtering**:
 Use the `getSelections` Nunjucks filter to display subsets:
+
 ```yaml
 items:
   source: 'maps.london-landmarks'
@@ -332,6 +350,7 @@ items:
 ### Section Components (30)
 
 **Content Display**:
+
 - **hero** - Full-screen or standard hero sections with background images and CTAs
 - **banner** - Call-to-action sections with flexible backgrounds
 - **text-only** - Pure content sections with markdown support
@@ -346,6 +365,7 @@ items:
 - **blurbs** - Grid of content blurbs (text cards)
 
 **Interactive & Advanced**:
+
 - **slider** - Image/content carousel with pagination or tabbed interface
 - **hero-slider** - Hero section with image carousel
 - **flip-cards** - Interactive cards with front/back content and animations
@@ -357,23 +377,27 @@ items:
 - **podcast** - Podcast player with Shikwasa integration and RSS feed parsing
 
 **Layout & Structure**:
+
 - **columns** - Multi-column layout for custom content
 - **compound** - Composable multi-section layout
 - **commons** - Base container and styling (required dependency for most sections)
 
 **Blog & Collections**:
+
 - **collection-list** - Lists collections (blog posts, references, etc.)
 - **cards-list** - Displays cards from data arrays
 - **blog-author** - Author information for blog posts
 - **blog-navigation** - Previous/next post navigation
 
 **Site Structure**:
+
 - **header** - Site header/navigation
 - **footer** - Site footer
 
 ### Partial Components (21)
 
 **Content Elements**:
+
 - **text** - Text content element (title, prose, etc.)
 - **image** - Image element with caption support
 - **video** - Video player supporting YouTube, Vimeo, and Cloudinary
@@ -382,6 +406,7 @@ items:
 - **icon** - Icon display element
 
 **Interactive Elements**:
+
 - **button** - CTA button element
 - **ctas** - Call-to-action links/buttons array
 - **text-link** - Styled text link element
@@ -389,6 +414,7 @@ items:
 - **dark-light-theme-switcher** - Theme toggle control
 
 **Cards & Lists**:
+
 - **flip-card** - Single flip card element
 - **manual-card** - Manually configured card element
 - **collection-card** - Card for displaying collection items
@@ -396,27 +422,31 @@ items:
 - **collection-pagination** - Pagination controls for collections
 
 **Navigation & Metadata**:
+
 - **navigation** - Main navigation menu
 - **breadcrumbs** - Navigation breadcrumbs
 - **branding** - Logo and branding element
 - **author-date** - Author and publication date display
 
 **UI Elements**:
+
 - **overlay** - Overlay/modal element
 
-All components include live examples and documentation at the [Component Library](https://ms-components-library.netlify.app/library).
+All components include live examples and documentation at the [Component Library](https://metalsmith-components.com/library).
 
 ## Testing
 
 The repository includes 4 comprehensive Mocha test suites validating the component system:
 
 **Test Coverage**:
+
 - `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 51 components
 - `test/build-integration.test.js` - Tests complete Metalsmith build pipeline, HTML generation, collections, pagination, and static assets
 - `test/content-structure.test.js` - Verifies frontmatter structure, global data file validity, SEO metadata, and content consistency
 - `test/component-dependency-bundler.test.js` - Tests component directory structure, file associations, manifest dependencies, and bundler integration
 
 Run tests:
+
 ```shell
 npm test              # Run all test suites
 npm run test:watch    # Run tests in watch mode
@@ -427,6 +457,7 @@ npm run test:watch    # Run tests in watch mode
 The build output in `build/` is a standard static site deployable to any hosting service:
 
 **Recommended Platforms**:
+
 - [Netlify](https://www.netlify.com) - Continuous deployment from Git (current deployment)
 - [Vercel](https://vercel.com/) - Zero-config deployment
 - [Cloudflare Pages](https://pages.cloudflare.com/) - Global CDN deployment
@@ -459,7 +490,7 @@ Additional technical documentation for developers is located in the [`docs/`](do
 
 ### Technical Documentation
 
-The site includes detailed technical guides available at [ms-components-library.netlify.app/blog](https://ms-components-library.netlify.app/blog):
+The site includes detailed technical guides available at [metalsmith-components.com/blog](https://metalsmith-components.com/blog):
 
 1. Building Pages with Metalsmith Components
 2. How Component Bundling Works
@@ -473,7 +504,7 @@ The site includes detailed technical guides available at [ms-components-library.
 10. Getting Started with the Metalsmith2025 Starter
 11. Installing Metalsmith Components in Your Project
 
-Browse the complete [Component Library](https://ms-components-library.netlify.app/library) for live examples and implementation details.
+Browse the complete [Component Library](https://metalsmith-components.com/library) for live examples and implementation details.
 
 ## Contributing
 
@@ -492,10 +523,12 @@ MIT License - see LICENSE file for details.
 ## Community
 
 **Metalsmith Community**:
+
 - [Gitter Chat](https://gitter.im/metalsmith/community)
 - [GitHub Discussions](https://github.com/metalsmith/metalsmith/discussions)
 
 **Component Library**:
-- Live Site: [ms-components-library.netlify.app](https://ms-components-library.netlify.app/)
+
+- Live Site: [metalsmith-components.com](https://metalsmith-components.com)
 - GitHub: [github.com/wernerglinka/metalsmith-components](https://github.com/wernerglinka/metalsmith-components)
 - Issues: [github.com/wernerglinka/metalsmith-components/issues](https://github.com/wernerglinka/metalsmith-components/issues)
