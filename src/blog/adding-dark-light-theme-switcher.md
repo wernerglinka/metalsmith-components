@@ -445,7 +445,7 @@ sections:
         - [Working with Partials Guide](/blog/building-interactive-components)
         - [Theming Architecture](/blog/theming-architecture)
         - [Metalsmith2025 Starter Repository](https://github.com/wernerglinka/metalsmith2025-structured-content-starter)
-        - [Metalsmith Components Library](https://github.com/wernerglinka/ms-components)
+        - [Metalsmith Components Library](https://github.com/wernerglinka/metalsmith-components)
 
         Happy theming!
 
