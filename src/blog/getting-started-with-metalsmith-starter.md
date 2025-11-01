@@ -8,7 +8,7 @@ card:
   description: 'Complete guide to setting up your first Metalsmith project. From installation to deployment, learn how to build modern static sites with structured content and reusable components.'
   date: '2025-10-15'
   author: 'Metalsmith Components Team'
-  thumbnail: '/assets/images/sample6.jpg'
+  thumbnail: '/assets/images/sample17.jpg'
 
 seo:
   title: Getting Started with Metalsmith2025 Structured Content Starter

@@ -37,7 +37,7 @@
   "devDependencies": {
     "auto-changelog": "^2.5.0",
     "browser-sync": "^3.0.4",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.0",
     "gray-matter": "^4.0.3",
     "mocha": "^11.7.4",
     "postcss-import": "^16.1.1",
@@ -55,7 +55,7 @@
     "archiver": "^7.0.1",
     "autoprefixer": "^10.4.21",
     "browserslist": "^4.27.0",
-    "cssnano": "^7.1.1",
+    "cssnano": "^7.1.2",
     "depcheck": "^1.4.7",
     "js-yaml": "^4.1.0",
     "jstransformer-nunjucks": "^1.2.0",
@@ -75,7 +75,7 @@
     "metalsmith-sitemap": "^1.2.2",
     "metalsmith-static-files": "^2.0.0",
     "metalsmith-unified-markdown": "^0.0.4",
-    "npm-check-updates": "^19.1.1",
+    "npm-check-updates": "^19.1.2",
     "postcss": "^8.5.6",
     "rehype-highlight": "^7.0.2"
   },
