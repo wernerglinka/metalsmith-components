@@ -34,7 +34,7 @@
         <div class="author-date is-vertical">{{ authorDate(info) }}</div>
       {% endif %}
 
-      <div class="prose">{{ props.excerpt | safe }}</div>
+      <div class="prose">{{ props.description | safe }}</div>
 
       {# right arrow icon #}
       {% set iconProps = { icon: "arrow-right", url: '' } %}

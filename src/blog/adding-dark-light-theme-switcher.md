@@ -123,19 +123,20 @@ sections:
         - `install.sh` - Automated installation script
 
         ### Install Using the Automated Script
-
-        Navigate to the partials directory, extract the package, and run the installation script:
+        - After downloading the zip file move it to the project root directory
+        - Then navigate to the project root directory
+        - Extract the package
+        - Run the installation script:
 
         ```bash
         # Navigate to your project's partials directory
-        cd lib/layouts/components/_partials/
+        cd /path/to/your/project root
 
         # Extract the component package
         unzip dark-light-theme-switcher.zip
-        cd dark-light-theme-switcher
 
         # Run the installation script
-        ./install.sh ..
+        ./dark-light-theme-switcher/install.sh ..
         ```
 
         **Note:** For section components, use `lib/layouts/components/sections/` instead.

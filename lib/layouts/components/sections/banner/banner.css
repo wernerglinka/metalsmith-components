@@ -19,6 +19,7 @@
   --banner-border-radius: var(--glass-border-radius);
   --transition-duration: 0.5s;
   --transition-timing: ease-in-out;
+  --max-accordion-height: 1000px;
 
   .content {
     /* Fluid layout system similar to hero-slider */
@@ -93,7 +94,7 @@
   }
 
   &:not(.is-closed) {
-    max-height: 500px;
+    max-height: var(--max-accordion-height);
     padding-top: var(--space-s);
     padding-bottom: var(--space-s);
   }

@@ -26,9 +26,5 @@
     "priority": 0.8
   },
 
-  "siteOwner": "Werner Glinka",
-  "validate": {
-    "google": "",
-    "ms": ""
-  }
+  "siteOwner": "Werner Glinka"
 }
