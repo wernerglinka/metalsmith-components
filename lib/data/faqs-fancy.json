@@ -1,0 +1,29 @@
+[
+  {
+    "id": "fancy-1",
+    "title": "What makes a great accordion?",
+    "answer": "Great accordions combine smooth animations, full accessibility support, and flexible styling options. They should work seamlessly across devices and provide clear visual feedback for user interactions.",
+    "isFancy": true,
+    "background": {
+      "image": "/assets/images/sample9.jpg"
+    }
+  },
+  {
+    "id": "fancy-2",
+    "title": "How do background images enhance the experience?",
+    "answer": "Background images add visual interest and can help communicate the content theme before users even expand the accordion. They create a more engaging and memorable interface.",
+    "isFancy": true,
+    "background": {
+      "image": "/assets/images/sample10.jpg"
+    }
+  },
+  {
+    "id": "fancy-3",
+    "title": "Can I mix fancy and simple styles?",
+    "answer": "Yes! You can mix fancy accordion items with background images alongside simple text-only items in the same accordion. Just omit the `isFancy` flag and `background` properties for standard styling.",
+    "isFancy": true,
+    "background": {
+      "image": "/assets/images/sample8.jpg"
+    }
+  }
+]

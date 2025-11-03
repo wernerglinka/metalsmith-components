@@ -1,4 +1,4 @@
-- sectionType: simple-accordion
+- sectionType: accordion
   containerTag: section
   classes: ""
   id: ""

@@ -191,9 +191,44 @@ sections:
 
         ### Update header.njk
 
-        Open your header template at `lib/layouts/components/sections/header/header.njk`
+        Open your header template at `lib/layouts/components/sections/header/header.njk`. It will look something like this:
 
-        Add the import at the top and include the theme switcher in your header markup. The header component needs to declare its dependency on the theme switcher.
+        ```liquid
+        {% from "components/_partials/branding/branding.njk" import branding %}
+        {% from "components/_partials/navigation/navigation.njk" import navigation %}
+
+        <header>
+            {% set link = '/' %}
+            {% set img = { src: '/assets/images/metalsmith2025-logo-bug.png', alt: 'Metalsmith Starter' } %}
+
+            {{ branding( link, img ) }}
+
+            {{ navigation( mainMenu, urlPath )}}
+        </header>
+        ```
+
+        Include the theme switcher partial in your header markup. Then add the theme switcher macro in a new div with class `misc`
+
+        ```liquid
+        {% from "components/_partials/branding/branding.njk" import branding %}
+        {% from "components/_partials/navigation/navigation.njk" import navigation %}
+        {% from "components/_partials/dark-light-theme-switcher/dark-light-theme-switcher.njk" import darkLightThemeSwitcher %}
+
+        <header>
+
+            {% set link = '/' %}
+            {% set img = { src: '/assets/images/metalsmith2025-logo-bug.png', alt: 'Metalsmith Starter' } %}
+
+            {{ branding( link, img ) }}
+
+            {{ navigation( mainMenu, urlPath )}}
+
+            <div class="misc">
+              {{ darkLightThemeSwitcher() }}
+            </div>
+        </header>
+
+        ```
 
         ### Update header manifest.json
 

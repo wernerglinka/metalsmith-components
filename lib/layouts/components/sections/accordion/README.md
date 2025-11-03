@@ -1,4 +1,4 @@
-# Simple Accordion Section
+# Accordion Section
 
 Interactive accordion component for FAQ-style content. Loads data from external JSON files with expandable/collapsible panels.
 
@@ -29,7 +29,7 @@ FAQ data is stored in JSON files referenced by `faqs.source`:
 ## Configuration
 
 ```yaml
-- sectionType: simple-accordion
+- sectionType: accordion
   text:
     title: "Frequently Asked Questions"
     prose: "Find answers to common questions"

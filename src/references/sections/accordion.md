@@ -2,20 +2,20 @@
 layout: pages/sections-with-sidebar.njk
 bodyClasses: 'sections-page'
 hasHero: true
-title: Simple Accordion
+title: Accordion
 
 navigation:
-  navLabel: 'Simple Accordion'
+  navLabel: 'Accordion'
   navIndex: 24
 
 card:
-  title: 'Simple Accordion'
+  title: 'Accordion'
   description: 'Interactive accordion component for FAQs with expand/collapse functionality and flexible data loading.'
   image: '/assets/images/sample24.jpg'
   tags: ['faq', 'accordion', 'collapse', 'questions', 'expandable']
 
 seo:
-  title: Simple Accordion Component - FAQ Section for Metalsmith
+  title: Accordion Component - FAQ Section for Metalsmith
   description: 'Interactive accordion component for displaying FAQs with smooth expand/collapse animations. Supports selective data loading and multiple configuration options for Metalsmith static sites.'
   socialImage: '/assets/images/sample.jpg'
   canonicalURL: ''
@@ -42,13 +42,13 @@ sections:
         imageScreen: 'none'
     text:
       leadIn: ''
-      title: 'Simple Accordion Section'
+      title: 'Accordion Section'
       titleTag: 'h1'
       subTitle: ''
       prose: 'An interactive accordion component for displaying frequently asked questions or any collapsible content. Features smooth animations, accessibility support, and flexible data loading from JSON files.'
     ctas: []
 
-  - sectionType: simple-accordion
+  - sectionType: accordion
     containerTag: section
     classes: ''
     id: 'demo-all-faqs'
@@ -81,7 +81,7 @@ sections:
     hasCenteredContent: false
     ctas: []
 
-  - sectionType: simple-accordion
+  - sectionType: accordion
     containerTag: section
     classes: ''
     id: 'demo-selected-faqs'
@@ -121,6 +121,39 @@ sections:
         type: 'primary'
         isExternal: false
 
+  - sectionType: accordion
+    containerTag: section
+    classes: ''
+    id: 'demo-fancy-accordion'
+    isDisabled: false
+    containerFields:
+      inContainer: true
+      isAnimated: true
+      noMargin:
+        top: false
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: 'Example 3'
+      title: 'Fancy Accordion with Background Images'
+      titleTag: 'h2'
+      subTitle: 'Visual Enhancement'
+      prose: 'This example demonstrates fancy accordion items with full-width background images. Each accordion header displays a striking visual that enhances the content presentation. Perfect for feature showcases, testimonials, or visually-driven content.'
+    faqs:
+      scope: 'all'
+      source: 'faqs-fancy'
+      selections: []
+    expandIndex: null
+    allowMultiple: true
+    hasCenteredContent: false
+    ctas: []
+
   - sectionType: text-only
     containerTag: section
     classes: ''
@@ -147,13 +180,40 @@ sections:
       prose: |-
         ### Data Structure
 
-        For our examples, FAQ data files are stored in `lib/data/faqs/` as JSON files. Each FAQ file should have the following structure:
+        For our examples, FAQ data files are stored in `lib/data/` as JSON files. Each FAQ file should have the following structure:
 
+        **Basic FAQ structure:**
         ```json
         {
           "id": "unique-id",
-          "question": "Your question here?",
+          "title": "Your question here?",
           "answer": "Your detailed answer here."
+        }
+        ```
+
+        **Fancy FAQ with background image:**
+        ```json
+        {
+          "id": "unique-id",
+          "title": "Your question here?",
+          "answer": "Your detailed answer here.",
+          "isFancy": true,
+          "background": {
+            "image": "/assets/images/sample9.jpg"
+          }
+        }
+        ```
+
+        **Fancy FAQ with background color:**
+        ```json
+        {
+          "id": "unique-id",
+          "title": "Your question here?",
+          "answer": "Your detailed answer here.",
+          "isFancy": true,
+          "background": {
+            "color": "#3498db"
+          }
         }
         ```
 
@@ -229,7 +289,7 @@ sections:
     isDisabled: false
     isReverse: false
     isAnimated: false
-    componentDownload: 'simple-accordion'
+    componentDownload: 'accordion'
     containerFields:
       inContainer: true
       noMargin:
@@ -245,13 +305,13 @@ sections:
         imageScreen: 'none'
     text:
       leadIn: ''
-      title: 'Download Simple Accordion Section'
+      title: 'Download Accordion Section'
       titleTag: 'h3'
       subTitle: ''
-      prose: 'Get the complete simple-accordion component package including template, styles, manifest, examples, and installation script.'
+      prose: 'Get the complete accordion component package including template, styles, manifest, examples, and installation script.'
     ctas:
-      - url: '/downloads/sections/simple-accordion.zip'
-        label: 'Download Simple Accordion Section'
+      - url: '/downloads/sections/accordion.zip'
+        label: 'Download Accordion Section'
         isButton: true
         buttonStyle: 'primary'
     image:

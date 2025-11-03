@@ -500,7 +500,7 @@ sections:
           prose: |
             Click `anywhere` on this card to navigate to the Flip Cards component page.
 
-      - link: '/library/simple-accordion'
+      - link: '/library/accordion'
         background:
           hasImage: false
           pattern: 'pattern4'
@@ -629,7 +629,7 @@ sections:
           prose: |
             Click `anywhere` on this card to navigate to the Flip Cards component page.
 
-      - link: '/library/simple-accordion'
+      - link: '/library/accordion'
         isHorizontal: true
         background:
           hasImage: false

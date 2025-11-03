@@ -1,15 +1,15 @@
 {
-  "name": "simple-accordion",
+  "name": "accordion",
   "type": "section",
-  "styles": ["simple-accordion.css"],
-  "scripts": ["simple-accordion.js"],
+  "styles": ["accordion.css"],
+  "scripts": ["accordion.js"],
   "requires": ["text", "ctas", "commons"],
   "validation": {
     "required": ["sectionType"],
     "properties": {
       "sectionType": {
         "type": "string",
-        "const": "simple-accordion"
+        "const": "accordion"
       },
       "containerFields.inContainer": {
         "type": "boolean"

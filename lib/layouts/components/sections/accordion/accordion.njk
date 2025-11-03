@@ -42,10 +42,14 @@
         </a>
       {% endif %}
       {% for faq in faqsList %}
-        <div class="accordion-item">
+        <div class="accordion-item{% if faq.isFancy %} is-fancy{% endif %}">
           <button class="accordion-header js-accordion-header"
                   aria-expanded="{% if section.expandIndex == loop.index0 %}true{% else %}false{% endif %}"
-                  aria-controls="accordion-panel-{{ loop.index }}">
+                  aria-controls="accordion-panel-{{ loop.index }}"
+                  {% if faq.background %}
+                    {% if faq.background.image %}style="background-image: url('{{ faq.background.image }}');"{% endif %}
+                    {% if faq.background.color and not faq.background.image %}style="background-color: {{ faq.background.color }};"{% endif %}
+                  {% endif %}>
             <p class="title">{{ faq.title }}</p>
           </button>
           <div id="accordion-panel-{{ loop.index }}"
