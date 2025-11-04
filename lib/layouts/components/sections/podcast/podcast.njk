@@ -4,9 +4,10 @@
   {% if section.podcast %}
     {% set podcastData = data.podcasts[section.podcast] %}
     {% if podcastData %}
-      <div class="podcast-wrapper" 
+      <div class="podcast-wrapper"
            data-rss-url="{{ podcastData.rssUrl }}"
            data-podcast-title="{{ podcastData.title }}"
+           data-cover-image="{{ podcastData.coverImage }}"
            data-theme="{{ section.options.theme or 'auto' }}"
            data-theme-color="{{ section.options.themeColor or '#007aff' }}"
            data-autoplay="{{ section.options.autoplay or false }}"

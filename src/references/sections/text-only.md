@@ -60,7 +60,7 @@ sections:
       inContainer: true
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: true
@@ -105,8 +105,8 @@ sections:
     containerFields:
       inContainer: true
       noMargin:
-        top: false
-        bottom: false
+        top: true
+        bottom: true
       noPadding:
         top: false
         bottom: false
@@ -166,7 +166,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: false
         bottom: false

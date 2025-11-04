@@ -168,7 +168,7 @@ sections:
       inContainer: true
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: true
@@ -203,14 +203,14 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
     containerFields:
       inContainer: false
       noMargin:
-        top: true
+        top: false
         bottom: false
       noPadding:
         top: false

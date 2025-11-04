@@ -37,7 +37,7 @@
   "devDependencies": {
     "auto-changelog": "^2.5.0",
     "browser-sync": "^3.0.4",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.1",
     "gray-matter": "^4.0.3",
     "mocha": "^11.7.4",
     "postcss-import": "^16.1.1",
@@ -62,7 +62,7 @@
     "marked": "^16.4.1",
     "metalsmith": "^2.6.3",
     "metalsmith-blog-lists": "^2.1.0",
-    "metalsmith-bundled-components": "^0.5.0",
+    "metalsmith-bundled-components": "^0.6.0",
     "metalsmith-menu-plus": "^0.2.0",
     "metalsmith-optimize-html": "^0.8.3",
     "metalsmith-optimize-images": "^0.10.2",

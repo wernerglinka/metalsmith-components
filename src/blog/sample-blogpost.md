@@ -17,7 +17,7 @@ card:
     - Albert Einstein
     - Isaac Newton
   thumbnail: '/assets/images/sample9.jpg'
-  excerpt: |-
+  description: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui nullam quis risus eget urna mollis ornare.
 
 sections:

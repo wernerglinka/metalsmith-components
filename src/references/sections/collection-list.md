@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: true
@@ -48,37 +48,11 @@ sections:
       prose: |-
         A universal collection listing component that displays a grid of items with pagination support. Works with any collection (blog posts, components, products, etc.) and automatically detects available fields like author and date.
 
-  - sectionType: collection-list
-    collectionName: 'blog'
-    containerTag: section
-    disabled: false
-    id: ''
-    classes: ''
-    containerFields:
-      inContainer: false
-      isAnimated: true
-      noMargin:
-        top: false
-        bottom: true
-      noPadding:
-        top: false
-        bottom: false
-      background:
-        isDark: false
-        color: ''
-        image: ''
-        imageScreen: 'none'
-    hasPagingParams: true
-    pagingParams:
-      numberOfBlogs: ''
-      numberOfPages: ''
-      pageLength: ''
-      pageStart: ''
-      pageNumber: ''
+        For an example including pagination see the [blog](/blog/) page
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true

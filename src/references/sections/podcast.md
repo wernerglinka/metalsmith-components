@@ -228,7 +228,7 @@ sections:
         color: ''
         image: '/assets/images/sample10.jpg'
         imageScreen: 'dark' # light, dark, none
-    podcast: 'artificial-intelligence'
+    podcast: 'ezra-klein-show'
     options:
       showHeader: false
       showEpisodeList: true

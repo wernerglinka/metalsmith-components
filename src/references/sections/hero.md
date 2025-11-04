@@ -87,7 +87,8 @@ sections:
       titleTag: 'h2'
       subTitle: ''
       prose: |-
-        Note the page property `hasHero: true` and in the section configuration `isFullScreen: true`
+        Note the page property `hasHero: true` and the section property `isFullScreen: true`. The section property `targetId: 'first-section'` point to the following section,
+
         ```yaml
         ---
         hasHero: true

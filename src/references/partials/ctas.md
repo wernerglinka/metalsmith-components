@@ -76,19 +76,25 @@ sections:
         | `buttonStyle` | string | No | 'primary' | Button style variant (primary, secondary, tertiary) |
         | `isSmall` | boolean | No | false | Render as small button |
 
-        ### Example
+        ### Examples
 
-  - sectionType: hero
+  - sectionType: text-only
     containerTag: section
     isFullScreen: false
     containerFields:
-      inContainer: true
+      inContainer: false
       isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: true
+        bottom: true
       background:
         color: ''
     text:
       title: 'Hero with Multiple CTAs'
-      titleTag: 'h1'
+      titleTag: 'h2'
       prose: 'Demonstrating different CTA styles and configurations in a hero section.'
     ctas:
       - url: '/get-started'
@@ -110,7 +116,7 @@ sections:
       isAnimated: true
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       background:
         isDark: false
     text:
