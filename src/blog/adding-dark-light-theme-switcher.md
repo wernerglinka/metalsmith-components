@@ -238,11 +238,11 @@ sections:
 
         ## Step 5: Style the Header Layout
 
-        Update your header styles to position the theme switcher.
+        `header.css` already includes styles for the theme switcher and a search form.
 
         Open `lib/layouts/components/sections/header/header.css`
 
-        Add layout styles to create a horizontal layout with the logo on the left, navigation in the middle, and theme switcher on the right.
+        The header styles create a horizontal layout with the logo on the left, navigation in the middle, and theme switcher on the right. Change the styles as needed for your implementation.
 
         ## Step 6: Add Dark Mode CSS Variables
 
