@@ -372,7 +372,8 @@ if ( isProduction ) {
      */
     .use(
       seo( {
-        metadataPath: 'data.site'  // Object in metadata points to where to find site metadata
+        metadataPath: 'data.site',  // Object in metadata points to where to find site metadata
+        omitIndex: true
       } )
     )
     /**

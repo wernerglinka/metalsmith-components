@@ -8,12 +8,12 @@ card:
   description: 'A step-by-step guide to adding a dark/light theme toggle from the Metalsmith Components library to your starter project'
   date: '2025-10-30'
   author: 'Metalsmith Components Team'
-  thumbnail: '/assets/images/sample10.jpg'
+  thumbnail: '/assets/images/sample2.jpg'
 
 seo:
   title: 'Adding Dark/Light Theme Switcher to Your Metalsmith Site'
   description: 'Complete beginner-friendly guide to adding a dark/light theme switcher component to the Metalsmith2025 Structured Content Starter'
-  socialImage: '/assets/images/sample10.jpg'
+  socialImage: '/assets/images/sample2.jpg'
   canonicalURL: ''
   keywords: 'metalsmith components, dark mode, theme switcher, how-to tutorial, component integration'
 
@@ -37,7 +37,7 @@ sections:
       background:
         isDark: true
         color: ''
-        image: '/assets/images/sample10.jpg'
+        image: '/assets/images/sample2.jpg'
         imageScreen: 'dark'
     text:
       leadIn: 'How-To Tutorial'
