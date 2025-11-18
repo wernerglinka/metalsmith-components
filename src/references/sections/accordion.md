@@ -219,16 +219,25 @@ sections:
 
         ### JavaScript Functionality
 
-        The accordion JavaScript handles:
+        The accordion uses `requestAnimationFrame` for animations rather than CSS transitions. This approach enables simultaneous animation of multiple panels, which is essential for smooth visual transitions when one panel closes while another opens (in single-panel mode) or when using the "toggle all" functionality.
+
+        CSS transitions would schedule these animations sequentially, resulting in janky, staggered motion. By using `requestAnimationFrame` with a batched animations array, all height changes occur frame-perfect synchronized, creating a polished user experience.
+
+        The JavaScript handles:
+        - Simultaneous expand/collapse animations for multiple panels
         - Click events on accordion headers
-        - Expanding/collapsing panels with proper ARIA attributes
+        - Managing ARIA attributes for accessibility (aria-expanded)
+        - Screen reader announcements when panels open/close
         - Single or multiple item expansion based on configuration
-        - Initial state management (expand first item if configured)
+        - Initial state management (expand specific item if configured)
+        - Full keyboard navigation (Arrow keys, Home, End, Enter, Space)
+        - Toggle all functionality with dynamic button text updates
 
         ### Styling
 
         The component includes responsive styles with:
-        - Smooth CSS transitions for expand/collapse animations
+        - Height manipulation via JavaScript for smooth synchronized animations
+        - Custom easing function (cubic bezier) for natural motion
         - Hover and focus states for accessibility
         - Customizable through CSS variables
 
