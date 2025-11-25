@@ -29,10 +29,9 @@
     "lint:css": "stylelint \"lib/**/*.css\" --fix",
     "fix": "npm run format && npm run lint && npm run lint:css",
     "depcheck": "depcheck",
-    "release": "./scripts/release.sh",
-    "release:patch": "./scripts/release.sh patch",
-    "release:minor": "./scripts/release.sh minor",
-    "release:major": "./scripts/release.sh major"
+    "release:patch": "./scripts/release.sh patch --ci",
+    "release:minor": "./scripts/release.sh minor --ci",
+    "release:major": "./scripts/release.sh major --ci"
   },
   "devDependencies": {
     "auto-changelog": "^2.5.0",
