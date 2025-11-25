@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Albert Einstein",
+    "role": "Chief Theorist",
+    "bio": "Passionate about relativity and making complex ideas simple.",
+    "extendedBio": "<p>Albert brings over two decades of theoretical experience to our team. His groundbreaking work on special and general relativity has transformed how we approach problem-solving.</p><p>Before joining us, Albert worked at the Swiss Patent Office where he developed his famous thought experiments. He believes that imagination is more important than knowledge and brings this philosophy to every project.</p><p>When not revolutionizing physics, Albert enjoys playing violin and sailing.</p>",
+    "image": {
+      "src": "/assets/images/authors/einstein.jpg",
+      "alt": "Albert Einstein"
+    },
+    "social": [
+      { "platform": "linkedin", "url": "#" },
+      { "platform": "twitter", "url": "#" }
+    ]
+  },
+  {
+    "name": "Marie Curie",
+    "role": "Head of Research",
+    "bio": "Pioneering researcher with a passion for discovery.",
+    "extendedBio": "<p>Marie leads our research division with an unwavering commitment to scientific excellence. As the only person to win Nobel Prizes in two different sciences, she brings unparalleled expertise to our team.</p><p>Her work on radioactivity has opened new frontiers in our understanding of atomic structure. Marie is known for her meticulous methodology and her ability to inspire her team to push beyond conventional boundaries.</p><p>She is also passionate about mentoring the next generation of scientists, particularly women in STEM fields.</p>",
+    "image": {
+      "src": "/assets/images/authors/curie.jpg",
+      "alt": "Marie Curie"
+    },
+    "social": [
+      { "platform": "linkedin", "url": "#" },
+      { "platform": "github", "url": "#" }
+    ]
+  },
+  {
+    "name": "Isaac Newton",
+    "role": "Lead Engineer",
+    "bio": "Building foundational systems that stand the test of time.",
+    "extendedBio": "<p>Isaac is the architect behind our most robust and scalable systems. His three laws of motion have become the foundation of our engineering principles, ensuring that every solution we build is grounded in solid fundamentals.</p><p>With expertise spanning mathematics, physics, and astronomy, Isaac brings a unique perspective to complex engineering challenges. He invented calculus to solve problems that existing math couldn't handle.</p><p>Outside of work, Isaac tends to his apple orchard and experiments with optics.</p>",
+    "image": {
+      "src": "/assets/images/authors/newton.jpg",
+      "alt": "Isaac Newton"
+    },
+    "social": [
+      { "platform": "linkedin", "url": "#" },
+      { "platform": "website", "url": "#" }
+    ]
+  },
+  {
+    "name": "Niels Bohr",
+    "role": "VP of Engineering",
+    "bio": "Bridging theory and practice in elegant solutions.",
+    "extendedBio": "<p>Niels oversees our engineering organization, bringing his famous complementarity principle to how we structure teams and tackle problems. He believes that embracing contradictions often leads to the most innovative solutions.</p><p>His atomic model revolutionized our understanding of electron behavior, and he applies the same systematic thinking to organizational design. Under his leadership, our engineering team has doubled in size while maintaining exceptional quality standards.</p><p>Niels is an avid footballer and enjoys spirited debates about quantum mechanics over coffee.</p>",
+    "image": {
+      "src": "/assets/images/authors/bohr.jpg",
+      "alt": "Niels Bohr"
+    },
+    "social": [
+      { "platform": "linkedin", "url": "#" },
+      { "platform": "github", "url": "#" },
+      { "platform": "twitter", "url": "#" }
+    ]
+  },
+  {
+    "name": "Werner Heisenberg",
+    "role": "Head of Product",
+    "bio": "Uncertain about everything except delivering value.",
+    "extendedBio": "<p>Werner leads our product strategy with a unique understanding that you cannot observe a system without changing it. This insight drives our user research methodology and product development process.</p><p>His uncertainty principle has become a guiding philosophy for our agile approach—we accept that perfect knowledge is impossible and instead focus on rapid iteration and continuous learning.</p><p>Werner is passionate about quantum mechanics, motorcycles, and the occasional philosophical discussion about the nature of reality.</p>",
+    "image": {
+      "src": "/assets/images/authors/heisenberg.jpg",
+      "alt": "Werner Heisenberg"
+    },
+    "social": [
+      { "platform": "linkedin", "url": "#" },
+      { "platform": "twitter", "url": "#" }
+    ]
+  },
+  {
+    "name": "Stephen Hawking",
+    "role": "Lead Developer",
+    "bio": "Exploring the boundaries of what's possible.",
+    "extendedBio": "<p>Stephen pushes the boundaries of our technical capabilities, much like his theoretical work on black holes pushed the boundaries of physics. His ability to make the complex accessible has made him an invaluable mentor to junior developers.</p><p>Despite facing significant challenges, Stephen has authored some of our most elegant codebases. His work on Hawking radiation—the idea that black holes emit particles—demonstrates his ability to find solutions where others see only impossibilities.</p><p>Stephen believes in making technology accessible to everyone and spends considerable time on developer education initiatives.</p>",
+    "image": {
+      "src": "/assets/images/authors/hawking.jpg",
+      "alt": "Stephen Hawking"
+    },
+    "social": [
+      { "platform": "github", "url": "#" },
+      { "platform": "email", "url": "#" }
+    ]
+  }
+]

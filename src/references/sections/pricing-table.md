@@ -32,7 +32,7 @@ sections:
       inContainer: false
       noMargin:
         top: true
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: false
@@ -86,7 +86,7 @@ sections:
       isAnimated: true
       noMargin:
         top: false
-        bottom: false
+        bottom: true
       noPadding:
         top: true
         bottom: false
@@ -106,7 +106,7 @@ sections:
 
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
+    classes: ''
     id: ''
     isDisabled: false
     isAnimated: true
