@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Starter",
+    "description": "Perfect for individuals and small projects",
+    "icon": "zap",
+    "price": {
+      "prefix": "$",
+      "amount": "9",
+      "suffix": "/month"
+    },
+    "features": [
+      { "text": "Up to 3 projects" },
+      { "text": "Basic analytics" },
+      { "text": "48-hour support response" },
+      { "text": "1 GB storage" },
+      { "text": "API access", "isExcluded": true },
+      { "text": "Custom integrations", "isExcluded": true }
+    ],
+    "ctas": [
+      {
+        "url": "#",
+        "label": "Get Started",
+        "isButton": true,
+        "buttonStyle": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Professional",
+    "description": "Best for growing teams and businesses",
+    "icon": "award",
+    "isFeatured": true,
+    "featuredLabel": "Most Popular",
+    "price": {
+      "prefix": "$",
+      "amount": "29",
+      "suffix": "/month"
+    },
+    "features": [
+      { "text": "Unlimited projects" },
+      { "text": "Advanced analytics" },
+      { "text": "24-hour support response" },
+      { "text": "10 GB storage" },
+      { "text": "API access" },
+      { "text": "Custom integrations", "isExcluded": true }
+    ],
+    "ctas": [
+      {
+        "url": "#",
+        "label": "Get Started",
+        "isButton": true,
+        "buttonStyle": "primary"
+      }
+    ]
+  },
+  {
+    "name": "Enterprise",
+    "description": "For large organizations with custom needs",
+    "icon": "building",
+    "features": [
+      { "text": "Unlimited projects" },
+      { "text": "Advanced analytics" },
+      { "text": "1-hour support response" },
+      { "text": "Unlimited storage" },
+      { "text": "API access" },
+      { "text": "Custom integrations" }
+    ],
+    "ctas": [
+      {
+        "url": "#",
+        "label": "Contact Sales",
+        "isButton": true,
+        "buttonStyle": "secondary"
+      }
+    ]
+  }
+]
