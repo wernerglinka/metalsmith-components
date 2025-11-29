@@ -7,7 +7,7 @@
   Metalsmith Components
 </h1>
 
-A reference implementation and documentation site for building component-based static sites with Metalsmith. The library contains 51 production-ready components (21 partials, 30 sections) that use structured content in frontmatter rather than Markdown body content. Each component manages its own template, styles, and scripts, which are automatically bundled only when used on pages.
+A reference implementation and documentation site for building component-based static sites with Metalsmith. The library contains 56 production-ready components (21 partials, 35 sections) that use structured content in frontmatter rather than Markdown body content. Each component manages its own template, styles, and scripts, which are automatically bundled only when used on pages.
 
 This library provides the component catalog for the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). All components are compatible with the starter's architecture and can be integrated into projects using the automated packaging system.
 
@@ -17,15 +17,15 @@ This library provides the component catalog for the [Metalsmith2025 Structured C
 
 ### Component Library
 
-The library contains 51 production-ready components organized in two categories:
+The library contains 56 production-ready components organized in two categories:
 
 **21 Partials** - Small, reusable UI elements used within larger sections:
 
 - audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, lottie, manual-card, navigation, overlay, search, slider-pagination, text, text-link, video
 
-**30 Sections** - Large page sections and main building blocks:
+**35 Sections** - Large page sections and main building blocks:
 
-- audio-only, banner, blog-author, blog-navigation, blurbs, cards-list, code, collection-list, columns, commons, compound, flip-cards, footer, header, hero, hero-slider, icon-only, image-compare, image-only, logos-list, lottie-only, maps, multi-media, podcast, search-only, simple-accordion, slider, testimonial, text-only, video-only
+- audio-only, banner, blog-author, blog-navigation, blurbs, cards-list, code, collection-list, columns, commons, compound, flip-cards, footer, header, hero, hero-slider, icon-only, image-compare, image-only, logos-list, lottie-only, maps, multi-media, podcast, pricing-table, search-only, simple-accordion, slider, stats, steps, team-grid, testimonial, text-only, timeline, video-only
 
 **Advanced Components**:
 
@@ -33,6 +33,11 @@ The library contains 51 production-ready components organized in two categories:
 - **podcast**: Shikwasa player integration with RSS feed parsing from JSON configurations
 - **video**: Multi-provider support (YouTube, Vimeo, Cloudinary) with responsive embeds
 - **search**: Two-layer architecture using metalsmith-search plugin for build-time indexing plus client-side Fuse.js filtering
+- **pricing-table**: Pricing tier comparison with cards and comparison table layouts
+- **team-grid**: Team member profiles with grid/compact layouts and modal bios using native `<dialog>`
+- **timeline**: Chronological events with vertical (alternating) and horizontal layouts
+- **stats**: Impact numbers and metrics with grid, row, and compact layouts
+- **steps**: Process/how-it-works flows with numbered steps, icons, and connector lines
 
 ### Documentation & Learning
 
@@ -174,7 +179,7 @@ Production build outputs to `build/` directory with HTML minification, optimized
 │   ├── blog/                              # 12 blog posts covering technical guides
 │   ├── library/                           # Component documentation and examples
 │   ├── references/
-│   │   ├── sections/                      # Reference pages for 30 section components
+│   │   ├── sections/                      # Reference pages for 35 section components
 │   │   └── partials/                      # Reference pages for 21 partial components
 │   └── partials.md                        # Partials index page
 ├── lib/
@@ -194,7 +199,7 @@ Production build outputs to `build/` directory with HTML minification, optimized
 │   ├── layouts/
 │   │   ├── components/
 │   │   │   ├── _partials/                 # 21 partial components
-│   │   │   └── sections/                  # 30 section components
+│   │   │   └── sections/                  # 35 section components
 │   │   │       └── maps/                  # Example: maps component structure
 │   │   │           ├── maps.njk           # Template
 │   │   │           ├── maps.css           # Styles
@@ -347,7 +352,7 @@ items:
 
 ## Component Catalog
 
-### Section Components (30)
+### Section Components (35)
 
 **Content Display**:
 
@@ -375,6 +380,11 @@ items:
 - **search-only** - Search functionality with two-layer filtering
 - **maps** - Interactive maps with dual provider support (Leaflet/OpenLayers), JSON data, custom Feather icon markers, and clustering
 - **podcast** - Podcast player with Shikwasa integration and RSS feed parsing
+- **pricing-table** - Pricing tier comparison with cards and table layouts, featured tier highlighting
+- **team-grid** - Team member profiles with grid/compact layouts and modal bios
+- **timeline** - Chronological events with vertical alternating and horizontal layouts
+- **stats** - Impact numbers and metrics with grid, row, and compact layouts
+- **steps** - Process flows with numbered steps, icons, and connector lines
 
 **Layout & Structure**:
 
@@ -440,7 +450,7 @@ The repository includes 4 comprehensive Mocha test suites validating the compone
 
 **Test Coverage**:
 
-- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 51 components
+- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 56 components
 - `test/build-integration.test.js` - Tests complete Metalsmith build pipeline, HTML generation, collections, pagination, and static assets
 - `test/content-structure.test.js` - Verifies frontmatter structure, global data file validity, SEO metadata, and content consistency
 - `test/component-dependency-bundler.test.js` - Tests component directory structure, file associations, manifest dependencies, and bundler integration
