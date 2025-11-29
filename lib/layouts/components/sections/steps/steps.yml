@@ -1,0 +1,12 @@
+sectionType: steps
+containerTag: section
+classes: ''
+id: ''
+text:
+  title: ''
+  subTitle: ''
+  prose: ''
+steps:
+  layout: 'horizontal'
+  showNumbers: true
+  items: []
