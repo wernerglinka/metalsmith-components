@@ -1,0 +1,11 @@
+sectionType: stats
+containerTag: section
+classes: ''
+id: ''
+text:
+  title: ''
+  subTitle: ''
+  prose: ''
+stats:
+  layout: 'grid'
+  items: []

@@ -1,0 +1,34 @@
+{
+  "name": "stats",
+  "type": "section",
+  "styles": ["stats.css"],
+  "requires": ["text", "icon", "commons"],
+  "description": "Display impact numbers and key metrics in a visually striking grid layout",
+  "example": {
+    "sectionType": "stats",
+    "text": {
+      "title": "Our Impact",
+      "subTitle": "Numbers that matter"
+    },
+    "stats": {
+      "layout": "grid",
+      "items": [
+        {
+          "value": "10K+",
+          "label": "Active Users",
+          "icon": "users"
+        },
+        {
+          "value": "99.9%",
+          "label": "Uptime",
+          "icon": "activity"
+        },
+        {
+          "value": "50M",
+          "label": "API Requests",
+          "icon": "zap"
+        }
+      ]
+    }
+  }
+}
