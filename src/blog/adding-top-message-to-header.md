@@ -4,10 +4,10 @@ bodyClasses: 'sections-page'
 hasHero: true
 
 topMessage:
-  text: "This is an example top message bar. Try dismissing it!"
+  text: 'This is an example top message bar. Try dismissing it!'
   link:
-    url: "/references/"
-    label: "View the library"
+    url: '/references/'
+    label: 'View the library'
   dismissible: true
 
 card:
@@ -88,7 +88,7 @@ sections:
       isCentered: false
       subTitle: ''
       prose: |-
-        **Using the Metalsmith2025 Starter?** This feature is already built in! Simply add the `topMessage` configuration to your page's frontmatter and it works out of the box. This tutorial is for those building from scratch or using a custom setup.
+        > **Using the Metalsmith2025 Starter?** This feature is already built in! Simply add the `topMessage` configuration to your page's frontmatter and it works out of the box. This tutorial is for those building from scratch or using a custom setup.
 
         ## What You'll Build
 
