@@ -88,6 +88,8 @@ sections:
       isCentered: false
       subTitle: ''
       prose: |-
+        **Using the Metalsmith2025 Starter?** This feature is already built in! Simply add the `topMessage` configuration to your page's frontmatter and it works out of the box. This tutorial is for those building from scratch or using a custom setup.
+
         ## What You'll Build
 
         By the end of this tutorial, you'll have a top message bar that:
@@ -474,8 +476,6 @@ sections:
         - `text` (required): The message text to display
         - `link` (optional): An object with `url` and `label` for an inline link
         - `dismissible` (optional): Set to `false` to hide the close button (defaults to `true`)
-
-        Note: If you are using the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter), this feature is already built into the header component. Simply add the `topMessage` configuration to your page's frontmatter and it will work out of the box.
 
         ## Step 6: Build and Test
 
