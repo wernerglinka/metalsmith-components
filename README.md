@@ -41,7 +41,7 @@ The library contains 56 production-ready components organized in two categories:
 
 ### Documentation & Learning
 
-The site includes 12 technical guides covering component development and implementation:
+The site includes 13 technical guides covering component development and implementation:
 
 - **Building Pages with Metalsmith Components** - Construct pages from reusable components defined in structured frontmatter
 - **How Component Bundling Works** - Deep dive into automatic component discovery and bundling with metalsmith-bundled-components
@@ -54,6 +54,7 @@ The site includes 12 technical guides covering component development and impleme
 - **Building Structured Pages** - Understand how Metalsmith transforms YAML configurations into HTML pages
 - **Getting Started with the Metalsmith2025 Starter** - Complete guide from installation to deployment
 - **Installing Metalsmith Components in Your Project** - Download and install component packages with automated install scripts
+- **Adding a Top Message Bar to Your Header** - Implement a dismissible announcement bar with cookie persistence and dark mode support
 
 ### Technical Implementation
 
@@ -401,7 +402,7 @@ items:
 
 **Site Structure**:
 
-- **header** - Site header/navigation
+- **header** - Site header/navigation with optional top message bar (dismissible announcements with cookie persistence)
 - **footer** - Site footer
 
 ### Partial Components (21)
@@ -513,6 +514,7 @@ The site includes detailed technical guides available at [metalsmith-components.
 9. Building Structured Pages
 10. Getting Started with the Metalsmith2025 Starter
 11. Installing Metalsmith Components in Your Project
+12. Adding a Top Message Bar to Your Header
 
 Browse the complete [Component Library](https://metalsmith-components.com/library) for live examples and implementation details.
 
