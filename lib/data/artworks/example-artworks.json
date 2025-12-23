@@ -1,0 +1,31 @@
+[
+  {
+    "image": "test1.jpg",
+    "alt": "Abstract painting with warm golden tones and geometric shapes",
+    "title": "Morning Light",
+    "description": "Inspired by the first rays of sunlight filtering through studio windows, this piece explores the interplay between warmth and structure.",
+    "size": "48 x 36 inches",
+    "year": "2024",
+    "materials": "Oil on canvas",
+    "link": "/works/morning-light"
+  },
+  {
+    "image": "test2.jpg",
+    "alt": "Blue and white abstract seascape with textured brushwork",
+    "title": "Coastal Memory",
+    "description": "A meditation on the rhythms of the sea, capturing the essence of tide and foam through layered pigments.",
+    "size": "60 x 40 inches",
+    "year": "2023",
+    "materials": "Acrylic and mixed media on canvas",
+    "link": "/works/coastal-memory"
+  },
+  {
+    "image": "test3.jpg",
+    "alt": "Geometric abstract with bold lines and muted earth tones",
+    "title": "Urban Fragments",
+    "description": "Deconstructed cityscapes reassembled as emotional landscapes, reflecting the complexity of modern life.",
+    "size": "36 x 36 inches",
+    "year": "2024",
+    "materials": "Oil and charcoal on linen"
+  }
+]
