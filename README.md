@@ -7,7 +7,7 @@
   Metalsmith Components
 </h1>
 
-A reference implementation and documentation site for building component-based static sites with Metalsmith. The library contains 56 production-ready components (21 partials, 35 sections) that use structured content in frontmatter rather than Markdown body content. Each component manages its own template, styles, and scripts, which are automatically bundled only when used on pages.
+A reference implementation and documentation site for building component-based static sites with Metalsmith. The library contains 59 production-ready components (21 partials, 38 sections) that use structured content in frontmatter rather than Markdown body content. Each component manages its own template, styles, and scripts, which are automatically bundled only when used on pages.
 
 This library provides the component catalog for the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). All components are compatible with the starter's architecture and can be integrated into projects using the automated packaging system.
 
@@ -17,15 +17,15 @@ This library provides the component catalog for the [Metalsmith2025 Structured C
 
 ### Component Library
 
-The library contains 56 production-ready components organized in two categories:
+The library contains 59 production-ready components organized in two categories:
 
 **21 Partials** - Small, reusable UI elements used within larger sections:
 
 - audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, lottie, manual-card, navigation, overlay, search, slider-pagination, text, text-link, video
 
-**35 Sections** - Large page sections and main building blocks:
+**38 Sections** - Large page sections and main building blocks:
 
-- audio-only, banner, blog-author, blog-navigation, blurbs, cards-list, code, collection-list, columns, commons, compound, flip-cards, footer, header, hero, hero-slider, icon-only, image-compare, image-only, logos-list, lottie-only, maps, multi-media, podcast, pricing-table, search-only, simple-accordion, slider, stats, steps, team-grid, testimonial, text-only, timeline, video-only
+- accordion, artist-slider, audio-only, banner, blog-author, blog-navigation, blurbs, calendar, cards-list, code, collection-list, columns, commons, compound, flip-cards, footer, header, hero, hero-slider, icon-only, image-compare, image-grid, image-only, logos-list, lottie-only, maps, multi-media, podcast, pricing-table, search-only, slider, stats, steps, team-grid, testimonial, text-only, timeline, video-only
 
 **Advanced Components**:
 
@@ -38,6 +38,7 @@ The library contains 56 production-ready components organized in two categories:
 - **timeline**: Chronological events with vertical (alternating) and horizontal layouts
 - **stats**: Impact numbers and metrics with grid, row, and compact layouts
 - **steps**: Process/how-it-works flows with numbered steps, icons, and connector lines
+- **image-grid**: Justified gallery layout for artist portfolios with automatic aspect ratio calculation and hover overlays
 
 ### Documentation & Learning
 
@@ -180,7 +181,7 @@ Production build outputs to `build/` directory with HTML minification, optimized
 │   ├── blog/                              # 12 blog posts covering technical guides
 │   ├── library/                           # Component documentation and examples
 │   ├── references/
-│   │   ├── sections/                      # Reference pages for 35 section components
+│   │   ├── sections/                      # Reference pages for 38 section components
 │   │   └── partials/                      # Reference pages for 21 partial components
 │   └── partials.md                        # Partials index page
 ├── lib/
@@ -200,7 +201,7 @@ Production build outputs to `build/` directory with HTML minification, optimized
 │   ├── layouts/
 │   │   ├── components/
 │   │   │   ├── _partials/                 # 21 partial components
-│   │   │   └── sections/                  # 35 section components
+│   │   │   └── sections/                  # 38 section components
 │   │   │       └── maps/                  # Example: maps component structure
 │   │   │           ├── maps.njk           # Template
 │   │   │           ├── maps.css           # Styles
@@ -222,7 +223,7 @@ Production build outputs to `build/` directory with HTML minification, optimized
 ├── plugins/
 │   └── generate-maps-icons.js             # Build-time icon registry generator
 ├── test/                                  # 4 comprehensive Mocha test suites
-│   ├── component-manifests.test.js        # Validates all 51 component manifests
+│   ├── component-manifests.test.js        # Validates all 59 component manifests
 │   ├── build-integration.test.js          # Tests build pipeline and HTML output
 │   ├── content-structure.test.js          # Verifies frontmatter and data files
 │   └── component-dependency-bundler.test.js
@@ -353,7 +354,7 @@ items:
 
 ## Component Catalog
 
-### Section Components (35)
+### Section Components (38)
 
 **Content Display**:
 
@@ -372,12 +373,15 @@ items:
 
 **Interactive & Advanced**:
 
+- **accordion** - Expandable/collapsible content sections
+- **artist-slider** - Image slider optimized for artwork galleries
+- **calendar** - Event calendar with recurring event support
 - **slider** - Image/content carousel with pagination or tabbed interface
 - **hero-slider** - Hero section with image carousel
 - **flip-cards** - Interactive cards with front/back content and animations
+- **image-grid** - Justified gallery layout for artist portfolios with automatic aspect ratio calculation and hover overlays
 - **logos-list** - Auto-scrolling logo carousel with infinite loop
 - **image-compare** - Before/after image comparison with draggable slider handle
-- **simple-accordion** - Expandable/collapsible content sections
 - **search-only** - Search functionality with two-layer filtering
 - **maps** - Interactive maps with dual provider support (Leaflet/OpenLayers), JSON data, custom Feather icon markers, and clustering
 - **podcast** - Podcast player with Shikwasa integration and RSS feed parsing
@@ -451,7 +455,7 @@ The repository includes 4 comprehensive Mocha test suites validating the compone
 
 **Test Coverage**:
 
-- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 56 components
+- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 59 components
 - `test/build-integration.test.js` - Tests complete Metalsmith build pipeline, HTML generation, collections, pagination, and static assets
 - `test/content-structure.test.js` - Verifies frontmatter structure, global data file validity, SEO metadata, and content consistency
 - `test/component-dependency-bundler.test.js` - Tests component directory structure, file associations, manifest dependencies, and bundler integration

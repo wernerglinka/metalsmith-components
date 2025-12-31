@@ -94,9 +94,9 @@ Small, reusable UI elements (21 components):
 
 #### Sections (`lib/layouts/components/sections/`)
 
-Large page sections and main building blocks (30 components):
+Large page sections and main building blocks (38 components):
 
-- audio-only, banner, blog-author, blog-navigation, blurbs, cards-list, code, collection-list, columns, commons, compound, flip-cards, footer, header, hero, hero-slider, icon-only, image-compare, image-only, logos-list, lottie-only, maps, multi-media, podcast, search-only, simple-accordion, slider, testimonial, text-only, video-only
+- accordion, artist-slider, audio-only, banner, blog-author, blog-navigation, blurbs, calendar, cards-list, code, collection-list, columns, commons, compound, flip-cards, footer, header, hero, hero-slider, icon-only, image-compare, image-grid, image-only, logos-list, lottie-only, maps, multi-media, podcast, pricing-table, search-only, slider, stats, steps, team-grid, testimonial, text-only, timeline, video-only
 
 ### Component Structure
 
@@ -150,7 +150,7 @@ Quick reference for creating a new component:
   - `src/index.md` - Homepage
   - `src/blog.md` - Blog index with pagination
   - `src/blog/` - Blog posts (12 articles)
-  - `src/references/sections/` - Section component reference pages (31 files)
+  - `src/references/sections/` - Section component reference pages (38 files)
   - `src/references/partials/` - Partial component reference pages (21 files)
 - `lib/data/` - Global JSON data files (site.json, author.json, socialLinks.json, etc.)
   - `lib/data/maps/` - Map data JSON files
@@ -158,7 +158,7 @@ Quick reference for creating a new component:
   - `lib/data/blurbs/` - Blurbs content data
 - `lib/layouts/` - Templates, components, and icons
   - `lib/layouts/components/_partials/` - 21 partial components
-  - `lib/layouts/components/sections/` - 30 section components
+  - `lib/layouts/components/sections/` - 38 section components
   - `lib/layouts/pages/` - Page templates (sections.njk, etc.)
   - `lib/layouts/icons/` - 299 Feather icon SVG templates
 - `lib/assets/` - Images, main CSS/JS entry points, and global styles
@@ -179,7 +179,7 @@ Comprehensive test suite using Mocha:
 
 ### Test Files
 
-- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 51 components
+- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 59 components
 - `test/build-integration.test.js` - Tests complete Metalsmith build pipeline, HTML generation, collections, pagination
 - `test/content-structure.test.js` - Verifies frontmatter structure, global data file validity, SEO metadata
 - `test/component-dependency-bundler.test.js` - Tests component directory structure, file associations, bundler integration

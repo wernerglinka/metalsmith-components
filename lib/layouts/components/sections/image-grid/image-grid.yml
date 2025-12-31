@@ -1,0 +1,8 @@
+sectionType: image-grid
+dataSource: artworks
+text:
+  title: "Sculptures 2020-Current"
+  titleTag: h2
+settings:
+  gap: "6"
+  targetRowHeight: "200"

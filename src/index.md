@@ -4,10 +4,10 @@ bodyClasses: 'home'
 hasHero: true
 
 topMessage:
-  text: "New components available: pricing-table, team-grid, timeline, stats, and steps!"
+  text: 'New Image Grid component available.'
   link:
-    url: "/references/"
-    label: "View the library"
+    url: '/references/sections/image-grid/'
+    label: 'View the component'
   dismissible: true
 
 navigation:
@@ -102,5 +102,4 @@ sections:
         Component-based architecture isn't just my preference—it's become a widely acknowledged pattern for building maintainable websites. React, Vue, and modern frontend frameworks have proven the value of composable, reusable components. This library brings that same paradigm to static site generation with Metalsmith, demonstrating that you can have both the flexibility of a minimal build tool and the structure of a component system.
 
         Metalsmith gives you the freedom to find your own way. This is mine. If you value component reusability, separation of concerns, and a clear content model that scales from simple landing pages to complex multi-section layouts, this approach might be yours too.
-
 ---

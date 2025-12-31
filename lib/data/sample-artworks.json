@@ -1,0 +1,54 @@
+[
+  {
+    "image": "/assets/images/artworks/test1.jpg",
+    "title": "#108",
+    "details": "36.5 x 55 x 13 inches, painted resin",
+    "date": "2023",
+    "link": "/artworks/piece-108/"
+  },
+  {
+    "image": "/assets/images/artworks/test2.jpg",
+    "title": "#95",
+    "details": "24 x 30 x 8 inches, bronze",
+    "date": "2022"
+  },
+  {
+    "image": "/assets/images/artworks/test3.jpg",
+    "title": "#82",
+    "details": "18 x 24 x 6 inches, mixed media",
+    "date": "2021",
+    "link": "/artworks/piece-82/"
+  },
+  {
+    "image": "/assets/images/sample1.jpg",
+    "title": "#76",
+    "details": "42 x 36 x 12 inches, steel and wood",
+    "date": "2020"
+  },
+  {
+    "image": "/assets/images/sample2.jpg",
+    "title": "#71",
+    "details": "30 x 28 x 10 inches, ceramic",
+    "date": "2019",
+    "link": "/artworks/piece-71/"
+  },
+  {
+    "image": "/assets/images/sample3.jpg",
+    "title": "#65",
+    "details": "20 x 22 x 8 inches, marble",
+    "date": "2018"
+  },
+  {
+    "image": "/assets/images/sample4.jpg",
+    "title": "#58",
+    "details": "28 x 32 x 10 inches, aluminum",
+    "date": "2017"
+  },
+  {
+    "image": "/assets/images/sample5.jpg",
+    "title": "#52",
+    "details": "16 x 20 x 6 inches, glass",
+    "date": "2016",
+    "link": "/artworks/piece-52/"
+  }
+]
