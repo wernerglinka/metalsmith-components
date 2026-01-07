@@ -1,4 +1,4 @@
-- sectionType: image-compare
+- sectionType: image-only
   containerTag: section
   classes: ""
   id: ""
@@ -16,11 +16,12 @@
       color: ""
       image: ""
       imageScreen: "none"
-  imageBefore:
-    src: "/assets/images/before.jpg"
-    alt: "Description of the before image for accessibility"
-    caption: ""
-  imageAfter:
-    src: "/assets/images/after.jpg"
-    alt: "Description of the after image for accessibility"
-    caption: ""
+  image:
+    src: "/assets/images/sample.jpg"
+    alt: "Image description for accessibility"
+    caption: "Optional caption for the image"
+  ctas:
+    - url: "#"
+      label: "View Gallery"
+      isButton: true
+      buttonStyle: "primary"

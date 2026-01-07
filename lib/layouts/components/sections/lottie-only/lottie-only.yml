@@ -1,4 +1,4 @@
-- sectionType: image-grid
+- sectionType: lottie-only
   containerTag: section
   classes: ""
   id: ""
@@ -16,10 +16,8 @@
       color: ""
       image: ""
       imageScreen: "none"
-  dataSource: sample-artworks
-  text:
-    title: "Sample Gallery"
-    titleTag: "h3"
-  settings:
-    gap: "6"
-    targetRowHeight: "180"
+  lottie:
+    src: "/assets/animations/sample.json"
+    autoplay: true
+    loop: true
+    alt: "Lottie animation description"

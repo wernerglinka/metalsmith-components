@@ -1,28 +1,31 @@
-# Search-Only Section Component Example
-# This shows how to add a dedicated search section to a page
-
-# Basic search-only section
-sectionType: search-only
-text:
-  title: "Search Components"
-  subtitle: "Find components, features, and documentation"
-placeholder: "Search components and documentation..."
-settings:
-  maxResults: 20
-  enableHighlighting: true
-
-# Alternative minimal configuration
-# sectionType: search-only
-# placeholder: "Search..."
-
-# Advanced configuration example
-# sectionType: search-only
-# text:
-#   title: "Find What You Need"
-#   subtitle: "Search through all component documentation"
-# placeholder: "Type to search components, guides, examples..."
-# settings:
-#   maxResults: 15
-#   showRelevanceScore: true
-#   enableHighlighting: true
-#   minCharacters: 2
+- sectionType: search-only
+  containerTag: section
+  classes: ""
+  id: ""
+  isDisabled: false
+  isAnimated: true
+  containerFields:
+    inContainer: true
+    noMargin:
+      top: true
+      bottom: true
+    noPadding:
+      top: true
+      bottom: false
+    background:
+      color: ""
+      image: ""
+      imageScreen: "none"
+  text:
+    leadIn: ""
+    title: "Search"
+    titleTag: "h2"
+    subTitle: "Find components, examples, and documentation"
+    prose: ""
+  settings:
+    placeholder: "Search components, features, or documentation..."
+    showCategories: true
+    maxResults: 15
+    resultTypes: []
+    enableHighlighting: true
+    showRelevanceScore: true

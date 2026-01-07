@@ -1,25 +1,21 @@
-- sectionType: image-grid
+- sectionType: blog-author
   containerTag: section
   classes: ""
   id: ""
   isDisabled: false
-  isAnimated: true
+  isReverse: false
   containerFields:
     inContainer: true
+    isAnimated: true
     noMargin:
       top: true
       bottom: true
     noPadding:
-      top: false
-      bottom: false
+      top: true
+      bottom: true
     background:
       color: ""
       image: ""
       imageScreen: "none"
-  dataSource: sample-artworks
-  text:
-    title: "Sample Gallery"
-    titleTag: "h3"
-  settings:
-    gap: "6"
-    targetRowHeight: "180"
+  name: "Author Name"
+  logoWidth: 30
