@@ -6,11 +6,16 @@
 
   <body class="{{ bodyClasses }}">
     <span id="top"></span>
-    {% include "components/sections/header/header.njk" %} {{ breadcrumbs(navigation.breadcrumbs) }}
+    {% include "components/sections/header/header.njk" %}
 
-    <main>{% block body %} {# will be replaced by page content #} {% endblock %}</main>
+    <main class="transition-fade" id="swup">
+      {{ breadcrumbs(navigation.breadcrumbs) }}
+      {% block body %} {# will be replaced by page content #} {% endblock %}
+    </main>
 
     {% include "components/sections/footer/footer.njk" %}
+
+    {% include "components/_partials/page-transitions/page-transitions.njk" %}
 
     <script src="/assets/main.js"></script>
 

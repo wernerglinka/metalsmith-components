@@ -287,6 +287,7 @@ sections:
 - Clean up event listeners in cleanup functions
 - Handle missing DOM elements gracefully
 - Avoid global state
+- Make components SWUP-compatible (see [SWUP Compatibility](#swup-compatibility))
 
 ### Naming Conventions
 
@@ -364,6 +365,164 @@ Before marking a component as portable:
 - [ ] Example frontmatter is complete and tested
 - [ ] Component renders in isolation
 - [ ] Tests pass in both library and starter
+
+## SWUP Compatibility
+
+All components with JavaScript are SWUP-compatible for smooth page transitions. This allows sites using SWUP to re-initialize components after each page swap without duplicating event listeners.
+
+### Pattern for SWUP-Compatible Components
+
+```javascript
+/**
+ * Initialize component
+ */
+function initMyComponent() {
+  const elements = document.querySelectorAll('.my-component');
+
+  elements.forEach((element) => {
+    // Skip if already initialized (prevents duplicate listeners)
+    if (element.dataset.initialized) return;
+    element.dataset.initialized = 'true';
+
+    // Component setup code here
+    setupElement(element);
+  });
+}
+
+// Register with page transitions for SWUP support
+if (window.PageTransitions) {
+  window.PageTransitions.registerComponent('my-component', initMyComponent);
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMyComponent);
+} else {
+  initMyComponent();
+}
+```
+
+### Components Requiring Cleanup
+
+For components with intervals, observers, or other persistent state:
+
+```javascript
+/**
+ * Cleanup component (stop intervals, disconnect observers)
+ */
+function cleanupMyComponent() {
+  const elements = document.querySelectorAll('.my-component[data-initialized]');
+  elements.forEach((element) => {
+    if (element._intervalId) {
+      clearInterval(element._intervalId);
+    }
+    if (element._resizeObserver) {
+      element._resizeObserver.disconnect();
+    }
+  });
+}
+
+// Register cleanup with page transitions
+if (window.PageTransitions) {
+  window.PageTransitions.registerComponent('my-component', initMyComponent);
+  window.PageTransitions.registerCleanup('my-component', cleanupMyComponent);
+}
+```
+
+### Key Points
+
+1. **Initialization Tracking**: Always check `element.dataset.initialized` before setting up event listeners
+2. **Cleanup Registration**: Components with intervals, observers, or fetch requests should register cleanup functions
+3. **Backwards Compatible**: The `if (window.PageTransitions)` check ensures components work without SWUP
+4. **Named Functions**: Extract initialization logic into named functions for re-usability
+5. **Entry Point Setup**: If your script is the entry point for a bundler, initialize the `PageTransitions` registry at the top (see below)
+
+### Setting Up the Entry Point
+
+When using a bundler (esbuild, Webpack, Rollup), the entry point script runs before other bundled scripts. This creates a timing issue: component scripts try to register with `window.PageTransitions` before `page-transitions.js` has defined it.
+
+**Solution - initialize the registry in the entry point:**
+
+The simplest approach is to initialize the `PageTransitions` registry at the very top of your bundler entry point (e.g., `main.js`). This ensures the registry exists before any component scripts run:
+
+```javascript
+/**
+ * Initialize PageTransitions registry at the very top of the entry point.
+ * This ensures it exists before any component scripts try to register.
+ * The actual SWUP initialization happens in page-transitions.js on DOMContentLoaded.
+ */
+if (!window.PageTransitions) {
+  const componentRegistry = new Map();
+  const cleanupRegistry = new Map();
+
+  window.PageTransitions = {
+    registerComponent: (name, initFn) => componentRegistry.set(name, initFn),
+    registerCleanup: (name, cleanupFn) => cleanupRegistry.set(name, cleanupFn),
+    // Expose registries for page-transitions.js to use
+    _componentRegistry: componentRegistry,
+    _cleanupRegistry: cleanupRegistry
+  };
+}
+```
+
+Then in `page-transitions.js`, use the existing registries instead of creating new ones:
+
+```javascript
+// Get registries from the global PageTransitions object
+const componentRegistry = window.PageTransitions?._componentRegistry || new Map();
+const cleanupRegistry = window.PageTransitions?._cleanupRegistry || new Map();
+```
+
+This approach is simpler and more reliable than deferring registration to `DOMContentLoaded`.
+
+### Components with Cleanup Functions
+
+These components register cleanup functions for proper SWUP support:
+
+| Component | Cleanup Reason |
+|-----------|----------------|
+| artist-slider | Interval for auto-cycling |
+| hero-slider | Interval for auto-play |
+| logos-list | ResizeObserver |
+| image-grid | ResizeObserver per grid |
+| image-compare | IntersectionObserver, ResizeObserver |
+| podcast | Shikwasa player instance |
+
+### Using Page Transitions
+
+To enable SWUP on your site, include the `page-transitions` partial in your layout and ensure your main content is wrapped in a SWUP container:
+
+```html
+<main class="transition-fade" id="swup">
+  <!-- Page content -->
+</main>
+```
+
+See the [page-transitions README](../../lib/layouts/components/_partials/page-transitions/README.md) for detailed setup instructions.
+
+### Handling Multiple Layouts
+
+Sites with multiple layouts (e.g., default and sidebar) need special handling. SWUP only replaces content inside `#swup`, so elements outside (like sidebars) persist during transitions.
+
+The solution is to detect layout changes and force a full reload:
+
+```javascript
+function hasSidebarLayout(doc) {
+  return doc.body.classList.contains('with-sidebar');
+}
+
+swup.hooks.on('page:view', (visit) => {
+  const currentHasSidebar = hasSidebarLayout(document);
+  const newHasSidebar = hasSidebarLayout(visit.to.document);
+
+  if (currentHasSidebar !== newHasSidebar) {
+    window.location.href = visit.to.url;
+    return;
+  }
+});
+```
+
+This provides smooth transitions within the same layout type, and graceful reloads (with fade-out) when switching layouts.
 
 ## Reference Implementation
 

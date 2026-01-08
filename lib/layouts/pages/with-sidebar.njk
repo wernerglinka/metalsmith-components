@@ -2,12 +2,7 @@
 
 <!doctype html>
 <html class="no-js" lang="">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Open+Sans:wght@300;500&display=swap"/>
-    <link rel="stylesheet" href="/assets/main.css"/>
-  </head>
+  {% include "components/_helpers/head.njk" %}
 
   <body class="with-sidebar {{ bodyClasses }}">
     <span id="top"></span>
@@ -17,7 +12,7 @@
       {% include "components/_helpers/references.njk" %}
     </aside>
 
-    <main>
+    <main class="transition-fade" id="swup">
       {{ breadcrumbs(navigation.breadcrumbs) }}
 
       {% block body %}
@@ -27,6 +22,7 @@
       {% include "components/sections/footer/footer.njk" %}
     </main>
 
+    {% include "components/_partials/page-transitions/page-transitions.njk" %}
 
     <script src="/assets/main.js"></script>
 

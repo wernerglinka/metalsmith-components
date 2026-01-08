@@ -88,9 +88,9 @@ Components are organized in two main categories:
 
 #### Partials (`lib/layouts/components/_partials/`)
 
-Small, reusable UI elements (21 components):
+Small, reusable UI elements (22 components):
 
-- audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, lottie, manual-card, navigation, overlay, search, slider-pagination, text, text-link, video
+- audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, lottie, manual-card, navigation, overlay, page-transitions, search, slider-pagination, text, text-link, video
 
 #### Sections (`lib/layouts/components/sections/`)
 
@@ -219,6 +219,17 @@ The `icon-loader.js` file in the maps component is excluded from watch mode (`li
 - `NODE_ENV=production` - Production build with optimizations
 - `BASE_PATH` - For subdirectory deployment (optional)
 - `DEBUG=@metalsmith*` - Enable debug output for all Metalsmith plugins
+
+### SWUP Page Transitions Support
+
+All components with JavaScript are SWUP-compatible for smooth page transitions. The `page-transitions` partial provides the SWUP integration. Components automatically re-initialize after page swaps without duplicating event listeners.
+
+**Key patterns:**
+- Components check `element.dataset.initialized` before setup
+- Components with intervals/observers register cleanup functions
+- Registration is conditional: `if (window.PageTransitions)` ensures backwards compatibility
+
+See [Component Development Guide](.claude/guides/COMPONENT-GUIDE.md#swup-compatibility) for the full pattern.
 
 ### Relationship to Metalsmith2025 Starter
 
