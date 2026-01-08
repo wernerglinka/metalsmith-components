@@ -12,11 +12,39 @@ npm install swup @swup/head-plugin @swup/scroll-plugin @swup/preload-plugin
 
 ## Usage
 
-Include the partial in your base layout:
+### 1. Set Up the Entry Point
+
+Initialize the PageTransitions registry at the very top of your bundler entry point (e.g., `main.js`). This ensures the registry exists before any component scripts run:
+
+```javascript
+/**
+ * Initialize PageTransitions registry at the very top of the entry point.
+ * This ensures it exists before any component scripts try to register.
+ */
+if (!window.PageTransitions) {
+  const componentRegistry = new Map();
+  const cleanupRegistry = new Map();
+
+  window.PageTransitions = {
+    registerComponent: (name, initFn) => componentRegistry.set(name, initFn),
+    registerCleanup: (name, cleanupFn) => cleanupRegistry.set(name, cleanupFn),
+    _componentRegistry: componentRegistry,
+    _cleanupRegistry: cleanupRegistry
+  };
+}
+
+// Rest of your main.js code...
+```
+
+### 2. Include the Partial
+
+Add the partial to your base layout:
 
 ```nunjucks
 {% include "components/_partials/page-transitions/page-transitions.njk" %}
 ```
+
+### 3. Set Up the SWUP Container
 
 Your layout needs a main element with the SWUP container:
 
@@ -28,6 +56,27 @@ Your layout needs a main element with the SWUP container:
 
 Content inside `#swup` is replaced during transitions. Content outside (header, footer) persists.
 
+## Multiple Layouts
+
+Sites with multiple layouts (e.g., default and sidebar) need the `with-sidebar` class on the body element for layout detection:
+
+```html
+<!-- default.njk -->
+<body class="{{ bodyClasses }}">
+  <main class="transition-fade" id="swup">...</main>
+</body>
+
+<!-- with-sidebar.njk -->
+<body class="with-sidebar {{ bodyClasses }}">
+  <aside class="sidebar">...</aside>
+  <main class="transition-fade" id="swup">...</main>
+</body>
+```
+
+The page-transitions module automatically detects layout changes and forces a full page reload when transitioning between different layouts. This ensures:
+- **Same layout**: Smooth SWUP animations
+- **Different layouts**: Current page fades out, then full reload brings in the new layout
+
 ## Component Registration
 
 Components inside the SWUP container that require JavaScript must register with the PageTransitions system to re-initialize after each page swap:
@@ -35,7 +84,14 @@ Components inside the SWUP container that require JavaScript must register with 
 ```javascript
 function initMyComponent() {
   const elements = document.querySelectorAll('.my-component');
-  elements.forEach(setupElement);
+
+  elements.forEach((element) => {
+    // Skip if already initialized (prevents duplicate listeners)
+    if (element.dataset.initialized) return;
+    element.dataset.initialized = 'true';
+
+    setupElement(element);
+  });
 }
 
 // Register for SWUP re-initialization

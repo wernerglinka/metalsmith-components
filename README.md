@@ -7,7 +7,7 @@
   Metalsmith Components
 </h1>
 
-A reference implementation and documentation site for building component-based static sites with Metalsmith. The library contains 59 production-ready components (21 partials, 38 sections) that use structured content in frontmatter rather than Markdown body content. Each component manages its own template, styles, and scripts, which are automatically bundled only when used on pages.
+A reference implementation and documentation site for building component-based static sites with Metalsmith. The library contains 60 production-ready components (22 partials, 38 sections) that use structured content in frontmatter rather than Markdown body content. Each component manages its own template, styles, and scripts, which are automatically bundled only when used on pages.
 
 This library provides the component catalog for the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter). All components are compatible with the starter's architecture and can be integrated into projects using the automated packaging system.
 
@@ -17,11 +17,11 @@ This library provides the component catalog for the [Metalsmith2025 Structured C
 
 ### Component Library
 
-The library contains 59 production-ready components organized in two categories:
+The library contains 60 production-ready components organized in two categories:
 
-**21 Partials** - Small, reusable UI elements used within larger sections:
+**22 Partials** - Small, reusable UI elements used within larger sections:
 
-- audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, lottie, manual-card, navigation, overlay, search, slider-pagination, text, text-link, video
+- audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, lottie, manual-card, navigation, overlay, page-transitions, search, slider-pagination, text, text-link, video
 
 **38 Sections** - Large page sections and main building blocks:
 
@@ -33,6 +33,7 @@ The library contains 59 production-ready components organized in two categories:
 - **podcast**: Shikwasa player integration with RSS feed parsing from JSON configurations
 - **video**: Multi-provider support (YouTube, Vimeo, Cloudinary) with responsive embeds
 - **search**: Two-layer architecture using metalsmith-search plugin for build-time indexing plus client-side Fuse.js filtering
+- **page-transitions**: Smooth SWUP-based page transitions with multi-layout support (automatic detection and graceful handoff between different layouts)
 - **pricing-table**: Pricing tier comparison with cards and comparison table layouts
 - **team-grid**: Team member profiles with grid/compact layouts and modal bios using native `<dialog>`
 - **timeline**: Chronological events with vertical (alternating) and horizontal layouts
@@ -42,7 +43,7 @@ The library contains 59 production-ready components organized in two categories:
 
 ### Documentation & Learning
 
-The site includes 13 technical guides covering component development and implementation:
+The site includes 14 technical guides covering component development and implementation:
 
 - **Building Pages with Metalsmith Components** - Construct pages from reusable components defined in structured frontmatter
 - **How Component Bundling Works** - Deep dive into automatic component discovery and bundling with metalsmith-bundled-components
@@ -56,6 +57,7 @@ The site includes 13 technical guides covering component development and impleme
 - **Getting Started with the Metalsmith2025 Starter** - Complete guide from installation to deployment
 - **Installing Metalsmith Components in Your Project** - Download and install component packages with automated install scripts
 - **Adding a Top Message Bar to Your Header** - Implement a dismissible announcement bar with cookie persistence and dark mode support
+- **Adding Smooth Page Transitions** - Implement SWUP page transitions with component re-initialization and multi-layout support
 
 ### Technical Implementation
 
@@ -409,7 +411,7 @@ items:
 - **header** - Site header/navigation with optional top message bar (dismissible announcements with cookie persistence)
 - **footer** - Site footer
 
-### Partial Components (21)
+### Partial Components (22)
 
 **Content Elements**:
 
@@ -446,6 +448,7 @@ items:
 **UI Elements**:
 
 - **overlay** - Overlay/modal element
+- **page-transitions** - Smooth SWUP-based page transitions with multi-layout support
 
 All components include live examples and documentation at the [Component Library](https://metalsmith-components.com/library).
 
@@ -455,7 +458,7 @@ The repository includes 4 comprehensive Mocha test suites validating the compone
 
 **Test Coverage**:
 
-- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 59 components
+- `test/component-manifests.test.js` - Validates manifest.json existence and structure for all 60 components
 - `test/build-integration.test.js` - Tests complete Metalsmith build pipeline, HTML generation, collections, pagination, and static assets
 - `test/content-structure.test.js` - Verifies frontmatter structure, global data file validity, SEO metadata, and content consistency
 - `test/component-dependency-bundler.test.js` - Tests component directory structure, file associations, manifest dependencies, and bundler integration
@@ -519,6 +522,7 @@ The site includes detailed technical guides available at [metalsmith-components.
 10. Getting Started with the Metalsmith2025 Starter
 11. Installing Metalsmith Components in Your Project
 12. Adding a Top Message Bar to Your Header
+13. Adding Smooth Page Transitions
 
 Browse the complete [Component Library](https://metalsmith-components.com/library) for live examples and implementation details.
 
