@@ -1,13 +1,19 @@
 {% from "components/_helpers/build-container-attributes.njk" import buildContainerAttributes %}
 {% from "components/_helpers/render-section.njk" import renderSection %}
 
+{#
+  firstSectionClass can be set before including this renderer:
+  - 'first-section' (default) for regular pages
+  - 'first-text-section' for sidebar layouts
+#}
+
 {# loop through all sections and render them #}
 {% for section in sections %}
   {# don't render section is disabled in frontmatter #}
   {% if not section.isDisabled %}
 
     {# section wrapper may be article, aside, section or div depending on section.containerTag setting #}
-    <{{ section.containerTag }} id="{{ section.id }}"  {{ buildContainerAttributes(section) }}>
+    <{{ section.containerTag }} id="{{ section.id }}"  {{ buildContainerAttributes(section, loop.first, firstSectionClass) }}>
 
       {# if section has background add a background image #}
       {% if section.containerFields.background.image %}

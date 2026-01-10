@@ -51,56 +51,6 @@ const mainFile = process.argv[ 1 ]; // Gets the file that was executed by Node.j
  */
 const dependencies = JSON.parse( fs.readFileSync( './package.json' ) ).dependencies;
 
-/**
- * @function getGlobalMetadata
- * @returns {Object} An object containing all JSON data files from lib/data directory
- *
- * This function reads all JSON files from the data directory and adds their data
- * to a metadata object. This object can then be added to the Metalsmith metadata.
- * /lib/data/
- *   - site.json
- *   - social.json
- *   - validate.json
- *
- * becomes
- * {
- *   site: {...},
- *   social: {...},
- *   validate: {...}
- * }
- */
-const getGlobalMetadata = () => {
-  const dataDir = path.join( thisDirectory, 'lib', 'data' ); // Path to data directory
-
-  const processDirectory = ( dirPath, relativePath = '' ) => {
-    const files = fs.readdirSync( dirPath );
-    const result = {};
-
-    files.forEach( file => {
-      const filePath = path.join( dirPath, file );
-      const stat = fs.statSync( filePath );
-
-      if ( stat.isDirectory() ) {
-        // Recursively process subdirectories
-        result[ file ] = processDirectory( filePath, path.join( relativePath, file ) );
-      } else if ( file.endsWith( '.json' ) ) {
-        // Process JSON files
-        const fileName = file.replace( '.json', '' );
-        const fileContents = fs.readFileSync( filePath, 'utf8' );
-        result[ fileName ] = JSON.parse( fileContents );
-      }
-    } );
-
-    return result;
-  };
-
-  return processDirectory( dataDir );
-};
-
-const globalMetadata = getGlobalMetadata();
-
-// Get the site URL for use in the sitemap plugin
-// const siteURL = globalMetadata.site; // Reserved for future use
 
 /**
  * TEMPLATE ENGINE SETUP
@@ -161,6 +111,7 @@ metalsmith
     'src/**/*',
     'lib/layouts/**/*',
     'lib/assets/**/*',
+    'lib/data/**/*',
     '!lib/layouts/components/sections/maps/modules/helpers/icon-loader.js' // Exclude generated file to prevent rebuild loops
   ] )
   // Pass NODE_ENV to plugins
@@ -171,8 +122,40 @@ metalsmith
   .destination( './build' )
   .metadata( {
     msVersion: dependencies.metalsmith,
-    nodeVersion: process.version,
-    data: globalMetadata
+    nodeVersion: process.version
+  } )
+
+  /**
+   * Load external data files into metadata
+   * This runs on each build, so changes to data files are picked up during watch mode
+   * Each JSON file in lib/data becomes a key under metadata.data (e.g., site.json -> data.site)
+   * Subdirectories are processed recursively
+   */
+  .use( ( files, metalsmith, done ) => {
+    const dataDir = path.join( metalsmith.directory(), 'lib', 'data' );
+
+    const processDirectory = ( dirPath ) => {
+      const dirFiles = fs.readdirSync( dirPath );
+      const result = {};
+
+      dirFiles.forEach( file => {
+        const filePath = path.join( dirPath, file );
+        const stat = fs.statSync( filePath );
+
+        if ( stat.isDirectory() ) {
+          result[ file ] = processDirectory( filePath );
+        } else if ( file.endsWith( '.json' ) ) {
+          const fileName = file.replace( '.json', '' );
+          const fileContents = fs.readFileSync( filePath, 'utf8' );
+          result[ fileName ] = JSON.parse( fileContents );
+        }
+      } );
+
+      return result;
+    };
+
+    metalsmith.metadata().data = processDirectory( dataDir );
+    done();
   } )
 
   // Exclude draft content in production mode

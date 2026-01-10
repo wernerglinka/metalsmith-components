@@ -16,7 +16,7 @@ seo:
 sections:
   - sectionType: hero
     containerTag: section
-    classes: 'first-section'
+    classes: ''
     id: ''
     description: "This is a blog post hero section. The hero section has a class of 'blog-hero'."
     isDisabled: false

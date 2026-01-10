@@ -25,7 +25,6 @@ seo:
 sections:
   - sectionType: text-only
     containerTag: article
-    classes: 'first-text-section'
     id: ''
     isDisabled: false
     isAnimated: true

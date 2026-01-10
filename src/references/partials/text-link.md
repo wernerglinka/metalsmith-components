@@ -16,7 +16,6 @@ card:
 sections:
   - sectionType: text-only
     containerTag: section
-    classes: 'first-text-section'
     containerFields:
       inContainer: false
       isAnimated: true

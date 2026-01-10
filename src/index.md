@@ -24,7 +24,7 @@ seo:
 sections:
   - sectionType: hero
     containerTag: section
-    classes: 'first-section'
+    classes: ''
     id: ''
     description: 'This is a hero section'
 

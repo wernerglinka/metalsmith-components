@@ -22,7 +22,6 @@ card:
 sections:
   - sectionType: text-only
     containerTag: section
-    classes: 'first-text-section'
     id: ''
     description: 'Introduction to section components'
     isDisabled: false
