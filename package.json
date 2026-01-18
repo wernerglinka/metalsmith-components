@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-components",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "A reference library for Metalsmith in 2025",
   "type": "module",
   "keywords": [
