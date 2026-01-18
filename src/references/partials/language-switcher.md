@@ -69,6 +69,7 @@ sections:
         ```json
         {
           "defaultLang": "en",
+          "fallbackUrl": "/404/",
           "available": [
             { "code": "en", "label": "English" },
             { "code": "de", "label": "Deutsch" },
@@ -78,9 +79,10 @@ sections:
         }
         ```
 
-        Add or remove languages by editing this file. Each language object should have:
-        - `code` - ISO 639-1 language code (e.g., 'en', 'de', 'fr')
-        - `label` - Display name (e.g., 'English', 'Deutsch', 'Francais')
+        Configuration options:
+        - `defaultLang` - The default language code (pages at root, no URL prefix)
+        - `fallbackUrl` - Where to navigate when a localized page doesn't exist
+        - `available` - Array of language objects with `code` (ISO 639-1) and `label` (display name)
 
   - sectionType: text-only
     containerTag: section
@@ -98,7 +100,7 @@ sections:
         ```liquid
         {% from "components/_partials/language-switcher/language-switcher.njk" import languageSwitcher %}
 
-        {{ languageSwitcher(data.languages.available, data.languages.defaultLang) }}
+        {{ languageSwitcher(data.languages.available, data.languages.defaultLang, data.languages.fallbackUrl) }}
         ```
 
   - sectionType: text-only

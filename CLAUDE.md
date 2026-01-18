@@ -88,9 +88,9 @@ Components are organized in two main categories:
 
 #### Partials (`lib/layouts/components/_partials/`)
 
-Small, reusable UI elements (22 components):
+Small, reusable UI elements (23 components):
 
-- audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, lottie, manual-card, navigation, overlay, page-transitions, search, slider-pagination, text, text-link, video
+- audio, author-date, branding, breadcrumbs, button, collection-card, collection-pagination, ctas, dark-light-theme-switcher, flip-card, icon, image, language-switcher, lottie, manual-card, navigation, overlay, page-transitions, search, slider-pagination, text, text-link, video
 
 #### Sections (`lib/layouts/components/sections/`)
 
@@ -149,15 +149,15 @@ Quick reference for creating a new component:
 - `src/` - Source content pages (Markdown files with frontmatter)
   - `src/index.md` - Homepage
   - `src/blog.md` - Blog index with pagination
-  - `src/blog/` - Blog posts (12 articles)
+  - `src/blog/` - Blog posts (18 articles)
   - `src/references/sections/` - Section component reference pages (38 files)
-  - `src/references/partials/` - Partial component reference pages (21 files)
-- `lib/data/` - Global JSON data files (site.json, author.json, socialLinks.json, etc.)
+  - `src/references/partials/` - Partial component reference pages (22 files)
+- `lib/data/` - Global JSON data files (site.json, author.json, socialLinks.json, languages.json, etc.)
   - `lib/data/maps/` - Map data JSON files
   - `lib/data/podcasts/` - Podcast RSS feed configurations
   - `lib/data/blurbs/` - Blurbs content data
 - `lib/layouts/` - Templates, components, and icons
-  - `lib/layouts/components/_partials/` - 21 partial components
+  - `lib/layouts/components/_partials/` - 23 partial components
   - `lib/layouts/components/sections/` - 38 section components
   - `lib/layouts/pages/` - Page templates (sections.njk, etc.)
   - `lib/layouts/icons/` - 299 Feather icon SVG templates
@@ -230,6 +230,7 @@ All components with JavaScript are SWUP-compatible for smooth page transitions. 
 - Components check `element.dataset.initialized` before setup
 - Components with intervals/observers register cleanup functions
 - Registration is conditional: `if (window.PageTransitions)` ensures backwards compatibility
+- SWUP's `ignoreVisit` option excludes non-HTML resources (`.zip`, `.pdf`, images, etc.) from page transitions
 
 See [Component Development Guide](.claude/guides/COMPONENT-GUIDE.md#swup-compatibility) for the full pattern.
 

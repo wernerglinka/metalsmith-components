@@ -339,6 +339,11 @@ sections:
           const swup = new Swup({
             containers: ['#swup'],
             animationSelector: '[class*="transition-"]',
+            // Ignore download links and other non-HTML resources
+            ignoreVisit: (url) => {
+              const path = url.pathname || url;
+              return /\.(zip|pdf|png|jpg|jpeg|gif|svg|webp|ico|mp3|mp4|webm)$/i.test(path);
+            },
             plugins: [
               new SwupHeadPlugin({
                 persistAssets: true,
@@ -898,6 +903,64 @@ sections:
 
   - sectionType: text-only
     containerTag: article
+    classes: 'single-column'
+    id: ''
+    isDisabled: false
+    isReverse: false
+    containerFields:
+      inContainer: true
+      isAnimated: true
+      noMargin:
+        top: true
+        bottom: true
+      noPadding:
+        top: false
+        bottom: false
+      background:
+        color: ''
+        image: ''
+        imageScreen: 'none'
+    text:
+      leadIn: ''
+      title: 'Excluding Non-HTML Resources'
+      titleTag: 'h2'
+      isCentered: false
+      subTitle: ''
+      prose: |-
+        By default, SWUP intercepts all internal link clicks and tries to handle them as page transitions. This causes problems when clicking links to downloadable files (ZIP archives, PDFs) or direct media files, because SWUP expects HTML content with a `#swup` container.
+
+        The `ignoreVisit` option tells SWUP which URLs to skip entirely, allowing the browser's default behavior:
+
+        ```javascript
+        const swup = new Swup({
+          containers: ['#swup'],
+          animationSelector: '[class*="transition-"]',
+          // Ignore download links and other non-HTML resources
+          ignoreVisit: (url) => {
+            const path = url.pathname || url;
+            return /\.(zip|pdf|png|jpg|jpeg|gif|svg|webp|ico|mp3|mp4|webm)$/i.test(path);
+          },
+          plugins: [...]
+        });
+        ```
+
+        **How it works:**
+
+        - SWUP calls `ignoreVisit` for every link click
+        - The function receives the URL object for the target
+        - Return `true` to skip SWUP handling (browser handles normally)
+        - Return `false` to let SWUP handle the navigation
+
+        **Common use cases:**
+
+        - **Download links**: ZIP, PDF, DOCX, and other downloadable files
+        - **Direct media**: Images, audio, and video files
+        - **External resources**: Files that trigger browser downloads
+
+        Without `ignoreVisit`, clicking a download button throws an error because SWUP fetches the file, can't find the `#swup` container in the binary content, and fails. With this configuration, download links work exactly as expected while page navigation remains smooth.
+
+  - sectionType: text-only
+    containerTag: article
     classes: ''
     id: ''
     isDisabled: false
@@ -1191,6 +1254,7 @@ sections:
 
         **3. Create the page-transitions module:**
         - Set up SWUP with plugins
+        - Configure `ignoreVisit` to exclude download links and media files
         - Create the component registry
         - Hook into `content:replace` for cleanup
         - Hook into `visit:end` for re-initialization
