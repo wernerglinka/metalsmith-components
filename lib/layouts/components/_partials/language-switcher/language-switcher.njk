@@ -36,7 +36,7 @@
     <ul class="language-dropdown js-language-dropdown" role="listbox" aria-label="Available languages">
       {% for lang in langs %}
         <li role="option" data-lang="{{ lang.code }}"{% if lang.code == default %} aria-selected="true"{% endif %}>
-          <a href="#" class="language-option js-language-option">
+          <a href="{{ fallback }}" class="language-option js-language-option">
             <span class="lang-code">{{ lang.code | upper }}</span>
             <span class="lang-label">{{ lang.label }}</span>
           </a>

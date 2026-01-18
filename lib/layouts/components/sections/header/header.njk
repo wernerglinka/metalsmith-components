@@ -36,7 +36,7 @@
             <path d="m21 21-4.35-4.35"></path>
           </svg>
         </button>
-        {{ languageSwitcher(data.languages.available, data.languages.defaultLang) }}
+        {{ languageSwitcher(data.languages.available, data.languages.defaultLang, data.languages.fallbackUrl) }}
         {{ darkLightThemeSwitcher() }}
         {{ icon( {
           url: "https://github.com/wernerglinka/metalsmith-components",
