@@ -6,14 +6,14 @@ hasHero: true
 card:
   title: 'Building Multi-Language Sites'
   description: 'A simple approach to internationalization with URL-based language switching in Metalsmith'
-  date: '2025-11-15'
+  date: '2026-01-18'
   author: 'Metalsmith Components Team'
-  thumbnail: '/assets/images/sample2.jpg'
+  thumbnail: '/assets/images/sample7.jpg'
 
 seo:
   title: 'Building Multi-Language Sites with Metalsmith'
   description: 'Learn how to implement internationalization with URL-based language switching using parallel content directories and a simple language switcher'
-  socialImage: '/assets/images/sample2.jpg'
+  socialImage: '/assets/images/sample7.jpg'
   canonicalURL: ''
   keywords: 'metalsmith, i18n, internationalization, multi-language, language switcher, localization'
 
@@ -37,7 +37,7 @@ sections:
       background:
         isDark: true
         color: ''
-        image: '/assets/images/sample2.jpg'
+        image: '/assets/images/sample7.jpg'
         imageScreen: 'dark'
     text:
       leadIn: 'Guide'
