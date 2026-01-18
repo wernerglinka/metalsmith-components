@@ -197,13 +197,15 @@ Comprehensive test suite using Mocha:
 
 ### Collections
 
-Three collections are automatically created during the build:
+Three collections are automatically created during the build using `@metalsmith/collections` v2:
 
-- **blog**: Blog posts from `blog/*.md`, sorted by `card.date`
-- **sections**: Section documentation from `references/sections/*.md`, sorted by `seo.title`
-- **partials**: Partial documentation from `references/partials/*.md`, sorted by `seo.title`
+- **blog**: Blog posts from `blog/*.md`, sorted by `card.date:desc`
+- **sections**: Section documentation from `references/sections/*.md`, sorted by `seo.title:asc`
+- **partials**: Partial documentation from `references/partials/*.md`, sorted by `seo.title:asc`
 
 These collections power the blog pagination, library search, and partials search features.
+
+**Collections v2 access pattern**: Previous/next navigation uses `collection['blog'].previous[0]` and `collection['blog'].next[0]` instead of the v1 `previous`/`next` properties. URLs use `permalink` (add leading/trailing slashes: `/{{ item.permalink }}/`).
 
 ### Watch Mode Exclusions
 

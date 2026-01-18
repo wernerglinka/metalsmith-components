@@ -1,0 +1,10 @@
+{
+  "defaultLang": "en",
+  "fallbackUrl": "/blog/building-multi-language-sites/",
+  "available": [
+    { "code": "en", "label": "English" },
+    { "code": "de", "label": "Deutsch" },
+    { "code": "es", "label": "Espanol" },
+    { "code": "fr", "label": "Francais" }
+  ]
+}

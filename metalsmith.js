@@ -172,18 +172,15 @@ metalsmith
     collections( {
       blog: {
         pattern: 'blog/*.md',
-        sortBy: 'card.date',
-        reverse: true
+        sort: 'card.date:desc'
       },
       sections: {
         pattern: 'references/sections/*.md',
-        sortBy: 'seo.title',
-        reverse: false
+        sort: 'seo.title:asc'
       },
       partials: {
         pattern: 'references/partials/*.md',
-        sortBy: 'seo.title',
-        reverse: false
+        sort: 'seo.title:asc'
       }
     } )
   )

@@ -1,6 +1,7 @@
 {% from "components/_partials/branding/branding.njk" import branding %}
 {% from "components/_partials/navigation/navigation.njk" import navigation %}
 {% from "components/_partials/dark-light-theme-switcher/dark-light-theme-switcher.njk" import darkLightThemeSwitcher %}
+{% from "components/_partials/language-switcher/language-switcher.njk" import languageSwitcher %}
 {% from "components/_partials/icon/icon.njk" import icon %}
 
 <div class="header-wrapper{% if topMessage %} has-top-message{% endif %}">
@@ -35,6 +36,7 @@
             <path d="m21 21-4.35-4.35"></path>
           </svg>
         </button>
+        {{ languageSwitcher(data.languages.available, data.languages.defaultLang) }}
         {{ darkLightThemeSwitcher() }}
         {{ icon( {
           url: "https://github.com/wernerglinka/metalsmith-components",
