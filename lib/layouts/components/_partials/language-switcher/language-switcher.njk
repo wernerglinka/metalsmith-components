@@ -21,17 +21,8 @@
   {% set fallback = fallbackUrl or data.languages.fallbackUrl or '/404/' %}
 
   <div class="language-switcher js-language-switcher" data-default-lang="{{ default }}" data-fallback-url="{{ fallback }}">
-    <button
-      type="button"
-      class="language-toggle js-language-toggle"
-      aria-label="Select language"
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      title="Select language"
-    >
-      {{ icon({ url: "#", icon: "globe" }) }}
-      <span class="current-lang js-current-lang">{{ default | upper }}</span>
-    </button>
+    {{ icon({ url: "#", icon: "globe" }) }}
+    <span class="current-lang js-current-lang">{{ default | upper }}</span>
 
     <ul class="language-dropdown js-language-dropdown" role="listbox" aria-label="Available languages">
       {% for lang in langs %}
