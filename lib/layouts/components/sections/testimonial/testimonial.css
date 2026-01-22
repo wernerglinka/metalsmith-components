@@ -11,7 +11,7 @@
  * - --font-h2
  */
 
-.testimonial {
+.section-wrapper.testimonial {
   --threshold: 25ch !important;
 
   padding: var(--space-s-m);

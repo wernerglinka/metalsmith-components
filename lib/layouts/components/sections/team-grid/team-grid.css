@@ -53,6 +53,7 @@
 
     img {
       width: 100%;
+      height: auto;
       aspect-ratio: 1;
       object-fit: cover;
       border-radius: 50%;
@@ -196,7 +197,8 @@
   }
 }
 
-.member-dialog .dialog-content {
+.member-dialog {
+  .dialog-content {
     position: relative;
     padding: var(--space-m-l);
     overflow-y: auto;
